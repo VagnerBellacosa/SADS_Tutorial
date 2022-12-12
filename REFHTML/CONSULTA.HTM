@@ -1,0 +1,678 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>CONSULTA</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+
+<B><FONT SIZE=6><P>Consultas gerais</B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS possui um reposit&oacute;rio de dados ativo, ou seja, que se mant&eacute;m atualizado a qualquer fase do desenvolvimento dos sistemas.</FONT> </P>
+<FONT SIZE=2><P>Desta forma, para auxiliar nas manuten&ccedil;&otilde;es e desenvolvimento dos sistemas, o SADS oferece uma grande variedade de consultas &agrave;s informa&ccedil;&otilde;es cadastradas em seu reposit&oacute;rio de dados, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Conatri">Atributo nos sistemas</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Conele">Elementos por sistema</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Condef">Defini&ccedil;&atilde;o e validades de atributo</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Conest">Estrutura de dados</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Estdet">Estrutura detalhada de dataset</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Descel">Descri&ccedil;&atilde;o de elemento</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Fonte">Fonte de programa/library</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Erros">Erros de compila&ccedil;&atilde;o de programa</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Relat">Consultas relativas a contexto</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Impre">Impress&atilde;o de consultas paginadas executadas</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Modul">M&oacute;dulos de programas</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Userc">Arquivos de erros no usercode</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Gerlib">Elementos pendentes de gera&ccedil;&atilde;o/libera&ccedil;&atilde;o para produ&ccedil;&atilde;o</A><FONT SIZE=2>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>A seguir, cada uma destas consultas encontra-se detalhadamente explicada.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Conatri">Consulta atributo nos sistemas</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Um mnem&ocirc;nico de atributo, campo, sin&ocirc;nimo ou dom&iacute;nio pode estar cadastrado em v&aacute;rios sistemas, tendo em cada um deles caracter&iacute;sticas pr&oacute;prias.</FONT> </P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada com objetivo de obter a rela&ccedil;&atilde;o de todos os sistemas em que determinado mnem&ocirc;nico est&aacute; cadastrado, seu nome e sua descri&ccedil;&atilde;o em cada um deles.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argum">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, no menu de opera&ccedil;&atilde;o CONATRSIS deve ser informado o seguinte argumento:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Atributo</B> - Mnem&ocirc;nico do atributo, campo, sin&ocirc;nimo ou dom&iacute;nio; no padr&atilde;o SADS.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>A padroniza&ccedil;&atilde;o utilizada pelo SADS para os mnem&ocirc;nicos dos atributos, campos, sin&ocirc;nimos ou dom&iacute;nios est&aacute; explicada detalhadamente na Se&ccedil;&atilde;o II, "Elementos do reposit&oacute;rio de dados do SADS", nos itens "Atributo", "Campo", "Sin&ocirc;nimo" e "Dom&iacute;nio", respectivamente.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Infex">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;SISTEMA</B> - C&oacute;digo do sistema no qual o mnem&ocirc;nico est&aacute; cadastrado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;ATRIBUTO</B> - Mnem&ocirc;nico do elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;NOME</B> - Descri&ccedil;&atilde;o resumida do elemento.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Se o elemento consultado pertencer a um dom&iacute;nio, ser&atilde;o exibidos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;DOMINIO - SISTEMA - ATRIBUTO</B> - C&oacute;digo do sistema e mnem&ocirc;nico do dom&iacute;nio ao qual o elemento pertence.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Se o elemento consultado estiver relacionado a um sin&ocirc;nimo, ser&atilde;o exibidos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;SINONIMO - SISTEMA - ATRIBUTO</B> - C&oacute;digo do sistema e mnem&ocirc;nico do atributo ou campo do qual o elemento &eacute; sin&ocirc;nimo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;DESCRICAO</B> - Primeira p&aacute;gina da descri&ccedil;&atilde;o cadastrada para o mnem&ocirc;nico no sistema indicado na tela.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Conele">Consulta elementos por sistema</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada para obter a rela&ccedil;&atilde;o de todos os elementos de um determinado tipo cadastrados em um sistema.</FONT> </P>
+<FONT SIZE=2><P>Podem ser consultados, por exemplo, os seguintes grupos de elementos: entidades, atributos, programas, relat&oacute;rios etc.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada na consulta &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Arcon">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, no menu de opera&ccedil;&atilde;o CONELESIS, deve ser informado o seguinte argumento:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Elemento</B> - Tipo do elemento ou o c&oacute;digo completo do elemento, no padr&atilde;o SADS. Se for informado o c&oacute;digo completo do elemento, ser&aacute; obtida a rela&ccedil;&atilde;o de todos os elementos do tipo informado, a partir deste c&oacute;digo.</FONT> </P>
+<FONT SIZE=2><P>A padroniza&ccedil;&atilde;o utilizada pelo SADS para diferenciar os diversos tipos de elementos &eacute; <B>"ssstt"</B> onde:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;sss</B> - Identificador alfab&eacute;tico do tipo do elemento</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;tt </B>- c&oacute;digo alfab&eacute;tico que identifica o sistema</P></DIR>
+
+<P>Na tabela a seguir est&atilde;o indicados os tipos de elementos que podem ser consultados:</FONT> </P></DIR>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" WIDTH=401>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER"><B><FONT SIZE=2>Tipo elemento</B></FONT></TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">Descri&ccedil;&atilde;o</B></FONT></TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">A</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Arquivo convencional</TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">B</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Banco de dados, base de dados, <I><FONT SIZE=2>Dataset</I>, <I>set</I>, <I>subset</I>, <I>access</I></FONT> </TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">C</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Consist&ecirc;ncia geral </TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">E</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Entidade</TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">&nbsp;</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Chave secund&aacute;ria de entidade </TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">G</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Uso geral</TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">H</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Processo, fun&ccedil;&atilde;o </TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">J</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<I><FONT SIZE=2><P>Job</I></FONT> </TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">K</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Atributo</TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">L</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<I><FONT SIZE=2><P>Library</I></FONT> </TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">M</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Tabela</TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">&nbsp;</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Chave secund&aacute;ria de tabela </TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">N</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Programa <I><FONT SIZE=2>on-line</I></FONT> </TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">O</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Generaliza&ccedil;&atilde;o </TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">P</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Programa <I><FONT SIZE=2>batch</I></FONT> </TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">Q</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Consist&ecirc;ncia geral de <I><FONT SIZE=2>job</I></FONT> </TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">R</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Relat&oacute;rio</TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">S</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Sub-rotina</TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">T</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Tela</TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">U</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Menu</TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">Y</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Relacionamento</TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">Z</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Dep&oacute;sito de dados </TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">&nbsp;</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Entidade externa</TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">&nbsp;</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Fluxo de dados</TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">ZD</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Dep&oacute;sito de dados </TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">ZE</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Entidade externa</TD>
+</TR>
+<TR><TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">ZF</TD>
+<TD WIDTH="71%" VALIGN="MIDDLE">
+<P>Fluxo de dados</TD>
+</TR>
+</TABLE>
+
+<B><FONT SIZE=5><P><A NAME="Infcon">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;SISTEMA</B> - C&oacute;digo e nome do sistema.</FONT> </P>
+<B><FONT SIZE=2><P>&lt;&lt;&lt;&lt;Elemento&gt;&gt;&gt;&gt;</B> - C&oacute;digo do elemento.</FONT> </P>
+<FONT SIZE=2><P>Dependendo do tipo do elemento a ser consultado, ser&aacute; apresentado, anteriormente ao seu c&oacute;digo, um caractere para identific&aacute;-lo e/ou diferenci&aacute;-lo.</FONT> </P>
+<FONT SIZE=2><P>Os caracteres que precedem os elementos em cada consulta s&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Consulta &agrave;s entidades:</P><DIR>
+<DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Se o elemento for uma chave secund&aacute;ria;</FONT> </P></DIR>
+</DIR>
+
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Consulta &agrave;s telas: </P><DIR>
+<DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"E" - Se o elemento for uma tela de explica&ccedil;&atilde;o;</FONT> </P></DIR>
+</DIR>
+
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Consulta a programas <I>on-line</I> e programas <I>batch</I>: </P><DIR>
+<DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"*" - Se o programa pertencer a uma vers&atilde;o anterior &agrave; 3.0 do SADS;</FONT> </P></DIR>
+</DIR>
+
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Consulta a atributos: </P><DIR>
+<DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Se o elemento for um sin&ocirc;nimo;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"D" - Se o elemento for um dom&iacute;nio;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"C" - Se o elemento for um campo.</FONT> </P></DIR>
+</DIR>
+</DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;NOME</B> - Nome do elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;ULTIMA LIBERACAO/CODIGO EXTERNO/ SITUACAO/GERACAO</B> - Informa&ccedil;&atilde;o dependente do tipo do elemento a ser consultado.</FONT> </P>
+<FONT SIZE=2><P>O cabe&ccedil;alho deste campo &eacute; vari&aacute;vel: na consulta aos programas <I>batch</I> e/ou <I>on-line</I>, &eacute; apresentado o campo ULTIMA LIBERACAO/GERACAO; na consulta aos atributos, o campo CODIGO EXTERNO; e nas demais consultas, o campo SITUACAO.</FONT> </P>
+<FONT SIZE=2><P>Nas consultas a programas <I>batch</I> e <I>on-line</I> por sistema, o SADS informa, no campo ULTIMA LIBERACAO, a data da &uacute;ltima libera&ccedil;&atilde;o do programa para produ&ccedil;&atilde;o ou n&atilde;o informa nada. Caso o programa ainda n&atilde;o tenha sido liberado, no campo GERACAO, &eacute; informado se o programa &eacute; gerado 100% pelo SADS.</FONT> </P>
+<FONT SIZE=2><P>Nas consultas aos atributos, o SADS informa no campo CODIGO EXTERNO o c&oacute;digo externo cadastrado para o atributo no reposit&oacute;rio de dados, caso ele o possua.</FONT> </P>
+<FONT SIZE=2><P>Nas consultas a arquivos convencionais, estruturas DMS, entidades, registros de uso geral e relat&oacute;rios, o campo SITUACAO pode apresentar as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><B><FONT SIZE=2>&nbsp;"CADASTR. INCOMPLETO"</B> - Quando o n&uacute;mero de registros estabelecido na defini&ccedil;&atilde;o do elemento for maior que o n&uacute;mero de estruturas de registros j&aacute; cadastrados;</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><B><FONT SIZE=2>&nbsp;"A GERAR LIBRARY"</B> - Quando o elemento ainda n&atilde;o teve sua <I>library</I> gerada ou ent&atilde;o seu cadastramento atual est&aacute; incompat&iacute;vel com a <I>library</I> existente;</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><B><FONT SIZE=2>&nbsp;"LIBRARY EM TESTE"</B> - Quando a <I>library</I> no ambiente de teste estiver compat&iacute;vel com o cadastramento do elemento no reposit&oacute;rio de dados do SADS;</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><B><FONT SIZE=2>&nbsp;"LIBRARY EM PRODUCAO"</B> - Quando a <I>library</I> no ambiente de produ&ccedil;&atilde;o estiver compat&iacute;vel com o cadastramento do elemento no reposit&oacute;rio de dados SADS.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Nas consultas &agrave;s consist&ecirc;ncias gerais, o campo SITUACAO pode conter as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;<B>"A LIBERAR PARA TESTE"</B> - Quando a consist&ecirc;ncia cadastrada no reposit&oacute;rio de dados do SADS ainda n&atilde;o estiver dispon&iacute;vel para o ambiente de testes;</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;<B>"A LIBERAR PARA PRODUCAO"</B> - Quando a consist&ecirc;ncia cadastrada no reposit&oacute;rio de dados do SADS ainda n&atilde;o estiver dispon&iacute;vel para o ambiente de produ&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Nas consultas &agrave;s tabelas, o campo SITUACAO pode conter as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;<B>"CADASTR. INCOMPLETO"</B> - Quando apenas parte da tabela estiver definida no reposit&oacute;rio de dados;</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;<B>"A GERAR LIBRARY"</B> - Quando a tabela ainda n&atilde;o tiver sua <I>library</I> gerada ou seu cadastramento atual estiver incompat&iacute;vel com a <I>library</I> existente;</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;<B>"LIBRARY EM TESTE"</B> - Quando a <I>library</I> no ambiente de teste estiver compat&iacute;vel com o cadastramento do elemento no reposit&oacute;rio de dados do SADS;</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;<B>"LIBRARY EM PRODUCAO"</B> - Quando a <I>library</I> no ambiente de produ&ccedil;&atilde;o estiver compat&iacute;vel com o cadastramento do elemento no reposit&oacute;rio de dados SADS.</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11>&nbsp;<B><FONT SIZE=2>"PARAMET.NAO CADAST."</B> - Quando a tabela ainda n&atilde;o tiver seus par&acirc;metros cadastrados no reposit&oacute;rio de dados do SADS.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Sempre que o cadastramento do elemento estiver completo e correto, este campo aparecer&aacute; em branco.</FONT> </P>
+<FONT SIZE=2><P>No rodap&eacute; da &uacute;ltima p&aacute;gina &eacute; exibido o total de elementos, que apresenta a quantidade de elementos consultados.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Condef">Consulta defini&ccedil;&atilde;o e validades de atributo</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter a rela&ccedil;&atilde;o de todas as defini&ccedil;&otilde;es cadastradas para um mnem&ocirc;nico em um determinado sistema.</FONT> </P>
+<FONT SIZE=2><P>O mnem&ocirc;nico pode ser de um atributo, campo, sin&ocirc;nimo ou dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argcon">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, alguns argumentos devem ser informados no menu de opera&ccedil;&atilde;o CONDEFVAL, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Sistema</B> - C&oacute;digo do sistema do atributo, campo, sin&ocirc;nimo ou dom&iacute;nio; no padr&atilde;o SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Atributo</B> - Mnem&ocirc;nico do atributo, campo, sin&ocirc;nimo ou dom&iacute;nio.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>A padroniza&ccedil;&atilde;o utilizada pelo SADS para os mnem&ocirc;nicos dos atributos, campos, sin&ocirc;nimos e dom&iacute;nios est&aacute; explicada detalhadamente na Se&ccedil;&atilde;o II, "Elementos do reposit&oacute;rio de dados do SADS", nos itens "Atributo", "Campo", "Sin&ocirc;nimo" e "Dom&iacute;nio", respectivamente.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Infor">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;SISTEMA</B> - C&oacute;digo do sistema do elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;CODIGO</B> - Mnem&ocirc;nico do elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;NOME</B> - Descri&ccedil;&atilde;o resumida do elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;FORMATO</B> - Formato do elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;SINTAXE</B> - Sintaxe do elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;TAMANHO</B> - Tamanho do elemento.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Se o elemento consultado pertencer a um dom&iacute;nio, ser&aacute; apresentado:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;DOMINIO</B> - Sistema e c&oacute;digo do dom&iacute;nio do elemento.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Se o elemento consultado estiver relacionado a um sin&ocirc;nimo, ser&aacute; apresentado:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;SINONIMO DE</B> - Sistema e mnem&ocirc;nico do elemento do qual ele &eacute; sin&ocirc;nimo.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Ap&oacute;s consultar esta tela, tem-se as seguintes possibilidades:</FONT> </P><DIR>
+<DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Se o elemento tiver descri&ccedil;&atilde;o cadastrada, ser&aacute; apresentada a primeira tela de sua descri&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Se o elemento for uma vari&aacute;vel definida, ser&aacute; apresentada uma tela com suas validades;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Se o elemento for uma vari&aacute;vel gerada, ser&aacute; apresentada uma tela com a defini&ccedil;&atilde;o de sua primeira f&oacute;rmula cadastrada.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Se existirem validades ou f&oacute;rmula cadastradas para o elemento, estas ser&atilde;o exibidas logo ap&oacute;s a apresenta&ccedil;&atilde;o de sua descri&ccedil;&atilde;o.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Conest">Consulta estrutura de dados</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada para obter a estrutura de dados de um elemento cadastrado no reposit&oacute;rio do SADS.</FONT> </P>
+<FONT SIZE=2><P>Este elemento pode ser:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>uma consist&ecirc;ncia geral;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>uma entidade;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>um registro de arquivo;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>um registro de <I>dataset</I>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>um <I>set</I> de acesso a um <I>dataset</I>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>um registro de uso geral;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>um registro de &aacute;rea de trabalho;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>um registro da &aacute;rea de comunica&ccedil;&atilde;o com sub-rotina; </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>um registro da &aacute;rea de work de um programa ou sub-rotina;</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>um registro da &aacute;rea conversacional;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>uma linha de um relat&oacute;rio;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>uma tabela;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>uma tela.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Arguc">Argumento da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, deve ser informado no menu de opera&ccedil;&atilde;o CONESTDAD o seguinte argumento:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Estrutura</B> - C&oacute;digo do elemento, no padr&atilde;o SADS.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>A padroniza&ccedil;&atilde;o utilizada pelo SADS para os c&oacute;digos de elementos, incluindo suas estruturas, &eacute;:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;"ssstxxxxxx"</B> onde:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"sss"</B> &eacute; o c&oacute;digo alfab&eacute;tico que identifica o sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"t"</B> &eacute; o identificador do tipo do elemento e</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"xxxxxx"</B> &eacute; o identificador do elemento e estrutura.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Exemplos:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"FACB05"</B> - <I>Dataset</I> FACB05;</FONT> </P>
+<B><FONT SIZE=2><P>"FACB0500"</B> - <I>Dataset</I> FACB05, registro 00;</FONT> </P>
+<B><FONT SIZE=2><P>"FACA5002"</B> - Arquivo FACA50, registro 02;</FONT> </P>
+<B><FONT SIZE=2><P>"FACT0110"</B> - Tela FACT0110.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>O padr&atilde;o para a estrutura de dados de uma linha de relat&oacute;rio deve ser informado conforme indicado abaixo:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;"sssRxnnnn"</B> onde:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"sss"</B> &eacute; o c&oacute;digo alfab&eacute;tico que identifica o sistema;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"R"</B> &eacute; a constante de elemento relat&oacute;rio e</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"xnn nn"</B> &eacute; o identificador do relat&oacute;rio, um espa&ccedil;o em branco em branco e n&uacute;mero da linha.</P></DIR>
+</DIR>
+
+<P>O identificador do relat&oacute;rio pode ser composto por dois ou tr&ecirc;s caracteres. Quando for composto por dois caracteres, o argumento dever&aacute; ter dois espa&ccedil;os em branco entre o identificador do relat&oacute;rio e o n&uacute;mero da linha; caso contr&aacute;rio, apenas um espa&ccedil;o em branco, conforme os exemplos a seguir:</FONT> </P><DIR>
+<DIR>
+
+<B><FONT SIZE=2><P>"FACR01 01"</B> - Relat&oacute;rio FACR01, linha 01;</FONT> </P>
+<B><FONT SIZE=2><P>"FACR021 01"</B> - Relat&oacute;rio FACR021, linha 01.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Infexi">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Nesta consulta s&atilde;o apresentados, no cabe&ccedil;alho da tela, o tipo, o c&oacute;digo e o nome do elemento consultado. A seguir, s&atilde;o exibidos os dados referentes a cada um dos atributos ou campos, que s&atilde;o ocorr&ecirc;ncias que comp&otilde;em a estrutura especificada.</FONT> </P>
+<FONT SIZE=2><P>Os dados de cada atributo ou campo da estrutura s&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;NIVEL</B> - N&iacute;vel de estrutura&ccedil;&atilde;o do atributo ou campo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;ATRIBUTO</B> - Mnem&ocirc;nico do atributo ou campo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;TAM</B> - Tamanho do atributo ou campo na estrutura de dados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;DEC</B> - N&uacute;mero de casas decimais do atributo ou campo na estrutura de dados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;SIN</B> - Indicador de sinaliza&ccedil;&atilde;o do atributo ou campo na estrutura de dados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;FOR</B> - Formato do atributo ou campo na estrutura de dados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;PAD</B> - Teste padr&atilde;o do atributo ou campo na estrutura de dados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;NOME</B> - Nome do atributo ou campo.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Na consulta a <I>datasets </I>, quando forem utilizados nomes externos, ser&atilde;o apresentados os c&oacute;digos externos dos atributos.</FONT> </P>
+<FONT SIZE=2><P>No rodap&eacute; da &uacute;ltima p&aacute;gina &eacute; exibido o total de atributos cadastrados na estrutura consultada.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Estdet">Consulta estrutura detalhada de dataset</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada para obter a estrutura de dados de um <I>dataset</I> cadastrado no reposit&oacute;rio do SADS.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argume">Argumento da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, no menu de opera&ccedil;&atilde;o CONESTDET, devem ser informados os seguintes argumentos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Dataset</B> - C&oacute;digo do <I>dataset</I> no padr&atilde;o SADS (sssBxx) </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Registro</B> - N&uacute;mero do registro correspondente ao <I>dataset</I> solicitado. Se n&atilde;o informado, ser&aacute; apresentada a estrutura principal do <I>dataset</I>.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Exibi">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Nesta consulta s&atilde;o apresentados, no cabe&ccedil;alho da tela, o c&oacute;digo, o n&uacute;mero do registro e o nome do <I>dataset</I> consultado. A seguir, s&atilde;o exibidos os dados referentes a cada um dos atributos ou campos, que s&atilde;o ocorr&ecirc;ncias que comp&otilde;em a estrutura do <I>dataset</I>.</FONT> </P>
+<FONT SIZE=2><P>Os dados de cada atributo ou campo da estrutura s&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Niv</B>. - N&iacute;vel de estrutura&ccedil;&atilde;o do atributo ou campo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Atributo</B> - Mnem&ocirc;nico do atributo ou campo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Nome Externo</B> - C&oacute;digo externo do atributo ou campo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Frm</B> - Formato do atributo ou campo na estrutura de dados do <I>dataset</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Tam/Dec</B> - Tamanho e n&uacute;mero de casas decimais do atributo ou campo na estrutura de dados do <I>dataset</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Nome</B> - Nome do atributo ou campo na estrutura de dados do <I>dataset</I>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Os atributos que tiverem sido definidos como vari&aacute;vel definida, ter&atilde;o suas validades apresentadas nesta consulta.</FONT> </P>
+<FONT SIZE=2><P>No rodap&eacute; da &uacute;ltima p&aacute;gina &eacute; exibido o total de atributos cadastrados na estrutura consultada.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Descel">Consulta descri&ccedil;&atilde;o de elemento</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada para obter a descri&ccedil;&atilde;o de um elemento cadastrada no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Este elemento pode ser um sistema, uma tela, um relat&oacute;rio, um arquivo, um registro de arquivo, um programa ou qualquer outro elemento que possua cadastramento no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Consu">Argumento da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, no menu de opera&ccedil;&atilde;o CONDSCELE deve ser informado o seguinte argumento:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Elemento</B> - C&oacute;digo do elemento, no padr&atilde;o SADS.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>A padroniza&ccedil;&atilde;o utilizada pelo SADS para elementos &eacute;:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;"ssstxxxxxx"</B> onde:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"sss"</B> &eacute; o c&oacute;digo alfab&eacute;tico que identifica o sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"t"</B> &eacute; o tipo do elemento e</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"xxxxxx"</B> &eacute; o diferenciador para elementos de mesmo tipo.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Exemplos:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"FACR01"</B> - Relat&oacute;rio FACR01;</FONT> </P>
+<B><FONT SIZE=2><P>"FACR021"</B> - Relat&oacute;rio FACR021;</FONT> </P>
+<B><FONT SIZE=2><P>"FACA5002"</B> - Arquivo FACA50, registro 02;</FONT> </P>
+<B><FONT SIZE=2><P>"FACT0110"</B> - Tela FACT0110.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Iexib">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;ELEMENTO</B> - C&oacute;digo do elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;NOME</B> - Nome do elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;DESCRICAO</B> - Descri&ccedil;&atilde;o do elemento.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Fonte">Consulta fonte de programa/library</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de se obter acesso ao c&oacute;digo fonte de um programa ou de uma <I>library</I> qualquer: de tela, de &aacute;rea conversacional, de tabela, de DASDL etc.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Consul">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, alguns argumentos devem ser informados no menu de opera&ccedil;&atilde;o CONFON, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Programa/library</B> - C&oacute;digo do programa ou <I>library</I>, no padr&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>A padroniza&ccedil;&atilde;o utilizada para o fonte destes elementos &eacute;:</FONT> </P>
+<FONT SIZE=2><P>Fontes de programas <I>on-line e batch</I>, sub-rotinas e DASDL de banco: </P><DIR>
+
+<B><P>"sssXEnnT"</B> onde</FONT> </P><DIR>
+<DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"sss"</B> &eacute; o c&oacute;digo alfab&eacute;tico que identifica o sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"X"</B> &eacute; tipo do elemento ("N", "P", "S", ou "B", respectivamente;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"E"</B> &eacute; a contante da fonte;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"nn"</B> &eacute; o identificador do elemento e</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"T"</B> &eacute; a constante de DASDL de banco de dados em teste (opc.).</FONT> </P></DIR>
+</DIR>
+</DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>&nbsp;<I><FONT SIZE=2>Libraries</I> de &aacute;rea de comunica&ccedil;&atilde;o com sub-rotina, de &aacute;rea de <I>work</I>, de tela, de relat&oacute;rio, de registro de uso geral, de base de dados do sistema, de <I>dataset</I>, de par&acirc;metros f&iacute;sicos de <I>dataset</I>, de tabela e de arquivo:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;"sssXLmmnn"</B> onde:</FONT> </P><DIR>
+<DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"sss"</B> &eacute; o c&oacute;digo do sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"X"</B> &eacute; o tipo do elemento ("S", "P", "T", "R", "G", "B", "M", e "A", respectivamente);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"L"</B> &eacute; a contante de library;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"mm"</B> &eacute; o n&uacute;mero sequencial e</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"nn"</B> &eacute; o n&uacute;mero sequencial.</FONT> </P></DIR>
+</DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Banco dados</B> - C&oacute;digo do banco de dados que possui o<B> </B><I>dataset</I> para o qual foram especificados os par&acirc;metros f&iacute;sicos a serem consultados (sssBxx).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Usercode</B> - <I>Usercode</I> de an&aacute;lise do fonte a ser consultado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Ambiente</B> - C&oacute;digo do ambiente do fonte (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Label/sequencia</B> - <I>Label</I>/seq&uuml;&ecirc;ncia do programa<I>/library</I> onde deve iniciar-se a consulta (opcional).</FONT> </P>
+<FONT SIZE=2><P>Se este campo n&atilde;o for informado, o SADS apresentar&aacute; a consulta a partir do in&iacute;cio do programa/<I>library</I>, exibindo todo o seu conte&uacute;do.</FONT> </P>
+<FONT SIZE=2><P>Pode-se informar, por exemplo, o <I>label</I> PROCEDURE ou um n&uacute;mero de seq&uuml;&ecirc;ncia do fonte, como "100032".</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Iecon">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;CODIGO/NOME</B> - C&oacute;digo e nome do programa ou <I>library</I>.</FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o exibidas telas com o c&oacute;digo fonte do programa ou <I>library</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;MARKID</B> - Identifica&ccedil;&atilde;o do programa. Neste campo s&atilde;o identificadas as linhas de programa que foram geradas pelo SADS ou o nome do m&oacute;dulo em que elas est&atilde;o cadastradas. Este campo aparece em branco para as linhas de programa que foram alteradas no Cande e para as linhas de<I> libraries</I>.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Erros">Consulta erros de compila&ccedil;&atilde;o de programa</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada para obter o arquivo de erros de compila&ccedil;&atilde;o de um determinado programa ou sub-rotina.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Arsul">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, alguns argumentos devem ser informados no menu de opera&ccedil;&atilde;o CONERRPRO, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Programa</B> - C&oacute;digo do programa ou sub-rotina, no padr&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>A padroniza&ccedil;&atilde;o utilizada pelo SADS para programas <I>on-line</I> e <I>batch</I> e sub-rotinas &eacute;:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;"ssstFnn"</B> onde:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"sss"</B> &eacute; o c&oacute;digo alfab&eacute;tico que identifica o sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"t"</B> &eacute; o tipo do elemento ("N", "P" ou "S", respectivamente);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"F"</B> &eacute; a constante de fonte e</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"nn"</B> &eacute; o identificador do elemento.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>ou</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;"ssstnn"</B> onde:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"sss" </b>&eacute; o c&oacute;digo que identifica o sistema; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"t"</b> &eacute; o tipo do elemento ("N", "P" ou "S", respectivamente); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"nn"</b> &eacute; o identificador do elemento. </P></DIR>
+
+<P>Usercode</B> - <I>Usercode</I> de an&aacute;lise do arquivo de erros a ser consultado.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Excon">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>No cabe&ccedil;alho da tela ser&atilde;o apresentados o c&oacute;digo e o nome do programa ou sub-rotina, seguidos da lista de erros de compila&ccedil;&atilde;o do(a) mesmo(a).</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Relat">Consultas relativas a contexto</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada para obter a lista de contextos cadastrados no SADS, os t&iacute;tulos e as rotas cadastradas para um determinado contexto.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Conarg">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, alguns argumentos devem ser informados no menu de opera&ccedil;&atilde;o CONRELCON, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Tipo da consulta</B> - Identificador do tipo da consulta, que pode ser:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"LIS" - Para consultar a lista de contextos cadastrados no reposit&oacute;rio de dados do SADS;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"TIT" - Para consultar os t&iacute;tulos de telas cadastrados para um contexto;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"ROT" - Para consultar as rotas de navega&ccedil;&atilde;o cadastradas para um contexto.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Contexto</B> - T&iacute;tulo do contexto (opcional).</FONT> </P>
+<FONT SIZE=2><P>Este campo deve ser informado apenas para as consultas "TIT" e "ROT".</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Exico">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Na consulta "LIS", ser&aacute; apresentada a tela de processamento do tipo consulta paginada contendo as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;CONTEXTO</B> - T&iacute;tulo do contexto.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;NOME</B> - Nome do contexto.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;TR.INICIAL</B> - C&oacute;digo da transa&ccedil;&atilde;o inicial.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;NOME INTERNO</B> - Nome interno atribu&iacute;do pelo SADS ao contexto.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>No rodap&eacute; da &uacute;ltima p&aacute;gina, ser&aacute; exibido o total de contextos com a quantidade de contextos consultados.</FONT> </P>
+<FONT SIZE=2><P>Na consulta "TIT", ser&aacute; apresentada a tela de processamento do tipo consulta paginada contendo as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;CONTEXTO</B> - T&iacute;tulo e nome do contexto.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;TRANSACAO</B> - C&oacute;digo da transa&ccedil;&atilde;o correspondente ao t&iacute;tulo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;TITULO</B> - T&iacute;tulos de telas cadastrados no contexto.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Quando um t&iacute;tulo n&atilde;o estiver relacionado a nenhuma rota, aparecer&aacute; precedido de um "*".</FONT> </P>
+<FONT SIZE=2><P>Na consulta "ROT", ser&aacute; apresentada a tela de processamento do tipo consulta paginada contendo as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;CONTEXTO</B> - T&iacute;tulo e nome do contexto.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;ORIGEM</B> - T&iacute;tulo da tela origem.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;PALAVRA CHAVE</B> - Escolha que pode ser selecionada na tela origem.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;DESTINO</B> - T&iacute;tulo da tela obtida quando na tela informada no campo ORIGEM se faz a escolha informada no campo PALAVRA CHAVE;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;TRANSACAO CHAMADA</B> - C&oacute;digo da transa&ccedil;&atilde;o chamada.</FONT> </P>
+<FONT SIZE=2><P>Esta informa&ccedil;&atilde;o pode conter:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"&lt;&lt;C&oacute;digo da transa&ccedil;&atilde;o disparada&gt;&gt;"</B> - Quando a tela informada no campo DESTINO disparar uma transa&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;&lt;&lt;brancos&gt;&gt;</B> - Quando a tela informada no campo DESTINO for um menu de escolha.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Impre">Impress&atilde;o de consultas paginadas executadas</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta fun&ccedil;&atilde;o &eacute; utilizada para imprimir a &uacute;ltima consulta paginada efetuada na esta&ccedil;&atilde;o, no dia corrente.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argu">Argumentos</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta fun&ccedil;&atilde;o seja utilizada, alguns argumentos devem ser informados no menu de opera&ccedil;&atilde;o IMPCONPAG, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Primeira pagina</B> - N&uacute;mero da primeira p&aacute;gina consultada a ser impressa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Ultima pagina</B> - N&uacute;mero da &uacute;ltima p&aacute;gina consultada a ser impressa.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;<B>"nn"</B> - Para limitar a &uacute;ltima p&aacute;gina a ser impressa, onde "nn" &eacute; um n&uacute;mero de uma p&aacute;gina existente na consulta;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;<B>"99"</B> - Para imprimir at&eacute; o fim da consulta, sem limitar o n&uacute;mero de p&aacute;ginas.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Impressora</B> - C&oacute;digo da impressora.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;<B>&lt;&lt;C&oacute;digo da impressora remota&gt;&gt;"</B> - Para listagem da consulta em impressora remota (esta impressora deve estar cadastrada na rede de terminais);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;<B>"PRINTER"</B> - Para listagem da consulta em impressora central, no formul&aacute;rio de 132 posi&ccedil;&otilde;es;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;<B>"PRINxx"</B> - Para listagem da consulta em impressora central e em formul&aacute;rio especial, onde "xx" &eacute; um <I>formid</I> definido para a sua instala&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso este campo n&atilde;o seja informado, ser&aacute; assumida a impressora <I>default</I> cadastrada para o usu&aacute;rio no Sistema de Seguran&ccedil;a. Caso esta n&atilde;o exista cadastrada, ent&atilde;o &eacute; obrigat&oacute;rio informar o c&oacute;digo da impressora no momento do disparo da impress&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As impressoras remotas podem ser cadastradas com um <I>formid</I> correspondente, na tabela SBPM5026. Sempre que for disparada uma impress&atilde;o pelo SADS, esta tabela &eacute; consultada e, caso a impressora esteja nela cadastrada, o relat&oacute;rio ser&aacute; impresso com o seu<I> formid</I> correspondente. A tabela SBPM5026 est&aacute; descrita na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<FONT SIZE=2><P>A impress&atilde;o ser&aacute; imediatamente iniciada, sem apresenta&ccedil;&atilde;o de tela de processamento e, ao seu t&eacute;rmino, ser&aacute; apresentada mensagem confirmando a impress&atilde;o da consulta.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Modul">Consulta m&oacute;dulos de programas</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada para obter a lista de m&oacute;dulos de um programa, de uma grupo de programas ou de todos os programas de um sistema.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Mento">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, alguns argumentos devem ser informados no menu de opera&ccedil;&atilde;o CONMODPRO, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Sistema</B> - C&oacute;digo do sistema dos programas cujos m&oacute;dulos ser&atilde;o consultados;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Identificador (N/P)</B> - Identificador do tipo dos programas cujos m&oacute;dulos ser&atilde;o consultados. (Opcional).</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"N" - Para consultar os m&oacute;dulos de todos os programas <I>on-line</I> do sistema; ou</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"P" - Para consultar os m&oacute;dulos de todos os programas <I>batch</I> do sistema.</FONT> </P></DIR>
+
+<B><FONT SIZE=2><P>Numero do programa</B> - Identificador do programa cujos m&oacute;dulos ser&atilde;o consultados. (Opcional) </P></DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Exibic">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>As informa&ccedil;&otilde;es a serem exibidas ir&aacute; depender dos argumentos especificados, da seguinte forma:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Se informado apenas o sistema (obrigat&oacute;rio), ser&atilde;o exibidos os m&oacute;dulos de todos os programas do sistema;</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Se informados o sistema e o identificador, ser&atilde;o exibidos os m&oacute;dulos de todos os programas do sistema que s&atilde;o do tipo especificado - <I>on-line</I> ou <I>batch</I>;</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Se informados o sistema, identificador e n&uacute;mero do programa, ser&atilde;o exibidos apenas os m&oacute;dulos do programa especificado.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para cada m&oacute;dulo apresentado, a consulta exibe as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;PROGRAM/MOD</B> - C&oacute;digos do programa e do m&oacute;dulo;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;NOME</B> - Nome do m&oacute;dulo;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;ULTIMA ATUALIZACAO</B> - Data da &uacute;ltima atualiza&ccedil;&atilde;o do programa.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Userc">Arquivos de erros no </FONT><FONT FACE="Arial" SIZE=5>usercode</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter a lista de todos os arquivos de erros de compila&ccedil;&atilde;o/<I>binder</I> existente em um determinado <I>usercode</I>.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Informa">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, alguns argumentos devem ser informados no menu de opera&ccedil;&atilde;o CONARQERR, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Usercode</B> - <I>Usercode</I> no qual os arquivos de erros ser&atilde;o pesquisados; </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Sistema</B> - C&oacute;digo do sistema cujos programas possuem arquivos de erros a serem consultados; (Opcional)</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Tipo </B>- Identificador do tipo dos programas cujos arquivos de erros ser&atilde;o consultados. (Opcional).</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"NF" - Para consultar os arquivos de erros de compila&ccedil;&atilde;o dos programas <I>on-line</I> do sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"PF" - Para consultar os arquivos de erros de compila&ccedil;&atilde;o dos programas <I>batch</I> do sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"SF" - Para consultar os arquivos de erros de compila&ccedil;&atilde;o das sub-rotinas do sistema; ou</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"NC" - Para consultar os arquivos de erros de <I>binder</I> dos <I>hosts</I> do sistema.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Conexi">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>As informa&ccedil;&otilde;es a serem exibidas ir&aacute; depender dos argumentos especificados, da seguinte forma:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Se informado apenas o <I>usercode</I> (obrigat&oacute;rio), ser&atilde;o exibidos todos os arquivos de erros nele residentes;</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Se informado o <I>usercode</I> e o sistema, ser&atilde;o exibidos todos os arquivos de erros de programas e sub-rotinas do sistema residentes no <I>usercode</I> especificado;</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Se informados o <I>usercode</I>, o sistema e o identificador, ser&atilde;o exibidos os arquivos de erros de todos os programas do sistema que s&atilde;o do tipo especificado - <I>on-line</I> ou <I>batch </I>e estiverem residente no <I>usercode</I> especificado.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para cada arquivo de erros encontrado, a consulta exibe as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;CODIGO DO ARQUIVO</B> - C&oacute;digo do arquivo de erro;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;DATA DE CRIACAO</B> - Data em que o arquivo foi criado;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;HORA DE CRIACAO</B> - Hora em que o arquivo foi criado.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Gerlib">Elementos pendentes de gera&ccedil;&atilde;o/libera&ccedil;&atilde;o para produ&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter a lista de todos os elementos de um sistema que ainda n&atilde;o foram gerados ou liberados para produ&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Mentoc">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, o seguinte argumento deve ser informado no menu de opera&ccedil;&atilde;o CONELEPEN:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Usercode</B> - <I>Usercode</I> no qual os arquivos de erros ser&atilde;o pesquisados; </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Elemento</B> - C&oacute;digo do sistema cujos elementos com pend&ecirc;ncia de gera&ccedil;&atilde;o e/ou libera&ccedil;&atilde;o ser&atilde;o consultados. </P></DIR>
+
+<P>Caso desej&aacute;vel, pode-se informar o c&oacute;digo de um elemento a partir do qual todos os demais elementos do sistema ser&atilde;o pesquisados quanto &agrave; pend&ecirc;ncia de gera&ccedil;&atilde;o e/ou libera&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Insul">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para cada elemento com pend&ecirc;ncia de gera&ccedil;&atilde;o e/ou libera&ccedil;&atilde;o, a consulta exibe as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Elemento</B> - C&oacute;digo do elemento;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Nome</B> - Nome do elemento;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Situacao</B> - Situa&ccedil;&atilde;o de gera&ccedil;&atilde;o/libera&ccedil;&atilde;o do respectivo elemento.</FONT> </P>
+<FONT SIZE=2><P>O campo SITUACAO pode apresentar as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"CADASTR. INCOMPLETO" - Quando o n&uacute;mero de registros estabelecido na defini&ccedil;&atilde;o do elemento for maior que o n&uacute;mero de estruturas de registros j&aacute; cadastrados;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"A GERAR LIBRARY" - Quando o elemento ainda n&atilde;o teve sua <I>library</I> gerada ou ent&atilde;o seu cadastramento atual est&aacute; incompat&iacute;vel com a <I>library</I> existente;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"LIBRARY EM TESTE" - Quando a <I>library</I> no ambiente de teste estiver compat&iacute;vel com o cadastramento do elemento no reposit&oacute;rio de dados do SADS;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"LIBRARY EM PRODUCAO" - Quando a <I>library</I> no ambiente de produ&ccedil;&atilde;o estiver compat&iacute;vel com o cadastramento do elemento no reposit&oacute;rio de dados SADS.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Nas consultas &agrave;s consist&ecirc;ncias gerais, o campo SITUACAO pode conter as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"A LIBERAR PARA TESTE" - Quando a consist&ecirc;ncia cadastrada no reposit&oacute;rio de dados do SADS ainda n&atilde;o estiver dispon&iacute;vel para o ambiente de testes;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"A LIBERAR PARA PRODUCAO" - Quando a consist&ecirc;ncia cadastrada no reposit&oacute;rio de dados do SADS ainda n&atilde;o estiver dispon&iacute;vel para o ambiente de produ&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Nas consultas &agrave;s tabelas, o campo SITUACAO pode conter as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"CADASTR. INCOMPLETO" - Quando apenas parte da tabela estiver definida no reposit&oacute;rio de dados;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"A GERAR LIBRARY" - Quando a tabela ainda n&atilde;o tiver sua <I>library</I> gerada ou seu cadastramento atual estiver incompat&iacute;vel com a <I>library</I> existente;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"LIBRARY EM TESTE" - Quando a <I>library</I> no ambiente de teste estiver compat&iacute;vel com o cadastramento do elemento no reposit&oacute;rio de dados do SADS;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"LIBRARY EM PRODUCAO" - Quando a <I>library</I> no ambiente de produ&ccedil;&atilde;o estiver compat&iacute;vel com o cadastramento do elemento no reposit&oacute;rio de dados SADS.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"PARAMET.NAO CADAST." - Quando a tabela ainda n&atilde;o tiver seus par&acirc;metros cadastrados no reposit&oacute;rio de dados do SADS.</FONT> </P></DIR>
+</DIR>
+</BODY>
+</HTML>

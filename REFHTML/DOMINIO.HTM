@@ -1,0 +1,287 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>dominio</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+
+<B><FONT SIZE=6><P><A NAME="Domin">Dom&iacute;nio</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Conce">Conceitua&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Dom&iacute;nios s&atilde;o conjuntos de caracter&iacute;sticas - formato, padr&atilde;o, sintaxe, tamanho, decimais, sinal, validades etc - que podem ser associados aos atributos e campos.</FONT> </P>
+<FONT SIZE=2><P>O dom&iacute;nio, geralmente, define as caracter&iacute;sticas gerais, os valores ou intervalos de valores, que um grupo de atributos/campos poder&aacute; assumir.</FONT> </P>
+<FONT SIZE=2><P>No reposit&oacute;rio de dados, o dom&iacute;nio &eacute; identificado pelo seu sistema e mnem&ocirc;nico.</FONT> </P>
+<FONT SIZE=2><P>Os dom&iacute;nios podem ser definidos no ET-SADS, que &eacute; uma ferramenta UPPER-CASE voltada &agrave; aplica&ccedil;&atilde;o da an&aacute;lise de dados e da an&aacute;lise estruturada e, posteriormente, transferidos para o reposit&oacute;rio de dados do SADS. O ET-SADS trabalha na filosofia de esta&ccedil;&atilde;o de trabalho, requerendo uma plataforma IBM-PC ou compat&iacute;vel em ambiente MS-DOS. </P>
+<P>As informa&ccedil;&otilde;es relativas &agrave; transfer&ecirc;ncia de informa&ccedil;&otilde;es do ET-SADS para o SADS podem ser consultadas no "Guia de Refer&ecirc;ncia do DFD" e no "Guia de Integra&ccedil;&atilde;o com o SADS", manuais que acompanham o ET-SADS.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Padro">Padroniza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O mnem&ocirc;nico de dom&iacute;nio n&atilde;o possui nenhum padr&atilde;o de codifica&ccedil;&atilde;o, devendo apenas respeitar o n&uacute;mero de caracteres estabelecido - m&iacute;nimo de 3 e m&aacute;ximo de 11.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Utili">Utiliza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O dom&iacute;nio, ap&oacute;s ter sido cadastrado no reposit&oacute;rio de dados, pode ser referenciado no cadastramento de atributos/campos, para evitar recadastramentos id&ecirc;nticos e facilitar as atividades de manuten&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Se um atributo ou campo for definido como possuidor de um dom&iacute;nio, aquele herdar&aacute; deste suas caracter&iacute;sticas de formato, tamanho, decimais, indicador de sinal, padr&atilde;o, sintaxe, validades e a tabela/sub-rotina para valida&ccedil;&atilde;o. Deste modo, a tarefa de defini&ccedil;&atilde;o destas caracter&iacute;sticas para este atributo ou campo ser&aacute; poupada. </P>
+<P>Qualquer altera&ccedil;&atilde;o efetuada no cadastramento do dom&iacute;nio ser&aacute; propagada para o cadastramento de todos os atributos ou campos a ele relacionados .</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o existe um limite de atributos ou campos que podem possuir o mesmo dom&iacute;nio. Por&eacute;m, cada atributo ou campo s&oacute; pode estar relacionado a um &uacute;nico dom&iacute;nio.</FONT> </P>
+<FONT SIZE=5><P><A NAME="Cadas">Cadastramento</A></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O processo de defini&ccedil;&atilde;o de um dom&iacute;nio s&oacute; &eacute; poss&iacute;vel a partir do cadastramento de seu sistema no reposit&oacute;rio de dados do SADS. </P>
+<P>Apesar do dom&iacute;nio ser cadastrado sob um sistema espec&iacute;fico, ele pode ser referenciado por atributos e campos de qualquer sistema.</FONT> </P>
+<FONT SIZE=4><P>Roteiro</FONT> </P>
+<FONT SIZE=2><P>Para cadastrar um dom&iacute;nio, as seguintes fun&ccedil;&otilde;es devem ser executadas:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Defdom">Defini&ccedil;&atilde;o de dom&iacute;nio</A>; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cadval">Cadastramento de validades de dom&iacute;nio</A><FONT SIZE=2>, caso seja vari&aacute;vel definida (Sintaxe = "VD").</FONT> </P></DIR>
+
+<FONT SIZE=5><P><A NAME="Defdom">Defini&ccedil;&atilde;o de dom&iacute;nio</A></FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SISTEMA</B> - Sistema sob o qual o dom&iacute;nio est&aacute; definido.</FONT> </P>
+<FONT SIZE=2><P>Todo dom&iacute;nio tem de estar, obrigatoriamente, relacionado a um sistema.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CODIGO</B> - Mnem&ocirc;nico do dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>Dom&iacute;nios com mesmo c&oacute;digo podem ser cadastrados em sistemas diferentes.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CODIGO EXTERNO</B> - C&oacute;digo externo do dom&iacute;nio.<BR>
+Este c&oacute;digo pode ser informado no caso da instala&ccedil;&atilde;o adotar um padr&atilde;o de codifica&ccedil;&atilde;o diferente do padr&atilde;o SADS ou quando houver integra&ccedil;&atilde;o entre o ET-SADS e o SADS. Neste caso, o c&oacute;digo externo do dom&iacute;nio no SADS conter&aacute; o c&oacute;digo do dom&iacute;nio no ET-SADS.</FONT> </P>
+<FONT SIZE=2><P>Exceto para a integra&ccedil;&atilde;o ET-SADS x SADS, o c&oacute;digo externo &eacute; puramente documental, ou seja, somente ser&aacute; utilizado para identificar, nos relat&oacute;rios e manuais, a qual elemento externo ao SADS o dom&iacute;nio se refere.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>NOME</B> - Descri&ccedil;&atilde;o resumida do dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>O nome tem o objetivo de identificar e explicar, de maneira resumida, a que se refere o dom&iacute;nio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>FORMATO</B> - Formato do dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>Indica o tipo do conte&uacute;do do dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>Os formatos v&aacute;lidos s&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"A" (Alfab&eacute;tico);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"D" (Alfanum&eacute;rico ou <I>display</I>); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"N" (Num&eacute;rico).</FONT> </P></DIR>
+
+<FONT SIZE=2><P>V&aacute;rias caracter&iacute;sticas do dom&iacute;nio est&atilde;o relacionadas com o formato do mesmo. Um exemplo disto &eacute; que, s&oacute; &eacute; poss&iacute;vel cadastrar sinal e decimais para dom&iacute;nios com formato num&eacute;rico.</FONT> </P>
+<FONT SIZE=2><P>Os testes padr&otilde;es tamb&eacute;m devem estar compatibilizados com o formato do dom&iacute;nio. Por exemplo, os testes padr&otilde;es para "CPF", "M10" e "DMA" est&atilde;o vinculados a dom&iacute;nios num&eacute;ricos e assim por diante.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PADRAO</B> - Teste padr&atilde;o ao qual os atributos e campos relacionados ao dom&iacute;nio ser&atilde;o submetidos para valida&ccedil;&atilde;o de seu conte&uacute;do.</FONT> </P>
+<FONT SIZE=2><P>S&atilde;o os seguintes os testes padr&otilde;es dispon&iacute;veis:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"AMD" (Data) - Para data no formato ano, m&ecirc;s, dia;</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do atributo ou campo relacionado ao dom&iacute;nio for igual a seis, o teste do ano ser&aacute; feito com duas posi&ccedil;&otilde;es, ou seja, o ano poder&aacute; assumir os valores de "00" a "99". Caso seu tamanho seja oito, o teste do ano ser&aacute; feito com quatro posi&ccedil;&otilde;es e, neste caso, o ano poder&aacute; assumir os valores de "0000" a "9999".</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"DMA" (Data) - Para data no formato dia, m&ecirc;s, ano;</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do atributo ou campo relacionado ao dom&iacute;nio for igual a seis, o teste do ano ser&aacute; feito com duas posi&ccedil;&otilde;es, ou seja, o ano poder&aacute; assumir os valores de "00" a "99". Caso seu tamanho seja oito, o teste do ano ser&aacute; feito com quatro posi&ccedil;&otilde;es e, neste caso, o ano poder&aacute; assumir os valores de "0000" a "9999".</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"D/M" (Data) - Para data no formato dia/m&ecirc;s;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"M/D" (Data) - Para data no formato m&ecirc;s/dia;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"M/A" (Data) - Para data no formato m&ecirc;s/ano;</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do atributo ou campo relacionado ao dom&iacute;nio for igual a quatro, o teste do ano ser&aacute; feito com duas posi&ccedil;&otilde;es, ou seja, o ano poder&aacute; assumir os valores de "00" a "99". Caso seu tamanho seja seis, o teste do ano ser&aacute; feito com quatro posi&ccedil;&otilde;es e, neste caso, o ano poder&aacute; assumir os valores de "0000" a "9999".</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INV" (Data) - Para data dia, m&ecirc;s, ano com invers&atilde;o para ano, m&ecirc;s, dia;</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do atributo ou campo relacionado ao dom&iacute;nio for igual a seis, o teste do ano ser&aacute; feito com duas posi&ccedil;&otilde;es, ou seja, o ano poder&aacute; assumir os valores de "00" a "99". Caso seu tamanho seja oito, o teste do ano ser&aacute; feito com quatro posi&ccedil;&otilde;es e, neste caso, o ano poder&aacute; assumir os valores de "0000" a "9999".</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"CPF" (CPF) - Para CPF;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"CGC" (CGC) - Para CGC abrangendo CPF;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"ICG" (CGC) - Para CGC n&atilde;o abrangendo CPF;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"C10" (M&oacute;d. 10) - Para c&aacute;lculo de d&iacute;gito usando m&oacute;dulo 10;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"C11" (M&oacute;d. 11) - Para c&aacute;lculo de d&iacute;gito usando m&oacute;dulo 11;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"M10" (M&oacute;d. 10) - Para teste de d&iacute;gito usando m&oacute;dulo 10;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"M11" (M&oacute;d. 11) - Para teste de d&iacute;gito usando m&oacute;dulo 11;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"BRA" - Para teste do preenchimento de apenas um branco entre as palavras de um atributo ou campo relacionado ao dom&iacute;nio;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"CIV" (Estado civil) - Para teste de estado civil: "S" (Solteiro), "C" (Casado), "D" (Divorciado) e "O" (Outros);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"EST" (Esta&ccedil;&atilde;o) - Para teste de esta&ccedil;&atilde;o v&aacute;lida na rede;</FONT> </P>
+<FONT SIZE=2><P>Antes de efetuar a valida&ccedil;&atilde;o de um c&oacute;digo de impressora na rede, &eacute; verificado se tal c&oacute;digo est&aacute; cadastrado na tabela SBPM5024 - Tabela de Impressoras em outra m&aacute;quina. Caso positivo, tal c&oacute;digo &eacute; aceito como v&aacute;lido. </P>
+<P>Este teste tamb&eacute;m efetua corretamente a valida&ccedil;&atilde;o de impressoras ligadas ao sistema atrav&eacute;s de linhas que utilizam o protocolo TCP/IP.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"HOR" (Hora) - Para hora no formato HHMM ou HHMMSS;</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do atributo ou campo relacionado ao dom&iacute;nio for igual a quatro, ser&aacute; consistido horas e minutos, se o tamanho for igual a seis, ser&aacute; consistido horas, minutos e segundos.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"NEZ" - Para teste de atributo ou campo relacionado ao dom&iacute;nio, num&eacute;rico e diferente de zero.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"PPO" - Para teste do preenchimento da primeira posi&ccedil;&atilde;o do atributo ou campo relacionado ao dom&iacute;nio, cujo conte&uacute;do n&atilde;o pode ser branco;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"RPT" - Para teste de impress&atilde;o via <I>Reprints;</I></FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"SEX" (Sexo) - Para teste de sexo: "F" (Feminino) ou "M" (Masculino);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"S/N" ("S" ou "N") - Para teste de resposta: "S" (Sim) ou "N" (N&atilde;o).</FONT> </P><DIR>
+<DIR>
+
+<FONT SIZE=2><P>Estes padr&otilde;es, quando definidos para o dom&iacute;nio, estabelecem para a consist&ecirc;ncia geral os testes aos quais ser&atilde;o submetidos os atributos e campos relacionados ao dom&iacute;nio. </P>
+<P>Os testes de consist&ecirc;ncia de data, opcionalmente, aceitam que uma data seja totalmente preenchida com o algarismo 9. </P>
+<P>Para fazer op&ccedil;&atilde;o por este modo de funcionamento, o campo "DATA C/ 9's", da tabela SBPM5004, deve ser preenchido com "S",  para um sistema espec&iacute;fico ou para o sistema "SBC" quando se desejar configurar para todos os sistemas da instala&ccedil;&atilde;o.</P>
+<P>Maiores detalhes sobre esta parametriza&ccedil;&atilde;o podem ser pesquisadas neste Manual de Refer&ecirc;ncia do SADS, na Se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es do SADS&quot;, item &quot;Consist&ecirc;ncia&quot;, t&oacute;pico &quot;Datas preenchidas com noves (999999)&quot;.</P></DIR>
+</DIR>
+</DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>SINTAXE</B> - Sintaxe do dom&iacute;nio. </P>
+<P>Determina qual a natureza da informa&ccedil;&atilde;o contida nos atributos e campos relacionados ao dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"VL" - Vari&aacute;vel livre ou vari&aacute;vel cujo conte&uacute;do n&atilde;o possui valores v&aacute;lidos pr&eacute;-estabelecidos;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"VD" - Vari&aacute;vel definida ou vari&aacute;vel cujo conte&uacute;do est&aacute; definido por um conjunto de validades pr&eacute;-estabelecidas.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Neste caso, as validades do dom&iacute;nio devem ser cadastradas para complementar a defini&ccedil;&atilde;o do mesmo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>TAMANHO</B> - Quantidade de caracteres (alfab&eacute;ticos, alfanum&eacute;ricos ou num&eacute;ricos) que o dom&iacute;nio possui.</FONT> </P>
+<FONT SIZE=2><P>Se o dom&iacute;nio possuir formato num&eacute;rico, seu tamanho compreender&aacute; a soma do n&uacute;mero de casas inteiras mais o n&uacute;mero de casas decimais.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>DECIMAIS</B> - Quantidade de casas decimais do dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>Este campo poder&aacute; ser informado somente para dom&iacute;nios com formato num&eacute;rico. O dom&iacute;nio que possuir casas decimais deve ter pelo menos uma casa inteira.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>SINAL</B> - Indicador de exist&ecirc;ncia de sinal no dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir um dos valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"S" - Se o dom&iacute;nio possuir sinal (+ ou -);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"N" ou " " - Se o dom&iacute;nio n&atilde;o possuir sinal.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Um dom&iacute;nio poder&aacute; ser sinalizado somente se o seu formato for num&eacute;rico.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>TAB/SUB</B> - Estrutura ou processo contra o qual os atributos e campos, relacionados ao dom&iacute;nio, ser&atilde;o validados.</FONT> </P>
+<FONT SIZE=2><P>Tanto a tabela quanto a sub-rotina informada para a valida&ccedil;&atilde;o dos atributos e campos relacionados ao dom&iacute;nio devem estar cadastradas no reposit&oacute;rio de dados e ser informadas no padr&atilde;o SADS (sssMnnnn e sssSxx, respectivamente).</FONT> </P>
+<FONT SIZE=2><P>Se, para um dom&iacute;nio, for informada uma tabela, significa que sempre quando um valor for atribu&iacute;do a um campo ou atributo relacionado a ele a consist&ecirc;ncia geral ir&aacute; testar se este valor &eacute; chave de algum item da tabela.</FONT> </P>
+<FONT SIZE=2><P>Da mesma forma, se uma sub-rotina for informada, a consist&ecirc;ncia ir&aacute; cham&aacute;-la para testar a validade do conte&uacute;do dos atributos e campos relacionados ao dom&iacute;nio. Neste caso, a sub-rotina deve obedecer aos padr&otilde;es definidos pela consist&ecirc;ncia geral, que encontram-se especificados no item "Consist&ecirc;ncia geral", nesta se&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o ao dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Cadval">Cadastramento de validades de dom&iacute;nio</A></B></FONT> </P>
+<FONT SIZE=2><P>Validades s&atilde;o valores ou intervalos de valores que o dom&iacute;nio poder&aacute; assumir.</FONT> </P>
+<B><FONT SIZE=2><P>Exemplo de validades de dom&iacute;nios</B>:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>Maior que 10 e menor que 50;</FONT> </P>
+<FONT SIZE=2><P>Igual a 1, 2 ou 3;</FONT> </P>
+<FONT SIZE=2><P>Diferente de "MARIA";</FONT> </P>
+<FONT SIZE=2><P>Diferente de "A", "B" e "C".</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para cadastrar as validades de um dom&iacute;nio, &eacute; necess&aacute;rio que o mesmo j&aacute; esteja definido no reposit&oacute;rio de dados do SADS e que seja uma vari&aacute;vel definida (SINTAXE = "VD").</FONT> </P>
+<FONT SIZE=2><P>As validades definidas para um dom&iacute;nio ser&atilde;o observadas sempre que um valor for atribu&iacute;do, em tabelas ou telas de entrada de dados, aos atributos e campos relacionados a ele, onde a consist&ecirc;ncia geral ir&aacute; testar se este valor se enquadra ou n&atilde;o entre valores v&aacute;lidos definidos para o dom&iacute;nio em quest&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As validades dos dom&iacute;nios s&atilde;o utilizadas pelo <I>help on-line</I> quando este &eacute; solicitado ap&oacute;s a verifica&ccedil;&atilde;o de um erro pela consist&ecirc;ncia geral, sendo este erro relativo a um atributo ou campo relacionado a um dom&iacute;nio vari&aacute;vel definida (SINTAXE = "VD"). </P>
+<P>Estas validades s&atilde;o utilizadas tamb&eacute;m pela sub-rotina SDDS04 que, ao ser disparada por programas aplicativos, decodifica as validades dos atributos e campos relacionados ao dom&iacute;nio para exibi&ccedil;&atilde;o em telas, relat&oacute;rios ou composi&ccedil;&atilde;o de arquivos. Detalhes a respeito da sub-rotina SDDS04 podem ser consultados no item "Sub-rotina", nesta se&ccedil;&atilde;o. </P>
+<B><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>SISTEMA</B> - Sistema no qual o dom&iacute;nio ser&aacute; definido, no padr&atilde;o SADS (sss).</FONT> </P>
+<FONT SIZE=2><P>Todo dom&iacute;nio tem de estar, obrigatoriamente, relacionado a um sistema.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>DOMINIO</B> - Mnem&ocirc;nico do dom&iacute;nio possuidor das validades.</FONT> </P>
+<FONT SIZE=2><P>Para cadastramento das validades do dom&iacute;nio s&atilde;o apresentados os seguintes campos:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>SEQ</B> - N&uacute;mero para posicionamento das validades de dom&iacute;nio em que os testes ser&atilde;o executados.</FONT> </P>
+<FONT SIZE=2><P>O primeiro n&uacute;mero &eacute; "0010" e os demais, acrescidos de 10.</FONT> </P>
+<FONT SIZE=2><P>Para incluir uma validade entre duas outras j&aacute; existentes, &eacute; necess&aacute;rio preencher uma linha que esteja em branco e alterar o n&uacute;mero sequencial desta linha para um n&uacute;mero entre os j&aacute; informados. O SADS reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima opera&ccedil;&atilde;o as validades j&aacute; estar&atilde;o na nova ordem.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>E/O</B> - Operador l&oacute;gico utilizado para concatenar as express&otilde;es que definem as validades do dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>Os operadores l&oacute;gicos poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"E" - Operador l&oacute;gico E (<I>and</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"O" - Operador l&oacute;gico OU (<I>or</I>).</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>OPER</B> - Operador relacional utilizado nas express&otilde;es que definem as validades do dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>Os operadores relacionais poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"EQ" (<I>equal</I>) - Igual a;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"NE" (<I>not equal</I>) - Diferente de;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"GE" (<I>greater or equal</I>) - Maior que ou igual a;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"GT" (<I>greater than</I>) - Maior que;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"LE" (<I>less or equal</I>) - Menor que ou igual a;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"LT" (<I>less than</I>) - Menor que.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>OPERANDO</B> - Valores que definem as validades poss&iacute;veis para o dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>O operando deve ser informado alinhado de acordo com o formato do dom&iacute;nio:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>Se o dom&iacute;nio for num&eacute;rico, o operando tamb&eacute;m deve ser num&eacute;rico e seu conte&uacute;do<BR>
+tem de ser ajustado &agrave; direita. N&atilde;o &eacute; necess&aacute;rio preench&ecirc;-lo com zeros &agrave; esquerda.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>Se o dom&iacute;nio for alfanum&eacute;rico ou alfab&eacute;tico, o operando tamb&eacute;m deve ser<BR>
+alfanum&eacute;rico ou alfab&eacute;tico e seu conte&uacute;do tem de ser ajustado &agrave; esquerda com brancos<BR>
+&agrave; direita.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>A seguir &eacute; apresentado um exemplo de validades concatenadas:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>DOM&Iacute;NIO SEXO </P>
+<P>Validades : EQ (igual) F</FONT> </P><DIR>
+<DIR>
+
+<FONT SIZE=2><P>O (ou) EQ (igual) M</FONT> </P></DIR>
+</DIR>
+</DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>DESCRICAO </B>- Descri&ccedil;&atilde;o ou explica&ccedil;&atilde;o resumida do operando.</FONT> </P>
+<FONT SIZE=2><P>Utilizado para descrever o valor informado no operando.</FONT> </P>
+<FONT SIZE=2><P>Retomando o exemplo apresentado anteriormente, poder-se-ia cadastrar as seguintes descri&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>DOM&Iacute;NIO SEXO </P>
+<P>Validades : EQ (igual) F - Descri&ccedil;&atilde;o : "Feminino"</FONT> </P><DIR>
+<DIR>
+
+<FONT SIZE=2><P>O(ou)&nbsp; EQ (igual) M - Descri&ccedil;&atilde;o : "Masculino"</P></DIR>
+</DIR>
+</DIR>
+
+<P>A descri&ccedil;&atilde;o n&atilde;o &eacute; obrigat&oacute;ria, por&eacute;m, quando poss&iacute;vel, ela deve ser informada, pois ser&aacute; apresentada quando um <I>help</I> de um atributo ou campo relacionado ao dom&iacute;nio for solicitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>CONTINUA (S/N)</B> - Indicador de continuidade de opera&ccedil;&atilde;o, com as seguintes situa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"S" - Nova tela ser&aacute; aberta para prosseguir a opera&ccedil;&atilde;o relacionada &agrave;s validades do dom&iacute;nio;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>"N" - &Uacute;ltima tela para opera&ccedil;&atilde;o sobre as validades do dom&iacute;nio.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave;s validades do dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta).</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Isto significa que os &uacute;nicos valores dispon&iacute;veis para os atributos e campos relacionados ao dom&iacute;nio MES s&atilde;o aqueles nele definidos. Por isto, sempre que um destes atributos ou campos aparecer em telas de entrada de dados e tabelas, a consist&ecirc;ncia geral ir&aacute; validar se o valor informado para o mesmo &eacute; um destes pr&eacute;-estabelecidos. Caso contr&aacute;rio, ser&aacute; acusado um erro, como o exemplo que se segue: </P><DIR>
+
+<P>PRJMES (Mes do projeto) INVALIDO;</FONT> </P>
+<FONT SIZE=2><P>onde o atributo PRJMES possui o dom&iacute;nio MES.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Funca">Fun&ccedil;&otilde;es de apoio</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT FACE="CG Times" SIZE=5><A NAME="Especifica"><P>Espec&iacute;ficas de atributo</a></P>
+</B></FONT>
+<P><b><FONT FACE="CG Times" SIZE=4><a name="Duplica">Duplica&ccedil;&atilde;o de dom&iacute;nio</a></P>
+</FONT></b><FONT SIZE=2><P>O SADS permite que seja definido um novo dom&iacute;nio com as mesmas caracter&iacute;sticas (formato, tamanho, decimais, indicador de sinal, padr&atilde;o, sintaxe, tabela/sub-rotina, f&oacute;rmula, validades e descri&ccedil;&atilde;o) de um dom&iacute;nio j&aacute; definido.</P>
+<P>Para duplicar dom&iacute;nio, &eacute; necess&aacute;rio que o dom&iacute;nio que ter&aacute; suas caracter&iacute;sticas duplicadas esteja cadastrado no reposit&oacute;rio de dados do SADS e que o novo dom&iacute;nio n&atilde;o esteja cadastrado.</P>
+<P>A duplica&ccedil;&atilde;o de c&oacute;digo de dom&iacute;nio n&atilde;o est&aacute; associada a nenhuma tela de processamento. Para efetu&aacute;-la, basta transmitir o menu de opera&ccedil;&atilde;o "DUPDOM", cujos campos est&atilde;o explicados a seguir: </P>
+<B><P>CAMPOS DA TELA</P><DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>&nbsp;<B>Original:</P><DIR>
+
+<P>Sistema</B> - Sistema do dom&iacute;nio a ser duplicado;</P>
+<B><P>Dominio</B> - C&oacute;digo do dom&iacute;nio a ser duplicado.</P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>&nbsp;<B>Copia:</P><DIR>
+
+<P>Sistema </B>- Sistema para o qual ser&aacute; criado o novo dom&iacute;nio;</P>
+<B><P>Dom&iacute;nio </B>- C&oacute;digo do dom&iacute;nio que ser&aacute; criado.</P>
+</DIR>
+</DIR>
+
+</FONT><B><FONT FACE="CG Times" SIZE=4><P>Troca c&oacute;digo de dom&iacute;nio</P>
+</B></FONT><FONT SIZE=2><P>A troca do c&oacute;digo de um dom&iacute;nio compreende, al&eacute;m da troca propriamente dita, a sua substitui&ccedil;&atilde;o em todos os relacionamentos com atributos/campos.</P>
+<P>Para trocar o c&oacute;digo de um dom&iacute;nio, &eacute; necess&aacute;rio que o dom&iacute;nio atual esteja cadastrado e que o novo dom&iacute;nio n&atilde;o esteja cadastrado.</P>
+<P>A troca de c&oacute;digo de dom&iacute;nio n&atilde;o est&aacute; associada a nenhuma tela de processamento. Para efetu&aacute;-la, basta transmitir o menu de opera&ccedil;&atilde;o "TRODOM", cujos campos est&atilde;o explicados a seguir: </P>
+<B><P>CAMPOS DA TELA</P><DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>&nbsp;<B>Atual: </P><DIR>
+
+<P>Sistema</B> - Sistema do dom&iacute;nio a ser trocado.</P>
+<B><P>Dominio </B>- C&oacute;digo do dom&iacute;nio a ser trocado.</P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>&nbsp;<B>Novo:</P><DIR>
+
+<P>Sistema</B> - Sistema para o qual o dom&iacute;nio ser&aacute; trocado.</P>
+<B><P>Dom&iacute;nio</B> - C&oacute;digo para o qual o dom&iacute;nio ser&aacute; trocado.</P>
+</FONT><B><FONT SIZE=5><P>&nbsp;</P></DIR>
+</DIR>
+
+<P><A NAME="Gener">Gen&eacute;ricas aplic&aacute;veis aos dom&iacute;nios</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Utilit&aacute;rios:</B></FONT> </P><DIR>
+
+<FONT SIZE=2><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13>Duplica&ccedil;&atilde;o de elemento; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13>Ressequenciamento de validades de elemento; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>Consultas:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Defini&ccedil;&atilde;o e validades de dom&iacute;nio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Descri&ccedil;&atilde;o de elemento.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Refer&ecirc;ncia cruzada:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Elementos X elementos: Todos os atributos relacionados a um dom&iacute;nio.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Informativos impressos:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista elementos do sistema.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Todas estes utilit&aacute;rios, consultas, refer&ecirc;ncias cruzadas e informativos impressos encontram-se detalhadamente descritos na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", neste manual.</FONT> </P></BODY>
+</HTML>

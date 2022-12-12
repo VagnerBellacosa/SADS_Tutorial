@@ -1,0 +1,359 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>ARETRA</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+
+<P><basefont size=2></P>
+<B><FONT SIZE=6><P><A NAME="Atretra">&Aacute;rea de trabalho</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="conce">Conceitua&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>&Aacute;rea de trabalho &eacute; um espa&ccedil;o reservado para declara&ccedil;&atilde;o de campos e atributos a serem inclu&iacute;dos na WORKING-STORAGE SECTION daqueles programas e sub-rotinas que a utilizem como recurso.</FONT> </P>
+<FONT SIZE=2><P>Uma &aacute;rea de trabalho &eacute;, portanto, uma estrutura composta de atributos e/ou campos, como mostra o exemplo a seguir:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>01 WSS-DATA</P><DIR>
+<DIR>
+
+<P>05 WSS-DIA PIC 9(02).</P>
+<P>05 WSS-MES PIC 9(02).</P>
+<P>05 WSS-ANO PIC 9(02).</P></DIR>
+
+<P>01 WSS-TABELA-EMPRESA OCCURS 3 TIMES.</P><DIR>
+
+<P>05 WSS-EMPCOD PIC X(03).</P>
+<P>05 WSS-EMPNOME PIC X(20).</P></DIR>
+</DIR>
+</DIR>
+
+<P>A defini&ccedil;&atilde;o de uma &aacute;rea de trabalho d&aacute; origem a uma <I>library</I> que, em tempo de compila&ccedil;&atilde;o, ser&aacute; incorporada aos programas e sub-rotinas.</FONT> </P>
+<FONT SIZE=2><P>Normalmente s&atilde;o declarados na &aacute;rea de trabalho aqueles atributos ou campos que ser&atilde;o utilizados em v&aacute;rios programas e/ou sub-rotinas. Isto evita que os mesmos tenham de ser declarados individualmente em cada um destes programas e sub-rotinas.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Padro">Padroniza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Para identificar uma &aacute;rea de trabalho s&atilde;o necess&aacute;rios: o c&oacute;digo do sistema + a constante de &aacute;rea de trabalho "L" + indicador de 2 (dois) caracteres - sendo o primeiro alfanum&eacute;rico e o segundo, num&eacute;rico.</P>
+</FONT><P><IMG SRC="figareta1.gif" WIDTH=361 HEIGHT=92></P>
+<B><FONT SIZE=5><P><A NAME="Utili">Utiliza&ccedil;&atilde;o</A></B></FONT><FONT SIZE=2> </P>
+</FONT><P><HR></P>
+<FONT SIZE=2><P>A &aacute;rea de trabalho &eacute; utilizada na WORKING-STORAGE SECTION de sub-rotinas e programas <I>host</I>, <I>on-line</I> e <I>batch</I>. </P>
+<P>Nos programas <I>on-line</I>, as &aacute;reas de trabalho podem assumir outras caracter&iacute;sticas, ou seja, podem ser utilizadas como &aacute;rea conversacional ou &aacute;rea global. </P>
+<P>A &aacute;rea conversacional &eacute; uma estrutura de atributos e/ou campos, cujo objetivo &eacute; armazenar e transferir dados entre transa&ccedil;&otilde;es efetuadas em uma mesma esta&ccedil;&atilde;o. </P>
+<P>&Aacute;rea global de comunica&ccedil;&atilde;o, por sua vez, &eacute; uma &aacute;rea comum entre os programas <I>on-line</I> e o programa <I>host</I> que os gerencia, podendo ser utilizada para transferir informa&ccedil;&otilde;es entre suas transa&ccedil;&otilde;es. </P>
+<P>Portanto, a diferen&ccedil;a b&aacute;sica entre estas duas &aacute;reas &eacute; que, enquanto as informa&ccedil;&otilde;es armazenadas na &aacute;rea conversacional ficam dispon&iacute;veis para todas as transa&ccedil;&otilde;es efetuadas na mesma esta&ccedil;&atilde;o, as armazenadas na &aacute;rea global ficam dispon&iacute;veis para as transa&ccedil;&otilde;es gerenciadas pelo mesmo <I>host</I>, enquanto este estiver ativo. </P>
+<P>Cumpre ressaltar que, estas &aacute;reas estar&atilde;o dispon&iacute;veis para utiliza&ccedil;&atilde;o desde que o aplicativo tenha sido preparado para tal. </P>
+<P>Para utiliza&ccedil;&atilde;o de uma &aacute;rea conversacional em um aplicativo, al&eacute;m da sua defini&ccedil;&atilde;o e gera&ccedil;&atilde;o, deve-se atentar para a execu&ccedil;&atilde;o dos seguintes passos: </P>
+<OL>
+
+<LI>Definir a &aacute;rea de trabalho no reposit&oacute;rio de dados do SADS com tipo igual a "C" (conversacional); </LI>
+<LI>Definir o tamanho da &aacute;rea conversacional com um acr&eacute;scimo de, no m&iacute;nimo, 14 <I>bytes</I> no seu tamanho. Estes 14<I> bytes</I> a mais, necess&aacute;rios na &aacute;rea conversacional, s&atilde;o utilizados pelo gerador de programas do SADS para armazenar o c&oacute;digo da transa&ccedil;&atilde;o e a data/hora do <I>header</I> do registro processado; </LI>
+<LI>Indicar, nos menus do aplicativo, as transa&ccedil;&otilde;es que ir&atilde;o utilizar &aacute;rea conversacional. Para isto, basta assinalar, nas respectivas transa&ccedil;&otilde;es, o campo ACV com "S". Sempre que forem solicitadas transa&ccedil;&otilde;es que n&atilde;o indicam utiliza&ccedil;&atilde;o de &aacute;rea conversacional, o <I>host</I> a inicializar&aacute; com <I>nulls</I> (zero bin&aacute;rio); </LI>
+<LI>Definir a &aacute;rea como recurso dos programas que ir&atilde;o utiliz&aacute;-la, com complemento igual a "C". Este procedimento determina que a &aacute;rea de trabalho ser&aacute; utilizada como &aacute;rea conversacional nos mesmos; </LI>
+<LI>Relacionar a &aacute;rea com o(s) <I>host(s)</I> do aplicativo, atrav&eacute;s do campo LIBRARY PARA AREA CONVERSACIONAL, na tela de defini&ccedil;&atilde;o do(s) mesmo(s). Este procedimento &eacute; necess&aacute;rio para o processamento de informa&ccedil;&otilde;es da &aacute;rea conversacional em alguma <I>library</I> de <I>procedure</I> especificada neste(s) <I>host(s)</I>. </LI></OL>
+
+<P>No momento da gera&ccedil;&atilde;o da <I>library </I>da &aacute;rea conversacional, caso o tamanho total definido para a mesma for menor que o definido para o <I>host</I>, ser&aacute; gerado um FILLER complementar, no final da <I>library</I>, com a diferen&ccedil;a dos tamanhos dos mesmos. </P>
+<P>Ap&oacute;s a execu&ccedil;&atilde;o dos procedimentos citados, mais gera&ccedil;&atilde;o, compila&ccedil;&atilde;o e <I>binder</I> dos elementos envolvidos - <I>libraries</I> e programas -, a &aacute;rea conversacional estar&aacute; dispon&iacute;vel para ser utilizada. </P>
+<P>Quando uma esta&ccedil;&atilde;o &eacute; desconectada, o conte&uacute;do da &aacute;rea conversacional &eacute; exclu&iacute;do. </P>
+<P>Para utiliza&ccedil;&atilde;o de uma &aacute;rea de trabalho global nos aplicativos, al&eacute;m da sua defini&ccedil;&atilde;o e gera&ccedil;&atilde;o, deve-se atentar para a execu&ccedil;&atilde;o dos seguintes passos: </P>
+<OL>
+
+<LI>Definir a &aacute;rea de trabalho no reposit&oacute;rio de dados do SADS com tipo igual a "G" (global); </LI>
+<LI>Relacionar a &aacute;rea ao <I>host</I>, atrav&eacute;s do campo LIBRARIES / USO, na tela de defini&ccedil;&atilde;o do mesmo; informando seu c&oacute;digo no padr&atilde;o SADS e sua utiliza&ccedil;&atilde;o igual a "W" (<I>work</I>); </LI>
+<LI>Definir a &aacute;rea como recurso dos programas que ir&atilde;o utiliz&aacute;-la, com complemento "W". Este procedimento determina que a &aacute;rea de trabalho ser&aacute; utilizada como &aacute;rea de WORKING-STORAGE SECTION dos mesmos. </LI></OL>
+
+<P>Ap&oacute;s a execu&ccedil;&atilde;o dos procedimentos citados, mais gera&ccedil;&atilde;o, compila&ccedil;&atilde;o e <I>binder</I> dos elementos envolvidos, a &aacute;rea de trabalho estar&aacute; dispon&iacute;vel para ser utilizada como &aacute;rea global. </P>
+<P>Uma &aacute;rea de trabalho (tipo = "E", "C" ou "G"), desde que n&atilde;o tenha sido definida a sua estrutura, pode ser transformada em uma <I>library</I> de <I>procedure</I> (tipo = "P"). Tamb&eacute;m, uma <I>library</I> de <I>procedure</I>, desde que n&atilde;o tenha m&oacute;dulos cadastrados, pode ser transformada em uma <I>library</I> de &aacute;rea de trabalho (tipo = "E", "C" ou "G"). </P>
+<P>As <I>libraries</I> de &aacute;rea de trabalho s&atilde;o agregadas aos programas atrav&eacute;s do comando COPY. </P>
+<P>Exemplo: </P><DIR>
+
+<P>COPY "SX/Y/PL/01". </P></DIR>
+
+<P>Este comando ser&aacute; gerado no <I>host</I> desta forma, mesmo quando as <I>libraries</I> forem utilizadas em programas <I>on-line</I> como &aacute;rea global. Por&eacute;m, nos programas aplicativos, o comando gerado ser&aacute; o seguinte: </P><DIR>
+
+<P>COPY "ss/s/PL/xn FROM 100100 THRU 199000. </P></DIR>
+
+<P>Exemplo: </P><DIR>
+
+<P>01 YL0101-SXYL01 GLOBAL. </P><DIR>
+<DIR>
+
+<P>&nbsp; COPY "SX/Y/PL/01" FROM 100100 THRU 199000. </P></DIR>
+</DIR>
+</DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Cadas">Cadastramento</A></B></FONT><FONT SIZE=2> </P>
+</FONT><P><HR></P>
+<FONT SIZE=2><P>Para efetuar o cadastramento da &aacute;rea de trabalho, &eacute; necess&aacute;rio que o sistema, para o qual ela ser&aacute; definida, esteja cadastrado no reposit&oacute;rio de dados do SADS. </P>
+</FONT><B><FONT SIZE=4><P>Roteiro</B></FONT><FONT SIZE=2> </P>
+<P>As fun&ccedil;&otilde;es utilizadas para definir e tornar dispon&iacute;vel uma &aacute;rea de trabalho s&atilde;o as seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<FONT SIZE=2>Defini&ccedil;&atilde;o de &aacute;rea de trabalho; </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<FONT SIZE=2>Cadastramento de estrutura de registro de &aacute;rea de trabalho; </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<FONT SIZE=2>Gera&ccedil;&atilde;o de <I>library </I>de &aacute;rea de trabalho; </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<FONT SIZE=2>Libera&ccedil;&atilde;o de <I>library</I> de &aacute;rea de trabalho para produ&ccedil;&atilde;o. </P></DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Defin">Defini&ccedil;&atilde;o de &aacute;rea de trabalho</A></B></FONT><FONT SIZE=2> </P>
+<P>Utilizando a mesma tela de defini&ccedil;&atilde;o de &aacute;rea de trabalho, pode-se tamb&eacute;m registros de <I>dataset</I> de uso geral e <I>libraries</I> de <I>procedure</I>. Por isso, existem nela alguns campos que n&atilde;o devem ser preenchidos no momento da defini&ccedil;&atilde;o da &aacute;rea de trabalho. </P>
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Elemento</B> - C&oacute;digo da &aacute;rea de trabalho no padr&atilde;o SADS (sssLxn). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Gera&ccedil;&atilde;o completa pelo SADS (S/N)</B> - Controle de gera&ccedil;&atilde;o da &aacute;rea de<I> </I>trabalho<I>, </I>diferenciando as &aacute;reas de trabalho criadas no CANDE das geradas pelo SADS. </P>
+<P>Pode assumir os seguintes valores: </P><DIR>
+
+<B><P>"S"</B> - Indicador de &aacute;rea de trabalho gerada pelo SADS; </P>
+<B><P>"N"</B> - Indicador de &aacute;rea de<I> </I>trabalho definida no reposit&oacute;rio de dados do SADS e criada manualmente no CANDE. </P></DIR>
+
+<P>Este campo ser&aacute; utilizado quando uma compila&ccedil;&atilde;o de programa ou sub-rotina que declare a &aacute;rea de<I> </I>trabalho como recurso, estiver com o campo COMPILAR MESMO QUE OS RECURSOS N&Atilde;O ESTEJAM ATUALIZADOS preenchido com o valor "NAO". Neste caso, se a &aacute;rea de<I> </I>trabalho contiver o valor "S", ser&aacute; verificado o seu <I>status</I> de gera&ccedil;&atilde;o. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Nome</B> - Descri&ccedil;&atilde;o resumida da &aacute;rea de trabalho. </P>
+<P>O nome da &aacute;rea de trabalho tem o objetivo de identificar e explicar resumidamente a que se refere a &aacute;rea de trabalho. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Registros </B>- Quantidade de registros que a &aacute;rea de trabalho possui. </P>
+<P>Cada registro da &aacute;rea de trabalho &eacute; um conjunto de atributos e/ou campos subordinados a um &uacute;nico n&iacute;vel 01 do Cobol. As <I>libraries</I> de &aacute;rea conversacional s&atilde;o consideradas exce&ccedil;&otilde;es, j&aacute; que s&atilde;o geradas a partir do n&iacute;vel 05. </P>
+<P>Este campo n&atilde;o deve ser informado para &aacute;rea de trabalho. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Tipo</B> - Tipo de utiliza&ccedil;&atilde;o da &aacute;rea de trabalho. </P>
+<P>Os seguintes tipos podem ser informados: </P><DIR>
+
+<B><P>"E"</B> - Para utiliza&ccedil;&atilde;o em WORKING-STORAGE SECTION de programas e sub-rotinas, ou para registro do <I>dataset</I> de uso geral SBGB02; </P>
+<B><P>"C"</B> - Para utiliza&ccedil;&atilde;o da &aacute;rea de trabalho como &aacute;rea conversacional; </P>
+<B><P>"G"</B> - Para utiliza&ccedil;&atilde;o como &aacute;rea global em programas <I>on-line;</I> </P>
+<B><P>"P"</B> - Para utiliza&ccedil;&atilde;o em <I>library</I> de <I>procedure</I>. </P></DIR>
+
+<P>Uma &aacute;rea de trabalho (tipo = "E", "C" ou "G"), desde que n&atilde;o tenha sido definida a sua estrutura, pode ser transformada em uma <I>library</I> de <I>procedure</I> (tipo = "P"). Tamb&eacute;m, uma <I>library</I> de <I>procedure</I>, desde que n&atilde;o tenha m&oacute;dulos cadastrados, pode ser transformada em uma <I>library</I> de &aacute;rea de trabalho (tipo = "E", "C" ou "G"). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Lib. de PROCEDURE p/ uso em:</B> </P><DIR>
+
+<P>Sub-rotina (S/N) - Este campo n&atilde;o deve ser informado para &aacute;rea de trabalho. </P>
+<P>On-line (S/N) - Este campo n&atilde;o deve ser informado para &aacute;rea de trabalho. </P>
+<P>Batch (S/N) - Este campo n&atilde;o deve ser informado para &aacute;rea de trabalho. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Operacao</B> - Opera&ccedil;&atilde;o efetuada sobre a defini&ccedil;&atilde;o da <I>&aacute;rea</I> de trabalho. </P>
+<P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes: </P><DIR>
+
+<P>"INC" (Inclus&atilde;o); </P>
+<P>"ALT" (Altera&ccedil;&atilde;o); </P>
+<P>"EXC" (Exclus&atilde;o); </P>
+<P>"CON" (Consulta). </P></DIR>
+</DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Estru">Cadastramento de estrutura de registro de &aacute;rea de trabalho</A></B></FONT><FONT SIZE=2> </P>
+<P>Uma &aacute;rea de trabalho pode conter um ou mais registros. </P>
+<P>Cada registro, por sua vez, &eacute; um conjunto de atributos e/ou campos, que pode ou n&atilde;o redefinir um outro da mesma &aacute;rea de trabalho. </P>
+<P>Para cadastrar a estrutura de um registro da &aacute;rea de trabalho, &eacute; necess&aacute;rio que a mesma j&aacute; esteja definida no reposit&oacute;rio de dados do SADS. </P>
+<P>O registro "00" pode ser definido em uma &aacute;rea de trabalho, por&eacute;m n&atilde;o ser&aacute; permitido o cadastramento de sua estrutura. </P>
+<P>Nos grupos de campos que ocorrem v&aacute;rias vezes na tela, dever&atilde;o ser definidos os atributos que fazem parte da estrutura do registro da &aacute;rea de trabalho e, se houver, suas particularidades. </P>
+<P>No contexto da &aacute;rea de trabalho, entenda-se atributo como sendo atributo propriamente dito, campo ou sin&ocirc;nimo. </P>
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>ELEMENTO</B> - C&oacute;digo da &aacute;rea de trabalho no padr&atilde;o SADS (sssLxn); </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>REGISTRO</B> - N&uacute;mero do registro a ser cadastrado; </P>
+<P>Ao incluir uma estrutura, este n&uacute;mero n&atilde;o precisa ser informado. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>REDEFINE REGISTRO</B> - N&uacute;mero do registro a ser redefinido. </P>
+<P>Se o campo REDEFINE REGISTRO n&atilde;o for informado, na gera&ccedil;&atilde;o da <I>library</I>, os registros ser&atilde;o gerados com <I>layouts</I> independentes. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>NOME</B> - Descri&ccedil;&atilde;o resumida do registro em cadastramento. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>SEQ</B> - N&uacute;mero sequencial para posicionamento do atributo dentro da estrutura. </P>
+<P>O primeiro n&uacute;mero apresentado no campo SEQ &eacute; igual a "0010" e os demais acrescidos de 10. </P>
+<P>Para incluir um atributo entre dois outros j&aacute; existentes, &eacute; necess&aacute;rio preencher uma linha que estiver em branco e alterar o n&uacute;mero sequencial desta linha para um valor entre os n&uacute;meros j&aacute; informados. O SADS reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima opera&ccedil;&atilde;o, os atributos j&aacute; estar&atilde;o na nova ordem. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>ATRIBUTO</B> - Mnem&ocirc;nico de um atributo ou campo. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>SUF</B> - Sufixo para diferenciar o atributo, caso ele apare&ccedil;a mais de uma vez na mesma estrutura. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>NIV</B> - N&iacute;vel de estrutura&ccedil;&atilde;o do atributo, an&aacute;logo ao n&iacute;vel do Cobol. </P>
+<P>O n&iacute;vel inicial &eacute; o 10. Se for necess&aacute;rio criar agrupamentos de atributos, deve-se utilizar m&uacute;ltiplos de 5 (15, 20 e assim por diante), de forma semelhante ao Cobol. O n&iacute;vel 77 pode ser utilizado, an&aacute;logo ao n&iacute;vel 77 do Cobol. </P>
+<P>NO SADS n&atilde;o &eacute; permitida a utiliza&ccedil;&atilde;o do n&iacute;vel 88. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>NDEF</B> - N&iacute;vel de defini&ccedil;&atilde;o do atributo. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<B><P>"S"</B> (Sistema) - Para atributo definido no sistema informado no campo SIS ou para atributo pertencente ao mesmo sistema da &aacute;rea de trabalho; </P>
+<B><P>"G"</B> (Geral) - Para atributo pr&eacute;-definido no reposit&oacute;rio de dados do SADS que ter&aacute; utiliza&ccedil;&atilde;o gen&eacute;rica pelos sistemas aplicativos; </P>
+<B><P>"P" </B>(Particular) - Para atributo utilizado unicamente neste registro da &aacute;rea de trabalho e, portanto, n&atilde;o cadastrado no reposit&oacute;rio de dados do SADS. </P>
+<P>Neste caso, o formato, tamanho, indicador de sinal e decimais do atributo t&ecirc;m de ser obrigatoriamente informados. </P>
+<P>N&atilde;o pode ser informado NDEF = "P" caso tenha sido parametrizado na tabela SBPM5000 que n&atilde;o &eacute; aceit&aacute;vel atributos/campos particulares nas estruturas SADS. </P>
+<P>Maiores detalhes a respeito desta parametriza&ccedil;&atilde;o, deve-se consultar a Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", item "Atributo", subitem "Redefini&ccedil;&atilde;o em estruturas". </P>
+<B><P>"R"</B> (Redefini&ccedil;&atilde;o) - Para atributo que redefine o anterior. </P>
+<P>O atributo com NDEF = "R" ser&aacute; interpretado como item grupo e, portanto, para que a redefini&ccedil;&atilde;o seja v&aacute;lida, ele deve conter itens elementares. </P></DIR>
+
+<P>Caso NDEF n&atilde;o seja informado, o gerador de <I>libraries</I> do SADS interpretar&aacute; o atributo como sendo um item grupo. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>SIS</B> - C&oacute;digo do sistema para o qual o atributo foi definido. </P>
+<P>O campo SIS deve ser indicado somente quando o campo NDEF estiver preenchido com "S" e o atributo pertencer a um sistema diferente do sistema da &aacute;rea de trabalho. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B>COMP</B> - Indicador de atributo compactado ou bin&aacute;rio. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes:</P><DIR>
+
+<B><P>"S"</B> (Compactado) - Para atributos num&eacute;ricos que devam ser gerados com o "COMP" do Cobol, deve-se informar "S";</P>
+<B><P>"B"</B> (Binary) - Para atributos num&eacute;ricos que devam ser gerados com formato binary.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>FORM</B> - Formato do atributo. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<B><P>"A"</B> (Alfab&eacute;tico); </P>
+<B><P>"N" </B>(Num&eacute;rico); </P>
+<B><P>"D" </B><I>(Display</I> ou alfanum&eacute;rico); </P>
+<B><P>"R" </B>(Real); </P>
+<B><P>"B" </B><I>(Boolean</I>). </P></DIR>
+
+<P>Este campo n&atilde;o pode ser informado caso tenha sido parametrizado na tabela SBPM5000 que os atributos/campos n&atilde;o podem ter seus formatos redefinidos nas estruturas nas quais s&atilde;o inclu&iacute;dos. </P>
+<P>Maiores detalhes a respeito desta parametriza&ccedil;&atilde;o, deve-se consultar a Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", item "Atributo", subitem "Redefini&ccedil;&atilde;o em estruturas". </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>TAM</B> - Tamanho do atributo. </P>
+<P>Este campo n&atilde;o pode ser informado caso tenha sido parametrizado na tabela SBPM5000 que os atributos/campos n&atilde;o podem ter seus tamanhos redefinidos nas estruturas nas quais s&atilde;o inclu&iacute;dos. </P>
+<P>Maiores detalhes a respeito desta parametriza&ccedil;&atilde;o, deve-se consultar a Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", item "Atributo", subitem "Redefini&ccedil;&atilde;o em estruturas". </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>SIN</B> - Indicador de atributo sinalizado. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<P>"<B>S</B>" - Para atributo n&uacute;merico sinalizado; </P>
+<P>"<B>N</B>" - Para atributo n&atilde;o sinalizado;</P>
+</FONT><P>"<B>J</B>" - Para atributo a ser definido com a cl&aacute;usula "JUST RIGHT".</P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>DEC</B> - Quantidade de casas decimais que o atributo num&eacute;rico possui. </P>
+<P>Os campos FORM, TAM, SIN e DEC devem ser informados para atributos/campos particulares ou para asssumir alguma destas caracter&iacute;sticas de forma diferente daquela que se encontra em sua defini&ccedil;&atilde;o. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>CLAS </B>- Este campo n&atilde;o &eacute; utilizado para o cadastramento da estrutura da &aacute;rea de trabalho. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>OCCURS</B> - Semelhante &agrave; cl&aacute;usula "OCCURS" das estruturas do Cobol. </P>
+<P>Pode ser utilizado somente para definir itens de grupo com ocorr&ecirc;ncias. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>CONTINUA(S/N)</B> - Indicador de continuidade de opera&ccedil;&atilde;o. </P>
+<P>As possibilidades para o preenchimento deste campo s&atilde;o as seguintes: </P><DIR>
+
+<B><P>"S"</B> - Para prosseguir no cadastramento da mesma estrutura; </P>
+<B><P>"N"</B> - Para encerrar o cadastramento da estrutura. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada sobre a estrutura da &aacute;rea de trabalho. </P>
+<P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes: </P><DIR>
+
+<B><P>"INC"</B> (Inclus&atilde;o); </P>
+<B><P>"ALT"</B> (Altera&ccedil;&atilde;o); </P>
+<B><P>"EXC"</B> (Exclus&atilde;o); </P>
+<B><P>"CON"</B> (Consulta). </P></DIR>
+</DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Libra">Gera&ccedil;&atilde;o de library de &aacute;rea de trabalho</A></B></FONT><FONT SIZE=2> </P>
+<P>Na gera&ccedil;&atilde;o de <I>library</I> de &aacute;rea de trabalho, &eacute; criado um arquivo fonte Cobol, com o <I>layout</I> da &aacute;rea de trabalho, que ser&aacute; incorporado aos programas aplicativos que a utilizarem. </P>
+<P>A <I>library</I> da &aacute;rea de trabalho &eacute; gerada a partir da estrutura de dados de todos os registros da mesma. </P>
+<P>Portanto, para gerar uma <I>library</I>, &eacute; necess&aacute;rio que a &aacute;rea de trabalho e as estruturas de seus registros estejam cadastradas no reposit&oacute;rio de dados do SADS. </P>
+<P>A <I>library</I> cont&eacute;m os atributos e campos que comp&otilde;em a &aacute;rea de trabalho. A seguir, s&atilde;o apresentados dois exemplos de <I>library</I> de &aacute;rea de trabalho. </P>
+<P>Para a &aacute;rea "SXYL01 - &Aacute;rea conversacional do sistema SXY", &eacute; gerada a <I>library</I>: </P><DIR>
+
+<P>05 YL0101-SXYL01.</P><DIR>
+<DIR>
+
+<P>10 YL0101-EMPCOD PIC 9(003).<BR>
+10 YL0101-FILCOD PIC 9(004).<BR>
+10 Yl0101-FILEND PIC X(040).</P></DIR>
+
+<P>05 YL0102-SXYL01 REDEFINE YL0101-SXYL01.</P><DIR>
+
+<P>10 YL0102-LOGCOD PIC 9(003) COMP.<BR>
+10 YL0102-ARTCOD PIC 9(003) COMP.<BR>
+10 YL0102-LOJCGC PIC 9(014) COMP.<BR>
+10 FILLER PIC X(037).</P></DIR>
+</DIR>
+</DIR>
+
+<P>Para a &aacute;rea "SXYL05 - &Aacute;rea de trabalho do sistema SXY", a <I>library</I> gerada &eacute;: </P><DIR>
+
+<P>01 YL0501-SXYL05.</P><DIR>
+<DIR>
+
+<P>10 YL0501-EMPCOD PIC 9(003).<BR>
+10 YL0501-FILCOD PIC 9(004).<BR>
+10 Yl0501-FILEND PIC X(040).</P></DIR>
+
+<P>01 YL0502-SXYL05 REDEFINE YL0501-SXYL05.</P><DIR>
+
+<P>10 YL0502-LOJCOD PIC 9(003) COMP.<BR>
+10 YL0502-ARTCOD PIC 9(003) COMP.<BR>
+10 YL0502-LOJCGC PIC 9(014) COMP.<BR>
+10 FILLER PIC X(037)</P></DIR>
+</DIR>
+</DIR>
+
+<P>Os prefixos dos campos de <I>library</I> de &aacute;rea de trabalho t&ecirc;m a seguinte forma&ccedil;&atilde;o: </P>
+<P>Terceira letra do sistema ("Y", no exemplo) + a letra "L" (que identifica uma &aacute;rea de trabalho) + o sequencial da &aacute;rea ("01" e "05", no exemplo) + o n&uacute;mero do registro ("01" e "02", no exemplo) + "-" (constante) + o mnem&ocirc;nico do atributo ou campo. </P>
+<P>Deve-se atentar para o fato de que as <I>libraries</I> de &aacute;rea conversacional s&atilde;o geradas a partir do n&iacute;vel "05" e as demais, a partir do n&iacute;vel "01". </P>
+<P>A <I>library</I> da &aacute;rea de trabalho &eacute; gerada no <I>usercode</I> definido para o ambiente escolhido, sendo poss&iacute;vel ger&aacute;-la sem <I>usercode</I> (em *) para o ambiente de produ&ccedil;&atilde;o. A especifica&ccedil;&atilde;o de onde a <I>library</I> dever&aacute; residir encontra-se descrita na tabela SBPM5002, que se encontra descrita na se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+<P>A gera&ccedil;&atilde;o de <I>library</I> de &aacute;rea de trabalho n&atilde;o est&aacute; associada a nenhuma tela de processamento. Portanto, para efetu&aacute;-la, basta transmitir os argumentos do menu de opera&ccedil;&atilde;o "GERLIBARE", cujos campos est&atilde;o explicados a seguir: </P>
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Area de Trabalho</B> - C&oacute;digo da &aacute;rea de trabalho no padr&atilde;o SADS (sssLxn). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Ambiente</B> - Ambiente para o qual a <I>library</I> ser&aacute; gerada: </P><DIR>
+
+<B><P>"T"</B> (Teste); </P>
+<B><P>"P"</B> (Produ&ccedil;&atilde;o). </P></DIR>
+
+<P>Caso o ambiente n&atilde;o seja informado, ser&aacute; assumido o ambiente <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do ambiente <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es". </P>
+<P>Quando uma <I>library</I> &eacute; gerada em ambiente de teste, o acesso &agrave; mesma ser&aacute; feito somente nas compila&ccedil;&otilde;es para este ambiente. Por&eacute;m, se a gera&ccedil;&atilde;o for executada para produ&ccedil;&atilde;o, ficando residente sem <I>usercode</I> (dependendo do cadastramento do seu <I>usercode </I>de an&aacute;lise na tabela SBPM5002), o acesso &agrave; mesma ser&aacute; feito nas compila&ccedil;&otilde;es para ambos os ambientes. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Usercode</B> - <I>Usercode</I> de an&aacute;lise. </P>
+<P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS". </P>
+<P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es". </P>
+<P>Para <I>usercodes</I> de an&aacute;lise, s&atilde;o definidos os ambientes (<I>usercode</I> e disco) onde ficar&atilde;o residentes suas <I>libraries</I> de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as <I>libraries</I> de produ&ccedil;&atilde;o fiquem sem <I>usercodes</I>. Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002, que se encontra descrita na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P></DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Liblib">Libera&ccedil;&atilde;o de</B> <B>library</B> <B>de &aacute;rea de trabalho para produ&ccedil;&atilde;o</A></B></FONT><FONT SIZE=2> </P>
+<P>A libera&ccedil;&atilde;o de <I>library</I> de &aacute;rea de trabalho para produ&ccedil;&atilde;o consiste na cria&ccedil;&atilde;o de uma c&oacute;pia da <I>library</I> no <I>usercode</I> de produ&ccedil;&atilde;o e, dependendo da parametriza&ccedil;&atilde;o do <I>usercode</I> de an&aacute;lise na tabela SBPM5002, na exclus&atilde;o da c&oacute;pia do <I>usercode</I> de teste. </P>
+<P>S&oacute; &eacute; poss&iacute;vel liberar <I>libraries</I> que tenham sido geradas no ambiente de teste. </P>
+<P>A libera&ccedil;&atilde;o de <I>library</I> de &aacute;rea de trabalho para produ&ccedil;&atilde;o n&atilde;o est&aacute; associada a nenhuma tela de processamento. Portanto, para efetu&aacute;-la, basta transmitir os argumentos da tela "LIBLIBARE", cujos campos est&atilde;o explicados a seguir: </P>
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Area de Trabalho</B> - C&oacute;digo da &aacute;rea de trabalho no padr&atilde;o SADS (sssLxn). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Usercode </B>- <I>Usercode</I> de an&aacute;lise. </P>
+<P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS". </P>
+<P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es". </P>
+<P>Para <I>usercodes</I> de an&aacute;lise s&atilde;o definidos os ambientes (<I>usercode</I> e disco) onde ficar&atilde;o residentes suas <I>libraries</I> de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as <I>libraries</I> de produ&ccedil;&atilde;o fiquem sem <I>usercodes</I>. Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002, que se encontra descrita neste manual, na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", . neste manual. </P>
+<P>Se na defini&ccedil;&atilde;o do seu <I>usercode</I> de an&aacute;lise, na tabela SBPM5002, estiver indicado que as <I>libraries</I> de produ&ccedil;&atilde;o ficar&atilde;o residentes no <I>usercode</I> de objetos em produ&ccedil;&atilde;o, ao executar suas libera&ccedil;&otilde;es, aquelas que est&atilde;o em teste ser&atilde;o mantidas e vers&otilde;es id&ecirc;nticas ser&atilde;o criadas para o <I>usercode</I> de produ&ccedil;&atilde;o. Se as <I>libraries</I> de produ&ccedil;&atilde;o ficarem residentes sem <I>usercode</I>, ao executar suas libera&ccedil;&otilde;es, aquelas que est&atilde;o em teste ser&atilde;o removidas e outras id&ecirc;nticas ser&atilde;o criadas em *, ou seja, sem <I>usercode</I>, para atender aos dois ambientes (teste e produ&ccedil;&atilde;o). </P></DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Funca">Fun&ccedil;&otilde;es de apoio</A></B></FONT><FONT SIZE=2> </P>
+</FONT><P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Espec">Espec&iacute;ficas de &aacute;rea de trabalho</A></B></FONT><FONT SIZE=2> </P><DIR>
+
+</FONT><B><FONT SIZE=4><P><A NAME="Trata"></P></DIR>
+
+<P>Tratamento de &aacute;rea conversacional</A></B></FONT><FONT SIZE=2> </P><DIR>
+
+<P>O SADS permite manipular as informa&ccedil;&otilde;es existentes, num dado momento, na &aacute;rea conversacional, ou seja, permite incluir, alterar, excluir ou consultar as informa&ccedil;&otilde;es armazenadas em uma determinada esta&ccedil;&atilde;o na sua &aacute;rea conversacional. </P>
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+<P>Em cada p&aacute;gina ser&atilde;o mostrados 240 caracteres, dispostos em tr&ecirc;s blocos de quatro linhas cada, sendo que, a primeira linha exibe o caractere, a segunda e a terceira, o caractere hexadecimal correspondente, e a quarta linha, a posi&ccedil;&atilde;o do <I>byte</I> no registro. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>TAM.REG</B> - Este campo vem preenchido com o n&uacute;mero de <I>bytes</I> que o registro cont&eacute;m. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>POS.INIC</B> - Campo para indicar, em opera&ccedil;&otilde;es de altera&ccedil;&atilde;o, a posi&ccedil;&atilde;o do primeiro <I>byte</I> que ser&aacute; alterado. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>NUM.POS</B> - Quantidade de posi&ccedil;&otilde;es que ser&atilde;o alteradas (m&aacute;ximo de 80 para caracteres e de 40 para hexadecimais). </P>
+<P>A partir da posi&ccedil;&atilde;o informada no campo POS.INIC, ser&atilde;o alteradas uma quantidade de posi&ccedil;&otilde;es equivalente ao n&uacute;mero informado no campo NUM.POS. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>CHA/HEX</B> - Tipo do caractere informado para altera&ccedil;&atilde;o. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<B><P>"H"</B> - Para caracteres hexadecimais; </P>
+<B><P>"C"</B> - Para caracteres que n&atilde;o s&atilde;o hexadecimais. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>CONTINUA(M/P/N)</B> - Indicador de continua&ccedil;&atilde;o de opera&ccedil;&atilde;o. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<B><P>"M"</B> (Mesma) - Para exibir a mesma p&aacute;gina, ou seja, a mesma posi&ccedil;&atilde;o relativa do registro mas com os novos caracteres, caso tenham sido alterados; </P>
+<B><P>"P"</B> (Pr&oacute;xima) - Para exibir a pr&oacute;xima p&aacute;gina com os 240 <I>bytes</I>seguintes; </P>
+<B><P>"N"</B> (N&atilde;o continuar) - Para retornar ao menu de escolha "ARE". </P></DIR>
+
+<P>O &uacute;ltimo campo &eacute; uma linha de 80 posi&ccedil;&otilde;es utilizada para informar os caracteres a serem inseridos ou substitu&iacute;dos a partir da posi&ccedil;&atilde;o inicial informada no campo POS.INI. </P>
+<P>A altera&ccedil;&atilde;o &eacute; feita de 80 em 80 caracteres ou de 40 em 40 hexadecimais, no m&aacute;ximo. Ser&atilde;o alterados tantos <I>bytes</I> quanto o n&uacute;mero informado no campo NUM.POS. </P></DIR>
+</DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Gener">Gen&eacute;ricas aplic&aacute;veis &agrave;s &aacute;reas de trabalho</A></B></FONT><FONT SIZE=2> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Utilit&aacute;rios: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Duplica&ccedil;&atilde;o de elemento; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Ressequenciamento de estrutura; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Descri&ccedil;&atilde;o de elemento; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Consultas: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Elementos por sistema; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Estruturas de dados; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Fontes de <I>libraries</I>; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Descri&ccedil;&atilde;o de elemento. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Refer&ecirc;ncias cruzadas: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Elementos x elemento - Programas e sub-rotinas que utilizam a &aacute;rea de trabalho. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Informativos impressos: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista de elementos por sistema; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista das estruturas de dados; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista das defini&ccedil;&otilde;es e validades dos atributos e campos por estrutura; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista das descri&ccedil;&otilde;es de elementos. </P></DIR>
+</DIR>
+
+<P>Todos estes utilit&aacute;rios, consultas, refer&ecirc;ncias cruzadas e informativos impressos encontram-se detalhadamente descritos na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", neste manual.</P></FONT></BODY>
+</HTML>

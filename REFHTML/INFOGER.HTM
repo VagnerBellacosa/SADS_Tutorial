@@ -1,0 +1,251 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>INFOGER</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+
+<B><FONT SIZE=6><P><A NAME="Infor">Informa&ccedil;&otilde;es gerenciais</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS possui um reposit&oacute;rio de dados ativo, ou seja, que se mant&eacute;m atualizado em qualquer fase do desenvolvimento dos sistemas.</FONT> </P>
+<FONT SIZE=2><P>Desta forma, para auxiliar no controle do desenvolvimento desses sistemas, o SADS oferece uma grande variedade de consultas gerenciais, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Prodes">Programas em desenvolvimento</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Produ">Programas em produ&ccedil;&atilde;o</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Codif">Programas faltando consistir padr&otilde;es de codifica&ccedil;&atilde;o</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Recur">Programas faltando atualizar recursos</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Estat">Estat&iacute;sticas de programas</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Repos">Estat&iacute;sticas do reposit&oacute;rio de dados</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Situa">Situa&ccedil;&atilde;o do desenvolvimento de sistema</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Lista">Lista de sistemas</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Subro">Sub-rotinas da instala&ccedil;&atilde;o</A><FONT SIZE=2>.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Prodes">Programas em desenvolvimento</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter a rela&ccedil;&atilde;o dos programas em desenvolvimento, sua data de cadastramento e o n&uacute;mero de compila&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>Programas em desenvolvimento s&atilde;o aqueles que ainda n&atilde;o foram compilados para a produ&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<P><A NAME="Argu01">Argumento da consulta</A> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, o seguinte argumento deve ser informado no menu de opera&ccedil;&atilde;o PRODES:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><B><FONT SIZE=2>&nbsp;Sistema</B> - C&oacute;digo do sistema dos programas a serem apresentados, no padr&atilde;o SADS (sss).</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Infex1">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o informados para cada um dos programas em desenvolvimento:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;PROGRAMA</B> - C&oacute;digo do programa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;NOME</B> - Nome do programa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;CADASTRAMENTO</B> - Data de cadastramento do programa no reposit&oacute;rio de dados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;COMPILACOES</B> - N&uacute;mero de compila&ccedil;&otilde;es para o ambiente de teste, efetuadas desde o seu cadastramento.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Produ">Programas em produ&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter a rela&ccedil;&atilde;o dos programas que est&atilde;o em produ&ccedil;&atilde;o, a data de libera&ccedil;&atilde;o do fonte do programa e o n&uacute;mero de compila&ccedil;&otilde;es para os ambientes de teste e de produ&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Programas em produ&ccedil;&atilde;o s&atilde;o aqueles que foram compilados para a produ&ccedil;&atilde;o pelo menos uma vez.</FONT> </P>
+<FONT SIZE=2><P>A data de libera&ccedil;&atilde;o informada nesta consulta &eacute; a &uacute;ltima data em que ocorreu a libera&ccedil;&atilde;o do fonte do programa para o ambiente de fontes compactados. Para maiores detalhes sobre a libera&ccedil;&atilde;o para a produ&ccedil;&atilde;o, deve-se consultar, nesta se&ccedil;&atilde;o, o item "Libera&ccedil;&atilde;o de fonte" ou "Libera&ccedil;&atilde;o de fam&iacute;lia de fonte".</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argu02">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, alguns argumentos devem ser informados no menu de opera&ccedil;&atilde;o PROLIBPRO, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;Sistema</B> - C&oacute;digo do sistema dos programas a serem apresentados, no padr&atilde;o SADS (sss).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;Data</B> - Data de libera&ccedil;&atilde;o dos programas para os ambiente de fontes compactados (opcional).</FONT> </P>
+<FONT SIZE=2><P>Esta data, no formato DDMMAA (dia, m&ecirc;s e ano), determinar&aacute; o in&iacute;cio da pesquisa.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Infex2">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o informados para cada um dos programas em produ&ccedil;&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;PROGRAMA </B>- C&oacute;digo do programa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;NOME</B> - Nome do programa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;LIBERACAO</B> - Data da &uacute;ltima libera&ccedil;&atilde;o do fonte do programa para o ambiente de fontes compactados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;COMPILACOES:</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;DES</B> - N&uacute;mero de compila&ccedil;&otilde;es para o ambiente de desenvolvimento;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;PROD</B> - N&uacute;mero de compila&ccedil;&otilde;es para o ambiente de produ&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Codif">Programas faltando consistir padr&otilde;es de codifica&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter a rela&ccedil;&atilde;o dos programas que ainda n&atilde;o tiveram os padr&otilde;es de codifica&ccedil;&atilde;o consistidos pelo SADS.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argu03">Argumento da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, no menu de opera&ccedil;&atilde;o PROPAD deve ser informado o seguinte argumento:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;Sistema</B> - C&oacute;digo do sistema dos programas a serem apresentados, no padr&atilde;o SADS (sss).</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Infex3">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o informados para cada um dos programas faltando consistir padr&otilde;es de codifica&ccedil;&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;PROGRAMA</B> - C&oacute;digo do programa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;NOME</B> - Nome do programa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;CADASTRAMENTO</B> - Data do cadastramento do programa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;LIBERACAO</B> - Data da &uacute;ltima libera&ccedil;&atilde;o do fonte do programa para o ambiente de fontes compactados.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Recur">Programas faltando atualizar recursos</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter a rela&ccedil;&atilde;o dos programas que ainda n&atilde;o tiveram seus recursos atualizados no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argu04">Argumento da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, um argumento deve ser informado no menu de opera&ccedil;&atilde;o PROREC, qual seja:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;Sistema</B> - C&oacute;digo do sistema dos programas a serem apresentados, no padr&atilde;o SADS (sss).</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Infex4">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o informados para cada um dos programas faltando atualizar recursos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;PROGRAMA </B>- C&oacute;digo do programa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;NOME</B> - Nome do programa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;CADASTRAMENTO</B> - Data de cadastramento do programa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;LIBERACAO</B> - Data da &uacute;ltima libera&ccedil;&atilde;o do programa.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Estat">Estat&iacute;sticas de programas</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter as estat&iacute;sticas acumuladas dos programas cadastrados no ambiente SADS.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argu05">Argumento da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada,nenhum argumento precisa ser informado no menu de opera&ccedil;&atilde;o ESTPRO, basta transmitir este menu para confirma&ccedil;&atilde;o da consulta.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Infex5">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;PROGRAMAS EM DESENVOLVIMENTO</B> - N&uacute;mero de programas que ainda n&atilde;o foram compilados para o ambiente de produ&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;PROGRAMAS EM PRODUCAO</B> - N&uacute;mero de programas que j&aacute; foram compilados para o ambiente de produ&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;TOTAL</B> - N&uacute;mero total de programas cadastrados no SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;VERIFICADOS (PADROES)</B> - N&uacute;mero de programas que est&atilde;o com os padr&otilde;es de codifica&ccedil;&atilde;o consistidos.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;RECURSOS ATUALIZADOS (DD)</B> - N&uacute;mero de programas que est&atilde;o com o cadastro dos recursos atualizados no dicion&aacute;rio de dados do SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;MEDIA DE COMPILACOES:</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;DESENVOLVIMENTO</B> - M&eacute;dia de compila&ccedil;&otilde;es no ambiente de desenvolvimento;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;PRODUCAO</B> - M&eacute;dia de compila&ccedil;&atilde;o no ambiente de produ&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Repos">Estat&iacute;sticas do reposit&oacute;rio de dados</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter as estat&iacute;sticas do reposit&oacute;rio de dados por sistema, por tipo de sistema ou em todo o ambiente SADS.</FONT> </P>
+<FONT SIZE=2><P>Nestas estat&iacute;sticas s&atilde;o informadas as quantidades de cada elemento armazenadas no reposit&oacute;rio de dados do SADS e o percentual da sua evolu&ccedil;&atilde;o nos &uacute;ltimos tr&ecirc;s meses, tomando como base o m&ecirc;s informado como argumento da consulta. </P>
+<P>A estat&iacute;stica do reposit&oacute;rio de dados apresenta um indicador de ambiente para cada elemento, de acordo com o seguinte padr&atilde;o:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Se ao lado esquerdo do elemento aparecer a letra "D", o elemento existe apenas no ambiente de desenvolvimento; ou</P>
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Se aparecer a letra "P", o elemento tamb&eacute;m existe em produ&ccedil;&atilde;o. </P></DIR>
+
+<P>No rodap&eacute; de cada p&aacute;gina da consulta &eacute; apresentada uma legenda para facilitar a compreens&atilde;o deste indicador.</P>
+<P>Atrav&eacute;s do menu ROTAPO - opera&ccedil;&atilde;o "ATU" - ou da execu&ccedil;&atilde;o do <I>job</I> SD/D/JB/45, podem ser extra&iacute;das as quantidades de cada elemento cadastradas nos <I>datasets</I> do SADS e armazenadas estas informa&ccedil;&otilde;es no m&ecirc;s corrente. Portando, para obter os dados atualizados desta estat&iacute;stica, deve-se executar, ao final de cada m&ecirc;s, a opera&ccedil;&atilde;o "ATU" do menu ROTAPO ou o <I>job</I> SD/D/JB/45.</FONT> </P>
+<FONT SIZE=2><P>Uma explica&ccedil;&atilde;o do <I>job</I> SD/D/JB/45 est&aacute; descrita a seguir:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nome Externo:</B> SD/D/JB/45;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Descri&ccedil;&atilde;o:</B> Armazena a situa&ccedil;&atilde;o do reposit&oacute;rio de dados no m&ecirc;s corrente;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Periodicidade</B>: Mensal;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Entradas:</B> Todos os <I>datasets</I> do SADS/DD;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sa&iacute;das:</B> SBGB02 (<I>Dataset</I> de Uso Geral);</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Recupera&ccedil;&atilde;o:</B> No caso de falha, este <I>job</I> pode ser disparado novamente;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Par&acirc;metros :</B> Primeira posi&ccedil;&atilde;o em branco e, a seguir, a data no formato AAMM, se esta for diferente da data corrente.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Reten&ccedil;&atilde;o arq.:</B> N&atilde;o h&aacute;.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita, na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argu06">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, alguns argumentos devem ser informados no menu de opera&ccedil;&atilde;o ESTREP, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;Sistema ou Classificacao</B> - Argumento para selecionar os sistemas (opcional).</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;"sss" - Para consultar a estat&iacute;stica de um sistema espec&iacute;fico;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;"&lt;&lt;Classifica&ccedil;&atilde;o quanto ao uso&gt;&gt;" - Para consultar a estat&iacute;stica de todos os sistemas de<BR>
+uma determinada classifica&ccedil;&atilde;o quanto ao uso.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>As classifica&ccedil;&otilde;es quanto ao uso poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;"E" - Sistemas de uso geral da empresa;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;"I" - Sistemas de uso da &aacute;rea de inform&aacute;tica;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;"T" - Sistemas de uso da &aacute;rea de treinamento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;"D" - Sistemas para demonstra&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;"S" - Sistemas cuja sigla serve apenas para controle;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;"H" - Sistemas de hierarquia funcional;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;"C" - Sistemas sem classifica&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;Periodo</B> - Per&iacute;odo de refer&ecirc;ncia da consulta no formato AAMM (ano e m&ecirc;s) (opcional).</FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o exibidas as estat&iacute;sticas dos tr&ecirc;s meses anteriores ao m&ecirc;s informado no campo Periodo, incluindo o m&ecirc;s informado.</FONT> </P>
+<FONT SIZE=2><P>Caso o per&iacute;odo n&atilde;o seja informado, ser&atilde;o exibidas as estat&iacute;sticas dos tr&ecirc;s meses anteriores ao m&ecirc;s corrente, incluindo o m&ecirc;s corrente.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Infex6">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o apresentados todos os tipos de elementos cadastrados no SADS para os sistemas selecionados, as quantidade de cada um e o percentual da evolu&ccedil;&atilde;o dos sistemas m&ecirc;s a m&ecirc;s.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Situa">Situa&ccedil;&atilde;o do desenvolvimento de sistema</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter a situa&ccedil;&atilde;o do desenvolvimento de um sistema.</FONT> </P>
+<FONT SIZE=2><P>Atrav&eacute;s desta consulta, ser&atilde;o apresentados os c&oacute;digos dos elementos, os nomes e as situa&ccedil;&otilde;es dos cadastros destes elementos.</FONT> </P>
+<FONT SIZE=2><P>Nesta consulta s&oacute; ser&atilde;o informados os elementos com algum tipo de irregularidade em seu cadastro.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argu07">Argumento da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, no menu de opera&ccedil;&atilde;o SIT deve ser informado o seguinte argumento:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;Sistema</B> - C&oacute;digo do sistema a ser consultado, no padr&atilde;o SADS (sss).</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Infex7">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;SISTEMA</B> - C&oacute;digo e nome do sistema a ser consultado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;Ser&atilde;o informados para cada um dos elementos a ser apresentado:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;&lt;&lt;elemento&gt;&gt;</B> - C&oacute;digo do elemento.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;NOME</B> - Nome do elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;SITUACAO</B> - Descri&ccedil;&atilde;o da situa&ccedil;&atilde;o do cadastro do elemento.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Lista">Lista de sistemas</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter a lista de sistemas cadastrados no SADS.</FONT> </P>
+<FONT SIZE=2><P>Esta lista de sistemas pode ser selecionada conforme a situa&ccedil;&atilde;o, classifica&ccedil;&atilde;o quanto ao desenvolvimento e classifica&ccedil;&atilde;o quanto ao uso.</FONT> </P>
+<FONT SIZE=2><P>Estas classifica&ccedil;&otilde;es est&atilde;o detalhadamente descritas na Se&ccedil;&atilde;o II, "Elementos do reposit&oacute;rio de dados do SADS", no item "Sistema".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argu08">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, alguns argumentos devem ser informados no menu de opera&ccedil;&atilde;o LISSIS, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;Situacao do sistema</B> - Situa&ccedil;&atilde;o do sistema (opcional).</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;"D" - Sistemas em desenvolvimento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;"P" - Sistemas em produ&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso este campo n&atilde;o seja informado, ser&atilde;o selecionados os sistemas cadastrados em desenvolvimento e em produ&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Classifica&ccedil;&atilde;o:</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Quanto ao Desenvolvimento</B> - Classifica&ccedil;&atilde;o dos sistemas a serem consultados quanto<BR>
+ao desenvolvimento (opcional).</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"PP" - Sistemas pr&oacute;prios padronizados;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"PN" - Sistemas pr&oacute;prios n&atilde;o padronizados;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"TP" - Sistemas de terceiros padronizados;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"TN" - Sistemas de terceiros n&atilde;o padronizados.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso este campo n&atilde;o seja informado, n&atilde;o ser&aacute; considerada a classifica&ccedil;&atilde;o quanto ao desenvolvimento no momento de se selecionar os sistemas a serem apresentados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Quanto ao uso </B>- Classifica&ccedil;&atilde;o quanto ao uso dos sistemas a serem consultados (opcional).</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"E" - Sistemas de uso geral da empresa;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"I" - Sistemas de uso &aacute;rea de inform&aacute;tica;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"T" - Sistemas de uso do treinamento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"D" - Sistemas para demonstra&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Sistemas cuja sigla serve apenas para controle;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"H" - Sistemas de hierarquia funcional.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso este campo n&atilde;o seja informado, n&atilde;o ser&aacute; considerada a classifica&ccedil;&atilde;o quanto ao uso no momento de se selecionar os sistemas a serem apresentados.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Infex8">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o informados para cada um dos sistemas a serem apresentados:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;SIS</B> - C&oacute;digo do sistema.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;NOME</B> - Nome do sistema.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;CLASSIFICACAO:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Classifica&ccedil;&atilde;o do sistema quanto &agrave; situa&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Classifica&ccedil;&atilde;o do sistema quanto ao desenvolvimento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Classifica&ccedil;&atilde;o do sistema quanto ao uso.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Subro">Sub-rotinas da instala&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada para se obter a rela&ccedil;&atilde;o das sub-rotinas cadastradas no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argu09">Argumento da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, um argumento deve ser informado no menu de opera&ccedil;&atilde;o SUBINS, qual seja:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Sub-rotina - </B>C&oacute;digo da sub-rotina, no padr&atilde;o SADS, a partir da qual ser&atilde;o apresentadas as sub-rotinas cadastradas no reposit&oacute;rio de dados do SADS, ou brancos para obter a rela&ccedil;&atilde;o completa. </P></DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Infex9">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o informados para cada uma das sub-rotinas:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Codigo</B> - C&oacute;digo da sub-rotina.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Nome</B> - Nome da sub-rotina.</FONT> </P></DIR>
+</BODY>
+</HTML>

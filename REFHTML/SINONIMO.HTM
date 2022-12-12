@@ -1,0 +1,791 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<TITLE>Untitled</TITLE>
+
+<META NAME="GENERATOR" CONTENT="Internet Assistant for Microsoft Word 2.04z">
+</HEAD>
+<BODY BACKGROUND="doc_b.gif"><basefont size=2>
+<P>
+<A NAME="Sinon"><B><FONT SIZE=6>Sin&ocirc;nimo</FONT></B></A>
+<HR>
+<P>
+<A NAME="Conce"><B><FONT SIZE=5>Conceitua&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>
+
+<FONT SIZE=2>Um sin&ocirc;nimo &eacute; um atributo ou campo que,
+no seu processo de defini&ccedil;&atilde;o, &eacute; relacionado
+a um outro atributo ou campo qualquer j&aacute; existente para
+herdar as suas caracter&iacute;sticas de cadastramento.</FONT>
+<P>
+<FONT SIZE=2>Todo atributo ou campo pode ser definido como sin&ocirc;nimo
+de um outro j&aacute; existente e assim herdar suas caracter&iacute;sticas.</FONT>
+<P>
+<FONT SIZE=2>A defini&ccedil;&atilde;o de sin&ocirc;nimos evita
+recadastramentos id&ecirc;nticos e facilita as atividades de manuten&ccedil;&atilde;o,
+pois qualquer altera&ccedil;&atilde;o efetuada no atributo ser&aacute;
+propagada para os sin&ocirc;nimos a ele relacionados.</FONT>
+<P>
+<A NAME="Padro"><B><FONT SIZE=5>Padroniza&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>
+<FONT SIZE=2>Considerando que o sin&ocirc;nimo de um atributo
+&eacute; tamb&eacute;m um atributo e que o sin&ocirc;nimo de um
+campo &eacute; tamb&eacute;m um campo, &eacute; importante salientar
+que:</FONT>
+<P><FONT SIZE=2><dir><img src="Bullet5.gif" width=13 heigth=13>O mnem&ocirc;nico do sin&ocirc;nimo de um campo
+n&atilde;o possui nenhum padr&atilde;o, devendo apenas respeitar
+o tamanho de posi&ccedil;&otilde;es estabelecido (m&aacute;ximo
+de 11 e m&iacute;nimo de 5);</FONT>
+<P><FONT SIZE=2>
+<img src="Bullet5.gif" width=13 heigth=13>O mnem&ocirc;nico do sin&ocirc;nimo de um atributo
+pode ou n&atilde;o possuir padroniza&ccedil;&atilde;o. </FONT></dir>
+<P>
+<FONT SIZE=2>Detalhes a respeito de padroniza&ccedil;&atilde;o
+de sin&ocirc;nimo de atributo podem ser consultados no t&oacute;pico
+&quot;Padroniza&ccedil;&atilde;o&quot;, item &quot;Atributo&quot;,
+nesta se&ccedil;&atilde;o.</FONT>
+<P>
+<A NAME="Utili"><B><FONT SIZE=5>Utiliza&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>
+<FONT SIZE=2>O sin&ocirc;nimo de um atributo ou campo, ap&oacute;s
+ter sido definido no reposit&oacute;rio de dados, pode ser utilizado
+como um atributo ou campo qualquer para definir estruturas de
+&aacute;reas de </FONT><I><FONT SIZE=2 COLOR=#000000>work</FONT></I><FONT SIZE=2>
+de programas, de &aacute;reas de comunica&ccedil;&atilde;o de
+sub-rotina, de arquivos, de consist&ecirc;ncias, de </FONT><I><FONT SIZE=2 COLOR=#000000>datasets</FONT></I><FONT SIZE=2>,
+de entidades, de registros de uso geral, de relat&oacute;rios,
+de tabelas e de telas.</FONT>
+<P>
+<FONT SIZE=2>Um sin&ocirc;nimo nunca pode ser utilizado para definir
+outros atributos ou campos como sin&ocirc;nimo dele mesmo. Um
+exemplo pr&aacute;tico disto &eacute; que, n&atilde;o se pode
+ter um atributo &quot;A&quot; como sin&ocirc;nimo de &quot;B&quot;
+e este, por sua vez, sin&ocirc;nimo de &quot;C&quot;. Um atributo
+pode ter v&aacute;rios sin&ocirc;nimos relacionados a ele, por&eacute;m
+n&atilde;o &eacute; poss&iacute;vel definir um sin&ocirc;nimo
+de um outro sin&ocirc;nimo.</FONT>
+<P>
+<A NAME="Cadas"><B><FONT SIZE=5>Cadastramento</FONT></B></A>
+<HR>
+<P>
+<FONT SIZE=2>O processo de defini&ccedil;&atilde;o de um sin&ocirc;nimo
+s&oacute; &eacute; poss&iacute;vel a partir do cadastramento do
+sistema e do atributo ou campo que possui as caracter&iacute;sticas
+a serem herdadas por ele.</FONT>
+<P>
+<FONT SIZE=2>O SADS pode obrigar que atributos sejam sin&ocirc;nimos
+de atributos e campos sejam sin&ocirc;nimos de campos, n&atilde;o
+permitindo relacionamentos h&iacute;bridos. A exist&ecirc;ncia
+desta consist&ecirc;ncia metodol&oacute;gica entre sin&ocirc;nimos
+&eacute; opcional e deve ser parametrizada.</FONT>
+<P>
+<FONT SIZE=2>A tabela utilizada para esta parametriza&ccedil;&atilde;o
+&eacute; a SBPM5000 (Tabela de Par&acirc;metros Gerais). Considerando
+o argumento &quot;EMPCOD&quot; desta tabela e de acordo com o
+par&acirc;metro 6 - PAR-6 - informado para este argumento, tem-se
+as seguintes possibilidades de consist&ecirc;ncias:</FONT>
+<P>
+<dir><img src="Bullet7.gif" width=13 heigth=13">
+<FONT SIZE=2>&quot;N&quot; - Indica que haver&aacute; consist&ecirc;ncia
+de sin&ocirc;nimos, ou seja, todo atributo s&oacute; pode ser
+sin&ocirc;nimo de atributo e todo campo s&oacute; pode ser sin&ocirc;nimo
+de campo</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;S&quot; - Indica que n&atilde;o haver&aacute;
+consist&ecirc;ncia de sin&ocirc;nimos, ou seja, um atributo pode
+ser sin&ocirc;nimo de um campo e um campo pode ser sin&ocirc;nimo
+de um atributo.</FONT></dir>
+<P>
+<FONT SIZE=2>Caso o par&acirc;metro 6 (PAR-6) n&atilde;o seja
+informado, a especifica&ccedil;&atilde;o de consist&ecirc;ncia
+de sin&ocirc;nimo ser&aacute; verificada no par&acirc;metro 5
+(PAR-5), que deve ser preenchido da seguinte forma:</FONT>
+<P><dir><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>PAR-5</FONT></B><FONT SIZE=2> -
+Indicador de consist&ecirc;ncia de entidades e de cadastramento
+de sin&ocirc;nimo.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;S&quot; - Caso seja desej&aacute;vel consist&ecirc;ncia
+no cadastramento de sin&ocirc;nimo, ou seja, atributo s&oacute;
+pode ser sin&ocirc;nimo de atributo e campo s&oacute; pode ser
+sin&ocirc;nimo de campo;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;N&quot; - Caso esta consist&ecirc;ncia n&atilde;o
+seja necess&aacute;ria.</FONT></dir>
+<P>
+<FONT SIZE=2>&Eacute; importante salientar que, na parametriza&ccedil;&atilde;o
+de consist&ecirc;ncia de cadastramento de sin&ocirc;nimo, o preenchimento
+dos par&acirc;metros 5 e 6 s&atilde;o inversos (mantendo compatibilidade
+com implementa&ccedil;&otilde;es anteriores do </FONT><I><FONT SIZE=2 COLOR=#000000>software</FONT></I><FONT SIZE=2>).
+</FONT>
+<P>
+<FONT SIZE=2>Para evitar conflitos com a parametriza&ccedil;&atilde;o
+de consist&ecirc;ncia de entidades, que tamb&eacute;m &eacute;
+efetuada no par&acirc;metro 5 (PAR-5) do c&oacute;digo 'EMPCOD&quot;,
+&eacute; interessante ent&atilde;o parametrizar a consist&ecirc;ncia
+de cadastramento de sin&ocirc;nimos sempre no par&acirc;metro
+6 (PAR-6).</FONT>
+<P>
+<FONT SIZE=2>Para sistemas pertencentes &agrave; tabela SBPM7002
+- Sistemas sem Valida&ccedil;&atilde;o e Metodologia - nenhuma
+consist&ecirc;ncia &eacute; efetuada, independentemente do cadastramento
+efetuado na tabela SBPM5000.</FONT>
+<P>
+<FONT SIZE=2>Para indicar que um sistema n&atilde;o possui metodologia
+e padroniza&ccedil;&atilde;o, deve-se inclui-lo na tabela SBPM7002,
+informando nela os seguintes campos:</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>SISTEMA</FONT></B><FONT SIZE=2>
+- C&oacute;digo do sistema no padr&atilde;o SADS (sss).</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>DESCRICAO</FONT></B><FONT SIZE=2>
+- Descri&ccedil;&atilde;o do sistema.</FONT>
+<P>
+<FONT SIZE=2>Detalhes a respeito da distin&ccedil;&atilde;o entre
+atributos e campos podem ser consultados no t&oacute;pico &quot;Defini&ccedil;&atilde;o&quot;,
+item &quot;Atributo&quot;, desta se&ccedil;&atilde;o.</FONT></dir>
+<P>
+<B><FONT SIZE=4>Roteiro</FONT></B>
+<P>
+<FONT SIZE=2>Para cadastrar um sin&ocirc;nimo, as seguintes fun&ccedil;&otilde;es
+devem ser executadas:</FONT><dir>
+<P><img src="Bullet5.gif" width=13 heigth=13>Defini&ccedil;&atilde;o de sin&ocirc;nimo;</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>Cadastramento de validades de sin&ocirc;nimo, caso
+ele seja uma vari&aacute;vel definida<BR>
+(SINTAXE = &quot;VD&quot;); (Opcional)</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>Descri&ccedil;&atilde;o de sin&ocirc;nimo (Opcional).</FONT></dir>
+<P>
+<P>
+<A NAME="Defsin"><B><FONT SIZE=5>Defini&ccedil;&atilde;o de sin&ocirc;nimo</FONT></B></A>
+<P><dir>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B>
+<P><dir><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>SISTEMA</FONT></B><FONT SIZE=2>
+- Sistema no qual o sin&ocirc;nimo ser&aacute; definido, no padr&atilde;o
+SADS (sss).</FONT>
+<P>
+<FONT SIZE=2>Todo sin&ocirc;nimo tem de estar, obrigatoriamente,
+relacionado a um sistema.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>CODIGO</FONT></B><FONT SIZE=2> -
+Mnem&ocirc;nico do sin&ocirc;nimo.</FONT>
+<P>
+<FONT SIZE=2>Se o sin&ocirc;nimo for um campo, a &uacute;nica
+regra a ser seguida &eacute; que ele deve possuir de 5 (cinco)
+a 11 (onze) caracteres.</FONT>
+<P>
+<FONT SIZE=2>O mnem&ocirc;nico do sin&ocirc;nimo deve estar informado
+segundo as regras de padroniza&ccedil;&atilde;o adotada para a
+instala&ccedil;&atilde;o. </FONT>
+<P>
+<FONT SIZE=2>Detalhes a respeito da padroniza&ccedil;&atilde;o
+de mnem&ocirc;nicos de sin&ocirc;nimos de atributos podem ser
+consultados no t&oacute;pico &quot;Padroniza&ccedil;&atilde;o&quot;,
+item &quot;Atributo&quot;, nesta se&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>&Eacute; permitido definir sin&ocirc;nimos, atributos
+e campos com um mesmo mnem&ocirc;nico, por&eacute;m em sistemas
+diferentes.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>COD.EXTERNO</FONT></B><FONT SIZE=2>
+- C&oacute;digo externo do sin&ocirc;nimo.</FONT>
+<P>
+<FONT SIZE=2>Este c&oacute;digo pode ser informado no caso da
+instala&ccedil;&atilde;o adotar um padr&atilde;o de codifica&ccedil;&atilde;o
+diferente do padr&atilde;o SADS ou quando houver integra&ccedil;&atilde;o
+entre o ET-SADS e o SADS. Neste caso, o c&oacute;digo externo
+do sin&ocirc;nimo no SADS conter&aacute; o c&oacute;digo do sin&ocirc;nimo
+no ET-SADS.</FONT>
+<P>
+<FONT SIZE=2>Exceto pela integra&ccedil;&atilde;o ET-SADS X SADS,
+o c&oacute;digo externo &eacute; puramente documental, ou seja,
+somente ser&aacute; utilizado para informar, nos relat&oacute;rios
+e manuais, a qual elemento externo ao SADS o sin&ocirc;nimo se
+refere.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>NOME</FONT></B><FONT SIZE=2> - Descri&ccedil;&atilde;o resumida do sin&ocirc;nimo.</FONT>
+<P>
+<FONT SIZE=2>O nome tem o objetivo de identificar e explicar,
+de maneira reduzida, a que se refere o sin&ocirc;nimo.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>SINONIMO DE</FONT></B><FONT SIZE=2>:</FONT>
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>SISTEMA</FONT></B><FONT SIZE=2>
+- C&oacute;digo do sistema do atributo ou campo do qual o sin&ocirc;nimo
+ir&aacute; herdar<BR>
+todas as suas carater&iacute;sticas.</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>ATRIBUTO/CAMPO</FONT></B><FONT SIZE=2>
+- Mnem&ocirc;nico do atributo ou campo a partir do qual est&aacute;
+se<BR>
+definindo o sin&ocirc;nimo.</FONT></DIR>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>SINTAXE</FONT></B><FONT SIZE=2>
+- Tipo da vari&aacute;vel do sin&ocirc;nimo.</FONT>
+<P><DIR><FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;VL&quot; (Vari&aacute;vel livre) - Significa
+que o sin&ocirc;nimo ir&aacute; herdar todas as caracter&iacute;sticas
+do atributo ou campo original;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;VD&quot; (Vari&aacute;vel definida) - Significa
+que as validades originais do atributo ou campo ser&atilde;o restringidas
+para o sin&ocirc;nimo que est&aacute; sendo definido.</FONT></dir>
+<P>
+<FONT SIZE=2>Um sin&ocirc;nimo de um atributo de SINTAXE &quot;VD&quot;
+n&atilde;o pode ultrapassar as validades definidas para o atributo
+original, ou seja, as validades do sin&ocirc;nimo devem ser as
+mesmas do atributo original ou um subconjunto delas.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>TAB/SUB</FONT></B><FONT SIZE=2>
+- Tabela ou sub-rotina contra o qual o sin&ocirc;nimo ser&aacute;
+validado.</FONT>
+<P>
+<FONT SIZE=2>Tanto a tabela quanto a sub-rotina para a valida&ccedil;&atilde;o
+do sin&ocirc;nimo devem estar previamente cadastradas no reposit&oacute;rio
+de dados e ser informadas no padr&atilde;o SADS &quot;sssMnnnn&quot;
+e &quot;sssSxx&quot;, respectivamente.</FONT>
+<P>
+<FONT SIZE=2>Se um sin&ocirc;nimo for validado contra uma tabela,
+toda vez que um valor lhe for atribu&iacute;do, a consist&ecirc;ncia
+geral ir&aacute; testar se este valor &eacute; chave de um dos
+itens desta tabela. Da mesma forma, se um sin&ocirc;nimo for validado
+contra uma sub-rotina, a consist&ecirc;ncia ir&aacute; cham&aacute;-la
+para testar a validade do conte&uacute;do do sin&ocirc;nimo. Neste
+caso, a sub-rotina deve obedecer certos padr&otilde;es definidos
+pela consist&ecirc;ncia geral, que est&atilde;o especificados
+no item &quot;Consist&ecirc;ncia geral&quot;, nesta se&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Se uma tabela ou sub-rotina for informada para o
+sin&ocirc;nimo e alguma outra estiver informada para o atributo
+original ao qual este est&aacute; relacionado, ambas as verifica&ccedil;&otilde;es
+ser&atilde;o executadas pela consist&ecirc;ncia geral.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>OPERACAO</FONT></B><FONT SIZE=2>
+- Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o ao
+sin&ocirc;nimo de atributo ou campo.</FONT>
+<P>
+<FONT SIZE=2>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o
+as seguintes:</FONT>
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;INC&quot; (Inclus&atilde;o);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;ALT&quot; (Altera&ccedil;&atilde;o);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;EXC&quot; (Exclus&atilde;o);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;CON&quot; (Consulta).</FONT></dir></dir></dir>
+<P>
+<A NAME="Cadval"><B><FONT SIZE=5>Cadastramento de validades de
+sin&ocirc;nimo</FONT></B></A>
+<P>
+<FONT SIZE=2>Validades de sin&ocirc;nimo s&atilde;o os valores
+ou intervalos de valores que os sin&ocirc;nimos poder&atilde;o
+assumir.</FONT>
+<P><dir><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Exemplo de validades de sin&ocirc;nimos:</FONT></B><FONT SIZE=2>
+</FONT>
+<P><dir><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>Maior que 10 e menor que 50</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>Igual a 1, 2 ou 3</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>Diferente de &quot;MARIA&quot;</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>Diferente de &quot;A&quot;, &quot;B&quot; e &quot;C&quot;</FONT></dir></dir>
+<P>
+<FONT SIZE=2>Para cadastrar as validades de um sin&ocirc;nimo,
+&eacute; necess&aacute;rio que o mesmo j&aacute; esteja definido
+no reposit&oacute;rio de dados do SADS e que seja uma vari&aacute;vel
+definida (SINTAXE = &quot;VD&quot;).</FONT>
+<P>
+<FONT SIZE=2>As validades definidas para um sin&ocirc;nimo n&atilde;o
+eliminam e nem podem extrapolar &agrave;quelas j&aacute; definidas
+para o atributo ou campo do qual este foi originado. &Eacute;
+permitido apenas que as validades do sin&ocirc;nimo herdem, totalmente,
+ou restrinjam as originais. </FONT>
+<P>
+<FONT SIZE=2>As validades s&atilde;o utilizadas para definir valores
+ou intervalos de valores poss&iacute;veis para o sin&ocirc;nimo.</FONT>
+<P>
+<FONT SIZE=2>Se um sin&ocirc;nimo possuir validades, sempre quando
+um valor lhe for atribu&iacute;do em tabelas ou telas de entrada
+de dados, a consist&ecirc;ncia geral ir&aacute; testar se este
+valor corresponde a um dos valores v&aacute;lidos definidos para
+ele.</FONT>
+<P>
+<FONT SIZE=2>Caso o valor atribu&iacute;do n&atilde;o seja v&aacute;lido,
+a consist&ecirc;ncia geral ir&aacute; acusar o erro. Os valores
+v&aacute;lidos para o sin&ocirc;nimo e a sua defini&ccedil;&atilde;o
+podem ser consultados atrav&eacute;s do </FONT><I><FONT SIZE=2 COLOR=#000000>help
+on-line</FONT></I><FONT SIZE=2>.</FONT>
+<P><dir>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B>
+<P><dir><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>SISTEMA</FONT></B><FONT SIZE=2>
+- Sistema no qual o sin&ocirc;nimo est&aacute; definido.</FONT>
+<P>
+<FONT SIZE=2>Todo sin&ocirc;nimo tem de estar, obrigatoriamente,
+relacionado a um sistema.</FONT>
+<P>
+<FONT SIZE=2>O pr&oacute;ximo campo a ser exibido na tela vai
+depender se o cadastramento do sin&ocirc;nimo &eacute; relativo
+a um atributo ou campo. </FONT>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>ATRIBUTO - </FONT></B><FONT SIZE=2>Mnem&ocirc;nico
+do sin&ocirc;nimo.</FONT>
+<P>
+<FONT SIZE=2>Para cada uma das validades do sin&ocirc;nimo s&atilde;o
+apresentados os seguintes campos:</FONT>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>SEQ </FONT></B><FONT SIZE=2>- N&uacute;mero
+para posicionamento das validades do sin&ocirc;nimo na sequ&ecirc;ncia
+em que os testes ser&atilde;o executados.</FONT>
+<P>
+<FONT SIZE=2>O primeiro n&uacute;mero &eacute; &quot;0010&quot;
+e os demais, acrescidos de 10.</FONT>
+<P>
+<FONT SIZE=2>Para incluir uma validade entre duas outras j&aacute;
+inclu&iacute;das, &eacute; necess&aacute;rio preencher uma linha
+que esteja em branco e alterar o n&uacute;mero sequencial desta
+linha para um n&uacute;mero entre os j&aacute; informados. O SADS
+reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima
+opera&ccedil;&atilde;o, as validades j&aacute; estar&atilde;o
+na nova ordem.</FONT>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>E/O</FONT></B><FONT SIZE=2> - Operador
+l&oacute;gico utilizado para concatenar as express&otilde;es que
+definem as validades do sin&ocirc;nimo.</FONT>
+<P>
+<FONT SIZE=2>Os operadores l&oacute;gicos poss&iacute;veis s&atilde;o
+os seguintes :</FONT>
+<P><dir><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;E&quot; - Operador l&oacute;gico E (</FONT><I><FONT SIZE=2 COLOR=#000000>and</FONT></I><FONT SIZE=2>);</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;O&quot; - Operador l&oacute;gico Ou (</FONT><I><FONT SIZE=2 COLOR=#000000>or</FONT></I><FONT SIZE=2>).</FONT></dir>
+<P>
+<FONT SIZE=2>A seguir, &eacute; apresentado um exemplo de concatena&ccedil;&atilde;o
+l&oacute;gica na composi&ccedil;&atilde;o das validades de um
+sin&ocirc;nimo:</FONT>
+<P>
+O atributo CDCCOD (c&oacute;digo do centro de custo)
+pode assumir, em determinada empresa, valores de 10000 a 50000.
+Os &uacute;nicos centros de custo que podem solicitar servi&ccedil;os
+s&atilde;o os de n&uacute;mero 40000 e 50000.</FONT>
+<P>
+<FONT SIZE=2>O atributo CDCCODSOL (c&oacute;digo do centro de
+custo solicitante) pode ser definido como sin&ocirc;nimo do atributo
+CDCCOD e ter suas validades restringidas da seguinte forma:</FONT>
+<Pre><FONT SIZE=3>
+               ATRIBUTO CDCCODSOL (sin&ocirc;nimo de CDCCOD)
+               Validades :         Igual a 40000 
+                                  OU Igual a 50000 
+</pre></FONT>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>OPER</FONT></B><FONT SIZE=2> - Operador
+relacional utilizado nas express&otilde;es que definem as validades
+do sin&ocirc;nimo.</FONT>
+<P>
+<FONT SIZE=2>Os operadores relacionais poss&iacute;veis s&atilde;o
+os seguintes :</FONT>
+<P><dir><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;EQ&quot; - Igual a (</FONT><I><FONT SIZE=2 COLOR=#000000>equal</FONT></I><FONT SIZE=2>);</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;NE&quot; - Diferente de (</FONT><I><FONT SIZE=2 COLOR=#000000>not
+equal</FONT></I><FONT SIZE=2>);</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;GE&quot; - Maior que ou igual a (</FONT><I><FONT SIZE=2 COLOR=#000000>greater
+or equal</FONT></I><FONT SIZE=2>);</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;GT&quot; - Maior que (</FONT><I><FONT SIZE=2 COLOR=#000000>greater
+than</FONT></I><FONT SIZE=2>);</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;LE&quot; - Menor que ou igual a (</FONT><I><FONT SIZE=2 COLOR=#000000>less
+or equal</FONT></I><FONT SIZE=2>);</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;LT&quot; - Menor que (</FONT><I><FONT SIZE=2 COLOR=#000000>less
+than</FONT></I><FONT SIZE=2>).</FONT></dir>
+<P>
+<FONT SIZE=2>Aproveitando o exemplo citado anteriormente na explica&ccedil;&atilde;o
+do campo E/O, o operador relacional seria utilizado das seguintes
+formas:</FONT>
+<Pre><FONT SIZE=3>
+        ATRIBUTO CDCCODSOL (sin&ocirc;nimo de CDCCOD) 
+        Validades :        EQ 40000
+                          OU EQ 50000
+</pre>
+</FONT>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>OPERANDO</FONT></B><FONT SIZE=2>
+- Valor que define uma validade poss&iacute;vel para o sin&ocirc;nimo.</FONT>
+<P>
+<FONT SIZE=2>O operando deve ser informado alinhado de acordo
+com o formato do sin&ocirc;nimo, da seguinte forma:</FONT>
+<P><dir><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>Se o sin&ocirc;nimo for num&eacute;rico, o operando
+tamb&eacute;m deve ser num&eacute;rico e seu conte&uacute;do tem
+de ser ajustado &agrave; direita. N&atilde;o &eacute; necess&aacute;rio
+preench&ecirc;-lo com zeros &agrave; esquerda.</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>Se o sin&ocirc;nimo for alfanum&eacute;rico ou
+alfab&eacute;tico, o operando tamb&eacute;m deve ser alfanum&eacute;rico
+ou alfab&eacute;tico e seu conte&uacute;do tem de ser ajustado
+&agrave; esquerda, com brancos &agrave; direita.</FONT>
+<P>
+<FONT SIZE=2>Tomando novamente o exemplo apresentado na explica&ccedil;&atilde;o
+do campo E/O, os operandos utilizados s&atilde;o: 40000 e 50000.</FONT></dir>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>DESCRICAO</FONT></B><FONT SIZE=2>
+- Descri&ccedil;&atilde;o ou explica&ccedil;&atilde;o resumida
+do operando.</FONT>
+<P>
+<FONT SIZE=2>Utilizado para descrever o valor informado no operando.</FONT>
+<P>
+<FONT SIZE=2>Retomando o exemplo apresentado na explica&ccedil;&atilde;o
+do campo E/O, pode-se cadastrar as seguintes descri&ccedil;&otilde;es:</FONT>
+<Pre><FONT SIZE=3>
+               ATRIBUTO CDCCODSOL (sin&ocirc;nimo de CDCCOD) 
+               Validades:       EQ 40000 Descri&ccedil;&atilde;o:&quot;Departamento de Manuten&ccedil;&atilde;o&quot;
+                              OU  EQ 50000 Descri&ccedil;&atilde;o: &quot;Departamento de Servi&ccedil;os&quot; 
+</FONT></pre>
+<P>
+<FONT SIZE=2>A descri&ccedil;&atilde;o n&atilde;o &eacute; obrigat&oacute;ria,
+por&eacute;m, quando poss&iacute;vel, ela deve ser informada,
+pois ser&aacute; apresentada quando um </FONT><I><FONT SIZE=2 COLOR=#000000>help
+on-line</FONT></I><FONT SIZE=2> do sin&ocirc;nimo for solicitado
+e, tamb&eacute;m, na composi&ccedil;&atilde;o dos manuais do sistema.</FONT>
+<P>
+<FONT SIZE=2>Ap&oacute;s as ocorr&ecirc;ncias, s&atilde;o apresentadas
+as seguintes informa&ccedil;&otilde;es:</FONT>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>CONTINUA (S/N)</FONT></B><FONT SIZE=2>
+- Indicador de continuidade de opera&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P><dir><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;S&quot; - Nova tela ser&aacute; aberta para
+continua&ccedil;&atilde;o da opera&ccedil;&atilde;o;</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;N&quot; - &Uacute;ltima tela para opera&ccedil;&atilde;o
+sobre as validades do sin&ocirc;nimo.</FONT></dir>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>OPERACAO </FONT></B><FONT SIZE=2>-
+Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave;s
+validades de sin&ocirc;nimo.</FONT>
+<P>
+<FONT SIZE=2>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o
+as seguintes:</FONT>
+<P><dir><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;INC&quot; (Inclus&atilde;o);</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;ALT&quot; (Altera&ccedil;&atilde;o);</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;EXC&quot; (Exclus&atilde;o);</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;CON&quot; (Consulta).</FONT></dir></dir></dir></dir>
+<P>
+<A NAME="Descsi"><B><FONT SIZE=5>Descri&ccedil;&atilde;o de sin&ocirc;nimo</FONT></B></A>
+<P>
+<FONT SIZE=2>A descri&ccedil;&atilde;o de um sin&ocirc;nimo &eacute;
+uma fun&ccedil;&atilde;o dispon&iacute;vel pelo SADS que auxilia
+na documenta&ccedil;&atilde;o do sistema.</FONT>
+<P>
+<FONT SIZE=2>Est&atilde;o dispon&iacute;veis 99 p&aacute;ginas
+para que possa ser feita a descri&ccedil;&atilde;o detalhada do
+sin&ocirc;nimo. Cada p&aacute;gina possui 10 linhas de 78 posi&ccedil;&otilde;es,
+totalizando 780 por p&aacute;gina de descri&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>A descri&ccedil;&atilde;o de um sin&ocirc;nimo no
+SADS &eacute; livre de qualquer padr&atilde;o, podendo ser cadastrada
+de acordo com a conveni&ecirc;ncia e necessidade de cada usu&aacute;rio.</FONT>
+<P>
+<FONT SIZE=2>As informa&ccedil;&otilde;es relativas &agrave; descri&ccedil;&atilde;o
+do sin&ocirc;nimo s&atilde;o puramente documentais, pois podem
+fazer parte dos relat&oacute;rios e manuais emitidos pelo SADS,
+sendo apresentadas sempre que um </FONT><I><FONT SIZE=2 COLOR=#000000>help
+on-line</FONT></I><FONT SIZE=2> for solicitado para o sin&ocirc;nimo.</FONT>
+<P>
+<FONT SIZE=2>Para descrever um sin&ocirc;nimo, &eacute; necess&aacute;rio
+que o mesmo j&aacute; esteja cadastrado no reposit&oacute;rio
+de dados do SADS.</FONT>
+<P><dir>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B>
+<P><dir><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>SISTEMA</FONT></B><FONT SIZE=2>
+- Sistema no qual o sin&ocirc;nimo est&aacute; definido </FONT>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>ATRIBUTO</FONT></B><FONT SIZE=2>
+- Mnem&ocirc;nico do sin&ocirc;nimo cuja descri&ccedil;&atilde;o
+ser&aacute; cadastrada</FONT>
+<P>
+<FONT SIZE=2>Este campo ser&aacute; exibido dependendo de para
+qual destes elementos foi cadastrado o sin&ocirc;nimo.</FONT>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>DESCRICAO</FONT></B><FONT SIZE=2>
+- Descri&ccedil;&atilde;o detalhada do sin&ocirc;nimo.</FONT>
+<P>
+<FONT SIZE=2>Est&atilde;o dispon&iacute;veis 99 p&aacute;ginas,
+com 10 linhas cada, para esta descri&ccedil;&atilde;o.</FONT>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>CONTINUA</FONT></B><FONT SIZE=2>
+- Indicador de continuidade da opera&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>As possibilidades de preenchimento deste campo s&atilde;o
+as seguintes:</FONT>
+<P><dir><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;S&quot; - Nova tela ser&aacute; aberta para
+prosseguir descrevendo o sin&ocirc;nimo;</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;N&quot; - Ultima tela da descri&ccedil;&atilde;o
+do sin&ocirc;nimo.</FONT></dir>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>OPERACAO</FONT></B><FONT SIZE=2>
+- Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave;
+descri&ccedil;&atilde;o do sin&ocirc;nimo.</FONT>
+<P>
+<FONT SIZE=2>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o
+as seguintes:</FONT>
+<P><dir><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;INC&quot; (Inclus&atilde;o);</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;ALT&quot; (Altera&ccedil;&atilde;o);</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;EXC&quot; (Exclus&atilde;o);</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;CON&quot; (Consulta).</FONT></dir></dir></dir>
+<P>
+<A NAME="Funca"><B><FONT SIZE=5>Fun&ccedil;&otilde;es de apoio</FONT></B></A>
+<HR>
+<P>
+<A NAME="Espsin"><FONT SIZE=5 COLOR=#000000>Espec&iacute;ficas
+de sin&ocirc;nimo</FONT></A>
+<P>
+<A NAME="Dupsin"><FONT SIZE=4 COLOR=#000000>Duplica&ccedil;&atilde;o
+de sin&ocirc;nimo</FONT></A>
+<P>
+<FONT SIZE=2>O SADS permite que seja definido um novo sin&ocirc;nimo
+com as mesmas caracter&iacute;sticas (tabela/sub-rotina, validades
+e descri&ccedil;&atilde;o) de um sin&ocirc;nimo j&aacute; definido.</FONT>
+<P>
+<FONT SIZE=2>Para cadastrar sin&ocirc;nimo a partir de outro sin&ocirc;nimo,
+&eacute; necess&aacute;rio que o sin&ocirc;nimo que ter&aacute;
+suas caracter&iacute;sticas duplicadas esteja cadastrado no reposit&oacute;rio
+de dados do SADS e que o novo sin&ocirc;nimo n&atilde;o esteja
+cadastrado. Se o sin&ocirc;nimo for de atributo, para que haja
+consist&ecirc;ncia entre entidades e atributos, ele deve estar
+definido como provis&oacute;rio na estrutura de sua entidade original
+(NDEF = &quot;P&quot;). (Ver t&oacute;pico &quot;Cadastramento&quot;,
+neste item).</FONT>
+<P>
+<FONT SIZE=2>O sin&ocirc;nimo novo n&atilde;o ser&aacute; criado
+como sin&ocirc;nimo do sin&ocirc;nimo, mas ambos ser&atilde;o
+sin&ocirc;nimos do mesmo atributo ou campo original.</FONT>
+<P>
+<FONT SIZE=2>O mnem&ocirc;nico do novo sin&ocirc;nimo poder&aacute;
+ser validado conforme os padr&otilde;es adotados para a instala&ccedil;&atilde;o
+(Ver t&oacute;pico &quot;Padroniza&ccedil;&atilde;o&quot;, item
+&quot;Sin&ocirc;nimo&quot;).</FONT>
+<P>
+<FONT SIZE=2>A duplica&ccedil;&atilde;o de sin&ocirc;nimo n&atilde;o
+est&aacute; associada a nenhuma tela de processamento. Para efetu&aacute;-la,
+basta transmitir os argumentos do menu de opera&ccedil;&atilde;o
+&quot;DUPCAM&quot; ou &quot;DUPATR&quot;, cujos campos est&atilde;o
+explicados a seguir:</FONT>
+<P><dir>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B>
+<P><dir><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Original:</FONT></B>
+<P><blockquote><img src="bullet7.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Sistema</FONT></B><FONT SIZE=2>
+- Sistema do sin&ocirc;nimo a ser duplicado.</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Atributo/Campo</FONT></B><FONT SIZE=2>
+- C&oacute;digo do sin&ocirc;nimo a ser duplicado.</FONT></blocquote></dir>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Copia:</FONT></B>
+<P><blockquote><img src="bullet7.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Sistema</FONT></B><FONT SIZE=2>
+- Sistema para o qual ser&aacute; criado o novo sin&ocirc;nimo.</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Atributo/Campo</FONT></B><FONT SIZE=2>
+- C&oacute;digo do sin&ocirc;nimo que ser&aacute; criado.</FONT></blockquote></dir></dir></blockquote>
+<P>
+<A NAME="Trosin"><B><FONT SIZE=4>Troca c&oacute;digo de sin&ocirc;nimo</FONT></B></A>
+<P>
+<FONT SIZE=2>A troca do c&oacute;digo de um sin&ocirc;nimo compreende,
+al&eacute;m da troca propriamente dita, a sua substitui&ccedil;&atilde;o
+em todas as estruturas de dados que o referenciarem.</FONT>
+<P>
+<FONT SIZE=2>Para trocar o c&oacute;digo de um sin&ocirc;nimo,
+&eacute; necess&aacute;rio que o sin&ocirc;nimo atual esteja cadastrado
+e que o novo sin&ocirc;nimo n&atilde;o esteja cadastrado. Se o
+sin&ocirc;nimo for de atributo, para que haja consist&ecirc;ncia
+entre entidades e atributos, ele deve estar definido como provis&oacute;rio
+na estrutura de sua entidade original (NDEF = &quot;P&quot;).
+(Ver t&oacute;pico &quot;Cadastramento&quot;, neste mesmo item).</FONT>
+<P>
+<FONT SIZE=2>O mnem&ocirc;nico do novo sin&ocirc;nimo poder&aacute;
+ser validado conforme os padr&otilde;es adotados em sua instala&ccedil;&atilde;o
+(Ver t&oacute;pico &quot;Padroniza&ccedil;&atilde;o&quot;, deste
+mesmo item).</FONT>
+<P>
+<FONT SIZE=2>Se o sin&ocirc;nimo atual estiver cadastrado em alguma
+estrutura, deve-se informar a op&ccedil;&atilde;o de atualiza&ccedil;&atilde;o
+de suas estruturas no momento da troca do c&oacute;digo para que
+a mesma possa ser efetuada. Caso contr&aacute;rio, a troca n&atilde;o
+ser&aacute; permitida.</FONT>
+<P>
+<FONT SIZE=2>A troca de c&oacute;digo de sin&ocirc;nimo n&atilde;o
+est&aacute; associada a nenhuma tela de processamento. Para efetu&aacute;-la,
+basta transmitir os argumentos do menu de opera&ccedil;&atilde;o
+&quot;TROCAM&quot; ou &quot;TROATR&quot;, cujos campos est&atilde;o
+explicados a seguir:</FONT>
+<P><dir>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B>
+<P><dir><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Atual:</FONT></B>
+<P><blockquote><img src="bullet7.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Sistema</FONT></B><FONT SIZE=2>
+- Sistema do sin&ocirc;nimo a ser trocado.</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Atributo/Campo </FONT></B><FONT SIZE=2>-
+C&oacute;digo do sin&ocirc;nimo a ser trocado.</FONT></blockquote>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Novo:</FONT></B>
+<P><blockquote><img src="bullet7.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Sistema</FONT></B><FONT SIZE=2>
+- Sistema para o qual o sin&ocirc;nimo ser&aacute; trocado.</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Atributo/Campo</FONT></B><FONT SIZE=2>
+- C&oacute;digo para o qual o sin&ocirc;nimo ser&aacute; trocado.</FONT></blockquote>
+<P>
+<B><FONT SIZE=2 COLOR=#000000>Informe &quot;S&quot; para atualizar
+estruturas</FONT></B><FONT SIZE=2> - Indicador de atualiza&ccedil;&atilde;o
+de estruturas nas quais o sin&ocirc;nimo atual est&aacute; sendo
+referenciado.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os valores:</FONT>
+<P><dir><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;S&quot; - Indica que o c&oacute;digo atual
+do sin&ocirc;nimo ser&aacute; trocado pelo novo em todas as estruturas
+em que ele estiver sendo referenciado;</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;N&quot; - Indica que o c&oacute;digo do sin&ocirc;nimo
+n&atilde;o ser&aacute; atualizado nas estruturas em que ele estiver
+sendo referenciado. </FONT></dir>
+<P>
+<FONT SIZE=2>Neste caso, se o sin&ocirc;nimo atual estiver cadastrado
+em alguma estrutura, a troca n&atilde;o ser&aacute; efetuada.</FONT></dir></dir>
+<P><A NAME="Transf"><b><FONT SIZE=4 COLOR=#000000>Transforma&ccedil;&atilde;o
+de atributo/campo em sin&ocirc;nimo e vice-versa</b></FONT></A>
+<P>
+<FONT SIZE=2>O SADS permite que um atributo ou campo seja transformado
+em sin&ocirc;nimo de um atributo ou campo j&aacute; existente.
+Deste modo, ele herdar&aacute; todas as caracter&iacute;sticas
+(formato, tamanho, sintaxe, validades e etc) do atributo ou campo
+original. Permite, tamb&eacute;m, que um sin&ocirc;nimo volte
+novamente &agrave; condi&ccedil;&atilde;o de atributo ou campo.
+</FONT>
+<P>
+<FONT SIZE=2>Para efetuar estas opera&ccedil;&otilde;es, ambos
+os atributos/campos devem estar cadastrados no reposit&oacute;rio
+de dados do SADS.</FONT>
+<P>
+<FONT SIZE=2>A tranforma&ccedil;&atilde;o de atributo ou campo
+em sin&ocirc;nimo n&atilde;o est&aacute; associada a nenhuma tela
+de processamento. Para efetu&aacute;-la, basta transmitir os argumentos
+do menu de opera&ccedil;&atilde;o &quot;TROCAM&quot; ou &quot;TROATR&quot;,
+cujos campos est&atilde;o explicados a seguir:</FONT>
+<P><dir>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B>
+<P>
+<FONT SIZE=2>As constantes desta tela podem variar, dependendo
+se o sin&ocirc;nimo for de um atributo (ATR) ou de um campo (CAM).</FONT>
+<P><dir><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Operacao (SIN/ATR)</FONT></B><FONT SIZE=2>-
+Opera&ccedil;&atilde;o a ser efetuada sobre o sin&ocirc;nimo informado.
+</FONT>
+<P>
+<FONT SIZE=2>Podem ser informados os seguintes valores:</FONT>
+<P><dir><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;SIN&quot; - Para transformar um atributo em
+sin&ocirc;nimo;</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<FONT SIZE=2>&quot;ATR&quot; - Para transformar um sin&ocirc;nimo
+em atributo.</FONT></dir>
+<P>
+<FONT SIZE=2>O atributo ou campo que possui as caracter&iacute;sticas
+a serem herdadas, atrav&eacute;s da opera&ccedil;&atilde;o &quot;SIN&quot;,
+n&atilde;o pode ser sin&ocirc;nimo de outro atributo ou campo.</FONT>
+<P>
+<FONT SIZE=2>Para a opera&ccedil;&atilde;o &quot;SIN&quot;, ser&aacute;
+criado um relacionamento entre o atributo ou campo e o sin&ocirc;nimo
+e, neste caso, o atributo ou campo, sempre que for referenciado,
+herdar&aacute; as caracter&iacute;sticas do sin&ocirc;nimo. </FONT>
+<P>
+<FONT SIZE=2>Para a opera&ccedil;&atilde;o &quot;ATR&quot;, as
+caracter&iacute;sticas do sin&ocirc;nimo ser&atilde;o copiadas
+para o atributo e o relacionamento entre eles ser&aacute; desfeito.</FONT>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Atributo:</FONT></B>
+<P><dir><img src="bullet7.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Sistema</FONT></B><FONT SIZE=2>
+- Sistema do atributo ou campo a ser transformado em sin&ocirc;nimo
+ou do sin&ocirc;nimo a ser transformado em atributo ou campo.</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Codigo</FONT></B><FONT SIZE=2> -
+C&oacute;digo do atributo ou campo a ser transformado em sin&ocirc;nimo
+ou do sin&ocirc;nimo a ser transformado em atributo ou campo.</FONT></dir>
+<P><img src="bullet5.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Sinonimo de:</FONT></B>
+<P><dir><img src="bullet7.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Sistema</FONT></B><FONT SIZE=2>
+- Sistema do atributo ou campo original a partir do qual ser&aacute;
+criado o sin&ocirc;nimo.</FONT>
+<P><img src="bullet7.gif" width=13 height=13>
+<B><FONT SIZE=2 COLOR=#000000>Atributo </FONT></B><FONT SIZE=2>-
+C&oacute;digo do atributo ou campo original a partir do qual ser&aacute;
+criado o sin&ocirc;nimo.</FONT></dir>
+<P>
+<FONT SIZE=2>Estes campos (Sin&ocirc;nimo de: Sistema - Atributo)
+devem ser informados somente para a opera&ccedil;&atilde;o &quot;SIN&quot;.
+</FONT></dir></dir></dir>
+<P>
+<A NAME="Gener"><B><FONT SIZE=5>Gen&eacute;ricas aplic&aacute;veis
+aos sin&ocirc;nimos</FONT></B></A>
+<P><dir><img src="bullet5.gif" width=13 height=13><b>Utilit&aacute;rios:</FONT></B>
+<P><dir><img src="bullet7.gif" width=13 height=13>Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o
+de elemento;</FONT>
+<P><img src="bullet7.gif" width=13 height=13>Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o
+de elemento;</FONT></dir>
+<P><img src="bullet5.gif" width=13 height=13><b>Consultas:</FONT></B>
+<P><dir><img src="bullet7.gif" width=13 height=13>Consulta atributos por sistema;</FONT>
+<P><img src="bullet7.gif" width=13 height=13>Defini&ccedil;&atilde;o e validades de atributos;</FONT>
+<P><img src="bullet7.gif" width=13 height=13>Atributos por estrutura;</FONT>
+<P><img src="bullet7.gif" width=13 height=13>Defini&ccedil;&atilde;o dos atributos por sistema
+ou estrutura;</FONT>
+<P><img src="bullet7.gif" width=13 height=13>Descri&ccedil;&atilde;o de atributo.</FONT></dir>
+<P><img src="bullet5.gif" width=13 height=13><B><FONT SIZE=2 COLOR=#000000>Refer&ecirc;ncias cruzadas:</FONT></B>
+<P><dir><img src="bullet7.gif" width=13 height=13>Estruturas a que o atributo pertence;</FONT>
+<P><img src="bullet7.gif" width=13 height=13>Programas que utilizam o atributo;</FONT>
+<P><img src="bullet7.gif" width=13 height=13>Atributos que s&atilde;o sin&ocirc;nimos de um determinado
+atributo;</FONT>
+<P><img src="bullet7.gif" width=13 height=13>Atributos relacionados a um dom&iacute;nio.</FONT></dir>
+<P><img src="bullet5.gif" width=13 height=13><b>Informativos
+impressos:</FONT></B>
+<P><dir><img src="bullet7.gif" width=13 height=13>Lista de atributos por sistema;</FONT>
+<P><img src="bullet7.gif" width=13 height=13>Relat&oacute;rio de defini&ccedil;&atilde;o de atributos
+por estrutura ou sistema;</FONT>
+<P><img src="bullet7.gif" width=13 height=13>Lista a descri&ccedil;&atilde;o de atributo.</FONT></dir>
+<P>
+<FONT SIZE=2>Todos estes utilit&aacute;rios, consultas, refer&ecirc;ncias
+cruzadas e informativos impressos encontram-se detalhadamente
+descritos na Se&ccedil;&atilde;o III, &quot;Fun&ccedil;&otilde;es
+de apoio&quot;, neste manual.</FONT>
+</BODY>
+</HTML>

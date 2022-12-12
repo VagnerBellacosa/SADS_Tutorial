@@ -1,0 +1,448 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Arquivo</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+<basefont size=2>
+<B><FONT SIZE=6><P><A NAME="Arqui">Arquivo</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Conce">Conceitua&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Arquivo &eacute; um local onde s&atilde;o armazenadas, geralmente de forma tempor&aacute;ria, algumas informa&ccedil;&otilde;es que ser&atilde;o processadas pelo sistema.</FONT> </P>
+<FONT SIZE=2><P>Estas informa&ccedil;&otilde;es s&atilde;o armazenadas em registros que j&aacute; possuem uma estrutura pr&eacute;-definida. Cada registro representa um conjunto de dados atrav&eacute;s dos quais os programas adquirem ou gravam informa&ccedil;&otilde;es no arquivo. Para o SADS, um mesmo arquivo pode ter registros com estrutura de dados diferentes, por&eacute;m com o mesmo tamanho.</FONT> </P>
+<FONT SIZE=2><P>Para definir completamente um arquivo, &eacute; necess&aacute;rio efetuar a defini&ccedil;&atilde;o de suas especifica&ccedil;&otilde;es e o cadastramento das estruturas de seus registros.</FONT> </P>
+<FONT SIZE=2><P>A partir das informa&ccedil;&otilde;es cadastradas para o arquivo &eacute; gerada uma <I>library</I> para ser incorporada aos programas que fizerem acesso a ele ou que o atualizarem. No momento da gera&ccedil;&atilde;o da <I>library</I> do arquivo &eacute; efetuada a consist&ecirc;ncia contra o cadastramento do mesmo.</FONT> </P>
+<FONT SIZE=2><P>Existe um tipo especial de arquivo, os <I>port files</I>, que podem ser definidos no SADS para efetivar a comunica&ccedil;&atilde;o entre programas.</FONT> </P>
+<FONT SIZE=2><P>Os <I>port files</I> s&atilde;o arquivos l&oacute;gicos e podem ser utilizados de diversas maneiras, a saber:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<FONT SIZE=2>Em programa <I>batch</I>: deve-se declarar o arquivo <I>port</I> como recurso do programa;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;Em programa <I>host</I>: deve-se declarar o arquivo <I>port</I> na defini&ccedil;&atilde;o do <I>host</I>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;Em programa chamado: deve-se declarar o arquivo <I>port</I> como recurso do programa;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<FONT SIZE=2>Simultaneamente, no programa chamado e no <I>host</I>: deve-se declarar o arquivo tanto no <I>host</I> quanto no programa. Desta forma, as &aacute;reas reservadas para suas declara&ccedil;&otilde;es no programa chamado ser&atilde;o geradas como globais.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>A declara&ccedil;&atilde;o de um <I>port file</I>, em programas e <I>hosts</I>, resulta na gera&ccedil;&atilde;o de comandos <I>copy</I> das <I>libraries</I> do arquivo. O seu tratamento deve ser implementado atrav&eacute;s de m&oacute;dulos ou de <I>libraries</I> de <I>procedure</I> pelo pr&oacute;prio analista respons&aacute;vel.</FONT> </P>
+<FONT SIZE=2><P>Detalhes a respeito da utiliza&ccedil;&atilde;o de<I> port files</I> est&atilde;o descritos no "I/O SUBSYSTEM MANUAL", da UNISYS.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Padro">Padroniza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O c&oacute;digo padr&atilde;o adotado pelo SADS para identifica&ccedil;&atilde;o do arquivo &eacute; a seguinte:</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>"sssAnn"</B> onde </P>
+
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12><B>"sss"</B> &eacute; o c&oacute;digo afab&eacute;tico que identifica o sistema; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12><B>"A"</B> &eacute; a constante de arquivo e </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12><B>"xn" </B>&eacute; o sequencial acima de 50 ou vari&aacute;vel de A1 a Z9. </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Utili">Utiliza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Os arquivos s&atilde;o utilizados para armazenar informa&ccedil;&otilde;es, normalmente tempor&aacute;rias, que ser&atilde;o processadas pelo sistema.</FONT> </P>
+<FONT SIZE=2><P>Exemplos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<FONT SIZE=2>Arquivo com dados extra&iacute;dos de um <I>dataset</I>, para posterior emiss&atilde;o de relat&oacute;rio;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<FONT SIZE=2>Arquivo com dados a serem carregados em um <I>dataset</I>, para integra&ccedil;&atilde;o de sistemas.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Apesar dos arquivos serem definidos em um &uacute;nico sistema, eles podem funcionar como um elemento de integra&ccedil;&atilde;o entre dois ou mais sistemas.</FONT> </P>
+<FONT SIZE=2><P>No SADS, o arquivo pode ser utilizado como recurso de programas <I>on-line</I>, <I>batch</I> e sub-rotinas, e tamb&eacute;m na defini&ccedil;&atilde;o de <I>hosts</I>.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Cadas">Cadastramento</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Para cadastrar um arquivo, &eacute; necess&aacute;rio que o seu sistema j&aacute; esteja cadastrado no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<B><FONT SIZE=4><P>Roteiro</B></FONT> </P>
+<FONT SIZE=2><P>Um arquivo poder&aacute; ser criado a partir de um <I>dataset</I> ou a partir de uma entidade atrav&eacute;s das seguintes fun&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<FONT SIZE=2>Cria&ccedil;&atilde;o de arquivo a partir de <I>dataset</I>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<FONT SIZE=2>Cria&ccedil;&atilde;o de arquivo a partir de entidade;</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para altera&ccedil;&otilde;es do cadastramento gerado ou para a inclus&atilde;o de um arquivo diretamente no reposit&oacute;rio de dados, temos as seguintes fun&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<FONT SIZE=2>Defini&ccedil;&atilde;o de arquivo;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<FONT SIZE=2>Cadastramento de estrutura de arquivo;</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para complementa&ccedil;&otilde;es do cadastramento, temos as seguintes fun&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<FONT SIZE=2>Gera&ccedil;&atilde;o da <I>library </I>de arquivo;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<FONT SIZE=2>Libera&ccedil;&atilde;o da <I>library</I> de arquivo para produ&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Criarqd">Cria&ccedil;&atilde;o de arquivo a partir de dataset</A></B></FONT> </P>
+<FONT SIZE=2><P>O SADS permite criar um arquivo, suas especifica&ccedil;&otilde;es e as estruturas de seus registros, a partir de um <I>dataset</I>. Neste caso, o arquivo ser&aacute; a imagem desta estrutura DMSII e servir&aacute;, por exemplo, para armazenar seus dados temporariamente, para posterior opera&ccedil;&atilde;o de carga em outro <I>dataset</I> ou emiss&atilde;o de relat&oacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Para criar um arquivo a partir de um <I>dataset</I>, &eacute; necess&aacute;rio que o <I>dataset</I> j&aacute; esteja definido completamente no reposit&oacute;rio de dados.</FONT> </P>
+<FONT SIZE=2><P>O tamanho do registro do arquivo &eacute; calculado a partir do tamanho dos campos contidos na estrutura do <I>dataset</I>.</FONT> </P>
+<FONT SIZE=2><P>A gera&ccedil;&atilde;o de arquivo a partir de <I>dataset</I> n&atilde;o est&aacute; relacionada a nenhuma tela de processamento. Para efetu&aacute;-la, basta transmitir os argumentos do menu de opera&ccedil;&atilde;o "CRIARQDAT", cujos campos s&atilde;o explicados a seguir:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Arquivo</B> - C&oacute;digo do arquivo no padr&atilde;o SADS (sssAxx).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Dataset</B> - C&oacute;digo do <I>dataset</I> no padr&atilde;o SADS (sssBxx).</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Criarqe">Cria&ccedil;&atilde;o de arquivo a partir de entidade</A></B></FONT> </P>
+<FONT SIZE=2><P>O SADS permite criar um arquivo, suas especifica&ccedil;&otilde;es e a estrutura de registro, a partir de uma entidade.</FONT> </P>
+<FONT SIZE=2><P>Para criar um arquivo a partir de uma entidade, &eacute; necess&aacute;rio que a entidade j&aacute; esteja definida completamente no reposit&oacute;rio de dados.</FONT> </P>
+<FONT SIZE=2><P>O tamanho do registro do arquivo &eacute; calculado a partir do tamanho dos campos contidos na estrutura da entidade.</FONT> </P>
+<FONT SIZE=2><P>A gera&ccedil;&atilde;o de arquivo a partir de entidade n&atilde;o est&aacute; relacionada a nenhuma tela de processamento. Para efetu&aacute;-la, basta transmitir os argumentos do menu de opera&ccedil;&atilde;o "CRIARQENT", cujos campos s&atilde;o explicados a seguir:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Entidade</B> - C&oacute;digo da entidade no padr&atilde;o SADS (sssExxx).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Arquivo</B> - C&oacute;digo do arquivo no padr&atilde;o SADS (sssAxx).</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Defin">Defini&ccedil;&atilde;o de arquivo</A></B></FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>ARQUIVO</B> - C&oacute;digo do arquivo no padr&atilde;o SADS (sssAxx). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>NOME</B> - Descri&ccedil;&atilde;o resumida do arquivo. </P>
+<P>O nome tem o objetivo de identificar e explicar resumidamente a que se refere o arquivo. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>TIPOS DE REGISTROS</B> - N&uacute;mero de tipos de registros diferentes a serem armazenados no arquivo. </P>
+<P>Na <I>library</I> do arquivo, onde &eacute; gerada sua FD, ser&aacute; gerado um n&iacute;vel "01" para cada um dos tipos de registros cadastrados para o arquivo. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>TIPO DE ARQUIVO</B> - Classifica&ccedil;&atilde;o do arquivo quanto ao tempo de reten&ccedil;&atilde;o. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<B><P>"W"</B> - Para arquivo tempor&aacute;rio (<I>work</I>);</FONT> </P>
+<B><FONT SIZE=2><P>"F"</B> - Para arquivo fixo ou permanente.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>DISPOSITIVO FISICO</B> - Dispositivo f&iacute;sico no qual residir&aacute; o arquivo.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"F"</B> (Fita);</P>
+<B><P>"D"</B> (Disco);</P>
+<B><P>"C"</B> (Cart&atilde;o par&acirc;metro);</P>
+<B><P>"P"</B> <I>(Port file</I>).</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>ORGANIZACAO</B> - Par&acirc;metro a partir do qual ser&atilde;o gerados os atributos ORGANIZATION e ACCESS MODE do arquivo.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S"</B> (Sequencial) - Arquivo pass&iacute;vel somente de acessos sequenciais.</FONT> </P>
+<FONT SIZE=2><P>Para arquivos com ORGANIZACAO = "S" n&atilde;o ser&atilde;o gerados, na <I>library</I>, os atributos<BR>
+ORGANIZATION e ACCESS MODE.</FONT> </P>
+<B><FONT SIZE=2><P>"I"</B> (Indexado) - Arquivo para acesso indexado. O acesso sequencial tamb&eacute;m ser&aacute;<BR>
+poss&iacute;vel.</FONT> </P>
+<FONT SIZE=2><P>Para arquivos com ORGANIZACAO = "I", ser&atilde;o geradas, na <I>library</I>, as seguintes declara&ccedil;&otilde;es :</FONT> </P><DIR>
+
+<FONT SIZE=2><P>ORGANIZATION IS INDEXED;</P>
+<P>ACCESSMODE IS DYNAMIC;</P>
+<P>RECORD KEY IS sxx01-atributo, onde:</P><DIR>
+
+<P>"s" &eacute; o sub-sistema do arquivo;</P>
+<P>"xx" &eacute; o identificador do arquivo;</P>
+<P>"01" indica que a chave &eacute; um atributo do registro "01" do arquivo;</P>
+<P>"atributo" &eacute; o mnem&ocirc;nico do atributo indicado em CAMPO CHAVE.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=2><P>"D"</B> (Direto) - Arquivo para acesso direto ou rand&ocirc;mico. O acesso sequencial tamb&eacute;m<BR>
+ser&aacute; poss&iacute;vel.</FONT> </P>
+<FONT SIZE=2><P>Para arquivos com ORGANIZACAO = "D", ser&atilde;o geradas, na <I>library</I>, as seguintes<BR>
+declara&ccedil;&otilde;es :</FONT> </P><DIR>
+
+<FONT SIZE=2><P>ACCESS IS RANDOM;</FONT> </P>
+<FONT SIZE=2><P>ACTUAL KEY IS KEY-sssAxx, onde "ssAxx" &eacute; o c&oacute;digo do arquivo.</FONT> </P></DIR>
+</DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>KEYEDIOII</B> <B>(S/N)</B> - Indicador de defini&ccedil;&atilde;o de arquivo indexado que utiliza o m&eacute;todo de acesso KEYEDIOII.</P>
+<P>Caso o arquivo possua este m&eacute;todo de acesso, a sua <I>library</I> ser&aacute; gerada com as declara&ccedil;&otilde;es exigidas pelas rotinas do referido m&eacute;todo</P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes:</P><DIR>
+
+<B><P>"S"</B> - Para definir a utiliza&ccedil;&atilde;o do m&eacute;todo de acesso KEYEDIOII para um arquivo indexado; </P>
+<B><P>"N"</B> - Para n&atilde;o definir o m&eacute;todo de acesso KEYEDIOII para um arquivo indexado.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>CAMPO CHAVE</B> - C&oacute;digo do atributo ou campo que ser&aacute; chave do registro. </P>
+<P>Este atributo/campo n&atilde;o pode ser definido com sufixo na estrutura do arquivo. </P>
+<P>Para arquivos com ORGANIZACAO = "I", deve-se informar o atributo do registro "01" do arquivo que ser&aacute; utilizado como chave. A partir deste campo, ser&aacute; gerada a cl&aacute;usula RECORD KEY. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>CAMPO CHAVE SECUNDARIA</B> - C&oacute;digo do atributo ou campo que ser&aacute; chave secund&aacute;ria do registro. </P>
+<P>Informa&ccedil;&atilde;o v&aacute;lida para arquivos indexados. </P>
+<P>Este atributo/campo n&atilde;o pode ser definido com sufixo na estrutura do arquivo. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>DUPLICATES</B> - Indicador de chave secund&aacute;ria que permite <I>duplicates</I>.Os valores poss&iacute;veis s&atilde;o os seguintes: </P>
+<DIR>
+<B><P>"S"</B> - Para permitir <I>duplicates</I>; </P>
+<B><P>"N" </B>- Para n&atilde;o permitir <I>duplicates</I>. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>LIBRARIES</B> - Indicador de quais<I> libraries</I> do arquivo devem ser geradas. Os valores poss&iacute;veis s&atilde;o os seguintes: </P>
+<DIR>
+
+<B><P>"C" (Completa) -</B> Para que sejam geradas todas as <I>libraries</I> do arquivo, quais sejam: </P><DIR>
+
+<P>ss/s/AL/xx - A ser inserida na FD - <I>File Description</I>; </P>
+<P>ss/s/AL/xxW - A ser inserida na <I>Working-Storage Section</I>; e </P>
+<P>ss/s/AL/xxS - A ser inserida na SD - <I>Sort Description</I> - a fim de ser utilizada pelo <BR>
+comando de SORT. </P></DIR>
+
+<B><P>"W" (<I>Work</I>) -</B> Para que sejam geradas as seguintes <I>libraries</I> do arquivo: </P><DIR>
+
+<P>ss/s/AL/xx - A ser inserida na FD - <I>File Description</I>; e </P>
+<P>ss/s/AL/xxW - A ser inserida na <I>Working-Storage Section</I>. </P></DIR>
+
+<B><P>"S" (<I>Sort</I>) -</B> Para que sejam geradas as seguintes <I>libraries</I> do arquivo: </P><DIR>
+
+<P>ss/s/AL/xx - A ser inserida na FD - <I>File Description</I>, e </P>
+<P>ss/s/AL/xxS - A ser inserida na SD - <I>Sort Description</I> - a fim de ser utilizada pelo <BR>
+comando de SORT. </P></DIR>
+</DIR>
+
+<P>Caso este indicador n&atilde;o seja informado, ser&aacute; gerada apenas a <I>library</I> de FD - ss/s/AL/xx - para arquivos do tipo cart&atilde;o ("C" no campo DISPOSITIVO FISICO)<B>.</B> </P>
+<P>A <I>library</I> de sort n&atilde;o ser&aacute; gerada, caso o arquivo n&atilde;o seja sequencial. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>GERA FILE STATUS</B> - Indicador de tratamento do atributo <I>filestatus.</I> </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<P><b>"S"</b> - Para gera&ccedil;&atilde;o do comando <I>write</I> com um <I>display </I>do<I> filestatus, </I>caso haja algum problema na grava&ccedil;&atilde;o do arquivo;
+<p><b>"N"</b> - Para n&atilde;o haver o tratamento do <I>filestatus</I>. </P></DIR>
+
+<P>Se a defini&ccedil;&atilde;o do arquivo for alterada para tratar <I>filestatus</I>, a sua <I>library</I> deve ser gerada novamente para efetivar a altera&ccedil;&atilde;o. O programa tamb&eacute;m deve ser gerado novamente, pois o campo <I>filestatus</I> pertence &agrave; &aacute;rea de <I>work</I> do programa. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>WORK SEM REDEFINICAO</B> - Indicador de registro de &aacute;rea de <I>work</I> sem redefini&ccedil;&atilde;o para o registro "00" e, tamb&eacute;m, sem o <I>filler</I> final que complementa o registro para o tamanho definido para o arquivo. </P>
+<P>Arquivos j&aacute; existentes, continuar&atilde;o a ser gerados com a redefini&ccedil;&atilde;o. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<B><P>"S"</B> - Para gera&ccedil;&atilde;o sem redefini&ccedil;&atilde;o; </P>
+<B><P>"N"</B> - Para gera&ccedil;&atilde;o com redefini&ccedil;&atilde;o. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>REGISTRO:</B> </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>TAMANHO</B> - Tamanho m&aacute;ximo dos registros pertencentes ao arquivo. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>OBRIGATORIO</B> - Indicador de que o tamanho informado no campo TAMANHO<BR>
+tem de ser respeitado no momento da gera&ccedil;&atilde;o da <I>library</I> pelo SADS. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<B><P>"S"</B> - Para que a <I>library</I> seja gerada com o tamanho definido no campo<BR>
+TAMANHO; </P>
+<B><P>"N"</B> - Para que, no momento da gera&ccedil;&atilde;o da <I>library</I>, seja calculado um tamanho<BR>
+otimizado para o registro do arquivo. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>ATRIBUTOS:</B> </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>AREAS</B> - Quantidade de &aacute;reas do arquivo. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;AREASIZE</B> - Quantidade de registros em cada &aacute;rea. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>FATOR DE BLOCO</B> - Fator de bloco do arquivo, ou seja, n&uacute;mero de registros que ir&atilde;o compor um bloco de I/O. </P>
+<P>Se o fator de bloco for informado, o gerador de <I>library</I> n&atilde;o far&aacute; o c&aacute;lculo do fator ideal para o bloco. Portanto, ao informar um fator de bloco, dever&aacute; ser observado um n&uacute;mero otimizado, para que n&atilde;o haja problemas de <I>perfomance</I> quando da leitura ou grava&ccedil;&atilde;o do arquivo. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>POPULACAO / MAXSUBFILES</B> - Popula&ccedil;&atilde;o estimada para o arquivo, ou seja, previs&atilde;o da quantidade m&aacute;xima de registros que o arquivo ir&aacute; armazenar. </P>
+<P>Esta informa&ccedil;&atilde;o servir&aacute; de base para o c&aacute;lculo de um fator de bloco otimizado para o arquivo. </P>
+<P>Deve-se optar entre informar POPULACAO ou AREAS e AREASIZE para um mesmo arquivo. </P>
+<P>Para arquivo "P" ("<I>Port File</I>"), deve-se informar neste campo o n&uacute;mero m&aacute;ximo de arquivos aos quais eles podem se conectar (MAXSUBFILES). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>INCORPORAR NOME EXTERNO ATRIBUTOS</B> - Indicador de gera&ccedil;&atilde;o de <I>library</I>, considerando o c&oacute;digo externo do atributo, conforme sua defini&ccedil;&atilde;o no reposit&oacute;rio de dados. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<B><P>"S"</B> - Para gera&ccedil;&atilde;o de <I>library</I> utilizada pelos programas SADS e de uma <I>library</I> espec&iacute;fica, que se diferencia da primeira atrav&eacute;s do sufixo "E", onde os atributos s&atilde;o declarados com o c&oacute;digo externo;
+<p><B>"N"</B> - Para gera&ccedil;&atilde;o apenas da <I>library</I> utilizada pelos programas SADS. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o a ser efetuada em rela&ccedil;&atilde;o &agrave; defini&ccedil;&atilde;o do arquivo. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<B><P>"INC"</B> (Inclus&atilde;o); </P>
+<B><P>"ALT"</B> (Altera&ccedil;&atilde;o); </P>
+<B><P>"CON"</B> (Consulta); </P>
+<B><P>"EXC"</B> (Exclus&atilde;o). </P></DIR></dir>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Estru">Cadastramento de estrutura de arquivo</A></B></FONT><FONT SIZE=2> </P>
+<P>Estruturas de arquivos compreendem os atributos e campos que comp&otilde;em seus registros e suas caracter&iacute;sticas dentro da estrutura. </P>
+<P>Dever&atilde;o ser especificadas a estrutura de cada um dos tipos de registro de um arquivo. </P>
+<P>As estruturas dos registros s&atilde;o utilizadas na gera&ccedil;&atilde;o da <I>library</I> do arquivo, a ser incorporada em todos os programas que fizerem acesso a ele ou que o atualizarem. </P>
+<P>Para efetuar o cadastramento da estrutura de um arquivo, &eacute; necess&aacute;rio que o mesmo tenha sido definido no reposit&oacute;rio de dados do SADS. </P>
+<P>No contexto de arquivo, entenda-se atributo como sendo atributo propriamente dito, campo ou sin&ocirc;nimo. </P>
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>ARQUIVO</B> - C&oacute;digo do arquivo no padr&atilde;o SADS (sssAxx). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>REGISTRO</B> - N&uacute;mero do registro. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>NOME</B> - Descri&ccedil;&atilde;o resumida do registro. </P>
+<P>O nome tem o objetivo de identificar e explicar resumidamente a que se refere o registro. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>SEQ</B> - N&uacute;mero sequencial que indica qual a posi&ccedil;&atilde;o do atributo dentro da estrutura do registro do arquivo. </P>
+<P>O primeiro n&uacute;mero &eacute; "0010" e os demais, acrescidos de 10. </P>
+<P>Para incluir um atributo entre dois outros j&aacute; inclu&iacute;dos, &eacute; necess&aacute;rio preencher uma linha que esteja em branco e alterar o n&uacute;mero sequencial desta linha para um n&uacute;mero entre os j&aacute; informados. O SADS reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima opera&ccedil;&atilde;o, os atributos j&aacute; estar&atilde;o na nova ordem. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>ATRIBUTO</B> - Mnem&ocirc;nico do atributo pertencente &agrave; estrutura do registro do arquivo. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>SUF</B> - Sufixo do atributo. </P>
+<P>O sufixo &eacute; utilizado para diferenciar um mesmo atributo que aparece mais de uma vez na mesma estrutura. </P>
+<P>Neste caso, para diferenciar suas ocorr&ecirc;ncias, deve-se cadastrar sufixos diferentes para cada um deles. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>NIVEL</B> - N&iacute;vel de estrutura&ccedil;&atilde;o dos atributos (an&aacute;logo ao n&iacute;vel do Cobol). </P>
+<P>O n&iacute;vel inicial &eacute; o 10. Se for necess&aacute;rio criar agrupamentos de atributos, deve-se usar m&uacute;ltiplos de 5 (15, 20 e assim por diante), de forma semelhante ao Cobol. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>NDEF</B> - N&iacute;vel de defini&ccedil;&atilde;o do atributo. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<B><P>"S" (Sistema) </B>- Para atributo definido no sistema informado no campo SIS ou pertencente ao mesmo sistema do arquivo; </P>
+<B><P>"G" (Geral)</B> - Para atributo definido no reposit&oacute;rio de dados do SADS para utiliza&ccedil;&atilde;o gen&eacute;rica nos sistemas aplicativos. </P>
+<B><P>"R" (Redefini&ccedil;&atilde;o)</B> - Para atributo utilizado na redefini&ccedil;&atilde;o de um item definido com sequ&ecirc;ncia imediatamente anterior. </P>
+<P>Atributos com NDEF = "R" t&ecirc;m obrigatoriamente de ser itens grupo. </P></DIR>
+
+<P>Caso nada seja informado em NDEF, ser&aacute; assumido que o atributo &eacute; um item grupo. </P>
+<B><P> <IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12></B></FONT> <B><FONT SIZE=2>SIS</B> - C&oacute;digo do sistema no qual o atributo est&aacute; definido. </P>
+<P>N&atilde;o &eacute; necess&aacute;rio informar este campo quando o atributo for gen&eacute;rico do SADS (NDEF = "G") ou estiver definido no mesmo sistema do arquivo em quest&atilde;o. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>COMP</B> - Indicador de atributo compactado. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<B><P>"S"</B> - (Num&eacute;rico compactado); </P>
+<B><P>"B"</B> - (<I>Binary</I>). </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;FORM</B> - Formato do atributo. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<B><P>"A"</B> (Alfab&eacute;tico);</P>
+<B><P>"N"</B> (Num&eacute;rico);</P>
+<B><P>"D"</B> (<I>Display</I> - alfanum&eacute;rico). </P></DIR>
+
+<P>Se o formato n&atilde;o for informado, ser&aacute; assumida a defini&ccedil;&atilde;o de formato do atributo contida no reposit&oacute;rio de dados. </P>
+<P>Este campo n&atilde;o pode ser informado caso tenha sido parametrizado na tabela SBPM5000 que os atributos/campos n&atilde;o podem ter seus formatos redefinidos nas estruturas nas quais s&atilde;o inclu&iacute;dos. </P>
+<P>Maiores detalhes a respeito desta parametriza&ccedil;&atilde;o, deve-se consultar a Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", item "Atributo", subitem "Redefini&ccedil;&atilde;o em estruturas". </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>TAM</B> - Tamanho do atributo. </P>
+<P>Se o tamanho n&atilde;o for informado, ser&aacute; assumido o tamanho definido para o atributo no reposit&oacute;rio de dados. </P>
+<P>Este campo n&atilde;o pode ser informado caso tenha sido parametrizado na tabela SBPM5000 que os atributos/campos n&atilde;o podem ter seus tamanhos redefinidos nas estruturas nas quais s&atilde;o inclu&iacute;dos. </P>
+<P>Maiores detalhes a respeito desta parametriza&ccedil;&atilde;o, deve-se consultar a Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", item "Atributo", subitem "Redefini&ccedil;&atilde;o em estruturas". </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>DEC</B> - N&uacute;mero de casas decimais para o atributo n&uacute;merico. </P>
+<P>Se n&atilde;o for informado, ser&aacute; assumida a quantidade de decimais definida para o atributo no reposit&oacute;rio de dados. Se um atributo com decimais no reposit&oacute;rio de dados tiver sua quantidade de decimais redefinidas para "00", o atributo ser&aacute; gerado sem decimais. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>SIN</B> - Indicador de atributo num&eacute;rico sinalizado. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<B><P>"S"</B> - Para atributo sinalizado; </P>
+<B><P>"N"</B> - Para atributo n&atilde;o sinalizado. </P></DIR>
+
+<P>Se n&atilde;o for informado, ser&aacute; assumida a defini&ccedil;&atilde;o de sinal para o atributo contida no reposit&oacute;rio de dados. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>OCCURS</B> - N&uacute;mero de ocorr&ecirc;ncias do atributo dentro da estrutura. </P>
+<P>O campo OCCURS &eacute; semelhante a cl&aacute;usula "OCCURS" das estruturas do Cobol e &eacute; usado para definir tabelas e itens de grupo repetitivos. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>CONTINUA (S/N)</B> - Indicador de continuidade de opera&ccedil;&atilde;o. </P>
+<P>As possibilidades para o preenchimento deste campo s&atilde;o as seguintes: </P><DIR>
+
+<B><P>"S"</B> - Nova tela ser&aacute; aberta para prosseguir informando mais atributos para a estrutura do registro em cadastramento; </P>
+<B><P>"N"</B> - Para encerrar o cadastramento desta estrutura do arquivo. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o a ser efetuada em rela&ccedil;&atilde;o &agrave; defini&ccedil;&atilde;o do arquivo. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<B><P>"INC"</B> (Inclus&atilde;o); </P>
+<B><P>"ALT"</B> (Altera&ccedil;&atilde;o); </P>
+<B><P>"CON"</B> (Consulta); </P>
+<B><P>"EXC"</B> (Exclus&atilde;o). </P></DIR>
+</DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Libra">Gera&ccedil;&atilde;o de library de arquivo</A></B></FONT><FONT SIZE=2> </P>
+<P>A gera&ccedil;&atilde;o da<I> library</I> compreende a cria&ccedil;&atilde;o de um arquivo fonte Cobol que ser&aacute; incorporado aos programas aplicativos que utilizarem ou atualizarem o arquivo. </P>
+<P>A <I>library</I> &eacute; gerada a partir da estrutura de dados de todos os registros do arquivo. Portanto, para ger&aacute;-la, &eacute; necess&aacute;rio que o arquivo e as estruturas de seus registros estejam cadastrados no reposit&oacute;rio de dados do SADS. </P>
+<P>A <I>library</I>cont&eacute;m os atributos e campos que comp&otilde;em os registros do arquivo. </P>
+<P>A seguir, &eacute; apresentado um exemplo de <I>library</I> de arquivo. </P>
+</FONT><PRE>
+
+<B><FONT FACE="Courier,Courier New">Library do arquivo "SXYA51"
+</B></FONT>
+<font size=3>
+000010
+000020*    SXYA51     - HISTORICO DE DOCUMENTOS DE ALTERACAO
+000030
+000040*    GERACAO    - 04/01/96  17:15:14                                     000050 
+000060*    GERADO POR - JOSE SILVEIRA ANDRADE CARVALHO
+000070
+000100  OBJECT-COMPUTER.
+000200          MEMORY   SIZE   21500 WORDS.
+000300          DISK         SIZE      7500 WORDS.
+100000
+100010          SELECT   SXYA51         ASSIGN TO DISK
+100020                     ORGANIZATION IS INDEXED
+100030                     ACCESS MODE IS DYNAMIC
+100040                     RESERVE 1 AREA
+100050                     RECORD KEY IS Y5101F-ARQSEQ.
+200000
+200010  FD      SXYA51
+200020          BLOCK  CONTAINS 0010 RECORDS
+200030          RECORD   CONTAINS 0180 CHARACTERS
+200040          VALUE   OF FILENAME   "SX/Y/AF/51"
+200050          AREAS   0001
+200060          AREA   SIZE   0112.
+200070
+200080  01       SXYA5100F                       PIC   X(0180).
+300000
+300010  01       SXYA5101F.
+300020  &#9;10      Y5101F-EMPCOD   PIC   9(003) COMP.
+300030  &#9;10      Y5101F-FILCOD   PIC   9(004) COMP.
+300040  &#9;10      FILLER          PIC   9(001) COMP.
+300050  &#9;10      Y5101F-FILEND   PIC   X(106).
+300060  &#9;10      Y5101F-FILNOM   PIC   X(070).
+300070
+300080
+300090  01       SXYA5102F.
+300100  &#9;10      Y5102F-LOGCOD   PIC   9(003) COMP.
+300110  &#9;10      Y5102F-ARTCOD   PIC   9(003) COMP.
+300120  &#9;10      Y5102F-LOJCGC   PIC   9(014) COMP.
+300130  &#9;10      FILLER          PIC   X(170).
+400000
+400010  01       SXYA5101.
+400020  &#9;10      Y5101-EMPCOD    PIC   9(003) COMP.
+400030  &#9;10      Y5101-FILCOD    PIC   9(004) COMP.
+400040  &#9;10      FILLER          PIC   9(001) COMP.
+400050  &#9;10      Y5101-FILEND    PIC   X(106).
+400060  &#9;10      Y5101-FILNOM    PIC   X(070).
+400070
+400080
+400090  01       SXYA5102.
+400100  &#9;10  Y5102-LOGCOD    PIC   9(003) COMP.
+400110  &#9;10  Y5102-ARTCOD    PIC   9(003) COMP.
+400120  &#9;10  Y5102-LOJCG             PIC   9(014) COMP.
+400130  &#9;10  FILLER          PIC   X(170).</PRE></font>
+<FONT SIZE=2><P>A <I>library</I> cont&eacute;m v&aacute;rias informa&ccedil;&otilde;es, sendo referenciada em pontos distintos do programa da seguinte forma: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>O seguimento da sequ&ecirc;ncia 020 at&eacute; 900, onde est&aacute; declarada a identifica&ccedil;&atilde;o do arquivo, e o OBJECT-COMPUTER, &eacute; chamado na CONFIGURATION SECTION da ENVIRONMENT DIVISION. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>O seguimento da sequ&ecirc;ncia 100000 at&eacute; 199000, onde est&aacute; declarado o SELECT<I> </I>do arquivo, &eacute; chamado no par&aacute;grafo FILE-CONTROL da ENVIRONMENT DIVISION. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>O seguimento da sequ&ecirc;ncia 200000 at&eacute; 299000, onde est&aacute; declarado a FD do arquivo, &eacute; chamado no par&aacute;grafo FILE SECTION da DATA DIVISION. Nesta parte da <I>library</I>, tamb&eacute;m est&aacute; declarado o tamanho do registro. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>O seguimento da sequ&ecirc;ncia 300000 at&eacute; 399000, onde est&atilde;o declaradas as estruturas dos registros do arquivo, tamb&eacute;m &eacute; chamado na FILE SECTION da DATA DIVISION. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>O seguimento da sequ&ecirc;ncia 400000 at&eacute; 499000, onde est&atilde;o declaradas novamente as estruturas dos registros do arquivo, &eacute; chamado na WORKING-STORAGE SECTION da DATA DIVISION. Estas estrututras funcionam como &aacute;res auxiliares para manipula&ccedil;&atilde;o dos registros do arquivo. </P></DIR>
+
+<P>Os prefixos dos atributos da <I>library</I> de um arquivo t&ecirc;m a seguinte forma&ccedil;&atilde;o: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>CAMPOS DE FD: Terceira letra do sistema ("Y", no exemplo) + o sequencial do arquivo ("51", no exemplo) + o n&uacute;mero do registro ("01" e "02", no exemplo) + a letra "F" (identifica campos de FD) + "-" (constante) + o mnem&ocirc;nico do atributo ou campo. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>CAMPOS DE WORK : Terceira letra do sistema ("Y", no exemplo) + o sequencial do arquivo ("51", no exemplo) + o n&uacute;mero do registro ("01" e "02", no exemplo) + "-" (constante) + o mnem&ocirc;nico do atributo ou campo. </P></DIR>
+
+<P>Os prefixos dos atributos de um arquivo, diferentemente de outros elementos do SADS, n&atilde;o possuem a letra "A" que identifica um arquivo. Por&eacute;m, os campos da estrutura de FD s&atilde;o diferenciados atrav&eacute;s da letra "F", no final do prefixo. </P>
+<P>Libraries de arquivo s&atilde;o geradas no <I>usercode</I> definido para o ambiente escolhido, sendo poss&iacute;vel ger&aacute;-la sem <I>usercode</I> (em *) para o ambiente de produ&ccedil;&atilde;o. A especifica&ccedil;&atilde;o de onde a <I>library</I> dever&aacute; residir encontra-se descrita na tabela SBPM5002, que pode ser consultada na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+<P>A transa&ccedil;&atilde;o que executa a gera&ccedil;&atilde;o de <I>library</I> de arquivo n&atilde;o est&aacute; associada a nenhuma tela de processamento. Portanto, para efetuar a sua gera&ccedil;&atilde;o, basta transmitir os argumentos na tela menu de opera&ccedil;&atilde;o "GERLIBARQ", cujos campos s&atilde;o explicados a seguir: </P>
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Arquivo</B> - C&oacute;digo do arquivo no padr&atilde;o SADS (sssAxx). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Ambiente</B> - Ambiente para o qual a <I>library</I> ser&aacute; gerada: </P>
+<P>Podem ser informados os seguintes ambientes: </P><DIR>
+
+<B><P>"T"</B> (Teste); </P>
+<B><P>"P"</B> (Produ&ccedil;&atilde;o). </P></DIR>
+
+<P>Caso o ambiente n&atilde;o seja informado, ser&aacute; assumido o ambiente <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do ambiente <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es". </P>
+<P>Quando uma <I>library</I> &eacute; gerada em ambiente de teste, o acesso &agrave; mesma ser&aacute; feito somente nas compila&ccedil;&otilde;es para este ambiente. Por&eacute;m, se a gera&ccedil;&atilde;o for executada para produ&ccedil;&atilde;o, ficando residente sem <I>usercode</I> (dependendo do cadastramento do seu <I>usercode </I>de an&aacute;lise na tabela SBPM5002), o acesso &agrave; mesma ser&aacute; feito nas compila&ccedil;&otilde;es para ambos os ambientes. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Usercode</B> - <I>Usercode</I> de an&aacute;lise. </P>
+<P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS". </P>
+<P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es". </P>
+<P>Para os <I>usercodes</I> de an&aacute;lise, s&atilde;o definidos os ambientes (<I>usercod</I>e e disco) onde ficar&atilde;o residentes as <I>libraries</I> de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as <I>libraries</I> de produ&ccedil;&atilde;o fiquem sem <I>usercode</I>. Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002, cuja manuten&ccedil;&atilde;o &eacute; feita pelo respons&aacute;vel pelo SADS na sua instala&ccedil;&atilde;o. Esta tabela encontra-se descrita na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P></DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Liblib">Libera&ccedil;&atilde;o de library de arquivo para produ&ccedil;&atilde;o</A></B></FONT><FONT SIZE=2> </P>
+<P>A libera&ccedil;&atilde;o da <I>library</I> consiste em copi&aacute;-la do <I>usercode</I> de teste para o de produ&ccedil;&atilde;o a ele relacionado. Deste modo, esta <I>library</I> estar&aacute; dispon&iacute;vel para ser incorporada aos programas que forem compilados para produ&ccedil;&atilde;o. </P>
+<P>Para liberar uma <I>library</I> para produ&ccedil;&atilde;o, &eacute; necess&aacute;rio que esta tenha sido gerada inicialmente para o ambiente de teste. </P>
+<P>A libera&ccedil;&atilde;o da <I>library</I> de arquivo para produ&ccedil;&atilde;o n&atilde;o est&aacute; relacionada a nenhuma tela de processamento. Para efetu&aacute;-la, basta transmitir os argumentos do menu de opera&ccedil;&atilde;o "LIBLIBARQ", cujos campos s&atilde;o explicados a seguir: </P>
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Arquivo</B> - C&oacute;digo do arquivo nos padr&otilde;es SADS (sssAxx). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Usercode</B> - <I>Usercode</I> de an&aacute;lise relacionado. </P>
+<P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS". </P>
+<P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es". </P>
+<P>Para os u<I>sercodes</I> de an&aacute;lise, s&atilde;o definidos os ambientes (<I>usercode</I> e disco) onde ficar&atilde;o residentes as <I>libraries</I> de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as <I>libraries</I> de produ&ccedil;&atilde;o fiquem sem <I>usercode</I>. Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002, cuja manuten&ccedil;&atilde;o &eacute; feita pelo respons&aacute;vel pelo SADS na sua instala&ccedil;&atilde;o. Esta tabela encontra-se descrita na se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P></DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Funca">Fun&ccedil;&otilde;es de apoio</A></B></FONT><FONT SIZE=2> </P></DIR>
+
+</FONT><P><HR></P>
+
+
+<B><FONT SIZE=5><P><A NAME="Gener">Gen&eacute;ricas aplic&aacute;veis aos arquivos</A></B></FONT><FONT SIZE=2> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Utilit&aacute;rios:</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Ressequenciamento de estrutura; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Duplica&ccedil;&atilde;o de elemento; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Duplica&ccedil;&atilde;o de registro; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Descri&ccedil;&atilde;o de elemento; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Consultas:</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Elementos por sistema; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Estrutura de dados; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Descri&ccedil;&atilde;o de elemento. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Refer&ecirc;ncia cruzada:</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Elementos x elemento - Programas que utilizam um arquivo. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Informativos impressos:</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Rela&ccedil;&atilde;o de elementos por sistema; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista estrutura de elemento; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista atributos por estrutura; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista descri&ccedil;&atilde;o de elemento. </P></DIR>
+
+<P>Todas estes utilit&aacute;rios, consultas, refer&ecirc;ncias cruzadas e informativos impressos encontram-se detalhadamente descritos na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", neste manual.</P></DIR>
+</DIR>
+</DIR>
+</FONT></BODY>
+</HTML>

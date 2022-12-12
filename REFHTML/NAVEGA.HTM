@@ -1,0 +1,826 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>NAVEGA</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+
+<B><FONT SIZE=6><P><A NAME="Naveg">Navega&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Conce">Conceitua&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Navega&ccedil;&atilde;o &eacute; o processo de caminhar pelos menus dos sistemas e, atrav&eacute;s deles, solicitar transa&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>O SADS tem &agrave; disposi&ccedil;&atilde;o duas formas de navega&ccedil;&atilde;o para os sistemas aplicativos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Nahos">Navega&ccedil;&atilde;o via host</A> e </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Naint">Navega&ccedil;&atilde;o interpretativa</A>. </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Nahos">Navega&ccedil;&atilde;o via host</A></B></FONT> </P>
+<FONT SIZE=2><P>A navega&ccedil;&atilde;o via <I>host </I>&eacute; aquela em que o usu&aacute;rio solicita as transa&ccedil;&otilde;es diretamente a partir dos menus de op&ccedil;&atilde;o, informando neles o n&uacute;mero da op&ccedil;&atilde;o e os argumentos referentes &agrave; transa&ccedil;&atilde;o que ele deseja executar.</FONT> </P>
+<FONT SIZE=2><P>Nesta navega&ccedil;&atilde;o s&oacute; &eacute; permitido o deslocamento entre submenus de um mesmo menu, caso existam. Tamb&eacute;m s&oacute; &eacute; permitida a solicita&ccedil;&atilde;o, de um menu de op&ccedil;&atilde;o, daquelas transa&ccedil;&otilde;es que foram definidas como pertencentes a ele no reposit&oacute;rio de dados do SADS. N&atilde;o &eacute; poss&iacute;vel, pois, atrav&eacute;s deste tipo de navega&ccedil;&atilde;o, navegar livremente entre diferentes menus.</FONT> </P>
+<FONT SIZE=2><P>Deste modo, para se solicitar uma transa&ccedil;&atilde;o &eacute; obrigat&oacute;rio ter conhecimento, de antem&atilde;o, do c&oacute;digo do menu no qual a mesma est&aacute; definida. Somente a partir deste menu &eacute; que a transa&ccedil;&atilde;o poder&aacute; ser solicitada.</FONT> </P>
+<FONT SIZE=2><P>A transa&ccedil;&atilde;o SOS01 propicia a navega&ccedil;&atilde;o entre os menus dos sistemas de forma hierarquizada, auxiliando o usu&aacute;rio final a encontrar o c&oacute;digo correto da transa&ccedil;&atilde;o a ser disparada, para utiliza&ccedil;&atilde;o de um determinado sistema.</FONT> </P>
+<FONT SIZE=2><P>O SOS01 controla a navega&ccedil;&atilde;o entre os n&iacute;veis I, II, III e IV. O n&iacute;vel V j&aacute; &eacute; controlado pelo <I>host</I> do sistema. A partir de algum menu (n&iacute;vel V) ou submenu (n&iacute;vel VI) de um sistema, para retornar ao menu de n&iacute;vel IV e passar o controle da navega&ccedil;&atilde;o para o SOS01, deve-se utilizar a op&ccedil;&atilde;o 94.</FONT> </P>
+<FONT SIZE=2><P>O SOS01 aceita tamb&eacute;m, para fazer o encadeamento, que seja informado o nome de um contexto j&aacute; existente, informando ou n&atilde;o a palavra "CONTEXTO" anteriormente.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Naint">Navega&ccedil;&atilde;o interpretativa</A></B></FONT> </P>
+<FONT SIZE=2><P>A navega&ccedil;&atilde;o interpretativa &eacute; o processo que permite caminhar pelas fun&ccedil;&otilde;es dispon&iacute;veis de um ou v&aacute;rios sistemas, atrav&eacute;s de um deslocamento amig&aacute;vel entre seus menus de escolha, menus de opera&ccedil;&atilde;o e telas de processamento.</FONT> </P>
+<FONT SIZE=2><P>Estes menus foram projetados em conformidade com o padr&atilde;o SAA - <I>System Application Architecture</I>, que, atrav&eacute;s de seu m&oacute;dulo CUA - <I>Common User Access</I>, define padr&otilde;es para a interface do usu&aacute;rio com o <I>software</I>.</FONT> </P>
+<FONT SIZE=2><P>Menus de escolha s&atilde;o aqueles que definem as rotas de navega&ccedil;&atilde;o dispon&iacute;veis, sendo que cada rota corresponde a um destino que pode ser outro menu de escolha ou um menu de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Um menu de escolha &eacute; utilizado, portanto, apenas para navega&ccedil;&atilde;o entre menus, n&atilde;o sendo poss&iacute;vel solicitar opera&ccedil;&otilde;es espec&iacute;ficas a partir dele.</FONT> </P>
+<FONT SIZE=2><P>Menus de opera&ccedil;&atilde;o s&atilde;o aqueles que definem as opera&ccedil;&otilde;es e os dados b&aacute;sicos a serem informados para solicita&ccedil;&atilde;o de processamento das transa&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>A diferen&ccedil;a entre os menus de opera&ccedil;&atilde;o e os de escolha est&aacute; no corpo de cada um: enquanto os menus de escolha exibem rotas de navega&ccedil;&atilde;o e um campo para escolha da rota a ser seguida, os de opera&ccedil;&atilde;o apresentam os campos espec&iacute;ficos associados &agrave;s transa&ccedil;&otilde;es que podem ser solicitadas a partir do menu.</FONT> </P>
+<FONT SIZE=2><P>Menus de opera&ccedil;&atilde;o, portanto, s&atilde;o as &uacute;nicas telas, na navega&ccedil;&atilde;o interpretativa, a partir das quais pode-se solicitar a execu&ccedil;&atilde;o de uma opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Deste modo, o acesso a uma tela de processamento de uma opera&ccedil;&atilde;o &eacute; feito a partir do preenchimento dos campos do menu de opera&ccedil;&atilde;o a ela correspondente.</FONT> </P>
+<FONT SIZE=2><P>Na navega&ccedil;&atilde;o interpretativa os menus de escolha agrupam transa&ccedil;&otilde;es operacionalmente relacionadas com o objetivo de criar vis&otilde;es para grupos de usu&aacute;rios que executam fun&ccedil;&otilde;es similares. Estas fun&ccedil;&otilde;es, por sua vez, podem ter sido definidas em diferentes menus de op&ccedil;&atilde;o e em diferentes sistemas.</FONT> </P>
+<FONT SIZE=2><P>A navega&ccedil;&atilde;o interpretativa &eacute; controlada pelo m&oacute;dulo de navega&ccedil;&atilde;o em uma camada superior &agrave; navega&ccedil;&atilde;o via <I>host</I>.</FONT> </P>
+<FONT SIZE=2><P>Assim, a navega&ccedil;&atilde;o interpretativa funciona como uma m&aacute;scara para o usu&aacute;rio final, que, ap&oacute;s permitir a ele um livre deslocamento entre os diversos menus, desvia o controle para a navega&ccedil;&atilde;o via <I>host</I>, de forma transparente para o usu&aacute;rio, para ser efetivada.</FONT> </P>
+<FONT SIZE=2><P>Internamente, os sistemas continuam trabalhando da forma convencional, atrav&eacute;s de menus de op&ccedil;&atilde;o, que s&atilde;o controlados diretamente pelo <I>host</I>.</FONT> </P>
+<FONT SIZE=2><P>O m&oacute;dulo de navega&ccedil;&atilde;o do SADS faz a convers&atilde;o dos dados entre os <I>layouts</I> do menu de opera&ccedil;&atilde;o e do menu de op&ccedil;&atilde;o automaticamente, toda vez que uma opera&ccedil;&atilde;o &eacute; disparada. Esta transfer&ecirc;ncia s&oacute; &eacute; poss&iacute;vel devido ao fato de existirem regras de convers&atilde;o de <I>layout</I> cadastradas.</FONT> </P>
+<FONT SIZE=2><P>As regras de convers&atilde;o s&atilde;o definidas apenas para os menus de opera&ccedil;&atilde;o, pois apenas esses menus disparam transa&ccedil;&otilde;es vinculadas aos menus de op&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Concluindo, a navega&ccedil;&atilde;o interpretativa possui uma s&eacute;rie de vantagens que sugerem, por isso, a sua utiliza&ccedil;&atilde;o nos sistemas de cunho operacional e, principalmente, nos sistemas gerenciais.</FONT> </P>
+<FONT SIZE=2><P>Suas principais caracter&iacute;sticas s&atilde;o: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Possibilidade de cria&ccedil;&atilde;o de v&aacute;rios contextos de navega&ccedil;&atilde;o - agrupamentos de telas menu - totalmente independentes.</FONT> </P>
+<FONT SIZE=2><P>Com isso, torna-se poss&iacute;vel obter vis&otilde;es diferenciadas das transa&ccedil;&otilde;es que comp&otilde;em um sistema de acordo com a classe de usu&aacute;rios que ir&atilde;o utiliz&aacute;-las.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Possibilidade de agrupamento de sistemas ou fun&ccedil;&otilde;es de sistemas diferentes em um &uacute;nico contexto de navega&ccedil;&atilde;o, possibilitando aos usu&aacute;rios utilizar todas as transa&ccedil;&otilde;es para as quais esteja habilitado como se fosse um &uacute;nico sistema.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Altera&ccedil;&atilde;o nos menus, das rotas de deslocamentos entre os menus e das regras de convers&atilde;o de <I>layout</I> sem necessidade de gera&ccedil;&otilde;es e recompila&ccedil;&otilde;es de programas envolvidos na navega&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Independ&ecirc;ncia do processo de navega&ccedil;&atilde;o em rela&ccedil;&atilde;o aos programas aplicativos, possibilitando sua transposi&ccedil;&atilde;o para processamento cooperativo em esta&ccedil;&otilde;es de trabalho.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Possibilidade de utiliza&ccedil;&atilde;o de ajuda <I>on-line</I> (<I>help</I>), em tempo de execu&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P><A NAME="Elena">Elementos da navega&ccedil;&atilde;o interpretativa</A></B></FONT> </P>
+<FONT SIZE=2><P>No processo de navega&ccedil;&atilde;o interpretativa est&atilde;o envolvidos os seguintes elementos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Menesc">Menus de escolha</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Menop">Menus de opera&ccedil;&atilde;o</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Tela">Telas de processamento</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Rota">Rotas de navega&ccedil;&atilde;o</A><FONT SIZE=2> e</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Regra">Regras de convers&atilde;o de layout</A><FONT SIZE=2>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Cada um destes elementos ser&aacute; detalhadamente explicado a seguir, para melhor entendimento do mecanismo da navega&ccedil;&atilde;o interpretativa.</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P><A NAME="Menu">Menus de escolha</A></B></FONT> </P>
+<FONT SIZE=2><P>Menus de escolha s&atilde;o aqueles onde est&atilde;o apresentadas palavras-chave poss&iacute;veis de serem escolhidas. Estas palavras do corpo do menu identificam as rotas que podem ser selecionadas a partir dele. Cada rota corresponde a um destino que pode ser outro menu de escolha ou um menu de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As telas dos menus de escolha n&atilde;o pertencem a um contexto espec&iacute;fico, ou seja, podem ser referenciadas em v&aacute;rios contextos simultaneamente. No entanto, as palavras-chave apresentadas definem rotas de navega&ccedil;&atilde;o e as rotas s&atilde;o definidas por contexto. Ou seja, apesar de as palavras-chave dispon&iacute;veis em uma tela menu de escolha serem as mesmas para qualquer contexto que a utilize, as rotas podem definir destinos diferentes em contextos diferentes para uma mesma palavra-chave.</FONT> </P>
+<FONT SIZE=2><P>Um menu de escolha &eacute; utilizado, portanto, apenas para navega&ccedil;&atilde;o entre menus, n&atilde;o sendo poss&iacute;vel solicitar opera&ccedil;&otilde;es espec&iacute;ficas a partir dele.</FONT> </P>
+<FONT SIZE=2><P>As escolhas dispon&iacute;veis s&atilde;o indicadas no corpo do menu por palavras-chave, que s&atilde;o indicadores ou mesmo segmentos das palavras que representam as rotas desejadas. No contexto SADS estes indicadores est&atilde;o representados em letras mai&uacute;sculas.</FONT> </P>
+<FONT SIZE=2><P>Para cada menu de escolha devem ser cadastradas no reposit&oacute;rio de dados as rotas de navega&ccedil;&atilde;o que partem dele, ou seja, qual tela de destino dever&aacute; ser apresentada para cada palavra-chave poss&iacute;vel de ser escolhida no menu.</FONT> </P>
+<FONT SIZE=2><P>O menu de escolha &eacute; dividido em tr&ecirc;s &aacute;reas: barra de a&ccedil;&atilde;o, corpo do menu e &aacute;rea de mensagem.</FONT> </P>
+<FONT SIZE=2><P>Cada um destes elementos ser&aacute; explicado a seguir.</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Barra de a&ccedil;&atilde;o</B></FONT> </P>
+<FONT SIZE=2><P>A barra de a&ccedil;&atilde;o &eacute; a primeira &aacute;rea do menu e &eacute; composta por:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>T&iacute;tulo do menu: C&oacute;digo alfab&eacute;tico do menu, composto de tr&ecirc;s, seis ou nove caracteres;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Descri&ccedil;&atilde;o do t&iacute;tulo;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Data e hora em que o menu foi recebido no terminal;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Campo ACAO: Campo onde &eacute; poss&iacute;vel executar um dos seguintes comandos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet9.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"Inicio &lt;nome do contexto&gt; &lt;t&iacute;tulo do menu &gt;" - Comando para apresentar o menu inicial do contexto especificado, ou o menu especificado do referido contexto;</FONT> </P>
+<FONT SIZE=2><P>A a&ccedil;&atilde;o "In&iacute;cio" sem especifica&ccedil;&atilde;o do nome do contexto e t&iacute;tulo do menu, apresenta o menu inicial do contexto corrente.</FONT> </P>
+<FONT SIZE=2><P>Caso um nome de contexto tenha sido especificado, este passar&aacute; a ser o contexto corrente.</FONT> </P>
+<FONT SIZE=2><P>A informa&ccedil;&atilde;o do t&iacute;tulo do menu exige que o nome do contexto tenha sido especificado.</FONT> </P>
+<P><IMG SRC="Bullet9.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"Anterior" - Comando para exibir o &uacute;ltimo menu apresentado com os campos preenchidos</FONT> </P>
+<FONT SIZE=2><P>Este comando n&atilde;o ir&aacute; exibir as telas repetidas, caso uma mesma tela seja utilizada mais de uma vez. Apenas uma &uacute;nica amostragem das &uacute;ltimas telas processadas ser&aacute; exibida.</FONT> </P>
+<FONT SIZE=2><P>Quando for informada a a&ccedil;&atilde;o "anterior", e a tela anterior for uma tela de processamento, ser&aacute; apresentado o menu de opera&ccedil;&atilde;o que a tiver originado, pois telas de processamento n&atilde;o s&atilde;o gravadas no arquivo de controle da navega&ccedil;&atilde;o. </P>
+</FONT><P><IMG SRC="Bullet9.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"Origem" - Comando para retornar ao menu de n&iacute;vel imediatamente superior na hierarquia de menus;</FONT> </P>
+<FONT SIZE=2><P>Quando for informada a a&ccedil;&atilde;o "origem" em uma tela de processamento, ser&aacute; apresentado o menu de opera&ccedil;&atilde;o que tiver originado esta transa&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet9.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"Desvio &lt;t&iacute;tulo do menu&gt; &lt;nome do contexto&gt;" - Comando para desviar para o menu correspondente ao t&iacute;tulo informado do contexto corrente ou do especificado;</FONT> </P>
+<FONT SIZE=2><P>Caso um nome de contexto tenha sido especificado, este passar&aacute; a ser o contexto corrente.</FONT> </P>
+<FONT SIZE=2><P>A informa&ccedil;&atilde;o do nome do contexto exige que o t&iacute;tulo do menu tenha sido especificado.</FONT> </P>
+<FONT SIZE=2><P>As telas de processamento n&atilde;o possuem t&iacute;tulo, e por isto n&atilde;o &eacute; poss&iacute;vel executar um desvio para elas.</FONT> </P>
+<P><IMG SRC="Bullet9.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"Restaura" ou "Refresh" - Comando para restaurar o menu corrente com todos os campos preenchidos, caso a transa&ccedil;&atilde;o tenha sido executada.</FONT> </P>
+<FONT SIZE=2><P>Nesta a&ccedil;&atilde;o, ser&atilde;o restaurados at&eacute; o limite de 700 <I>bytes</I> dos campos preenchidos.</FONT> </P>
+<FONT SIZE=2><P>Quando se executa a a&ccedil;&atilde;o "restaura" ou "refresh" em uma tela de processamento com um campo de a&ccedil;&atilde;o, ser&aacute; apresentado o menu de opera&ccedil;&atilde;o que a tiver originado. </P>
+</FONT><P><IMG SRC="Bullet9.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"Fim" - Comando para encerrar a sess&atilde;o do SADS, efetuando um <I>logoff</I> na esta&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet9.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"Comando &lt;contexto&gt;:&lt;t&iacute;tulo do menu&gt;&gt; &lt;argumentos da transa&ccedil;&atilde;o&gt;" - Comando que corresponde &agrave; transmiss&atilde;o da tela menu com o t&iacute;tulo informado, definida no contexto determinado, com os argumentos especificados. </P>
+<P>O c&oacute;digo do contexto pode n&atilde;o ser informado e, neste caso, o t&iacute;tulo do menu deve estar definido no contexto correntemente logado.</FONT> </P>
+<FONT SIZE=2><P>Os argumentos da transa&ccedil;&atilde;o podem n&atilde;o ser informados, possibilitando o disparo de um menu de opera&ccedil;&atilde;o sem argumentos. </P>
+<P>Este t&iacute;tulo de tela informado deve ser correspondente a um menu de opera&ccedil;&atilde;o, pois somente de menus de opera&ccedil;&atilde;o pode-se solicitar uma transa&ccedil;&atilde;o qualquer.</FONT> </P>
+<FONT SIZE=2><P>Exemplo: "C PEDIDOS:CADCLI ALT001"</FONT> </P>
+<P><IMG SRC="Bullet9.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"Contexto &lt;nome do contexto&gt; &lt;t&iacute;tulo do menu&gt;" - Comando para se efetuar desviar para o contexto especificado ou para o menu especificado do referido contexto ;</FONT> </P>
+<FONT SIZE=2><P>A informa&ccedil;&atilde;o do t&iacute;tulo do menu exige que o nome do contexto tenha sido especificado.</FONT> </P>
+<FONT SIZE=2><P>Caso n&atilde;o se saiba o nome do contexto que se deseja utilizar, pode-se solicitar a a&ccedil;&atilde;o "D CONTEXTO" a fim de que seja apresentada a tela de sele&ccedil;&atilde;o de contextos dispon&iacute;veis (Tela STKT0004).</FONT> </P>
+<P><IMG SRC="Bullet9.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"Usuario" - Comando para fornecer as seguintes informa&ccedil;&otilde;es sobre o usu&aacute;rio e a sess&atilde;o:</FONT> </P><DIR>
+<DIR>
+
+<FONT SIZE=2><P>Usu&aacute;rio: n&uacute;mero, nome e c&oacute;digo do usu&aacute;rio, sigla e &aacute;rea da empresa, padr&otilde;es de impressora e de <I>usercode</I>;</FONT> </P>
+<FONT SIZE=2><P>Sess&atilde;o: n&uacute;mero e nome da esta&ccedil;&atilde;o, data e hor&aacute;rio do in&iacute;cio da sess&atilde;o e ambiente do <I>logon</I>.</FONT> </P></DIR>
+</DIR>
+</DIR>
+
+<FONT SIZE=2><P>Para executar uma a&ccedil;&atilde;o, deve-se informar a palavra referente &agrave; a&ccedil;&atilde;o que se quer executar ou apenas o conjunto de caracteres que identifica o comando. Por&eacute;m, para utilizar a a&ccedil;&atilde;o CONTEXTO, deve-se informar pelo menos "CON" para diferenci&aacute;-la da a&ccedil;&atilde;o COMANDO.</FONT> </P>
+<FONT SIZE=2><P>Como exemplo, as tr&ecirc;s informa&ccedil;&otilde;es descritas a seguir ir&atilde;o disparar a mesma opera&ccedil;&atilde;o de navega&ccedil;&atilde;o:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>"D DEFENT";</FONT> </P>
+<FONT SIZE=2><P>"DES DEFENT";</FONT> </P>
+<FONT SIZE=2><P>"DESVIO DEFENT".</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Exemplos de comandos disparados no campo ACAO para o contexto SADS: </P><DIR>
+
+<P>ORIGEM: No menu DEFENT (Defini&ccedil;&atilde;o de Entidade), se o campo ACAO for preenchido com "O" (Origem), a navega&ccedil;&atilde;o apresentar&aacute; o menu de escolha ENT (Entidade), que corresponde &agrave; origem do menu DEFENT;</FONT> </P>
+<FONT SIZE=2><P>DESVIO: Se o campo ACAO for preenchido com "D INCUSU", a navega&ccedil;&atilde;o apresentar&aacute; o menu de t&iacute;tulo INCUSU, que corresponde ao menu de opera&ccedil;&atilde;o de inclus&atilde;o de usu&aacute;rios do Sistema de Seguran&ccedil;a;</FONT> </P>
+<FONT SIZE=2><P>COMANDO: Se o campo ACAO for preenchido com "C DEFENT INCABCECAT", a navega&ccedil;&atilde;o apresentar&aacute; a tela de processamento para inclus&atilde;o da entidade ABCECAT, pois foi disparado o menu de opera&ccedil;&atilde;o DEFENT com os argumentos "INCABCECAT" (Opera&ccedil;&atilde;o = "INC", Entidade = "ABCECAT").</FONT> </P></DIR>
+
+<FONT SIZE=2><P>As a&ccedil;&otilde;es INICIO, DESVIO, COMANDO, RESTAURA (REFRESH), CONTEXTO e USUARIO podem tamb&eacute;m ser executadas de uma tela desformatada ou vazia.</FONT> </P>
+<FONT SIZE=2><P>Tamb&eacute;m &eacute; poss&iacute;vel efetuar outras opera&ccedil;&otilde;es no campo ACAO, al&eacute;m daquelas dispon&iacute;veis no SADS, tais como: "?ON CANDE", "?WRU", outros <I>trancodes,</I> etc.</FONT> </P>
+<FONT SIZE=2><P>O campo ACAO deve estar vazio para que qualquer informa&ccedil;&atilde;o seja transmitida do campo ESCOLHA.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Corpo do menu</B></FONT> </P>
+<FONT SIZE=2><P>O corpo do menu &eacute; a sua segunda &aacute;rea, onde est&aacute; definido o conjunto de rotas de navega&ccedil;&atilde;o v&aacute;lidas e o campo ESCOLHA.</FONT> </P>
+<FONT SIZE=2><P>Cada rota de navega&ccedil;&atilde;o corresponde a um destino que pode ser outro menu de escolha ou um menu de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A hierarquia de menus deve ser constru&iacute;da a partir de uma ordem l&oacute;gica de utiliza&ccedil;&atilde;o, de forma a facilitar o seu uso.</FONT> </P>
+<FONT SIZE=2><P>O campo ESCOLHA permite a navega&ccedil;&atilde;o por esses menus e o seu preenchimento &eacute; feito utilizando-se a identifica&ccedil;&atilde;o da rota a ser seguida. No contexto SADS foram utilizadas letras mai&uacute;sculas - em geral, as tr&ecirc;s letras iniciais das palavras - para representar as rotas.</FONT> </P>
+<FONT SIZE=2><P>Como exemplo, para selecionar o menu de Utilit&aacute;rios, a partir da tela inicial do SADS, informe "UTI" no campo ESCOLHA.</FONT> </P>
+<FONT SIZE=2><P>Tamb&eacute;m &eacute; poss&iacute;vel fazer escolhas m&uacute;ltiplas nos menus de escolha. Para isto deve-se digit&aacute;-las separadas por um caracter especial no campo ESCOLHA. Por exemplo: no menu inicial do SADS, pode-se digitar "TEL DES" no campo escolha e ser&aacute; apresentado o menu "DESTEL".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&Aacute;rea de mensagem</B></FONT> </P>
+<FONT SIZE=2><P>A &aacute;rea de mensagem &eacute; o &uacute;ltimo espa&ccedil;o do menu, que corresponde &agrave;s duas linhas finais da tela.</FONT> </P>
+<FONT SIZE=2><P>Esse &eacute; o local em que ser&atilde;o apresentadas mensagens que orientar&atilde;o a utiliza&ccedil;&atilde;o dos sistemas: mensagens de erro e mensagens de confirma&ccedil;&atilde;o de opera&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<B><FONT SIZE=2><P><A NAME="Menus">Menus de opera&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Menu de opera&ccedil;&atilde;o &eacute; aquele que define as opera&ccedil;&otilde;es e os dados b&aacute;sicos a serem informados para solicita&ccedil;&atilde;o de processamento das transa&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>Os menus de opera&ccedil;&atilde;o s&atilde;o divididos em tr&ecirc;s &aacute;reas: barra de a&ccedil;&atilde;o, corpo do menu e &aacute;rea de mensagem.</FONT> </P>
+<FONT SIZE=2><P>A diferen&ccedil;a entre os menus de opera&ccedil;&atilde;o e de escolha est&aacute; no corpo de cada um: enquanto os menus de escolha exibem rotas de navega&ccedil;&atilde;o e um campo para escolha da rota a ser seguida, os de opera&ccedil;&atilde;o apresentam os campos espec&iacute;ficos associados &agrave;s&nbsp;transa&ccedil;&otilde;es que podem ser solicitadas a partir deles.</FONT> </P>
+<FONT SIZE=2><P>Menus de opera&ccedil;&atilde;o, portanto, s&atilde;o as &uacute;nicas telas a partir das quais pode-se solicitar a execu&ccedil;&atilde;o de uma opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Menus de opera&ccedil;&atilde;o, a exemplo dos de escolha, n&atilde;o pertencem a um contexto espec&iacute;fico e, portanto, podem tamb&eacute;m ser utilizados em v&aacute;rios contextos simultaneamente. Como as regras de convers&atilde;o de <I>layout</I> s&atilde;o definidas para um determinado menu de opera&ccedil;&atilde;o, elas tamb&eacute;m n&atilde;o s&atilde;o definidas para um contexto espec&iacute;fico.</FONT> </P>
+<FONT SIZE=2><P>O m&oacute;dulo de navega&ccedil;&atilde;o do SADS faz a convers&atilde;o dos dados transmitidos nos menus de opera&ccedil;&atilde;o para o <I>layout</I> do menu de op&ccedil;&atilde;o automaticamente, toda vez que uma opera&ccedil;&atilde;o &eacute; disparada. Esta transfer&ecirc;ncia s&oacute; &eacute; poss&iacute;vel devido ao fato de existirem regras de convers&atilde;o de <I>layout</I> cadastradas.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o &eacute; necess&aacute;rio que a esta&ccedil;&atilde;o esteja logada em um contexto para que, ao ser transmitido um menu de opera&ccedil;&atilde;o, seja executada sua regra de convers&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As regras de convers&atilde;o s&atilde;o definidas apenas para os menus de opera&ccedil;&atilde;o, pois apenas esses menus disparam transa&ccedil;&otilde;es vinculadas aos menus de op&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=2><P><A NAME="Tela">Telas de processamento</A></B></FONT> </P>
+<FONT SIZE=2><P>Tela de processamento &eacute; uma tela utilizada pelo programa que processa uma transa&ccedil;&atilde;o, permitindo a execu&ccedil;&atilde;o das opera&ccedil;&otilde;es de inclus&atilde;o, altera&ccedil;&atilde;o, exclus&atilde;o, consulta, gera&ccedil;&atilde;o, libera&ccedil;&atilde;o e outras relativas aos elementos manipulados pelos programas.</FONT> </P>
+<FONT SIZE=2><P>Existem transa&ccedil;&otilde;es que podem ser executadas diretamente a partir de um menu de opera&ccedil;&atilde;o, sem que sejam apresentadas telas de processamento associadas. Como exemplo destas transa&ccedil;&otilde;es, no SADS tem-se as libera&ccedil;&otilde;es de consist&ecirc;ncias, ressequenciamento de estruturas etc.</FONT> </P>
+<FONT SIZE=2><P>Em uma tela de processamento, pode-se tomar duas decis&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Retornar a um menu, sem executar o processamento da transa&ccedil;&atilde;o, considerando-se os seguintes casos:</FONT> </P>
+<FONT SIZE=2><P>Se a tela de processamento utilizar o campo de a&ccedil;&atilde;o, o retorno ser&aacute; atrav&eacute;s deste campo;</FONT> </P>
+<FONT SIZE=2><P>Caso o campo de a&ccedil;&atilde;o n&atilde;o seja utilizado, o retorno ser&aacute; ao menu de escolha hierarquicamente superior ao menu de opera&ccedil;&atilde;o que tiver originado a transa&ccedil;&atilde;o. </P>
+<P>Neste caso, a tela deve ser transmitida com o cursor no in&iacute;cio do seu primeiro campo, ap&oacute;s o c&oacute;digo de transa&ccedil;&atilde;o, ou caso a tela possua o campo CONFIRME, este deve ser preenchido com "N";</FONT> </P>
+<FONT SIZE=2><P>Se o terminal estiver programado para transmitir a tela inteira, deve ser utilizada a tecla "ETX" para transmitir somente o <I>trancode</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Processar a opera&ccedil;&atilde;o solicitada.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>As telas de processamento s&atilde;o de quatro tipos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Atualiza&ccedil;&atilde;o Simples</B>: s&atilde;o telas com caracter&iacute;sticas b&aacute;sicas dos elementos, como defini&ccedil;&otilde;es ou descri&ccedil;&otilde;es.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Atualiza&ccedil;&atilde;o Paginada</B>: s&atilde;o telas que permitem atualiza&ccedil;&atilde;o de itens em uma ou mais p&aacute;ginas, com facilidade de deslocamento entre elas, sem obedecer a uma sequ&ecirc;ncia l&oacute;gica.</FONT> </P>
+<FONT SIZE=2><P>Os campos espec&iacute;ficos para atualiza&ccedil;&atilde;o paginada s&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>PAGINA</B> - N&uacute;mero da p&aacute;gina corrente.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>PROXIMA PAGINA</B> - N&uacute;mero da pr&oacute;xima p&aacute;gina que se deseja visualizar.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>"nn" - O n&uacute;mero da p&aacute;gina desejada;<BR>
+"--" - Para acesso &agrave; p&aacute;gina anterior; <BR>
+"UL" - Para acesso &agrave; &uacute;ltima p&aacute;gina; <BR>
+"99" - Para encerramento da pagina&ccedil;&atilde;o e efetiva&ccedil;&atilde;o do processamento da<BR>
+transa&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Se este campo n&atilde;o for informado, ser&aacute; apresentada a pr&oacute;xima p&aacute;gina na sequ&ecirc;ncia que foi programada.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>A atualiza&ccedil;&atilde;o de p&aacute;ginas somente ser&aacute; efetuada quando for transmitido o valor "99" no campo PROXIMA PAGINA.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Consulta Simples</B>: s&atilde;o telas com caracter&iacute;sticas b&aacute;sicas dos elementos, como defini&ccedil;&otilde;es ou descri&ccedil;&otilde;es.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Consulta Paginada</B>: s&atilde;o telas que permitem que os itens sejam apresentados em uma ou mais p&aacute;ginas, com a facilidade de deslocamento entre elas, sem obedecer a uma sequ&ecirc;ncia l&oacute;gica.</FONT> </P>
+<FONT SIZE=2><P>Os campos espec&iacute;ficos para consulta paginada s&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>PAGINA</B> - N&uacute;mero da p&aacute;gina corrente.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>PROXIMA PAGINA</B> - N&uacute;mero da pr&oacute;xima p&aacute;gina que se deseja visualizar.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>"nn" - O n&uacute;mero da p&aacute;gina desejada;<BR>
+"--" - Para acesso &agrave; p&aacute;gina anterior; <BR>
+"UL" - Para acesso &agrave; &uacute;ltima p&aacute;gina; <BR>
+"99" - Para encerramento da pagina&ccedil;&atilde;o.</FONT> </P></DIR>
+</DIR>
+</DIR>
+
+<FONT SIZE=2><P>Maiores detalhes a respeito de telas de processamento est&atilde;o descritos na Se&ccedil;&atilde;o II, "Elementos do reposit&oacute;rio de dados do SADS", item "Tela", neste manual.</P>
+<B><P><A NAME="Rota">Rotas de navega&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Uma rota &eacute; definida por um menu de escolha, uma palavra-chave e um destino.</FONT> </P>
+<FONT SIZE=2><P>O destino pode ser outro menu de escolha ou um menu de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As rotas de navega&ccedil;&atilde;o s&atilde;o sempre definidas a partir de um menu de escolha, sendo que este tipo de menu &eacute; utilizado apenas para navega&ccedil;&atilde;o entre menus, n&atilde;o sendo poss&iacute;vel solicitar opera&ccedil;&otilde;es espec&iacute;ficas a partir deles.</FONT> </P>
+<FONT SIZE=2><P>As escolhas dispon&iacute;veis s&atilde;o indicadas no corpo do menu por palavras-chave que, no contexto SADS, s&atilde;o segmentos das palavras que representam as rota desejadas, em letras mai&uacute;sculas.</P>
+<B><P><A NAME="Regra">Regras de convers&atilde;o de <I>layout</A></B></I></FONT> </P>
+<FONT SIZE=2><P>Regras de convers&atilde;o de <I>layout</I> s&atilde;o mapeamentos existentes entre os campos do menu de opera&ccedil;&atilde;o e os campos do menu de op&ccedil;&atilde;o correspondente.</FONT> </P>
+<FONT SIZE=2><P>A navega&ccedil;&atilde;o, com seus menus de escolha e opera&ccedil;&atilde;o, funciona como uma m&aacute;scara para o usu&aacute;rio final. Assim, internamente, os sistemas continuam trabalhando da forma convencional, atrav&eacute;s de menus de op&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Para que uma transa&ccedil;&atilde;o seja realmente disparada, os campos de seu menu de op&ccedil;&atilde;o correspondente devem ser preenchidos com os argumentos informados pelo usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Sendo assim, toda vez que uma opera&ccedil;&atilde;o for solicitada a partir de menu de opera&ccedil;&atilde;o, os dados nele informados dever&atilde;o ser passados para os campos correspondentes no menu de op&ccedil;&atilde;o, para que a transa&ccedil;&atilde;o seja efetivamente processada.</FONT> </P>
+<FONT SIZE=2><P>O m&oacute;dulo de navega&ccedil;&atilde;o do SADS far&aacute; a transfer&ecirc;ncia autom&aacute;tica de dados entre o menu de opera&ccedil;&atilde;o e o menu de op&ccedil;&atilde;o a ele relacionado. Por&eacute;m, esta transfer&ecirc;ncia s&oacute; &eacute; poss&iacute;vel devido ao fato de existirem regras de convers&atilde;o cadastradas para cada menu de opera&ccedil;&atilde;o da navega&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As regras de convers&atilde;o s&atilde;o definidas apenas para os menus de opera&ccedil;&atilde;o, pois apenas a partir deles as transa&ccedil;&otilde;es podem ser solicitadas.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o &eacute; necess&aacute;rio que a esta&ccedil;&atilde;o esteja logada em um contexto para que, ao ser transmitido um menu de opera&ccedil;&atilde;o, seja executada sua regra de convers&atilde;o.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Cadas">Cadastramento</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Um sistema aplicativo pode ter sua navega&ccedil;&atilde;o projetada seguindo o mesmo padr&atilde;o SAA adotado pelo SADS. O desenvolvimento do sistema, por&eacute;m, tem de ser efetuado de acordo com a navega&ccedil;&atilde;o via <I>host</I>.</FONT> </P>
+<FONT SIZE=2><P>Para um sistema utilizar a navega&ccedil;&atilde;o interpretativa, seus menus de escolha e de opera&ccedil;&atilde;o devem ser desenhados e devem ser feitos os cadastramentos das rotas, para possibilitar o deslocamento entre eles, e das regras de convers&atilde;o de <I>layout</I>.</FONT> </P>
+<FONT SIZE=2><P>Um sistema aplicativo j&aacute; existente n&atilde;o precisa de adapta&ccedil;&atilde;o para utiliza&ccedil;&atilde;o da navega&ccedil;&atilde;o interpretativa. Basta que ela seja criada, pois os dois tipos de navega&ccedil;&atilde;o funcionam independentemente e apenas a executada pelo <I>host</I> &eacute; obrigat&oacute;ria.</FONT> </P>
+<FONT SIZE=2><P>A constru&ccedil;&atilde;o de um novo sistema exige que a navega&ccedil;&atilde;o via <I>host</I>, com menus de op&ccedil;&atilde;o, seja constru&iacute;da. Se o sistema, por&eacute;m, for operado apenas atrav&eacute;s da navega&ccedil;&atilde;o interpretativa, devem ser executados os seguintes procedimentos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Defini&ccedil;&atilde;o de um &uacute;nico menu - menu de op&ccedil;&atilde;o - contendo todas as op&ccedil;&otilde;es poss&iacute;veis de serem executadas pelo sistema.</FONT> </P>
+<FONT SIZE=2><P>O processo de cadastramento de menu est&aacute; descrito na Se&ccedil;&atilde;o II, "Elementos do reposit&oacute;rio de dados do SADS", no item "Menu".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Cadastramento do desenho do menu de op&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o &eacute; necess&aacute;rio desenhar as constantes, bastando desenhar todos os argumentos a serem utilizados pelos programas chamados e o campo de op&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Cadastramento da estrutura do menu de op&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Gera&ccedil;&atilde;o e libera&ccedil;&atilde;o de sua <I>library</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Cadastramento do desenho e estrutura de todas as telas de processamento tratadas pelos programas chamados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Gera&ccedil;&atilde;o e libera&ccedil;&atilde;o da <I>library</I> destas telas de processamento.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Ap&oacute;s terem sido executados estes procedimentos, pode-se, ent&atilde;o, definir a sua navega&ccedil;&atilde;o atrav&eacute;s de menus de escolha, menus de opera&ccedil;&atilde;o, regras e rotas de navega&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=4><P>Roteiro</B></FONT> </P>
+<FONT SIZE=2><P>O processo de defini&ccedil;&atilde;o da navega&ccedil;&atilde;o consiste em cadastrar todos os elementos nela envolvidos, atrav&eacute;s da execu&ccedil;&atilde;o consecutiva dos seguintes passos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Especifica&ccedil;&atilde;o dos menus de opera&ccedil;&atilde;o e escolha a serem utilizados no contexto.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Defini&ccedil;&atilde;o de um contexto de navega&ccedil;&atilde;o para o sistema aplicativo ou cria&ccedil;&atilde;o de novas rotas em um contexto j&aacute; existente.</FONT> </P>
+<FONT SIZE=2><P>Contexto de navega&ccedil;&atilde;o &eacute; o nome dado ao agrupamento de menus de escolha e de opera&ccedil;&atilde;o origin&aacute;rios de um ou mais sistemas e que delimitam uma vis&atilde;o global para o usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Para definir um determinado contexto, com seus menus, rotas e regras, o usu&aacute;rio deve ter habilita&ccedil;&atilde;o de elemento no Sistema de Seguran&ccedil;a para tal contexto. O nome da lista de elementos a qual o usu&aacute;rio dever&aacute; ser habilitado &eacute; a "CONTEXT". Esta lista dever&aacute; conter, como elementos, o c&oacute;digo de todos os contextos com os quais o usu&aacute;rio ir&aacute; trabalhar, com o devido tipo de habilita&ccedil;&atilde;o (s&oacute; consultar, consultar e atualizar ou n&atilde;o trabalhar). Para maiores detalhes sobre o cadastramento de habilita&ccedil;&atilde;o de contextos, deve-se consultar a Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&atilde;o de usu&aacute;rios SADS", neste manual.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Cadastramento dos t&iacute;tulos dos menus desenhados, associando-os aos seus c&oacute;digos de tela.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o deve haver t&iacute;tulos de telas id&ecirc;nticos num mesmo contexto, para que seja poss&iacute;vel o deslocamento do usu&aacute;rio atrav&eacute;s dos nomes delas.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Cadastramento das rotas de navega&ccedil;&atilde;o para cada menu de escolha, isto &eacute;, cadastramento das possibilidades de deslocamentos a partir das palavras-chave nele apresentadas.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Cadastramento e libera&ccedil;&atilde;o das regras de convers&atilde;o de <I>layout</I> para cada menu de opera&ccedil;&atilde;o, para converter os dados informados no menu para o formato que os programas foram preparados para processar. A libera&ccedil;&atilde;o das regras pode ser feita uma a uma ou, de uma s&oacute; vez, pode ser feita a libera&ccedil;&atilde;o de todas as regras cadastradas em um contexto especificado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Ap&oacute;s cadastrados os elementos relativos &agrave; navega&ccedil;&atilde;o devem ser efetuados certos procedimentos de prepara&ccedil;&atilde;o para utiliza&ccedil;&atilde;o da mesma.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>A seguir, cada um destes passos ser&aacute; explicado detalhadamente, assim como o procedimento para utiliza&ccedil;&atilde;o do contexto definido.</FONT> </P>
+<B><FONT SIZE=5><P>Especifica&ccedil;&atilde;o dos menus</B></FONT> </P>
+<FONT SIZE=2><P>Menus de opera&ccedil;&atilde;o e de escolha n&atilde;o s&atilde;o obrigat&oacute;rios para o funcionamento do sistema e somente devem ser especificados caso contextos de navega&ccedil;&atilde;o venham a ser criados para o sistema.</FONT> </P>
+<FONT SIZE=2><P>J&aacute; os menus de op&ccedil;&atilde;o e as telas de processamento, independentemente da utiliza&ccedil;&atilde;o ou n&atilde;o da navega&ccedil;&atilde;o, devem ter suas caracter&iacute;sticas especificadas no reposit&oacute;rio de dados a fim de permitir o desenvolvimento de um determinado sistema.</FONT> </P>
+<FONT SIZE=2><P>Neste t&oacute;pico, que diz respeito &agrave; navega&ccedil;&atilde;o, somente ser&atilde;o explicadas as especifica&ccedil;&otilde;es dos menus de escolha e de opera&ccedil;&atilde;o. As especifica&ccedil;&otilde;es dos demais elementos - menus de op&ccedil;&atilde;o e telas de processamento - est&atilde;o descritas na Se&ccedil;&atilde;o II, "Elementos do reposit&oacute;rio de dados do SADS", itens "Menu" e "Tela", respectivamente.</FONT> </P>
+<FONT SIZE=2><P>Para os menus de escolha dever&atilde;o ser especificados:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Desen">Desenho de menu</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Defme">Defini&ccedil;&atilde;o de menu</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Libera&ccedil;&atilde;o de desenho de tela menu;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Cadastramento de t&iacute;tulo de tela menu;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Cadastramento de rotas de navega&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para os menus de opera&ccedil;&atilde;o dever&atilde;o ser especificados:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Desen">Desenho de menu</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Defme">Defini&ccedil;&atilde;o de menu</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cadest">Cadastramento de estrutura de tela menu</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cadlib">Cadastramento e libera&ccedil;&atilde;o de consist&ecirc;ncia de tela menu</A><FONT SIZE=2>, se necess&aacute;rio;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Libdes">Libera&ccedil;&atilde;o de desenho de tela menu</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Cadastramento de t&iacute;tulo de tela menu;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Cadastramento de regras de convers&atilde;o de <I>layout</I>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Libera&ccedil;&atilde;o de regras de convers&atilde;o de <I>layout</I>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Menus de escolha e de opera&ccedil;&atilde;o n&atilde;o possuem <I>libraries</I>. N&atilde;o &eacute; necess&aacute;rio, portanto, efetuar a gera&ccedil;&atilde;o das mesmas.</FONT> </P>
+<FONT SIZE=2><P>A seguir, ser&atilde;o apresentados os passos a serem obedecidos para se definir cada um destes menus e os padr&otilde;es utilizados para a navega&ccedil;&atilde;o do SADS.</FONT> </P>
+<FONT SIZE=4><P><A NAME="Desen">Desenho de menu</A></FONT> </P>
+<FONT SIZE=2><P>Da mesma forma que para os menus de op&ccedil;&atilde;o, para cada menu de escolha ou de opera&ccedil;&atilde;o deve-se desenhar uma tela para explicitar as escolhas e opera&ccedil;&otilde;es v&aacute;lidas, respectivamente.</FONT> </P>
+<FONT SIZE=2><P>O desenho destes menus deve obedecer &agrave;s seguintes regras:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>O c&oacute;digo da tela e o <I>trancode</I> devem ter o n&uacute;mero do menu igual a 00 ou um m&uacute;ltiplo de 10, da seguinte forma:</FONT> </P></DIR>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" WIDTH=319>
+<TR><TD WIDTH="37%" VALIGN="MIDDLE">
+<P><B><FONT SIZE=2>C&oacute;digo da tela</B></FONT> </TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<B><I><FONT SIZE=2><P ALIGN="CENTER">Trancode</B></I></FONT></TD>
+<TD WIDTH="30%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P>Transa&ccedil;&atilde;o</B></FONT> </TD>
+</TR>
+<TR><TD WIDTH="37%" VALIGN="MIDDLE">
+<P>sssT00nn</TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">sss00</TD>
+<TD WIDTH="30%" VALIGN="MIDDLE">
+<P>sss00.nn</TD>
+</TR>
+<TR><TD WIDTH="37%" VALIGN="MIDDLE">
+<P>sssT10nn</TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">sss10</TD>
+<TD WIDTH="30%" VALIGN="MIDDLE">
+<P>sss10.nn</TD>
+</TR>
+<TR><TD WIDTH="37%" VALIGN="MIDDLE">
+<P>sssT20nn</TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">sss20</TD>
+<TD WIDTH="30%" VALIGN="MIDDLE">
+<P>sss20.nn</TD>
+</TR>
+<TR><TD WIDTH="37%" VALIGN="MIDDLE">
+<P>...</TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">...</TD>
+<TD WIDTH="30%" VALIGN="MIDDLE">
+<P>...</TD>
+</TR>
+</TABLE>
+<DIR>
+<DIR>
+
+<P><BR>
+onde "nn" indica o n&uacute;mero da transa&ccedil;&atilde;o. </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>O <I><FONT SIZE=2>trancode</I> deve ser desenhado como um campo protegido, transmiss&iacute;vel e invis&iacute;vel, a fim de que seja transparente ao usu&aacute;rio final.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>No desenho do menu, o t&iacute;tulo deve ser colocado na primeira linha, seguido de sua descri&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Sugere-se que, tal qual na navega&ccedil;&atilde;o do SADS, o mesmo seja definido em caracteres brilhantes.</FONT> </P>
+<FONT SIZE=2><P>Exemplo: <B>CADFOR</B> - Cadastro de Fornecedores.</FONT> </P>
+<FONT SIZE=2><P>Para utiliza&ccedil;&atilde;o amig&aacute;vel do sistema, deve-se escolher um t&iacute;tulo adequado para o menu e de f&aacute;cil memoriza&ccedil;&atilde;o pelo usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Sugere-se que este t&iacute;tulo seja formado em conjunto de tr&ecirc;s caracteres, respeitando o limite de nove, sendo que a regra de forma&ccedil;&atilde;o do t&iacute;tulo deve ser informada ao usu&aacute;rio para facilitar a utiliza&ccedil;&atilde;o do sistema.</FONT> </P>
+<FONT SIZE=2><P>Exemplo: Nome do menu - "Desenho de Tela"; </P><DIR>
+<DIR>
+
+<P>T&iacute;tulo do menu - "DESTEL".</FONT> </P></DIR>
+</DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Deve-se desenhar o campo para receber data e hora, com tamanho de 18 caracteres.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Na segunda linha deve ser desenhado o campo de a&ccedil;&atilde;o, com 69 posi&ccedil;&otilde;es, e na terceira, as a&ccedil;&otilde;es que podem ser informadas neste campo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>No in&iacute;cio da terceira linha dever&aacute; ser definido um caractere de sublinhado, a fim de separar a barra de a&ccedil;&atilde;o do corpo do menu.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>O corpo do menu deve ser desenhado abaixo da barra de a&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Este varia de acordo com o tipo do menu, escolha ou opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Nos pr&oacute;ximos t&oacute;picos, ser&atilde;o detalhados os procedimentos e regras necess&aacute;rios ao correto desenho de cada um destes menus.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Em seguida ao conte&uacute;do definido no corpo do menu, deve-se definir um campo de transmiss&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Caso se queira seguir a padroniza&ccedil;&atilde;o adotada nos menus de navega&ccedil;&atilde;o do SADS, deve-se desenhar uma linha com apenas o caractere de sublinhado na primeira posi&ccedil;&atilde;o, para separar o corpo do menu da &aacute;rea de mensagem.</FONT> </P></DIR>
+
+<B><FONT SIZE=2><P><A NAME="Menesc">Menu de escolha</A></B></FONT> </P>
+<FONT SIZE=2><P>Padr&otilde;es a serem utilizados no desenho dos menus de escolha, que s&atilde;o diferentes dos menus de opera&ccedil;&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>No corpo do menu devem ser desenhadas as rotas que podem ser seguidas.</FONT> </P>
+<FONT SIZE=2><P>Cada uma das rotas definir&aacute; um deslocamento a partir deste menu. Em cada rota, deve-se indicar em caracteres mai&uacute;sculos as palavras-chave que correspondem &agrave;s escolhas que podem ser selecionadas, a fim de efetuar tais deslocamentos.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Deve-se distribuir as fun&ccedil;&otilde;es nos menus de escolha conforme sua utiliza&ccedil;&atilde;o pelo usu&aacute;rio, e n&atilde;o conforme menus e submenus de op&ccedil;&atilde;o, sobre os quais os sistemas foram desenvolvidos.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Deve-se desenhar, abaixo do corpo do menu, um campo de entrada, para preenchimento da escolha, com 66 posi&ccedil;&otilde;es, que ir&aacute; anteceder o campo de transmiss&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Sugere-se que seja dado o nome de ESCOLHA a este campo, para padronizar com o SADS e torn&aacute;-lo condizente com o tipo do menu: menu de escolha.</P></DIR>
+
+<B><P><A NAME="Menop">Menu de opera&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Padr&otilde;es utilizados pelo SADS no desenho dos menus de opera&ccedil;&atilde;o, que s&atilde;o diferentes dos menus de escolha:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Deve-se desenhar somente os campos de argumentos que s&atilde;o necess&aacute;rios ao disparo da transa&ccedil;&atilde;o, da seguinte forma:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Um campo para informa&ccedil;&atilde;o da opera&ccedil;&atilde;o, caso deste menu possam ser disparadas mais de uma opera&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Os campos obrigat&oacute;rios devem ser desenhados primeiramente, seguidos pelos opcionais;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Para os campos opcionais &eacute; desej&aacute;vel que sejam descritas quais as ocasi&otilde;es em que devem ser preenchidos;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Para os campos que podem assumir v&aacute;rios valores, &eacute; conveniente indicar, na frente dos mesmos, quais s&atilde;o os valores poss&iacute;veis de serem informados.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Existe um limite m&aacute;ximo de 90 campos de <I>input</I> por menu de opera&ccedil;&atilde;o<I>.</I></FONT> </P></DIR>
+
+<FONT SIZE=4><P><A NAME="Defme">Defini&ccedil;&atilde;o de menu</A></FONT> </P>
+<FONT SIZE=2><P>A defini&ccedil;&atilde;o dos menus de escolha ou de opera&ccedil;&atilde;o no reposit&oacute;rio de dados do SADS &eacute; efetuada tal como uma tela qualquer do sistema, e est&aacute; explicada na Se&ccedil;&atilde;o II, "Elementos do reposit&oacute;rio de dados do SADS", item "Tela", t&oacute;pico "Defini&ccedil;&atilde;o".</FONT> </P>
+<FONT SIZE=2><P>Os c&oacute;digos das telas de menus de escolha e de opera&ccedil;&atilde;o, bem como seus <I>trancode</I>s, devem ter o n&uacute;mero do menu igual a 00 ou um m&uacute;ltiplo de 10, da seguinte forma:</FONT> </P>
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" WIDTH=354>
+<TR><TD WIDTH="37%" VALIGN="MIDDLE">
+<P><B><FONT SIZE=2>C&oacute;digo da tela</B></FONT> </TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<B><I><FONT SIZE=2><P ALIGN="CENTER">Trancode</B></I></FONT></TD>
+<TD WIDTH="30%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P>Transa&ccedil;&atilde;o</B></FONT> </TD>
+</TR>
+<TR><TD WIDTH="37%" VALIGN="MIDDLE">
+<P>sssT00nn</TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">sss00</TD>
+<TD WIDTH="30%" VALIGN="MIDDLE">
+<P>sss00.nn</TD>
+</TR>
+<TR><TD WIDTH="37%" VALIGN="MIDDLE">
+<P>sssT10nn</TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">sss10</TD>
+<TD WIDTH="30%" VALIGN="MIDDLE">
+<P>sss10.nn</TD>
+</TR>
+<TR><TD WIDTH="37%" VALIGN="MIDDLE">
+<P>sssT20nn</TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">sss20</TD>
+<TD WIDTH="30%" VALIGN="MIDDLE">
+<P>sss20.nn</TD>
+</TR>
+<TR><TD WIDTH="37%" VALIGN="MIDDLE">
+<P>...</TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">...</TD>
+<TD WIDTH="30%" VALIGN="MIDDLE">
+<P>...</TD>
+</TR>
+</TABLE>
+
+<P>onde "nn" indica o n&uacute;mero da transa&ccedil;&atilde;o. </P>
+<FONT SIZE=4><P><A NAME="Cadest">Cadastramento de estrutura de tela menu</A></FONT> </P>
+<FONT SIZE=2><P>Apenas os menus de opera&ccedil;&atilde;o exigem o cadastramento de estrutura da tela.</FONT> </P>
+<FONT SIZE=2><P>O campo ACAO deve ser cadastrado na estrutura do menu de opera&ccedil;&atilde;o atrav&eacute;s do atributo "TLAACAO", que deve ser um campo de <I>input</I> com tamanho 69.</FONT> </P>
+<FONT SIZE=2><P>Para maiores detalhes a respeito do cadastramento de estrutura de tela, deve-se consultar a Se&ccedil;&atilde;o II, "Elementos do reposit&oacute;rio de dados do SADS", item "Tela", t&oacute;pico "Estrutura".</FONT> </P>
+<FONT SIZE=4><P><A NAME="Cadlib">Cadastramento e libera&ccedil;&atilde;o de consist&ecirc;ncia de tela menu</A></FONT> </P>
+<FONT SIZE=2><P>N&atilde;o &eacute; poss&iacute;vel efetuar o cadastramento ou gera&ccedil;&atilde;o da consist&ecirc;ncia dos menus de escolha. Por&eacute;m, caso haja necessidade, para menus de opera&ccedil;&atilde;o sua gera&ccedil;&atilde;o ou cadastramento pode ser efetuada normalmente. Estes procedimentos est&atilde;o descritos na Se&ccedil;&atilde;o II, "Elementos do reposit&oacute;rio de dados do SADS", item "Consist&ecirc;ncia", t&oacute;pico "Cadastramento".</FONT> </P>
+<FONT SIZE=4><P><A NAME="Libdes">Libera&ccedil;&atilde;o de desenho de tela menu</A></FONT> </P>
+<FONT SIZE=2><P>Os desenhos dos menus devem ser liberados para um ambiente - teste (T) ou produ&ccedil;&atilde;o (P) - de acordo com a necessidade de utiliza&ccedil;&atilde;o da navega&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A libera&ccedil;&atilde;o do desenho das telas dos menus de escolha ou de opera&ccedil;&atilde;o &eacute; semelhante &agrave; libera&ccedil;&atilde;o de uma tela qualquer do sistema e est&aacute; explicada na Se&ccedil;&atilde;o II, "Elementos do reposit&oacute;rio de dados do SADS", item "Tela", t&oacute;pico "Libera&ccedil;&atilde;o de desenho de tela".</FONT> </P>
+<FONT SIZE=5><P><A NAME="Defcon">Defini&ccedil;&atilde;o de contexto</A></FONT> </P>
+<FONT SIZE=2><P>Contexto &eacute; um agrupamento de menus de escolha e de opera&ccedil;&atilde;o que define uma vis&atilde;o das aplica&ccedil;&otilde;es dispon&iacute;veis para os usu&aacute;rios, podendo disparar transa&ccedil;&otilde;es de um ou mais sistemas.</FONT> </P>
+<FONT SIZE=2><P>As transa&ccedil;&otilde;es de um contexto s&atilde;o operacionalmente relacionadas e se destinam a um grupo de usu&aacute;rios que efetuam fun&ccedil;&otilde;es similares.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s ter conclu&iacute;do o desenvolvimento de um sistema aplicativo, pode-se determinar ent&atilde;o o contexto em que o mesmo ser&aacute; inserido.</FONT> </P>
+<FONT SIZE=2><P>As transa&ccedil;&otilde;es de um sistema aplicativo podem ser inclu&iacute;das em um ou mais contextos j&aacute; existentes e, tamb&eacute;m, pode-se criar um novo contexto para agrupar suas transa&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>A adapta&ccedil;&atilde;o de contextos j&aacute; existentes para inclus&atilde;o de novas transa&ccedil;&otilde;es deve ser feita atrav&eacute;s das seguintes fun&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Altera&ccedil;&atilde;o dos desenhos dos menus de escolha incluindo as escolhas referentes as novas fun&ccedil;&otilde;es;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Defini&ccedil;&atilde;o das rotas das novas escolhas inclu&iacute;das e</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Defini&ccedil;&atilde;o das regras de convers&atilde;o dos novos menus de opera&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso as fun&ccedil;&otilde;es do novo sistema n&atilde;o sejam necess&aacute;rias em contextos j&aacute; existentes, pode-se criar um contexto pr&oacute;prio, cuja defini&ccedil;&atilde;o ser&aacute; explicada a seguir.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s o cadastramento dos elementos de um contexto, para utiliz&aacute;-lo, deve-se informar no campo ACAO de um menu de qualquer contexto o seguinte comando: "Inicio ;&lt;contexto&gt;", onde &lt;contexto&gt; &eacute; o nome do contexto ao qual se quer executar o acesso. Pode-se, tamb&eacute;m, de uma tela desformatada transmitir "CONTEXTO &lt;contexto&gt;".</FONT> </P>
+<FONT SIZE=2><P>Para definir e alterar qualquer elemento de um determinado contexto, o usu&aacute;rio deve ter habilita&ccedil;&atilde;o de elemento no Sistema de Seguran&ccedil;a para tal contexto. O nome da lista de elementos a qual o usu&aacute;rio dever&aacute; ser habilitado &eacute; a "CONTEXT". Esta lista dever&aacute; conter, como elementos, o c&oacute;digo de todos os contextos com os quais o usu&aacute;rio ir&aacute; trabalhar, com o devido tipo de habilita&ccedil;&atilde;o (s&oacute; consultar, consultar e atualizar ou n&atilde;o trabalhar). Para maiores detalhes sobre o cadastramento desta habilita&ccedil;&atilde;o de contextos, deve-se consultar a Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&atilde;o de usu&aacute;rios SADS", neste manual.</FONT> </P>
+<FONT SIZE=2><P>Definir um contexto &eacute; cadastrar um c&oacute;digo, dar-lhe um nome, indicar a tela menu inicial e definir se ser&aacute; exigida seguran&ccedil;a na sua utiliza&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A defini&ccedil;&atilde;o do contexto deve ser efetuada antes dos cadastramentos dos t&iacute;tulos de telas, das rotas de navega&ccedil;&atilde;o e das regras de convers&atilde;o de <I>layout</I>, por ser um pr&eacute;-requisito para tais defini&ccedil;&otilde;es.</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TITULO DO CONTEXTO</B> - C&oacute;digo do contexto.</FONT> </P>
+<FONT SIZE=2><P>O c&oacute;digo do contexto &eacute; livre, devendo ter no m&aacute;ximo 09 caracteres.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME DO CONTEXTO</B> - Descri&ccedil;&atilde;o resumida do contexto.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TRANSACAO INICIAL</B> - C&oacute;digo da tela inicial do contexto, no formato padr&atilde;o de transa&ccedil;&atilde;o do SADS:</P>
+<P>Os dois primeiros caracteres do identificador num&eacute;rico da transa&ccedil;&atilde;o deve ser "00" ou um m&uacute;ltiplo de "10".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTEXTO COM SEGURANCA (S/N)</B> - Indicador de exig&ecirc;ncia de seguran&ccedil;a do SADS para utiliza&ccedil;&atilde;o da navega&ccedil;&atilde;o do contexto.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para obrigar o teste de habilita&ccedil;&atilde;o do usu&aacute;rio que tentar utilizar a navega&ccedil;&atilde;o do contexto. </P>
+<P>Neste caso &eacute; exigido que o usu&aacute;rio efetue o <I>logon</I> no SADS.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para n&atilde;o testar a habilita&ccedil;&atilde;o do usu&aacute;rio que tentar utilizar a navega&ccedil;&atilde;o do contexto.</FONT> </P>
+<FONT SIZE=2><P>Neste caso n&atilde;o &eacute; necess&aacute;rio que o usu&aacute;rio efetue o <I>logon</I> no SADS para navegar no contexto.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONFIRME</B> - Indicador de confirma&ccedil;&atilde;o da opera&ccedil;&atilde;o sobre o contexto.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para confirmar o processamento da opera&ccedil;&atilde;o sobre o contexto;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para desistir do processamento da opera&ccedil;&atilde;o sobre o contexto.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o realizada sobre o contexto.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>A seguir, &eacute; apresentado um exemplo de defini&ccedil;&atilde;o de contexto de navega&ccedil;&atilde;o:</P>
+<P>Na opera&ccedil;&atilde;o de exclus&atilde;o, ser&aacute; exclu&iacute;da a defini&ccedil;&atilde;o do contexto e, se houver, os t&iacute;tulos das telas menus e as rotas de navega&ccedil;&atilde;o nele cadastrados; ou seja, na exclus&atilde;o de um contexto, todos os demais cadastramentos a ele relacionados ser&atilde;o exclu&iacute;dos, exceto as regras de convers&atilde;o de <I>layout</I>.</FONT> </P>
+<FONT SIZE=2><P>O contexto SADS j&aacute; cadastrado n&atilde;o pode ser alterado ou exclu&iacute;do em hip&oacute;tese alguma.</FONT> </P>
+<FONT SIZE=2><P>A inclus&atilde;o de um contexto cria um c&oacute;digo interno para o reposit&oacute;rio de dados do SADS. Este c&oacute;digo &eacute; formado por duas letras. O primeiro contexto inclu&iacute;do na instala&ccedil;&atilde;o ter&aacute; o c&oacute;digo "AA", o pr&oacute;ximo ser&aacute; o "AB" e assim sucessivamente.</FONT> </P>
+<FONT SIZE=2><P>Conhecer o c&oacute;digo interno do contexto &eacute; importante para as opera&ccedil;&otilde;es de extra&ccedil;&atilde;o e carga de contexto, uma vez que um contexto pode englobar mais de um sistema. N&atilde;o basta, portanto, extrair um sistema, como se faz convencionalmente.</FONT> </P>
+<FONT SIZE=2><P>A opera&ccedil;&atilde;o "LIS", do menu CONCONNAV (Consultas relativas a contextos de navega&ccedil;&atilde;o), exibe a lista dos contextos cadastrados e apresenta o c&oacute;digo interno de cada um deles. As rotinas de extra&ccedil;&atilde;o e carga de contexto de navega&ccedil;&atilde;o, bem como as consultas relativas a contextos, est&atilde;o descritas na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", neste manual.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Cadtit">Cadastramento de t&iacute;tulo de tela menu</A></B></FONT> </P>
+<FONT SIZE=2><P>Cadastrar t&iacute;tulos de telas menu &eacute; definir, para cada menu de escolha e de opera&ccedil;&atilde;o do contexto, os c&oacute;digos pelos quais eles poder&atilde;o ser identificados na a&ccedil;&atilde;o de desvio ou na a&ccedil;&atilde;o de comando.</FONT> </P>
+<FONT SIZE=2><P>O t&iacute;tulo da tela a ser cadastrado para um menu de escolha ou de opera&ccedil;&atilde;o deve ser o mesmo que se encontra identificado em seu desenho.</FONT> </P>
+<FONT SIZE=2><P>Uma mesma tela menu pode assumir t&iacute;tulos diferentes em contextos diferentes. Este, por&eacute;m, n&atilde;o &eacute; um bom procedimento, uma vez que &eacute; importante que o t&iacute;tulo da tela apare&ccedil;a no seu desenho.</FONT> </P>
+<FONT SIZE=2><P>Deve ser escolhido um t&iacute;tulo adequado para o menu, de modo que seja f&aacute;cil a sua memoriza&ccedil;&atilde;o pelo usu&aacute;rio, para uma utiliza&ccedil;&atilde;o mais r&aacute;pida do sistema.</FONT> </P>
+<FONT SIZE=2><P>Sugere-se que este t&iacute;tulo seja formado em conjunto de tr&ecirc;s caracteres, com o m&aacute;ximo de nove, sendo que a regra de forma&ccedil;&atilde;o do t&iacute;tulo deve ser informada ao usu&aacute;rio para facilitar a utiliza&ccedil;&atilde;o do sistema.</FONT> </P>
+<FONT SIZE=2><P>A seguir ser&atilde;o apresentados alguns exemplos de forma&ccedil;&atilde;o de t&iacute;tulos de menus:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Nome do menu - "Desenho de Tela";</FONT> </P>
+<FONT SIZE=2><P>T&iacute;tulo do menu - "DESTEL".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Nome do menu -"Libera&ccedil;&atilde;o de Desenho de Tela"</FONT> </P>
+<FONT SIZE=2><P>T&iacute;tulo do menu - "LIBDESTEL".</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para cadastrar t&iacute;tulos de telas menu, &eacute; necess&aacute;rio que o contexto j&aacute; esteja cadastrado no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Cumpre ressaltar que, quando se solicita a opera&ccedil;&atilde;o de exclus&atilde;o, todos os t&iacute;tulos referentes ao contexto informado ser&atilde;o exclu&iacute;dos. Para excluir apenas um t&iacute;tulo, deve-se ent&atilde;o informar opera&ccedil;&atilde;o altera&ccedil;&atilde;o (ALT) e limpar a linha referente ao t&iacute;tulo que se deseja excluir.</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTEXTO</B> - C&oacute;digo do contexto.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TRANSACAO</B> - C&oacute;digo da transa&ccedil;&atilde;o &agrave; qual ser&aacute; associado o t&iacute;tulo.</FONT> </P>
+<FONT SIZE=2><P>Este c&oacute;digo de transa&ccedil;&atilde;o tem de ser informado conforme a seguinte padroniza&ccedil;&atilde;o do SADS:</P>
+<P>Os dois primeiros caracteres do identificador num&eacute;rico da transa&ccedil;&atilde;o t&ecirc;m de ser 00 ou m&uacute;ltiplo de 10.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TITULO DA TELA</B> - T&iacute;tulo com o qual o menu ser&aacute; conhecido, para utiliza&ccedil;&atilde;o nas ac&otilde;es Desvio e Comando.</FONT> </P>
+<FONT SIZE=2><P>Sugere-se que este t&iacute;tulo seja formado em conjunto de tr&ecirc;s caracteres, com o m&aacute;ximo de nove, sendo que a regra de forma&ccedil;&atilde;o do t&iacute;tulo deve ser informada ao usu&aacute;rio para facilitar a utiliza&ccedil;&atilde;o do sistema.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTINUA(S/N)</B> - Indicador de continuidade de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para prosseguir no cadastramento de t&iacute;tulos de tela para o contexto;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para encerrar o cadastramento de t&iacute;tulos de tela para o contexto.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o realizada sobre os t&iacute;tulos de telas.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Cadrot">Cadastramento de rotas de navega&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Definir rotas de navega&ccedil;&atilde;o &eacute; estabelecer quais palavras-chaves podem ser selecionadas em um determinado menu de escolha e que outro menu dever&aacute; ser apresentado quando a palavra-chave for escolhida.</FONT> </P>
+<FONT SIZE=2><P>Uma rota &eacute;, pois, um deslocamento que se pode efetuar a partir de uma escolha selecionada no menu.</FONT> </P>
+<FONT SIZE=2><P>Cada rota determina um destino que pode ser outro menu de escolha ou um menu de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Um menu de destino s&oacute; pode estar relacionado a um menu de origem, ou seja, n&atilde;o pode haver mais de uma rota em menus de origem diferentes com destino a um mesmo menu.</FONT> </P>
+<FONT SIZE=2><P>As rotas de navega&ccedil;&atilde;o s&atilde;o sempre definidas a partir de um menu de escolha, sendo que este tipo de menu &eacute; utilizado apenas para navega&ccedil;&atilde;o entre menus, n&atilde;o sendo poss&iacute;vel disparar opera&ccedil;&otilde;es espec&iacute;ficas a partir deles.</FONT> </P>
+<FONT SIZE=2><P>As escolhas dispon&iacute;veis s&atilde;o indicadas no corpo do menu pelas palavras-chave, que s&atilde;o partes das palavras que representam as rotas desejadas, em letras mai&uacute;sculas.</FONT> </P>
+<FONT SIZE=2><P>Para definir as rotas de navega&ccedil;&atilde;o de uma determinada tela menu, &eacute; necess&aacute;rio que seu t&iacute;tulo esteja cadastrado no reposit&oacute;rio de dados do SADS para o contexto em quest&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>&Eacute; importante salientar que, se desej&aacute;vel que a a&ccedil;&atilde;o "Origem" seja executada corretamente a partir da tela inicial de um contexto qualquer, retornando como origem a pr&oacute;pria tela inicial, &eacute; necess&aacute;rio cadastrar a seguinte rota no contexto:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>T&iacute;tulo origem</B> = T&iacute;tulo da tela inicial do contexto;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Palavra-chave</B> = Qualquer palavra, diferente apenas daquelas j&aacute; cadastradas para esta tela inicial;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>T&iacute;tulo destino</B> = T&iacute;tulo da tela inicial do contexto.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Cumpre ressaltar que, quando se solicita a opera&ccedil;&atilde;o de exclus&atilde;o, todas as rotas referentes &agrave; tela origem informada ser&atilde;o exclu&iacute;das. Para excluir apenas uma rota, deve-se ent&atilde;o informar opera&ccedil;&atilde;o altera&ccedil;&atilde;o (ALT) e limpar a linha referente &agrave; rota que se deseja excluir.</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTEXTO</B> - C&oacute;digo do contexto.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TITULO ORIGEM</B> - T&iacute;tulo do menu de escolha de origem.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PALAVRA CHAVE</B> - C&oacute;digo da palavra-chave.</FONT> </P>
+<FONT SIZE=2><P>Ao ser informada a palavra-chave no campo ESCOLHA da tela origem, ser&aacute; apresentado o menu correspondente ao t&iacute;tulo destino.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TITULO DESTINO</B> - T&iacute;tulo do menu de destino.</FONT> </P>
+<FONT SIZE=2><P>Um menu de destino s&oacute; pode estar relacionado a um menu de origem, ou seja, n&atilde;o pode haver mais de uma rota em menus de origem diferentes com destino a um mesmo menu.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTINUA(S/N)</B> - Indicador de continuidade de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para prosseguir no cadastramento de rotas de navega&ccedil;&atilde;o para o menu de escolha informado no menu;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para encerrar o cadastramento de rotas de navega&ccedil;&atilde;o para o menu de escolha informado no menu.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o realizada sobre as rotas de navega&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Cadreg">Cadastramento de regras de convers&atilde;o de layout</A></B></FONT> </P>
+<FONT SIZE=2><P>Regras de convers&atilde;o de <I>layout</I> s&atilde;o mapeamentos que possibilitam a convers&atilde;o dos dados informados nos menus de opera&ccedil;&atilde;o para o formato de um menu ou submenu de op&ccedil;&atilde;o, a partir do qual uma transa&ccedil;&atilde;o pode efetivamente ser ativada.</FONT> </P>
+<FONT SIZE=2><P>A navega&ccedil;&atilde;o, com seus menus de escolha e de opera&ccedil;&atilde;o, funciona como uma m&aacute;scara para o usu&aacute;rio final. Internamente, os sistemas aplicativos trabalham da forma convencional, ou seja, atrav&eacute;s de menus de op&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Sendo assim, toda vez que um menu de opera&ccedil;&atilde;o &eacute; disparado, os dados nele informados devem ser colocados na disposi&ccedil;&atilde;o dos campos do menu de op&ccedil;&atilde;o, para que o programa que processa a transa&ccedil;&atilde;o possa execut&aacute;-la.</FONT> </P>
+<FONT SIZE=2><P>A convers&atilde;o dos dados entre os <I>layouts</I> dos menus de opera&ccedil;&atilde;o e dos menus de op&ccedil;&atilde;o &eacute; executada automaticamente, toda vez que uma opera&ccedil;&atilde;o &eacute; disparada de um menu de opera&ccedil;&atilde;o. Por&eacute;m, esta transfer&ecirc;ncia s&oacute; &eacute; poss&iacute;vel devido ao fato de existirem regras de convers&atilde;o cadastradas para cada menu de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As regras de convers&atilde;o s&atilde;o definidas apenas para os menus de opera&ccedil;&atilde;o, pois apenas esses menus disparam as transa&ccedil;&otilde;es vinculadas aos menus de op&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Como as regras de convers&atilde;o est&atilde;o vinculadas &agrave;s telas dos menus de opera&ccedil;&atilde;o, ao excluir um contexto que utilize estes menus, as regras n&atilde;o ser&atilde;o exclu&iacute;das. Somente quando a tela do menu de opera&ccedil;&atilde;o tiver sua defini&ccedil;&atilde;o exclu&iacute;da do reposit&oacute;rio de dados &eacute; que as regras relativas a ele ser&atilde;o tamb&eacute;m exclu&iacute;das.</FONT> </P>
+<FONT SIZE=2><P>O tamanho total permitido para os atributos de entrada de um menu de opera&ccedil;&atilde;o, exceto o campo TLAACAO, &eacute; de 700 bytes. Caso este tamanho n&atilde;o seja respeitado, n&atilde;o ser&aacute; poss&iacute;vel liberar as regras do mesmo.</FONT> </P>
+<FONT SIZE=2><P>Para cadastrar regras de convers&atilde;o de <I>layout</I>, &eacute; necess&aacute;rio que a tela de menu de opera&ccedil;&atilde;o, sua estrutura e seu t&iacute;tulo estejam cadastrados no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CODIGO DA TELA</B> - C&oacute;digo da tela do menu de opera&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CODIGO DO MENU DESTINO</B> - C&oacute;digo do menu ou submenu de op&ccedil;&atilde;o correspondente ao menu de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>O c&oacute;digo deste menu ou submenu deve ser informado no seguinte padr&atilde;o:</P>
+<P>Como exemplo, suponha que o menu de opera&ccedil;&atilde;o INCPED - Inclus&atilde;o de Pedido - dispare uma transa&ccedil;&atilde;o do menu de op&ccedil;&atilde;o PEDU01, submenu 20. O c&oacute;digo de tela deste submenu &eacute;, pois, PEDU0120.</FONT> </P>
+<FONT SIZE=2><P>Neste caso, na defini&ccedil;&atilde;o desta rota, dever&aacute; ser informado "PEDU0120" no campo TRAN. RELACIONADA, para indicar que a transa&ccedil;&atilde;o ser&aacute; disparada atrav&eacute;s do submenu PED01.20.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SEQUENCIA</B> - N&uacute;mero para posicionamento do teste na estrutura.</FONT> </P>
+<FONT SIZE=2><P>O primeiro n&uacute;mero &eacute; "0010" e os demais, acrescidos de 10. Para incluir um teste entre dois outros j&aacute; inclu&iacute;dos, &eacute; necess&aacute;rio preencher uma linha que esteja em branco e alterar o n&uacute;mero desta linha para um n&uacute;mero entre os j&aacute; informados. O SADS reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima opera&ccedil;&atilde;o os testes j&aacute; estar&atilde;o na nova ordem.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SE/MV</B> - Opera&ccedil;&atilde;o a ser efetuada com um campo do menu de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"SE" (Teste condicional SE) - Para testar se o conte&uacute;do do campo do menu de opera&ccedil;&atilde;o &eacute; igual a uma constante;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"MV" (Mover) - Para mover uma constante ou o conte&uacute;do de um campo do menu de opera&ccedil;&atilde;o para um campo do menu de op&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TIPO</B> - Tipo do campo informado em OPERANDO-1.</FONT> </P>
+<FONT SIZE=2><P>O tipo deve ser informado para o comando "MV".</FONT> </P>
+<FONT SIZE=2><P>Pode assumir o seguinte valor:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"K" - Quando o OPERANDO-1 for um valor constante.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Quando o tipo do operando n&atilde;o for informado, indica que o operando &eacute; um campo da estrutura do menu de opera&ccedil;&atilde;o que ser&aacute; movido.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERANDO-1</B> - Valor constante ou c&oacute;digo de um atributo/campo da estrutura do menu de opera&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SUFIXO</B> - Sufixo do OPERANDO-1.</FONT> </P>
+<FONT SIZE=2><P>Este sufixo deve ser especificado quando o campo informado no OPERANDO-1 aparecer mais de uma vez na estrutura do menu de opera&ccedil;&atilde;o e, por isso, for necess&aacute;rio diferenci&aacute;-los.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERADOR</B> - Operador relacional a ser utilizado no teste condicional (opcional).</FONT> </P>
+<FONT SIZE=2><P>Este campo s&oacute; deve ser informado quando for utilizado o teste condicional SE no campo SE/MV. </P>
+<P>Este operador definir&aacute; o relacionamento entre o OPERANDO-1 e o OPERANDO-2.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EQ" (<I>Equal</I>) - Igual a;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"NE" (<I>Not equal</I>) - Diferente de;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"GT" (<I>Greater than</I>) - Maior que;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"GE" (<I>Greater than or equal</I>) - Maior que ou igual a;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"LT" (<I>Less than</I>) - Menor que;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"LE" (<I>Less than or equal</I>) - Menor que ou igual a.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERANDO-2</B> - Constante ou c&oacute;digo de um atributo/campo da estrutura do menu de op&ccedil;&atilde;o (opcional).</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&lt;Uma constante&gt; - Para comandos do tipo SE;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&lt;Um atributo/campo de entrada do menu de op&ccedil;&atilde;o&gt; - Para comandos do tipo MV.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SUFIXO</B> - Sufixo do OPERANDO-2.</FONT> </P>
+<FONT SIZE=2><P>O sufixo &eacute; utilizado para diferenciar um atributo/campo, quando aparecer mais de uma vez na estrutura do menu de op&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTINUA(S/N)</B> - Indicador de continuidade de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para prosseguir no cadastramento das regras de convers&atilde;o de <I>layout</I> para o menu de opera&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para encerrar o cadastramento das regras de convers&atilde;o de <I>layout</I> para o menu de opera&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o realizada sobre as regras de convers&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o).</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta);</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Libreg">Libera&ccedil;&atilde;o de regras de convers&atilde;o de layout</A></B></FONT> </P>
+<FONT SIZE=2><P>Liberar as regras de convers&atilde;o de <I>layout</I> &eacute; torn&aacute;-las dispon&iacute;veis para uso nos ambientes de teste ou produ&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Para liberar as regras para teste, &eacute; necess&aacute;rio que as mesmas estejam cadastradas no reposit&oacute;rio de dados do SADS, tenham sido inclu&iacute;das ou modificadas, tenham sofrido altera&ccedil;&otilde;es em suas estruturas e que o tamanho total dos atributos de entrada do menu de opera&ccedil;&atilde;o, exceto o campo TLAACAO, n&atilde;o seja superior a 700 bytes.</FONT> </P>
+<FONT SIZE=2><P>A libera&ccedil;&atilde;o para produ&ccedil;&atilde;o s&oacute; &eacute; poss&iacute;vel para regras previamente liberadas para teste, o que torna a regra de convers&atilde;o dispon&iacute;vel para o ambiente de produ&ccedil;&atilde;o da mesma m&aacute;quina onde ela foi liberada.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s a libera&ccedil;&atilde;o das regras de convers&atilde;o de <I>layout</I>, est&aacute; terminado o cadastramento da navega&ccedil;&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>Caso o processamento dos sistemas em produ&ccedil;&atilde;o se d&ecirc; em um computador diferente daquele onde foram cadastradas as regras, deve-se efetuar os seguintes procedimentos para utiliza&ccedil;&atilde;o das regras j&aacute; liberadas no outro computador:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Deve-se executar o <I>job</I> SD/D/JB/70 na m&aacute;quina de desenvolvimento,</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Copiar o arquivo SS/C/AF/71 para a m&aacute;quina de produ&ccedil;&atilde;o e,</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Na m&aacute;quina de produ&ccedil;&atilde;o, executar o <I>job</I> SD/D/JB/72.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Estes <I>jobs</I> processam a extra&ccedil;&atilde;o e carga das regras de convers&atilde;o de <I>layout</I> liberadas para produ&ccedil;&atilde;o, telas e consist&ecirc;ncias. Portanto, outros arquivos ser&atilde;o gerados e devem ser copiados para a m&aacute;quina de produ&ccedil;&atilde;o, para garantir a completeza do processo.</FONT> </P>
+<FONT SIZE=2><P>A libera&ccedil;&atilde;o de regras de convers&atilde;o de <I>layout</I> n&atilde;o est&aacute; relacionada a nenhuma tela de processamento. Deste modo, para execut&aacute;-la, basta transmitir o menu de opera&ccedil;&atilde;o LIBNAV, informando nele os seguintes campos:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Contexto</B> - T&iacute;tulo do contexto para o qual ser&atilde;o liberadas as regras de convers&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Titulo da tela</B> - T&iacute;tulo do menu de opera&ccedil;&atilde;o para o qual ser&atilde;o liberadas as regras de convers&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Ambiente</B> - Ambiente para o qual as regras ser&atilde;o liberadas.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"T" - Para liberar as regras para o ambiente de teste;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"P" - Para liberar as regras para o ambiente de produ&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Ser&aacute; apresentada uma mensagem confirmando a libera&ccedil;&atilde;o das regras.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Libfa">Libera&ccedil;&atilde;o de fam&iacute;lia de regras de convers&atilde;o de layout</A></B></FONT> </P>
+<FONT SIZE=2><P>Liberar fam&iacute;lia de regras de convers&atilde;o de <I>layout</I> &eacute; tornar todas as regras de um determinado contexto dispon&iacute;veis para uso no ambiente especificado - teste ou produ&ccedil;&atilde;o. Esta opera&ccedil;&atilde;o elimina a necessidade de se ter que liberar, uma a uma, as regras de um determinado contexto.</FONT> </P>
+<FONT SIZE=2><P>Para liberar as regras para teste, &eacute; necess&aacute;rio que as mesmas estejam cadastradas no reposit&oacute;rio de dados do SADS, tenham sido inclu&iacute;das ou modificadas, tenham sofrido altera&ccedil;&otilde;es em suas estruturas e que o tamanho total dos atributos de entrada do menu de opera&ccedil;&atilde;o, exceto o campo TLAACAO, n&atilde;o seja superior a 700 bytes.</FONT> </P>
+<FONT SIZE=2><P>A libera&ccedil;&atilde;o de fam&iacute;lia de regras para produ&ccedil;&atilde;o s&oacute; &eacute; poss&iacute;vel para regras previamente liberadas para teste, o que torna a regra de convers&atilde;o dispon&iacute;vel para o ambiente de produ&ccedil;&atilde;o da mesma m&aacute;quina onde ela foi liberada. Caso o processamento dos sistemas em produ&ccedil;&atilde;o se d&ecirc; em um computador diferente daquele onde foram cadastradas as regras, deve-se executar alguns jobs de transfer&ecirc;ncia, conforme descrito no t&oacute;pico anterior , "Libera&ccedil;&atilde;o de regras de convers&atilde;o de <I>layout</I>".</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s todas regras de convers&atilde;o de <I>layout</I> estarem liberadas, est&aacute; terminado o cadastramento da navega&ccedil;&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>Qualquer erro ocorrido na libera&ccedil;&atilde;o de fam&iacute;lia de regras ser&aacute; armazenado, podendo ser verificado atrav&eacute;s da consulta automaticamente encadeada ap&oacute;s a libera&ccedil;&atilde;o. Deste modo, algumas regras do contexto especificado ser&atilde;o liberadas corretamente e as demais, que possu&iacute;rem erro, n&atilde;o ser&atilde;o liberadas e ter&atilde;o a descri&ccedil;&atilde;o do errro gravada para possibilitar a sua corre&ccedil;&atilde;o posterior. A consulta aos erros ocorridos poder&aacute; ser tamb&eacute;m disparada manualmente, a partir do menu de opera&ccedil;&atilde;o ERRLIB (Erros na libera&ccedil;&atilde;o de fam&iacute;lia de regras).</FONT> </P>
+<FONT SIZE=2><P>A libera&ccedil;&atilde;o de fam&iacute;lia de regras de convers&atilde;o de <I>layout</I> n&atilde;o est&aacute; relacionada a nenhuma tela de processamento. Deste modo, para execut&aacute;-la, basta transmitir o menu de opera&ccedil;&atilde;o FAMNAV, informando nele os seguintes campos:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Contexto</B> - Nome do contexto para o qual ser&atilde;o liberadas as regras de convers&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Ambiente</B> - Ambiente para o qual as regras ser&atilde;o liberadas.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"T" - Para liberar as regras para o ambiente de teste;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"P" - Para liberar as regras para o ambiente de produ&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Ser&aacute; apresentada uma mensagem confirmando a libera&ccedil;&atilde;o das regras.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Proced">Procedimentos de prepara&ccedil;&atilde;o para uso da navega&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Uma vez efetuados os cadastramentos relativos &agrave; navega&ccedil;&atilde;o - menus de escolha, menus de opera&ccedil;&atilde;o, rotas e regras -, &eacute; necess&aacute;rio efetuar alguns procedimentos a fim de tornar a navega&ccedil;&atilde;o dispon&iacute;vel para uso, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Deve-se solicitar ao administrador do SADS da instala&ccedil;&atilde;o o cadastramento, no Utility do COMS, dos <I>trancodes</I> que fazem parte do contexto. Esta carga pode ser feita utilizando-se do arquivo gerado via menu GERCOMHOS. Para maiores detalhes de como gerar o arquivo para carga no COMS, deve-se consultar a Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de Apoio", neste manual.</FONT> </P>
+<FONT SIZE=2><P>O par&acirc;metro <I>Module Function Index</I>, no <I>Utility</I> do COMS, dos <I>trancodes</I> relativos aos menus de escolha e de opera&ccedil;&atilde;o deve ser definido com o valor 10 ou 20, dependendo de estarem definidos para o ambiente de teste ou produ&ccedil;&atilde;o, respectivamente.</FONT> </P>
+<FONT SIZE=2><P>O <I>host</I> que tratar&aacute; estes <I>trancodes</I> pode ser qualquer dos <I>hosts</I> do sistema que tratam os menus de op&ccedil;&atilde;o. N&atilde;o &eacute; conveniente relacionar os <I>trancodes</I> da navega&ccedil;&atilde;o a <I>hosts</I> secund&aacute;rios.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Adequar a op&ccedil;&atilde;o de compila&ccedil;&atilde;o "SADSDESENV" aos programas chamados.</FONT> </P>
+<FONT SIZE=2><P>A navega&ccedil;&atilde;o interpretativa do SADS n&atilde;o funciona com a op&ccedil;&atilde;o de compila&ccedil;&atilde;o SADSDESENV. Se for desej&aacute;vel construir a navega&ccedil;&atilde;o espec&iacute;fica para um sistema, seus programas devem ser compilados sem utilizar esta op&ccedil;&atilde;o. Nesse caso, o ambiente de trabalho deve ser diferenciado pelo par&acirc;metro <I>Module Function Index</I> do <I>trancode</I> no COMS, conforme explicado anteriormente.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Definir, se desej&aacute;vel, a tela inicial do contexto como sendo a tela a ser enviada ao usu&aacute;rio ap&oacute;s o <I>logon</I> e/ou <I>logoff</I>. </P>
+<P>Caso tenha sido cadastrada uma resposta ap&oacute;s o <I>logon</I>, atrav&eacute;s de uma parametriza&ccedil;&atilde;o de resposta ap&oacute;s o <I>logon</I> cadastrada especificamente para o usu&aacute;rio, em seu cadastro no Sistema de Seguran&ccedil;a, esta ser&aacute; ent&atilde;o a resposta a ser encadeada.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s a cria&ccedil;&atilde;o de um contexto e a constru&ccedil;&atilde;o de sua navega&ccedil;&atilde;o, o mesmo pode ser utilizado pelo administrador de seguran&ccedil;a como item v&aacute;lido a ser cadastrado na tabela SBPM6004 - (Tabela de Controle de Resposta ap&oacute;s <I>Logon/Logoff</I>). Nesta tabela s&atilde;o definidos os programas que ser&atilde;o executados ou as telas que ser&atilde;o apresentadas ap&oacute;s o <I>logon</I> e <I>logoff</I> das esta&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>Nesta tabela, a indica&ccedil;&atilde;o "CONTEXTO &lt;nome do contexto&gt;" pode ser informada para as esta&ccedil;&otilde;es que se deseja que apare&ccedil;a a tela inicial do contexto ap&oacute;s o <I>logon</I> e/ou <I>logoff</I>. Caso seja indicada apenas a palavra "CONTEXTO", ser&aacute; apresentada uma tela para o usu&aacute;rio escolher que contexto ele deseja utilizar.</FONT> </P>
+<FONT SIZE=2><P>Se a tabela possuir um registro para esta&ccedil;&atilde;o <I>default</I>, este deve ser alterado, caso se queira que para as esta&ccedil;&otilde;es n&atilde;o declaradas na tabela tamb&eacute;m seja apresentada a tela inicial do contexto.</FONT> </P>
+<FONT SIZE=2><P>A tela de escolha de contexto apresentada pelo SADS, ap&oacute;s o <I>logon</I>, &eacute; a STKT0004. O administrador de seguran&ccedil;a dever&aacute; alterar o desenho desta tela indicando todos os contextos da instala&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Se a palavra "CONTEXTO" for informada na tabela SBPM6004 seguida do nome de um contexto, ser&aacute; apresentada na esta&ccedil;&atilde;o especificada a tela inicial do contexto informado.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para maiores detalhes de como cadastrar a tabela SBPM6004, deve-se consultar a Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", item "Seguran&ccedil;a", subitem "Resposta ap&oacute;s <I>&lt;W0&gt;logon/logoff</I>".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Contex">Utiliza&ccedil;&atilde;o do contexto definido</A></B></FONT> </P>
+<FONT SIZE=2><P>Caso o usu&aacute;rio j&aacute; esteja trabalhando no SADS em um determinado contexto e deseja trocar de contexto, deve-se informar no campo ACAO o comando "Inicio &lt;contexto&gt;", onde &lt;contexto&gt; &eacute; o nome do contexto que se deseja utilizar.</FONT> </P>
+<FONT SIZE=2><P>Para entrar em um contexto, pode-se faz&ecirc;-lo, tamb&eacute;m, atrav&eacute;s da transmiss&atilde;o do comando "CONTEXTO &lt;nome do contexto&gt;" de uma tela desformatada.</FONT> </P>
+<FONT SIZE=2><P>Caso o nome do contexto que se deseja utilizar n&atilde;o seja conhecido, pode-se solicitar a a&ccedil;&atilde;o "D CONTEXTO" a fim de que seja apresentada a tela de sele&ccedil;&atilde;o de contextos dispon&iacute;veis (Tela STKT0004).</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Funca">Fun&ccedil;&otilde;es de apoio</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Espec">Espec&iacute;ficas da navega&ccedil;&atilde;o</A></B></FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Erro">Consulta erros na libera&ccedil;&atilde;o de fam&iacute;lia de regras</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta apresentar&aacute; uma lista com todos os erros ocorridos na libera&ccedil;&atilde;o de fam&iacute;lia de regras de navega&ccedil;&atilde;o de um contexto para um determinado ambiente.</FONT> </P>
+<FONT SIZE=2><P>Para efetuar esta consulta, &eacute; necess&aacute;rio que o contexto j&aacute; tenha sido cadastrado no reposit&oacute;rio de dados e que, ap&oacute;s uma libera&ccedil;&atilde;o de fam&iacute;lia de regras deste contexto, tenha ocorrido pelo menos um erro na libera&ccedil;&atilde;o.</FONT> </P><DIR>
+
+<P><A NAME="Arco1"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para disparar esta consulta, os seguintes argumentos devem ser informados a partir da tela "ERRLIB":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Contexto</B> - C&oacute;digo do contexto para o qual as regras de navega&ccedil;&atilde;o foram liberadas.</FONT> </P></DIR>
+
+<P><A NAME="Infco1"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Informa&ccedil;&otilde;es apresentadas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Na consulta "ERRLIB" (Erros na libera&ccedil;&atilde;o de fam&iacute;lia de regras ), ser&aacute; apresentada a tela de processamento contendo as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Contexto</B> - T&iacute;tulo e nome do contexto.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Titulo</B> - T&iacute;tulo da tela cuja regra n&atilde;o foi liberada devido a um erro ocorrido.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>C&oacute;digo e descri&ccedil;&atilde;o do erro ocorrido na tela com o t&iacute;tulo anterior.</FONT> </P></DIR>
+
+<FONT SIZE=4><P><A NAME="Lista">Lista de contextos</A></FONT> </P>
+<FONT SIZE=2><P>Esta consulta apresentar&aacute; uma lista de todos os contextos cadastrados no reposit&oacute;rio de dados.</FONT> </P><DIR>
+
+<P><A NAME="Arco2"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Argumento da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para disparar esta consulta, o seguinte argumento deve ser informado a partir da tela "CONCONNAV".</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Tipo da consulta</B> - "LIS", para disparar a consulta &agrave; lista de contextos cadastrados.</FONT> </P></DIR>
+
+<P><A NAME="Infco2"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Informa&ccedil;&otilde;es apresentadas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Na consulta "LIS" - Lista de contextos cadastrados, ser&aacute; apresentada uma tela de processamento contendo as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>CONTEXTO</B> - T&iacute;tulo do contexto.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Nome do contexto.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>TR. INICIAL</B> - C&oacute;digo da transa&ccedil;&atilde;o inicial.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>NOME INTERNO</B> - Nome interno atribu&iacute;do pelo SADS ao contexto.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=4><P><A NAME="Relti">Rela&ccedil;&atilde;o de t&iacute;tulos de telas</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta apresentar&aacute; uma lista com os t&iacute;tulos de telas de menu de escolha e de opera&ccedil;&atilde;o cadastrados para um determinado contexto.</FONT> </P>
+<FONT SIZE=2><P>Para efetuar esta consulta &eacute; necess&aacute;rio que o contexto j&aacute; tenha sido cadastrado no reposit&oacute;rio de dados e exista pelo menos um t&iacute;tulo de tela para ele cadastrado.</FONT> </P><DIR>
+
+<P><A NAME="Arco3"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para disparar esta consulta, os seguintes argumentos devem ser informados a partir da tela CONCONNAV:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Tipo da consulta</B> - "TIT" , para indicar que ser&aacute; efetuada a consulta aos t&iacute;tulos de telas cadastrados para o contexto.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Contexto</B> - C&oacute;digo do contexto para os quais os t&iacute;tulos de telas foram cadastrados.</FONT> </P></DIR>
+
+<P><A NAME="Infco3"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Informa&ccedil;&otilde;es apresentadas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Na consulta "TIT" - Rela&ccedil;&atilde;o de t&iacute;tulos de telas, ser&aacute; apresentada uma tela de processamento contendo as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>CONTEXTO</B> - T&iacute;tulo e nome do contexto.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>TRANSACAO</B> - C&oacute;digo da transa&ccedil;&atilde;o correspondente ao t&iacute;tulo.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>TITULO</B> - T&iacute;tulos de telas ligados ao contexto.</FONT> </P>
+<FONT SIZE=2><P>Quando um t&iacute;tulo n&atilde;o estiver relacionado a nenhuma rota, aparecer&aacute; precedido de "*".</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=4><P><A NAME="Rerot">Rela&ccedil;&atilde;o de rotas de navega&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta apresentar&aacute; uma lista com as rotas de navega&ccedil;&atilde;o cadastradas em um determinado contexto cadastrado no reposit&oacute;rio de dados.</FONT> </P>
+<FONT SIZE=2><P>Para efetuar esta consulta, &eacute; necess&aacute;rio que o contexto j&aacute; tenha sido cadastrado no reposit&oacute;rio de dados e que exista pelo menos uma rota de navega&ccedil;&atilde;o cadastrada para ele.</FONT> </P><DIR>
+
+<P><A NAME="Arco4"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para disparar esta consulta, os seguintes argumentos devem ser informados a partir da tela "CONCONNAV":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Tipo da consulta</B> - "ROT", para indicar que ser&aacute; efetuada consulta &agrave;s rotas de navega&ccedil;&atilde;o cadastradas para o contexto.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Contexto</B> - C&oacute;digo do contexto para o qual as rotas de navega&ccedil;&atilde;o foram cadastradas.</FONT> </P></DIR>
+
+<P><A NAME="Infco4"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Informa&ccedil;&otilde;es apresentadas na consulta</A></FONT> </P>
+</B><FONT SIZE=2><P>Na consulta "ROT" (Rela&ccedil;&atilde;o de rotas de navega&ccedil;&atilde;o), ser&aacute; apresentada a tela de processamento contendo as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>CONTEXTO</B> - T&iacute;tulo e nome do contexto.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>ORIGEM</B> - T&iacute;tulo do menu de origem.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>PALAVRA CHAVE</B> - Palavra-chave para apresenta&ccedil;&atilde;o do menu de destino, quando esta for informada no menu de origem.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>DESTINO</B> - T&iacute;tulo do menu de destino.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>TRANSACAO CHAMADA</B> - C&oacute;digo da transa&ccedil;&atilde;o disparada, quando o menu informado no campo DESTINO for um menu de opera&ccedil;&atilde;o, ou seja, quando o menu informado no campo DESTINO disparar uma transa&ccedil;&atilde;o;</FONT> </P>
+<FONT SIZE=2><P>Este campo n&atilde;o ser&aacute; informado quando o menu apresentado no campo DESTINO for um menu de escolha.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=4><P><A NAME="Ambi">Regras a serem liberadas para um ambiente</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta apresentar&aacute; uma lista com as regras de navega&ccedil;&atilde;o cadastradas em um determinado contexto que necessitam ser liberadas para um determinado ambiente em que ainda n&atilde;o est&atilde;o dispon&iacute;veis.</FONT> </P>
+<FONT SIZE=2><P>Para efetuar esta consulta, &eacute; necess&aacute;rio que o contexto j&aacute; tenha sido cadastrado no reposit&oacute;rio de dados e que exista pelo menos uma regra de navega&ccedil;&atilde;o cadastrada nele.</FONT> </P><DIR>
+
+<P><A NAME="Arco5"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para disparar esta consulta, os seguintes argumentos devem ser informados a partir da tela "CONCONNAV":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Tipo da consulta</B> - "LIB", para indicar que ser&aacute; efetuada consulta &agrave;s regras de navega&ccedil;&atilde;o que dever&atilde;o ser liberadas para um determinado ambiente.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Contexto</B> - C&oacute;digo do contexto para o qual as regras de navega&ccedil;&atilde;o foram cadastradas.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Ambiente</B> - C&oacute;digo do ambiente para o qual as regras dever&atilde;o ser liberadas.</FONT> </P></DIR>
+
+<P><A NAME="Infco5"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Informa&ccedil;&otilde;es apresentadas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Na consulta "LIB" (Regras a serem liberadas para um ambiente), ser&aacute; apresentada a tela de processamento contendo as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Contexto</B> - T&iacute;tulo e nome do contexto.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Titulo/Transacao</B> - T&iacute;tulo da tela cuja regra dever&aacute; ser liberada.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Nome</B> - Nome da tela cuja regra dever&aacute; ser liberada.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=4><P><A NAME="Prome">Programas relacionados ao menu de opera&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta apresentar&aacute; uma lista com os programas relacionados aos menus existentes em regras de um determinado contexto cadastrado no reposit&oacute;rio de dados.</FONT> </P>
+<FONT SIZE=2><P>Para efetuar esta consulta, &eacute; necess&aacute;rio que o contexto j&aacute; tenha sido cadastrado no reposit&oacute;rio de dados e que exista pelo menos uma regra de navega&ccedil;&atilde;o cadastrada para ele.</FONT> </P><DIR>
+
+<P><A NAME="Arco6"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para disparar esta consulta, os seguintes argumentos devem ser informados a partir da tela "CONCONNAV".</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Tipo da consulta</B> - "PRO", para indicar que ser&aacute; efetuada consulta aos programas relacionados aos menus de opera&ccedil;&atilde;o das regras cadastradas para o contexto.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Contexto</B> - C&oacute;digo do contexto para o qual as regras de navega&ccedil;&atilde;o foram cadastradas.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Menu de operacao</B> - T&iacute;tulo do menu de opera&ccedil;&atilde;o, para o qual ser&atilde;o enviadas as informa&ccedil;&otilde;es. Caso n&atilde;o seja informado, ser&atilde;o considerados todos os menus de opera&ccedil;&atilde;o utilizados em regras do contexto. </P></DIR>
+
+</FONT><P><A NAME="Infco6"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Informa&ccedil;&otilde;es apresentadas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Na consulta "PRO" (Programas relacionados ao menu de opera&ccedil;&atilde;o), ser&aacute; apresentada a tela de processamento contendo as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Contexto</B> - T&iacute;tulo e nome do contexto que cont&eacute;m os menus de opera&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Menu de Operacao</B> - T&iacute;tulo do menu de opera&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Transacao</B> - Transa&ccedil;&atilde;o relacionada ao menu de opera&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Menu de Opcao</B> - C&oacute;digo do menu de op&ccedil;&atilde;o relacionado ao menu de opera&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Opcao</B> - Op&ccedil;&atilde;o utilizada nas regras.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Programa</B> - C&oacute;digo do programa relacionado &agrave; regra utilizada.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=4><P><A NAME="Help">Help atrav&eacute;s de SPFY</A></B></FONT> </P>
+<FONT SIZE=2><P>Pode-se obter acesso &agrave; descri&ccedil;&atilde;o de uma tela de menu de escolha ou de opera&ccedil;&atilde;o atrav&eacute;s da tecla SPFY. Para isto, &eacute; necess&aacute;rio que a descri&ccedil;&atilde;o do menu de escolha ou de opera&ccedil;&atilde;o tenha sido previamente cadastrada no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<P><B><FONT FACE="CG Times" SIZE=4><a name="Resre">Ressequenciamento de regras de convers&atilde;o</P></font></a>
+</B></FONT><FONT SIZE=2><P>Esta fun&ccedil;&atilde;o permite efetuar o ressequenciamento das regras de convers&atilde;o de navega&ccedil;&atilde;o cadastradas para um determinado menu de opera&ccedil;&atilde;o.</P>
+<P>Para efetuar o ressequenciamento, &eacute; necess&aacute;rio que as regras de navega&ccedil;&atilde;o j&aacute; estejam cadastradas.</P>
+</FONT><B><P>Argumentos </P>
+</B><FONT SIZE=2><P>Para disparar esta fun&ccedil;&atilde;o, os seguintes argumentos devem ser informados a partir da tela "REGNAV":</P><DIR>
+<DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B>&nbsp;Opera&ccedil;&atilde;o -</B> "RES", para indicar que ser&aacute; ressequenciada as regras de navega&ccedil;&atilde;o.</P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B>&nbsp;Contexto -</B> C&oacute;digo do contexto no qual as regras de navega&ccedil;&atilde;o foram cadastradas.</P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B>&nbsp;Titulo da tela origem </B>– C&oacute;digo do menu de opera&ccedil;&atilde;o para o qual as regras de navega&ccedil;&atilde;o est&atilde;o cadastradas.</P></DIR>
+</FONT><B><FONT SIZE=5><P><A NAME="Gener">Gen&eacute;ricas aplic&aacute;veis &agrave; navega&ccedil;&atilde;o</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Utilit&aacute;rios</B>:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Ressequenciamento de estrutura de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Duplica&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Consultas</B>:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Elementos por sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Estrutura de dados de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Descri&ccedil;&atilde;o de elemento.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Informativos impressos</B>:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista de elementos por sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista estrutura de elementos;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista atributos e campos por elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista contexto de navega&ccedil;&atilde;o.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Todos estes utilit&aacute;rios, consultas e informativos impressos encontram-se descritos na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", neste manual.</FONT> </P></BODY>
+</HTML>

@@ -1,0 +1,925 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<TITLE>Untitled</TITLE>
+
+<META NAME="GENERATOR" CONTENT="Internet Assistant for Microsoft Word 2.04z">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+<basefont size=2>
+<P>
+<A NAME="Menu"><B><FONT SIZE=6>Menu</FONT></B></A>
+<HR>
+<P>
+<A NAME="Conce"><B><FONT SIZE=5>Conceitua&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>
+<FONT SIZE=2>Para o usu&aacute;rio final, um menu representa uma
+tela que exibe determinadas op&ccedil;&otilde;es, opera&ccedil;&otilde;es
+ou escolhas que, ao serem solicitadas, ativam transa&ccedil;&otilde;es
+ou outros menus.</FONT>
+<P>
+<FONT SIZE=2>Um menu est&aacute; sempre vinculado a um sistema,
+que est&aacute; identificado em seu c&oacute;digo.</FONT>
+<P>
+<FONT SIZE=2>Para o SADS, existem tr&ecirc;s tipos de menus: menus
+de escolha e de opera&ccedil;&atilde;o, utilizados apenas pela
+navega&ccedil;&atilde;o interpretativa, e menus de op&ccedil;&atilde;o,
+utilizados para o processamento das transa&ccedil;&otilde;es.
+Os menus de op&ccedil;&atilde;o t&ecirc;m de ser definidos no
+reposit&oacute;rio de dados do SADS.</FONT>
+<P>
+<FONT SIZE=2>A seguir, ser&aacute; apresentada uma explica&ccedil;&atilde;o
+detalhada de cada um destes tipos de menus:</FONT>
+<P>
+<A NAME="Menesc"><B><FONT SIZE=4>Menu de escolha</FONT></B></A>
+<P>
+<FONT SIZE=2>Tela que cont&eacute;m rotas de navega&ccedil;&atilde;o,
+sendo que cada rota corresponde a um destino que pode ser outro
+menu de escolha ou um menu de opera&ccedil;&atilde;o. Portanto,
+um menu de escolha &eacute; utilizado apenas para navega&ccedil;&atilde;o
+entre menus, n&atilde;o sendo poss&iacute;vel solicitar opera&ccedil;&otilde;es
+espec&iacute;ficas a partir dele.</FONT>
+<P>
+<FONT SIZE=2>Um menu de escolha n&atilde;o possui cadastramento
+no reposit&oacute;rio de dados do SADS, mas apenas o desenho de
+sua tela para apresenta&ccedil;&atilde;o durante o processo de
+navega&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Menus de escolha n&atilde;o s&atilde;o gerenciados
+por </FONT><I><FONT SIZE=2 COLOR=#000000>hosts</FONT></I><FONT SIZE=2>,
+e sim pelo m&oacute;dulo de navega&ccedil;&atilde;o do SADS.</FONT>
+<P>
+<A NAME="Meoper"><B><FONT SIZE=4>Menu de opera&ccedil;&atilde;o</FONT></B></A>
+<P>
+<FONT SIZE=2>Tela que cont&eacute;m os dados b&aacute;sicos a
+serem informados para processamento das transa&ccedil;&otilde;es
+e de onde as opera&ccedil;&otilde;es s&atilde;o solicitadas.</FONT>
+<P>
+<FONT SIZE=2>Um menu de opera&ccedil;&atilde;o n&atilde;o necessita
+ser cadastrado no reposit&oacute;rio de dados do SADS, mas apenas
+seu desenho e sua estrutura.</FONT>
+<P>
+<FONT SIZE=2>Menus de opera&ccedil;&atilde;o n&atilde;o s&atilde;o
+gerenciados por </FONT><I><FONT SIZE=2 COLOR=#000000>hosts</FONT></I><FONT SIZE=2>
+e sim pelo m&oacute;dulo de navega&ccedil;&atilde;o do SADS.</FONT>
+<P>
+<A NAME="Meopc"><B><FONT SIZE=4>Menu de op&ccedil;&atilde;o</FONT></B></A>
+<P>
+<FONT SIZE=2>Telas que s&atilde;o tratadas pelos </FONT><I><FONT SIZE=2 COLOR=#000000>hosts</FONT></I><FONT SIZE=2>
+e a partir das quais os programas s&atilde;o disparados para processamento
+de transa&ccedil;&otilde;es. Estes menus s&atilde;o os &uacute;nicos
+efetivamente processados pelos programas aplicativos e n&atilde;o
+s&atilde;o tratados pelo m&oacute;dulo de navega&ccedil;&atilde;o
+do SADS.</FONT>
+<P>
+<FONT SIZE=2>A especifica&ccedil;&atilde;o de um menu de op&ccedil;&atilde;o
+&eacute; composta:</FONT>
+<P>
+<DIR><FONT SIZE=2><B>a)</B> De uma tela e sua estrutura;</FONT>
+<P>
+<FONT SIZE=2><B>b)</B> Da defini&ccedil;&atilde;o no reposit&oacute;rio
+de dados, onde ser&atilde;o especificadas as caracter&iacute;sticas
+do processamento a ser executado pelo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+para cada uma das transa&ccedil;&otilde;es.</FONT>
+</DIR><P>
+<FONT SIZE=2>Cada menu de op&ccedil;&atilde;o pode tratar as op&ccedil;&otilde;es
+de 01 a 93, sendo que as op&ccedil;&otilde;es de 94 a 99 s&atilde;o
+reservadas para procedimentos gerais do SADS e ser&atilde;o descritas
+no t&oacute;pico &quot;Defini&ccedil;&atilde;o de menu&quot;,
+posteriormente.</FONT>
+<P>
+<FONT SIZE=2>Para cada op&ccedil;&atilde;o escolhida dever&atilde;o
+ser definidos o programa executor, ou a transa&ccedil;&atilde;o
+a ser disparada, e as fun&ccedil;&otilde;es gen&eacute;ricas que
+o </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+dever&aacute; processar, tais como: seguran&ccedil;a no acesso
+aos dados, utiliza&ccedil;&atilde;o da &aacute;rea conversacional,
+disparo da consist&ecirc;ncia geral, prototipa&ccedil;&atilde;o
+da transa&ccedil;&atilde;o, etc.</FONT>
+<P>
+<FONT SIZE=2>Nos menus gerenciados por </FONT><I><FONT SIZE=2 COLOR=#000000>hosts</FONT></I><FONT SIZE=2>
+prim&aacute;rios deve-se definir todas as op&ccedil;&otilde;es
+que ser&atilde;o tratadas por eles, inclusive as que ser&atilde;o
+repassadas a </FONT><I><FONT SIZE=2 COLOR=#000000>hosts</FONT></I><FONT SIZE=2>
+secund&aacute;rios. Nos menus gerenciados por </FONT><I><FONT SIZE=2 COLOR=#000000>hosts</FONT></I><FONT SIZE=2>
+secund&aacute;rios deve-se definir apenas as op&ccedil;&otilde;es
+que ser&atilde;o tratadas por ele e submenus de onde as op&ccedil;&otilde;es
+ser&atilde;o solicitadas, caso existam.</FONT>
+<P>
+<FONT SIZE=2>Devido ao fato de os menus de escolha e de opera&ccedil;&atilde;o
+serem utilizados apenas na navega&ccedil;&atilde;o, eles ser&atilde;o
+detalhadamente explicados no item &quot;Navega&ccedil;&atilde;o&quot;,
+na Se&ccedil;&atilde;o III, &quot;Fun&ccedil;&otilde;es de Apoio&quot;,
+neste manual. Desta forma, para este item, qualquer refer&ecirc;ncia
+ao termo menu deve-se entender &quot;menu de op&ccedil;&atilde;o&quot;.</FONT>
+<P>
+<A NAME="Padro"><B><FONT SIZE=5>Padroniza&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>
+<FONT SIZE=2>O padr&atilde;o de codifica&ccedil;&atilde;o adotado
+pelo SADS para a identifica&ccedil;&atilde;o de menus &eacute;
+o seguinte:</FONT>
+<P>
+<DIR><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&quot;sssUxn&quot;</FONT></B><FONT SIZE=2> onde:</FONT>
+<P>
+<DIR><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&quot;sss&quot;</FONT></B><FONT SIZE=2> &eacute;
+o c&oacute;digo alfab&eacute;tico que identifica o sistema;</FONT>
+<P>
+<IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&quot;U&quot;</FONT></B><FONT SIZE=2> &eacute;
+a constante de menu e</FONT>
+<P>
+<IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&quot;xn&quot;</FONT></B><FONT SIZE=2> &eacute;
+o identificador alfanum&eacute;rico do menu.</DIR></DIR></FONT>
+<P>
+<FONT SIZE=2>Se o menu pertencer a um </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+prim&aacute;rio, seu identificador alfanum&eacute;rico poder&aacute;
+variar de 01 a 09; se pertencer a um </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+secund&aacute;rio, seu identificador poder&aacute; variar de L1
+a L9.</FONT>
+<P>
+<FONT SIZE=2>Cada </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+pode tratar, no m&aacute;ximo, cinco menus, sendo que os pares
+de menus 01 e 06, 02 e 07, 03 e 08, 04 e 09 n&atilde;o podem pertencer
+ao mesmo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>.</FONT>
+<P>
+<A NAME="Cadas"><B><FONT SIZE=5>Cadastramento</FONT></B></A>
+<HR>
+<P>
+<FONT SIZE=2>Para efetuar o cadastramento do menu, &eacute; necess&aacute;rio
+que o sistema para o qual o menu est&aacute; sendo definido esteja
+cadastrado no reposit&oacute;rio de dados do SADS. &Eacute; necess&aacute;rio,
+tamb&eacute;m, que o </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+que ir&aacute; gerenciar o menu j&aacute; esteja cadastrado.</FONT>
+<P>
+<B><FONT SIZE=4>Roteiro</FONT></B>
+<P>
+<FONT SIZE=2>O cadastramento de menu &eacute; efetuada atrav&eacute;s
+de uma &uacute;nica fun&ccedil;&atilde;o, qual seja:</FONT>
+<P>
+<DIR><FONT SIZE=2>-Defini&ccedil;&atilde;o de menu.</FONT></DIR>
+<P>
+<A NAME="Defmen"><B><FONT SIZE=5>Defini&ccedil;&atilde;o de menu</FONT></B></A>
+<P>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B>
+<P>
+<DIR><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2 COLOR=#000000>Menu</FONT></B><FONT SIZE=2> - C&oacute;digo
+do menu no padr&atilde;o SADS (sssUxn).</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Nome</FONT></B><FONT SIZE=2> - Nome
+do menu, ou seja, sua descri&ccedil;&atilde;o resumida.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Host</FONT></B><FONT SIZE=2> - C&oacute;digo
+do </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+que ir&aacute; tratar o menu que est&aacute; sendo definido no
+padr&atilde;o SADS (sssNnn).</FONT>
+<P>
+<FONT SIZE=2>Se o identificador alfanum&eacute;rico do menu variar
+de 01 a 09, deve-se informar um </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+prim&aacute;rio; se o seu identificador variar de L1 a L9, deve-se
+informar um </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+secund&aacute;rio (o identificador alfanum&eacute;rico de um menu
+compreende os dois &uacute;ltimos caracteres de seu c&oacute;digo).</FONT>
+<P>
+<FONT SIZE=2>Cada </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+pode tratar, no m&aacute;ximo, cinco menus, sendo que os pares
+de menus 01 e 06, 02 e 07, 03 e 08, 04 e 09 n&atilde;o podem pertencer
+ao mesmo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>.</FONT>
+<P>
+<FONT SIZE=2>Para cada uma das op&ccedil;&otilde;es relativas
+ao menu devem ser definidos os campos a seguir.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Opcao</FONT></B><FONT SIZE=2> -
+N&uacute;mero da op&ccedil;&atilde;o que poder&aacute; ser solicitada
+do menu.</FONT>
+<P>
+<FONT SIZE=2>As op&ccedil;&otilde;es v&aacute;lidas s&atilde;o
+de 01 a 93, sendo que as op&ccedil;&otilde;es de 94 a 99 s&atilde;o
+reservadas ao SADS e n&atilde;o poder&atilde;o ser utilizadas
+para processamentos espec&iacute;ficos do sistema.</FONT>
+<P>
+<FONT SIZE=2>Todas as op&ccedil;&otilde;es que poder&atilde;o
+ser solicitadas de um menu dever&atilde;o ser especificadas em
+seu cadastramento, inclusive aquelas cujos programas executores
+ser&atilde;o agregados a um </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+secund&aacute;rio. O programa ou transa&ccedil;&atilde;o respons&aacute;vel
+por tratar a op&ccedil;&atilde;o ser&aacute; determinado no campo
+PROG/TRAN.</FONT>
+<P>
+<FONT SIZE=2>As op&ccedil;&otilde;es de 94 a 99, reservadas ao
+SADS, podem ser disparadas de qualquer um dos menus dos sistemas
+desenvolvidos em SADS, n&atilde;o sendo necess&aacute;rio especific&aacute;-las
+na defini&ccedil;&atilde;o destes menus.</FONT>
+<P>
+<FONT SIZE=2>Estas op&ccedil;&otilde;es, denominadas op&ccedil;&otilde;es
+gen&eacute;ricas, s&atilde;o tratadas diretamente pelos </FONT><I><FONT SIZE=2 COLOR=#000000>hosts</FONT></I><FONT SIZE=2>
+e, ao serem disparadas, executam fun&ccedil;&otilde;es espec&iacute;ficas,
+tais como:</FONT>
+<P>
+<DIR><FONT SIZE=2><B>- Op&ccedil;&atilde;o 94</B> - Retorna o menu hierarquicamente
+superior da navega&ccedil;&atilde;o executada atrav&eacute;s do
+SOS01;</FONT>
+<P>
+<FONT SIZE=2><B>- Op&ccedil;&atilde;o 95</B> - Integra&ccedil;&atilde;o
+com o SPO;</FONT>
+<P>
+<FONT SIZE=2><B>- Op&ccedil;&atilde;o 96</B> - Acesso ao menu com detalhamento
+de op&ccedil;&otilde;es;</FONT>
+<P>
+<FONT SIZE=2><B>- Op&ccedil;&atilde;o 97</B> - Ativa&ccedil;&atilde;o
+da tela de explica&ccedil;&atilde;o dos argumentos do menu;</FONT>
+<P>
+<FONT SIZE=2><B>- Op&ccedil;&atilde;o 98</B> - Ativa&ccedil;&atilde;o
+do </FONT><I><FONT SIZE=2 COLOR=#000000>logon</FONT></I><FONT SIZE=2>;</FONT>
+<P>
+<FONT SIZE=2><B>- Op&ccedil;&atilde;o 99</B> - Ativa&ccedil;&atilde;o
+do </FONT><I><FONT SIZE=2 COLOR=#000000>logoff</FONT></I><FONT SIZE=2>.</FONT></DIR>
+<P>
+<FONT SIZE=2>A seguir, todas estas op&ccedil;&otilde;es s&atilde;o
+explicadas separadamente, com mais detalhes.</FONT>
+<P>
+<DIR><FONT SIZE=2 COLOR=#000000><B>Op&ccedil;&atilde;o 94</FONT><FONT SIZE=2></B>
+- Retorno ao menu hierarquicamente superior da navega&ccedil;&atilde;o
+executada atrav&eacute;s do SOS01.</FONT>
+<P>
+<FONT SIZE=2>A navega&ccedil;&atilde;o via </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+n&atilde;o possibilita a navega&ccedil;&atilde;o entre menus e,
+consequentemente, entre sistemas. O SOS01 propicia esta navega&ccedil;&atilde;o,
+auxiliando o usu&aacute;rio final a encontrar o c&oacute;digo
+correto do menu de op&ccedil;&atilde;o a ser solicitado para a
+opera&ccedil;&atilde;o desejada.</FONT>
+<P>
+<FONT SIZE=2>No menu SOS01 s&atilde;o apresentados os menus dispon&iacute;veis,
+podendo ser de todos os sistemas. Deste modo, caso queira se passar
+de um sistema para o SOS01, deve-se informar op&ccedil;&atilde;o
+94 em qualquer menu de op&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2 COLOR=#000000><B>Op&ccedil;&atilde;o 95</B></FONT><FONT SIZE=2>
+- Integra&ccedil;&atilde;o com o Sistema de Controle de Processamento
+(SPO).</FONT>
+<P>
+<FONT SIZE=2>Esta op&ccedil;&atilde;o tem o objetivo de apresentar
+os servi&ccedil;os cadastrados no SPO que estiverem autorizados
+ao usu&aacute;rio que a solicitou. O usu&aacute;rio pode, a partir
+do seu pr&oacute;prio menu, solicitar a prepara&ccedil;&atilde;o
+de algum dos servi&ccedil;os apresentados.</FONT>
+<P>
+<FONT SIZE=2 COLOR=#000000><B>Op&ccedil;&atilde;o 96</B></FONT><FONT SIZE=2>
+- Acesso ao menu com detalhamento de op&ccedil;&otilde;es.</FONT>
+<P>
+<FONT SIZE=2>Quando um sistema &eacute; utilizado por um n&uacute;mero
+reduzido de usu&aacute;rios e estes j&aacute; conhecem amplamente
+todas as transa&ccedil;&otilde;es dos menus, &eacute; dispens&aacute;vel
+que as telas de menu lhes sejam completamente apresentadas. Basta
+que os campos de argumento e op&ccedil;&atilde;o estejam dispon&iacute;veis
+para solicitar a opera&ccedil;&atilde;o desejada.</FONT>
+<P>
+<FONT SIZE=2>Considerando que os menus s&atilde;o as telas mais
+utilizadas em um sistema, pois &eacute; atrav&eacute;s deles que
+as opera&ccedil;&otilde;es do sistema s&atilde;o iniciadas, o
+ganho de tr&aacute;fego de caracteres na linha seria enorme se
+fosse poss&iacute;vel trabalhar sempre com menus resumidos.</FONT>
+<P>
+<FONT SIZE=2>Para isso o SADS oferece a op&ccedil;&atilde;o 96,
+um recurso que possibilita a simplifica&ccedil;&atilde;o da tela
+menu, a fim de reduzir o tr&aacute;fego da linha, sem, no entanto,
+perder o acesso ao seu desenho completo.</FONT>
+<P>
+<FONT SIZE=2>Para isso, o analista dever&aacute; construir o desenho
+resumido do menu para ser utilizado pelos usu&aacute;rios, conservando
+o desenho completo do mesmo, que, atrav&eacute;s da op&ccedil;&atilde;o
+96, pode ser consultado sempre que for necess&aacute;rio.</FONT>
+<P>
+<FONT SIZE=2>Passos para simplifica&ccedil;&atilde;o da tela menu:</FONT>
+<P>
+<DIR><FONT SIZE=2><B>a)</B> Duplica&ccedil;&atilde;o da tela menu de c&oacute;digo
+sssTnn00 para o novo c&oacute;digo sssTnn96;</FONT>
+<P>
+<FONT SIZE=2><B>b)</B> Simplifica&ccedil;&atilde;o do desenho da tela
+menu de c&oacute;digo sssTnn00 para conter apenas o </FONT><I><FONT SIZE=2 COLOR=#000000>trancode</FONT></I><FONT SIZE=2>,
+data/hora (caso o desenho completo j&aacute; contiver), campos
+de argumentos, de op&ccedil;&atilde;o e de transmiss&atilde;o;</FONT>
+<P>
+<FONT SIZE=2><B>c)</B> Certifica&ccedil;&atilde;o de que o desenho da
+tela menu de c&oacute;digo sssT0096 cont&eacute;m a descri&ccedil;&atilde;o
+de todas as suas op&ccedil;&otilde;es;</FONT>
+<P>
+<FONT SIZE=2><B>d)</B> Se o sistema for cooperativo, deve-se gerar a
+</FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+da tela de c&oacute;digo sssTnn00;</FONT>
+<P>
+<FONT SIZE=2><B>e)</B> Libera&ccedil;&atilde;o dos desenhos de ambas
+as telas para o ambiente onde o sistema ser&aacute; executado:
+teste e/ou produ&ccedil;&atilde;o.</FONT></DIR>
+<P>
+<FONT SIZE=2 COLOR=#000000><B>Op&ccedil;&atilde;o 97</B></FONT><FONT SIZE=2>
+- Ativa&ccedil;&atilde;o da tela de explica&ccedil;&atilde;o dos
+argumentos do menu.</FONT>
+<P>
+<FONT SIZE=2>Atrav&eacute;s desta op&ccedil;&atilde;o o usu&aacute;rio
+pode obter a explica&ccedil;&atilde;o sobre o preenchimento dos
+argumentos necess&aacute;rios para disparar uma determinada transa&ccedil;&atilde;o
+a partir de um menu ou submenu de op&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Quando o usu&aacute;rio tiver d&uacute;vidas a respeito
+do preenchimento dos argumentos, ele deve informar o n&uacute;mero
+da op&ccedil;&atilde;o que lhe gerou d&uacute;vidas no in&iacute;cio
+do primeiro campo dispon&iacute;vel da tela menu e informar 97
+no campo OPCAO. Neste momento, o </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+lhe apresentar&aacute; a tela de explica&ccedil;&atilde;o dos
+argumentos referente &agrave; op&ccedil;&atilde;o informada.</FONT>
+<P>
+<FONT SIZE=2>Para que este recurso oferecido pelo SADS possa ser
+utilizado, alguns procedimentos devem ter sido efetuados, quais
+sejam:</FONT>
+<P>
+<DIR><FONT SIZE=2><B>a)</B> Cadastramento do desenho da tela de explica&ccedil;&atilde;o
+dos argumentos da op&ccedil;&atilde;o no reposit&oacute;rio de
+dados.</FONT>
+<P>
+<FONT SIZE=2>Esta tela deve possuir o c&oacute;digo sssEnnmm,
+onde &quot;nn&quot; representa o c&oacute;digo do menu e &quot;mm&quot;,
+o n&uacute;mero da op&ccedil;&atilde;o. Por exemplo, a tela explicativa
+da op&ccedil;&atilde;o 03 do menu ABC01 deve possuir o c&oacute;digo
+ABCE0103.</FONT>
+<P>
+<FONT SIZE=2><B>b)</B> Libera&ccedil;&atilde;o do desenho da tela de
+explica&ccedil;&atilde;o para o ambiente onde o sistema ser&aacute;
+executado: teste ou produ&ccedil;&atilde;o.</FONT></DIR>
+<P>
+<FONT SIZE=2>Telas de explica&ccedil;&atilde;o de argumentos n&atilde;o
+s&atilde;o definidas no reposit&oacute;rio de dados do SADS, portanto,
+suas estruturas n&atilde;o podem ser cadastradas e suas </FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+n&atilde;o podem ser geradas, pois n&atilde;o s&atilde;o necess&aacute;rias.</FONT>
+<P>
+<FONT SIZE=2>Esta op&ccedil;&atilde;o fornece, tamb&eacute;m,
+descri&ccedil;&otilde;es de telas e fun&ccedil;&otilde;es, dependendo
+da situa&ccedil;&atilde;o em que a op&ccedil;&atilde;o e a fun&ccedil;&atilde;o
+de </FONT><I><FONT SIZE=2 COLOR=#000000>help</FONT></I><FONT SIZE=2>
+for requisitada.</FONT></DIR></DIR>
+<P>
+<FONT SIZE=2>A seguir, &eacute; apresentado um esquema que explica
+as situa&ccedil;&otilde;es em que as descri&ccedil;&otilde;es,
+exibidas atrav&eacute;s da op&ccedil;&atilde;o 97, ser&atilde;o
+apresentadas:<BR>
+</FONT>
+<P>
+<B><FONT SIZE=2 COLOR=#000000>SE</FONT></B><FONT SIZE=2> existe
+a tela de explica&ccedil;&atilde;o para a op&ccedil;&atilde;o
+escolhida<BR>
+</FONT><B><FONT SIZE=2 COLOR=#000000>ENT&Atilde;O<BR>
+</FONT></B><FONT SIZE=2>ser&aacute; enviada a tela de explica&ccedil;&atilde;o
+ao usu&aacute;rio<BR>
+<DIR></FONT><B><FONT SIZE=2 COLOR=#000000>SE</FONT></B><FONT SIZE=2>
+o usu&aacute;rio dispara o </FONT><I><FONT SIZE=2 COLOR=#000000>help</FONT></I><FONT SIZE=2>
+para obter mais explica&ccedil;&otilde;es<BR>
+</FONT><B><FONT SIZE=2 COLOR=#000000>ENT&Atilde;O<BR>
+<DIR>SE</FONT></B><FONT SIZE=2> existe descri&ccedil;&atilde;o da tela
+<BR>
+</FONT><B><FONT SIZE=2 COLOR=#000000>ENT&Atilde;O<BR>
+</FONT></B><FONT SIZE=2>ser&aacute; exibida a descri&ccedil;&atilde;o
+da tela<BR>
+</FONT><B><FONT SIZE=2 COLOR=#000000>SEN&Atilde;O<BR>
+<DIR>SE</FONT></B><FONT SIZE=2> existe o relacionamento da transa&ccedil;&atilde;o
+com alguma <BR>
+fun&ccedil;&atilde;o e existe descri&ccedil;&atilde;o da fun&ccedil;&atilde;o
+<BR>
+</FONT><B><FONT SIZE=2 COLOR=#000000>ENT&Atilde;O<BR>
+</FONT></B><FONT SIZE=2>ser&aacute; exibida a descri&ccedil;&atilde;o
+da fun&ccedil;&atilde;o<BR>
+</FONT><B><FONT SIZE=2 COLOR=#000000>SEN&Atilde;O<BR>
+</FONT></B><FONT SIZE=2>ser&aacute; exibida uma explica&ccedil;&atilde;o
+do</FONT><I><FONT SIZE=2 COLOR=#000000> help on-line.<BR></DIR></DIR></DIR>
+<BR>
+</FONT></I><B><FONT SIZE=2 COLOR=#000000>SE n&atilde;o existe
+a tela de explica&ccedil;&atilde;o para a op&ccedil;&atilde;o
+escolhida<BR>
+<DIR>SE</FONT></B><FONT SIZE=2> existe descri&ccedil;&atilde;o da tela
+<BR>
+</FONT><B><FONT SIZE=2 COLOR=#000000>ENT&Atilde;O<BR>
+</FONT></B><FONT SIZE=2>ser&aacute; exibida a descri&ccedil;&atilde;o
+da tela<BR>
+</FONT><B><FONT SIZE=2 COLOR=#000000>SEN&Atilde;O<BR>
+<DIR>SE</FONT></B><FONT SIZE=2> existe o relacionamento da transa&ccedil;&atilde;o
+com<BR>
+alguma fun&ccedil;&atilde;o e existe descri&ccedil;&atilde;o da
+fun&ccedil;&atilde;o<BR>
+</FONT><B><FONT SIZE=2 COLOR=#000000>ENT&Atilde;O<BR>
+</FONT></B><FONT SIZE=2>ser&aacute; exibida a descri&ccedil;&atilde;o
+da fun&ccedil;&atilde;o<BR>
+</FONT><B><FONT SIZE=2 COLOR=#000000>SEN&Atilde;O<BR>
+</FONT></B><FONT SIZE=2>ser&aacute; exibida uma explica&ccedil;&atilde;o
+do</FONT><I><FONT SIZE=2 COLOR=#000000> help on-line</FONT></I><FONT SIZE=2>.
+</DIR></DIR>
+</FONT>
+<P><DIR><dir><FONT SIZE=2 COLOR=#000000><B>Op&ccedil;&atilde;o 98</B></FONT><FONT SIZE=2>
+- Ativa&ccedil;&atilde;o do </FONT><I><FONT SIZE=2 COLOR=#000000>logon</FONT></I><FONT SIZE=2>.</FONT>
+<P>
+<FONT SIZE=2>Esta op&ccedil;&atilde;o &eacute; utilizada quando
+o usu&aacute;rio deseja efetuar o </FONT><I><FONT SIZE=2 COLOR=#000000>logon</FONT></I><FONT SIZE=2>
+no ambiente SADS.</FONT>
+<P>
+<FONT SIZE=2>Quando esta op&ccedil;&atilde;o &eacute; disparada
+de um menu de op&ccedil;&atilde;o de um sistema qualquer desenvolvido
+atrav&eacute;s do SADS, o </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+deste sistema desvia o controle para o Sistema de Seguran&ccedil;a,
+que, por sua vez, apresenta uma tela onde o usu&aacute;rio deve
+informar seu n&uacute;mero e senha, dentre outros dados.</FONT>
+<P>
+<FONT SIZE=2>Caso j&aacute; exista um usu&aacute;rio trabalhando
+na esta&ccedil;&atilde;o, &eacute; efetuado o seu </FONT><I><FONT SIZE=2 COLOR=#000000>logoff</FONT></I><FONT SIZE=2>
+e o </FONT><I><FONT SIZE=2 COLOR=#000000>logon</FONT></I><FONT SIZE=2>
+do novo usu&aacute;rio.</FONT>
+<P>
+<FONT SIZE=2>Ap&oacute;s o </FONT><I><FONT SIZE=2 COLOR=#000000>logon</FONT></I><FONT SIZE=2>,
+ser&aacute; exibida uma tela, mensagem ou contexto, ou ser&aacute;
+executado um programa, de acordo com os </FONT><I><FONT SIZE=2 COLOR=#000000>defaults</FONT></I><FONT SIZE=2>
+de encadeamento cadastrados para o usu&aacute;rio, ou de acordo
+com a parametriza&ccedil;&atilde;o adotada para a instala&ccedil;&atilde;o
+e cadastrada na tabela SBPM6004.</FONT>
+<P>
+<FONT SIZE=2>Detalhes sobre </FONT><I><FONT SIZE=2 COLOR=#000000>defaults</FONT></I><FONT SIZE=2>
+de respostas ap&oacute;s o </FONT><I><FONT SIZE=2 COLOR=#000000>logon</FONT></I><FONT SIZE=2>/</FONT><I><FONT SIZE=2 COLOR=#000000>logoff</FONT></I><FONT SIZE=2>
+do usu&aacute;rio est&atilde;o descritos na Se&ccedil;&atilde;o
+VI, &quot;Sistema de Seguran&ccedil;a&quot;, item &quot;Usu&aacute;rios
+e habilita&ccedil;&otilde;es&quot;, neste manual.</FONT>
+<P>
+<FONT SIZE=2>Detalhes sobre parametriza&ccedil;&atilde;o da resposta
+a ser enviada ap&oacute;s o </FONT><I><FONT SIZE=2 COLOR=#000000>logon/logoff
+</FONT></I><FONT SIZE=2>&nbsp;est&atilde;o descritos na Se&ccedil;&atilde;o
+III, &quot;Parametriza&ccedil;&otilde;es do SADS&quot;, neste
+manual.</FONT>
+<P>
+<FONT SIZE=2 COLOR=#000000><B>Op&ccedil;&atilde;o 99</B></FONT><FONT SIZE=2>
+- Ativa&ccedil;&atilde;o do </FONT><I><FONT SIZE=2 COLOR=#000000>logoff</FONT></I><FONT SIZE=2>.</FONT>
+<P>
+<FONT SIZE=2>Esta op&ccedil;&atilde;o &eacute; utilizada quando
+o usu&aacute;rio deseja efetuar o </FONT><I><FONT SIZE=2 COLOR=#000000>logoff</FONT></I><FONT SIZE=2>
+no ambiente SADS.</FONT>
+<P>
+<FONT SIZE=2>Ap&oacute;s o </FONT><I><FONT SIZE=2 COLOR=#000000>logoff</FONT></I><FONT SIZE=2>,
+ser&aacute; exibida uma tela, mensagem ou contexto, ou ser&aacute;
+executado um programa, de acordo com os </FONT><I><FONT SIZE=2 COLOR=#000000>defaults</FONT></I><FONT SIZE=2>
+de encadeamento cadastrados para o usu&aacute;rio, ou de acordo
+com a parametriza&ccedil;&atilde;o adotada para a instala&ccedil;&atilde;o
+e cadastrada na tabela SBPM6004.</FONT>
+<P>
+<FONT SIZE=2>Detalhes sobre </FONT><I><FONT SIZE=2 COLOR=#000000>defaults</FONT></I><FONT SIZE=2>
+de respostas ap&oacute;s o </FONT><I><FONT SIZE=2 COLOR=#000000>logon</FONT></I><FONT SIZE=2>/</FONT><I><FONT SIZE=2 COLOR=#000000>logoff</FONT></I><FONT SIZE=2>
+do usu&aacute;rio est&atilde;o descritos na Se&ccedil;&atilde;o
+VI, &quot;Sistema de Seguran&ccedil;a&quot;, item &quot;Usu&aacute;rios
+e habilita&ccedil;&otilde;es&quot;, neste manual.</FONT>
+<P>
+<FONT SIZE=2>Detalhes sobre parametriza&ccedil;&atilde;o da resposta
+a ser enviada ap&oacute;s o </FONT><I><FONT SIZE=2 COLOR=#000000>logon/logoff
+</FONT></I><FONT SIZE=2>&nbsp;est&atilde;o descritos na Se&ccedil;&atilde;o
+III, &quot;Parametriza&ccedil;&otilde;es do SADS&quot;, neste
+manual.</dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>H.Sec</FONT></B><FONT SIZE=2> -
+Indicador de desvio de controle para o </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+secund&aacute;rio.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P>
+<DIR><FONT SIZE=2>&quot;S&quot; - Se a op&ccedil;&atilde;o for tratada
+por um </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+secund&aacute;rio;</FONT>
+<P>
+<FONT SIZE=2>&quot;N&quot; - Se a op&ccedil;&atilde;o for tratada
+pelo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+prim&aacute;rio.</FONT>
+<P></DIR>
+<FONT SIZE=2>Todas as transa&ccedil;&otilde;es de um sistema,
+quando disparadas, ativam primeiramente o </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+prim&aacute;rio, respons&aacute;vel pelos seus respectivos menus.
+Por&eacute;m, se a transa&ccedil;&atilde;o disparada possuir o
+campo H.SEC = &quot;S&quot;, o </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+prim&aacute;rio ir&aacute; desviar seu controle para o </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+secund&aacute;rio espec&iacute;fico. Neste caso, um programa agregado
+ao </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+secund&aacute;rio, definido no campo PROG/TRAN, &eacute; que ir&aacute;
+processar esta transa&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>O objetivo do </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+secund&aacute;rio &eacute; processar as transa&ccedil;&otilde;es
+mais demoradas, para aliviar o processamento do </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+prim&aacute;rio e evitar enfileiramentos. Pode-se conseguir, desta
+forma, melhor </FONT><I><FONT SIZE=2 COLOR=#000000>performance</FONT></I><FONT SIZE=2>
+do sistema.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Prog/Tran</FONT></B><FONT SIZE=2>
+- C&oacute;digo do programa ou transa&ccedil;&atilde;o que ir&aacute;
+tratar a op&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Este campo poder&aacute; ser preenchido com:</FONT>
+<P>
+<DIR><FONT SIZE=2>- O c&oacute;digo do programa, quando a op&ccedil;&atilde;o
+disparar a execu&ccedil;&atilde;o de um programa espec&iacute;fico.
+Pode ser informado um c&oacute;digo de programa mesmo que a transa&ccedil;&atilde;o
+esteja em prototipa&ccedil;&atilde;o;</FONT>
+<P>
+<FONT SIZE=2>- O c&oacute;digo da transa&ccedil;&atilde;o, quando
+a op&ccedil;&atilde;o disparar a execu&ccedil;&atilde;o de uma
+transa&ccedil;&atilde;o j&aacute; implementada em outro </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>,
+diferente daquele que trata o menu. Neste caso, quando a op&ccedil;&atilde;o
+for requisitada, o </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+se encarregar&aacute; de passar os argumentos informados no menu
+para o programa executor da transa&ccedil;&atilde;o informada
+no campo PROG/TRAN.</FONT></DIR>
+<P>
+<FONT SIZE=2>Quando for informado o c&oacute;digo de uma transa&ccedil;&atilde;o,
+deve-se informar &quot;T&quot; no campo A/C/E/M/T.</FONT>
+<P>
+<DIR><FONT SIZE=2>- O c&oacute;digo do </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>,
+quando a op&ccedil;&atilde;o for um submenu ou a transa&ccedil;&atilde;o
+estiver em prototipa&ccedil;&atilde;o. Pode-se informar o c&oacute;digo
+do </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+tamb&eacute;m para transa&ccedil;&otilde;es que ser&atilde;o processadas
+pelo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+secund&aacute;rio;</FONT>
+<P>
+<FONT SIZE=2>- O c&oacute;digo do </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+secund&aacute;rio, quando, no cadastramento do menu prim&aacute;rio,
+a op&ccedil;&atilde;o for executada por um programa que ser&aacute;
+agregado ao </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+secund&aacute;rio. Neste caso, pode-se informar tamb&eacute;m
+o c&oacute;digo do </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+prim&aacute;rio.</FONT></DIR>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>ACV</FONT></B><FONT SIZE=2> - Indicador
+de utiliza&ccedil;&atilde;o de &aacute;rea conversacional.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P>
+<DIR><FONT SIZE=2>&quot;S&quot; - Se o programa que executa a op&ccedil;&atilde;o
+utilizar &aacute;rea conversacional;</FONT>
+<P>
+<FONT SIZE=2>&quot;N&quot; - Se o programa que executa a op&ccedil;&atilde;o
+n&atilde;o utilizar &aacute;rea conversacional.</FONT></DIR>
+<P>
+<FONT SIZE=2>A &aacute;rea conversacional tem como fun&ccedil;&atilde;o
+armazenar e transferir dados entre as transa&ccedil;&otilde;es
+efetuadas em uma mesma esta&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Toda transa&ccedil;&atilde;o de atualiza&ccedil;&atilde;o
+deve utilizar obrigatoriamente a &aacute;rea conversacional.</FONT>
+<P>
+<FONT SIZE=2>O </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+limpar&aacute; a &aacute;rea conversacional toda vez que for disparada
+uma op&ccedil;&atilde;o que n&atilde;o utilizar &aacute;rea conversacional.
+Portanto, mesmo em programas de consulta, para conservar as informa&ccedil;&otilde;es
+armazenadas nesta &aacute;rea, deve-se declarar a sua utiliza&ccedil;&atilde;o.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Acao</FONT></B><FONT SIZE=2> - Indicador
+de utiliza&ccedil;&atilde;o do campo ACAO na tela de processamento
+tratada pela op&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P>
+<DIR><FONT SIZE=2>&quot;S&quot; - Se a tela de processamento tratada
+pela op&ccedil;&atilde;o utilizar o campo ACAO.</FONT>
+<P>
+<FONT SIZE=2>&quot;N&quot; - Se a tela de processamento tratada
+pela op&ccedil;&atilde;o n&atilde;o utilizar o campo ACAO.</FONT></DIR>
+<P>
+<FONT SIZE=2>Para obter maiores detalhes em como utilizar o campo
+ACAO em telas de processamento, deve-se consultar o item &quot;Tela&quot;,
+subitem &quot;Cadastramento&quot;, nesta se&ccedil;&atilde;o.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>A/C/E/M/T</FONT></B><FONT SIZE=2>
+- Tipo do programa ou transa&ccedil;&atilde;o a ser disparada
+pela op&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT>
+<P>
+<DIR><FONT SIZE=2>&quot;A&quot; - Para que a op&ccedil;&atilde;o dispare
+a execu&ccedil;&atilde;o de um programa de atualiza&ccedil;&atilde;o(Neste caso, deve-se informar o c&oacute;digo do programa
+em PROG/TRAN).</FONT>
+<P>
+<FONT SIZE=2>&quot;C&quot; - Para que a op&ccedil;&atilde;o dispare
+a execu&ccedil;&atilde;o de um programa de consulta(Neste caso, deve-se informar o c&oacute;digo do programa
+em PROG/TRAN).</FONT>
+<P>
+<FONT SIZE=2>&quot;E&quot; - Para que a op&ccedil;&atilde;o dispare
+a execu&ccedil;&atilde;o de um programa cuja l&oacute;gica seja
+de consulta encadeada ou de sele&ccedil;&atilde;o(Neste caso, deve-se informar o c&oacute;digo do programa
+em PROG/TRAN).</FONT>
+<P>
+<FONT SIZE=2>&quot;M&quot; - Para que a op&ccedil;&atilde;o ative
+o </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+para apresenta&ccedil;&atilde;o da tela de um submenu(Neste caso, deve-se informar o c&oacute;digo do </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+que ir&aacute; tratar as op&ccedil;&otilde;es do submenu em PROG/TRAN e o identificador num&eacute;rico do submenu a ser apresentado
+no campo TELA. O c&oacute;digo do submenu ser&aacute; composto de: c&oacute;digo do menu + a op&ccedil;&atilde;o).</FONT>
+<P>
+<FONT SIZE=2>&quot;T&quot; - Para disparar uma transa&ccedil;&atilde;o
+j&aacute; implementada em outro </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>(Neste caso, deve-se informar qual transa&ccedil;&atilde;o
+ser&aacute; disparada em PROG/TRAN. Caso a transa&ccedil;&atilde;o solicitada seja processada, no outro </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>,
+atrav&eacute;s de um submenu, deve-se informar o n&uacute;mero do submenu de destino no campo TELA).</FONT></DIR>
+<P>
+<B><FONT SIZE=2 COLOR=#000000>Exemplo</FONT></B><FONT SIZE=2>:</FONT>
+<P>
+<FONT SIZE=2>Se a transa&ccedil;&atilde;o a ser disparada pertencer
+ao menu ADF03, submenu 60, e se referir &agrave; op&ccedil;&atilde;o
+63, deve-se informar ADF0363 no campo PROG/TRAN (que ser&aacute;
+o c&oacute;digo da transa&ccedil;&atilde;o disparada), e 60 (submenu)
+no campo TELA.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Segur</FONT></B><FONT SIZE=2> -
+Indicador de execu&ccedil;&atilde;o de testes de seguran&ccedil;a
+quando a op&ccedil;&atilde;o for disparada.</FONT>
+<P>
+<FONT SIZE=2>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT>
+<P>
+<dir><FONT SIZE=2>&quot;S&quot; - Para que o </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+execute os testes de habilita&ccedil;&atilde;o do Sistema de Seguran&ccedil;a,
+para esta op&ccedil;&atilde;o;</FONT>
+<P>
+<FONT SIZE=2>&quot;N&quot; - Para que a op&ccedil;&atilde;o seja
+utilizada sem verifica&ccedil;&atilde;o de habilita&ccedil;&atilde;o
+no Sistema de Seguran&ccedil;a.</FONT></dir>
+<P>
+<FONT SIZE=2>Atrav&eacute;s da tabela SBPM5000, o respons&aacute;vel
+pelo suporte SADS pode definir que somente usu&aacute;rios autorizados
+podem eliminar testes de seguran&ccedil;a que tenham sido cadastrados
+para serem disparados antes da execu&ccedil;&atilde;o das transa&ccedil;&otilde;es.
+Desta forma, a informa&ccedil;&atilde;o do valor &quot;N&quot;
+nos campos &quot;Segur&quot;, &quot;Consistencia Menu&quot; e
+&quot;Consistencia Transacao&quot; somente poder&aacute; ser feita
+por usu&aacute;rios devidamente autorizados. </FONT>
+<P>
+<FONT SIZE=2>Detalhes sobre esta parametriza&ccedil;&atilde;o
+podem ser obtidos na Se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es
+do SADS&quot;, item &quot;Seguran&ccedil;a&quot;, neste manual.</FONT>
+<P>
+<FONT SIZE=2>Caso todas as op&ccedil;&otilde;es do menu exijam
+seguran&ccedil;a, este menu s&oacute; ser&aacute; apresentado
+para usu&aacute;rios habilitados. Caso ele seja solicitado e o
+usu&aacute;rio n&atilde;o tenha efetuado o </FONT><I><FONT SIZE=2 COLOR=#000000>logon</FONT></I><FONT SIZE=2>,
+ser&aacute; apresentada a tela para a execu&ccedil;&atilde;o do
+</FONT><I><FONT SIZE=2 COLOR=#000000>logon</FONT></I><FONT SIZE=2>
+e, posteriormente, ser&aacute; apresentado o menu.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Consistencia</FONT></B><FONT SIZE=2>
+- Indicador de disparo da consist&ecirc;ncia geral pelo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>.</FONT>
+<P>
+<FONT SIZE=2>A consist&ecirc;ncia geral de uma op&ccedil;&atilde;o
+poder&aacute; ser disparada pelo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+nas seguintes situa&ccedil;&otilde;es:<BR>
+<BR>
+<dir></FONT><B><FONT SIZE=2 COLOR=#000000>1</FONT></B><FONT SIZE=2>- Quando a op&ccedil;&atilde;o for solicitada do menu - Neste
+caso, a consist&ecirc;ncia geral validar&aacute; os argumentos da tela menu informados no momento do disparo da op&ccedil;&atilde;o;<BR>
+<BR>
+</FONT><B><FONT SIZE=2 COLOR=#000000>2</FONT></B><FONT SIZE=2>- Antes de o </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+entregar a mensagem vinda da tela de processamento da op&ccedil;&atilde;o para seu programa executor - Neste caso, a consist&ecirc;ncia
+geral validar&aacute; os dados informados pelo usu&aacute;rio nesta tela de processamento.</FONT></dir>
+<P>
+<FONT SIZE=2>Cumpre ressaltar que programas de atualiza&ccedil;&atilde;o
+paginada n&atilde;o devem definir o disparo da consist&ecirc;ncia
+geral pelo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>,
+visto que o Paginador de Entrada &eacute; que se encarrega de
+dispar&aacute;-la.</FONT>
+<P>
+<FONT SIZE=2>Os preenchimento dos dois pr&oacute;ximos campos
+da tela de cadastramento de menu determinam se haver&aacute; ou
+n&atilde;o disparo da consist&ecirc;ncia geral da op&ccedil;&atilde;o
+pelo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+no menu e em sua tela de processamento.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Menu</FONT></B><FONT SIZE=2> - Indicador
+de disparo da consist&ecirc;ncia geral a partir do menu.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P>
+<dir><FONT SIZE=2>&quot;S&quot; - A consist&ecirc;ncia geral do menu
+ser&aacute; disparada pelo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+quando esta op&ccedil;&atilde;o for solicitada do menu;</FONT>
+<P>
+<FONT SIZE=2>&quot;N&quot; - A consist&ecirc;ncia geral do menu
+n&atilde;o ser&aacute; disparada pelo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+quando esta op&ccedil;&atilde;o for solicitada do menu.</FONT></dir>
+<P>
+<FONT SIZE=2>Atrav&eacute;s da tabela SBPM5000, o respons&aacute;vel
+pelo suporte SADS pode definir que somente usu&aacute;rios autorizados
+podem eliminar testes de seguran&ccedil;a que tenham sido cadastrados
+para serem disparados antes da execu&ccedil;&atilde;o das transa&ccedil;&otilde;es.
+Desta forma, a informa&ccedil;&atilde;o do valor &quot;N&quot;
+nos campos &quot;Segur&quot;, &quot;Consistencia Menu&quot; e
+&quot;Consistencia Transacao&quot; somente poder&aacute; ser feita
+por usu&aacute;rios devidamente autorizados. </FONT>
+<P>
+<FONT SIZE=2>Detalhes sobre esta parametriza&ccedil;&atilde;o
+podem ser obtidos na Se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es
+do SADS&quot;, item &quot;Seguran&ccedil;a&quot;, neste manual.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Transacao</FONT></B><FONT SIZE=2>
+- Indicador de disparo da consist&ecirc;ncia geral a partir da
+tela de processamento da transa&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P>
+<dir><FONT SIZE=2>&quot;S&quot; - A consist&ecirc;ncia geral da tela
+de processamento ser&aacute; disparada pelo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+quando da sua transmiss&atilde;o;</FONT>
+<P>
+<FONT SIZE=2>&quot;N&quot; - A consist&ecirc;ncia geral n&atilde;o
+ser&aacute; disparada pelo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+quando da transmiss&atilde;o da tela de processamento da transa&ccedil;&atilde;o.</FONT></dir>
+<P>
+<FONT SIZE=2>Atrav&eacute;s da tabela SBPM5000, o respons&aacute;vel
+pelo suporte SADS pode definir que somente usu&aacute;rios autorizados
+podem eliminar testes de seguran&ccedil;a que tenham sido cadastrados
+para serem disparados antes da execu&ccedil;&atilde;o das transa&ccedil;&otilde;es.
+Desta forma, a informa&ccedil;&atilde;o do valor &quot;N&quot;
+nos campos &quot;Segur&quot;, &quot;Consistencia Menu&quot; e
+&quot;Consistencia Transacao&quot; somente poder&aacute; ser feita
+por usu&aacute;rios devidamente autorizados. </FONT>
+<P>
+<FONT SIZE=2>Detalhes sobre esta parametriza&ccedil;&atilde;o
+podem ser obtidos na Se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es
+do SADS&quot;, item &quot;Seguran&ccedil;a&quot;, neste manual.</FONT>
+<P>
+<FONT SIZE=2>O ideal &eacute; que as consist&ecirc;ncias sejam
+disparadas pelo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+pois, neste caso, evita-se que programas sejam carregados na mem&oacute;ria
+somente para detectar erros de consist&ecirc;ncia.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Protot</FONT></B><FONT SIZE=2> -
+Indicador de prototipa&ccedil;&atilde;o da transa&ccedil;&atilde;o
+relativa &agrave; op&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P>
+<dir><FONT SIZE=2>&quot;S&quot; - Se a transa&ccedil;&atilde;o est&aacute;
+em prototipa&ccedil;&atilde;o. Neste caso, o c&oacute;digo do
+</FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+ou do futuro<BR>
+programa que executar&aacute; a op&ccedil;&atilde;o deve ser informado
+no campo PROG/TRAN;</FONT>
+<P>
+<FONT SIZE=2>&quot;N&quot; - Se a transa&ccedil;&atilde;o n&atilde;o
+est&aacute; em prototipa&ccedil;&atilde;o. Neste caso, o c&oacute;digo
+do programa ou da<BR>
+transa&ccedil;&atilde;o que ir&aacute; tratar a op&ccedil;&atilde;o
+deve ser informado no campo PROG/TRAN.</FONT></dir>
+<P>
+<FONT SIZE=2>N&atilde;o &eacute; poss&iacute;vel informar &quot;S&quot;
+neste campo para submenus e para transa&ccedil;&otilde;es externas.</FONT>
+<P>
+<FONT SIZE=2>A prototipa&ccedil;&atilde;o permite que o usu&aacute;rio
+tenha uma vis&atilde;o de como ser&aacute; o funcionamento do
+sistema antes dos programas executores das op&ccedil;&otilde;es
+e da base de dados do mesmo serem constru&iacute;dos.</FONT>
+<P>
+<FONT SIZE=2>Quando for informado que haver&aacute; prototipa&ccedil;&atilde;o,
+nenhum programa chamado ou transa&ccedil;&atilde;o ser&aacute;
+disparada. Neste caso, o </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+apenas se encarregar&aacute; de efetuar fun&ccedil;&otilde;es
+como:</FONT>
+<P>
+<dir><FONT SIZE=2>- Testar se o usu&aacute;rio est&aacute; habilitado
+a trabalhar com a op&ccedil;&atilde;o requisitada;</FONT>
+<P>
+<FONT SIZE=2>- Exibir a tela de processamento definida para a
+op&ccedil;&atilde;o solicitada;</FONT>
+<P>
+<FONT SIZE=2>- Validar os dados de entrada;</FONT>
+<P>
+<FONT SIZE=2>- Interagir com o </FONT><I><FONT SIZE=2 COLOR=#000000>help
+on-line</FONT></I><FONT SIZE=2> do SADS;</FONT>
+<P>
+<FONT SIZE=2>- Executar a navega&ccedil;&atilde;o dos menus desejada.</FONT></dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Tela</FONT></B><FONT SIZE=2> - C&oacute;digo
+num&eacute;rico que identifica a tela.</FONT>
+<P>
+<FONT SIZE=2>A partir do identificador num&eacute;rico informado
+neste campo, o c&oacute;digo da tela ser&aacute; composto da seguinte
+forma:</FONT>
+<p><dir><IMG SRC="Seta.gif" WIDTH=13 HEIGHT=13>&quot;sssTnnmm&quot; onde:</FONT>
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>&quot;sss&quot; &eacute; o c&oacute;digo alfab&eacute;tico
+que identifica o sistema;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>&quot;T&quot; &eacute; a constante de tela;</FONT>
+<P>
+<IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>&quot;nn&quot; &eacute; o identificador num&eacute;rico
+do menu e</FONT>
+<P>
+<IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>&quot;mm&quot; &eacute; o identificador num&eacute;rico
+da tela.</dir></dir></dir>
+<P>
+<Dir><FONT SIZE=2>&Eacute; aconselh&aacute;vel que a tela possua o
+mesmo n&uacute;mero da op&ccedil;&atilde;o do menu ao qual se
+encontra relacionada, pois o processo de gera&ccedil;&atilde;o
+de programas </FONT><I><FONT SIZE=2 COLOR=#000000>on-line</FONT></I><FONT SIZE=2>
+pressup&otilde;e esta compatibilidade.</FONT>
+<P>
+<FONT SIZE=2>Este n&uacute;mero &eacute; utilizado para identificar
+o c&oacute;digo da tela nas seguintes situa&ccedil;&otilde;es:</FONT>
+<P>
+<dir><FONT SIZE=2>- Quando a op&ccedil;&atilde;o estiver em prototipa&ccedil;&atilde;o
+- PROTOT = &quot;S&quot;. Neste caso, o n&uacute;mero informado
+identificar&aacute; a tela que ser&aacute; apresentada ao usu&aacute;rio
+quando a op&ccedil;&atilde;o for disparada do menu para uma pr&eacute;via
+visualiza&ccedil;&atilde;o do sistema;</FONT>
+<P>
+<FONT SIZE=2>- Quando tiver sido definido um programa executor
+espec&iacute;fico da op&ccedil;&atilde;o - PROG/TRAN = &lt;&lt;sssNnn&gt;&gt;.
+Neste caso, o c&oacute;digo num&eacute;rico identificar&aacute;
+a tela de processamento do programa executor da op&ccedil;&atilde;o.
+Esta tela ser&aacute; lida pelo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+antes de desviar o processamento para o programa executor da op&ccedil;&atilde;o,
+evitando que o programa tenha que estabelecer um </FONT><I><FONT SIZE=2 COLOR=#000000>link</FONT></I><FONT SIZE=2>
+f&iacute;sico com a sub-rotina de acesso a telas. Portanto, &eacute;
+aconselh&aacute;vel identificar o n&uacute;mero da tela para uma
+melhor </FONT><I><FONT SIZE=2 COLOR=#000000>performance</FONT></I><FONT SIZE=2>
+do sistema;</FONT>
+<P>
+<FONT SIZE=2>- Quando tiver sido determinado que uma transa&ccedil;&atilde;o
+j&aacute; definida em outro </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+ser&aacute; disparada atrav&eacute;s da op&ccedil;&atilde;o. Neste
+caso, este n&uacute;mero identificar&aacute; o c&oacute;digo do
+submenu de destino, relativo &agrave; transa&ccedil;&atilde;o
+a ser disparada.</FONT>
+<P>
+<B><FONT SIZE=2 COLOR=#000000>Exemplo</FONT></B><FONT SIZE=2>:</FONT>
+<P>
+<FONT SIZE=2>Se a transa&ccedil;&atilde;o for disparada pela op&ccedil;&atilde;o
+63 do menu ADF03, submenu 60, deve-se informar &quot;ADF0363&quot;
+no campo PROG/TRAN, que &eacute; o c&oacute;digo da transa&ccedil;&atilde;o
+disparada, e &quot;60&quot; (submenu) no campo TELA.</FONT>
+<P>
+<FONT SIZE=2>O n&uacute;mero de tela n&atilde;o dever&aacute;
+ser informado quando a transa&ccedil;&atilde;o destino for executada
+a partir do menu principal.</dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Continua (S/N)</FONT></B><FONT SIZE=2>
+- Indicador de continuidade de opera&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>As possibilidades de preenchimento deste campo s&atilde;o
+as seguintes:</FONT>
+<P>
+<dir><FONT SIZE=2>&quot;S&quot; - Nova tela ser&aacute; exibida para
+prosseguir informando as demais op&ccedil;&otilde;es do menu,
+<BR>
+quando uma tela n&atilde;o for suficiente para a informa&ccedil;&atilde;o
+de todas elas;</FONT>
+<P>
+<FONT SIZE=2>&quot;N&quot;- &Uacute;ltima tela para a informa&ccedil;&atilde;o
+das op&ccedil;&otilde;es do menu.</FONT></dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Operacao</FONT></B><FONT SIZE=2>
+- Opera&ccedil;&atilde;o a ser efetuada em rela&ccedil;&atilde;o
+ao cadastramento do menu.</FONT>
+<P>
+<FONT SIZE=2>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o:</FONT>
+<P>
+<dir><FONT SIZE=2>&quot;INC&quot; (Inclus&atilde;o);</FONT>
+<P>
+<FONT SIZE=2>&quot;ALT&quot; (Altera&ccedil;&atilde;o);</FONT>
+<P>
+<FONT SIZE=2>&quot;EXC&quot; (Exclus&atilde;o);</FONT>
+<P>
+<FONT SIZE=2>&quot;CON&quot; (Consulta).</FONT></dir></dir></dir>
+<P>
+<A NAME="Funca"><B><FONT SIZE=5>Fun&ccedil;&otilde;es de apoio</FONT></B></A>
+<HR>
+<P>
+<A NAME="Gener"><B><FONT SIZE=5>Gen&eacute;ricas aplic&aacute;veis
+aos menus</FONT></B></A>
+<P>
+<dir><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>Utilit&aacute;rios:</FONT></B>
+<P>
+<dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Descri&ccedil;&atilde;o de elemento;</FONT>
+<P>
+<IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o
+de elemento;</FONT>
+<P>
+<IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o
+de elemento.</FONT></dir>
+<P>
+<IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>Consultas:</FONT></B>
+<P>
+<dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Elementos por sistema;</FONT>
+<P>
+<IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Descri&ccedil;&atilde;o de elemento.</FONT></dir>
+<P>
+<IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>Refer&ecirc;ncias
+cruzadas:</FONT></B>
+<P>
+<dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Elementos x elemento: Todos os programas que est&atilde;o
+relacionados ao menu e a que </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+o menu est&aacute; relacionado.</FONT></dir>
+<P>
+<IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>Informativos
+impressos:</FONT></B>
+<P>
+<dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Lista de elementos por sistema;</FONT>
+<P>
+<IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Lista descri&ccedil;&atilde;o de elemento.</FONT></dir>
+<P>
+<FONT SIZE=2>Todos estes utilit&aacute;rios, consultas, refer&ecirc;ncias
+cruzadas e informativos impressos encontram-se detalhadamente
+descritos na Se&ccedil;&atilde;o III, &quot;Fun&ccedil;&otilde;es
+de apoio&quot;, neste manual.</FONT>
+</BODY>
+</HTML>

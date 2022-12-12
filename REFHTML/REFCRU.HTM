@@ -1,0 +1,218 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>REFCRU</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+<basefont size=2>
+<B><FONT SIZE=6><P><A NAME="Refer">Refer&ecirc;ncias cruzadas</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS possui um reposit&oacute;rio de dados ativo, ou seja, que se mant&eacute;m atualizado a qualquer fase do desenvolvimento dos sistemas.</FONT> </P>
+<FONT SIZE=2><P>Desta forma, para auxiliar nas manuten&ccedil;&otilde;es e desenvolvimento dos sistemas, o SADS oferece uma grande variedade de refer&ecirc;ncias cruzadas, que exibem os relacionamentos existentes entre os diversos elementos cadastrados em seu reposit&oacute;rio de dados, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Atrib">Atributo x estruturas</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Prog">Atributo x programas</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Atrisi">Atributo x sin&ocirc;nimos</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Doatri">Dom&iacute;nio x atributos</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Elem">Elementos x elemento</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Acess">Set de acesso x programas</A><FONT SIZE=2>.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Atrib">Atributo x estruturas</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter a lista de todas as estruturas que cont&ecirc;m determinado atributo ou campo.</FONT> </P>
+<FONT SIZE=2><P>Caso o atributo a ser pesquisado perten&ccedil;a &agrave; estrutura do <I>header</I> padr&atilde;o de <I>datasets</I> da instala&ccedil;&atilde;o, nesta consulta tamb&eacute;m ser&atilde;o exibidos todos os <I>datasets</I> que possuem tal <I>header</I> padr&atilde;o. </P>
+<P>Pode ser informado um c&oacute;digo de uma estrutura inicial como par&acirc;metro. Neste caso, a consulta ser&aacute; parcial, informando apenas os elementos relacionados ao atributo a partir daquele especificado. </P>
+<P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados", neste manual.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argu1">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, alguns argumentos devem ser informados na tela REFATREST, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sistema</B> - C&oacute;digo do sistema do atributo ou campo, no padr&atilde;o SADS (sss).</FONT> </P>
+<FONT SIZE=2><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>Atributo</B> - Mnem&ocirc;nico do atributo ou campo.</P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B>&nbsp; Estrutura </B>- C&oacute;digo da estrutura, a partir da qual a consulta ser&aacute; apresentada (opcional).</P>
+</FONT><P> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Info1">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ATRIBUTO </B>- C&oacute;digo e nome do atributo ou campo.</FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o informados para cada estrutura onde o atributo ou campo estiver cadastrado:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ESTRUTURA</B> - C&oacute;digo da estrutura.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Nome da estrutura.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>No rodap&eacute; da &uacute;ltima p&aacute;gina da consulta ser&aacute; apresentado o total de estruturas onde o atributo ou campo estiver cadastrado.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Prog">Atributo x programas</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter a lista dos programas que trabalham ou utilizam um determinado atributo ou campo.</FONT> </P>
+<FONT SIZE=2><P>Ser&aacute; apresentada uma tela de consulta com o atributo ou campo e seu nome no cabe&ccedil;alho, e a lista de programas que o utilizam.</FONT> </P>
+<FONT SIZE=2><P>Para cada programa ser&atilde;o exibidas as estruturas que utilizam o atributo ou campo.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados", neste manual.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argu2">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, alguns argumentos devem ser informados na tela REFATRPRO, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sistema</B> - C&oacute;digo do sistema do atributo ou campo, no padr&atilde;o SADS (sss).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Atributo </B>- Mnem&ocirc;nico do atributo ou campo.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Info2">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ATRIBUTO</B> - C&oacute;digo e nome do atributo ou campo.</FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o informados para cada programa que utilizar o atributo ou campo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PROGRAMA</B> - C&oacute;digo do programa, no padr&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>O SADS marca com um "*" os programas que n&atilde;o envolvem movimenta&ccedil;&atilde;o de dados com o atributo ou campo, ou seja, este atributo/campo somente aparece declarado nas estruturas que est&atilde;o cadastradas no programa.</FONT> </P>
+<FONT SIZE=2><P>Por&eacute;m, se o atributo/campo pertencer &agrave; &aacute;rea de <I>work</I> cadastrada para o programa no RD, independentemente de haver ou n&atilde;o movimenta&ccedil;&atilde;o para o mesmo, n&atilde;o ser&aacute; marcado com "*".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Nome do programa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ELEMENTOS</B> - C&oacute;digos das estruturas que utilizam o atributo ou campo internamente ao programa.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>No rodap&eacute; da &uacute;ltima p&aacute;gina da consulta ser&aacute; apresentado o total de programas onde o atributo ou campo est&aacute; sendo utilizado.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Atrisi">Atributo x sin&ocirc;nimos</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter a lista de todos os sin&ocirc;nimos de um atributo ou campo.</FONT> </P>
+<FONT SIZE=2><P>Pode-se definir para todo atributo ou campo v&aacute;rios sin&ocirc;nimos. Deste modo, estes sin&ocirc;nimos herdam todas as suas caracter&iacute;sticas, exceto a sintaxe, a tabela e a sub-rotina.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados", neste manual.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argu3">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, alguns argumentos devem ser informados na tela REFATRSIN, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sistema</B> - C&oacute;digo do sistema do atributo ou campo que possui sin&ocirc;nimos, no padr&atilde;o SADS (sss).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Atributo</B> - Mnem&ocirc;nico do atributo ou campo que possui sin&ocirc;nimos.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Info3">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SISTEMA</B> - C&oacute;digo do sistema do campo ou atributo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Nome do campo ou atributo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CAMPO/ATRIBUTO</B> - C&oacute;digo do campo ou atributo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>FORMATO</B> - Formato do campo ou atributo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TAMANHO</B> - Tamanho do campo ou atributo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DECIMAIS</B> - N&uacute;mero de casas decimais que o campo ou atributo possui.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DOMINIO</B> - Sistema e mnem&ocirc;nico do dom&iacute;nio, caso o atributo ou campo o possua.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SINONIMOS: </P>
+</B><P>Ser&atilde;o informados para cada sin&ocirc;nimo do atributo ou campo:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>SISTEMA</B> - C&oacute;digo do sistema do sin&ocirc;nimo.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>ATRIBUTO</B> - C&oacute;digo do sin&ocirc;nimo.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Nome do sin&ocirc;nimo.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>No rodap&eacute; da &uacute;ltima p&aacute;gina da consulta ser&aacute; apresentado o total de sin&ocirc;nimos do atributo ou campo.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Doatri">Dom&iacute;nio x atributos</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter a lista de todos os atributos ou campos que pertencem a um determinado dom&iacute;nio. </P>
+<P>Dom&iacute;nio &eacute; um conjunto de caracter&iacute;sticas que podem estar associados aos atributos ou campos.</FONT> </P>
+<FONT SIZE=2><P>&Eacute; apresentada uma tela de consulta paginada com as caracter&iacute;sticas do dom&iacute;nio seguida da lista de atributos e campos que possuem este dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados", neste manual.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argu4">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, alguns argumentos devem ser informados na tela REFDOMATR, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sistema</B> - C&oacute;digo do sistema do dom&iacute;nio, no padr&atilde;o SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Dominio</B> - C&oacute;digo do dom&iacute;nio.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Info4">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SISTEMA</B> - C&oacute;digo do sistema do dom&iacute;nio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Nome do dom&iacute;nio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DOMINIO</B> - C&oacute;digo do dom&iacute;nio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>FORMATO</B> - Formato do dom&iacute;nio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TAMANHO</B> - Tamanho do dom&iacute;nio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DECIMAIS</B> - N&uacute;mero de casas decimais do dom&iacute;nio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ATRIBUTOS:</B></FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o informados para cada atributo ou campo relacionado ao dom&iacute;nio:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>SISTEMA</B> - C&oacute;digo do sistema do atributo ou campo relacionado ao dom&iacute;nio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>ATRIBUTO</B> - C&oacute;digo do atributo ou campo relacionado ao dom&iacute;nio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Nome do atributo ou campo relacionado ao dom&iacute;nio.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>No rodap&eacute; da &uacute;ltima p&aacute;gina da consulta ser&aacute; apresentado o total de atributos e campos relacionados ao dom&iacute;nio especificado.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Elem">Elementos x elemento</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada a fim de obter a lista de todos os elementos relacionados a um determinado elemento.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados", neste manual.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argu5">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, alguns argumentos devem ser informados na tela REFELEELE, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Elemento-1</B> - C&oacute;digo de um dos elementos pertencentes &agrave; lista&nbsp;Elemento-1 (opcional).</FONT> </P>
+<FONT SIZE=2><P>A lista Elemento-1 &eacute; composta pelos seguintes elementos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Banco;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Base de dados;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Fun&ccedil;&atilde;o;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><I><FONT SIZE=2>Dataset</I>; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><I><FONT SIZE=2>Host</I>; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Programa;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Entidade e</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Consist&ecirc;ncia.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Elemento-2 </B>- C&oacute;digo de um dos elementos pertencentes &agrave; lista Elemento-2 (opcional).</FONT> </P>
+<FONT SIZE=2><P>A lista Elemento-2 &eacute; composta pelos seguintes elementos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Banco;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><I><FONT SIZE=2>Dataset</I>; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Sub-rotina;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><I><FONT SIZE=2>Remap</I>; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Menu;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><I><FONT SIZE=2>Job</I>; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Arquivo;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Tela;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Estrutura de trabalho;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Relat&oacute;rio;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Tabela;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Arquivo geral e</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Fun&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Quando apenas um elemento for informado na consulta- elemento-1 ou elemento-2, todos os elementos da outra lista que estiverem relacionados com o elemento especificado ser&atilde;o apresentados na consulta. </P>
+<P>Quando os dois elementos forem informados - elemento-1 e elemento-2, o elemento-2 ser&aacute; considerado como argumento e o elemento-1 ser&aacute; considerado como par&acirc;metro inicial da consulta a ser apresentada. Neste caso ent&atilde;o,todos os elementos pertencentes &agrave; lista Elemento-1, a partir do elemento-1 informado, que estiverem relacionados com o elemento-2 especificado ser&atilde;o apresentados na consulta.</P></DIR>
+</DIR>
+
+<P>Por exemplo:</FONT> </P>
+<FONT SIZE=2><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11>&nbsp;Para consultar o banco de dados f&iacute;sico, os <I>hosts</I> e os programas relacionados a um determinado <I>dataset</I>, deve-se informar o c&oacute;digo do <I>dataset</I> no campo Elemento-2. </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11>&nbsp;Para consultar os programas, a partir do programa DCEN11, relacionados a um determinado <I>dataset</I>, deve-se informar o c&oacute;digo do <I>dataset</I> no campo Elemento-2 e o c&oacute;digo do programa (DCEN11) no campo Elemento-1.</P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Para consultar os menus, <I>datasets</I>, telas, arquivos, sub-rotinas e demais elementos da lista 2 que est&atilde;o cadastrados como recursos de um programa, deve-se informar o c&oacute;digo do programa no campo Elemento-1.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Para consultar todos os <I>datasets</I> ou tabelas gerados a partir de uma entidade, deve-se informar o c&oacute;digo da entidade no campo Elemento-1.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Info5">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ELEMENTO</B> - C&oacute;digo do elemento que est&aacute; sendo consultado, no padr&atilde;o SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Nome do elemento que est&aacute; sendo consultado.</FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o apresentados para cada elemento relacionado ao elemento informado:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ELEMENTOS</B> - C&oacute;digo do elemento relacionado ao elemento informado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Nome do elemento relacionado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>COMPLEMENTO</B> - Informa&ccedil;&otilde;es complementares do relacionamento existente entre os dois elementos, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Menu</B> - Cadastramento da transa&ccedil;&atilde;o no <I>host</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><I><FONT SIZE=2>Library</B></I> - Tipo da <I>library</I>: </P><DIR>
+<DIR>
+
+<P>W - <I>library</I> de <I>work</I>; <BR>
+P - <I>library</I> de <I>procedure</I>; <BR>
+C - <I>library</I> de &aacute;rea conversacional.</FONT> </P></DIR>
+</DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><I><FONT SIZE=2>Dataset</B></I> - Banco de dados f&iacute;sico;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Arquivo:</P><DIR>
+<DIR>
+
+</B><P>I - <I>Input</I>; <BR>
+O - <I>Output</I>.</FONT> </P></DIR>
+</DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>etc.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>No rodap&eacute; da &uacute;ltima p&aacute;gina da consulta ser&aacute; apresentado o total de elementos relacionados ao elemento especificado.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Acess">Set de acesso x programas</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Esta consulta &eacute; utilizada para obter a lista de todas os programas que utilizam determinado <I>set</I> de acesso.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e est&aacute; descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados", neste manual.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argu6">Argumento da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que esta consulta seja utilizada, um argumento deve ser informado na tela REFSETPRO:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Set acesso</B> - C&oacute;digo do <I>set</I> de acesso, no padr&atilde;o SADS (sssBxxx).</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Info6">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SET DE ACESSO</B> - C&oacute;digo e nome do <I>set</I> de acesso.</FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o informados para cada programa onde o <I>set</I> de acesso estiver sendo utilizado:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PROGRAMA</B> - C&oacute;digo do programa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Nome do programa.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>No rodap&eacute; da &uacute;ltima p&aacute;gina da consulta, ser&aacute; apresentado o total de programas onde o <I>set</I> de acesso estiver sendo utilizado.</FONT> </P></BODY>
+</HTML>

@@ -1,0 +1,1158 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Untitled</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+
+<P><BASEFONT SIZE=2></P>
+<B><FONT SIZE=6><P><A NAME="Host">Host</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Conce">Conceitua&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Host &eacute; um programa on-line que desempenha dois pap&eacute;is fundamentais, durante o desenvolvimento e funcionamento dos sistemas aplicativos, a saber: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>&nbsp;<FONT SIZE=2>Numa primeira fase, gerencia a prototipa&ccedil;&atilde;o de transa&ccedil;&otilde;es on-line de um sistema quando este ainda est&aacute; no projeto l&oacute;gico, ou seja, quando n&atilde;o existem programas codificados e a base de dados ainda n&atilde;o foi constru&iacute;da. A partir de menus, telas e regras previamente cadastradas, o host simula a execu&ccedil;&atilde;o do sistema, dando a id&eacute;ia de como ser&aacute; sua opera&ccedil;&atilde;o ap&oacute;s o desenvolvimento. Nesta fase, ele &eacute; denominado de <I>host</I> l&oacute;gico.</FONT> </P>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>&nbsp;<FONT SIZE=2>Na etapa de processamento do sistema, ap&oacute;s a fase de prototipa&ccedil;&atilde;o, executa fun&ccedil;&otilde;es gen&eacute;ricas, recebe e distribui as transa&ccedil;&otilde;es diretamente para os respectivos programas. Estes programas, que especificamente processam transa&ccedil;&otilde;es <I>on-line</I>, s&atilde;o denominados "programas chamados" e seus objetos s&atilde;o agregados ao <I>host</I> atrav&eacute;s do utilit&aacute;rio <I>binder</I> da Unisys. Nesta fase, ele &eacute; denominado de <I>host</I> f&iacute;sico.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Programas chamados s&atilde;o aqueles que executam os procedimentos relacionados &agrave;s transa&ccedil;&otilde;es <I>on-line</I> de um sistema, cuja execu&ccedil;&atilde;o n&atilde;o pode ser processada isoladamente, sendo, por isso, necess&aacute;ria uma pr&eacute;via agrega&ccedil;&atilde;o ao programa host atrav&eacute;s do <I>binder</I>.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Fonpro">Fonte de um programa</B><I> </I><B>host</A></B></FONT> </P>
+<FONT SIZE=2><P>Os hosts s&atilde;o totalmente gerados pelo SADS, portanto, as complementa&ccedil;&otilde;es nos seus fontes atrav&eacute;s de m&oacute;dulos s&atilde;o desnecess&aacute;rias. Entretanto, os tratamentos espec&iacute;ficos nos hosts podem ser feitos atrav&eacute;s de libraries de work e de procedure. </P>
+<P>Devido ao fato de serem totalmente gerados pelo SADS, os fontes de programas host possuem um padr&atilde;o &uacute;nico de codifica&ccedil;&atilde;o. </P>
+<P>Para efetuar manuten&ccedil;&otilde;es no fonte de um programa host, basta alterar o seu cadastramento no reposit&oacute;rio de dados do SADS e ger&aacute;-lo novamente. </P>
+<P>O fonte de um host cont&eacute;m comandos respons&aacute;veis por executar fun&ccedil;&otilde;es gen&eacute;ricas dos sistemas, garantindo, assim, a uniformidade dos comandos e, consequentemente, uma boa performance dos mesmos. </P>
+</FONT><B><FONT SIZE=5><P><A NAME="Nompro">Nomenclaturas adotadas para programas hosts</A></B></FONT> </P>
+<FONT SIZE=2><P>Existem algumas nomenclaturas adotadas pelo SADS referentes aos <I>hosts</I>. S&atilde;o elas:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><I><FONT SIZE=2>Host </I>l&oacute;gico </B>- <I>Host</I> utilizado na etapa de prototipa&ccedil;&atilde;o de sistema <I>on-line</I>, quando este ainda n&atilde;o possui programas e a base de dados ainda n&atilde;o foi constru&iacute;da. A partir de menus, telas e regras previamente cadastradas, o <I>host</I> simula a execu&ccedil;&atilde;o do sistema, fornecendo uma id&eacute;ia de como ser&aacute; a sua opera&ccedil;&atilde;o ap&oacute;s o desenvolvimento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><I><FONT SIZE=2>Host</I> f&iacute;sico</B> -<I> Host</I> que processa as transa&ccedil;&otilde;es ap&oacute;s o desenvolvimento e implanta&ccedil;&atilde;o do sistema. Neste caso, o <I>host</I>, al&eacute;m de simular a opera&ccedil;&atilde;o, gerencia as transa&ccedil;&otilde;es que realmente fazem acesso &agrave;s bases de dados do sistema.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><I><FONT SIZE=2>Host</I> prim&aacute;rio</B> -<I> Host</I> encarregado de controlar e disparar todas as transa&ccedil;&otilde;es pertencentes aos menus a ele relacionados. &Eacute; aconselh&aacute;vel que sejam agregadas ao <I>host</I> prim&aacute;rio apenas as transa&ccedil;&otilde;es menos pesadas do sistema, ou seja, aquelas que n&atilde;o consomem muito tempo de processamento. Desta forma, as demais ficariam agregadas ao <I>host </I>secund&aacute;rio, que, por sua vez, &eacute; disparado pelo <I>host</I> prim&aacute;rio. Isto quer dizer que, mesmo as transa&ccedil;&otilde;es processadas pelo <I>host</I> secund&aacute;rio devem ser definidas no prim&aacute;rio.<BR>
+<BR>
+As transa&ccedil;&otilde;es gerenciadas diretamente pelo <I>host</I> prim&aacute;rio est&atilde;o associadas aos menus de c&oacute;digo "sssUnn".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><I><FONT SIZE=2>Host</I> secund&aacute;rio</B> -<I> Host</I> disparado pelo prim&aacute;rio com o objetivo de gerenciar as transa&ccedil;&otilde;es mais pesadas do sistema, ou seja, aquelas que consomem maior tempo de processamento. Deste modo, o processamento do <I>host</I> prim&aacute;rio &eacute; aliviado, evitando, assim, a concorr&ecirc;ncia das transa&ccedil;&otilde;es demoradas com as r&aacute;pidas, minimizando enfileiramentos e garantindo um bom tempo de resposta ao usu&aacute;rio final.<BR>
+<BR>
+As transa&ccedil;&otilde;es gerenciadas pelo <I>host</I> secund&aacute;rio est&atilde;o associadas aos menus de c&oacute;digo "sssULn".</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Padro">Padroniza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O c&oacute;digo padr&atilde;o que identifica um programa <I>host</I> no reposit&oacute;rio de dados do SADS &eacute; o seguinte:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>"sssNnn"</B> onde:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"sss"</B> &eacute; o c&oacute;digo alfab&eacute;tico que identifica o sistema:</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"N"</B> &eacute; a constante de programa on-line e host e</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"nn"</B> &eacute; o indicador num&eacute;rico (valores v&aacute;lidos de 00 a 10).</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>O padr&atilde;o de codifica&ccedil;&atilde;o de um programa <I>host</I> &eacute; o mesmo dos programas <I>on-line</I>. O que os diferencia &eacute; o indicador num&eacute;rico, que, para o <I>host</I>, varia de 00 a 10.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Utili">Utiliza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O <I>host</I>, tal como citado em sua defini&ccedil;&atilde;o, &eacute; respons&aacute;vel por gerenciar as transa&ccedil;&otilde;es de um sistema, tanto na sua fase de prototipa&ccedil;&atilde;o como na de desenvolvimento.</FONT> </P>
+<FONT SIZE=2><P>Para melhor explicar como os <I>hosts</I> s&atilde;o utilizados, ser&atilde;o expostos os seguintes t&oacute;picos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Gener">Fun&ccedil;&otilde;es gen&eacute;ricas efetuadas pelo host</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Areglo">&Aacute;rea global de comunica&ccedil;&atilde;o do host</A><FONT SIZE=2>.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Gener">Fun&ccedil;&otilde;es gen&eacute;ricas efetuadas pelo host</A></B></FONT> </P>
+<FONT SIZE=2><P>O <I>host</I> trata v&aacute;rias fun&ccedil;&otilde;es gen&eacute;ricas, evitando, assim, que estas tenham de ser definidas e codificadas nos programas aplicativos.</FONT> </P>
+<FONT SIZE=2><P>As principais fun&ccedil;&otilde;es tratadas pelo <I>host</I> s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Segace">Seguran&ccedil;a de acesso aos dados</A><FONT SIZE=2>: esta valida&ccedil;&atilde;o &eacute; efetuada de acordo com informa&ccedil;&otilde;es do <I>logon</I>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Banda">Abertura de banco de dados</A><FONT SIZE=2>: somente os <I>hosts</I>, em transa&ccedil;&otilde;es <I>on-line</I>, abrem bancos de dados;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Recban">Recupera&ccedil;&atilde;o de banco de dados</A><FONT SIZE=2>: tratamento padr&atilde;o de exclus&atilde;o de informa&ccedil;&otilde;es do <I>restart</I> <I>dataset</I>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Tramen">Tratamento de menus e submenus</A><FONT SIZE=2>: montagem de data, hora, sigla de empresa, ambiente do <I>logon</I> do usu&aacute;rio e campos espec&iacute;ficos de <I>output</I> nestas telas e processamento das op&ccedil;&otilde;es;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Tratop">Tratamento de op&ccedil;&otilde;es gen&eacute;ricas</A><FONT SIZE=2>: as op&ccedil;&otilde;es 94 a 99 s&atilde;o reservadas e tratadas exclusivamente pelos <I>hosts</I>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Comun">Comunica&ccedil;&atilde;o com o COMS</A><FONT SIZE=2>: a recep&ccedil;&atilde;o e o envio de mensagens em transa&ccedil;&otilde;es <I>on-line</I> geralmente s&atilde;o executadas pelos <I>hosts</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Contro">Controle da &aacute;rea conversacional</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Navmen">Navega&ccedil;&atilde;o entre menus</A><FONT SIZE=2>: tratamento de menus de escolha e de opera&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Funhel">Fun&ccedil;&otilde;es de help</A><FONT SIZE=2>: prepara&ccedil;&atilde;o e disparo do <I>help</I> <I>on-line</I> do SADS;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Metran">Consist&ecirc;ncia de menu e transa&ccedil;&atilde;o</A><FONT SIZE=2>: interface com a consist&ecirc;ncia geral do SADS nas fun&ccedil;&otilde;es de prepara&ccedil;&atilde;o, disparo e apresenta&ccedil;&atilde;o de mensagens de erro;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Difpro">Comunica&ccedil;&atilde;o entre diferentes programas</A><FONT SIZE=2>: disparo de transa&ccedil;&otilde;es de outros <I>hosts</I>, inclusive com controle de retorno;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Tratme">Tratamento de mensagens de erros</A><FONT SIZE=2>: leitura e apresenta&ccedil;&atilde;o de mensagens de erro tabeladas;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Dispa">Disparo dos paginadores de entrada e de sa&iacute;da</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Leite">Leitura de telas</A><FONT SIZE=2>, em sistemas convencionais, e composi&ccedil;&atilde;o de dados, em sistemas cooperativos.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>A seguir, cada uma destas fun&ccedil;&otilde;es s&atilde;o explicadas separadamente.</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Segace">Seguran&ccedil;a de acesso aos dados</A></B></FONT> </P>
+<FONT SIZE=2><P>Para toda transa&ccedil;&atilde;o que &eacute; requisitada, atrav&eacute;s da integra&ccedil;&atilde;o com o Sistema de Seguran&ccedil;a, o <I>host</I> verifica se o acesso &eacute; permitido ao usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Al&eacute;m disso, o <I>host</I> dispara as transa&ccedil;&otilde;es de <I>logon</I> e <I>logoff</I> quando as mesmas forem solicitadas pelo usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Quando h&aacute; cancelamento de programa em produ&ccedil;&atilde;o, o <I>host</I> desabilita automaticamente a transa&ccedil;&atilde;o causadora do cancelamento. Neste caso, a transa&ccedil;&atilde;o s&oacute; poder&aacute; voltar a ser processada se houver nova habilita&ccedil;&atilde;o no Sistema de Seguran&ccedil;a. A finalidade deste procedimento &eacute; evitar o disparo sucessivo da transa&ccedil;&atilde;o causadora do cancelamento sem antes corrigir o problema que o gerou.</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Banda">Abertura de banco de dados</A></B></FONT> </P>
+<FONT SIZE=2><P>Os bancos de dados e todos os <I>datasets</I> aos quais ser&atilde;o feitos acessos pelos programas chamados t&ecirc;m de estar declarados na base de dados cadastrada para ser utilizada pelo <I>host</I>. Nas rotinas <I>on-line</I>, somente os <I>hosts</I> abrem bancos de dados. Portanto, quando "entra no ar", o <I>host</I> processa a abertura dos bancos e os mant&eacute;m abertos enquanto ele estiver ativo.</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Recban">Recupera&ccedil;&atilde;o de banco de dados</A></B></FONT> </P>
+<FONT SIZE=2><P>A recupera&ccedil;&atilde;o de banco de dados pode ser sincronizada com o COMS, de acordo com o crit&eacute;rio definido pela instala&ccedil;&atilde;o no ato da implanta&ccedil;&atilde;o do SADS.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o havendo recupera&ccedil;&atilde;o sincronizada, o <I>host</I> solicita ao usu&aacute;rio o reprocessamento da transa&ccedil;&atilde;o que estava sendo executada quando ocorreu o <I>abort</I>. Neste caso, o <I>host</I> remove tamb&eacute;m as informa&ccedil;&otilde;es do <I>restart dataset</I> referentes a ele, sem fazer nenhum tratamento das mesmas.</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Tramen">Tratamento de menus e submenus</A></B></FONT> </P>
+<FONT SIZE=2><P>O <I>host</I> trata todas as telas de um sistema: menus, submenus e telas de processamento.</FONT> </P>
+<FONT SIZE=2><P>Existem as seguintes possibilidades de tratamento das mensagens enviadas ao <I>host</I> atrav&eacute;s destas telas:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Mensagem originada de um de seus menus ou submenus de op&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Neste caso, o <I>host</I> determina, atrav&eacute;s do n&uacute;mero da op&ccedil;&atilde;o informada no mesmo, qual programa chamado dever&aacute; ser disparado ou qual submenu dever&aacute; ser apresentado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Mensagem originada de uma tela de processamento:</FONT> </P>
+<FONT SIZE=2><P>Neste caso, o <I>host</I> entrega a mensagem ao programa chamado, relativo &agrave; transa&ccedil;&atilde;o, a fim de que ele a processe.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Quando o programa chamado concluir a opera&ccedil;&atilde;o sobre a informa&ccedil;&atilde;o originada da tela de processamento, o controle &eacute; retornado ao <I>host</I>.</FONT> </P>
+<FONT SIZE=2><P>A resposta da opera&ccedil;&atilde;o para o usu&aacute;rio final ser&aacute; enviada pelo <I>host</I> de acordo com o que foi indicado pelo programa chamado nos campos GBL-ERRO e GBL-STATUS da &aacute;rea global de comunica&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Tratop">Tratamento de op&ccedil;&otilde;es gen&eacute;ricas</A></B></FONT> </P>
+<FONT SIZE=2><P>Algumas op&ccedil;&otilde;es, que podem ser disparadas de qualquer um dos menus de op&ccedil;&atilde;o de sistemas desenvolvidos com o SADS, s&atilde;o tratadas diretamente pelos <I>hosts</I>, sem a necessidade de estarem relacionadas ao mesmo no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Estas op&ccedil;&otilde;es, denominadas op&ccedil;&otilde;es gen&eacute;ricas, executam as seguintes fun&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>Op&ccedil;&atilde;o 94 - Retorno ao menu hierarquicamente superior da navega&ccedil;&atilde;o executada via SOS01; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>Op&ccedil;&atilde;o 95 - Integra&ccedil;&atilde;o com o Sistema de Controle de Processamento (SPO); </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>Op&ccedil;&atilde;o 96 - Acesso ao menu com detalhamento de op&ccedil;&otilde;es; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>Op&ccedil;&atilde;o 97 - Ativa&ccedil;&atilde;o da tela de explica&ccedil;&atilde;o dos argumentos do menu; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>Op&ccedil;&atilde;o 98 - Ativa&ccedil;&atilde;o do <I>logon</I>; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>Op&ccedil;&atilde;o 99 - Ativa&ccedil;&atilde;o do <I>logoff</I>. </P></DIR>
+
+<FONT SIZE=2><P>A seguir, ser&atilde;o explicadas cada uma destas op&ccedil;&otilde;es separadamente.</FONT> </P><DIR>
+<DIR>
+
+<FONT SIZE=2><P>-<B>Op&ccedil;&atilde;o 94</B> - Retorno ao menu hierarquicamente superior (n&iacute;vel IV) da navega&ccedil;&atilde;o via SOS01.</FONT> </P>
+<FONT SIZE=2><P>A transa&ccedil;&atilde;o SOS01 propicia a navega&ccedil;&atilde;o entre os menus dos sistemas de forma hierarquizada, auxiliando o usu&aacute;rio final a encontrar o c&oacute;digo correto da transa&ccedil;&atilde;o a ser disparada, para utiliza&ccedil;&atilde;o de um determinado sistema.</FONT> </P>
+<FONT SIZE=2><P>O SOS01 controla a navega&ccedil;&atilde;o entre os n&iacute;veis I, II, III e IV. O n&iacute;vel V j&aacute; &eacute; controlado pelo <I>host</I> do sistema. A partir de algum menu (n&iacute;vel V) ou submenu (n&iacute;vel VI) de um sistema, deve-se utilizar a op&ccedil;&atilde;o 94 para retornar ao menu de n&iacute;vel IV e passar o controle da navega&ccedil;&atilde;o para o SOS01.</FONT> </P>
+<FONT SIZE=2><P>-<B>Op&ccedil;&atilde;o 95</B> - Integra&ccedil;&atilde;o com o Sistema de Controle de Processamento (SPO).</FONT> </P>
+<FONT SIZE=2><P>Esta op&ccedil;&atilde;o tem o objetivo de realizar a integra&ccedil;&atilde;o entre os sistemas aplicativos e o Sistema de Controle de Processamento (SPO). Atrav&eacute;s desta op&ccedil;&atilde;o, pode-se selecionar qual servi&ccedil;o ser&aacute; executado dentre aqueles que se encontram cadastrados no SPO e para os quais o usu&aacute;rio est&aacute; autorizado.</FONT> </P>
+<FONT SIZE=2><P>-<B>Op&ccedil;&atilde;o 96</B> - Acesso ao menu com detalhamento de op&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>Quando um sistema &eacute; utilizado por um n&uacute;mero reduzido de usu&aacute;rios e estes j&aacute; conhecem amplamente todas as transa&ccedil;&otilde;es dos menus, &eacute; dispens&aacute;vel que as telas de menu lhes sejam completamente apresentadas. Para este tipo de usu&aacute;rio, basta que os campos de argumentos e op&ccedil;&atilde;o estejam dispon&iacute;veis para que eles possam disparar a opera&ccedil;&atilde;o desejada.</FONT> </P>
+<FONT SIZE=2><P>Considerando que os menus s&atilde;o as telas mais utilizadas em um sistema, pois &eacute; a partir deles que qualquer opera&ccedil;&atilde;o do sistema tem in&iacute;cio, caso eles pudessem ser sempre resumidos, haveria um ganho real consider&aacute;vel de tr&aacute;fego de caracteres na linha.</FONT> </P>
+<FONT SIZE=2><P>A op&ccedil;&atilde;o 96, oferecida pelo SADS, &eacute; um recurso que torna poss&iacute;vel a simplifica&ccedil;&atilde;o da tela menu a fim de reduzir o tr&aacute;fego da linha, sem que, no entanto, o acesso ao seu desenho completo seja perdido.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Para isso, o analista dever&aacute; construir o desenho resumido do menu para ser utilizado pelos usu&aacute;rios e conservar o desenho completo do mesmo, que dever&aacute; ficar dispon&iacute;vel para consultas.</FONT> </P>
+<FONT SIZE=2><P>Para utilizar a op&ccedil;&atilde;o 96 como recurso de redu&ccedil;&atilde;o de tr&aacute;fego de linha, os seguintes procedimentos devem ser efetuados:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>a)</B> Duplica&ccedil;&atilde;o da tela menu de c&oacute;digo sssTnn00 para o novo c&oacute;digo sssTnn96;</FONT> </P>
+<B><FONT SIZE=2><P>b)</B> Simplifica&ccedil;&atilde;o do desenho da tela menu de c&oacute;digo sssTnn00 para conter apenas o <I>trancode</I>, data/hora, ambiente de logon do usu&aacute;rio, campos de argumento, op&ccedil;&atilde;o e campo de transmiss&atilde;o;</FONT> </P>
+<B><FONT SIZE=2><P>c)</B> Libera&ccedil;&atilde;o dos desenhos de ambas as telas para o ambiente onde o sistema ser&aacute; executado: teste e/ou produ&ccedil;&atilde;o;</FONT> </P>
+<B><FONT SIZE=2><P>d)</B> Gera&ccedil;&atilde;o da <I>library</I> da tela de c&oacute;digo sssTnn00;</FONT> </P>
+<B><FONT SIZE=2><P>e)</B> Compila&ccedil;&atilde;o do <I>host</I> e programas chamados;</FONT> </P>
+<B><FONT SIZE=2><P>f)</B> Execu&ccedil;&atilde;o do <I>binder</I> para o <I>host</I>.</FONT> </P><DIR>
+
+<FONT SIZE=2><P>-<B>Op&ccedil;&atilde;o 97</B> - Ativa&ccedil;&atilde;o da tela de explica&ccedil;&atilde;o dos argumentos do menu.</FONT> </P>
+<FONT SIZE=2><P>Atrav&eacute;s desta op&ccedil;&atilde;o o usu&aacute;rio tem acesso &agrave; tela de explica&ccedil;&atilde;o sobre o preenchimento dos argumentos necess&aacute;rios ao disparo de uma determinada transa&ccedil;&atilde;o do menu ou submenu.</FONT> </P>
+<FONT SIZE=2><P>Para acionar a tela de explica&ccedil;&atilde;o dos argumentos do menu, o usu&aacute;rio dever&aacute; informar o n&uacute;mero da op&ccedil;&atilde;o que requer esclarecimentos no primeiro campo dispon&iacute;vel da tela menu e 97 no campo OPCAO. O <I>host</I> apresentar&aacute; a tela de explica&ccedil;&atilde;o dos argumentos referentes &agrave; op&ccedil;&atilde;o somente se o seu desenho estiver cadastrado no reposit&oacute;rio de dados.</FONT> </P>
+<FONT SIZE=2><P>Para que este recurso oferecido pelo SADS possa ser utilizado, alguns procedimentos devem ter sido efetuados, quais sejam:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>a)</B> Cadastramento do desenho da tela de explica&ccedil;&atilde;o dos argumentos da op&ccedil;&atilde;o no reposit&oacute;rio de dados.</FONT> </P><DIR>
+
+<FONT SIZE=2><P>Esta tela dever&aacute; possuir o c&oacute;digo sssEnnmm, onde "nn" representa o c&oacute;digo do menu e "mm", o n&uacute;mero da op&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=2><P>Exemplo</B>: A tela explicativa da op&ccedil;&atilde;o 03 do menu ABC01 deve possuir o c&oacute;digo ABCE0103.</FONT> </P></DIR>
+
+<B><FONT SIZE=2><P>b)</B> Libera&ccedil;&atilde;o do desenho da tela de explica&ccedil;&atilde;o para o ambiente onde o sistema ser&aacute; executado: teste ou produ&ccedil;&atilde;o.</FONT> </P><DIR>
+
+<FONT SIZE=2><P>Atrav&eacute;s desta op&ccedil;&atilde;o pode-se, tamb&eacute;m, obter descri&ccedil;&otilde;es de telas e fun&ccedil;&otilde;es, dependendo da situa&ccedil;&atilde;o em que a op&ccedil;&atilde;o e a fun&ccedil;&atilde;o de <I>help</I> forem requisitadas.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Para melhor compreens&atilde;o das situa&ccedil;&otilde;es em que estas descri&ccedil;&otilde;es ser&atilde;o exibidas, quando a op&ccedil;&atilde;o 97 for requisitada, o seguinte esquema &eacute; apresentado :</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>SE</B> existe a tela de explica&ccedil;&atilde;o para a op&ccedil;&atilde;o escolhida<BR>
+<B>ENT&Atilde;O<BR>
+</B>ser&aacute; enviada a tela de explica&ccedil;&atilde;o ao usu&aacute;rio</P><DIR>
+
+<B><P>SE</B> o usu&aacute;rio dispara o <I>help</I> para obter mais explica&ccedil;&otilde;es<BR>
+<B>ENT&Atilde;O</P><DIR>
+
+<P>SE</B> existe descri&ccedil;&atilde;o da tela <BR>
+<B>ENT&Atilde;O<BR>
+</B>ser&aacute; exibida a descri&ccedil;&atilde;o da tela<BR>
+<B>SEN&Atilde;O</P><DIR>
+
+<P>SE</B> existe o relacionamento da transa&ccedil;&atilde;o com alguma <BR>
+fun&ccedil;&atilde;o e existe descri&ccedil;&atilde;o da fun&ccedil;&atilde;o <BR>
+<B>ENT&Atilde;O<BR>
+</B>ser&aacute; exibida a descri&ccedil;&atilde;o da fun&ccedil;&atilde;o<BR>
+<B>SEN&Atilde;O<BR>
+</B>ser&aacute; exibida uma explica&ccedil;&atilde;o do<I> help on-line.</P></DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<P><BR>
+</I><B>SE n&atilde;o existe a tela de explica&ccedil;&atilde;o para a op&ccedil;&atilde;o escolhida</P><DIR>
+
+<P>SE</B> existe descri&ccedil;&atilde;o da tela <BR>
+<B>ENT&Atilde;O<BR>
+</B>ser&aacute; exibida a descri&ccedil;&atilde;o da tela<BR>
+<B>SEN&Atilde;O</P><DIR>
+
+<P>SE</B> existe o relacionamento da transa&ccedil;&atilde;o com<BR>
+alguma fun&ccedil;&atilde;o e existe descri&ccedil;&atilde;o da fun&ccedil;&atilde;o<BR>
+<B>ENT&Atilde;O<BR>
+</B>ser&aacute; exibida a descri&ccedil;&atilde;o da fun&ccedil;&atilde;o<BR>
+<B>SEN&Atilde;O<BR>
+</B>ser&aacute; exibida uma explica&ccedil;&atilde;o do<I> help on-line</I>. </P></DIR>
+</DIR>
+
+<P>-<B>Op&ccedil;&atilde;o 98</B> - Ativa&ccedil;&atilde;o do <I>logon</I>.</FONT> </P>
+<FONT SIZE=2><P>Esta op&ccedil;&atilde;o &eacute; utilizada quando o usu&aacute;rio deseja efetuar o <I>logon</I> para utiliza&ccedil;&atilde;o do SADS e/ou de sistemas desenvolvidos no ambiente SADS.</FONT> </P>
+<FONT SIZE=2><P>Quando esta op&ccedil;&atilde;o &eacute; selecionada a partir de um menu de op&ccedil;&atilde;o de qualquer sistema desenvolvido com o SADS, o <I>host</I> deste dispara o Sistema de Seguran&ccedil;a, que, por sua vez, apresenta uma tela onde o usu&aacute;rio dever&aacute; informar seu n&uacute;mero ou c&oacute;digo e sua senha, dentre outros dados.</FONT> </P>
+<FONT SIZE=2><P>Caso algum usu&aacute;rio esteja com um <I>logon</I> ativo na esta&ccedil;&atilde;o, o Sistema de Seguran&ccedil;a far&aacute; o <I>logoff</I> do mesmo e o <I>logon</I> do novo usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s o <I>logon</I>, ser&aacute; exibida uma tela, mensagem ou contexto, ou ser&aacute; executado um programa, de acordo com defini&ccedil;&atilde;o de resposta ap&oacute;s <I>logon</I> cadastrada para o usu&aacute;rio ou de acordo com a parametriza&ccedil;&atilde;o adotada para a instala&ccedil;&atilde;o ou esta&ccedil;&atilde;o (esta parametriza&ccedil;&atilde;o &eacute; definida na tabela SBPM6004).</FONT> </P>
+<FONT SIZE=2><P>Detalhes a respeito da resposta enviada ap&oacute;s o <I>logon</I> est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es", e na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", no item "Resposta ap&oacute;s o <I>logon</I>/<I>logoff</I>", neste manual.</FONT> </P>
+<FONT SIZE=2><P>-<B>Op&ccedil;&atilde;o 99</B> - Ativa&ccedil;&atilde;o do <I>logoff</I>.</FONT> </P>
+<FONT SIZE=2><P>Esta op&ccedil;&atilde;o &eacute; utilizada quando o usu&aacute;rio deseja efetuar o <I>logoff</I> no ambiente SADS.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s o <I>logoff</I>, ser&aacute; exibida uma tela, mensagem ou contexto, ou ser&aacute; executado um programa, de acordo com a defini&ccedil;&atilde;o de resposta ap&oacute;s o logon cadastrada para o usu&aacute;rio ou de acordo com a parametriza&ccedil;&atilde;o adotada para a instala&ccedil;&atilde;o ou esta&ccedil;&atilde;o (esta parametriza&ccedil;&atilde;o &eacute; definida na tabela SBPM6004).</FONT> </P>
+<FONT SIZE=2><P>Maiores detalhes a respeito da resposta ap&oacute;s o <I>logoff</I> podem ser consultados na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es" e na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", no item "Resposta ap&oacute;s o <I>logon/logoff</I>", neste manual.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=4><P><A NAME="Comun">Comunica&ccedil;&atilde;o com o COMS</A></B></FONT> </P>
+<FONT SIZE=2><P>O <I>host</I> &eacute; o programa do sistema respons&aacute;vel por estabelecer a <I>interface</I> com o COMS. </P>
+<P>Ele recebe, atrav&eacute;s do COMS, a mensagem de um de seus menus e a entrega para o programa chamado que processar&aacute; a transa&ccedil;&atilde;o. Ap&oacute;s o processamento, o controle &eacute; retornado ao <I>host</I>, que envia a resposta da transa&ccedil;&atilde;o, atrav&eacute;s do COMS, para a esta&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Contro">Controle da &aacute;rea conversacional</A></B></FONT> </P>
+<FONT SIZE=2><P>A &aacute;rea conversacional &eacute; uma &aacute;rea de mem&oacute;ria reservada para armazenamento e transfer&ecirc;ncia de informa&ccedil;&otilde;es entre as diversas transa&ccedil;&otilde;es de uma mesma esta&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A &aacute;rea conversacional, para que possa ser utilizada pelas transa&ccedil;&otilde;es de um sistema, deve ser declarada no <I>host</I> do mesmo. Deste modo, o <I>host</I> a manter&aacute; atualizada.</FONT> </P>
+<FONT SIZE=2><P>Cumpre ressaltar que o <I>host</I> sempre limpar&aacute; a &aacute;rea conversacional quando for processada uma transa&ccedil;&atilde;o que n&atilde;o a utilize.</FONT> </P>
+<FONT SIZE=2><P>Para definir que uma transa&ccedil;&atilde;o ir&aacute; utilizar a &aacute;rea conversacional, deve-se informar "S" para a transa&ccedil;&atilde;o, no campo ACV, na tela de cadastramento de menu.</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Navmen">Navega&ccedil;&atilde;o entre menus</A></B></FONT> </P>
+<FONT SIZE=2><P>O SADS disp&otilde;e de um m&eacute;todo amig&aacute;vel de navega&ccedil;&atilde;o, orientado por menus, que facilita ainda mais a utiliza&ccedil;&atilde;o do sistema.</FONT> </P>
+<FONT SIZE=2><P>O <I>host</I> &eacute;, pois, o elemento respons&aacute;vel por permitir esta navega&ccedil;&atilde;o entre os v&aacute;rios menus de escolha, de opera&ccedil;&atilde;o e telas de processamento de um sistema desenvolvido atrav&eacute;s do SADS.</FONT> </P>
+<FONT SIZE=2><P>Detalhes a respeito de como cadastrar e utilizar a navega&ccedil;&atilde;o podem ser consultados na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", no item "Navega&ccedil;&atilde;o", neste manual.</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Funhel">Fun&ccedil;&otilde;es de help</A></B></FONT> </P>
+<FONT SIZE=2><P>A ajuda <I>on-line</I> ou <I>help</I> &eacute; uma op&ccedil;&atilde;o oferecida pelo SADS, e ativada pelo <I>host</I>, para esclarecimento de d&uacute;vidas ou de erros ocorridos, apoiando o usu&aacute;rio durante a utiliza&ccedil;&atilde;o do sistema.</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>help</I> seja solicitado logo ap&oacute;s a detec&ccedil;&atilde;o de um erro pela consist&ecirc;ncia, ser&atilde;o apresentadas as validades do atributo relativo ao erro.</FONT> </P>
+<FONT SIZE=2><P>A fun&ccedil;&atilde;o de <I>help</I> &eacute; utilizada, tamb&eacute;m, para se obter maiores informa&ccedil;&otilde;es a respeito de uma tela de explica&ccedil;&atilde;o de argumentos, para menus de op&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Para utilizar a fun&ccedil;&atilde;o de <I>help</I>, basta transmitir o <I>trancode</I> HELP.</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Metran">Consist&ecirc;ncia de menu e transa&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>A validade dos dados de entrada de programas <I>on-line</I> &eacute; feita pela consist&ecirc;ncia geral de forma interpretativa e em tempo de execu&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>O <I>host</I> pode disparar a consist&ecirc;ncia geral para telas de processamento e menus. Para que este disparo seja efetuado, deve-se indic&aacute;-lo especificamente, para cada transa&ccedil;&atilde;o, no cadastramento dos menus.</FONT> </P>
+<FONT SIZE=2><P>&Eacute; aconselh&aacute;vel que a consist&ecirc;ncia da transa&ccedil;&atilde;o seja disparada pelo <I>host</I>, ao inv&eacute;s de pelo programa chamado, para se obter melhor <I>performance</I> do sistema.</FONT> </P>
+<FONT SIZE=2><P>Para definir o disparo da consist&ecirc;ncia da transa&ccedil;&atilde;o e do menu pelo <I>host</I>, deve-se informar "S" nos campos TRANSACAO e MENU, respectivamente, na tela de cadastramento do menu.</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Difpro">Comunica&ccedil;&atilde;o entre diferentes programas</A></B></FONT> </P>
+<FONT SIZE=2><P>O <I>host</I> possui fun&ccedil;&otilde;es respons&aacute;veis por controlar v&aacute;rios tipos de comunica&ccedil;&atilde;o entre programas, quais sejam:</FONT> </P>
+<B><FONT SIZE=2><P><A NAME="Hosmen">Comunica&ccedil;&atilde;o entre programas chamados vinculados ao mesmo <I>host</I> em um mesmo menu</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta comunica&ccedil;&atilde;o ocorre quando, ap&oacute;s finalizado um determinado programa, for necess&aacute;rio o encadeamento de outro programa que esteja agregado ao mesmo <I>host</I> e no mesmo menu, para finalizar o processamento do primeiro.</FONT> </P>
+<FONT SIZE=2><P>Este tipo de comunica&ccedil;&atilde;o torna-se poss&iacute;vel de duas formas distintas:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>a)</B> Em um programa com l&oacute;gica de consulta simples, atrav&eacute;s da altera&ccedil;&atilde;o do desenho de sua tela de consulta, incluindo os argumentos do menu.</FONT> </P>
+<FONT SIZE=2><P>Para propiciar este encadeamento, deve-se, ent&atilde;o, incluir no desenho e na estrutura da tela de consulta todos os argumentos do menu (como campos de<I> input</I>) , inclusive o campo OPCAO. Desta forma, a tela de consulta ir&aacute; se comportar tal e qual a tela menu, e poder&aacute; ser disparado qualquer programa deste menu. </P>
+<P>Deve-se tamb&eacute;m cadastrar a consist&ecirc;ncia para esta tela de consulta, que ser&aacute; executada antes do encadeamento do pr&oacute;ximo programa.</FONT> </P>
+<B><FONT SIZE=2><P>b)</B> Em um programa com l&oacute;gica qualquer, atrav&eacute;s da composi&ccedil;&atilde;o dos campos da &aacute;rea global GBL-STATUS e GBL-INDPROGRAMA, dos campos de argumento da tela menu do segundo programa e da &aacute;rea conversacional;</FONT> </P>
+<FONT SIZE=2><P>Para indicar ao <I>host</I> que um programa chamado encadear&aacute; outro em uma mesma transa&ccedil;&atilde;o, o primeiro programa dever&aacute; conter os seguintes comandos:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>MOVE 6 TO GBL-STATUS</FONT> </P>
+<FONT SIZE=2><P>MOVE &lt;n&uacute;mero da op&ccedil;&atilde;o referente ao programa a ser encadeado&gt; TO GBL-INDPROGRAMA. </P></DIR>
+</DIR>
+
+<P>Se necess&aacute;rio, deve-se compor os campos da &aacute;rea conversacional e os de <I>input</I> (argumentos) da tela menu, que ser&atilde;o utilizados pelo programa encadeado. Em certos casos deve-se compor, inclusive, o c&oacute;digo da transa&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Quando um encadeamento via GBL-STATUS = 6 for utilizado, o programa encadeado dever&aacute; zerar o GBL-STATUS pois, como o endere&ccedil;o contido em GBL-INDPROGRAMA &eacute; dele, o <I>host</I> pode voltar a dispar&aacute;-lo, causando um <I>loop</I>.</FONT> </P>
+<FONT SIZE=2><P>Esta forma de encadeamento permite que o BEGIN-TRANSACTION seja executado no programa encadeador e o END-TRANSACTION no programa encadeado. Desta forma, caso haja cancelamento, as transa&ccedil;&otilde;es executadas nos dois programas ser&atilde;o desfeitas.</FONT> </P>
+<FONT SIZE=2><P>O <I>host</I> n&atilde;o dispara consist&ecirc;ncia geral para o programa encadeado. Assim, na defini&ccedil;&atilde;o da op&ccedil;&atilde;o no menu, deve-se indicar que ela n&atilde;o possui consist&ecirc;ncia na transa&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Caso haja necessidade da execu&ccedil;&atilde;o da consist&ecirc;ncia geral para a op&ccedil;&atilde;o encadeada, ela deve ser disparada de um m&oacute;dulo de processamento do programa encadeado, atrav&eacute;s dos seguintes comandos:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>PERFORM 93000-00-CONSISTENCIA THRU 93000-99-EXIT.</FONT> </P>
+<FONT SIZE=2><P>IF SSC-QTDERROS GREATER 0</FONT> </P><DIR>
+
+<FONT SIZE=2><P>MOVE GBL-TELA-ERROS TO MENSAGEM</FONT> </P>
+<FONT SIZE=2><P>GO TO 99000-99-EXIT-PROGRAM</FONT> </P></DIR>
+
+<FONT SIZE=2><P>ELSE</FONT> </P><DIR>
+
+<FONT SIZE=2><P>MOVE SSC-AREACOM TO MENSAGEM.</P></DIR>
+</DIR>
+
+<P>Mesmo que a consist&ecirc;ncia geral n&atilde;o seja executada, o campo MENSAGEM ser&aacute; movido para o campo SSC-AREACOM, para evitar problemas no encadeamento. </P>
+<B><P><A NAME="Promen">Comunica&ccedil;&atilde;o entre programas de diferentes menus</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta comunica&ccedil;&atilde;o ocorre quando, ap&oacute;s finalizado um determinado programa, for necess&aacute;rio o encadeamento de um segundo programa que n&atilde;o perten&ccedil;a ao mesmo menu do primeiro.</FONT> </P>
+<FONT SIZE=2><P>Este tipo de comunica&ccedil;&atilde;o torna-se poss&iacute;vel de duas formas distintas:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>a)</B> Em um programa com l&oacute;gica de consulta paginada, atrav&eacute;s da altera&ccedil;&atilde;o do desenho de sua tela de consulta, incluindo os argumentos do menu, necess&aacute;rios ao encadeamento do segundo programa.</FONT> </P>
+<FONT SIZE=2><P>Esta forma de encadeamento est&aacute; detalhadamente descrita no t&oacute;pico "Desvio de transa&ccedil;&otilde;es atrav&eacute;s do paginador de sa&iacute;da de dados", item "Utilit&aacute;rios <I>on-line</I>", na se&ccedil;&atilde;o III, neste manual.</FONT> </P>
+<B><FONT SIZE=2><P>b)</B> Em um programa com l&oacute;gica qualquer, atrav&eacute;s do disparo via COMS, caracterizando, portanto, duas transa&ccedil;&otilde;es distintas.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Este tipo de comunica&ccedil;&atilde;o torna-se poss&iacute;vel atrav&eacute;s do campos da &aacute;rea global GBL-STATUS e dos campos de argumento da tela menu do segundo programa.</FONT> </P>
+<FONT SIZE=2><P>Para determinar ao <I>host</I> que um programa encadear&aacute; um segundo programa, o primeiro programa dever&aacute; conter os seguintes comandos:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>MOVE</FONT> 9 <FONT SIZE=2>TO GBL-STATUS</FONT>. </P></DIR>
+
+<FONT SIZE=2><P>Al&eacute;m disso, o programa dever&aacute; compor os seguintes campos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Todos os campos de <I>input</I> (argumentos) da tela menu, necess&aacute;rios ao disparo do segundo programa, inclusive o c&oacute;digo da transa&ccedil;&atilde;o, pois ele ser&aacute; utilizado pelo COMS para o endere&ccedil;amento.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;O campo H-TAMANHO de acordo com o tamanho total dos campos de <I>input</I> da tela menu da transa&ccedil;&atilde;o a ser encadeada.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Se necess&aacute;rio, pode-se compor os campos da &aacute;rea conversacional, para serem utilizados pelo programa encadeado.</FONT> </P>
+<B><FONT SIZE=2><P><A NAME="Transf">Transfer&ecirc;ncia de transa&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Este tipo de comunica&ccedil;&atilde;o ocorre quando uma op&ccedil;&atilde;o do <I>host</I> for, na verdade, processada por um programa pertencente a um outro sistema ou a um outro <I>host</I>. Deste modo, quando a op&ccedil;&atilde;o for requisitada, o <I>host</I> repassa os argumentos informados para serem processados pelo programa respons&aacute;vel.</FONT> </P>
+<FONT SIZE=2><P>Esta transfer&ecirc;ncia &eacute; executada atrav&eacute;s do COMS, caracterizando, portanto, duas transa&ccedil;&otilde;es distintas.</FONT> </P>
+<FONT SIZE=2><P>Este tipo de comunica&ccedil;&atilde;o &eacute; autom&aacute;tica e execut&aacute;vel a partir da especifica&ccedil;&atilde;o da op&ccedil;&atilde;o no cadastramento do menu de onde ela ser&aacute; disparada.</FONT> </P>
+<FONT SIZE=2><P>Detalhes sobre o processo de transfer&ecirc;ncia entre programas est&atilde;o descritos no item "Menu", nesta se&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Tratme">Tratamento de mensagens de erros</A></B></FONT> </P>
+<FONT SIZE=2><P>Quando o programa chamado concluir seu processamento espec&iacute;fico, o controle ser&aacute; devolvido ao <I>host</I>.</FONT> </P>
+<FONT SIZE=2><P>A resposta da opera&ccedil;&atilde;o para o usu&aacute;rio final ser&aacute; enviada pelo <I>host</I> de acordo com o que foi indicado pelo programa chamado nos campos GBL-ERRO e GBL-STATUS da &aacute;rea global de comunica&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Maiores detalhes sobre como utilizar e preencher estes campos podem ser consultados no t&oacute;pico "&Aacute;rea global de comunica&ccedil;&atilde;o", neste mesmo item.</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Dispa">Disparo dos paginadores de entrada e de sa&iacute;da</A></B></FONT> </P>
+<FONT SIZE=2><P>O <I>host</I> &eacute; respons&aacute;vel por disparar os paginadores de entrada (STP05) e de sa&iacute;da de dados (STP03) do SADS.</FONT> </P>
+<FONT SIZE=2><P>Na inclus&atilde;o ou entrada de dados, os programas chamados preparam as telas onde os dados ser&atilde;o informados e devolvem o controle ao<I> host</I>. Este, por sua vez, dispara o paginador de entrada que se encarrega de gerenciar a pagina&ccedil;&atilde;o das telas montadas e de disparar a consist&ecirc;ncia dos dados. Ao encerrar a pagina&ccedil;&atilde;o, o controle &eacute; repassado ao programa chamado que ir&aacute; efetuar o devido tratamento dos dados.</FONT> </P>
+<FONT SIZE=2><P>Na consulta ou sa&iacute;da de dados, os programas chamados preparam todas as informa&ccedil;&otilde;es a serem apresentadas ao usu&aacute;rio e devolvem o controle para o <I>host</I>. Este, por sua vez, dispara o paginador de sa&iacute;da, que se encarrega de gerenciar a pagina&ccedil;&atilde;o das telas montadas.</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Leite">Leitura de telas</A></B></FONT> </P>
+<FONT SIZE=2><P>No cadastramento do menu pode-se especificar o n&uacute;mero da tela a ser utilizada por cada op&ccedil;&atilde;o dispon&iacute;vel no mesmo.</FONT> </P>
+<FONT SIZE=2><P>No caso de haver especifica&ccedil;&atilde;o de n&uacute;mero de tela, o <I>host</I> efetuar&aacute; a leitura da mesma antes de entregar o controle ao programa chamado respons&aacute;vel por processar a transa&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A utiliza&ccedil;&atilde;o desta facilidade evita que o programa chamado tenha de fazer um novo <I>link</I> com a sub-rotina de leitura de telas, melhorando consideravelmente a <I>performance</I> do sistema.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Areglo">&Aacute;rea global de comunica&ccedil;&atilde;o do host</A></B></FONT> </P>
+<FONT SIZE=2><P>A comunica&ccedil;&atilde;o entre o <I>host</I> e seus programas chamados &eacute; feita atrav&eacute;s da &aacute;rea global de comunica&ccedil;&atilde;o, que &eacute; incorporada aos mesmos atrav&eacute;s de <I>library</I>.</FONT> </P>
+<FONT SIZE=2><P>Para melhor explicar a &aacute;rea global de comunica&ccedil;&atilde;o, s&atilde;o apresentados os seguintes t&oacute;picos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Conte&uacute;do da &aacute;rea global de comunica&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><I><FONT SIZE=2>&nbsp;Libraries</I> da &aacute;rea global de comunica&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P><A NAME="Glocom">Conte&uacute;do da &aacute;rea global de comunica&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>A &aacute;rea global de comunica&ccedil;&atilde;o &eacute; composta pelas seguintes sub&aacute;reas:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><I><FONT SIZE=2>&nbsp;Database Section</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;&Aacute;reas de controle do SADS;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;&Aacute;rea conversacional;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;&Aacute;rea de envio e recebimento de mensagens;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;&Aacute;rea de comunica&ccedil;&atilde;o do <I>host</I> com os programas chamados.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Segue a descri&ccedil;&atilde;o de cada uma destas &aacute;reas.</FONT> </P>
+<B><FONT SIZE=2><P><A NAME="Databa">DATABASE SECTION</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta &aacute;rea &eacute; reservada &agrave; declara&ccedil;&atilde;o das estruturas DMSII, banco de dados e <I>datasets</I>, utilizados pelo <I>host</I> e programas chamados. A &aacute;rea declarada para o <I>host</I>, portanto, ser&aacute; exatamente a mesma utilizada pelos programas chamados.</FONT> </P>
+<B><FONT SIZE=2><P><A NAME="Control">&Aacute;reas de controle do SADS</A></B></FONT> </P>
+<FONT SIZE=2><P>S&atilde;o &aacute;reas incorporadas na WORKING-STORAGE SECTION e que s&atilde;o utilizadas para comunica&ccedil;&atilde;o do <I>host</I> com seus programas chamados.</FONT> </P>
+<FONT SIZE=2><P>Estas &aacute;reas s&atilde;o utilizadas em processamentos gen&eacute;ricos, tais como: leitura de telas, disparo da consist&ecirc;ncia geral, seguran&ccedil;a de acesso aos dados, recupera&ccedil;&atilde;o DMSII e comunica&ccedil;&atilde;o com o COMS.</FONT> </P>
+<FONT SIZE=2><P>A seguir ser&atilde;o apresentados alguns campos que comp&otilde;em estas &aacute;reas de controle e podem ter interesse aos aplicativos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;GBL-TRANSDMS PIC X (01)</P><DIR>
+
+<P>- </B>Indica a &uacute;ltima opera&ccedil;&atilde;o efetuada pelo programa chamado: "B" (<I>Begin-transaction</I>),"E" (<I>End-transaction</I>)ou " "(Nenhuma das duas).</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;GBL-COOPERATIVO PIC X (01)</P><DIR>
+
+<P>- </B>Identificador de transa&ccedil;&atilde;o cooperativa: "&amp;" (Transa&ccedil;&atilde;o cooperativa com interface clipper), "#" (Transa&ccedil;&atilde;o cooperativa com interface DOS)ou " "(Transa&ccedil;&atilde;o n&atilde;o cooperativa);</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;GBL-CODTELA PIC X (08)</P><DIR>
+
+<P>- </B>C&oacute;digo da &uacute;ltima tela lida pelo <I>host</I>; </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;SSC-CONSISTIDO PIC X (01)</P><DIR>
+
+<P>- </B>Identifica se a consist&ecirc;ncia da transa&ccedil;&atilde;o j&aacute; foi disparada("S"/ "N");</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;STATION-NAME PIC X (61)</P><DIR>
+
+<P>- </B>C&oacute;digo da esta&ccedil;&atilde;o em que a transa&ccedil;&atilde;o foi disparada;</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;AWS-EST-ORIGEM PIC X (61)</P><DIR>
+
+<P>- </B>C&oacute;digo da esta&ccedil;&atilde;o em que a transa&ccedil;&atilde;o foi disparada;</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;AWS-COMS-ORIGEM-MSG PIC X (01)</P><DIR>
+
+<P>- </B>Identificador da origem da mensagem: "E"(Esta&ccedil;&atilde;o) ou "P" (Programa).</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;H-NOMEST PIC X (60)</P><DIR>
+
+<P>- </B>C&oacute;digo da esta&ccedil;&atilde;o em que a transa&ccedil;&atilde;o foi disparada;</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;H-ESTACAO PIC 9 (06)</P><DIR>
+
+<P>- </B>N&uacute;mero da esta&ccedil;&atilde;o em que a transa&ccedil;&atilde;o foi disparada;</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;AGENDA-NAME PIC X (17)</P><DIR>
+
+<P>- </B>Nome da agenda;</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;PROGRAM-NAME PIC X (17)</P><DIR>
+
+<P>- </B>Nome do<I> program</I>;</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;USERCODE-NAME-PROG PIC X (17)</P><DIR>
+
+<P>- </B><I>Usercode</I> do programa(<I>Myself usercode</I>);</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;USERCODE-NAME-MARC PIC X (17)</P><DIR>
+
+<P>- </B><I>Usercode</I> no Marc;</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;SADS-MENU PIC X (05)</P><DIR>
+
+<P>- </B>C&oacute;digo do menu da transa&ccedil;&atilde;o ("sssnn");</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;SADS-SUBMENU PIC 9 (02)</P><DIR>
+
+<P>- </B>N&uacute;mero da transa&ccedil;&atilde;o ("mm", do <I>trancode</I> "sssnn.mm").</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;SADS-ORIGEMMSG PIC X (01)</P><DIR>
+
+<P>- </B>Identificador da origem da mensagem: "&amp;" (Transa&ccedil;&atilde;o cooperativa com interface clipper), "#" (Transa&ccedil;&atilde;o cooperativa com interface DOS) ou " " (Transa&ccedil;&atilde;o n&atilde;o cooperativa);</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=2><P><A NAME="Conver">&Aacute;rea conversacional</A></B></FONT> </P>
+<FONT SIZE=2><P>A &aacute;rea conversacional &eacute; uma &aacute;rea comum ao <I>host</I> e a seus programas chamados.</FONT> </P>
+<FONT SIZE=2><P>Cada sistema pode definir sua pr&oacute;pria &aacute;rea conversacional no reposit&oacute;rio de dados do SADS e gerar sua <I>library</I> para utiliza&ccedil;&atilde;o pelos programas aplicativos.</FONT> </P>
+<FONT SIZE=2><P>O <I>host</I> mant&eacute;m a &aacute;rea conversacional dispon&iacute;vel, &iacute;ntegra e atualizada para as transa&ccedil;&otilde;es que fazem uso dela, de modo a permitir a transfer&ecirc;ncia de dados entre transa&ccedil;&otilde;es de uma mesma esta&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=2><P><A NAME="Envrec">&Aacute;rea de envio e recebimento de mensagens</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta &aacute;rea &eacute; utilizada pelo <I>host</I> para transferir as mensagens recebidas para o programa respons&aacute;vel pela execu&ccedil;&atilde;o e enviar as telas e mensagens de resposta para o terminal.</FONT> </P>
+<FONT SIZE=2><P>Esta &aacute;rea &eacute; redefinida pelas <I>libraries</I> das telas nos programas chamados.</FONT> </P>
+<B><FONT SIZE=2><P><A NAME="Hospro">&Aacute;rea de comunica&ccedil;&atilde;o do <I>host</I> com os programas chamados</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta &aacute;rea cont&eacute;m os campos, atualizados pelo <I>host</I> a cada transa&ccedil;&atilde;o, que s&atilde;o utilizados pelos programas chamados para o processamento de suas transa&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>Nesta &aacute;rea est&atilde;o inclu&iacute;dos os seguintes campos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Campos para identifica&ccedil;&atilde;o do usu&aacute;rio;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Campos auxiliares;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Campos de comunica&ccedil;&atilde;o do programa chamado com o <I>host</I>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Segue uma explica&ccedil;&atilde;o detalhada destes campos:</FONT> </P>
+<B><FONT SIZE=2><P><A NAME="Identi">Campos para identifica&ccedil;&atilde;o do usu&aacute;rio</A></B></FONT> </P>
+<FONT SIZE=2><P>Estes campos cont&ecirc;m as informa&ccedil;&otilde;es cadastradas no Sistema de Seguran&ccedil;a e os dados informados no momento do <I>logon</I>. Sua finalidade principal &eacute; de identificar, para o <I>host</I> e programas chamados, o usu&aacute;rio que requisitou a transa&ccedil;&atilde;o e as caracter&iacute;sticas do <I>logon</I> por ele efetuado.</FONT> </P>
+<FONT SIZE=2><P>Estes campos, tal como definidos na <I>library</I>, s&atilde;o apresentados a seguir:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>05 GBL-USUNUM PIC X (06)</B> - N&uacute;mero do usu&aacute;rio;</FONT> </P>
+<B><FONT SIZE=2><P>05 GBL-USUCODEXT PIC X (17)</B> - C&oacute;digo do usu&aacute;rio;</FONT> </P>
+<B><FONT SIZE=2><P>05 GBL-EMPCOD PIC 9 (03)</B> - C&oacute;digo da empresa em que o usu&aacute;rio efetuou o <I>logon</I>;</FONT> </P>
+<B><FONT SIZE=2><P>05 GBL-ETBCOD PIC 9 (04)</B> - C&oacute;digo do estabelecimento em que o usu&aacute;rio efetuou o <I>logon</I>;</FONT> </P>
+<B><FONT SIZE=2><P>05 GBL-UNDCOD PIC 9 (03)</B> - C&oacute;digo da unidade em que o usu&aacute;rio efetuou o <I>logon</I>;</FONT> </P>
+<B><FONT SIZE=2><P>05 GBL-USUAMBI PIC X (01)</B> - Ambiente em que o usu&aacute;rio efetuou o <I>logon</I>;</FONT> </P>
+<B><FONT SIZE=2><P>05 GBL-EMPSIGLA PIC X (10)</B> - Sigla da empresa em que o usu&aacute;rio efetuou o <I>logon</I>;</FONT> </P>
+<B><FONT SIZE=2><P>05 GBL-UAHNIVHAB PIC 9(02) -</B> N&iacute;vel de acesso do usu&aacute;rio.</P></DIR>
+
+<B><P><A NAME="Campo">Campos auxiliares</A></FONT> </P>
+</B><FONT SIZE=2><P>Estes campos informam a data e a hora, em v&aacute;rios formatos, em que a transa&ccedil;&atilde;o foi requisitada.</FONT> </P>
+<FONT SIZE=2><P>Estes campos, tal como apresentados na <I>library</I>, s&atilde;o exibidos a seguir:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>01 GBL-DATA-HORA-SIS.</P><DIR>
+
+<P>05 GBL-DATA PIC 9(06).<BR>
+05 GBL-DATA-RED REDEFINES GBL-DATA.</P><DIR>
+
+<P>10 GBL-ANO-RED PIC 9(02).<BR>
+10 GBL-MES-RED PIC 9(02).<BR>
+10 GBL-DIA-RED PIC 9(02).</P></DIR>
+
+<P>05 GBL-HORA-SIST.</P><DIR>
+
+<P>10 GBL-HORA-SIS PIC 9(02).<BR>
+10 GBL-MINU-SIS PIC 9(02).<BR>
+10 GBL-SEGU-SIS PIC 9(02).<BR>
+10 FILLER PIC 9(04).</P></DIR>
+
+<P>05 GBL-HORA-RED REDEFINES GBL-HORA-SIST.</P><DIR>
+
+<P>10 GBL-HORA PIC 9(06).<BR>
+10 FILLER PIC X(04).</P></DIR>
+
+<P><BR>
+05 GBL-DATA-HORA.</P><DIR>
+
+<P>10 GBL-DIA PIC 9(02).<BR>
+10 FILLER PIC X(01).<BR>
+10 GBL-MES PIC 9(02).<BR>
+10 FILLER PIC X(01).<BR>
+10 GBL-ANO PIC 9(02).<BR>
+10 FILLER PIC X(01).<BR>
+10 GBL-HOR PIC 9(02).<BR>
+10 FILLER PIC X(01).<BR>
+10 GBL-MINUTO PIC 9(02).<BR>
+10 FILLER PIC X(01).<BR>
+10 GBL-SEGUNDO PIC 9(02).</P></DIR>
+</DIR>
+
+<P>01 GBL-DATAC-SIS.</P><DIR>
+
+<P>05 GBL-DATAC PIC 9(08).<BR>
+05 GBL-DATAC-RED REDEFINES GBL-DATAC.</P><DIR>
+
+<P>10 GBL-ANOC-RED PIC 9(04).<BR>
+10 GBL-MESC-RED PIC 9(02).<BR>
+10 GBL-DIAC-RED PIC 9(02).</P></DIR>
+
+<P>05 GBL-DATAC-HORA.</P><DIR>
+
+<P>10 GBL-DIAC PIC 9(02).<BR>
+10 FILLER PIC X(01).<BR>
+10 GBL-MESC PIC 9(02).<BR>
+10 FILLER PIC X(01).<BR>
+10 GBL-ANOC PIC 9(04).<BR>
+10 FILLER PIC X(02).<BR>
+10 GBL-HORC PIC 9(02).<BR>
+10 FILLER PIC X(01).<BR>
+10 GBL-MINUTOC PIC 9(02).<BR>
+10 FILLER PIC X(01).<BR>
+10 GBL-SEGUNDOC PIC 9(02).</P></DIR>
+
+<P>05 GBL-DATAC-HORA-RED REDEFINES GBL-DATAC-HORA.</P><DIR>
+
+<P>10 GBL-DTCH-OC OCCURS 20 TIMES<BR>
+PICX(01).</P></DIR>
+</DIR>
+</DIR>
+
+<P><A NAME="Camco">Campos para comunica&ccedil;&atilde;o do programa chamado com o <I>host</A></I></FONT> </P>
+<FONT SIZE=2><P>Estes campos s&atilde;o utilizados pelos programas chamados para transferir informa&ccedil;&otilde;es ao <I>host</I>, no momento em que o processamento &eacute; retornado ao mesmo.</FONT> </P>
+<FONT SIZE=2><P>Estes campos, tal como apresentados na <I>library</I>, s&atilde;o exibidos a seguir:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;05 GBL-MENSAGEM - Mensagem a ser enviada pelo host no rodap&eacute; da tela.</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;10 GBL-MENSINI PIC X (60). - Parte inicial da mensagem.</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;10 GBL-MENSFIM PIC X (20). - Parte final da mensagem.</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;05 GBL-ERRO PIC 9 (01) COMP. - Indica a forma como a resposta ser&aacute; processada pelo host.</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;05 GBL-STATUS PIC 9 (01) COMP. - Indica o tipo de processamento a ser efetuado no host.</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;05 GBL-INDPROGRAMA PIC 9 (03) COMP. - N&uacute;mero da op&ccedil;&atilde;o a ser disparada pelo host,em encadeamento de programas.</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;05 GBL-TBLCOD PIC X (08). - Tabela de mensagem de erros.</FONT> </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;05 GBL-MENSCOD PIC X (05). - C&oacute;digo da mensagem de erro.</P></DIR>
+
+<P>Segue uma explica&ccedil;&atilde;o detalhada de cada um destes campos:</FONT> </P>
+<B><FONT SIZE=2><P>a) GBL-MENSAGEM:</FONT> </P>
+</B><FONT SIZE=2><P>Este campo cont&eacute;m a mensagem a ser enviada pelo <I>host</I> para o rodap&eacute; da tela.</FONT> </P>
+<FONT SIZE=2><P>O programa chamado, quando desejar enviar uma mensagem qualquer ao usu&aacute;rio (mensagem de erro, confirma&ccedil;&atilde;o de opera&ccedil;&atilde;o, dentre outras), deve ter o campo GBL-MENSAGEM preenchido com a mensagem desejada. Por&eacute;m, o campo GBL-ERRO deve ter um valor diferente de zero e ser preenchido de acordo com o processamento a ser efetuado pelo <I>host</I> para a exibi&ccedil;&atilde;o da mesma.</FONT> </P>
+<FONT SIZE=2><P>Os valores a serem informados no campo GBL-ERRO est&atilde;o apresentados numa tabela a seguir, em explica&ccedil;&atilde;o espec&iacute;fica reservada para o mesmo.</FONT> </P>
+<B><FONT SIZE=2><P>b) GBL-MENSINI:</FONT> </P>
+</B><FONT SIZE=2><P>Parte inicial da mensagem a ser composta pelo programa chamado. Utilizada quando houver necessidade de divis&atilde;o da mesma.</FONT> </P>
+<B><FONT SIZE=2><P>c) GBL-MENSFIM:</FONT> </P>
+</B><FONT SIZE=2><P>Parte final da mensagem a ser composta pelo programa chamado. Utilizada quando houver necessidade de divis&atilde;o da mesma.</FONT> </P>
+<FONT SIZE=2><P>Este campo tamb&eacute;m pode ser utilizado quando a mensagem a ser apresentada pertencer a uma tabela de erro. Neste caso, esta informa&ccedil;&atilde;o tem de ser composta pelo programa chamado.</FONT> </P>
+<FONT SIZE=2><P>Exemplo: O programa chamado ABCN75 deseja enviar a mensagem de erro de c&oacute;digo N7503, da tabela de erros ABCM5099, detectada no argumento da tela menu CT01I-EMPCOD. Para que isso seja poss&iacute;vel, ao final da sua execu&ccedil;&atilde;o, ele dever&aacute; conter os seguintes comandos:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>MOVE 5 TO GBL-ERRO</FONT> </P>
+<FONT SIZE=2><P>MOVE "N7503" TO GBL-MENSCOD</FONT> </P>
+<FONT SIZE=2><P>MOVE "ABCM5099" TO GBL-TBLCOD</FONT> </P>
+<FONT SIZE=2><P>MOVE CT01I-EMPCOD TO GBL-MENSFIM.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Neste caso, a mensagem exibida ser&aacute; a "N7503" da tabela ABCM5099, concatenada com o valor transmitido no campo CT01I-EMPCOD.</FONT> </P>
+<B><FONT SIZE=2><P>d) GBL-ERRO:</FONT> </P>
+</B><FONT SIZE=2><P>Este campo &eacute; utilizado para que o programa indique o tipo de apresenta&ccedil;&atilde;o da mensagem que o <I>host</I> ir&aacute; efetuar.</FONT> </P>
+<FONT SIZE=2><P>Os processamentos poss&iacute;veis de serem efetuados no <I>host</I> est&atilde;o apresentados na tabela a seguir:</FONT> </P>
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" WIDTH=571>
+<TR><TD WIDTH="17%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">GBL-ERRO</TD>
+<TD WIDTH="83%" VALIGN="MIDDLE">
+<P>PROCESSAMENTO A SER EFETUADO PELO <I><FONT SIZE=2>HOST</I></FONT> </TD>
+</TR>
+<TR><TD WIDTH="17%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">1</B></FONT></TD>
+<TD WIDTH="83%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Enviar mensagem de erro contida em GBL-MENSAGEM. </FONT></TD>
+</TR>
+<TR><TD WIDTH="17%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">2</B></FONT></TD>
+<TD WIDTH="83%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Enviar tela resposta composta pelo programa e Enviar mensagem de erro contida em GBL-MENSAGEM. </FONT></TD>
+</TR>
+<TR><TD WIDTH="17%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">3</B></FONT></TD>
+<TD WIDTH="83%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Enviar mensagem de erro contida em GBL-MENSAGEM, Cancelar com "SET MYSELF(STATUS) TO -1" e Desabilitar a transa&ccedil;&atilde;o. </FONT></TD>
+</TR>
+<TR><TD WIDTH="17%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">5</B></FONT></TD>
+<TD WIDTH="83%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Acessar tabela informada em GBL-TBLCOD, Enviar a mens. de c&oacute;d. GBL-MENSCOD da tabela e Compor informa&ccedil;&otilde;es para o HELP ON-LINE. </FONT></TD>
+</TR>
+<TR><TD WIDTH="17%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">6</B></FONT></TD>
+<TD WIDTH="83%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Enviar a mensagem contida em GBL-MENSAGEM e Compor informa&ccedil;&otilde;es p/ o HELP ON-LINE (GBL-TBLCOD e GBL-MENSCOD). </FONT></TD>
+</TR>
+<TR><TD WIDTH="17%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">7</B></FONT></TD>
+<TD WIDTH="83%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Enviar tela menu e Enviar a mensagem contida em GBL-MENSAGEM. </FONT></TD>
+</TR>
+<TR><TD WIDTH="17%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">8</B></FONT></TD>
+<TD WIDTH="83%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Enviar tela resposta e Enviar mensagem de erro contida em GBL-MENSAGEM. (Id&ecirc;ntico ao GBL-ERRO = 2). </FONT></TD>
+</TR>
+<TR><TD WIDTH="17%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">9</B></FONT></TD>
+<TD WIDTH="83%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Enviar mensagem de erro contida em GBL-MENSAGEM somente para a linha 24 (semelhante ao 1). </FONT></TD>
+</TR>
+</TABLE>
+
+<FONT SIZE=2><P>A</FONT> <FONT SIZE=2>seguir, s&atilde;o apresentados alguns exemplos para os c&oacute;digos do campo GBL-ERRO mais utilizados</FONT>: </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><B>&nbsp;<FONT SIZE=2>GBL-ERRO = 1:</FONT> </P>
+</B><FONT SIZE=2><P>Para determinar ao <I>host</I> o envio da mensagem de confirma&ccedil;&atilde;o da opera&ccedil;&atilde;o, montada no campo GBL-MENSAGEM, o programa deve conter, ao final de sua execu&ccedil;&atilde;o, os seguintes comandos:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>MOVE 1 TO GBL-ERRO</FONT> </P>
+<FONT SIZE=2><P>MOVE "N7201 - OPERACAO EFETUADA COM SUCESSO" TO GBL-MENSAGEM.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><B><FONT SIZE=2>&nbsp;GBL-ERRO = 2 e 8:</FONT> </P>
+</B><FONT SIZE=2><P>Para determinar ao <I>host</I> a apresenta&ccedil;&atilde;o da tela ABCT0172 e o envio da mensagem de confirma&ccedil;&atilde;o da opera&ccedil;&atilde;o, montada no campo GBL-MENSAGEM, o programa deve conter, ao final de sua execu&ccedil;&atilde;o, os seguintes comandos:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>MOVE "ABCT0172" TO S0101-CODTELA.</FONT> </P>
+<FONT SIZE=2><P>PERFORM 88000-00-LER-TELA THRU 88000-99-EXIT.</FONT> </P>
+<FONT SIZE=2><P>MOVE GBL-DATAHORA TO CT72O-TLADTH.</FONT> </P>
+<FONT SIZE=2><P>MOVE 2 TO GBL-ERRO.</FONT> </P>
+<FONT SIZE=2><P>MOVE "N7201 - OPERACAO EFETUADA COM SUCESSO" TO GBL-MENSAGEM.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><B><FONT SIZE=2>&nbsp;GBL-ERRO = 5:</FONT> </P>
+</B><FONT SIZE=2><P>Para determinar ao <I>host</I> o envio da mensagem de erro de c&oacute;digo "N7503" da tabela de erro ABCM5099, detectada no argumento da tela menu CT01I-EMPSIGLA, ele deve conter na rotina de consist&ecirc;ncia contra cadastro os seguintes comandos:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>MOVE 5 TO GBL-ERRO</FONT> </P>
+<FONT SIZE=2><P>MOVE "N7503" TO GBL-MENSCOD</FONT> </P>
+<FONT SIZE=2><P>MOVE "ABCM5099" TO GBL-TBLCOD</FONT> </P>
+<FONT SIZE=2><P>MOVE CT01I-EMPSIGLA TO GBL-MENSFIM.</FONT> </P>
+<FONT SIZE=2><P>GO TO 99000-99-EXIT-PROGRAM.</P></DIR>
+
+<P>Pode-se enviar, opcionalmente, duas mensagens de erro atrav&eacute;s do valor 5 em GBL-ERRO. No exemplo anterior, caso a tabela ABCM5098 possu&iacute;sse a mensagem N7503, ela tamb&eacute;m seria exibida.</FONT> </P>
+<FONT SIZE=2><P>No caso de a tabela de erros ser a mesma para todas as mensagens que ser&atilde;o enviadas pelo programa, ela pode ser composta uma &uacute;nica vez na rotina principal do programa.</FONT> </P>
+<B><FONT SIZE=2><P>e) GBL-STATUS:</FONT> </P>
+</B><FONT SIZE=2><P>Este campo, de acordo com o c&oacute;digo informado nos programas chamados, pode indicar os seguintes processamentos a serem efetuados pelo <I>host</I>: </P></FONT>
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" WIDTH=555>
+<TR><TD WIDTH="21%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">GBL- STATUS</TD>
+<TD WIDTH="79%" VALIGN="MIDDLE">
+<P>PROCESSAMENTO A SER EFETUADO PELO <I><FONT SIZE=2>HOST</I></FONT> </TD>
+</TR>
+<TR><TD WIDTH="21%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">1</B></FONT></TD>
+<TD WIDTH="79%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Enviar tela menu. </FONT></TD>
+</TR>
+<TR><TD WIDTH="21%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">2</B></FONT></TD>
+<TD WIDTH="79%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Enviar tela menu e Disparar outro programa de acordo com trancode e dados contidos no campo MENSAGEM. </FONT></TD>
+</TR>
+<TR><TD WIDTH="21%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">3</B></FONT></TD>
+<TD WIDTH="79%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Encerramento de transa&ccedil;&atilde;o. Indica que o host n&atilde;o deve enviar nada nem disparar nenhum outro programa. Neste caso, o programa chamado j&aacute; enviou resposta para a esta&ccedil;&atilde;o. </FONT></TD>
+</TR>
+<TR><TD WIDTH="21%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">6</B></FONT></TD>
+<TD WIDTH="79%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Disparar o programa chamado relacionado &agrave; op&ccedil;&atilde;o informada em GBL-INDPROGRAMA. </FONT></TD>
+</TR>
+<TR><TD WIDTH="21%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">7</B></FONT></TD>
+<TD WIDTH="79%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Limpar os campos desprotegidos da tela ap&oacute;s processar a inclus&atilde;o. Isto evita leitura da mesma tela ap&oacute;s inclus&otilde;es sucessivas. </FONT></TD>
+</TR>
+<TR><TD WIDTH="21%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">9</B></FONT></TD>
+<TD WIDTH="79%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Disparar outro programa atrav&eacute;s do COMS. Neste caso, deve-se compor os campos da tela menu do programa a ser disparado, inclusive o trancode. </FONT></TD>
+</TR>
+</TABLE>
+
+<FONT SIZE=2><P>Seguem explica&ccedil;&otilde;es mais detalhadas a respeito dos c&oacute;digos do campo GBL-STATUS mais utilizados</FONT>: </P>
+<P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><B><FONT SIZE=2>&nbsp;GBL-STATUS = 1:</FONT> </P>
+</B><FONT SIZE=2><P>Para determinar ao <I>host</I> o envio da tela menu na qual a transa&ccedil;&atilde;o foi solicitada, deve-se, antes de retornar o controle para o <I>host</I>, executar o seguinte comando:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>MOVE 1 TO GBL-STATUS.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><B><FONT SIZE=2>&nbsp;GBL-STATUS = 6:</FONT> </P>
+</B><FONT SIZE=2><P>Para determinar ao <I>host</I> que um programa chamado encadear&aacute; um segundo programa (do mesmo menu), o primeiro dever&aacute; conter os seguintes comandos na rotina de compor pr&oacute;xima transa&ccedil;&atilde;o:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>MOVE 6 TO GBL-STATUS<BR>
+MOVE &lt;n&uacute;mero da op&ccedil;&atilde;o referente ao programa a ser encadeado&gt;<BR>
+TO GBL-INDPROGRAMA.</FONT> </P>
+<FONT SIZE=2><P>&lt;Se necess&aacute;rio, deve-se compor os argumentos da tela menu e/ou campos da &aacute;rea conversacional&gt; </P></DIR>
+
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><B><FONT SIZE=2>&nbsp;GBL-STATUS = 9:</FONT> </P>
+</B><FONT SIZE=2><P>Para determinar ao <I>host</I> que um programa chamado encadear&aacute; um segundo programa atrav&eacute;s do COMS (como se fosse transmitido um "XMIT"), o primeiro dever&aacute; conter os seguintes comandos:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>MOVE 9 TO GBL-STATUS.<BR>
+Move &lt;Tamanho da mensagem&gt; TO H - TAMANHO<BR>
+&lt;Compor todos os argumentos (campos de input) da tela menu do<BR>
+programa a ser disparado, inclusive o trancode&gt;</P></DIR>
+
+<B><P>f) GBL-INDPROGRAMA:</FONT> </P>
+</B><FONT SIZE=2><P>N&uacute;mero da op&ccedil;&atilde;o relativa ao programa aplicativo que se deseja encadear, nos casos de encadeamento de programas numa mesma transa&ccedil;&atilde;o (utiliza&ccedil;&atilde;o do GBL-STATUS = 6).</FONT> </P>
+<B><FONT SIZE=2><P>g) GBL-TBLCOD:</FONT> </P>
+</B><FONT SIZE=2><P>C&oacute;digo da tabela de mensagens a qual ser&aacute; executado acesso para apresenta&ccedil;&atilde;o da mensagem, cujo c&oacute;digo est&aacute; contido no campo GBL-MENSCOD. Esta informa&ccedil;&atilde;o ser&aacute; utilizada, tamb&eacute;m, pelo <I>help on-line.</I></FONT> </P>
+<FONT SIZE=2><P>Este c&oacute;digo de tabela deve ser informado no programa chamado para GBL-ERRO 5 e 6.</FONT> </P>
+<FONT SIZE=2><P>Caso uma tabela com c&oacute;digo imediatamente anterior possua um item (mensagem) com o mesmo c&oacute;digo, ela tamb&eacute;m ser&aacute; exibida.</FONT> </P>
+<B><FONT SIZE=2><P>h) GBL-MENSCOD:</FONT> </P>
+</B><FONT SIZE=2><P>C&oacute;digo da mensagem que ser&aacute; apresentada. Esta mensagem tem de estar descrita na tabela cujo c&oacute;digo estiver contido no campo GBL-TBLCOD.</FONT> </P>
+<FONT SIZE=2><P>Este c&oacute;digo de mensagem deve ser informado no programa chamado para GBL-ERRO 5 e 6.</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Libglo">Libraries da &aacute;rea global de comunica&ccedil;&atilde;o</A></FONT> </P>
+</B><FONT SIZE=2><P>A &aacute;rea global de comunica&ccedil;&atilde;o, utilizada pelo <I>host</I> e seus programas chamados, &eacute; composta por v&aacute;rias <I>libraries</I>, cujos c&oacute;digos s&atilde;o apresentados na tabela a seguir: </P></FONT>
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" WIDTH=558>
+<TR><TD VALIGN="MIDDLE" COLSPAN=3>
+<P ALIGN="CENTER"><I><FONT SIZE=2>LIBRARIES</I> DA &Aacute;REA GLOBAL DE COMUNICA&Ccedil;&Atilde;O</FONT></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">FUN&Ccedil;&Atilde;O</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<I><FONT SIZE=2><P ALIGN="CENTER">LIBRARY</I> DO <I>HOST</I></FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<I><FONT SIZE=2><P ALIGN="CENTER">LIBRARY</I> DO PROGRAMA</FONT></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>DECLARA&Ccedil;&Atilde;O DE BANCO</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">ss/s/BL/00</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">ss/s/BL/00</FONT></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>LEITURA DE TELAS E EXECU&Ccedil;&Atilde;O DE CONSIST&Ecirc;NCIA GERAL </FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">SB/P/PL/60</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">SB/P/PL/53</FONT></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>SEGURAN&Ccedil;A DE ACESSO</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">SB/T/PL/60</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>&nbsp;</FONT></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>RECUPERA&Ccedil;&Atilde;O DMSII</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">SB/P/PL/56</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">SB/P/PL/53</FONT></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>COMUNICA&Ccedil;&Atilde;O COM COMS</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">ST/K/PL/01</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">ST/K/PL/02</FONT></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>&Aacute;REA CONVERSACIONAL</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">ss/s/PL/nn</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">ss/s/PL/nn</FONT></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>ENVIO/RECEB. MENSAG.</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">ST/K/PL/01</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">ST/K/PL/02</FONT></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>LOGON E LOGOFF</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">SB/T/PL/60</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">(*)SB/P/PL/12</P>
+<P ALIGN="CENTER">SB/P/PL/22</P>
+<P ALIGN="CENTER">SB/P/PL/32</P>
+<P ALIGN="CENTER">SB/P/PL/42</FONT></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>CAMPOS AUXILIARES</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">SB/P/PL/60</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">(*)SB/P/PL/12</P>
+<P ALIGN="CENTER">SB/P/PL/22</P>
+<P ALIGN="CENTER">SB/P/PL/32</P>
+<P ALIGN="CENTER">SB/P/PL/42</FONT></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>CAMPOS PARA COMUNI CA&Ccedil;&Atilde;O DO PROGRAMA CHAMADO COM O HOST </FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">SB/P/PL/60</FONT></TD>
+<TD WIDTH="33%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">(*)SB/P/PL/12</P>
+<P ALIGN="CENTER">SB/P/PL/22</P>
+<P ALIGN="CENTER">SB/P/PL/32</P>
+<P ALIGN="CENTER">SB/P/PL/42</FONT></TD>
+</TR>
+</TABLE>
+
+<P>(*) Somente uma destas <I><FONT SIZE=2>libraries</I>, dependendo do n&uacute;mero de mensagens de erro tratadas pelo <I>host</I>, ser&aacute; inclu&iacute;da no programa chamado.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Cadas">Cadastramento</A></FONT> </P>
+</B><P><HR></P>
+<FONT SIZE=2><P>O processo de defini&ccedil;&atilde;o do <I>host</I> exige o cadastramento pr&eacute;vio do sistema para o qual ele ser&aacute; definido no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>No caso de defini&ccedil;&atilde;o de <I>host</I> f&iacute;sico (que n&atilde;o seja prot&oacute;tipo), com acesso a bancos de dados, o cadastramento do <I>host</I> s&oacute; ser&aacute; poss&iacute;vel se a base de dados a ser por ele utilizada j&aacute; estiver cadastrada.</FONT> </P>
+<FONT SIZE=2><P>Se o programa <I>host</I> utilizar tabelas, sub-rotinas, arquivos<I> Port, libraries</I> de <I>work </I>ou<I> </I>de<I> procedure</I>, estes tamb&eacute;m dever&atilde;o estar previamente cadastrados no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<B><FONT SIZE=4><P>Roteiro</FONT> </P>
+</B><FONT SIZE=2><P>Para definir um <I>host</I> no reposit&oacute;rio de dados do SADS e torn&aacute;-lo dispon&iacute;vel, as seguintes fun&ccedil;&otilde;es dever&atilde;o ser executadas:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Defini&ccedil;&atilde;o de <I>host</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Defini&ccedil;&atilde;o de menu;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;-Gera&ccedil;&atilde;o de programa <I>host</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Compila&ccedil;&atilde;o de <I>host</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;B<I>inder</I> de <I>host</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Libera&ccedil;&atilde;o de<I> host</I> para produ&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Gera&ccedil;&atilde;o de elementos do COMS;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Gera&ccedil;&atilde;o da <I>library</I> de sub-rotinas globais;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>Libera&ccedil;&atilde;o da <I>library</I> de sub-rotinas globais para produ&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Defhos">Defini&ccedil;&atilde;o de host</A></FONT> </P>
+<FONT SIZE=2><P>CAMPOS DA TELA</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Host - </B>C&oacute;digo do <I>host</I> no padr&atilde;o SADS (sssNnn).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Nome </B>- Descri&ccedil;&atilde;o resumida do <I>host</I>.</FONT> </P>
+<FONT SIZE=2><P>O nome tem a fun&ccedil;&atilde;o de explicar e identificar resumidamente a que se refere o <I>host</I>.</FONT> </P>
+<FONT SIZE=2><P>Base de dados - C&oacute;digo da base de dados a ser utilizada pelo <I>host</I>, no padr&atilde;o SADS (sssB00xx).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Bancos (I/U) - </B>C&oacute;digos dos bancos de dados que ser&atilde;o utilizados pelo <I>host</I>, no padr&atilde;o SADS (sssBxx), e crit&eacute;rios de abertura dos mesmos.</FONT> </P>
+<FONT SIZE=2><P>Os crit&eacute;rios de abertura que podem ser utilizados s&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"I" (<I>Inquiry</I>) - </B>Para banco de dados que ser&aacute; utilizado pelo <I>host</I> somente para consulta dos dados nele armazenados;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"U" (<I>Update</I>) - </B>Para banco de dados que ser&aacute; utilizado pelo <I>host</I> para atualiza&ccedil;&atilde;o dos dados nele armazenados<B>.</FONT> </P></DIR>
+
+</B><FONT SIZE=2><P>A informa&ccedil;&atilde;o de quais s&atilde;o os bancos de dados utilizados pelo <I>host</I> &eacute; opcional, pois este n&atilde;o trabalha necessariamente com banco de dados.</FONT> </P>
+<FONT SIZE=2><P>Al&eacute;m disso, os bancos de dados somente poder&atilde;o ser informados caso a base de dados declarada pelo <I>host</I> possua o c&oacute;digo "sssB0000", indicando que a base de dados &eacute; gen&eacute;rica a todo o sistema. Neste caso, para elementos (<I>hosts</I>, programas <I>batch</I> e sub-rotinas) que referenciam a base de dados gen&eacute;rica &eacute; poss&iacute;vel utilizar apenas dois bancos, sendo que apenas um deles pode ser utilizado como <I>update</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;"OPCAO" nos menus (P/U) - </B>Indicador da localiza&ccedil;&atilde;o do campo para sele&ccedil;&atilde;o das op&ccedil;&otilde;es nas telas de menu do sistema.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"P" (Primeiro) - </B>Para que a OPCAO seja o primeiro campo da tela ap&oacute;s o c&oacute;digo de transa&ccedil;&atilde;o;</FONT><B> </P>
+</B><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"U" (&Uacute;ltimo) - </B>Para que o campo OPCAO seja o &uacute;ltimo da tela.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Sugere-se que a op&ccedil;&atilde;o seja definida como o &uacute;ltimo campo dos menus, pois os m&oacute;dulos do SADS assim foram desenvolvidos e o usu&aacute;rio poder&aacute; utiliz&aacute;-los simultaneamente com os menus do sistema.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Linhas p/ mensagens - </B>Quantidade de linhas de mensagens de erro que ser&atilde;o tratadas pelo programa <I>host</I>.</FONT> </P>
+<FONT SIZE=2><P>Sugere-se definir duas linhas de mensagens de erro para as telas.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Compilador </B>- Nome do compilador a ser utilizado na compila&ccedil;&atilde;o do programa <I>host</I><B>.</FONT> </P>
+</B><FONT SIZE=2><P>Dever&aacute; ser utilizada alguma das vers&otilde;es do compilador Cobol. A sugest&atilde;o &eacute; que se utilize o compilador COBOL74, pois no momento <I>hosts</I> somente s&atilde;o gerados em COBOL74.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Area conv:</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;Tam </B>- Quantidade de <I>bytes</I> ocupados pela &aacute;rea conversacional do <I>host</I><B>.</FONT> </P>
+</B><FONT SIZE=2><P>O tamanho da &aacute;rea conversacional deve ser um m&uacute;ltiplo de 6 (seis) e indicar&aacute; o tamanho m&aacute;ximo da &aacute;rea conversacional a ser utilizada por todos os programas do <I>host</I>.</FONT> </P>
+<FONT SIZE=2><P>O tamanho da &aacute;rea conversacional utilizada pelo <I>host</I> deve ser sempre acrescido de 14, que &eacute; o tamanho da &aacute;rea necess&aacute;ria &agrave;s consist&ecirc;ncias geradas automaticamente para programas de atualiza&ccedil;&atilde;o. Nesta &aacute;rea s&atilde;o armazenadas a transa&ccedil;&atilde;o e data e hora da &uacute;ltima atualiza&ccedil;&atilde;o do registro processado.</FONT> </P>
+<FONT SIZE=2><P>Para <I>hosts</I> que n&atilde;o utilizam &aacute;rea conversacional, deve ser informado 0 (zero) neste campo.</FONT> </P>
+<FONT SIZE=2><P>A &aacute;rea conversacional &eacute; utilizada para armazenar e transferir dados entre as transa&ccedil;&otilde;es de uma mesma esta&ccedil;&atilde;o. </P>
+<P>Caso se deseje utilizar &aacute;rea conversacional, o tamanho m&iacute;nimo que pode ser informado &eacute; de 18 <I>bytes</I>.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;Library - </B>C&oacute;digo da <I>library</I> da &aacute;rea conversacional a ser utilizada pelo <I>host</I>, no padr&atilde;o SADS (sssLnn).</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Port File - </B>C&oacute;digo do arquivo <I>port file</I> utilizado pelo <I>host</I>, no padr&atilde;o SADS (sssAxn). (Opcional)</FONT> </P>
+<FONT SIZE=2><P>O arquivo <I>port file</I> &eacute; utilizado para comunica&ccedil;&atilde;o entre programas. Para declar&aacute;-lo no <I>host</I> ele tem de estar previamente cadastrado no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Caso ele seja definido no <I>host</I>, os programas chamados podem trat&aacute;-lo como global.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Sub-rotinas - </B>C&oacute;digos das sub-rotinas a serem chamadas pelo programa <I>host</I>, informados no padr&atilde;o SADS (sssSxx). (Opcional)</FONT><B> </P>
+</B><FONT SIZE=2><P>A declara&ccedil;&atilde;o de sub-rotinas a serem disparadas pelo host s&oacute; ser&aacute; necess&aacute;ria caso o sistema n&atilde;o utilize sub-rotinas globais. Caso contr&aacute;rio, esta declara&ccedil;&atilde;o &eacute; dispens&aacute;vel, pois o <I>host</I> j&aacute; efetua normalmente as chamadas a todas as sub-rotinas relacionadas aos seus programas.</P>
+<P>As sub-rotinas que devem ser declaradas no <I>host </I>s&atilde;o aquelas utilizadas com frequ&ecirc;ncia pelos programas chamados associados ao <I>host</I> e que, se declaradas como tempor&aacute;rias, permanecer&atilde;o ativas enquanto o <I>host</I> tamb&eacute;m estiver ativo.</FONT> </P>
+<FONT SIZE=2><P>As chamadas &agrave;s sub-rotinas normalmente n&atilde;o s&atilde;o executadas pelo<I> host</I>, a n&atilde;o ser em casos excepcionais.</FONT> </P>
+<FONT SIZE=2><P>O <I>host</I>, para colocar uma sub-rotina no ar executa um disparo passando o valor "9" no primeiro <I>byte</I> da &aacute;rea de comunica&ccedil;&atilde;o. Assim, a sub-rotina deve tratar esta informa&ccedil;&atilde;o, n&atilde;o executando, neste caso, nenhum processamento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Arquivos - </B>C&oacute;digos dos arquivos a serem utilizadas pelo <I>host</I>, no padr&atilde;o SADS (sssAxnnn). (Opcional).</FONT> </P>
+<FONT SIZE=2><P>Os arquivos poder&atilde;o ser utilizadas pelo <I>host</I> atrav&eacute;s de um procedimento especial contido em alguma <I>library</I> de <I>procedure</I> a ser incorporada ao mesmo. Ao declarar arquivos para um <I>host</I>, suas <I>libraries</I> ser&atilde;o invocadas. Os arquivos declarados no <I>host</I> t&ecirc;m de estar previamente cadastrados no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Tabelas - </B>C&oacute;digos das tabelas a serem utilizadas pelo <I>host</I>, no padr&atilde;o SADS (sssMnnnn). (Opcional). </P>
+<P>As tabelas poder&atilde;o ser utilizadas pelo <I>host</I> atrav&eacute;s de um procedimento especial contido em alguma <I>library</I> de <I>procedure</I> a ser incorporada ao mesmo. Ao declarar tabelas para um <I>host</I>, suas <I>libraries</I> ser&atilde;o invocadas. As tabelas declaradas no <I>host</I> t&ecirc;m de estar previamente cadastradas no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Libraries / Uso (W/I/B/T/A/D/E/F) - </B>C&oacute;digo da <I>library</I> a ser incorporada ao <I>host</I> e c&oacute;digo do local onde a mesma ser&aacute; inclu&iacute;da. (Opcionais)</FONT> </P>
+<FONT SIZE=2><P>Os c&oacute;digos de locais onde as <I>libraries</I> podem ser inclu&iacute;das s&atilde;o: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;W" (<I>Work</I>) - </B>Para que a <I>library</I> informada seja incorporada na <I>Working-Storage Section</I> do <I>host</I>;</FONT><B> </P>
+</B><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"I" (In&iacute;cio) - </B>Para que a <I>library</I> informada seja incorporada nos procedimentos iniciais do <I>host</I>, ap&oacute;s o <I>change/call</I> das sub-rotinas, antes da abertura do banco;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"B" (Banco) - </B>Para que a <I>library</I> informada seja incorporada nos procedimentos iniciais do <I>host</I>, ap&oacute;s a abertura do banco;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"T" (Tela) </B>- Para que a <I>library</I> informada seja incorporada nos procedimentos do <I>host</I>, ap&oacute;s a rotina de leitura de tela menu;</FONT><B> </P>
+</B><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"A" (Antes) </B>- Para que a <I>library</I> informada seja incorporada nos procedimentos do <I>host</I>, antes do disparo dos aplicativos;</FONT><B> </P>
+</B><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"D" (Depois) - </B>Para que a <I>library</I> informada seja incorporada nos procedimentos do <I>host</I>, ap&oacute;s o aplicativo devolver o controle para o <I>host</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"E" (Envio) - </B>Para que a <I>library</I> informada seja incorporada nos procedimentos do <I>host</I>, antes deste enviar a mensagem para o COMS, ap&oacute;s o label WRITE-PORT;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;"F" (Final) - </B>Para que a <I>library</I> informada seja incorporada nos procedimentos finais do <I>host</I>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Todos os c&oacute;digos de <I>libraries</I> a serem informados para a defini&ccedil;&atilde;o do <I>host</I> dever&atilde;o estar no padr&atilde;o SADS (sssLxx) e t&ecirc;m de estar previamente cadastradas no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Podem ser inclu&iacute;das at&eacute; doze <I>libraries</I> no mesmo <I>host</I> e mais de uma no mesmo local.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Defmen">Defini&ccedil;&atilde;o de menu</A></FONT> </P>
+</B><FONT SIZE=2><P>Existem tr&ecirc;s tipos de classifica&ccedil;&otilde;es para os menus: menus de escolha e de opera&ccedil;&atilde;o - que n&atilde;o s&atilde;o utilizados na defini&ccedil;&atilde;o e gera&ccedil;&atilde;o de <I>hosts</I> - e menus de op&ccedil;&atilde;o, que s&atilde;o os menus tratados pelos <I>hosts</I> para disparo de transa&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>Os menus de escolha e de opera&ccedil;&atilde;o s&atilde;o apresentados no item "Navega&ccedil;&atilde;o" da Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", neste manual.</FONT> </P>
+<FONT SIZE=2><P>Menus de op&ccedil;&atilde;o s&atilde;o aqueles efetivamente tratados pelos <I>hosts</I> e processados pelos programas.</FONT> </P>
+<FONT SIZE=2><P>Um menu de op&ccedil;&atilde;o &eacute; composto de:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>a) </B>Uma tela para apresenta&ccedil;&atilde;o das transa&ccedil;&otilde;es dispon&iacute;veis;</FONT><B> </P>
+<FONT SIZE=2><P>b) </B>Uma defini&ccedil;&atilde;o no reposit&oacute;rio de dados, onde ser&atilde;o especificadas as caracter&iacute;sticas do processamento a ser executado pelo <I>host</I> para cada transa&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>As telas dos menus de op&ccedil;&atilde;o n&atilde;o s&atilde;o apresentadas pelo m&oacute;dulo de navega&ccedil;&atilde;o do SADS.</FONT> </P>
+<FONT SIZE=2><P>O padr&atilde;o para codifica&ccedil;&atilde;o de menu &eacute; "sssUxn". </P>
+<P>As transa&ccedil;&otilde;es definidas em um menu podem ser tratadas por um outro <I>host</I>, que &eacute; chamado <I>host</I> secund&aacute;rio, que somente pode ser disparado atrav&eacute;s do prim&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Portanto, dependendo de qual <I>host</I> tratar&aacute; o menu, pode-se classific&aacute;-lo dentre dois tipos, quais sejam:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>-Menu prim&aacute;rio: menu de op&ccedil;&atilde;o onde est&atilde;o especificadas todas as transa&ccedil;&otilde;es que ser&atilde;o tratadas tanto pelo <I>host</I> prim&aacute;rio quanto pelo secund&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>-Menu secund&aacute;rio: menu de op&ccedil;&atilde;o onde est&atilde;o especificados apenas os submenus e as transa&ccedil;&otilde;es que ser&atilde;o tratadas pelo <I>host</I> secund&aacute;rio.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Todos os detalhes referentes ao elemento menu, incluindo a sua defini&ccedil;&atilde;o, est&atilde;o descritos no item "Menu", nesta se&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Gerhos">Gera&ccedil;&atilde;o de programa host</A></FONT> </P>
+</B><FONT SIZE=2><P>Atrav&eacute;s do SADS, o programa <I>host</I> &eacute; gerado em linguagem Cobol a partir de suas especifica&ccedil;&otilde;es cadastradas no reposit&oacute;rio de dados, n&atilde;o sendo necess&aacute;rio, de modo geral, efetuar qualquer complementa&ccedil;&atilde;o nos seus fontes.</FONT> </P>
+<FONT SIZE=2><P>Para efetuar manuten&ccedil;&otilde;es no fonte de um programa <I>host</I>, basta alterar o seu cadastramento no reposit&oacute;rio de dados do SADS e ger&aacute;-lo novamente.</FONT> </P>
+<FONT SIZE=2><P>O fonte de um <I>host</I> cont&eacute;m comandos respons&aacute;veis por executar fun&ccedil;&otilde;es gen&eacute;ricas dos sistema, garantindo, assim, a uniformidade e boa <I>performance</I> dos aplicativos.</FONT> </P>
+<FONT SIZE=2><P>Para a gera&ccedil;&atilde;o, &eacute; necess&aacute;rio que o <I>host</I>, seus menus e sua base de dados, caso exista, j&aacute; estejam definidos no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Host - </B>C&oacute;digo do <I>host</I> no padr&atilde;o SADS (sssNnn).</FONT><B> </P>
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Usercode - </B><I>Usercode</I> de an&aacute;lise no qual residir&aacute; o fonte do programa <I>host</I>.</FONT><B> </P>
+</B><FONT SIZE=2><P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS".</FONT> </P>
+<FONT SIZE=2><P>Este <I>usercode</I> dever&aacute; estar cadastrado com tipo "AN" (an&aacute;lise) na tabela de <I>usercodes</I> do SADS - SBPM5002, que se encontra descrita na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Gerar mesmo que ja exista o fonte (S/N) - </B>Indicador de sobreposi&ccedil;&atilde;o de fonte do <I>host</I> no <I>usercode</I>.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S" - </B>O novo fonte poder&aacute; ser gerado sobre um fonte j&aacute; existente no <I>usercode</I>.</FONT> </P>
+<FONT SIZE=2><P>Para evitar a perda do fonte do <I>host</I> j&aacute; existente no <I>usercode</I>, em casos de manuten&ccedil;&atilde;o evolutiva, deve-se providenciar um <I>backup</I> antes de efetuar a gera&ccedil;&atilde;o do novo fonte. Este <I>backup</I> pode ser efetivado atrav&eacute;s do m&oacute;dulo Administra&ccedil;&atilde;o e Controle de Programas.</FONT> </P>
+<B><FONT SIZE=2><P>"N" - </B>O novo fonte s&oacute; ser&aacute; gerado caso n&atilde;o haja um fonte com o mesmo nome no <I>usercode</I>.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Comhos">Compila&ccedil;&atilde;o de host</A></FONT> </P>
+</B><FONT SIZE=2><P>Para compilar um programa <I>host</I>, &eacute; necess&aacute;rio que o fonte do mesmo j&aacute; tenha sido gerado e que as <I>libraries</I> (telas menu, &aacute;rea conversacional, declara&ccedil;&atilde;o de banco, etc) por ele utilizadas tamb&eacute;m tenham sido geradas e, se necess&aacute;rio, liberadas para o ambiente para o qual ele ser&aacute; compilado.</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;USERCODE - </B><I>Usercode</I> de an&aacute;lise onde reside o fonte do programa<B>.</FONT> </P>
+</B><FONT SIZE=2><P>Este <I>usercode</I> dever&aacute; estar cadastrado na tabela de <I>usercodes</I> utilizada pelo SADS - SBPM5002. Detalhes a respeito desta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<FONT SIZE=2><P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS".</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;PASSWORD - </B>Senha do <I>usercode</I><B>.</FONT> </P>
+</B><FONT SIZE=2><P>A <I>password</I> pode ou n&atilde;o ser informada conforme parametriza&ccedil;&atilde;o na tabela SBPM5000, campo COMPDF, Par&acirc;metro 5. Detalhes a respeito desta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;ACCESSCODE - </B><I>Accesscode</I> no padr&atilde;o Unisys, caso o <I>usercode</I> o exija<B>.</FONT> </P>
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;ACCESSPASSWORD - </B>Senha do <I>accesscode</I>, caso o mesmo tenha sido informado.</FONT><B> </P>
+</B><FONT SIZE=2><P>A <I>accesspassword</I> pode ou n&atilde;o ser informada conforme parametriza&ccedil;&atilde;o na tabela SBPM5000, campo COMPDF, Par&acirc;metro 5. Detalhes a respeito desta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;NOME </B>- Nome para o <I>job</I> de compila&ccedil;&atilde;o no padr&atilde;o Unisys.</FONT> </P>
+<FONT SIZE=2><P>Caso o nome informado se inicie com "SPMA89", com ou sem algum complemento, o <I>job</I> de compila&ccedil;&atilde;o ser&aacute; salvo no <I>usercode</I> anteriormente especificado com este mesmo nome. Por exemplo, pode-se informar "SPMA89SXY" para que seja criado um arquivo de nome "SPMA89SXY" contendo o <I>job</I> de compila&ccedil;&atilde;o do <I>host</I> SXYN00.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;FONTES </B>- Indicadores num&eacute;ricos dos c&oacute;digos de <I>hosts</I> e programas a serem compilados.</FONT> </P>
+<FONT SIZE=2><P>Para o disparo de suas compila&ccedil;&otilde;es, devem ser informados, no m&aacute;ximo, seis fontes de programas e <I>hosts</I>.</FONT> </P>
+<FONT SIZE=2><P>Para compilar todos os fontes de um mesmo sistema que estejam residentes no <I>usercode</I> informado, deve-se informar "=" no espa&ccedil;o reservado para o primeiro fonte. Neste caso, a especifica&ccedil;&atilde;o da fila na tabela SBPM5001 deve aceitar compila&ccedil;&atilde;o de fam&iacute;lia de programas.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;AMBIENTE (T/P) - </B>Ambiente para o qual os programas e os <I>host</I>s ser&atilde;o compilados<B>.</FONT> </P>
+</B><FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"T" - </B>Para que o<I> host</I> e os programas sejam compilados para o ambiente de teste;</FONT><B> </P>
+<FONT SIZE=2><P>"P" - </B>Para que o<I> host</I> e os programas sejam compilados para o ambiente de produ&ccedil;&atilde;o.</FONT><B> </P></DIR>
+
+</B><FONT SIZE=2><P>Caso o ambiente n&atilde;o seja informado, ser&aacute; assumido o ambiente <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do ambiente <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;FILA</B> - Fila onde ser&aacute; executado o <I>job</I> de compila&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Este campo vem preenchido com a fila <I>default</I> para compila&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>O n&uacute;mero da fila tem de estar cadastrado na tabela SBPM5001 e a fila <I>default</I> na tabela SBPM5002. Detalhes a respeito destas tabelas podem ser consultados na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;COMPILADOR - </B>Nome do compilador utilizado. </P>
+<P>N&atilde;o precisa ser informado caso seja o mesmo compilador definido no cadastramento do <I>host</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;LISTAGEM - </B>Indicador de impress&atilde;o de listagem da compila&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S" - </B>Para obter a listagem da compila&ccedil;&atilde;o;</FONT><B> </P>
+<FONT SIZE=2><P>"N" - </B>Para n&atilde;o emitir a listagem da compila&ccedil;&atilde;o.</FONT><B> </P></DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;BDNAME </B>- Nome do arquivo <I>backup</I> gerado atrav&eacute;s da listagem da compila&ccedil;&atilde;o. (Opcional)</FONT> </P>
+<FONT SIZE=2><P>Esta informa&ccedil;&atilde;o &eacute; v&aacute;lida somente quando LISTAGEM = "S".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;OPCAO - </B>Op&ccedil;&atilde;o a ser utilizada na compila&ccedil;&atilde;o do <I>host</I> (opcional).</FONT> </P>
+<FONT SIZE=2><P>As op&ccedil;&otilde;es de compila&ccedil;&atilde;o podem ser definidas na tabela SBPM5018, podendo ser especificadas por sistema, por instala&ccedil;&atilde;o, por ambiente e tipo de programa. Detalhes a esse respeito est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;R/S </B>- Indicador de utiliza&ccedil;&atilde;o da op&ccedil;&atilde;o de compila&ccedil;&atilde;o, que pode ser:</FONT><B> </P><DIR>
+
+<FONT SIZE=2><P>"S" - </B>Para que a op&ccedil;&atilde;o seja setada na compila&ccedil;&atilde;o; e</FONT> </P>
+<B><FONT SIZE=2><P>"N" - </B>Para que a op&ccedil;&atilde;o seja resetada na compila&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;CHARGECODE - </B><I>Chargecode</I> de acordo com os padr&otilde;es Unisys.</FONT> </P>
+<FONT SIZE=2><P>O <I>chargecode</I>, quando informado, ser&aacute; validado no <I>Userdatafile</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;COMPILAR MESMO QUE OS RECURSOS N&Atilde;O ESTEJAM ATUALIZADOS</B> - Indicador de compila&ccedil;&atilde;o for&ccedil;ada.</FONT> </P>
+<FONT SIZE=2><P>Os seguintes valores podem ser informados:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"SIM" - </B>Para for&ccedil;ar o disparo da compila&ccedil;&atilde;o, mesmo que as <I>libraries</I> dos recursos relacionados n&atilde;o estejam atualizadas. Neste caso, a parametriza&ccedil;&atilde;o feita na tabela SBPM5016, sobre compila&ccedil;&atilde;o conforme atualiza&ccedil;&atilde;o de recursos, ser&aacute; ignorada. Detalhes sobre esta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS";</FONT> </P>
+<B><FONT SIZE=2><P>"NAO" - </B>Para n&atilde;o disparar a compila&ccedil;&atilde;o quando as <I>libraries</I> dos recursos relacionados n&atilde;o estiverem atualizadas.<B> </P></DIR>
+
+</B><P>Caso o<I> job </I>de compila&ccedil;&atilde;o montado n&atilde;o localize alguma <I>library </I>utilizada pelo programa, a compila&ccedil;&atilde;o pode ser descontinuada ou ficar em <I>waiting,</I>conforme parametriza&ccedil;&atilde;o feita na tabela SBPM5000. Detalhes sobre esta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS".</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>host</I> possua como recursos <I>libraries </I>ou sub-rotinas, a verifica&ccedil;&atilde;o do <I>status</I> de gera&ccedil;&atilde;o destes elementos depender&aacute; do conte&uacute;do do campo "Geracao completa pelo SADS (S/N)". Detalhes sobre esta verifica&ccedil;&atilde;o encontram-se descritos nesta Se&ccedil;&atilde;o, nos itens "Sub-rotina" e "<I>Library</I> de<I> Procedure</I>".</FONT> </P>
+<FONT SIZE=2><P>Durante a execu&ccedil;&atilde;o das compila&ccedil;&otilde;es, ser&atilde;o enviadas para o terminal mensagens informando sobre o in&iacute;cio da compila&ccedil;&atilde;o, com o ambiente para a qual foi disparada, sobre o fim da compila&ccedil;&atilde;o e sobre a exist&ecirc;ncia ou n&atilde;o de erros ou <I>warnings</I> na compila&ccedil;&atilde;o. Estas mensagens s&atilde;o enviadas para a linha 25 do terminal. Mensagens de "<I>waiting</I>" n&atilde;o s&atilde;o enviadas.</FONT> </P>
+<FONT SIZE=2><P>No momento do disparo da compila&ccedil;&atilde;o para teste, o objeto antigo &eacute; removido.</FONT> </P>
+<FONT SIZE=2><P>No momento do disparo da compila&ccedil;&atilde;o para produ&ccedil;&atilde;o, o objeto antigo pode ser removido ou n&atilde;o, conforme cadastramento na tabela SBPM5000. Detalhes sobre esta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS".</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Binhos">Binder de host</A></FONT> </P>
+</B><I><FONT SIZE=2><P>Binder</I> &eacute; o processo atrav&eacute;s do qual diferentes programas s&atilde;o agregados com a finalidade de formar um &uacute;nico programa execut&aacute;vel.</FONT> </P>
+<FONT SIZE=2><P>Todos os programas do sistema devem estar agregados aos seus respectivos <I>hosts</I> atrav&eacute;s do <I>binder</I>. Estes programas agregados s&atilde;o tamb&eacute;m denominados programas chamados.</FONT> </P>
+<FONT SIZE=2><P>Para efetuar o disparo do <I>binder</I> de programas, &eacute; necess&aacute;rio que os fontes do programa <I>host</I> e dos programas chamados tenham sido compilados e que seus objetos, isto &eacute;, os arquivos resultantes das suas compila&ccedil;&otilde;es, residam no <I>usercode</I> onde o <I>binder</I> ser&aacute; efetuado.</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;USERCODE - </B><I>Usercode</I> onde se encontram os fontes dos programas.</FONT> </P>
+<FONT SIZE=2><P>Este <I>usercode</I> dever&aacute; estar cadastrado na tabela de <I>usercodes</I> utilizada pelo SADS - SBPM5002. Detalhes a respeito desta tabela podem ser consultados na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<FONT SIZE=2><P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS".</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT><B> </P>
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;PASSWORD - </B>Senha do <I>usercode</I>.</FONT><B> </P>
+</B><FONT SIZE=2><P>A <I>password</I> pode ou n&atilde;o ser informada conforme parametriza&ccedil;&atilde;o na tabela SBPM5000, campo COMPDF, Par&acirc;metro 5. Detalhes a respeito desta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;ACCESSCODE - </B><I>Accesscode</I> no padr&atilde;o Unisys, se utilizado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;ACCESSPASSWORD - </B>Senha do <I>accesscode</I>, caso o mesmo tenha sido informado.</FONT> </P>
+<FONT SIZE=2><P>A <I>accesspassword</I> pode ou n&atilde;o ser informada conforme parametriza&ccedil;&atilde;o na tabela SBPM5000, campo COMPDF, Par&acirc;metro 5. Detalhes a respeito desta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;NOME - </B>Nome para o <I>job</I> de <I>binder</I> no padr&atilde;o Unisys.</FONT> </P>
+<FONT SIZE=2><P>Caso o nome informado se inicie com "SPMA89", com ou sem algum complemento, o <I>job</I> de <I>binder</I> ser&aacute; salvo no <I>usercode</I> anteriormente especificado com este mesmo nome. Por exemplo, pode-se informar "SPMA89SXY" para que seja criado um arquivo de nome "SPMA89SXY" contendo o <I>job</I> de <I>binder</I> do <I>host</I> SXYN00.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;HOST - </B>C&oacute;digo do objeto do programa <I>host</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;CHAMADOS </B>- Identificadores dos programas que ser&atilde;o agregados ao programa <I>host</I>.</FONT><B> </P>
+</B><FONT SIZE=2><P>Quando o programa <I>host</I> for compilado sem que nenhum <I>binder</I> tenha sido executado, n&atilde;o &eacute; necess&aacute;ria a informa&ccedil;&atilde;o dos identificadores dos programas chamados. Isto &eacute;, o primeiro <I>binder</I> ap&oacute;s a compila&ccedil;&atilde;o do <I>host</I> agrega ao mesmo todos os objetos de programas definidos para ele que existirem no <I>usercode</I> informado.</FONT> </P>
+<FONT SIZE=2><P>Caso algum objeto dos que est&atilde;o relacionados ao <I>host</I> n&atilde;o resida no <I>usercode</I> informado, ser&aacute; feito o <I>binder</I> de um objeto padr&atilde;o que, quando a transa&ccedil;&atilde;o for solicitada, enviar&aacute; a seguinte mensagem:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>N9301 - TRANSACAO SOLICITADA NAO DISPONIVEL</FONT> </P><DIR>
+<DIR>
+
+<FONT SIZE=2><P>AVISE ANALISTA</FONT> </P></DIR>
+</DIR>
+</DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;AMBIENTE(T/P) - </B>Ambiente para o qual os programas chamados foram compilados e para o qual o <I>binder</I> ser&aacute; efetuado.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o seguintes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"T" - </B>Para que o objeto do <I>host</I> seja gerado em ambiente de teste;</FONT><B> </P>
+<FONT SIZE=2><P>"P" - </B>Para que o objeto do <I>host</I> seja gerado em ambiente de produ&ccedil;&atilde;o.</FONT><B> </P></DIR>
+
+</B><FONT SIZE=2><P>Caso o ambiente n&atilde;o seja informado, ser&aacute; assumido o ambiente <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do ambiente <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;FILA </B>- Fila onde ser&aacute; executado o <I>job</I> de <I>binder</I>.</FONT> </P>
+<FONT SIZE=2><P>O n&uacute;mero da fila deve estar cadastrado na tabela SBPM5001 e a fila <I>default</I> na tabela SBPM5002. Detalhes a respeito destas tabelas podem ser consultados na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;LISTAGEM </B>- Indicador de impress&atilde;o de listagem do <I>binder</I>.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S" - </B>Para gera&ccedil;&atilde;o de listagem da execu&ccedil;&atilde;o do <I>binder</I>;</FONT><B> </P>
+<FONT SIZE=2><P>"N" </B>- Para que a execu&ccedil;&atilde;o do <I>binder</I> n&atilde;o gere listagem<B>.</FONT> </P></DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;BDNAME - </B>Nome do arquivo <I>backup</I> gerado atrav&eacute;s do <I>binder</I> do programa <I>host.</I> (Opcional)</FONT> </P>
+<FONT SIZE=2><P>Esta informa&ccedil;&atilde;o &eacute; v&aacute;lida somente quando LISTAGEM = "S".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;CHARGECODE - </B><I>Chargecode</I> de acordo com os padr&otilde;es Unisys.</FONT> </P>
+<FONT SIZE=2><P>O <I>chargecode</I>, quando informado, ser&aacute; validado no <I>Userdatafile</I><B>.</FONT> </P>
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;SOFT. BINDER - </B><I>Software</I> para execu&ccedil;&atilde;o do <I>binder</I>.</FONT> </P>
+<FONT SIZE=2><P>Durante a execu&ccedil;&atilde;o do <I>binder</I>, ser&atilde;o enviadas para o terminal mensagens informando do in&iacute;cio da sua execu&ccedil;&atilde;o com o ambiente para o qual foi disparado, fim da sua execu&ccedil;&atilde;o e da exist&ecirc;ncia ou n&atilde;o de erros ou <I>warnings</I> no processo. Mensagens de "<I>waiting</I>" n&atilde;o s&atilde;o apresentadas na linha 25 do terminal.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Libhos">Libera&ccedil;&atilde;o de host para produ&ccedil;&atilde;o</A></FONT> </P>
+</B><FONT SIZE=2><P>Para a utiliza&ccedil;&atilde;o de um <I>host</I> no ambiente de produ&ccedil;&atilde;o, &eacute; necess&aacute;rio que o objeto do mesmo esteja dispon&iacute;vel no <I>usercode</I> referente aos objetos em produ&ccedil;&atilde;o. </P>
+<P>Atrav&eacute;s desta fun&ccedil;&atilde;o, &eacute; poss&iacute;vel, pois, copiar o objeto de um <I>host</I> que tenha sido compilado para a produ&ccedil;&atilde;o e se encontre no <I>usercode</I> de "objetos a liberar para produ&ccedil;&atilde;o" (<I>usercode</I> de tipo "AP") para o<I> usercode</I> de "objetos em produ&ccedil;&atilde;o" (<I>usercode</I> de tipo "OP").</FONT> </P>
+<FONT SIZE=2><P>Os <I>usercodes</I> de tipo "AP" e "OP" est&atilde;o relacionados ao <I>usercode</I> de an&aacute;lise (<I>usercode</I> de tipo "AN"), onde reside o fonte do <I>host</I> (tabela SBPM5002). Todos os detalhes referentes ao cadastramento de tais <I>usercodes</I> nesta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+<P>Para liberar um <I>host</I> para produ&ccedil;&atilde;o, &eacute; necess&aacute;rio que o mesmo tenha sido compilado para o ambiente de produ&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A libera&ccedil;&atilde;o de <I>host</I> para produ&ccedil;&atilde;o<I> </I>&nbsp;n&atilde;o est&aacute; associada a nenhuma tela de processamento. Portanto, para efetu&aacute;-la, basta transmitir os argumentos na tela "LIBOBJHOS", cujos campos est&atilde;o explicados a seguir:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Host - </B>C&oacute;digo do <I>host</I> no padr&atilde;o SADS (sssNCnn).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Usercode origem - </B><I>Usercode</I> de an&aacute;lise onde reside o fonte do<I> host</I>.</FONT> </P>
+<FONT SIZE=2><P>A partir do <I>usercode</I> de an&aacute;lise informado, ser&aacute; definido quais os<I> usercodes</I> origem (<I>usercode</I> de objetos a liberar para produ&ccedil;&atilde;o) e destino (<I>usercode</I> de objetos em produ&ccedil;&atilde;o) da c&oacute;pia a ser efetuada. Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002, que se encontra descrita na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<FONT SIZE=2><P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS".</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Hora prevista - </B>Hora a partir da qual o objeto do <I>host</I> deve ser liberado para a produ&ccedil;&atilde;o. (opcional)</FONT> </P>
+<FONT SIZE=2><P>Caso a hora seja informada, a mesma servir&aacute; como "STARTTIME" para o <I>job</I> de libera&ccedil;&atilde;o do objeto do <I>host</I> a ser disparado.</FONT><B> </P></DIR>
+
+<FONT SIZE=5><P><A NAME="Gerele">Gera&ccedil;&atilde;o de elementos do COMS</A></FONT> </P>
+</B><P><HR></P>
+<FONT SIZE=2><P>Elementos do COMS s&atilde;o informa&ccedil;&otilde;es b&aacute;sicas, utilizadas pelo mesmo, para gerenciamento das transa&ccedil;&otilde;es <I>on-line</I>.</FONT> </P>
+<FONT SIZE=2><P>No momento da gera&ccedil;&atilde;o de elementos do COMS, ser&aacute; criado um arquivo fonte no <I>usercode</I> especificado pelo usu&aacute;rio que ser&aacute; posteriormente carregado atrav&eacute;s do <I>Utility</I> do COMS.</FONT> </P>
+<FONT SIZE=2><P>Para efetuar a gera&ccedil;&atilde;o de elementos do COMS, deve-se utilizar o menu de opera&ccedil;&atilde;o "GERCOM".</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Host - </B>C&oacute;digo do <I>host</I> no padr&atilde;o SADS (sssNnn).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Ambiente - </B>Ambiente para o qual as especifica&ccedil;&otilde;es de elementos do COMS ser&atilde;o geradas.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"T" </B>- Para gerar o arquivo de elementos do COMS com caracter&iacute;sticas de sistema em teste;</FONT> </P>
+<B><FONT SIZE=2><P>"P" - </B>Para gerar o arquivo de elementos do COMS com caracter&iacute;sticas de sistema em produ&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso o ambiente n&atilde;o seja informado, ser&aacute; assumido o ambiente <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do ambiente <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Janela - </B>Nome da janela (<I>window</I>) na qual o sistema ser&aacute; executado.</FONT><B> </P>
+</B><FONT SIZE=2><P>Ser&aacute; apresentada uma tela de processamento, com as informa&ccedil;&otilde;es digitadas no menu de opera&ccedil;&atilde;o, para que sejam preenchidos os seguintes campos:</FONT> </P></DIR>
+
+<B><FONT SIZE=2><P>CAMPOS DA TELA</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Usercode Geracao Arquivo Carga - </B><I>Usercode</I> de an&aacute;lise no qual ser&aacute; gerado o arquivo de elementos do COMS.</FONT> </P>
+<FONT SIZE=2><P>Este <I>usercode</I> dever&aacute; estar cadastrado como sendo de an&aacute;lise na tabela de <I>usercodes</I> do SADS - SBPM5002, que se encontra descrita na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Prioridade - </B>N&uacute;mero que, associado &agrave; execu&ccedil;&atilde;o do <I>host</I>, determinar&aacute; a prioridade deste em rela&ccedil;&atilde;o a outros programas na utiliza&ccedil;&atilde;o dos recursos da m&aacute;quina.</FONT> </P>
+<FONT SIZE=2><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B>&nbsp;Usercode de Localizacao Objeto - </B><I>Usercode</I> utilizado na forma&ccedil;&atilde;o do <I>title</I> do programa.</P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B>&nbsp; Pack user - Localizacao Objeto</B> - Nome do disco onde ficar&aacute; residente o objeto do programa.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Usercode Execucao do Programa - </B><I>Usercode</I> no qual ser&aacute; executado o sistema.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Pack do User de Execucao </B>- Nome do disco onde ficar&atilde;o residentes os arquivos aos quais o sistema poder&aacute; executar o acesso e os que ele ir&aacute; gerar.</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;otherwise - </B>Nome do disco em que o sistema encontrar&aacute; os arquivos necess&aacute;rios para execu&ccedil;&atilde;o e que n&atilde;o est&atilde;o residentes no disco prim&aacute;rio.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;TIME LIMIT do Programa em Producao - </B>Quantidade de tempo que o <I>host</I> ficar&aacute; ativo sem que nenhuma transa&ccedil;&atilde;o seja solicitada, sendo que essa informa&ccedil;&atilde;o deve ser expressa em minutos e segundos.</FONT> </P>
+<FONT SIZE=2><P>O campo TIME LIMIT n&atilde;o pode ser informado nas gera&ccedil;&otilde;es para o ambiente de teste, onde o tempo assumido ser&aacute; de 5 minutos.</FONT> </P>
+<FONT SIZE=2><P>Quando n&atilde;o informado, assumir&aacute; o tempo de 15 minutos para produ&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Janela como sufixo de Programa/Agenda - Indicador de janela como parte integrante do c&oacute;digo do programa e agenda.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S" - </B>Para que o c&oacute;digo do programa e da agenda sejam gerados com o nome da janela como sufixo;</FONT> </P>
+<B><FONT SIZE=2><P>"N" - </B>Para que o c&oacute;digo do programa e da agenda sejam gerados sem o nome da janela como sufixo.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para um <I>host</I> no padr&atilde;o SADS (sssNnn), o arquivo de elementos do COMS ser&aacute; composto com o c&oacute;digo de programa do COMS no padr&atilde;o sssnn e a agenda no padr&atilde;o sssW23nn.</FONT> </P>
+<FONT SIZE=2><P>Se no campo Janela como sufixo de Programa/Agenda for informado "S", o programa ser&aacute; gerado no padr&atilde;o sssnn_<I>window</I> e a agenda como sssW23nn_<I>window</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Janela/Host como INSTALLATION_DATA - </B>Indicador de gera&ccedil;&atilde;o de INSTALLATION_DATA.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"J" - </B>Ser&aacute; gerado um INSTALLATION_DATA com o mesmo nome da janela;</FONT><B> </P>
+<FONT SIZE=2><P>"H" - </B>Ser&aacute; gerado um INSTALLATION_DATA com o mesmo nome do <I>host</I>;</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso este campo n&atilde;o seja informado, n&atilde;o ser&aacute; gerado um INSTALLATION_DATA.</FONT> </P>
+<FONT SIZE=2><P>Agenda com TRANSACTION_MODE - Indicador de solicita&ccedil;&atilde;o de transa&ccedil;&otilde;es em uma mesma janela.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S" - </B>Quando cada transa&ccedil;&atilde;o de uma janela deve ser finalizada para que outra transa&ccedil;&atilde;o seja solicitada;</FONT> </P>
+<B><FONT SIZE=2><P>"N" - </B>Quando for poss&iacute;vel solicitar uma transa&ccedil;&atilde;o em uma janela sem que a solicitada anteriormente tenha sido finalizada.</FONT><B> </P></DIR>
+
+</B><FONT SIZE=2><P>Se nada for informado, ser&aacute; assumido "N".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Diferencia TRANCODE em teste </B>- Indica&ccedil;&atilde;o que permite a gera&ccedil;&atilde;o de <I>trancodes</I> diferenciados para o ambiente de teste, possibilitando que um sistema em teste e outro em produ&ccedil;&atilde;o possam ser executados simultaneamente em uma mesma agenda.</FONT> </P>
+<FONT SIZE=2><P>Esta diferencia&ccedil;&atilde;o resume-se na utiliza&ccedil;&atilde;o das letras "T" e "M" para <I>trancodes</I> prim&aacute;rios e secund&aacute;rios, em teste. Neste caso, os programas <I>on-line</I> do sistema t&ecirc;m de ser compilados com a op&ccedil;&atilde;o de compila&ccedil;&atilde;o "SADSDESENV".</FONT> </P>
+<FONT SIZE=2><P>&Eacute; importante ressaltar que, o m&oacute;dulo de Navega&ccedil;&atilde;o e o COOPERATOR n&atilde;o funcionam com <I>trancodes</I> em teste diferenciados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Cria/associa DATABASE - </B>Cria o elemento DATABASE e associa este c&oacute;digo ao elemento <I>program</I> do COMS, correspondente ao <I>host,</I> que deve utilizar este banco como <I>update</I>. Este campo deve ser informado em caso de utiliza&ccedil;&atilde;o da recupera&ccedil;&atilde;o sincronizada do COMS com o DMSII.</FONT> </P>
+<FONT SIZE=2><P>Trancodes de navegacao processados pelo <I>host</I> na janela - <I>Trancodes</I> utilizados em menus de escolha ou opera&ccedil;&atilde;o que sejam tratados por este <I>host</I>. Detalhes sobre navega&ccedil;&atilde;o podem ser encontrados na se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de Apoio", neste manual.</FONT><B> </P>
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;GERAR MESMO QUE JA EXISTA O ARQUIVO - </B>Indicador de sobreposi&ccedil;&atilde;o do arquivo de elementos do COMS no <I>usercode</I>.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S" - </B>O novo arquivo poder&aacute; ser gerado sobre um j&aacute; existente no <I>usercode</I>;</FONT> </P>
+<B><FONT SIZE=2><P>"N" - </B>O novo arquivo s&oacute; ser&aacute; gerado caso n&atilde;o haja outro com o mesmo nome no <I>usercode</I>.</FONT><B> </P></DIR>
+
+</B><FONT SIZE=2><P>O nome do arquivo ser&aacute; gerado no disco prim&aacute;rio do <I>usercode</I> informado com o seguinte c&oacute;digo:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>"(Usercode)COMS/sssNnn/a" onde:</P><DIR>
+
+</B></FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"(Usercode)"&eacute; o nome do usercode onde ser&aacute; geradp o arquivo;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"COMS" &eacute; a constante;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"sssNnn" &eacute; o nome do host no padr&atilde;o SADS e,</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"a" &eacute; T(teste) ou P (produ&ccedil;&atilde;o).</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Ap&oacute;s a defini&ccedil;&atilde;o desses elementos, a carga do arquivo resultante desta gera&ccedil;&atilde;o dever&aacute; ser efetuada no COMS. Para isso, atrav&eacute;s da janela <I>Utility</I>, deve-se executar o comando LOAD, informando o nome do arquivo conforme mostrado anteriormente. Detalhes sobre esta opera&ccedil;&atilde;o podem ser consultados no "<I>Planning and Installation Manual</I>", da Unisys.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Gerlib">Gera&ccedil;&atilde;o de library de sub-rotinas globais</A></FONT> </P>
+</B><FONT SIZE=2><P>Para que fosse poss&iacute;vel &agrave;s sub-rotinas dos aplicativos serem utilizadas como globais, foi necess&aacute;rio criar uma fun&ccedil;&atilde;o de gera&ccedil;&atilde;o de <I>library</I> de sub-rotinas globais. Atrav&eacute;s desta fun&ccedil;&atilde;o, &eacute; gerado um arquivo com os comandos de CHANGE e CALL das sub-rotinas utilizadas nos programas aplicativos, para posteriormente ser incorporado ao <I>host</I> e ao Programa chamador de sub-rotinas, que juntos propiciam esta utiliza&ccedil;&atilde;o global.</FONT> </P>
+<FONT SIZE=2><P>A fun&ccedil;&atilde;o de gera&ccedil;&atilde;o de <I>library</I> de sub-rotinas globais tamb&eacute;m possibilita gerar o Programa chamador de sub-rotinas, que ser&aacute; incorporado ao <I>host</I> atrav&eacute;s do <I>binder</I>.</FONT> </P>
+<FONT SIZE=2><P>O padr&atilde;o para o c&oacute;digo da <I>library</I> de sub-rotinas globais a ser gerada &eacute; o seguinte:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>"ss/s/NI/nn" onde:</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"ss/s" &eacute; o c&oacute;digo alfab&eacute;tico que identifica o sistema; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"NI" &eacute; a constante de library de sub-rotinas globais e </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"nn" &eacute; o identificador num&eacute;rico do host (de 00 a 10).</FONT> </P></DIR>
+
+<FONT SIZE=2><P>O padr&atilde;o para o c&oacute;digo do Programa Chamador a ser gerado &eacute; o seguinte:</FONT><B> </P>
+</B><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>"ss/s/NF/nn/SISTSUB" onde:</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"ss/s/NF/nn" &eacute; o c&oacute;digo do fonte do host e,</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;"SISTSUB" &eacute; a constante de sub-rotinas globais.</P></DIR>
+</DIR>
+
+<P>Todos os detalhes referentes &agrave; conceitua&ccedil;&atilde;o e esquema de funcionamento das sub-rotinas globais, incluindo o Programa chamador de sub-rotinas, encontram-se descritos nesta Se&ccedil;&atilde;o, no item "Sub-rotinas".</P>
+<P>A gera&ccedil;&atilde;o de <I>library</I> de sub-rotinas globais n&atilde;o est&aacute; associada a nenhuma tela de processamento. Portanto, para efetu&aacute;-la, basta transmitir os argumentos da tela "LIBSUBGBL", cujos campos est&atilde;o explicados a seguir:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Host - </B>C&oacute;digo do <I>host</I> no padr&atilde;o SADS (sssNnn).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Ambiente </B>- Ambiente na qual a <I>library</I> de sub-rotinas globais ser&aacute; gerada.</FONT> </P>
+<FONT SIZE=2><P>Os ambientes poss&iacute;veis s&atilde;o:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"T" - </B>Para gerar a <I>library</I> de sub-rotinas globais para o ambiente de teste. </P>
+<P>Neste caso, ela ser&aacute; utilizada por programas compilados para teste.</FONT> </P>
+<B><FONT SIZE=2><P>"P" - </B>Para gerar a <I>library</I> de sub-rotinas globais para o ambiente de produ&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Neste caso, ela ser&aacute; utilizada por programas compilados para produ&ccedil;&atilde;o. </P>
+<P>Se o ambiente de produ&ccedil;&atilde;o para gera&ccedil;&atilde;o de <I>libraries</I> n&atilde;o especificar <I>usercode (usercode *), as libraries</I> ser&atilde;o utilizadas simultaneamente para compila&ccedil;&otilde;es para teste e produ&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Caso o ambiente n&atilde;o seja informado, ser&aacute; assumido o ambiente <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do ambiente <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Usercode - </B><I>Usercode</I> de an&aacute;lise.</FONT> </P>
+<FONT SIZE=2><P>Para <I>usercodes</I> de an&aacute;lise, s&atilde;o definidos os elementos (<I>usercode</I> e disco) onde ficar&atilde;o residentes suas <I>libraries</I> de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as <I>libraries</I> de produ&ccedil;&atilde;o fiquem sem <I>usercodes</I>. Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002, que se encontra descrita na se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<FONT SIZE=2><P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS".</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Liblib">Libera&ccedil;&atilde;o de library de sub-rotinas globais para produ&ccedil;&atilde;o</A></FONT> </P>
+</B><FONT SIZE=2><P>Para a utiliza&ccedil;&atilde;o das sub-rotinas dos aplicativos como globais no ambiente de produ&ccedil;&atilde;o, foi necess&aacute;rio que se criasse uma fun&ccedil;&atilde;o de libera&ccedil;&atilde;o de <I>library</I> de sub-rotinas globais.</FONT> </P>
+<FONT SIZE=2><P>Atrav&eacute;s desta fun&ccedil;&atilde;o, ser&aacute; poss&iacute;vel disponibilizar a <I>library</I> de sub-rotinas globais anteriormente gerada para os programas aplicativos a serem compilados para produ&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Todos os detalhes referentes &agrave; conceitua&ccedil;&atilde;o e esquema de funcionamento das sub-rotinas globais, incluindo o Programa chamador de sub-rotinas, encontram-se descritos nesta Se&ccedil;&atilde;o, no item "Sub-rotinas".</FONT> </P>
+<FONT SIZE=2><P>Para liberar uma <I>library</I> para produ&ccedil;&atilde;o, &eacute; necess&aacute;rio que a mesma tenha sido gerada para o ambiente de teste.</FONT> </P>
+<FONT SIZE=2><P>A libera&ccedil;&atilde;o de <I>library</I> de sub-rotinas globais n&atilde;o est&aacute; associada a nenhuma tela de processamento. Portanto, para efetu&aacute;-la, basta transmitir os argumentos na tela "LIBLIBGBL", cujos campos est&atilde;o explicados a seguir:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Host - </B>C&oacute;digo do <I>host</I> no padr&atilde;o SADS (sssNnn).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Usercode - </B><I>Usercode</I> de an&aacute;lise.</FONT><B> </P>
+</B><FONT SIZE=2><P>Para <I>usercodes</I> de an&aacute;lise, s&atilde;o definidos os ambientes (<I>usercode</I> e disco) onde ficar&atilde;o residentes suas <I>libraries</I> de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as <I>libraries</I> de produ&ccedil;&atilde;o fiquem sem <I>usercodes</I>. Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002, que se encontra descrita na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<FONT SIZE=2><P>Se na parametriza&ccedil;&atilde;o do <I>usercode</I> informado houver indica&ccedil;&atilde;o para que <I>libraries</I> de produ&ccedil;&atilde;o fiquem residentes no <I>usercode</I> de produ&ccedil;&atilde;o, ao liberar <I>library</I> para produ&ccedil;&atilde;o, a vers&atilde;o de teste ser&aacute; mantida e uma id&ecirc;ntica ser&aacute; criada no <I>usercode</I> de produ&ccedil;&atilde;o. Caso contr&aacute;rio, a <I>library</I> de teste ser&aacute; removida e outra ser&aacute; gerada sem <I>usercode</I> (em *) para utiliza&ccedil;&atilde;o pelos programas compilados em ambos os ambientes.</FONT> </P>
+<FONT SIZE=2><P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS".</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Funca">Fun&ccedil;&otilde;es de apoio</A></FONT> </P>
+</B><P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Generi">Gen&eacute;ricas aplic&aacute;veis aos hosts</A></FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp; Utilit&aacute;rios:</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Duplica&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento<B>.</FONT> </P></DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Consultas:</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Fonte de <I>library</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Erros de compila&ccedil;&atilde;o e <I>binder</I>.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Refer&ecirc;ncias cruzadas:</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Elementos x elemento - Menus e elementos que est&atilde;o relacionados ao <I>host</I>.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Informativos impressos:</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Listagem de fonte;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Lista descri&ccedil;&atilde;o de elemento.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Todos estes utilit&aacute;rios, consultas, refer&ecirc;ncias cruzadas e informativos impressos encontram-se detalhadamente descritos na Se&ccedil;&atilde;o III, Fun&ccedil;&otilde;es de apoio", neste manual.</FONT> </P></BODY>
+</HTML>

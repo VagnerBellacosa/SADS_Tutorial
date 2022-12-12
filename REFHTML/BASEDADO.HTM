@@ -1,0 +1,218 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Base de dados</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+
+<B><FONT SIZE=6><P><A NAME="Based">Base de dados </A></P>
+</B></FONT><P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Conce">Conceitua&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>A base de dados compreende os bancos de dados e os <I>datasets</I> que ser&atilde;o utilizados pelos programas<I> </I>e sub-rotinas do sistema.</FONT> </P>
+<FONT SIZE=2><P>Um sistema pode possuir mais de uma base de dados, dependendo da necessidade de utiliza&ccedil;&atilde;o de seus <I>hosts</I>, programas <I>batch</I> e sub-rotinas.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o &eacute; obrigat&oacute;rio que um sistema trabalhe com bancos de dados. Neste caso, a defini&ccedil;&atilde;o de uma base de dados tamb&eacute;m n&atilde;o &eacute; necess&aacute;ria.</FONT> </P>
+<FONT SIZE=2><P>Uma base de dados pode ser gen&eacute;rica para todo o sistema, possuindo at&eacute; dois bancos de dados, ou espec&iacute;fica por elemento(s) do sistema, com at&eacute; dez bancos de dados. Desta forma, os elementos de um sistema - <I>hosts</I>, programas <I>batch</I> e sub-rotinas - podem utilizar diferentes bases de dados, que podem ser espec&iacute;ficas para cada um deles ou espec&iacute;ficas para um grupo deles.</FONT> </P>
+<FONT SIZE=2><P>O SADS faz o tratamento diferenciado das bases de dados espec&iacute;ficas e gen&eacute;ricas, da seguinte maneira:</FONT> </P>
+<FONT SIZE=2><P>Para as bases de dados espec&iacute;ficas, cujos c&oacute;digos s&atilde;o identificados por "sssB00xx", onde "xx" &eacute; obrigatoriamente diferente de zeros:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&Eacute; permitido cadastrar at&eacute; dez bancos de dados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>N&atilde;o &eacute; permitido determinar os <I>datasets</I> que s&atilde;o utilizados exclusivamente pelos programas <I>batch</I> e sub-rotinas. Caso sejam espec&iacute;ficos, outra base de dados dever&aacute; ser criada para atend&ecirc;-los.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>As <I>libraries</I> destas bases de dados t&ecirc;m c&oacute;digo "ss/s/BL/00/xx".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Os comandos de <I>open</I> dos bancos, internos &agrave; <I>library</I>, s&atilde;o gerados considerando o tipo de utiliza&ccedil;&atilde;o dos mesmos no cadastramento da base de dados.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para as bases de dados gen&eacute;ricas, cujos c&oacute;digos s&atilde;o identificados por "sssB0000", onde "xx" &eacute; obrigatoriamente igual a zeros :</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&Eacute; permitido cadastrar apenas dois bancos de dados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&Eacute; permitido determinar os <I>datasets</I> que s&atilde;o utilizados exclusivamente pelos programas <I>batch</I> e sub-rotinas. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>As <I>libraries</I> destas bases de dados t&ecirc;m c&oacute;digo "ss/s/BL/00".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Os comandos de <I>open</I> dos bancos, internos &agrave; <I>library</I>, s&atilde;o gerados independentemente do tipo de utiliza&ccedil;&atilde;o dos mesmos no cadastramento da base de dados.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>No cadastramento de uma base de dados, somente um banco pode ser aberto para atualiza&ccedil;&atilde;o de dados (<I>update</I>). Portanto, os demais somente podem ser abertos para consulta de dados (<I>inquiry</I>). </P>
+</FONT><B><FONT SIZE=5><P><A NAME="Padro">Padroniza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O padr&atilde;o de codifica&ccedil;&atilde;o adotado pelo SADS para base de dados &eacute; o seguinte:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>"sssBOOxx"</B> onde: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B>"sss"</B> &eacute; o c&oacute;digo alfab&eacute;tico que identifica o sistema; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B>"B"</B> &eacute; a constante que identifica estruturas de bancos de dados; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B>"OO"</B> &eacute; o identificador num&eacute;rico do elemento base de dados e, </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B>"xx"</B> &eacute; o identificador alfanum&eacute;rico da base de dados. </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Para bases de dados com identificador alfanum&eacute;rico igual a "00"- base de dados gen&eacute;rica do sistema- s&oacute; &eacute; permitido cadastrar dois bancos de dados. J&aacute; para as bases de dados com identificador alfanum&eacute;rico diferente de "00"- base de dados espec&iacute;fica - &eacute; permitido cadastrar at&eacute; dez bancos de dados diferentes.</FONT> </P>
+<FONT SIZE=2><P>No processo de convers&atilde;o para a vers&atilde;o 4.0, todas as bases de dados j&aacute; existentes no reposit&oacute;rio de dados foram convertidas com o identificador alfanum&eacute;rico da base de dados igual a "00", compondo o c&oacute;digo no seguinte formato: "sssB0000".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Utili">Utiliza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>A defini&ccedil;&atilde;o da base de dados &eacute; utilizada na gera&ccedil;&atilde;o de sua <I>library</I> - ss/s/BL/00/xx, que poder&aacute; ser incorporada aos <I>hosts</I>, programas e sub-rotinas do sistema.</FONT> </P>
+<FONT SIZE=2><P>&Eacute; nesta <I>library</I> que s&atilde;o geradas as declara&ccedil;&otilde;es dos bancos de dados que estar&atilde;o dispon&iacute;veis para os <I>hosts</I>, programas <I>batch</I> e sub-rotinas do sistema e os comandos de <I>Open</I> e <I>Close</I> dos mesmos. S&atilde;o geradas, tamb&eacute;m, as declara&ccedil;&otilde;es dos <I>datasets</I> para utiliza&ccedil;&atilde;o nos programas <I>on-line </I>e os comamdos FREE para estes <I>datasets</I>.</FONT> </P>
+<FONT SIZE=2><P>Para que se torne poss&iacute;vel a implanta&ccedil;&atilde;o parcial de um sistema no ambiente de produ&ccedil;&atilde;o, a base de dados deste pode ser composta por parte dos <I>datasets </I>do ambiente de desenvolvimento.</FONT> </P>
+<FONT SIZE=5><P><A NAME="Cadas">Cadastramento</A></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>A defini&ccedil;&atilde;o da base de dados s&oacute; &eacute; poss&iacute;vel a partir do cadastramento do sistema, dos bancos e dos <I>datasets </I>&nbsp;no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Al&eacute;m disso, os <I>datasets</I> devem estar relacionados aos bancos de dados que forem indicados na defini&ccedil;&atilde;o da base de dados do sistema.</FONT> </P>
+<B><FONT SIZE=4><P>Roteiro</B></FONT> </P>
+<FONT SIZE=2><P>Para cadastrar uma base de dados e torn&aacute;-la dispon&iacute;vel para utiliza&ccedil;&atilde;o pelo sistema, as seguintes fun&ccedil;&otilde;es dever&atilde;o ser executadas:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Defin">Defini&ccedil;&atilde;o de base de dados</A>; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cadas">Cadastramento de estrutura de base de dados;</A> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Libra">Gera&ccedil;&atilde;o de library de base de dados</A>; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Gerlib">Gera&ccedil;&atilde;o de library de base de dados com sele&ccedil;&atilde;o de datasets</A>. </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Defin">Defini&ccedil;&atilde;o de base de dados </A></P>
+</B></FONT><FONT SIZE=2><P>Na defini&ccedil;&atilde;o da base de dados, dever&atilde;o ser especificados seu c&oacute;digo e nome. </P>
+<B><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>CODIGO</B> - C&oacute;digo alfab&eacute;tico que identifica a base de dados (sssB00xx).</FONT> </P>
+<FONT SIZE=2><P>O SADS faz o tratamento diferenciado das bases de dados espec&iacute;ficas ou gen&eacute;ricas, de acordo com o padr&atilde;o de seus c&oacute;digos, da seguinte maneira:</FONT> </P>
+<FONT SIZE=2><P>Para as bases de dados espec&iacute;ficas, cujo c&oacute;digo segue o padr&atilde;o "sssB00xx", onde "xx" &eacute; obrigatoriamente diferente de zeros:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&Eacute; permitido cadastrar at&eacute; dez bancos de dados, sendo que somente um deles pode ser aberto para atualiza&ccedil;&atilde;o de dados (<I>update</I>). Portanto, os demais somente podem ser abertos para consulta de dados (<I>inquiry</I>). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>N&atilde;o &eacute; permitido determinar os <I>datasets</I> que ser&atilde;o utilizados exclusivamente pelos programas <I>batch</I> e sub-rotinas. Caso sejam espec&iacute;ficos, outra base de dados deve ser criada para atend&ecirc;-los.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>As <I>libraries</I> destas bases de dados t&ecirc;m c&oacute;digo "ss/s/BL/00/xx".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Os comandos de <I>open</I> dos bancos, internos &agrave; <I>library</I>, s&atilde;o gerados considerando o tipo de utiliza&ccedil;&atilde;o dos mesmos no cadastramento da base de dados.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para as bases de dados gen&eacute;ricas, cujo c&oacute;digo segue o padr&atilde;o "sssB0000", onde "xx" &eacute; obrigatoriamente igual a zeros:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&Eacute; permitido cadastrar apenas dois bancos de dados, sendo que somente um deles pode ser aberto para atualiza&ccedil;&atilde;o de dados (<I>update</I>). Portanto, o segundo banco deve ser aberto para consulta de dados (<I>inquiry</I>). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&Eacute; permitido determinar os <I>datasets</I> que ser&atilde;o utilizados exclusivamente pelos programas <I>batch</I> e sub-rotinas. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>As <I>libraries</I> destas bases de dados t&ecirc;m c&oacute;digo "ss/s/BL/00".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Os comandos de <I>open</I> dos bancos, internos &agrave; <I>library</I>, s&atilde;o gerados independentemente do tipo de utiliza&ccedil;&atilde;o dos mesmos no cadastramento da base de dados.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>No processo de convers&atilde;o para a vers&atilde;o 4.0, todas as bases de dados j&aacute; existentes no reposit&oacute;rio de dados foram convertidas com o identificador alfanum&eacute;rico igual a "00", compondo o c&oacute;digo no seguinte formato: "sssB0000" - Base de dados gen&eacute;rica do sistema.</FONT> </P>
+<B><FONT SIZE=2><P>NOME</B> - Nome da base de dados.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Estru">Cadastramento de estrutura de base de dados</A></B></FONT> </P>
+<FONT SIZE=2><P>O cadastramento da estrutura da base de dados &eacute; efetuada atrav&eacute;s do Paginador de Entrada do SADS (STP05). Cada p&aacute;gina a ser inclu&iacute;da corresponde ao cadastramento de um banco de dados e de todos os <I>datasets</I> deste mesmo banco que poder&atilde;o ser utilizados pelos <I>hosts</I>, programas <I>batch</I> e sub-rotinas do sistema. </P>
+<P>Cada uma destas p&aacute;ginas, al&eacute;m dos campos utilizados pelo paginador - PAGINA e PROXIMA PAGINA, possui os seguintes campos:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>Base de Dados</B> - C&oacute;digo alfab&eacute;tico que identifica a base de dados, no padr&atilde;o SADS (sssB00xx). </P>
+<P>Ap&oacute;s o c&oacute;digo, &eacute; apresentado o nome da base de dados. </P>
+<B><P>Banco de Dados</B> - C&oacute;digo do banco de dados, no padr&atilde;o SADS (sssBxx). </P>
+<B><P>Utilizacao (I/U)</B> - Crit&eacute;rio de utiliza&ccedil;&atilde;o do banco de dados informado. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<P>"I" (<I>Inquiry</I>) - Para banco de dados utilizado apenas para a opera&ccedil;&atilde;o de consulta; </P>
+<P>"U" (<I>Update</I>) - Para banco de dados utilizado para atualiza&ccedil;&atilde;o. </P></DIR>
+
+<P>"<B>INVOKE" de visoes (S/N)</B> - Indicador de gera&ccedil;&atilde;o de <I>invokes</I> de diferentes vis&otilde;es de um mesmo <I>set</I>. </P>
+<P>Pode assumir os seguintes valores: </P><DIR>
+
+<P>"S" - Para que sejam gerados, na <I>library</I> de declara&ccedil;&atilde;o de banco, os <I>invokes</I> de diferentes vis&otilde;es dos <I>sets</I>, caso existam cadastradas; </P>
+<P>"N" - Para que seja gerado um &uacute;nico <I>invoke </I>do <I>set</I>. </P></DIR>
+
+<B><P>Datasets para composicao da library da Base de Dados </B>- C&oacute;digos dos <I>datasets</I> pertencentes ao banco que ser&atilde;o utilizados pelos <I>hosts</I>, programas <I>batch</I> e/ou sub-rotinas do sistema, no padr&atilde;o SADS (sssBxx). </P>
+<P>Os <I>datasets</I> dever&atilde;o estar previamente cadastrados e relacionados aos respectivos bancos de dados. </P>
+<P>Estes <I>datasets</I> ir&atilde;o compor a <I>library</I> da base de dados. J&aacute; a <I>library</I> poder&aacute; ser utilizada pelos seguintes elementos do sistema: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><I><FONT SIZE=2>Hosts</I>; </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Programas <I>on-line;</I> </P>
+<P>Neste caso, a base de dados n&atilde;o necessita ser especificada, pois ser&aacute; a mesma do <I>host</I> relacionado ao programa. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Programas <I>batch</I>. </P>
+<P>Para os programas <I>batch</I>, somente as declara&ccedil;&otilde;es dos bancos e seus comandos de OPEN e CLOSE ser&atilde;o utilizados a partir da <I>library</I> da base de dados. Os <I>datasets</I> ter&atilde;o suas declara&ccedil;&otilde;es geradas diretamente nos programas. </P>
+<P>Caso se esteja definindo uma base de dados gen&eacute;rica do sistema - C&oacute;digo da base igual a "sssB0000"- podem ser declarados <I>datasets</I> que n&atilde;o ir&atilde;o fazer parte da <I>library</I> da base e que ser&atilde;o utilizados apenas pelos programas <I>batch</I> e sub-rotinas. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Sub-rotinas. </P>
+<P>Funcionamento de forma id&ecirc;ntica a dos programas <I>batch</I>. </P></DIR>
+
+<B><P>Datasets para utiliza&ccedil;&atilde;o exclusiva em programas batch e sub-rotinas</B> - C&oacute;digos dos <I>datasets</I> pertencentes ao banco, informados no padr&atilde;o SADS (sssBxx), que ser&atilde;o utilizados apenas por programas <I>batch</I> e sub-rotinas do sistema, ou seja, n&atilde;o ser&atilde;o utilizados em programas <I>on-line</I>. </P>
+<P>Quando se estiver definindo a base de dados gen&eacute;rica do sistema ("sssB0000"), os <I>datasets</I>, quando forem utilizados exclusivamente em programas <I>batch</I> e sub-rotinas, devem obrigatoriamente ser declarados. Estes <I>datasets</I> n&atilde;o ser&atilde;o utilizados na composi&ccedil;&atilde;o da <I>library</I> da base de dados, por&eacute;m ser&atilde;o utilizados na valida&ccedil;&atilde;o dos <I>datasets</I> definidos como recursos de programas <I>batch</I> e sub-rotinas. </P>
+<P>A defini&ccedil;&atilde;o dos <I>datasets</I> para utiliza&ccedil;&atilde;o exclusiva em programas <I>batch</I> e sub-rotinas s&oacute; ser&aacute; permitida quando se estiver cadastrando uma base de dados gen&eacute;rica para todo o sistema - Base de dados com c&oacute;digo "sssB0000". Caso contr&aacute;rio, se a base de dados for espec&iacute;fica - Base de dados com c&oacute;digo "sssB00xx", onde "xx" &eacute; obrigatoriamente diferente de "00" - deve-se ent&atilde;o, se necess&aacute;rio, definir uma outra base de dados, que contenha tais <I>datasets</I>, que ir&aacute; atender especificamente aos programas <I>batch</I> e/ou sub-rotinas do sistema. </P>
+<P>Os <I>datasets</I> informados dever&atilde;o estar previamente cadastrados e relacionados aos respectivos bancos de dados no reposit&oacute;rio de dados. </P>
+<B><P>OPERACAO</B> - Opera&ccedil;&atilde;o a ser efetuada em rela&ccedil;&atilde;o ao cadastramento da base de dados do sistema. </P>
+<P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes: </P><DIR>
+
+<P>"INC" (Inclus&atilde;o); </P>
+<P>"ALT" (Altera&ccedil;&atilde;o); </P>
+<P>"EXC" (Exclus&atilde;o); </P>
+<P>"CON" (Consulta). </P></DIR>
+</DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Libra">Gera&ccedil;&atilde;o de library de base de dados</A></B></FONT> </P>
+<FONT SIZE=2><P>A <I>library</I> de base de dados pode ser utilizada pelos <I>hosts, </I>programas <I>e</I> sub-rotinas do sistema.</FONT> </P>
+<FONT SIZE=2><P>&Eacute; atrav&eacute;s dessa <I>library</I> que o <I>host</I> executa comandos de <I>Open</I> e <I>Close</I> do banco e que os <I>datasets</I> s&atilde;o declarados dentro dos programas <I>on-line</I> do sistema.</FONT> </P>
+<FONT SIZE=2><P>A gera&ccedil;&atilde;o da <I>library</I> da base de dados do sistema &eacute; imprescind&iacute;vel &agrave; compila&ccedil;&atilde;o dos programas, caso o sistema utilize bancos de dados.</FONT> </P>
+<FONT SIZE=2><P>Para a gera&ccedil;&atilde;o de uma <I>library</I> de base de dados, &eacute; exigido apenas que a base de dados esteja definida no reposit&oacute;rio de dados.</FONT> </P>
+<FONT SIZE=2><P>Para as bases de dados espec&iacute;ficas - base de dados com c&oacute;digo "sssB00xx", onde "xx" &eacute; obrigatoriamente diferente de zeros - sua <I>library</I> ser&aacute; gerada com o seguinte c&oacute;digo: "ss/s/BL/00/xx". Por&eacute;m, para as bases de dados gen&eacute;ricas dos sistemas - base de dados com c&oacute;digo "sssB00xx", onde "xx" &eacute; obrigatoriamente igual a zeros - sua <I>library</I> ser&aacute; gerada com o seguinte c&oacute;digo: "ss/s/BL/00". </P>
+<P>Os comandos de <I>open</I> dos bancos, internos &agrave; <I>library</I> de base de dados espec&iacute;ficas, s&atilde;o gerados considerando o tipo de utiliza&ccedil;&atilde;o dos mesmos no cadastramento da base de dados.</FONT> </P>
+<FONT SIZE=2><P>Ao contr&aacute;rio das bases de dados espec&iacute;ficas, internos &agrave; <I>library</I> de base de dados gen&eacute;ricas, os comandos de <I>open</I> dos bancos s&atilde;o gerados independentemente do tipo de utiliza&ccedil;&atilde;o dos mesmos no cadastramento da base de dados.</FONT> </P>
+<FONT SIZE=2><P>A gera&ccedil;&atilde;o da <I>library</I> da base de dados n&atilde;o est&aacute; associada a nenhuma tela de processamento. Para efetu&aacute;-la, basta transmitir o menu de opera&ccedil;&atilde;o "GERBAS", cujos campos est&atilde;o explicados a seguir:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>Base de dados</B> - C&oacute;digo da base de dados no padr&atilde;o SADS (sssB00xx).</FONT> </P>
+<B><FONT SIZE=2><P>Ambiente (P/T)</B> - Ambiente onde ser&aacute; gerada a <I>library</I> da base de dados.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>"P" - Para gerar a <I>library</I> no ambiente de produ&ccedil;&atilde;o;</FONT> </P>
+<FONT SIZE=2><P>"T" - Para gerar a <I>library</I> no ambiente de teste.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso o ambiente n&atilde;o seja informado, ser&aacute; assumido o ambiente <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do ambiente <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<FONT SIZE=2><P>Quando a <I>library</I> da base de dados for gerada para o ambiente de teste, ser&aacute; assumido o banco de teste relacionado ao banco de produ&ccedil;&atilde;o definido na base de dados.</FONT> </P>
+<FONT SIZE=2><P>Se os bancos de teste e produ&ccedil;&atilde;o forem diferentes, a <I>library</I> de teste n&atilde;o poder&aacute; ser liberada, requerendo, portanto, gera&ccedil;&otilde;es espec&iacute;ficas para teste e produ&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Para tornar poss&iacute;vel a implanta&ccedil;&atilde;o parcial de um sistema no ambiente de produ&ccedil;&atilde;o, a base de dados pode ser composta por parte dos <I>datasets </I>do ambiente de desenvolvimento. Para isto, &eacute; necess&aacute;rio utilizar-se da gera&ccedil;&atilde;o de <I>library </I>de base de dados com sele&ccedil;&atilde;o de <I>dataset.</I></FONT> </P>
+<B><FONT SIZE=2><P>Usercode</B> - <I>Usercode</I> de an&aacute;lise no qual est&aacute; sendo desenvolvido o sistema.</FONT> </P>
+<FONT SIZE=2><P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS".</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<FONT SIZE=2><P>Para <I>usercodes</I> de an&aacute;lise s&atilde;o definidos os ambientes (<I>usercode</I> e disco) onde ficar&atilde;o residentes as <I>libraries</I> de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as <I>libraries</I> de produ&ccedil;&atilde;o fiquem sem <I>usercodes</I>. Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002, cuja manuten&ccedil;&atilde;o &eacute; feita pelo respons&aacute;vel pelo SADS na sua instala&ccedil;&atilde;o. Esta tabela encontra-se descrita na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Gerlib">Gera&ccedil;&atilde;o de</B><I> </I><B>library</B><I> </I><B>de base de dados com sele&ccedil;&atilde;o de <I>datasets</A></B></I></FONT> </P>
+<FONT SIZE=2><P>A <I>library</I> de base de dados, com sele&ccedil;&atilde;o de <I>datasets,</I> pode ser utilizada em todos os <I>hosts,</I> programas e sub-rotinas do sistema.</FONT> </P>
+<FONT SIZE=2><P>&Eacute; atrav&eacute;s dessa <I>library</I> que o <I>host</I> em produ&ccedil;&atilde;o executa comandos de <I>Open</I> e <I>Close</I> do banco e que os <I>datasets</I> s&atilde;o declarados dentro dos programas <I>on-line</I> do sistema em produ&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A gera&ccedil;&atilde;o da <I>library</I> de base de dados com sele&ccedil;&atilde;o de <I>datasets</I> &eacute; utilizada para implanta&ccedil;&atilde;o parcial de um sistema em produ&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Para a gera&ccedil;&atilde;o de uma <I>library</I> de base de dados com sele&ccedil;&atilde;o de <I>datasets</I> &eacute; exigido apenas que a base de dados esteja definida no reposit&oacute;rio de dados.</FONT> </P>
+<FONT SIZE=2><P>Para efetuar a gera&ccedil;&atilde;o da <I>library</I> da base de dados com sele&ccedil;&atilde;o de <I>datasets</I>, basta transmitir o menu de opera&ccedil;&atilde;o "SELDAT" e, ap&oacute;s a transmiss&atilde;o deste menu, em telas paginadas, marcar um "X" nos <I>datasets</I> que fizerem parte da base de dados em produ&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Os campos do menu "SELDAT" est&atilde;o explicados a seguir:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>Base de dados</B> - C&oacute;digo da base de dados no padr&atilde;o SADS ("sssB00xx").</FONT> </P>
+<B><FONT SIZE=2><P>Usercode</B> - <I>Usercode</I> de an&aacute;lise no qual est&aacute; sendo desenvolvido o sistema.</FONT> </P>
+<FONT SIZE=2><P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS".</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<FONT SIZE=2><P>Para <I>usercodes</I> de an&aacute;lise s&atilde;o definidos os ambientes (<I>usercode</I> e disco) onde ficar&atilde;o residentes as <I>libraries</I> de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as <I>libraries</I> de produ&ccedil;&atilde;o fiquem sem <I>usercodes</I>. Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002, cuja manuten&ccedil;&atilde;o &eacute; feita pelo respons&aacute;vel pelo SADS na instala&ccedil;&atilde;o. Esta tabela encontra-se descrita na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Os campos da tela de processamento est&atilde;o explicados a seguir:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>Base de Dados</B> - C&oacute;digo da base de dados cuja <I>library </I>ser&aacute; gerada.</FONT> </P>
+<B><FONT SIZE=2><P>Banco</B> - C&oacute;digo do banco de dados informado no cadastramento da base de dados.</FONT> </P>
+<B><FONT SIZE=2><P>Tipo</B> - Indicativo do tipo de utiliza&ccedil;&atilde;o do banco: <I>inquiry</I> ou <I>update. </P>
+</I><P>Indicador de sele&ccedil;&atilde;o de <I>dataset</I> - Deve ser marcado um "X" no campo que antecede cada <I>dataset</I> selecionado para compor a base de dados em produ&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=2><P>CONFIRME(S/N)</B> - Indicador de confirma&ccedil;&atilde;o de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>"S" - Para confirmar a gera&ccedil;&atilde;o da <I>library</I>;</FONT> </P>
+<FONT SIZE=2><P>"N" - Para n&atilde;o efetuar a gera&ccedil;&atilde;o.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>A gera&ccedil;&atilde;o da <I>library</I> &eacute; efetuada no encerramento do paginador, ao ser transmitido o valor "99" no campo PROXIMA PAGINA e "S" no campo CONFIRME.</FONT> </P>
+<FONT SIZE=2><P>A informa&ccedil;&atilde;o de quais <I>datasets</I> foram selecionados &eacute; armazenada e reapresentada na chamada subsequente desta transa&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=5><P><A NAME="Funca">Fun&ccedil;&otilde;es de apoio</A></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Gener">Gen&eacute;ricas aplic&aacute;veis &agrave;s bases de dados</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Utilit&aacute;rio</B>:</FONT> </P><DIR>
+
+<FONT SIZE=2><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12>Descri&ccedil;&atilde;o de elemento;.</P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12>Duplica&ccedil;&atilde;o de elemento. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Consultas:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Fonte de <I>library</I>.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Consulta elementos por sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Consulta descri&ccedil;&atilde;o de elemento.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Refer&ecirc;ncias cruzadas:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Elementos x Elementos - <I>Datasets</I> que comp&otilde;em a base de dados do sistema; sistemas em que um <I>dataset</I> &eacute; utilizado; elementos que utilizam uma base de dados.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Informativos impressos:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista fonte de <I>library</I>.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista rela&ccedil;&atilde;o de elementos;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista descri&ccedil;&atilde;o de elementos.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Todas estas fun&ccedil;&otilde;es - utilit&aacute;rio, consultas, refer&ecirc;ncias cruzadas e informativos impressos - encontram-se detalhadamente descritas na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", neste manual. </P></FONT></BODY>
+</HTML>

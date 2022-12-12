@@ -1,0 +1,241 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>FUNCON</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+
+<B><FONT SIZE=6><P><A NAME="Funco">Fun&ccedil;&otilde;es de controle</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Intro">Introdu&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>As fun&ccedil;&otilde;es de controle do Sistema de Seguran&ccedil;a s&oacute; podem ser efetuadas pelo Administrador de Seguran&ccedil;a, n&iacute;vel de acesso 99, ou por usu&aacute;rios por ele devidamente habilitados, que devem possuir n&iacute;vel de acesso 98, denominados subadministradores de Seguran&ccedil;a.</FONT> </P>
+<FONT SIZE=2><P>Aos Administradores de Seguran&ccedil;a &eacute; permitido executar qualquer fun&ccedil;&atilde;o do Sistema de Seguran&ccedil;a, independente de suas habilita&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>Um usu&aacute;rio de n&iacute;vel de acesso 98, para que possa efetuar tais fun&ccedil;&otilde;es de controle, deve possuir as seguintes habilita&ccedil;&otilde;es e deve atender aos seguintes requisitos:</FONT> </P>
+<FONT SIZE=2><P>Para que possa efetuar fun&ccedil;&otilde;es de seguran&ccedil;a de usu&aacute;rio:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>As unidades autorizadas do usu&aacute;rio afetado pela opera&ccedil;&atilde;o - bloqueio, libera&ccedil;&atilde;o, troca de senha, etc</FONT><FONT SIZE=2 COLOR="#00ffff"> </FONT><FONT SIZE=2>- devem ser compat&iacute;veis &agrave;s suas.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>O n&iacute;vel de acesso do usu&aacute;rio afetado n&atilde;o pode ser igual a 99 - Administrador de Seguran&ccedil;a. Somente outro usu&aacute;rio de n&iacute;vel de acesso 99 poder&aacute; proceder tais opera&ccedil;&otilde;es.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Ele n&atilde;o poder&aacute; operar sobre seu pr&oacute;prio cadastramento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Todos os aplicativos que estiverem habilitados ao usu&aacute;rio a ser operado devem estar definidos como elemento, na sua lista de elementos "SBT" ou "SBT01", com tipo de habilita&ccedil;&atilde;o igual a "2" (Atualizar) ou "9" (Habilitar a outro usu&aacute;rio 98). </P></DIR>
+
+<P>Para que possa efetuar fun&ccedil;&otilde;es de seguran&ccedil;a de esta&ccedil;&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Ele dever&aacute; estar habilitado, em seu cadastramento, a trabalhar com a esta&ccedil;&atilde;o sobre a qual deseja operar.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para que possa efetuar fun&ccedil;&otilde;es de seguran&ccedil;a de aplicativo/transa&ccedil;&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Dever&aacute; possuir tal aplicativo/transa&ccedil;&atilde;o habilitado como elemento, na lista de elementos "SBT" ou "SBT01", com tipo de habilita&ccedil;&atilde;o igual a "2" (Atualizar) ou "9" (Habilitar a outro usu&aacute;rio 98). </P></DIR>
+
+<P>Para disparar as fun&ccedil;&otilde;es de controle do Sistema de Seguran&ccedil;a, deve-se utilizar o menu de opera&ccedil;&atilde;o " FUNSEG".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Segur">Seguran&ccedil;a de usu&aacute;rio</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Bloque">Bloqueio de usu&aacute;rio</A></B></FONT> </P>
+<FONT SIZE=2><P>Bloquear um usu&aacute;rio significa indicar ao Sistema de Seguran&ccedil;a que o mesmo est&aacute; impedido de efetuar <I>logon</I> e, consequentemente, processar qualquer aplicativo no ambiente SADS que exija seguran&ccedil;a.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o &eacute; permitido efetuar o bloqueio de um usu&aacute;rio perfil modelo.</FONT> </P>
+<FONT SIZE=2><P>Para bloquear o acesso de um usu&aacute;rio ao ambiente SADS, basta informar seu n&uacute;mero ou c&oacute;digo e opera&ccedil;&atilde;o "BLO" no menu de opera&ccedil;&atilde;o "SEGUSU".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Libusu">Libera&ccedil;&atilde;o de usu&aacute;rio bloqueado</A></B></FONT> </P>
+<FONT SIZE=2><P>A libera&ccedil;&atilde;o de usu&aacute;rio deve ocorrer sempre que um usu&aacute;rio que deseja trabalhar em uma sess&atilde;o SADS se encontrar bloqueado.</FONT> </P>
+<FONT SIZE=2><P>O bloqueio de usu&aacute;rio pode ter ocorrido em conseq&uuml;&ecirc;ncia de uma opera&ccedil;&atilde;o volunt&aacute;ria do administrador ou subadministrador de Seguran&ccedil;a ou por um bloqueio autom&aacute;tico do Sistema de Seguran&ccedil;a.</FONT> </P>
+<FONT SIZE=2><P>O bloqueio autom&aacute;tico de um usu&aacute;rio pode ocorrer devido a tr&ecirc;s motivos distintos, a saber: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Por ter vencido o prazo para troca de sua senha; </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Por ter esgotado a validade da senha; </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Por ter efetuado cinco tentativas inv&aacute;lidas de <I>logon</I> e na tabela SBPM5000 estiver parametrizado o bloqueio de usu&aacute;rio ou usu&aacute;rio/esta&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Na primeira situa&ccedil;&atilde;o, para que o usu&aacute;rio possa novamente utilizar o ambiente SADS, &eacute; necess&aacute;rio liberar seu acesso e efetuar a troca de sua senha.</FONT> </P>
+<FONT SIZE=2><P>Na segunda situa&ccedil;&atilde;o, &eacute; necess&aacute;rio aumentar ou retirar o prazo de validade de sua senha e, posteriormente, tamb&eacute;m liberar seu acesso.</FONT> </P>
+<FONT SIZE=2><P>No &uacute;ltimo caso, &eacute; necess&aacute;rio apenas efetuar sua libera&ccedil;&atilde;o, para que ele possa obter acesso ao ambiente SADS.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o &eacute; permitido efetuar a libera&ccedil;&atilde;o de um usu&aacute;rio perfil modelo.</FONT> </P>
+<FONT SIZE=2><P>Para liberar o acesso de um usu&aacute;rio ao ambiente SADS, basta informar seu n&uacute;mero ou c&oacute;digo e opera&ccedil;&atilde;o "LIB" no menu de opera&ccedil;&atilde;o "SEGUSU".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Trose">Troca de senha de usu&aacute;rio</A></B></FONT> </P>
+<FONT SIZE=2><P>A troca da senha de um usu&aacute;rio poder&aacute; ser efetuada respeitando-se o valor do campo "Alteracao de senha" definido no cadastramento do usu&aacute;rio, que pode ser:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>"0" - Para que seja exigida a troca peri&oacute;dica da senha do usu&aacute;rio, ap&oacute;s aproximadamente 60 dias de sua cria&ccedil;&atilde;o ou da &uacute;ltima troca realizada. </P>
+<P>Haver&aacute;, ainda, um per&iacute;odo de toler&acirc;ncia de mais dez dias para que o usu&aacute;rio efetue a troca de senha, sendo que, findo esse prazo, o usu&aacute;rio ficar&aacute; impedido de efetuar <I>logon</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>"1" - Para que seja permitida a troca de senha do usu&aacute;rio, mas n&atilde;o seja exigida.
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>"2" - Para que n&atilde;o seja permitida a troca de senha do usu&aacute;rio.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso o c&oacute;digo do controle de altera&ccedil;&atilde;o de senha seja "0" ou "1", o usu&aacute;rio poder&aacute; trocar pessoalmente sua senha a qualquer momento, independentemente do Sistema de Seguran&ccedil;a exigir ou n&atilde;o tal troca, bastando para isto utilizar o menu de opera&ccedil;&atilde;o "HAB", opera&ccedil;&atilde;o "TRO".</FONT> </P>
+<FONT SIZE=2><P>Por&eacute;m, tamb&eacute;m para o caso do controle de senha do usu&aacute;rio ser "0" ou "1", a troca de sua senha pode ser disparada pelo administrador ou subadministrador de Seguran&ccedil;a, por raz&otilde;es v&aacute;rias, a saber: o usu&aacute;rio n&atilde;o se lembra mais qual &eacute; sua senha atual, deseja-se for&ccedil;ar uma troca de senha do usu&aacute;rio, etc. </P>
+<P>Para que a troca de senha seja efetuada pelo administrador ou subadministrador de Seguran&ccedil;a, deve-se utilizar o menu de opera&ccedil;&atilde;o "SEGUSU", opera&ccedil;&atilde;o "TRO".</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o se pode trocar a senha de um perfil modelo, pois este usu&aacute;rio nunca possui senha cadastrada, por n&atilde;o efetuar <I>logon</I>.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s a troca de senha efetuada pelo Administrador de Seguran&ccedil;a, ser&aacute; exigida nova troca pelo usu&aacute;rio. Isto para evitar que o usu&aacute;rio permane&ccedil;a com a senha criada pelo Administrador.</FONT> </P>
+<FONT SIZE=2><P>A senha do usu&aacute;rio deve ter um tamanho m&aacute;ximo de seis caracteres, obrigatoriamente letras e n&uacute;meros. Al&eacute;m disto, pode ter sido parametrizado no campo PAR-6, CODIGO = &quot;SISSEG&quot; da tabela SBPM5000, qual o tamanho m&iacute;nimo de uma senha a ser definida. Se o valor deste campo n&atilde;o tiver sido informado, for &quot;0&quot; (zero) ou for inv&aacute;lido, n&atilde;o haver&aacute; a valida&ccedil;&atilde;o do n&uacute;mero de caracteres m&iacute;nimos da senha.</P>
+<B><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario </B>- N&uacute;mero e c&oacute;digo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nome</B> - Nome do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nova Senha</B> - Nova senha do usu&aacute;rio.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Hortra">Limita&ccedil;&atilde;o de hor&aacute;rio de trabalho</A></B></FONT> </P>
+<FONT SIZE=2><P>A limita&ccedil;&atilde;o de hor&aacute;rio de trabalho possibilita definir em quais intervalos de tempo o usu&aacute;rio poder&aacute; trabalhar em uma sess&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>A hora final especificada ser&aacute; o limite m&aacute;ximo de trabalho do usu&aacute;rio. </P>
+<P>Ap&oacute;s a hora final permitida e respeitados os intervalos de 10 em 10 minutos para os testes de limita&ccedil;&otilde;es de hor&aacute;rio de trabalho, o <I>logoff</I> do usu&aacute;rio ser&aacute; automaticamente efetuado. </P>
+<P>Pode-se cadastrar at&eacute; quatro intervalos de trabalho para um mesmo usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o &eacute; permitido limitar hor&aacute;rio para perfis modelo, pois estes usu&aacute;rios n&atilde;o trabalham em uma sess&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>A limita&ccedil;&atilde;o n&atilde;o est&aacute; restrita somente ao <I>logon</I>, e sim ao hor&aacute;rio de trabalho. Deste modo, mesmo que o <I>logon</I> j&aacute; tenha sido efetuado, o usu&aacute;rio n&atilde;o poder&aacute; trabalhar fora dos limites de hor&aacute;rios que lhe foram estabelecidos.</FONT> </P>
+<FONT SIZE=2><P>A altera&ccedil;&atilde;o nos limites de hor&aacute;rio permitido ao usu&aacute;rio s&oacute; passar&aacute; a ser considerada ap&oacute;s novo <I>logon</I> do usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Para limitar o hor&aacute;rio de trabalho de um usu&aacute;rio, deve-se informar seu n&uacute;mero ou c&oacute;digo e opera&ccedil;&atilde;o "LIM" no menu de opera&ccedil;&atilde;o "SEGUSU".</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero, nome e c&oacute;digo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Empresa</B> - Empresa do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&Aacute;rea</B> - &Aacute;rea do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Horario Permitido</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora Inicial</B> - Hora inicial, a partir da qual o usu&aacute;rio poder&aacute; trabalhar em uma sess&atilde;o SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora Final</B> - Hora final, a partir da qual o usu&aacute;rio n&atilde;o mais poder&aacute; trabalhar em uma sess&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>Estas faixas de hor&aacute;rio dever&atilde;o ser informadas no formato HHMM. </P>
+<P>O limite inferior m&iacute;nimo &eacute; "0000" (zero hora) e o limite superior m&aacute;ximo &eacute; "2359".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Confirme</B> - Indicador de confirma&ccedil;&atilde;o de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para confirmar a opera&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para cancelar a opera&ccedil;&atilde;o.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Horap">Limita&ccedil;&atilde;o de hor&aacute;rio do usu&aacute;rio trabalhar com o aplicativo/transa&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>A limita&ccedil;&atilde;o de hor&aacute;rio de trabalho por aplicativo/transa&ccedil;&atilde;o possibilita definir em quais intervalos de tempo o usu&aacute;rio poder&aacute; trabalhar com um determinado aplicativo ou transa&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A hora final especificada &eacute; o limite m&aacute;ximo do hor&aacute;rio de trabalho do usu&aacute;rio no aplicativo/transa&ccedil;&atilde;o. </P>
+<P>Pode-se cadastrar at&eacute; quatro intervalos de trabalho do usu&aacute;rio para um mesmo aplicativo/transa&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>No primeiro disparo do aplicativo/transa&ccedil;&atilde;o pelo usu&aacute;rio ap&oacute;s a hora final, ele receber&aacute; uma mensagem informando que n&atilde;o est&aacute; mais habilitado a trabalhar com o aplicativo/transa&ccedil;&atilde;o. </P>
+<P>As altera&ccedil;&otilde;es na limita&ccedil;&atilde;o de hor&aacute;rio de trabalho de um usu&aacute;rio ao aplicativo/transa&ccedil;&atilde;o s&oacute; ser&atilde;o reconhecidas pelo Sistema de Seguran&ccedil;a ap&oacute;s novo <I>logon</I> do usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o &eacute; permitido limitar hor&aacute;rio de aplicativo/transa&ccedil;&atilde;o para perfis modelo, pois estes usu&aacute;rios n&atilde;o trabalham em uma sess&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>A limita&ccedil;&atilde;o n&atilde;o est&aacute; restrita somente ao logon, e sim ao hor&aacute;rio de trabalho. Deste modo, mesmo que o usu&aacute;rio j&aacute; tenha efetuado logon, ele n&atilde;o poder&aacute; trabalhar com o aplicativo/transa&ccedil;&atilde;o fora dos limites de hor&aacute;rios que lhe foram estabelecidos.</FONT> </P>
+<FONT SIZE=2><P>Para limitar o hor&aacute;rio de trabalho de um usu&aacute;rio ao aplicativo/transa&ccedil;&atilde;o, deve-se informar seu n&uacute;mero ou c&oacute;digo, o c&oacute;digo do aplicativo (sssmm) ou transa&ccedil;&atilde;o (sssmmnn) e opera&ccedil;&atilde;o "APL", no menu de opera&ccedil;&atilde;o "SEGUSU". Pode-se tamb&eacute;m utilizar o menu de opera&ccedil;&atilde;o "SEGAPL", informando os mesmos argumentos e opera&ccedil;&atilde;o "USU".</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero, nome e c&oacute;digo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplicativo/Transacao</B> - Aplicativo ou transa&ccedil;&atilde;o para o qual o usu&aacute;rio ter&aacute; limita&ccedil;&otilde;es de hor&aacute;rio de trabalho.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Horario de Trabalho Permitido</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora Inicial</B> - Hora inicial, a partir da qual o usu&aacute;rio poder&aacute; trabalhar com o aplicativo/transa&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora Final</B> - Hora final, a partir da qual o usu&aacute;rio n&atilde;o mais poder&aacute; trabalhar com o aplicativo/transa&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Estas faixas de hor&aacute;rio dever&atilde;o ser informadas no formato HHMM. </P>
+<P>O limite inferior m&iacute;nimo &eacute; "0000" e o limite superior m&aacute;ximo &eacute; "2359".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Confirme</B> - Indicador de confirma&ccedil;&atilde;o de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para confirmar a opera&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para cancelar a opera&ccedil;&atilde;o.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Segest">Seguran&ccedil;a de esta&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Liblo">Libera&ccedil;&atilde;o de esta&ccedil;&atilde;o bloqueada</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta opera&ccedil;&atilde;o &eacute; utilizada para liberar uma esta&ccedil;&atilde;o que foi bloqueada por a&ccedil;&atilde;o volunt&aacute;ria do administrador ou subadministrador de Seguran&ccedil;a ou devido &agrave; detec&ccedil;&atilde;o de v&aacute;rias tentativas de logon inv&aacute;lidas na mesma.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s cinco tentativas de efetuar <I>logon</I> sem sucesso - senha inv&aacute;lida, senha incompat&iacute;vel com o n&uacute;mero, etc -, caso na tabela SBPM5000 esteja parametrizado o bloqueio da esta&ccedil;&atilde;o ou usu&aacute;rio/esta&ccedil;&atilde;o, a esta&ccedil;&atilde;o ser&aacute; bloqueada, a fim de que o usu&aacute;rio n&atilde;o mais consiga obter acesso a ela.</FONT> </P>
+<FONT SIZE=2><P>Para liberar uma esta&ccedil;&atilde;o bloqueada, basta informar seu c&oacute;digo e opera&ccedil;&atilde;o "LIB" no menu de opera&ccedil;&atilde;o "SEGEST".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Logof">Logoff</B><I> </I><B>do usu&aacute;rio da esta&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Para for&ccedil;ar um usu&aacute;rio a encerrar sua sess&atilde;o de trabalho na esta&ccedil;&atilde;o, basta informar o c&oacute;digo da esta&ccedil;&atilde;o e opera&ccedil;&atilde;o "LOG" no menu de opera&ccedil;&atilde;o "SEGEST".</FONT> </P>
+<FONT SIZE=2><P>Nesta situa&ccedil;&atilde;o, nem o usu&aacute;rio, nem a esta&ccedil;&atilde;o ser&atilde;o bloqueados.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Blolo">Bloqueio/logoff do usu&aacute;rio na esta&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Para bloquear o usu&aacute;rio de uma esta&ccedil;&atilde;o e, ao mesmo tempo, encerrar sua sess&atilde;o de trabalho, basta informar o c&oacute;digo da esta&ccedil;&atilde;o e opera&ccedil;&atilde;o "BLO" no menu de opera&ccedil;&atilde;o "SEGEST".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Bloest">Bloqueio da esta&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Para bloquear uma esta&ccedil;&atilde;o, basta informar seu c&oacute;digo e opera&ccedil;&atilde;o "EST" no menu de opera&ccedil;&atilde;o "SEGEST".</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s esta opera&ccedil;&atilde;o, nenhum usu&aacute;rio poder&aacute; obter acesso ao ambiente SADS atrav&eacute;s desta esta&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Aplic">Seguran&ccedil;a de aplicativo/transa&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Hatran">Habilita&ccedil;&atilde;o de aplicativo/transa&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Uma transa&ccedil;&atilde;o de um aplicativo (sssmmnn) ou um aplicativo (sssmm) podem ser desabilitados manual ou automaticamente. </P>
+<P>Para que ele seja posteriormente liberado para utiliza&ccedil;&atilde;o pelos usu&aacute;rios, &eacute; necess&aacute;rio habilit&aacute;-lo.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s o disparo da opera&ccedil;&atilde;o de habilitac&atilde;o, todas as c&oacute;pias do programa referente &agrave; transa&ccedil;&atilde;o/aplicativo habilitado, que estiverem ativas, ir&atilde;o consider&aacute;-lo imediatamente como habilitado. Isto ser&aacute; verdade independentemente se as c&oacute;pias estiverem sendo executadas ou n&atilde;o na mesma <I>window</I> onde foi disparada a habilita&ccedil;&atilde;o. Por&eacute;m, &eacute; obrigat&oacute;rio que o programa <I>host</I> tenha sido compilado na vers&atilde;o 3.3 do SADS ou outra vers&atilde;o superior.</FONT> </P>
+<FONT SIZE=2><P>Para habilitar um aplicativo (sssmm) ou transa&ccedil;&atilde;o do aplicativo (sssmmnn), basta informar seu c&oacute;digo e opera&ccedil;&atilde;o "HAB" no menu de opera&ccedil;&atilde;o "SEGAPL".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Destra">Desabilita&ccedil;&atilde;o de aplicativo/transa&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Uma transa&ccedil;&atilde;o de um aplicativo ou um aplicativo podem ser desabilitados manual ou automaticamente a qualquer momento, impedindo seu acesso aos usu&aacute;rios. </P>
+<P>A desabilita&ccedil;&atilde;o manual &eacute; aquela disparada voluntariamente pelo administrador ou subadministrador de Seguran&ccedil;a. </P>
+<P>A desabilita&ccedil;&atilde;o autom&aacute;tica &eacute; aquela disparada pelo pr&oacute;prio <I>host</I> do aplicativo sempre quando s&atilde;o detectados cancelamentos no programa que trata a transa&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>No momento da desabilita&ccedil;&atilde;o manual, poder&aacute; ser estabelecido um intervalo de dias no qual o aplicativo/transa&ccedil;&atilde;o ficar&aacute; desabilitado. A data inicial para a desabilita&ccedil;&atilde;o pode ser posterior &agrave; data atual. Findo o prazo da desabilita&ccedil;&atilde;o e respeitados os intervalos de 10 em 10 minutos para os testes de aplicativos/transa&ccedil;&otilde;es a serem habilitados, ele ser&aacute; automaticamente habilitado. Este tipo de desabilita&ccedil;&atilde;o manual &eacute; denominada temporizada. Se o intervalo de dias n&atilde;o for especificado, a desabilita&ccedil;&atilde;o ser&aacute; efetuada imediatamente e por tempo indeterminado. Neste caso, somente ap&oacute;s a habilita&ccedil;&atilde;o manual do aplicativo/transa&ccedil;&atilde;o &eacute; que o mesmo estar&aacute; novamente dispon&iacute;vel para utiliza&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s o disparo da opera&ccedil;&atilde;o de desabilitac&atilde;o manual, todas as c&oacute;pias do programa referente &agrave; transa&ccedil;&atilde;o/aplicativo desabilitado, que estiverem ativas, ir&atilde;o consider&aacute;-lo imediatamente como desabilitado. Isto ser&aacute; verdade independentemente se as c&oacute;pias estiverem sendo executadas ou n&atilde;o na mesma <I>window</I> onde foi disparada a desabilita&ccedil;&atilde;o. Por&eacute;m, &eacute; obrigat&oacute;rio que o programa <I>host</I> tenha sido compilado na vers&atilde;o 3.3 do SADS ou outra vers&atilde;o superior.</FONT> </P>
+<FONT SIZE=2><P>A desabilita&ccedil;&atilde;o autom&aacute;tica &eacute; efetuada apenas para a transa&ccedil;&atilde;o onde ocorreram os cancelamentos e caso ela esteja em produ&ccedil;&atilde;o. </P>
+<P>O n&uacute;mero de vezes que uma transa&ccedil;&atilde;o pode cancelar at&eacute; que o <I>host</I> a desabilite automaticamente pode ser parametrizado na tabela SBPM5000. Para obter maiores detalhes sobre como proceder tal parametriza&ccedil;&atilde;o, deve-se consultar a se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<FONT SIZE=2><P>A desabilita&ccedil;&atilde;o autom&aacute;tica de uma transa&ccedil;&atilde;o do <I>host</I> secund&aacute;rio ser&aacute; indicada pelo caractere "L" no c&oacute;digo do menu "sssLnmm". Para habilit&aacute;-la, deve-se informar o c&oacute;digo tal qual informado na desabilita&ccedil;&atilde;o. Por&eacute;m, para o caso em que se desejar desabilit&aacute;-la manualmente, pode-se informar o c&oacute;digo do menu sem o "L" : "sssnnmm".</FONT> </P>
+<FONT SIZE=2><P>Existe outra forma de desabilita&ccedil;&atilde;o e habilita&ccedil;&atilde;o de aplicativos e transa&ccedil;&otilde;es, que pode ser efetuada pelos programas aplicativos, atrav&eacute;s de chamada &agrave; sub-rotina de seguran&ccedil;a SBTS03. Esta sub-rotina &eacute; a respons&aacute;vel pela integra&ccedil;&atilde;o dos sistemas aplicativos e o Sistema de Seguran&ccedil;a, no sentido de permitir que aqueles consigam operar sobre as habilita&ccedil;&otilde;es e desabilita&ccedil;&otilde;es de suas transa&ccedil;&otilde;es. </P>
+<P>Um aplicativo/transa&ccedil;&atilde;o desabilitado pela sub-rotina SBTS03 s&oacute; poder&aacute; ser habilitado pela pr&oacute;pria sub-rotina ou por um usu&aacute;rio de n&iacute;vel de acesso 99 ou 98.</FONT> </P>
+<FONT SIZE=2><P>Para obter maiores detalhes sobre como proceder &agrave; habilita&ccedil;&atilde;o ou desabilita&ccedil;&atilde;o de um aplicativo/transa&ccedil;&atilde;o atrav&eacute;s de chamada &agrave; sub-rotina SBTS03, deve-se consultar a se&ccedil;&atilde;o II, "Elementos do reposit&oacute;rio de dados", item "Sub-rotina".</FONT> </P>
+<FONT SIZE=2><P>A desabilita&ccedil;&atilde;o de um aplicativo ou transa&ccedil;&atilde;o evita, por exemplo, que os usu&aacute;rios disparem uma transa&ccedil;&atilde;o que esteja com problemas, ou uma transa&ccedil;&atilde;o que, por motivo de processamento <I>batch</I> em paralelo, n&atilde;o pode ser executada naquele momento, etc.</FONT> </P>
+<FONT SIZE=2><P>O motivo da desabilita&ccedil;&atilde;o de um aplicativo/transa&ccedil;&atilde;o sempre &eacute; definido, e pode ser: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Caso seja uma desabilita&ccedil;&atilde;o autom&aacute;tica, o motivo ser&aacute;: "Cancelamento";</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Caso seja uma desabilita&ccedil;&atilde;o pela sub-rotina SBTS03, o motivo ser&aacute; o texto informado na &aacute;rea de comunica&ccedil;&atilde;o da sub-rotina (TS0304 - BLOMOT) ou, caso este n&atilde;o seja informado, ser&aacute;: "Bloqueio por sub-rotina" + &lt;&lt;C&oacute;digo do programa que disparou a sub-rotina SBTS03&gt;&gt;;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Caso seja uma desabilita&ccedil;&atilde;o manual, o motivo ser&aacute; o texto informado na tela de desabilita&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para desabilitar um aplicativo (sssmm) ou transa&ccedil;&atilde;o (sssmmnn), deve-se informar seu c&oacute;digo e opera&ccedil;&atilde;o "DES" no menu de opera&ccedil;&atilde;o "SEGAPL".</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplicativo/Transa&ccedil;&atilde;o</B> - C&oacute;digo do aplicativo ou da transa&ccedil;&atilde;o do aplicativo a ser desabilitado, no padr&atilde;o SADS/SS (sssmm ou sssmmnn).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Motivo</B> - Motivo da desabilita&ccedil;&atilde;o do aplicativo/transa&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Bloqueio Temporizado</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data Inicial</B> - Data a partir da qual o aplicativo/transa&ccedil;&atilde;o ser&aacute; desabilitado para uso (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora Inicial</B> - Hora a partir da qual o aplicativo/transa&ccedil;&atilde;o ser&aacute; desabilitado para uso (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data Final</B> - Data at&eacute; a qual o aplicativo/transa&ccedil;&atilde;o estar&aacute; desabilitado para uso (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora Final</B> - Hora at&eacute; a qual o aplicativo/transa&ccedil;&atilde;o estar&aacute; desabilitado para uso (opcional).</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P>Altera&ccedil;&atilde;o da desabilita&ccedil;&atilde;o temporizada de aplicativo/transa&ccedil;&atilde;o </P>
+</B></FONT><FONT SIZE=2><P>Esta opera&ccedil;&atilde;o propicia alterar os intervalos de datas, a data/hora inicial e/ou a data/hora final, entre as quais um aplicativo ou transa&ccedil;&atilde;o estar&aacute; desabilitado para uso.</FONT> </P>
+<FONT SIZE=2><P>A altera&ccedil;&atilde;o de dados de uma desabilita&ccedil;&atilde;o temporizada s&oacute; poder&aacute; ser efetuada pelo administrador de Seguran&ccedil;a ou pelo subadministrador, caso este possua o aplicativo/transa&ccedil;&atilde;o cadastrado, como elemento, em sua lista de elementos "SBT" ou "SBT01", com tipo de habilita&ccedil;&atilde;o igual a "2" ou "9".</FONT> </P>
+<FONT SIZE=2><P>Se um aplicativo ou transa&ccedil;&atilde;o j&aacute; estiver desabilitado, e esta desabilita&ccedil;&atilde;o tiver sido feita automaticamente (cancelamentos) ou pela sub-rotina SBTS03, ent&atilde;o n&atilde;o ser&aacute; permitido alterar os dados da desabilita&ccedil;&atilde;o, devendo proceder &agrave; sua habilita&ccedil;&atilde;o se houver necessidade.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s o disparo da opera&ccedil;&atilde;o de altera&ccedil;&atilde;o da desabilitac&atilde;o, todas as c&oacute;pias do programa referente &agrave; transa&ccedil;&atilde;o/aplicativo alterado, que estiverem ativas, ir&atilde;o consider&aacute;-lo imediatamente com os novos intervalos de desabilita&ccedil;&atilde;o. Isto ser&aacute; verdade independentemente se as c&oacute;pias estiverem sendo executadas ou n&atilde;o na mesma <I>window</I> onde foi disparada a desabilita&ccedil;&atilde;o. Por&eacute;m, &eacute; obrigat&oacute;rio que o programa <I>host</I> tenha sido compilado na vers&atilde;o 3.3 do SADS ou outra vers&atilde;o superior.</FONT> </P>
+<FONT SIZE=2><P>Para alterar a desabilita&ccedil;&atilde;o de um aplicativo (sssmm) ou transa&ccedil;&atilde;o (sssmmnn), deve-se informar seu c&oacute;digo e opera&ccedil;&atilde;o "ALT" no menu de opera&ccedil;&atilde;o "SEGAPL".</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplicativo/Transa&ccedil;&atilde;o</B> - C&oacute;digo do aplicativo ou da transa&ccedil;&atilde;o do aplicativo a ser desabilitado, no padr&atilde;o SADS/SS (sssmm ou sssmmnn).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Motivo</B> - Motivo da desabilita&ccedil;&atilde;o do aplicativo/transa&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data Inicial</B> - Data a partir da qual o aplicativo/transa&ccedil;&atilde;o ser&aacute; desabilitado para uso (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora Inicial</B> - Hora a partir da qual o aplicativo/transa&ccedil;&atilde;o ser&aacute; desabilitado para uso (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data Final </B>- Data at&eacute; a qual o aplicativo/transa&ccedil;&atilde;o estar&aacute; desabilitado para uso (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora Final</B> - Hora at&eacute; a qual o aplicativo/transa&ccedil;&atilde;o estar&aacute; desabilitado para uso (opcional).</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Lihor">Limita&ccedil;&atilde;o de hor&aacute;rio de aplicativo/transa&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>A limita&ccedil;&atilde;o de hor&aacute;rio de utiliza&ccedil;&atilde;o de aplicativos e transa&ccedil;&otilde;es possibilita determinar em quais intervalos de hora eles poder&atilde;o ser processados.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s o disparo da opera&ccedil;&atilde;o de limitac&atilde;o de hor&aacute;rio, todas as c&oacute;pias do programa referente &agrave; transa&ccedil;&atilde;o/aplicativo limitado, que estiverem ativas, ir&atilde;o tratar imediatamente as limita&ccedil;&otilde;es definidas. Isto ser&aacute; verdade independentemente se as c&oacute;pias estiverem sendo executadas ou n&atilde;o na mesma <I>window</I> onde foi disparada a limita&ccedil;&atilde;o. Por&eacute;m, &eacute; obrigat&oacute;rio que o programa <I>host</I> tenha sido compilado na vers&atilde;o 3.3 do SADS ou outra vers&atilde;o superior.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o &eacute; poss&iacute;vel limitar o hor&aacute;rio de uma transa&ccedil;&atilde;o da navega&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Para limitar hor&aacute;rio de uso de um aplicativo ou transa&ccedil;&atilde;o (sssmm ou sssmmnn), deve-se informar seu c&oacute;digo e opera&ccedil;&atilde;o "LIM" no menu de opera&ccedil;&atilde;o "SEGAPL".</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplicativo/Transa&ccedil;&atilde;o</B> - C&oacute;digo do aplicativo (sssmm) ou da transa&ccedil;&atilde;o (sssmmnn) do aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Horario Permitido para Uso</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Inicio </B>- Hor&aacute;rio a partir do qual a transa&ccedil;&atilde;o do aplicativo/transa&ccedil;&atilde;o ser&aacute; habilitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Fim</B> - Hor&aacute;rio a partir do qual a transa&ccedil;&atilde;o do aplicativo/transa&ccedil;&atilde;o estar&aacute; desabilitado.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Litra">Limita&ccedil;&atilde;o de hor&aacute;rio do usu&aacute;rio trabalhar com o aplicativo/transa&ccedil;&atilde;o </A></P>
+</B></FONT><FONT SIZE=2><P>A limita&ccedil;&atilde;o de hor&aacute;rio de trabalho de um usu&aacute;rio por aplicativo/transa&ccedil;&atilde;o possibilita definir em quais intervalos de tempo tal usu&aacute;rio poder&aacute; trabalhar com um determinado aplicativo ou transa&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A hora final especificada &eacute; o limite final do hor&aacute;rio de trabalho do usu&aacute;rio no aplicativo/transa&ccedil;&atilde;o. </P>
+<P>Pode-se cadastrar at&eacute; quatro intervalos de trabalho do usu&aacute;rio para um mesmo aplicativo/transa&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>No primeiro disparo do aplicativo/transa&ccedil;&atilde;o pelo usu&aacute;rio ap&oacute;s a hora final, ele receber&aacute; uma mensagem informando que n&atilde;o est&aacute; mais habilitado a trabalhar com o aplicativo/transa&ccedil;&atilde;o. </P>
+<P>As altera&ccedil;&otilde;es na limita&ccedil;&atilde;o de hor&aacute;rio de trabalho de um usu&aacute;rio ao aplicativo/transa&ccedil;&atilde;o s&oacute; ser&atilde;o reconhecidas pelo Sistema de Seguran&ccedil;a ap&oacute;s novo <I>logon</I> do usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o &eacute; permitido limitar hor&aacute;rio de aplicativo/transa&ccedil;&atilde;o para perfis modelo, pois estes usu&aacute;rios n&atilde;o trabalham em uma sess&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>A limita&ccedil;&atilde;o n&atilde;o est&aacute; restrita somente ao <I>logon</I>, e sim ao hor&aacute;rio de trabalho. Deste modo, mesmo que o usu&aacute;rio j&aacute; tenha efetuado <I>logon</I>, ele n&atilde;o poder&aacute; trabalhar com o aplicativo/transa&ccedil;&atilde;o fora dos limites de hor&aacute;rios que lhe foram estabelecidos.</FONT> </P>
+<FONT SIZE=2><P>Para limitar o hor&aacute;rio de trabalho de um usu&aacute;rio ao aplicativo/transa&ccedil;&atilde;o, deve-se informar seu n&uacute;mero ou c&oacute;digo, o c&oacute;digo do aplicativo (sssmm) ou transa&ccedil;&atilde;o (sssmmnn) e opera&ccedil;&atilde;o "USU", no menu de opera&ccedil;&atilde;o "SEGAPL". Pode-se tamb&eacute;m utilizar o menu de opera&ccedil;&atilde;o "SEGUSU", informando os mesmos argumentos e opera&ccedil;&atilde;o "APL".</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero, nome e c&oacute;digo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplicativo/Transacao</B> - Aplicativo ou transa&ccedil;&atilde;o para o qual o usu&aacute;rio ter&aacute; limita&ccedil;&otilde;es de hor&aacute;rio de trabalho. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Horario de Trabalho Permitido</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora Inicial</B> - Hora inicial, a partir da qual o usu&aacute;rio poder&aacute; trabalhar com o aplicativo/transa&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora Final</B> - Hora final, a partir da qual o usu&aacute;rio n&atilde;o mais poder&aacute; trabalhar com o aplicativo/transa&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Estas faixas de hor&aacute;rio dever&atilde;o ser informadas no formato HHMM. </P>
+<P>O limite inferior m&iacute;nimo &eacute; "0000" e o limite superior m&aacute;ximo &eacute; "2359".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Confirme</B> - Indicador de confirma&ccedil;&atilde;o de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para confirmar a opera&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para cancelar a opera&ccedil;&atilde;o.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Segsub">Seguran&ccedil;a de sub-rotina</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>A fun&ccedil;&atilde;o de controle de seguran&ccedil;a de sub-rotina &eacute; respons&aacute;vel por definir quais programas poder&atilde;o ter acesso a uma sub-rotina. Posteriormente este cadastramento ser&aacute; utilizado pela sub-rotina para validar se o programa que a chamou poder&aacute; ou n&atilde;o process&aacute;-la.</FONT> </P>
+<FONT SIZE=2><P>Para maiores detalhes sobre como efetuar a valida&ccedil;&atilde;o de programas autorizados a executar o acesso a uma sub-rotina, deve-se consultar o item "N&iacute;veis de seguran&ccedil;a dispon&iacute;veis", t&oacute;pico "Valida&ccedil;&atilde;o de programa para acesso a sub-rotina", nesta se&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Para definir os programas que podem obter acesso a uma sub-rotina, deve-se informar o c&oacute;digo da sub-rotina (sssSxx) no menu de opera&ccedil;&atilde;o "SEGSUB".</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sub-rotina</B> - C&oacute;digo da sub-rotina.</FONT> </P>
+<FONT SIZE=2><P>Para cada um dos programas a serem habilitados a acessar a sub-rotina, deve-se informar:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Programa</B> - C&oacute;digo do programa que poder&aacute; executar o acesso &agrave; sub-rotina, no padr&atilde;o SADS (ssspxx).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data</B> - Data da compila&ccedil;&atilde;o do programa (<I>CreationDate</I>).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora</B> - Hora da compila&ccedil;&atilde;o do programa (<I>CreationDate</I>).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Segmentos</B> - Tamanho do objeto do programa em segmentos (<I>Totalsectors</I>).</FONT> </P></DIR>
+</BODY>
+</HTML>

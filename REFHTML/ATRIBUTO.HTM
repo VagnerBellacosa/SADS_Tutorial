@@ -1,0 +1,664 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Seção II - Atributo</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+
+<P>&nbsp;
+<P><basefont size=2></P>
+<B><FONT SIZE=6><P><A NAME="Atrib">Atributo</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Conce">Conceitua&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Atributo &eacute; um dado elementar que caracteriza, identifica, classifica ou qualifica uma entidade.</FONT> </P>
+<FONT SIZE=2><P>No reposit&oacute;rio de dados do SADS, um item de dados pode ser definido como um atributo ou como um campo.</FONT> </P>
+<FONT SIZE=2><P>A distin&ccedil;&atilde;o l&oacute;gica entre eles &eacute; que um atributo &eacute; um dado que, juntamente com outros dados, caracteriza, de um modo geral, uma determinada entidade do modelo conceitual. Deste modo, um atributo est&aacute; sempre referenciando uma entidade, alvo de estudo do seu sistema e, por isso mesmo, parte integrante do mesmo. J&aacute; um campo &eacute; um dado isolado, geralmente utilizado nos modelos l&oacute;gico e f&iacute;sico nas seguintes situa&ccedil;&otilde;es: para definir totalizadores em telas e relat&oacute;rios, t&iacute;tulos variados tamb&eacute;m em telas e relat&oacute;rios, campos de processamento em arquivos, campos de &aacute;reas de <I>work</I> de programas e &aacute;reas de comunica&ccedil;&atilde;o com sub-rotina.</FONT> </P>
+<FONT SIZE=2><P>A distin&ccedil;&atilde;o f&iacute;sica entre um atributo e um campo &eacute; que um campo nunca pertence a estrutura de uma entidade e um atributo sim. No caso da instala&ccedil;&atilde;o fazer op&ccedil;&atilde;o pela aus&ecirc;ncia de verifica&ccedil;&atilde;o metodol&oacute;gica, um atributo pode tamb&eacute;m n&atilde;o estar relacionado a sua entidade origem. Neste caso, o atributo assemelha-se fisicamente a um campo. </P>
+<P>Detalhes sobre a metodologia de atributos podem ser consultados no t&oacute;pico "Cadastramento", deste mesmo item.</FONT> </P>
+<FONT SIZE=2><P>Os atributos podem ser definidos no ET-SADS, que &eacute; uma ferramenta UPPER-CASE voltada &agrave; aplica&ccedil;&atilde;o da an&aacute;lise de dados e da an&aacute;lise estruturada e, posteriormente, transferidos para o reposit&oacute;rio de dados do SADS. O ET-SADS trabalha na filosofia de esta&ccedil;&atilde;o de trabalho, requerendo uma plataforma IBM-PC ou compat&iacute;vel em ambiente MS-DOS. </P>
+<P>As informa&ccedil;&otilde;es relativas &agrave; tranfer&ecirc;ncia de informa&ccedil;&otilde;es do ET-SADS para o SADS podem ser consultadas no "Guia de Refer&ecirc;ncia do DFD" e no "Guia de Integra&ccedil;&atilde;o com o SADS", manuais que acompanham o ET-SADS.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Padro">Padroniza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O padr&atilde;o de codifica&ccedil;&atilde;o mais usual para identificar mnem&ocirc;nicos de atributos no reposit&oacute;rio de dados do SADS &eacute; o seguinte:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;&nbsp;<B>"eee ttt qqqqq"</B> onde: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"eee"</B> &eacute; o c&oacute;digo da entidade de origem do atributo; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"ttt"</B> &eacute; o tipo e </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"qqqqq"</B> s&atilde;o os qualificadores. </P></DIR>
+
+<P>O "tipo" e os "qualificadores" s&atilde;o denominados descritores. </P>
+<P>O "tipo" determina a natureza do dado relacionado ao atributo. Por exemplo: uma data, um valor, um c&oacute;digo, etc. </P>
+<P>O "qualificador" complementa a defini&ccedil;&atilde;o da natureza do dado quando o "tipo", por si s&oacute;, n&atilde;o for suficiente para esta identifica&ccedil;&atilde;o. Por exemplo: analisando o mnem&ocirc;nico EPGCOD, &eacute; f&aacute;cil perceber que este se refere ao c&oacute;digo do empregado. Por&eacute;m, o mnem&ocirc;nico EPGDAT pode referir-se a diversas datas. Neste caso, &eacute; necess&aacute;rio o aux&iacute;lio de um qualificador que melhor caracterize a qual destas datas o atributo est&aacute; relacionado, como, EPGDATNAS e EPGDATADM, para data de nascimento e de admiss&atilde;o do empregado, respectivamente.</FONT> </P>
+<FONT SIZE=2><P>Para melhor entendimento desta padroniza&ccedil;&atilde;o, ser&aacute; apresentado, a seguir, um exemplo um pouco mais completo:</FONT> </P>
+<FONT SIZE=2><P>Supondo a exist&ecirc;ncia da entidade Empregado do sistema SXY - Entidade SXYEEPG - com os atributos: nome, endere&ccedil;o, data de nascimento, cargo, faixa salarial e data do pagamento do sal&aacute;rio, e tomando estes atributos como base, poderiam ser definidos os seguintes tipos e qualificadores:</P>
+<P>&nbsp;</P></FONT>
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" WIDTH=245>
+<TR><TD WIDTH="50%" VALIGN="MIDDLE">
+<P ALIGN="CENTER"><B><FONT SIZE=2>TIPO</B></FONT></TD>
+<TD WIDTH="50%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">DESCRI&Ccedil;&Atilde;O</B></FONT></TD>
+</TR>
+<TR><TD WIDTH="50%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">CAR</TD>
+<TD WIDTH="50%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">cargo</TD>
+</TR>
+<TR><TD WIDTH="50%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">DAT</TD>
+<TD WIDTH="50%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">data</TD>
+</TR>
+<TR><TD WIDTH="50%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">END</TD>
+<TD WIDTH="50%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">endere&ccedil;o</TD>
+</TR>
+<TR><TD WIDTH="50%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">FAI</TD>
+<TD WIDTH="50%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">faixa</TD>
+</TR>
+<TR><TD WIDTH="50%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">NOM</TD>
+<TD WIDTH="50%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">nome</TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;</P>
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" WIDTH=259>
+<TR><TD WIDTH="55%" VALIGN="MIDDLE" COLSPAN=2>
+<P ALIGN="CENTER"><B><FONT SIZE=2>QUALIFICADOR</B></FONT></TD>
+<TD WIDTH="45%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P ALIGN="CENTER">DESCRI&Ccedil;&Atilde;O</B></FONT></TD>
+</TR>
+<TR><TD WIDTH="55%" VALIGN="MIDDLE" COLSPAN=2>
+<P ALIGN="CENTER">SAL</TD>
+<TD WIDTH="45%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">sal&aacute;rio</TD>
+</TR>
+<TR><TD WIDTH="55%" VALIGN="MIDDLE" COLSPAN=2>
+<P ALIGN="CENTER">NAS</TD>
+<TD WIDTH="45%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">nascimento</TD>
+</TR>
+</TABLE>
+
+<FONT SIZE=2><P>&nbsp;</P>
+<P>Deste modo, os atributos a serem definidos podem possuir os seguintes mnem&ocirc;nicos: </P>
+<P>&nbsp;</P></FONT>
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" WIDTH=406>
+<TR><TD WIDTH="65%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">Atributo</TD>
+<TD WIDTH="35%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">Mnem&ocirc;nico</TD>
+</TR>
+<TR><TD WIDTH="65%" VALIGN="MIDDLE">
+<P>Nome do empregado</TD>
+<TD WIDTH="35%" VALIGN="MIDDLE">
+<P>EPGNOM</TD>
+</TR>
+<TR><TD WIDTH="65%" VALIGN="MIDDLE">
+<P>Endere&ccedil;o do empregado</TD>
+<TD WIDTH="35%" VALIGN="MIDDLE">
+<P>EPGEND </TD>
+</TR>
+<TR><TD WIDTH="65%" VALIGN="MIDDLE">
+<P>Data de nascimento do empregado</TD>
+<TD WIDTH="35%" VALIGN="MIDDLE">
+<P>EPGDATNAS </TD>
+</TR>
+<TR><TD WIDTH="65%" VALIGN="MIDDLE">
+<P>Cargo do empregado</TD>
+<TD WIDTH="35%" VALIGN="MIDDLE">
+<P>EPGCAR </TD>
+</TR>
+<TR><TD WIDTH="65%" VALIGN="MIDDLE">
+<P>Faixa salarial do empregado</TD>
+<TD WIDTH="35%" VALIGN="MIDDLE">
+<P>EPGFAISAL </TD>
+</TR>
+<TR><TD WIDTH="65%" VALIGN="MIDDLE">
+<P>Data de pagamento do sal&aacute;rio</TD>
+<TD WIDTH="35%" VALIGN="MIDDLE">
+<P>EPGDATSAL </TD>
+</TR>
+</TABLE>
+
+<FONT SIZE=2><P>Apesar da padroniza&ccedil;&atilde;o acima citada ser a mais usual, o SADS permite que a padroniza&ccedil;&atilde;o de atributos a ser adotada em sua instala&ccedil;&atilde;o seja parametrizada. </P>
+<P>A tabela utilizada para esta parametriza&ccedil;&atilde;o &eacute; a SBPM5000 (Tabela de Par&acirc;metros Gerais). </P>
+<P>Considerando o argumento "EMPCOD" desta tabela e de acordo com o par&acirc;metro 3 informado para este argumento, tem-se as seguintes possibilidades de padroniza&ccedil;&atilde;o de atributos: </P><DIR>
+
+<B><P>"N"</B> - Indica que n&atilde;o haver&aacute; valida&ccedil;&atilde;o do mnem&ocirc;nico do atributo. Neste caso, o &uacute;nico<BR>
+teste executado &eacute; que o mnem&ocirc;nico deve possuir no m&iacute;nimo cinco posi&ccedil;&otilde;es alfab&eacute;ticas; </P>
+<B><P>"1"</B> - Indica que haver&aacute; valida&ccedil;&atilde;o da entidade, do tipo e de todos os qualificadores do<BR>
+mnem&ocirc;nico contra tabelas de teste e de produ&ccedil;&atilde;o. Neste caso, no momento da inclus&atilde;o do atributo, os qualificadores dever&atilde;o ser informados separados por "/"; </P>
+<B><P>"2"</B> - Indica que haver&aacute; valida&ccedil;&atilde;o de entidade definida no SADS e do tipo contra suas tabelas. Os qualificadores n&atilde;o ser&atilde;o validados; </P>
+<B><P>"3"</B> - Indica que haver&aacute; valida&ccedil;&atilde;o de entidade definida no SADS. Se o mnem&ocirc;nico possuir seis ou mais que oito caracteres, haver&aacute; valida&ccedil;&atilde;o do tipo com tr&ecirc;s caracteres contra suas tabelas. Se o mnem&ocirc;nico possuir nove caracteres, haver&aacute; valida&ccedil;&atilde;o dos qualificadores de tr&ecirc;s caracteres contra suas tabelas. </P>
+<B><P>"4"</B> - Indica que haver&aacute; valida&ccedil;&atilde;o de entidade definida no SADS. Se o mnem&ocirc;nico possuir cinco ou mais que sete caracteres, haver&aacute; valida&ccedil;&atilde;o do tipo com dois caracteres contra suas tabelas. Se o mnem&ocirc;nico possuir oito caracteres, haver&aacute; valida&ccedil;&atilde;o dos qualificadores de tr&ecirc;s caracteres contra suas tabelas. </P>
+<B><P>"5"</B> - Indica que somente ser&aacute; poss&iacute;vel definir uma entidade se a mesma estiver cadastrada na tabela SBPM7007 associada ao mesmo sistema em que estiver sendo definida, e que n&atilde;o haver&aacute; valida&ccedil;&atilde;o do tipo e qualificador do mnem&ocirc;nico contra tabelas. </P>
+<B><P>"6"</B> - Indica que as entidades dos mnem&ocirc;nicos de atributos dever&atilde;o estar cadastradas no reposit&oacute;rio de dados do SADS e haver&aacute; valida&ccedil;&atilde;o de seus tipos com dois caracteres contra as respectivas tabelas. </P>
+<P>Se os mnem&ocirc;nicos possu&iacute;rem oito ou onze caracteres, tamb&eacute;m haver&aacute; valida&ccedil;&atilde;o de seus qualificadores contra tabela, sendo que para o mnem&ocirc;nico com onze caracteres, dois qualificadores de tr&ecirc;s caracteres ser&atilde;o validados contra tabela. Para mnem&ocirc;nicos de outros tamanhos n&atilde;o haver&aacute; valida&ccedil;&atilde;o de qualificador contra tabela.. </P>
+<B><P>"7"</B> - Indica que somente ser&aacute; poss&iacute;vel definir uma entidade se a mesma estiver cadastrada na tabela SBPM7007 associada ao mesmo sistema em que estiver sendo definida e haver&aacute; valida&ccedil;&atilde;o de seus tipos contra as respectivas tabelas.</P></DIR>
+
+<P>Quando validados, os tipos e qualificadores s&atilde;o, em geral, aprovados e normatizados pela administra&ccedil;&atilde;o de dados da instala&ccedil;&atilde;o e cadastrados nas seguintes tabelas: </P><DIR>
+
+<B><P>SBPM7003</B> - Tipos liberados para uso; </P>
+<B><P>SBPM7008</B> - Tipos em desenvolvimento; </P>
+<B><P>SBPM7009</B> - Qualificadores liberados para uso; </P>
+<B><P>SBPM7010</B> - Qualificadores em desenvolvimento. </P></DIR>
+
+<P>As entidades dos atributos geralmente s&atilde;o aprovadas e normatizadas pela administra&ccedil;&atilde;o de dados da instala&ccedil;&atilde;o e, se necess&aacute;rio, cadastradas nas seguintes tabelas: </P><DIR>
+
+<B><P>SBPM7007</B> - Entidades liberadas para uso; </P>
+<B><P>SBPM7011</B> - Entidades em desenvolvimento. </P></DIR>
+
+<P>Para sistemas pertencentes &agrave; tabela SBPM7002 - Sistemas sem Valida&ccedil;&atilde;o e Metodologia - nenhuma valida&ccedil;&atilde;o do mnem&ocirc;nico do atributo &eacute; efetuada, independentemente do cadastramento efetuado na tabela SBPM5000. </P>
+<P>Para indicar que um sistema n&atilde;o possui metodologia e padroniza&ccedil;&atilde;o, deve-se inclu&iacute;-lo na tabela SBPM7002, informando nela os seguintes campos: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>SISTEMA</B> - C&oacute;digo do sistema, no padr&atilde;o SADS (sss);</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>DESCRICAO</B> - Descri&ccedil;&atilde;o do sistema.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Utili">Utiliza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O atributo, ap&oacute;s ter sido definido no reposit&oacute;rio de dados, pode ser utilizado nas defini&ccedil;&otilde;es de &aacute;reas de <I>work</I> de programas, &aacute;reas de comunica&ccedil;&atilde;o de sub-rotina, em estruturas de arquivos, consist&ecirc;ncias, <I>datasets</I>, entidades, registros de uso geral, relat&oacute;rios, tabelas e telas.</FONT> </P>
+<FONT SIZE=2><P>O atributo pode tamb&eacute;m, ap&oacute;s ter sido cadastrado no reposit&oacute;rio de dados do SADS, ser utilizado como sin&ocirc;nimo de outros atributos ou campos. Com este relacionamento, o novo atributo possuir&aacute; as mesmas caracter&iacute;sticas (formato, tamanho, sintaxe etc) do atributo ou campo j&aacute; definido. Qualquer altera&ccedil;&atilde;o efetuada no atributo refletir&aacute; automaticamente nos seus sin&ocirc;nimos.</FONT> </P>
+<FONT SIZE=2><P>O SADS permite que seja parametrizado se haver&aacute; ou n&atilde;o consist&ecirc;ncia no cadastramento de sin&ocirc;nimos, da seguinte forma: atributo s&oacute; pode ser sin&ocirc;nimo de atributo e campo s&oacute; pode ser sin&ocirc;nimo de campo, nunca vice-versa.</FONT> </P>
+<FONT SIZE=2><P>A tabela utilizada para esta parametriza&ccedil;&atilde;o &eacute; a SBPM5000 (Tabela de Par&acirc;metros Gerais), argumento "EMPCOD", par&acirc;metro 6 - PAR-6.</FONT> </P>
+<FONT SIZE=2><P>Detalhes a respeito desta parametriza&ccedil;&atilde;o podem ser consultados na se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", item "Metodologia", t&oacute;pico "Consist&ecirc;ncia de sin&ocirc;nimos".</FONT> </P>
+<FONT SIZE=2><P>Detalhes a respeito de sin&ocirc;nimo de atributo podem ser consultados no item "Sin&ocirc;nimo", nesta mesma se&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Cadas">Cadastramento</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O processo de cadastramento de um atributo s&oacute; &eacute; poss&iacute;vel a partir do cadastramento de seu sistema no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Em geral, este processo tamb&eacute;m s&oacute; se torna poss&iacute;vel caso o atributo j&aacute; perten&ccedil;a &agrave; estrutura de sua entidade origem. Isto se deve ao fato de o SADS permitir que seja parametrizado se haver&aacute; ou n&atilde;o consist&ecirc;ncia metodol&oacute;gica entre atributos e entidades.</FONT> </P>
+<FONT SIZE=2><P>A tabela utilizada para esta parametriza&ccedil;&atilde;o &eacute; a SBPM5000 (Tabela de Par&acirc;metros Gerais). Considerando o argumento "EMPCOD" desta tabela e de acordo com o par&acirc;metro 5 informado para este argumento, tem-se as seguintes possibilidades de consist&ecirc;ncias:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S"</B> - Indica que haver&aacute; consist&ecirc;ncia de atributo em entidade, ou seja, todo atributo para que possa ser cadastrado deve obrigatoriamente pertencer &agrave; estrutura de sua entidade<BR>
+como provis&oacute;rio (campo NDEF = "P");</FONT> </P>
+<B><FONT SIZE=2><P>"N"</B> - Indica que n&atilde;o haver&aacute; consist&ecirc;ncia de atributo em entidade, ou seja, n&atilde;o &eacute; obrigat&oacute;rio que o atributo j&aacute; esteja relacionado com sua entidade para que possa ser cadastrado. </P></DIR>
+
+<P>No momento da defini&ccedil;&atilde;o de um atributo, caso ele j&aacute; tenha sido definido em outro sistema, o SADS ir&aacute; informar esta duplicidade ao usu&aacute;rio atrav&eacute;s de uma mensagem e exigir que ele retransmita a tela de defini&ccedil;&atilde;o do atributo a fim de que seja realmente efetivada a inclus&atilde;o, caso a deseje.</FONT> </P>
+<B><FONT SIZE=4><P>Roteiro</B></FONT> </P>
+<FONT SIZE=2><P>Para cadastrar um atributo, as seguintes fun&ccedil;&otilde;es devem ser executadas:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Cadastramento do atributo como provis&oacute;rio na estrutura de sua entidade (Ver t&oacute;pico "Cadastramento", descrito acima);</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Defini&ccedil;&atilde;o de atributo;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Cadastramento de validades de atributo, caso seja vari&aacute;vel definida (Sintaxe = "VD") (opcional);</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Descri&ccedil;&atilde;o de atributo (opcional);</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Cadastramento de f&oacute;rmula de atributo, caso seja vari&aacute;vel gerada (Sintaxe = "VG") (opcional);</FONT> </P></DIR>
+
+<FONT SIZE=5><P><A NAME="Defin">Defini&ccedil;&atilde;o de atributo</A></FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>SISTEMA</B> - Sistema no qual o atributo est&aacute; definido.</FONT> </P>
+<FONT SIZE=2><P>Todo atributo tem de estar, obrigatoriamente, relacionado a um sistema.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>CODIGO</B> - Mnem&ocirc;nico do atributo.</FONT> </P>
+<FONT SIZE=2><P>O mnem&ocirc;nico do atributo deve estar informado segundo as regras de padroniza&ccedil;&atilde;o adotada para a instala&ccedil;&atilde;o. </P>
+<P>Detalhes a respeito da padroniza&ccedil;&atilde;o de mnem&ocirc;nicos de atributos podem ser consultados no item "Padroniza&ccedil;&atilde;o" do atributo, nesta se&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Pode-se cadastrar atributos com mesmo mnem&ocirc;nico, por&eacute;m em sistemas diferentes.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>NOME</B> - Descri&ccedil;&atilde;o resumida do atributo.</FONT> </P>
+<FONT SIZE=2><P>O nome tem o objetivo de identificar e explicar, de maneira reduzida, a que se refere o atributo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>COD.EXTERNO</B> - C&oacute;digo externo do atributo.</FONT> </P>
+<FONT SIZE=2><P>Este c&oacute;digo pode ser informado no caso da instala&ccedil;&atilde;o adotar um padr&atilde;o de codifica&ccedil;&atilde;o diferente do padr&atilde;o SADS ou quando houver integra&ccedil;&atilde;o entre o ET-SADS e o SADS. Neste caso, o c&oacute;digo externo do atributo no SADS conter&aacute; o c&oacute;digo do atributo no ET-SADS.</FONT> </P>
+<FONT SIZE=2><P>Caso um <I>dataset</I> seja definido como externo (campo INCORPORAR NOME EXTERNO DE ATRIBUTOS = "S"), o c&oacute;digo externo do atributo substituir&aacute; seu mnem&ocirc;nico na DASDL do <I>dataset</I> e nos comandos de movimenta&ccedil;&atilde;o e acesso ao <I>dataset</I> naqueles programas que o utilizam.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>DOMINIO</B> - Sistema/dom&iacute;nio do atributo.</FONT> </P>
+<FONT SIZE=2><P>Dom&iacute;nio &eacute; um conjunto de caracter&iacute;sticas e valores, ou intervalo de valores, que os atributos e campos a ele relacionados poder&atilde;o assumir.</FONT> </P>
+<FONT SIZE=2><P>No reposit&oacute;rio de dados, o dom&iacute;nio &eacute; identificado pelo seu sistema e c&oacute;digo.</FONT> </P>
+<FONT SIZE=2><P>Se um atributo for relacionado a um dom&iacute;nio, ele herdar&aacute; deste suas caracter&iacute;sticas de formato, tamanho, decimais, indicador de sinal, padr&atilde;o, sintaxe, validades, tabela ou sub-rotina. Portanto, estas caracter&iacute;sticas n&atilde;o poder&atilde;o ser especificadas para o atributo, caso ele se relacione a um dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>A defini&ccedil;&atilde;o de dom&iacute;nio para um atributo exige o cadastramento pr&eacute;vio daquele no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Detalhes a respeito de dom&iacute;nio podem ser consultados no item "Dom&iacute;nio", nesta se&ccedil;&atilde;o. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>FORMATO</B> - Formato do atributo.</FONT> </P>
+<FONT SIZE=2><P>O formato indica o tipo do conte&uacute;do do atributo.</FONT> </P>
+<FONT SIZE=2><P>O atributo pode possuir os seguintes formatos: </P><DIR>
+
+<B><P>"N"</B> (Num&eacute;rico); </P>
+<B><P>"A"</B> (Alfab&eacute;tico); </P>
+<B><P>"D"</B> (<I>Display</I> - alfanum&eacute;rico);</P>
+<B><P>"B"</B> (<I>Boolean</I>); </P>
+<B><P>"F"</B> (<I>Fiel</I>d); </P>
+<B><P>"R"</B> (Real).</FONT> </P></DIR>
+
+<FONT SIZE=2><P>V&aacute;rias caracter&iacute;sticas do atributo est&atilde;o relacionadas ao seu formato. Por exemplo, s&oacute; &eacute; poss&iacute;vel cadastrar sinal, decimais e f&oacute;rmula para atributos com formato num&eacute;rico.</FONT> </P>
+<FONT SIZE=2><P>Os testes padr&otilde;es tamb&eacute;m devem ser compat&iacute;veis com o formato do atributo. Por exemplo, testes padr&otilde;es "CPF", "CGC" e "DMA" est&atilde;o vinculados a atributos num&eacute;ricos e assim por diante.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>TAMANHO</B> - Tamanho do atributo.</FONT> </P>
+<FONT SIZE=2><P>O tamanho identifica a quantidade de caracteres (alfab&eacute;ticos, alfanum&eacute;ricos ou num&eacute;ricos) que o atributo possui.</FONT> </P>
+<FONT SIZE=2><P>Se o atributo possuir formato num&eacute;rico, seu tamanho compreender&aacute; a soma do n&uacute;mero de casas inteiras mais o n&uacute;mero de casas decimais.</FONT> </P>
+<FONT SIZE=2><P>Se o atributo possuir teste padr&atilde;o "M10", "M11", "CPF" ou "CGC" seu tamanho n&atilde;o pode ser superior a 23 posi&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>No caso de um atributo possuir dom&iacute;nio, o seu tamanho n&atilde;o pode ser informado, pois ser&aacute; herdado deste.</FONT> </P>
+<FONT SIZE=2><P>No caso de um atributo com formato "B" (<I>boolean</I>), "F" (<I>field</I>) ou "R" (<I>real</I>), o seu tamanho tamb&eacute;m n&atilde;o pode ser informado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>DECIMAIS</B> - Quantidade de casas decimais do atributo.</FONT> </P>
+<FONT SIZE=2><P>Um atributo somente poder&aacute; ter decimais caso seu formato seja num&eacute;rico. O atributo que tiver casas decimais dever&aacute; ter, pelo menos, uma casa inteira.</FONT> </P>
+<FONT SIZE=2><P>No caso de um atributo possuir dom&iacute;nio, a quantidade de casas decimais n&atilde;o pode ser informada , pois ser&aacute; herdada deste.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>SINAL</B> - Indicador de exist&ecirc;ncia de sinal no atributo.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S"</B> - Se o atributo possuir sinal (+ ou -);</FONT> </P>
+<B><FONT SIZE=2><P>"N"</B> ou <B>" "</B> - Se o atributo n&atilde;o possuir sinal.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Um atributo somente poder&aacute; ser sinalizado caso seu formato seja num&eacute;rico.</FONT> </P>
+<FONT SIZE=2><P>No caso de um atributo possuir dom&iacute;nio, sua sinaliza&ccedil;&atilde;o n&atilde;o pode ser informada, pois ser&aacute; herdada deste.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>CLASSIFICACAO</B> - Classifica&ccedil;&atilde;o do atributo na entidade.</FONT> </P>
+<FONT SIZE=2><P>Esta classifica&ccedil;&atilde;o indica o valor que cada atributo agrega para cada ocorr&ecirc;ncia da entidade.</FONT> </P>
+<FONT SIZE=2><P>Um atributo pode ter as seguintes classifica&ccedil;&otilde;es:</FONT> </P><DIR>
+<DIR>
+
+<B><FONT SIZE=2><P>"G"</B> (Global) - Se o atributo tiver o mesmo valor em todas as ocorr&ecirc;ncias da entidade;</FONT> </P>
+<B><FONT SIZE=2><P>"M"</B> (Multivalorado) - Se o atributo agregar m&uacute;ltiplos valores para uma mesma ocorr&ecirc;ncia da entidade. </P></DIR>
+</DIR>
+
+<P>Neste caso, o valor informado no campo OCORRENCIAS do atributo indica a quantidade de valores que ele possui. Por exemplo, o atributo com o telefone do funcion&aacute;rio - FUNTEL - pode ser projetado para agregar mais de um valor, caso o funcion&aacute;rio possuir mais de um telefone.</FONT> </P>
+<FONT SIZE=2><P>Caso um atributo multivalorado perten&ccedil;a &agrave; estrutura de um dataset, na gera&ccedil;&atilde;o do fonte DASDL do mesmo, o atributo ser&aacute; gerado com OCCURS, semelhante ao valor informado em OCORRENCIAS. <I>&nbsp;</I>O programa <I>batch </I>SD/U/PC/09 emite um relat&oacute;rio com a rela&ccedil;&atilde;o de todos os <I>datasets</I> da instala&ccedil;&atilde;o que possuem atributos multivalorados em sua estrutura.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>OCORRENCIAS</B> - N&uacute;mero de valores que o atributo poder&aacute; assumir, caso seja multivalorado.</FONT> </P>
+<FONT SIZE=2><P>Aproveitando o exemplo anterior, o atributo FUNTEL poderia ser projetado para ter duas ocorr&ecirc;ncias, ou seja, poderia armazenar apenas dois n&uacute;meros de telefone para um mesmo funcion&aacute;rio: um residencial e outro comercial.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>PADRAO</B> - Teste padr&atilde;o ao qual o atributo ser&aacute; submetido para valida&ccedil;&atilde;o de seu conte&uacute;do.</FONT> </P>
+<FONT SIZE=2><P>O teste padr&atilde;o, quando definido para o atributo, ir&aacute; estabelecer para a consist&ecirc;ncia geral qual o teste a que o atributo ser&aacute; submetido para valida&ccedil;&atilde;o do seu conte&uacute;do.</FONT> </P>
+<FONT SIZE=2><P>Os testes padr&otilde;es dispon&iacute;veis para atributo, de acordo com o conte&uacute;do a ser assumido pelo mesmo, s&atilde;o os seguintes :</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"AMD"</B> (Data) - Para data no formato ano, m&ecirc;s, dia.</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do atributo for igual a seis, o teste do ano ser&aacute; feito com duas posi&ccedil;&otilde;es, ou seja, o ano poder&aacute; assumir os valores de "00" a "99". Caso seu tamanho seja oito, o teste do ano ser&aacute; feito com a quatro posi&ccedil;&otilde;es, e neste caso o ano poder&aacute; assumir os valores de "0000" a "9999".</FONT> </P>
+<B><FONT SIZE=2><P>"DMA"</B> (Data) - Para data no formato DDMMAA.</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do atributo for igual a seis, o teste do ano ser&aacute; feito com duas posi&ccedil;&otilde;es, ou seja, o ano poder&aacute; assumir os valores de "00" a "99". Caso seu tamanho seja oito, o teste do ano ser&aacute; feito com a quatro posi&ccedil;&otilde;es, e neste caso o ano poder&aacute; assumir os valores de "0000" a "9999".</FONT> </P>
+<B><FONT SIZE=2><P>"A/M"</B> (Data) - Para data no formato AAMM (ano/m&ecirc;s);</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do atributo for igual a quatro, o teste do ano ser&aacute; feito com duas posi&ccedil;&otilde;es, ou seja, o ano poder&aacute; assumir os valores de "00" a "99". Caso seu tamanho seja seis, o teste do ano ser&aacute; feito com a quatro posi&ccedil;&otilde;es, e neste caso o ano poder&aacute; assumir os valores de "0000" a "9999".</FONT> </P>
+<B><FONT SIZE=2><P>"D/M"</B> (Data) - Para data no formato DDMM (dia/m&ecirc;s);</FONT> </P>
+<B><FONT SIZE=2><P>"M/D"</B> (Data) - Para data no formato MMDD (dia/m&ecirc;s);</FONT> </P>
+<B><FONT SIZE=2><P>"M/A"</B> (Data) - Para data no formato MMAA (m&ecirc;s/ano);</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do atributo for igual a quatro, o teste do ano ser&aacute; feito com duas posi&ccedil;&otilde;es, ou seja, o ano poder&aacute; assumir os valores de "00" a "99". Caso seu tamanho seja seis, o teste do ano ser&aacute; feito com a quatro posi&ccedil;&otilde;es, e neste caso o ano poder&aacute; assumir os valores de "0000" a "9999".</FONT> </P>
+<B><FONT SIZE=2><P>"INV"</B> (Data) - Para data DDMMAA ou DDMMAAAA com invers&atilde;o para AAMMDD ou AAAAMMDD;</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do atributo for igual a seis, o teste do ano ser&aacute; feito com duas posi&ccedil;&otilde;es, ou seja, o ano poder&aacute; assumir os valores de "00" a "99". Caso seu tamanho seja oito, o teste do ano ser&aacute; feito com a quatro posi&ccedil;&otilde;es, e neste caso o ano poder&aacute; assumir os valores de "0000" a "9999".</FONT> </P>
+<B><FONT SIZE=2><P>"CPF"</B> (CPF) - Para CPF;</FONT> </P>
+<B><FONT SIZE=2><P>"CGC"</B> (CGC) - Para CGC, abrangendo CPF;</FONT> </P>
+<B><FONT SIZE=2><P>"ICG" </B>(CGC) - Para CGC, n&atilde;o abrangendo CPF;</FONT> </P>
+<B><FONT SIZE=2><P>"C10"</B> (M&oacute;d. 10) - Para c&aacute;lculo de d&iacute;gito usando m&oacute;dulo 10;</FONT> </P>
+<B><FONT SIZE=2><P>"C11"</B> (M&oacute;d. 11) - Para c&aacute;lculo de d&iacute;gito usando m&oacute;dulo 11;</FONT> </P>
+<B><FONT SIZE=2><P>"M10"</B> (M&oacute;d. 10) - Para teste de d&iacute;gito usando m&oacute;dulo 10;</FONT> </P>
+<B><FONT SIZE=2><P>"M11"</B> (M&oacute;d. 11) - Para teste de d&iacute;gito usando m&oacute;dulo 11;</FONT> </P>
+<B><FONT SIZE=2><P>"BRA"</B> - Para teste do preenchimento de apenas um branco entre as palavras de um atributo;</FONT> </P>
+<B><FONT SIZE=2><P>"CIV"</B> (Estado civil) - Para teste de estado civil: "S" (Solteiro), "C" (Casado), "D" (Divorciado) e "O" (Outros);</FONT> </P>
+<B><FONT SIZE=2><P>"EST"</B> (Esta&ccedil;&atilde;o) - Para teste de esta&ccedil;&atilde;o v&aacute;lida na rede;</FONT> </P>
+<FONT SIZE=2><P>Antes de efetuar a valida&ccedil;&atilde;o de um c&oacute;digo de impressora na rede, &eacute; verificado se tal c&oacute;digo est&aacute; cadastrado na tabela SBPM5024 - Tabela de Impressoras em outra m&aacute;quina. Caso positivo, tal c&oacute;digo &eacute; aceito como v&aacute;lido. </P>
+<P>Este teste tamb&eacute;m efetua corretamente a valida&ccedil;&atilde;o de impressoras ligadas ao sistema atrav&eacute;s de linhas que utilizam o protocolo TCP/IP.</FONT> </P>
+<B><FONT SIZE=2><P>"HOR"</B> (Hora) - Para hora no formato HHMM ou HHMMSS;</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do atributo for igual a quatro, ser&aacute; consistido horas e minutos e se o tamanho for igual a seis ser&aacute; consistido horas, minutos e segundos.</FONT> </P>
+<FONT SIZE=2><P><B>"NEZ"</B> - Para teste de atributo num&eacute;rico diferente de zero.</FONT> </P>
+<FONT SIZE=2><P><B>"PPO"</B> - Para teste do preenchimento da primeira posi&ccedil;&atilde;o do atributo, que n&atilde;o pode ser branco;</FONT> </P>
+<B><FONT SIZE=2><P>"RPT"</B> - Para teste de impress&atilde;o via <I>Reprints;</I></FONT> </P>
+<B><FONT SIZE=2><P>"SEX"</B> (Sexo) - Para teste de sexo: "F" (Feminino) ou "M" (Masculino);</FONT> </P>
+<B><FONT SIZE=2><P>"S/N"</B> ("S" ou "N") - Para teste de resposta: "S" (Sim) ou "N" (N&atilde;o). </P>
+<P>Os testes de consist&ecirc;ncia de data, opcionalmente, aceitam que uma data seja totalmente preenchida com o algarismo 9. </P>
+<P>Para fazer op&ccedil;&atilde;o por este modo de funcionamento, o campo "DATA C/ 9's", da tabela SBPM5004, deve ser preenchido com "S",  para um sistema espec&iacute;fico ou para o sistema "SBC" quando se desejar configurar para todos os sistemas da instala&ccedil;&atilde;o.</P>
+<P>Maiores detalhes sobre esta parametriza&ccedil;&atilde;o podem ser pesquisadas neste Manual de Refer&ecirc;ncia do SADS, na Se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es do SADS&quot;, item &quot;Consist&ecirc;ncia&quot;, t&oacute;pico &quot;Datas preenchidas com noves (999999)&quot;.</P></DIR>
+
+<P>No caso de um atributo possuir dom&iacute;nio, seu teste padr&atilde;o n&atilde;o poder&aacute; ser informado, pois ser&aacute; herdado deste.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>DESCRICAO</B> - Indicador de encadeamento da descri&ccedil;&atilde;o do atributo.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S"</B> - Indica que, ap&oacute;s a tela de defini&ccedil;&atilde;o de atributo, ser&aacute; encadeada a tela de descri&ccedil;&atilde;o;</FONT> </P>
+<B><FONT SIZE=2><P>"N"</B> - Indica que, ap&oacute;s a tela de defini&ccedil;&atilde;o de atributo, n&atilde;o haver&aacute; encadeamento da tela de descri&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>No caso da altera&ccedil;&atilde;o do atributo, se DESCRICAO = "S", ser&aacute; encadeada a tela de descri&ccedil;&atilde;o somente se a mesma j&aacute; tiver sido cadastrada no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>DEFAULT</B> - Valor <I>default</I> do atributo. </P>
+<P>Valor assumido pelo atributo quando o mesmo n&atilde;o for informado em telas de entrada de dados.</FONT> </P>
+<FONT SIZE=2><P>O valor <I>default</I> &eacute; utilizado na gera&ccedil;&atilde;o da WORKING-STORAGE SECTION dos programas que utilizam o atributo, nos casos em que na tela de defini&ccedil;&atilde;o da &aacute;rea de <I>work </I>dos mesmos for definido "D" no campo VAL referente ao atributo. Deste modo, o atributo ser&aacute; inicializado com este valor pr&eacute;-estabelecido.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>TABELA/SUBROTINA</B> - Tabela ou sub-rotina contra o qual o atributo ser&aacute; validado.</FONT> </P>
+<FONT SIZE=2><P>Tanto a tabela quanto a sub-rotina informada para a valida&ccedil;&atilde;o do atributo devem estar cadastradas no reposit&oacute;rio de dados e ser informadas no padr&atilde;o SADS (sssMnnnn e sssSxx, respectivamente).</FONT> </P>
+<FONT SIZE=2><P>Se, para um atributo, estiver definido um teste contra uma tabela, os valores que lhe forem atribu&iacute;dos nas transa&ccedil;&otilde;es de entrada de dados ter&atilde;o de estar cadastrados na tabela indicada. Da mesma forma, em um teste contra sub-rotina, a consist&ecirc;ncia geral ir&aacute; cham&aacute;-la para testar a validade do conte&uacute;do do atributo. Neste caso, a sub-rotina deve obedecer a certos padr&otilde;es definidos pela consist&ecirc;ncia geral, que encontram-se especificados no item "Consist&ecirc;ncia geral", nesta se&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>SINTAXE</B> - Sintaxe do atributo.</FONT> </P>
+<FONT SIZE=2><P>Determina qual a natureza da informa&ccedil;&atilde;o contida no atributo.</FONT> </P>
+<FONT SIZE=2><P>Um atributo pode possuir as seguintes sintaxes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"VL"</B> (Vari&aacute;vel livre) - Vari&aacute;vel cujo conte&uacute;do n&atilde;o possui valores v&aacute;lidos pr&eacute;-estabelecidos. </P>
+<P>Uma vari&aacute;vel pode ser livre e ter o seu conte&uacute;do validado contra uma tabela ou sub-rotina.</FONT> </P>
+<B><FONT SIZE=2><P>"VD"</B> (Vari&aacute;vel definida) - Vari&aacute;vel cujo conte&uacute;do est&aacute; definido por um conjunto de validades pr&eacute;-estabelecidas para o atributo. </P>
+<P>Neste caso, as validades do atributo devem ser cadastradas para complementar a defini&ccedil;&atilde;o do mesmo. Um atributo pode ser cadastrado como vari&aacute;vel definida e ter o seu conte&uacute;do tamb&eacute;m validado por uma tabela ou sub-rotina.</FONT> </P>
+<B><FONT SIZE=2><P>"VE"</B> (Vari&aacute;vel estruturada) - Vari&aacute;vel composta por itens elementares.</FONT> </P>
+<FONT SIZE=2><P>A cria&ccedil;&atilde;o de itens grupos ocorre na defini&ccedil;&atilde;o das estruturas de dados. Portanto, a sintaxe "VE" apenas documenta a estrutura&ccedil;&atilde;o do atributo.</FONT> </P>
+<B><FONT SIZE=2><P>"VG"</B> (Vari&aacute;vel gerada) - Vari&aacute;vel gerada atrav&eacute;s de f&oacute;rmula. </P>
+<P>Neste caso, as f&oacute;rmulas do atributo podem ser cadastradas para complementar a defini&ccedil;&atilde;o do mesmo. Um atributo pode ser uma vari&aacute;vel gerada e n&atilde;o ter a sua f&oacute;rmula cadastrada no reposit&oacute;rio de dados do SADS. </P>
+<P>Um atributo com sintaxe "VG" deve possuir formato num&eacute;rico.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>FORMULA</B> - Indicador de encadeamento da f&oacute;rmula do atributo.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S"</B> - Indica que haver&aacute; encadeamento da tela de f&oacute;rmula ap&oacute;s a tela de defini&ccedil;&atilde;o do atributo. Neste caso, ao conte&uacute;do do campo SINTAXE deve ser "VG".</P>
+<B><P>"N"</B> - Indica que n&atilde;o haver&aacute; encadeamento da tela de f&oacute;rmula ap&oacute;s a tela de defini&ccedil;&atilde;o do atributo.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>No caso da altera&ccedil;&atilde;o do atributo, se FORMULA = "S", a tela de defini&ccedil;&atilde;o de f&oacute;rmula somente ser&aacute; encadeada caso a mesma j&aacute; esteja cadastrada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>CABEC</B> - Cabe&ccedil;alho ou t&iacute;tulo atribu&iacute;do ao atributo.</FONT> </P>
+<FONT SIZE=2><P>O cabe&ccedil;alho do atributo pode ser utilizado na composi&ccedil;&atilde;o das mensagens de erro apresentadas pela consist&ecirc;ncia geral, caso na instala&ccedil;&atilde;o esteja parametrizado que o mesmo deva ser exibido. Para maiores detalhes a respeito desta parametriza&ccedil;&atilde;o, deve-se consultar a Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>MASCARA DE EDICAO</B> - Edi&ccedil;&atilde;o Cobol para o atributo.</FONT> </P>
+<FONT SIZE=2><P>A m&aacute;scara de edi&ccedil;&atilde;o ou <I>picture</I> de edi&ccedil;&atilde;o segue os mesmos padr&otilde;es adotados no desenho de telas e relat&oacute;rios, ou seja, pode ser definida, como por exemplo, das seguintes formas: yyyyyvyy, yyqyyqyy e rrrprryvyy.</FONT> </P>
+<FONT SIZE=2><P>A m&aacute;scara &eacute; utilizada na gera&ccedil;&atilde;o da WORKING-STORAGE SECTION dos programas que utilizam o atributo, nos casos em que na tela de defini&ccedil;&atilde;o da &aacute;rea de <I>work</I> dos programas for definido "E" no campo VAL. Deste modo, o atributo ser&aacute; gerado com a <I>picture</I> de edi&ccedil;&atilde;o pr&eacute;-estabelecida.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o ao atributo.</FONT> </P>
+<FONT SIZE=2><P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>"INC" (Inclus&atilde;o);</FONT> </P>
+<FONT SIZE=2><P>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<FONT SIZE=2><P>"EXC" (Exclus&atilde;o);</FONT> </P>
+<FONT SIZE=2><P>"CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Cadval">Cadastramento de validades de atributo</A></B></FONT> </P>
+<FONT SIZE=2><P>Validades s&atilde;o valores ou intervalo de valores que o atributo poder&aacute; assumir.</FONT> </P>
+<B><FONT SIZE=2><P>Exemplos de validades de atributos: </P><DIR>
+</B><P>Maior que 10 e menor que 50;
+<p>Igual a 1, 2 ou 3;
+<p>Diferente de "MARIA";</FONT> </P>
+</DIR>
+
+<FONT SIZE=2><P>As validades definidas para os atributos ser&atilde;o observadas sempre que um valor lhe for atribu&iacute;do em tabelas ou telas de entrada de dados, onde a consist&ecirc;ncia geral ir&aacute; testar se este valor se enquadra nos valores v&aacute;lidos definidos para o atributo em quest&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As validades s&atilde;o utilizadas pelo <I>help on-line</I> quando o mesmo for solicitado ap&oacute;s ter sido detectado um erro pela consist&ecirc;ncia geral e este erro for relativo a um atributo vari&aacute;vel definida (SINTAXE = "VD").</FONT> </P>
+<FONT SIZE=2><P>As validades s&atilde;o tamb&eacute;m utilizadas pela sub-rotina SDDS04 que, ao ser disparada por programas aplicativos, decodifica as validades dos atributos para exibi&ccedil;&atilde;o em telas, relat&oacute;rios ou composi&ccedil;&atilde;o de arquivos. </P>
+<P>Detalhes a respeito da sub-rotina SDDS04 podem ser consultados no item "Sub-rotina", nesta se&ccedil;&atilde;o. </P>
+<P>Para cadastrar as validades de um atributo, &eacute; necess&aacute;rio que o mesmo j&aacute; esteja definido no reposit&oacute;rio de dados do SADS e que possua SINTAXE = "VD" (vari&aacute;vel definida).</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+<DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>SISTEMA</B> - Sistema no qual o atributo est&aacute; definido.</FONT> </P>
+<FONT SIZE=2><P>Todo atributo tem de estar, obrigatoriamente, relacionado a um sistema.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>ATRIBUTO</B> - Mnem&ocirc;nico do atributo possuidor das validades.</FONT> </P>
+<FONT SIZE=2><P>Para cadastramento das validades do atributo s&atilde;o apresentados os seguintes campos:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>SEQ</B> - N&uacute;mero para posicionamento das validades do atributo na sequ&ecirc;ncia em que os testes ser&atilde;o executados.</FONT> </P>
+<FONT SIZE=2><P>O primeiro n&uacute;mero &eacute; "0010" e os demais, acrescidos de 10.</FONT> </P>
+<FONT SIZE=2><P>Para incluir uma validade entre duas outras j&aacute; inclu&iacute;das, &eacute; necess&aacute;rio preencher uma linha que esteja em branco e alterar n&uacute;mero sequencial desta linha para um n&uacute;mero entre os j&aacute; existentes. O SADS reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima opera&ccedil;&atilde;o, as validades j&aacute; estar&atilde;o na nova ordem.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>E/O</B> - Operador l&oacute;gico utilizado para concatenar as express&otilde;es que definem as validades do atributo.</FONT> </P>
+<FONT SIZE=2><P>Os operadores l&oacute;gicos poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+<DIR>
+
+<B><FONT SIZE=2><P>"E"</B> - Operador l&oacute;gico E <I>(and</I>);</FONT> </P>
+<B><FONT SIZE=2><P>"O"</B> - Operador l&oacute;gico Ou (<I>or</I>). </P></DIR>
+</DIR>
+
+<P><BR>
+A seguir, s&atilde;o apresentados exemplos de concatena&ccedil;&atilde;o l&oacute;gica na composi&ccedil;&atilde;o das validades de atributo:</FONT> </P>
+<PRE><FONT SIZE=3>
+     ATRIBUTO EPGSEX - Sexo do empregado
+     Validades :           Igual a F
+                    OU          &nbsp;Igual a M
+     ATRIBUTO EPGCARFAI - Faixa do cargo do empregado
+     Validades :           Maior ou igual a  1
+                     E     Menor que 5</PRE></PRE>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>OPER</B> - Operador relacional utilizado nas express&otilde;es que definem as validades do atributo.</FONT> </P>
+<FONT SIZE=2><P>Os operadores relacionais poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+<DIR>
+
+<B><FONT SIZE=2><P>"EQ"</B> (<I>equal</I>) - Igual a;</P>
+<B><P>"NE"</B> (<I>not equal</I>) - Diferente de;</P>
+<B><P>"GE"</B> (<I>greater or equal</I>) - Maior que ou igual a;</P>
+<B><P>"GT"</B> (<I>greater than</I>) - Maior que;</P>
+<B><P>"LE"</B> (<I>less or equal</I>) - Menor que ou igual a;</P>
+<B><P>"LT"</B> (<I>less than</I>) - Menor que.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Tomando os exemplos citados anteriormente na explica&ccedil;&atilde;o do campo E/O, o operador relacional seria utilizado das seguintes formas:</FONT> </P>
+<PRE>
+     ATRIBUTO EPGSEX - Sexo do empregado
+     Validades :        EQ  F
+                    OU  EQ  M
+     ATRIBUTO EPGCARFAI - Faixa do cargo do empregado
+     Validades :        GE   1
+                     E  LT   5</PRE>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>OPERANDO</B> - Valores que definem as validades poss&iacute;veis para o atributo.</FONT> </P>
+<FONT SIZE=2><P>O operando deve ser informado alinhado de acordo com o formato do atributo:</FONT> </P><DIR>
+<DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Se o atributo for num&eacute;rico, o operando tamb&eacute;m deve ser num&eacute;rico e seu conte&uacute;do tem de ser ajustado &agrave; direita. N&atilde;o &eacute; necess&aacute;rio preench&ecirc;-lo com zeros &agrave; esquerda.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Se o atributo for alfanum&eacute;rico ou alfab&eacute;tico, o operando tamb&eacute;m deve ser alfanum&eacute;rico ou alfab&eacute;tico e seu conte&uacute;do tem de ser ajustado &agrave; esquerda com brancos &agrave; direita.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Tomando novamente o exemplo apresentado na explica&ccedil;&atilde;o do campo E/O, os operandos utilizados seriam "F", "M", "1" e "5".</FONT> </P>
+<FONT SIZE=2><P>O tamanho do operando n&atilde;o pode exceder o tamanho determinado para o atributo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>DESCRICAO</B> - Descri&ccedil;&atilde;o ou explica&ccedil;&atilde;o resumida do operando.</FONT> </P>
+<FONT SIZE=2><P>Utilizado para descrever o valor informado no operando.</FONT> </P>
+<FONT SIZE=2><P>Retomando o exemplo apresentado na explica&ccedil;&atilde;o do campo E/O, pode-se cadastrar as seguintes descri&ccedil;&otilde;es:</FONT> </P>
+<PRE>
+     ATRIBUTO EPGSEX - Sexo do empregado
+     Validades :        EQ  F - Descri&ccedil;&atilde;o : "Feminino"
+                    OU  EQ  M - Descri&ccedil;&atilde;o : "Masculino"
+     ATRIBUTO EPGCARFAI - Faixa do cargo do empregado
+     Validades :        GE   1  
+                     E  LT   5 </PRE>
+<FONT SIZE=2><P>A descri&ccedil;&atilde;o n&atilde;o &eacute; obrigat&oacute;ria, por&eacute;m, quando poss&iacute;vel, ela deve ser informada, pois ser&aacute; apresentada quando um <I>help</I> do atributo for solicitado. Ela pode ainda ser utilizada na decodifica&ccedil;&atilde;o das validades do atributo em telas e relat&oacute;rios. </P>
+<P>Ap&oacute;s as ocorr&ecirc;ncias, as seguintes informa&ccedil;&otilde;es s&atilde;o apresentadas:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>CONTINUA (S/N)</B> - Indicador de continua&ccedil;&atilde;o da opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As possibilidades de preenchimento deste campo s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S"</B> - Nova tela ser&aacute; aberta para prosseguir a opera&ccedil;&atilde;o relacionada &agrave;s validades do atributo;</P>
+<B><P>"N"</B> - &Uacute;ltima tela para opera&ccedil;&atilde;o sobre as validades do atributo. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave;s validades do atributo.</FONT> </P>
+<FONT SIZE=2><P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"INC"</B> (Inclus&atilde;o);</FONT> </P>
+<B><FONT SIZE=2><P>"ALT"</B> (Altera&ccedil;&atilde;o);</FONT> </P>
+<B><FONT SIZE=2><P>"EXC"</B> (Exclus&atilde;o);</FONT> </P>
+<B><FONT SIZE=2><P>"CON"</B> (Consulta).</FONT> </P></DIR>
+</DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Desatr">Descri&ccedil;&atilde;o de atributo</A></B></FONT> </P>
+<FONT SIZE=2><P>A descri&ccedil;&atilde;o de um atributo &eacute; uma fun&ccedil;&atilde;o dispon&iacute;vel no SADS que auxilia na documenta&ccedil;&atilde;o do sistema.</FONT> </P>
+<FONT SIZE=2><P>Est&atilde;o dispon&iacute;veis 99 p&aacute;ginas para a descri&ccedil;&atilde;o detalhada do atributo, sendo que cada p&aacute;gina possui 10 linhas de 78 posi&ccedil;&otilde;es, totalizando 780 por p&aacute;gina de descri&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A descri&ccedil;&atilde;o de um atributo no SADS &eacute; livre de qualquer padr&atilde;o, podendo ser cadastrada de acordo com a conveni&ecirc;ncia e a necessidade de cada usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>As informa&ccedil;&otilde;es relativas &agrave; descri&ccedil;&atilde;o do atributo s&atilde;o puramente documentais, pois podem fazer parte dos relat&oacute;rios e manuais emitidos pelo SADS, sendo apresentadas sempre que um <I>help on-line</I> for solicitado para o atributo.</FONT> </P>
+<FONT SIZE=2><P>Para descrever um atributo, &eacute; necess&aacute;rio que o mesmo j&aacute; esteja cadastrado no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>SISTEMA</B> - Sistema no qual o atributo est&aacute; definido. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>ATRIBUTO</B> - Mnem&ocirc;nico e nome do atributo cuja descri&ccedil;&atilde;o ser&aacute; cadastrada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>DESCRICAO</B> - Descri&ccedil;&atilde;o detalhada do atributo.</FONT> </P>
+<FONT SIZE=2><P>Est&atilde;o dispon&iacute;veis 99 p&aacute;ginas, com 10 linhas cada, para esta descri&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>CONTINUA</B> - Indicador de continuidade da opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As possibilidades de preenchimento deste campo s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S"</B> - Nova tela ser&aacute; aberta para prosseguir descrevendo o atributo;</FONT> </P>
+<B><FONT SIZE=2><P>"N"</B> - &Uacute;ltima tela da descri&ccedil;&atilde;o do atributo.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave; descri&ccedil;&atilde;o do atributo.</FONT> </P>
+<FONT SIZE=2><P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>"INC" (Inclus&atilde;o);</FONT> </P>
+<FONT SIZE=2><P>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<FONT SIZE=2><P>"EXC" (Exclus&atilde;o);</FONT> </P>
+<FONT SIZE=2><P>"CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=5><P><A NAME="Cadfor">Cadastramento de f&oacute;rmula de atributo</A></FONT> </P>
+<FONT SIZE=2><P>A f&oacute;rmula &eacute; uma sequ&ecirc;ncia de opera&ccedil;&otilde;es matem&aacute;ticas que define como calcular o valor de um atributo.</FONT> </P>
+<FONT SIZE=2><P>A f&oacute;rmula do atributo &eacute; identificada pelo sistema, acrescido do mnem&ocirc;nico do atributo e de um sequencial que representa o n&uacute;mero da f&oacute;rmula do atributo.</FONT> </P>
+<FONT SIZE=2><P>Um atributo pode possuir mais de uma f&oacute;rmula.</FONT> </P>
+<FONT SIZE=2><P>A f&oacute;rmula do atributo pode ser utilizada na gera&ccedil;&atilde;o de programas pelo SADS atrav&eacute;s do comando de m&oacute;dulo "FORMUL". </P>
+<P>Detalhes a respeito dos comandos de m&oacute;dulo, relativos &agrave; f&oacute;rmula, podem ser consultados no item "Programa", t&oacute;pico "Comandos de m&oacute;dulo", nesta se&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Para cadastrar as f&oacute;rmulas de um atributo, &eacute; necess&aacute;rio que o mesmo j&aacute; esteja definido no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Para que um atributo possua f&oacute;rmula, &eacute; necess&aacute;rio que ele tenha sido definido como vari&aacute;vel gerada (SINTAXE = "VG") e com formato num&eacute;rico (FORMATO = "N").</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>SISTEMA</B> - C&oacute;digo do sistema do atributo que possui a f&oacute;rmula.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>ATRIBUTO</B> - Mnem&ocirc;nico do atributo que possui a f&oacute;rmula.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>NUM. FORMULA</B> - N&uacute;mero da f&oacute;rmula.</FONT> </P>
+<FONT SIZE=2><P>O n&uacute;mero da f&oacute;rmula &eacute; um sequencial que distingue as v&aacute;rias f&oacute;rmulas do atributo.</FONT> </P>
+<FONT SIZE=2><P>A f&oacute;rmula do atributo &eacute; identificada pelo sistema acrescido do mnem&ocirc;nico do atributo e de um n&uacute;mero sequencial que identifica uma das f&oacute;rmulas do atributo.</FONT> </P>
+<FONT SIZE=2><P>Para cadastramento dos operandos da f&oacute;rmula do atributo s&atilde;o apresentados os seguintes campos:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>SEQ</B> - N&uacute;mero para posicionamento do item dentro da f&oacute;rmula.</FONT> </P>
+<FONT SIZE=2><P>O primeiro n&uacute;mero &eacute; igual a "0010" e os demais, acrescidos de 10.</FONT> </P>
+<FONT SIZE=2><P>Para incluir um item entre dois outros j&aacute; inclu&iacute;dos, &eacute; necess&aacute;rio preencher uma linha que esteja em branco e alterar o n&uacute;mero sequencial desta linha para um n&uacute;mero entre os j&aacute; informados. O SADS reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima opera&ccedil;&atilde;o os itens j&aacute; estar&atilde;o na nova ordem.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>OPER</B> - Operador aritm&eacute;tico utilizado na defini&ccedil;&atilde;o da f&oacute;rmula.</FONT> </P>
+<FONT SIZE=2><P>Os operadores aritm&eacute;ticos poss&iacute;veis s&atilde;o:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"+"</B> (Adi&ccedil;&atilde;o);</P>
+<B><P>"-"</B> (Subtra&ccedil;&atilde;o);</P>
+<B><P>"*"</B> (Multiplica&ccedil;&atilde;o);</P>
+<B><P>"/" </B>(Divis&atilde;o).</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>PAR</B> - Indicador de abre par&ecirc;ntese(s).</FONT> </P>
+<FONT SIZE=2><P>O indicador de abre par&ecirc;ntese(s) &eacute; utilizado para definir as prioridades das opera&ccedil;&otilde;es matem&aacute;ticas que comp&otilde;em a f&oacute;rmula. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: "( ", "((" ou " (", ou seja, s&atilde;o permitidos apenas dois n&iacute;veis de par&ecirc;nteses.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>NDEF</B> - N&iacute;vel de defini&ccedil;&atilde;o do operando.</FONT> </P>
+<FONT SIZE=2><P>O valor v&aacute;lido para este campo &eacute;:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>"S" - Para atributos e campos definidos no sistema do campo "SIS" ou no mesmo sistema do atributo da f&oacute;rmula.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Quando nada for informado no campo NDEF, o SADS assumir&aacute; que o operando informado &eacute; uma constante.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>SIS</B> - C&oacute;digo do sistema do operando.</FONT> </P>
+<FONT SIZE=2><P>Este campo deve ser informado somente se o operando for um atributo ou campo e o sistema do operando n&atilde;o for o mesmo daquele do atributo possuidor da f&oacute;rmula.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>OPERANDO</B> - Atributo, campo ou constante utilizado na f&oacute;rmula.</FONT> </P>
+<FONT SIZE=2><P>Somente s&atilde;o permitidas constantes num&eacute;ricas.</FONT> </P>
+<FONT SIZE=2><P>Se o operando for um atributo ou campo, deve-se informar "S" no campo NDEF.</FONT> </P>
+<FONT SIZE=2><P>Se o operando for uma constante, deve-se ajust&aacute;-la &agrave; direita. N&atilde;o &eacute; necess&aacute;rio preencher com zeros &agrave; esquerda, nem informar os campos NDEF e SIS.</FONT> </P>
+<FONT SIZE=2><P>Se o operando for um campo ou atributo seu formato tem de ser num&eacute;rico.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>PAR</B> - Indicador de fecha par&ecirc;ntese(s).</FONT> </P>
+<FONT SIZE=2><P>O indicador de fecha-par&ecirc;ntese(s) &eacute; utilizado para definir, junto com os abre-par&ecirc;nteses, as prioridades das opera&ccedil;&otilde;es matem&aacute;ticas que comp&otilde;em a f&oacute;rmula.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes: ") ", "))" ou " )", ou seja, s&atilde;o permitidos apenas dois n&iacute;veis de par&ecirc;nteses.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s as ocorr&ecirc;ncias aparecem as seguintes informa&ccedil;&otilde;es:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>CONTINUA (S/N)</B> - Indicador de continuidade de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As possibilidades de preenchimento deste campo s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>"S" - Nova tela ser&aacute; aberta para prosseguir cadastrando f&oacute;rmula de atributo;</FONT> </P>
+<FONT SIZE=2><P>"N" - &Uacute;ltima tela para opera&ccedil;&atilde;o sobre a f&oacute;rmula de atributo.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave; f&oacute;rmula de atributo.</FONT> </P>
+<FONT SIZE=2><P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>"INC" (Inclus&atilde;o);</FONT> </P>
+<FONT SIZE=2><P>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<FONT SIZE=2><P>"EXC" (Exclus&atilde;o);</FONT> </P>
+<FONT SIZE=2><P>"CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Funca">Fun&ccedil;&otilde;es de apoio</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Espec">Espec&iacute;ficas de atributo</A></B></FONT> </P><DIR>
+
+<P><A NAME="Dupli"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=4>Duplica&ccedil;&atilde;o de atributo</A></FONT> </P>
+<FONT SIZE=2><P>O SADS permite que seja definido um novo atributo ou campo com as mesmas caracter&iacute;sticas (formato, tamanho, decimais, indicador de sinal, classifica&ccedil;&atilde;o, padr&atilde;o, sintaxe, tabela/sub-rotina, f&oacute;rmula, validades e descri&ccedil;&atilde;o) de um atributo j&aacute; definido.</FONT> </P>
+<FONT SIZE=2><P>Para duplicar atributo, &eacute; necess&aacute;rio que o atributo que ter&aacute; suas caracter&iacute;sticas duplicadas esteja cadastrado no reposit&oacute;rio de dados do SADS e que o novo atributo n&atilde;o esteja cadastrado, mas definido na estrutura de sua entidade como provis&oacute;rio (NDEF = "P"), caso haja consist&ecirc;ncia entre entidades e atributo. (Ver t&oacute;pico "Cadastramento", neste item).</FONT> </P>
+<FONT SIZE=2><P>O atributo novo n&atilde;o ser&aacute; criado como sin&ocirc;nimo do atributo original.</FONT> </P>
+<FONT SIZE=2><P>O mnem&ocirc;nico do novo atributo poder&aacute; ser validado conforme os padr&otilde;es adotados em sua instala&ccedil;&atilde;o (Ver t&oacute;pico "Padroniza&ccedil;&atilde;o", neste item).</FONT> </P>
+<FONT SIZE=2><P>A duplica&ccedil;&atilde;o de c&oacute;digo de atributo n&atilde;o est&aacute; associada a nenhuma tela de processamento. Para efetu&aacute;-la, basta transmitir o menu de opera&ccedil;&atilde;o "DUPATR", cujos campos est&atilde;o explicados a seguir: </P>
+<B><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Original:</B></FONT> </P><DIR>
+<DIR>
+
+<B><FONT SIZE=2><P>Sistema</B> - Sistema do atributo a ser duplicado;</FONT> </P>
+<B><FONT SIZE=2><P>Atributo</B> - C&oacute;digo do atributo a ser duplicado.</FONT> </P></DIR>
+</DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Copia:</B></FONT> </P><DIR>
+<DIR>
+
+<B><FONT SIZE=2><P>Sistema </B>- Sistema para o qual ser&aacute; criado o novo atributo;</FONT> </P>
+<B><FONT SIZE=2><P>Atributo</B> - C&oacute;digo do atributo que ser&aacute; criado.</FONT> </P></DIR>
+</DIR>
+</DIR>
+
+<P><A NAME="Troca"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=4>Troca c&oacute;digo de atributo</A></B></FONT> </P>
+<FONT SIZE=2><P>A troca do c&oacute;digo de um atributo compreende, al&eacute;m da troca propriamente dita, a sua substitui&ccedil;&atilde;o em todas as estruturas de dados que o referenciarem.</FONT> </P>
+<FONT SIZE=2><P>Para trocar o c&oacute;digo de um atributo, &eacute; necess&aacute;rio que o atributo atual esteja cadastrado e que o novo atributo n&atilde;o esteja cadastrado, mas definido como provis&oacute;rio na estrutura de sua entidade original (NDEF = "P"), caso haja consist&ecirc;ncia entre entidades e atributos. (Ver t&oacute;pico "Cadastramentos", neste item).</FONT> </P>
+<FONT SIZE=2><P>O mnem&ocirc;nico do novo atributo poder&aacute; ser validado conforme os padr&otilde;es adotados para a instala&ccedil;&atilde;o (Ver t&oacute;pico "Padroniza&ccedil;&atilde;o", neste item).</FONT> </P>
+<FONT SIZE=2><P>Se o atributo atual estiver cadastrado em alguma estrutura, deve-se informar a op&ccedil;&atilde;o de atualiza&ccedil;&atilde;o de suas estruturas no momento da troca do c&oacute;digo, para que a mesma possa ser efetuada. Caso contr&aacute;rio, a troca n&atilde;o ser&aacute; permitida.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o ser&aacute; permitida a troca de c&oacute;digo de atributo que pertenca a uma tabela j&aacute; liberada para o ambiente de produ&ccedil;&atilde;o. Isto impede a perda de conte&uacute;do dos itens j&aacute; existentes na tabela ap&oacute;s a primeira libera&ccedil;&atilde;o para o mesmo ambiente.</FONT> </P>
+<FONT SIZE=2><P>A troca de c&oacute;digo de atributo n&atilde;o est&aacute; associada a nenhuma tela de processamento. Para efetu&aacute;-la, basta transmitir o menu de opera&ccedil;&atilde;o "TROATR", cujos campos est&atilde;o explicados a seguir: </P>
+<B><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Atual: </P><DIR>
+<DIR>
+
+<P>Sistema</B> - Sistema do atributo a ser trocado.</FONT> </P>
+<B><FONT SIZE=2><P>Atributo</B> - C&oacute;digo do atributo a ser trocado.</FONT> </P></DIR>
+</DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Novo:</B></FONT> </P><DIR>
+<DIR>
+
+<B><FONT SIZE=2><P>Sistema</B> - Sistema para o qual o atributo ser&aacute; trocado.</FONT> </P>
+<B><FONT SIZE=2><P>Atributo</B> - C&oacute;digo para o qual o atributo ser&aacute; trocado.</FONT> </P></DIR>
+</DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Informe "S" para atualizar estruturas</B> - Indicador de atualiza&ccedil;&atilde;o das estruturas nas quais o atributo atual est&aacute; sendo referenciado.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os valores:</FONT> </P><DIR>
+<DIR>
+
+<FONT SIZE=2><P>"S" - Indica que o c&oacute;digo atual ser&aacute; trocado pelo novo em todas as estruturas em que ele estiver sendo referenciado;</FONT> </P>
+<FONT SIZE=2><P>"N" - Indica que o c&oacute;digo do atributo n&atilde;o ser&aacute; atualizado nas estruturas em que ele estiver sendo referenciado. Neste caso, se o atributo atual estiver cadastrado em alguma estrutura, a troca n&atilde;o ser&aacute; efetuada.</FONT> </P></DIR>
+</DIR>
+</DIR>
+
+<P><A NAME="Trans"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=4>Transforma&ccedil;&atilde;o atributo x sin&ocirc;nimo</A></B></FONT> </P>
+<FONT SIZE=2><P>O SADS permite que um atributo seja transformado em sin&ocirc;nimo de um atributo ou campo j&aacute; existente. Deste modo, ele herdar&aacute; todas as caracter&iacute;sticas (formato, tamanho, sintaxe, validades, tabela/sub-rotina etc) do atributo ou campo original. </P>
+<P>Esta fun&ccedil;&atilde;o permite tamb&eacute;m que um sin&ocirc;nimo volte novamente &agrave; sua condi&ccedil;&atilde;o original de atributo.</FONT> </P>
+<FONT SIZE=2><P>O SADS permite que seja parametrizado se haver&aacute; ou n&atilde;o consist&ecirc;ncia no cadastramento de sin&ocirc;nimos, da seguinte forma: atributo s&oacute; pode ser sin&ocirc;nimo de atributo e campo s&oacute; pode ser sin&ocirc;nimo de campo, nunca vice-versa.</FONT> </P>
+<FONT SIZE=2><P>A tabela utilizada para esta parametriza&ccedil;&atilde;o &eacute; a SBPM5000 (Tabela de Par&acirc;metros Gerais), argumento "EMPCOD", par&acirc;metro 6 - PAR-6.</FONT> </P>
+<FONT SIZE=2><P>Detalhes a respeito desta parametriza&ccedil;&atilde;o podem ser consultados na se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", item "Metodologia", t&oacute;pico "Consist&ecirc;ncia de sin&ocirc;nimos".</FONT> </P>
+<FONT SIZE=2><P>Para efetuar as opera&ccedil;&otilde;es de transforma&ccedil;&atilde;o de atributo em sin&ocirc;nimo e vice-versa, ambos os atributos devem estar cadastrados no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>A transforma&ccedil;&atilde;o de atributo em sin&ocirc;nimo e vice-versa n&atilde;o est&aacute; associada a nenhuma tela de processamento. Para efetu&aacute;-la, basta transmitir o menu de opera&ccedil;&atilde;o "TRAATR", cujos campos est&atilde;o explicados a seguir: </P>
+<B><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Operacao (SIN/ATR)</B> - Opera&ccedil;&atilde;o a ser efetuada sobre o atributo informado. </P>
+<P>Podem ser informados os seguintes valores:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>"SIN" - Para transformar um atributo em sin&ocirc;nimo;</FONT> </P>
+<FONT SIZE=2><P>"ATR" - Para transformar um sin&ocirc;nimo em atributo.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>O atributo que possui as caracter&iacute;sticas a serem herdadas atrav&eacute;s da opera&ccedil;&atilde;o "SIN" n&atilde;o pode ser sin&ocirc;nimo de outro atributo e nem pode ser dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>Para a opera&ccedil;&atilde;o "SIN", ser&aacute; criado um relacionamento entre o atributo e o sin&ocirc;nimo. Neste caso, o sin&ocirc;nimo herdar&aacute; as caracter&iacute;sticas do atributo sempre que for referenciado. </P>
+<P>O atributo a ser transformado em sin&ocirc;nimo na opera&ccedil;&atilde;o "SIN" n&atilde;o pode possuir outro atributo como sin&ocirc;nimo de si pr&oacute;prio.</FONT> </P>
+<FONT SIZE=2><P>Para a opera&ccedil;&atilde;o "ATR", as caracter&iacute;sticas do sin&ocirc;nimo ser&atilde;o copiadas para o atributo e o relacionamento entre eles ser&aacute; desfeito.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Atributo:</B></FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>Sistema</B> - Sistema do atributo a ser transformado em sin&ocirc;nimo ou do sin&ocirc;nimo a ser transformado em atributo.</FONT> </P>
+<B><FONT SIZE=2><P>Codigo </B>- C&oacute;digo do atributo a ser transformado em sin&ocirc;nimo ou do sin&ocirc;nimo a ser transformado em atributo.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Sinonimo de:</B></FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>Sistema</B> - Sistema do atributo original a partir do qual ser&aacute; criado o sin&ocirc;nimo;</FONT> </P>
+<B><FONT SIZE=2><P>Atributo</B> - C&oacute;digo do atributo original a partir do qual ser&aacute; criado o sin&ocirc;nimo </P>
+<P>Os campos referentes ao sin&ocirc;nimo devem ser informados somente para a opera&ccedil;&atilde;o "SIN".</FONT> </P></DIR>
+</DIR>
+
+<P><A NAME="Resse"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=4>Ressequenciamento de validades</A></B></FONT> </P>
+<FONT SIZE=2><P>O SADS possibilita que as validades definidas para um determinado atributo sejam ressequenciadas, ou seja, tenham alteradas suas sequ&ecirc;ncias, de modo que todas elas tenham um n&uacute;mero m&uacute;ltiplo de 10 (dez).</FONT> </P>
+<FONT SIZE=2><P>Para utilizar esta opera&ccedil;&atilde;o, as validades a serem ressequenciadas j&aacute; devem ter sido cadastradas no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Para ressequenciar as validades de um atributo, basta transmitir os argumentos do menu de opera&ccedil;&atilde;o RESVALATR, cujos campos devem ser preenchidos conforme explica&ccedil;&atilde;o a seguir:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Sistema</B> - C&oacute;digo do sistema ao qual pertence o atributo (sss).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&nbsp;<B><FONT SIZE=2>Atributo</B> - C&oacute;digo do atributo cujas validades ser&atilde;o ressequenciadas.</FONT> </P>
+<FONT SIZE=2><P>Esta transa&ccedil;&atilde;o ser&aacute; executada imediatamente, sem apresenta&ccedil;&atilde;o de tela de processamento e, ao seu t&eacute;rmino, ser&aacute; enviada uma mensagem confirmando o ressequenciamento.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Gener">Gen&eacute;ricas aplic&aacute;veis aos atributos</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Utilit&aacute;rios:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento;</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Consultas:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Defini&ccedil;&atilde;o e validades de atributos;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Atributos por sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Atributos por estrutura;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Defini&ccedil;&atilde;o dos atributos por sistema ou estrutura;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Descri&ccedil;&atilde;o de atributo.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Refer&ecirc;ncias cruzadas:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Todas as estruturas a que o atributo pertence; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Todos os programas que o utilizam;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Todos os atributos que s&atilde;o sin&ocirc;nimos de um determinado atributo;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Todos os atributos relacionados a um dom&iacute;nio;</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Informativos impressos:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista de atributos por sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista de atributos por sistema por c&oacute;digo externo;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Relat&oacute;rio de defini&ccedil;&atilde;o de atributos por estrutura ou sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista a descri&ccedil;&atilde;o.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Todos estes utilit&aacute;rios, consultas, refer&ecirc;ncias cruzadas e informativos impressos encontram-se detalhadamente descritos na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", neste manual.</FONT> </P></BODY>
+</HTML>

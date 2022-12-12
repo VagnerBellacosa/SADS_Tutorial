@@ -1,0 +1,1129 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Untitled</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+
+<P><basefont size=2></P>
+<B><FONT SIZE=6><P><A NAME="Utili">Utilit&aacute;rios on-line</A></P>
+</B></FONT><P><HR></P>
+<P><basefont size=2></P>
+<FONT SIZE=2><P>O SADS disp&otilde;e de certas fun&ccedil;&otilde;es <I>on-line</I> que apoiam o desenvolvimento e a manuten&ccedil;&atilde;o dos sistemas aplicativos. Estas fun&ccedil;&otilde;es s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Gerele">Gera&ccedil;&atilde;o de elementos do COMS</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Gerlib">Gera&ccedil;&atilde;o e libera&ccedil;&atilde;o de fam&iacute;lia</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Dupli">Duplica&ccedil;&atilde;o de elemento</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Dureg">Duplica&ccedil;&atilde;o de registro</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Restru">Ressequenciamento de estrutura</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Desce">Descri&ccedil;&atilde;o de elemento</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Impele">Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Exele">Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cancel">Consulta a lista de cancelamentos on-line</A><I><FONT SIZE=2>;</I></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Tranca">Consulta a transa&ccedil;&atilde;o cancelada</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Integ">Integra&ccedil;&atilde;o ET-SADS x SADS</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Argfun">Relacionamento "Fun&ccedil;&atilde;o X Transa&ccedil;&otilde;es</A><FONT SIZE=2>";</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Edit">Importa&ccedil;&atilde;o de edit</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Exedit">Exporta&ccedil;&atilde;o de edit</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Maqpro">Cancelamento de transfer&ecirc;ncia de tela e consist&ecirc;ncia para a m&aacute;quina de produ&ccedil;&atilde;o</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Pagina">Paginadores</A><FONT SIZE=2>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Cada uma destas fun&ccedil;&otilde;es encontra-se explicada detalhadamente a seguir.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Gerele">Gera&ccedil;&atilde;o de elementos do COMS</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Elementos do COMS s&atilde;o informa&ccedil;&otilde;es b&aacute;sicas, utilizadas pelo mesmo, para gerenciamento das transa&ccedil;&otilde;es <I>on-line</I>.</FONT> </P>
+<FONT SIZE=2><P>No momento da gera&ccedil;&atilde;o de elementos do COMS, ser&aacute; criado um arquivo fonte no <I>usercode</I> especificado pelo usu&aacute;rio que ser&aacute; posteriormente carregado atrav&eacute;s do Utility do COMS.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Arger">Argumentos da gera&ccedil;&atilde;o de elementos do COMS</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que a gera&ccedil;&atilde;o de elementos do COMS possa ser utilizada, os seguintes argumentos devem ser informados no menu de opera&ccedil;&atilde;o "GERCOM":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Host </B>- C&oacute;digo do <I>host</I> no padr&atilde;o SADS (sssNnn).</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Ambiente</B> - Ambiente para o qual as especifica&ccedil;&otilde;es de elementos do COMS ser&atilde;o geradas.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"T"</B> - Para gerar o arquivo de elementos do COMS com caracter&iacute;sticas de sistema em teste;</FONT> </P>
+<B><FONT SIZE=2><P>"P"</B> - Para gerar o arquivo de elementos do COMS com caracter&iacute;sticas de sistema em produ&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Janela</B> - Nome da janela (<I>window</I>) na qual o sistema ser&aacute; executado.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Ser&aacute; apresentada uma tela de processamento, com as informa&ccedil;&otilde;es digitadas no menu de opera&ccedil;&atilde;o, para que sejam preenchidos os seguintes campos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Usercode Geracao Arquivo Carga</B> - <I>Usercode</I> de an&aacute;lise no qual ser&aacute; gerado o arquivo de elementos do COMS.</FONT> </P>
+<FONT SIZE=2><P>Este <I>usercode</I> dever&aacute; estar cadastrado como sendo de an&aacute;lise (Tipo = "AN") na tabela de <I>usercodes</I> do SADS - Tabela SBPM5002, que se encontra descrita na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Prioridade</B> - N&uacute;mero associado &agrave; execu&ccedil;&atilde;o do <I>host</I>, que determinar&aacute; a prioridade deste em rela&ccedil;&atilde;o a outros programas na utiliza&ccedil;&atilde;o dos recursos da m&aacute;quina.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Usercode de Localizacao Objeto</B> - <I>Usercode</I> utilizado na forma&ccedil;&atilde;o do <I>title</I> do programa.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Usercode Execucao do Programa</B> - <I>Usercode</I> no qual ser&aacute; executado o sistema.</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;Pack User - Localizacao Objeto - </B>Nome do disco onde ficar&aacute; residente o objeto do programa.</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Pack do User de Execucao</B> - Nome do disco onde ficar&atilde;o residentes os arquivos aos quais o sistema poder&aacute; executar o acesso e os que ele ir&aacute; gerar.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>otherwise</B> - Nome do disco em que o sistema encontrar&aacute; os arquivos necess&aacute;rios para execu&ccedil;&atilde;o, que n&atilde;o estiverem residentes no disco prim&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>TIME LIMIT do Programa em Producao</B> - Quantidade de tempo que o <I>host</I> ficar&aacute; ativo sem que nenhuma transa&ccedil;&atilde;o seja solicitada, sendo que essa informa&ccedil;&atilde;o deve ser expressa em minutos e segundos.</FONT> </P>
+<FONT SIZE=2><P>O campo TIME LIMIT n&atilde;o pode ser informado nas gera&ccedil;&otilde;es para o ambiente de teste, onde o tempo assumido ser&aacute; de 5 minutos.</FONT> </P>
+<FONT SIZE=2><P>Quando n&atilde;o informado, assumir&aacute; o tempo de 15 minutos para produ&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Janela como sufixo de Programa/Agenda</B> - Indicador de janela como parte integrante do c&oacute;digo do programa e agenda.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S"</B> - Para que o c&oacute;digo do programa e da agenda sejam gerados com o nome da janela como sufixo;</FONT> </P>
+<B><FONT SIZE=2><P>"N"</B> - Para que o c&oacute;digo do programa e da agenda sejam gerados sem o nome da janela como sufixo.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para um <I>host</I> no padr&atilde;o SADS (sssNnn), o arquivo de elementos do COMS ser&aacute; composto com o c&oacute;digo de programa do COMS no padr&atilde;o sssnn e a agenda no padr&atilde;o sssW23nn.</FONT> </P>
+<FONT SIZE=2><P>Se no campo Janela como sufixo de Programa/Agenda for informado "S", o programa ser&aacute; gerado no padr&atilde;o sssnn_<I>window</I> e a agenda como sssW23nn_<I>window</I>.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Janela/Host como INSTALLATION_DATA</B> - Indicador de gera&ccedil;&atilde;o de INSTALLATION_DATA.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"J"</B> - Ser&aacute; gerado um INSTALLATION_DATA com o mesmo nome da janela;</FONT> </P>
+<B><FONT SIZE=2><P>"H"</B> - Ser&aacute; gerado um INSTALLATION_DATA com o mesmo nome do <I>host</I>;</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso este campo n&atilde;o seja informado, n&atilde;o ser&aacute; gerado um INSTALLATION_DATA.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Agenda com TRANSACTION_MODE</B> - Indicador de solicita&ccedil;&atilde;o de transa&ccedil;&otilde;es em uma mesma janela.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S"</B> - Quando cada transa&ccedil;&atilde;o de uma janela deve ser finalizada para que outra transa&ccedil;&atilde;o seja solicitada;</FONT> </P>
+<B><FONT SIZE=2><P>"N"</B> - Quando for poss&iacute;vel solicitar uma transa&ccedil;&atilde;o em uma janela sem que a solicitada anteriormente j&aacute; tenha terminado.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Se nada for informado, ser&aacute; assumido "N".</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Diferencia TRANCODE em teste</B> - Indica&ccedil;&atilde;o que permite a gera&ccedil;&atilde;o de <I>trancodes</I> diferenciados para o ambiente de teste, possibilitando que um sistema em teste e outro em produ&ccedil;&atilde;o possam ser executados simultaneamente em uma mesma agenda.</FONT> </P>
+<FONT SIZE=2><P>Esta diferencia&ccedil;&atilde;o resume-se na utiliza&ccedil;&atilde;o das letras "T" e "M" para <I>trancodes</I>, prim&aacute;rios e secund&aacute;rios, em teste. Neste caso, os programas <I>on-line</I> do sistema t&ecirc;m de ser compilados com a op&ccedil;&atilde;o de compila&ccedil;&atilde;o "SADSDESENV".</FONT> </P>
+<FONT SIZE=2><P>Cumpre ressaltar que, o m&oacute;dulo de Navega&ccedil;&atilde;o e o COOPERATOR n&atilde;o funcionam com <I>trancodes</I> em teste diferenciados.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Cria/associa DATABASE</B> - Cria o elemento DATABASE e associa este c&oacute;digo ao elemento <I>program</I> do COMS, correspondente ao <I>host,</I> que deve utilizar este banco como <I>update</I>.. Este campo deve ser informado caso se utilize recupera&ccedil;&atilde;o sincronizada do COMS com o DMSII.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Trancodes de navegacao processados pelo host na janela</B> - <I>Trancodes</I> utilizados em menus de escolha ou opera&ccedil;&atilde;o que sejam tratados por este <I>host</I>. </P>
+<P>Detalhes sobre navega&ccedil;&atilde;o podem ser encontrados na se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de Apoio", item "Navega&ccedil;&atilde;o", neste manual.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>GERAR MESMO QUE JA EXISTA O ARQUIVO</B> - Indicador de sobreposi&ccedil;&atilde;o do arquivo de elementos do COMS no <I>usercode</I>.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S"</B> - O novo arquivo poder&aacute; ser gerado sobre um arquivo j&aacute; existente no <I>usercode</I>;</FONT> </P>
+<B><FONT SIZE=2><P>"N"</B> - O novo arquivo s&oacute; ser&aacute; gerado caso n&atilde;o haja outro com o mesmo nome no <I>usercode</I>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>O nome do arquivo ser&aacute; gerado no disco prim&aacute;rio do <I>usercode</I> informado com o seguinte c&oacute;digo:</P>
+<P>&nbsp;</P>
+</FONT><P><IMG SRC="Image1.gif" WIDTH=457 HEIGHT=132></P>
+<FONT SIZE=2><P>Ap&oacute;s a defini&ccedil;&atilde;o desses elementos, a carga do arquivo resultante desta gera&ccedil;&atilde;o dever&aacute; ser efetuada no COMS. Para isso, atrav&eacute;s da janela Utility, deve-se executar o comando LOAD, informando o nome do arquivo conforme mostrado anteriormente. Detalhes sobre esta opera&ccedil;&atilde;o podem ser consultados no "<I>Planning and Installation Manual</I>", da Unisys.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Gerlib">Gera&ccedil;&atilde;o e libera&ccedil;&atilde;o de fam&iacute;lia</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS possui uma fun&ccedil;&atilde;o encarregada por gerar <I>libraries</I> , programas e sub-rotinas</FONT>,<FONT SIZE=2> liberar telas e consist&ecirc;ncias para testes e liberar <I>libraries</I>, telas e consist&ecirc;ncias para o ambiente de produ&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Esta fun&ccedil;&atilde;o consiste em executar o acesso aos elementos de um sistema que forem indicados, gerar suas <I>libraries</I> ou liber&aacute;-los de acordo com a necessidade e o estado em que os mesmos se encontrarem.</FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o enviadas mensagens informando sobre o in&iacute;cio das gera&ccedil;&otilde;es e/ou libera&ccedil;&otilde;es, o resultado de cada opera&ccedil;&atilde;o e se o t&eacute;rmino da gera&ccedil;&atilde;o e/ou libera&ccedil;&atilde;o foi efetuado com sucesso. No caso de ocorr&ecirc;ncia de erro em alguma opera&ccedil;&atilde;o, ao final do processamento, &eacute; encadeada uma consulta paginada com os erros ocorridos durante este processamento de fam&iacute;lias, sendo salvas para que possam ser consultadas posteriormente atrav&eacute;s do menu "GERLIBFAM". A cada novo processamento de fam&iacute;lia, as mensagens de erro de execu&ccedil;&otilde;es anteriores s&atilde;o exclu&iacute;das deste arquivo. </P>
+<P>Atrav&eacute;s desta fun&ccedil;&atilde;o podem ser efetuadas:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Gera&ccedil;&atilde;o de <I>libraries</I> de &aacute;rea conversacional, &aacute;rea de trabalho, arquivo, &aacute;rea de comunica&ccedil;&atilde;o com sub-rotina, DASDL, <I>library de procedure</I>, registro de uso geral, relat&oacute;rio, tabela, tela e tela de explica&ccedil;&atilde;o para os ambientes de teste e produ&ccedil;&atilde;o; </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Gera&ccedil;&atilde;o de programas</FONT> <FONT SIZE=2>e sub-rotinas;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Libera&ccedil;&atilde;o de consist&ecirc;ncias e telas para o ambiente de teste;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Libera&ccedil;&atilde;o de consist&ecirc;ncias, <I>libraries</I> e telas para o ambiente de produ&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>S&oacute; ser&atilde;o processadas as libera&ccedil;&otilde;es para os elementos da fam&iacute;lia que se encontrarem em estado compat&iacute;vel com as solicita&ccedil;&otilde;es. Por exemplo: se forem solicitadas libera&ccedil;&otilde;es de telas para o ambiente de teste, somente aquelas que estiverem em desenvolvimento ou manuten&ccedil;&atilde;o ser&atilde;o liberadas.</FONT> </P>
+<FONT SIZE=2><P>As gera&ccedil;&otilde;es tamb&eacute;m, em via geral, s&oacute; s&atilde;o necess&aacute;rias para os elementos da fam&iacute;lia que se encontrarem em estado compat&iacute;vel com as solicita&ccedil;&otilde;es. Por&eacute;m, para facilitar a gera&ccedil;&atilde;o das <I>libraries</I> de todos os elementos de uma fam&iacute;lia, pode-se optar por gerar todas as <I>libraries</I>, independentemente do estado de seus elementos, atrav&eacute;s do campo GERAR TODAS AS LIBRARIES (S/N).</FONT> </P>
+<FONT SIZE=2><P>Caso seja informado o c&oacute;digo de um atributo (SISTEMA/ATRIBUTO), s&oacute; ser&atilde;o gerados ou liberados os elementos que contenham o atributo em sua estrutura e estejam com <I>status</I> de "a gerar" ou "a liberar", respectivamente.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Libfa">Argumentos da gera&ccedil;&atilde;o e libera&ccedil;&atilde;o de fam&iacute;lia</A></B></FONT> </P>
+<FONT SIZE=2><P>Para que a gera&ccedil;&atilde;o e libera&ccedil;&atilde;o de fam&iacute;lia possam ser utilizadas, alguns argumentos devem ser informados no menu de opera&ccedil;&atilde;o "GERFAM", quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SISTEMA </B>- C&oacute;digo do sistema do atributo pertencente aos elementos a serem gerados/liberados, no padr&atilde;o SADS. (Opcional)</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ATRIBUTO</B> - C&oacute;digo do atributo pertencente aos elementos a serem gerados/liberados, no padr&atilde;o definido na instala&ccedil;&atilde;o. (Opcional)</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>USERCODE</B> -<I> Usercode</I> de an&aacute;lise sob o qual ser&atilde;o geradas as <I>libraries</I>.</FONT> </P>
+<FONT SIZE=2><P>Para <I>usercodes</I> de an&aacute;lise, s&atilde;o definidos os ambientes (<I>usercode</I> e disco) onde ficar&atilde;o residentes suas <I>libraries</I> de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as <I>libraries</I> de produ&ccedil;&atilde;o fiquem sem <I>usercodes</I>. Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002, que se encontra descrita na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>BANCO</B> - C&oacute;digo do banco de dados, no padr&atilde;o SADS (sssBxx), a ser utilizado para gera&ccedil;&atilde;o de par&acirc;metros f&iacute;sicos de todos os <I>datasets</I> pertencentes a este, inclusive do r<I>estart dataset</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ELEMENTO</B> - Fam&iacute;lia de elementos a ser gerada/liberada, no padr&atilde;o SADS. </P>
+<P>Todas as fam&iacute;lias de elementos indicadas devem pertencer ao sistema informado no cabe&ccedil;alho da tela.</FONT> </P>
+<FONT SIZE=2><P>A seguir, s&atilde;o apresentadas as fam&iacute;lias dos elementos que podem ter <I>libraries</I> geradas e o padr&atilde;o de codifica&ccedil;&atilde;o que deve ser informado no campo ELEMENTO:</P></DIR>
+</FONT>
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" WIDTH=318>
+<TR><TD WIDTH="63%" VALIGN="MIDDLE">
+<P><B><FONT SIZE=2>Fam&iacute;lia</B></FONT> </TD>
+<TD WIDTH="37%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P>ELEMENTO</B></FONT> </TD>
+</TR>
+<TR><TD WIDTH="63%" VALIGN="MIDDLE">
+<P>&Aacute;reas conversacionais</TD>
+<TD WIDTH="37%" VALIGN="MIDDLE">
+<P>"L" </TD>
+</TR>
+<TR><TD WIDTH="63%" VALIGN="MIDDLE">
+<P>&Aacute;reas de trabalho</TD>
+<TD WIDTH="37%" VALIGN="MIDDLE">
+<P>"L" </TD>
+</TR>
+<TR><TD WIDTH="63%" VALIGN="MIDDLE">
+<I><P>Libraries de procedure</I></TD>
+<TD WIDTH="37%" VALIGN="MIDDLE">
+<P>"L"</TD>
+</TR>
+<TR><TD WIDTH="63%" VALIGN="MIDDLE">
+<P>Arquivos</TD>
+<TD WIDTH="37%" VALIGN="MIDDLE">
+<P>"A"</TD>
+</TR>
+<TR><TD WIDTH="63%" VALIGN="MIDDLE">
+<P>&Aacute;reas de comun. sub-rotina</TD>
+<TD WIDTH="37%" VALIGN="MIDDLE">
+<P>"S" </TD>
+</TR>
+<TR><TD WIDTH="63%" VALIGN="MIDDLE">
+<P>DASDL</TD>
+<TD WIDTH="37%" VALIGN="MIDDLE">
+<P>"B"</TD>
+</TR>
+<TR><TD WIDTH="63%" VALIGN="MIDDLE">
+<P>Par&acirc;metros f&iacute;sicos de <I><FONT SIZE=2>dataset</I></FONT> </TD>
+<TD WIDTH="37%" VALIGN="MIDDLE">
+<P>"F"</TD>
+</TR>
+<TR><TD WIDTH="63%" VALIGN="MIDDLE">
+<P>Tabelas </TD>
+<TD WIDTH="37%" VALIGN="MIDDLE">
+<P>"M"</TD>
+</TR>
+<TR><TD WIDTH="63%" VALIGN="MIDDLE">
+<P>Telas</TD>
+<TD WIDTH="37%" VALIGN="MIDDLE">
+<P>"T"</TD>
+</TR>
+<TR><TD WIDTH="63%" VALIGN="MIDDLE">
+<P>Registros de uso geral </TD>
+<TD WIDTH="37%" VALIGN="MIDDLE">
+<P>"G" </TD>
+</TR>
+<TR><TD WIDTH="63%" VALIGN="MIDDLE">
+<P>Relat&oacute;rios </TD>
+<TD WIDTH="37%" VALIGN="MIDDLE">
+<P>"R" </TD>
+</TR>
+</TABLE>
+<DIR>
+
+<P>A seguir, ser&atilde;o apresentadas as fam&iacute;lias dos elementos que podem ser submetidos a processos de libera&ccedil;&atilde;o e o padr&atilde;o de codifica&ccedil;&atilde;o que deve ser informado no campo ELEMENTO: </P></DIR>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" WIDTH=295>
+<TR><TD WIDTH="60%" VALIGN="MIDDLE">
+<P><B><FONT SIZE=2>Fam&iacute;lia</B></FONT> </TD>
+<TD WIDTH="40%" VALIGN="MIDDLE">
+<B><FONT SIZE=2><P>ELEMENTO</B></FONT> </TD>
+</TR>
+<TR><TD WIDTH="60%" VALIGN="MIDDLE">
+<P>Consist&ecirc;ncias</TD>
+<TD WIDTH="40%" VALIGN="MIDDLE">
+<P>"C" </TD>
+</TR>
+<TR><TD WIDTH="60%" VALIGN="MIDDLE">
+<P>Telas de explica&ccedil;&atilde;o</TD>
+<TD WIDTH="40%" VALIGN="MIDDLE">
+<P>"E" </TD>
+</TR>
+<TR><TD WIDTH="60%" VALIGN="MIDDLE">
+<P>Telas</TD>
+<TD WIDTH="40%" VALIGN="MIDDLE">
+<P>"T"</TD>
+</TR>
+</TABLE>
+<DIR>
+
+<P>As <I><FONT SIZE=2>libraries</I> geradas para teste podem ser liberadas para produ&ccedil;&atilde;o, com exce&ccedil;&atilde;o das de declara&ccedil;&atilde;o de bancos (ss/s/BL/00). Deve-se utilizar o mesmo padr&atilde;o de codifica&ccedil;&atilde;o descrito para a sua gera&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>P/T</B> - Ambiente sob o qual ser&atilde;o geradas as <I>libraries</I> ou para o qual ser&atilde;o feitas as libera&ccedil;&otilde;es. </P>
+<P>Os valores poss&iacute;veis s&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"P" - Para ambiente de produ&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"T" - Para ambiente de teste.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPCAO</B> - Op&ccedil;&atilde;o relativa ao processamento desejado, de acordo com a tabela de OPCOES exibida na tela.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"GER" - Gera&ccedil;&atilde;o de <I>libraries</I> e programas;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"LIB" - Libera&ccedil;&atilde;o de <I>library</I> para produ&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"DES" - Libera&ccedil;&atilde;o de desenho de tela;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" - Libera&ccedil;&atilde;o de consist&ecirc;ncia.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para maiores informa&ccedil;&otilde;es, cada uma das op&ccedil;&otilde;es deve ser consultada isoladamente, neste manual.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>GERAR TODAS AS LIBRARIES (S/N)</B> - Indicador de gera&ccedil;&atilde;o incondicional de <I>libraries</I>.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para que todas as <I>libraries</I> sejam geradas, independentemente do estado de seus elementos;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para que somente sejam geradas <I>libraries</I> para os elementos com <I>status </I>"a gerar".</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso este campo n&atilde;o seja informado, ser&aacute; assumido que somente as <I>libraries</I> com <I>status</I> "a gerar" dever&atilde;o ser geradas.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>GERAR MESMO QUE JA EXISTA O FONTE (S/N)</B> - Indicador de sobreposi&ccedil;&atilde;o de fonte a ser gerado.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para que o fonte seja gerado, mesmo que ele j&aacute; exista no <I>usercode</I> especificado;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para que o fonte n&atilde;o seja gerado caso ele j&aacute; exista no <I>usercode</I> especificado.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONFIRME (S/N)</B> - Indicador de confirma&ccedil;&atilde;o de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para confirmar a execu&ccedil;&atilde;o da opera&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para cancelar a execu&ccedil;&atilde;o da opera&ccedil;&atilde;o.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Dupli">Duplica&ccedil;&atilde;o de elemento</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS oferece uma fun&ccedil;&atilde;o respons&aacute;vel por duplicar as defini&ccedil;&otilde;es e estruturas dos elementos cadastrados no reposit&oacute;rio de dados do SADS. </P>
+<P>Os elementos que podem ser duplicados s&atilde;o: arquivo, <I>dataset</I>, consist&ecirc;ncia, <I>library</I>, registro de uso geral, relat&oacute;rio, tabela e tela.</FONT> </P>
+<FONT SIZE=2><P>A duplica&ccedil;&atilde;o de programas, sub-rotinas e m&oacute;dulos <I>on-line</I> e <I>batch</I> encontra-se descrita na Se&ccedil;&atilde;o II, "Elementos do reposit&oacute;rio de dados do SADS", no item "Programa", t&oacute;pico "Duplica&ccedil;&atilde;o de programa/m&oacute;dulo" e no item "Sub-rotina", t&oacute;pico "Duplica&ccedil;&atilde;o de sub-rotina/m&oacute;dulo".</P>
+<P>A duplica&ccedil;&atilde;o somente poder&aacute; ocorrer entre elementos do mesmo tipo se o elemento original e o sistema do elemento destino estiverem cadastrados e se o elemento a ser gerado ainda n&atilde;o estiver cadastrado. A &uacute;nica exce&ccedil;&atilde;o desta regra &eacute; a duplica&ccedil;&atilde;o de <I>dataset</I>, onde o <I>dataset</I> a ser gerado pode j&aacute; estar cadastrado no reposit&oacute;rio de dados, desde que possua o mesmo c&oacute;digo externo do <I>dataset</I> original.</FONT> </P>
+<FONT SIZE=2><P>Somente elementos completos podem ser duplicados nesta fun&ccedil;&atilde;o, n&atilde;o sendo poss&iacute;vel duplicar isoladamente registros de elementos ou linhas de relat&oacute;rios. Para duplicar isoladamente registros de elementos, consultar o item de duplica&ccedil;&atilde;o de registro, neste mesmo cap&iacute;tulo.</FONT> </P>
+<FONT SIZE=2><P>Ao duplicar um elemento, todas as caracter&iacute;sticas de cadastramento do original ser&atilde;o herdadas pelo elemento duplicata, bem como descri&ccedil;&atilde;o, estruturas, desenhos de linhas, validades de consist&ecirc;ncia etc. As &uacute;nicas exce&ccedil;&otilde;es s&atilde;o para telas e tabelas, que possuem fun&ccedil;&otilde;es de duplica&ccedil;&atilde;o de desenho e de par&acirc;metros, respectivamente.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Dupele">Argumentos da duplica&ccedil;&atilde;o de elemento</A></B></FONT> </P>
+<FONT SIZE=2><P>Para duplicar as defini&ccedil;&otilde;es e estruturas dos elementos cadastrados no reposit&oacute;rio de dados do SADS, alguns argumentos devem ser informados no menu de opera&ccedil;&atilde;o DUPELE, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Elemento original</B> - C&oacute;digo do elemento que ser&aacute; duplicado, no padr&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>Os elementos que podem ser duplicados s&atilde;o: arquivo, base de dados,</FONT> <I><FONT SIZE=2>dataset</I>, consist&ecirc;ncia, <I>library</I>, registro de uso geral, relat&oacute;rio, sub-rotina, tabela e tela.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Elemento novo</B> - C&oacute;digo do elemento que ser&aacute; criado, no padr&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>O elemento novo deve ser do mesmo tipo do elemento duplicado.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Dureg">Duplica&ccedil;&atilde;o de registro</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS oferece uma fun&ccedil;&atilde;o respons&aacute;vel por duplicar registros das estruturas de dados cadastradas no reposit&oacute;rio de dados do SADS. </P>
+<P>Os elementos que podem ter seus registros duplicados s&atilde;o: arquivo, <I>dataset</I>, <I>library</I>, registro de uso geral e &aacute;rea de comunica&ccedil;&atilde;o de sub-rotina.</FONT> </P>
+<FONT SIZE=2><P>A duplica&ccedil;&atilde;o somente poder&aacute; ocorrer entre registros de elementos do mesmo tipo se o registro original e o elemento destino estiverem cadastrados e se o registro novo ainda n&atilde;o estiver cadastrado, com exce&ccedil;&atilde;o do elemento <I>dataset</I>, que, ao ser duplicado, exige o registro 00. Por&eacute;m se o registro a ser duplicado for o 00, o <I>dataset</I>, se n&atilde;o existente, ser&aacute; criado.</FONT> </P>
+<FONT SIZE=2><P>Ao duplicar um registro, todas as caracter&iacute;sticas de cadastramento do original ser&atilde;o herdadas pelo registro duplicado.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argreg">Argumentos da duplica&ccedil;&atilde;o de registro</A></B></FONT> </P>
+<FONT SIZE=2><P>Para duplicar registro de estruturas dos elementos cadastrados no reposit&oacute;rio de dados do SADS, alguns argumentos devem ser informados no menu de opera&ccedil;&atilde;o DUPREG, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Registro original</B> - C&oacute;digo do registro que ser&aacute; duplicado, no padr&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>Os elementos que podem ter seus registros duplicados s&atilde;o: arquivo, <I>dataset</I>, <I>library</I>, registro de uso geral e &aacute;rea de comunica&ccedil;&atilde;o de sub-rotina.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Registro novo</B> - C&oacute;digo do registro que ser&aacute; criado, no padr&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>O registro novo deve ser de um elemento do mesmo tipo do elemento duplicado.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Restru">Ressequenciamento de estrutura</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS oferece uma fun&ccedil;&atilde;o respons&aacute;vel por ressequenciar a estrutura informada. A primeira sequ&ecirc;ncia ficar&aacute; com o valor "0010" e as demais, acrescidas de 10.</FONT> </P>
+<FONT SIZE=2><P>Para isso, &eacute; necess&aacute;rio que a estrutura do elemento a ser ressequenciada j&aacute; esteja cadastrada no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argest">Argumentos do ressequenciamento de estrutura</A></B></FONT> </P>
+<FONT SIZE=2><P>Para ressequenciar estrutura, deve-se utilizar o menu de opera&ccedil;&atilde;o RESEST, cujo campo deve ser preenchido conforme indicado:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estrutura</B> - C&oacute;digo da estrutura que se deseja ressequenciar.</FONT> </P>
+<FONT SIZE=2><P>Deve-se informar um c&oacute;digo de estrutura, conforme especificado a seguir:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&Aacute;rea de comunica&ccedil;&atilde;o de sub-rotina: "sssSxxnn";</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&Aacute;rea de trabalho: "sssLxnmm", onde "mm" &eacute; o n&uacute;mero do registro a ser ressequenciado;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&Aacute;rea de <I>work</I> de programa <I>batch</I>: "sssPxx";</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&Aacute;rea de <I>work</I> de programa <I>on-line</I>: "sssNxx";</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;&Aacute;rea de work de sub-rotina: "sssSxx";</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Chave secund&aacute;ria de entidade: "sssEaaaa", <BR>
+onde o &uacute;ltimo "a" &eacute; a letra que indica a chave secund&aacute;ria da entidade a ser ressequenciada;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Chave secund&aacute;ria de tabela: "sssMnnnna", <BR>
+onde "a" &eacute; a letra que indica a chave secund&aacute;ria de tabela a ser ressequenciada;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Consist&ecirc;ncia: "sssCnnmm" ou "sssQxnmm". <BR>
+As validades definidas para a consist&ecirc;ncia tamb&eacute;m ser&atilde;o ressequenciadas;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Entidade: "sssEaaa";</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Linha de relat&oacute;rio: "sssRxn ll" ou "sssRxnnll",<BR>
+onde "ll" &eacute; o n&uacute;mero da linha a ser ressequenciada;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Registro de arquivo: "sssAxnmm",<BR>
+onde "mm" &eacute; o n&uacute;mero do registro a ser ressequenciado;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Registro de <I>dataset</I>: "ssBxxmm",<BR>
+onde "mm" &eacute; o n&uacute;mero do registro a ser ressequenciado;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Registro de uso geral: "sssGxnmm",<BR>
+onde "mm" &eacute; o n&uacute;mero do registro a ser ressequenciado;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><I><FONT SIZE=2>Sets</I>, <I>subsets</I>, <I>access</I> : "sssBxxa",<BR>
+onde "a" &eacute; a letra que indica o <I>set</I>, <I>subset</I> ou <I>access</I> a ser ressequenciado;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Tabela: "sssMnnnn";</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Tela: "sssTnnmm".</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Desce">Descri&ccedil;&atilde;o de elemento</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS permite que se cadastre a descri&ccedil;&atilde;o de qualquer tipo de elemento - <I>dataset</I>, tabela, entidade, tela, etc - anteriormente definido no seu reposit&oacute;rio de dados.</FONT> </P>
+<FONT SIZE=2><P>Estas descri&ccedil;&otilde;es tem diversas utilidades, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Composi&ccedil;&atilde;o do manual da aplica&ccedil;&atilde;o (manual do sistema, do usu&aacute;rio ou por comando);</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Explica&ccedil;&atilde;o das telas de menus de escolha e opera&ccedil;&atilde;o (atrav&eacute;s do acionamento do <I>help</I> pela tecla SPFY);</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Explica&ccedil;&atilde;o mais detalhada de um atributo, cujo erro foi detectado pela consist&ecirc;ncia, atrav&eacute;s do acionamento do comando "HELP".</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Cumpre ressaltar que, para os elementos entidade externa, fluxo de dados, dep&oacute;sito de dados, fun&ccedil;&atilde;o/processo e sistema, o cadastramento da descri&ccedil;&atilde;o &eacute; feito simultaneamente &agrave;s suas defini&ccedil;&otilde;es. </P>
+</FONT><B><FONT SIZE=5><P><A NAME="Argele">Argumentos da descri&ccedil;&atilde;o de elemento</A></B></FONT> </P>
+<FONT SIZE=2><P>Para descrever um elemento, deve-se efetuar o desvio para o menu de escolha referente ao elemento que se quer descrever e nele selecionar a fun&ccedil;&atilde;o apropriada para esta opera&ccedil;&atilde;o (geralmente "DESC").</FONT> </P>
+<FONT SIZE=2><P>No menu de opera&ccedil;&atilde;o apresentado, os campos que sempre devem ser preenchidos s&atilde;o os seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - Opera&ccedil;&atilde;o a ser efetuada em rela&ccedil;&atilde;o &agrave; descri&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta).</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&lt;Elemento&gt;</B> - C&oacute;digo do elemento a ser descrito.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Impele">Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>A descri&ccedil;&atilde;o de qualquer elemento pode ser feita utilizando os recursos de edi&ccedil;&atilde;o do Cande e posteriormente importada para o reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Na opera&ccedil;&atilde;o de importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de um elemento qualquer, exceto atributo, campo, sin&ocirc;nimo e dom&iacute;nio, o arquivo texto deve estar no padr&atilde;o "(USERCODE)TEXTO/sssexxxxxx", onde::</P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp; (USERCODE)</B> - Nome do usercode sob o qual se encontra;</P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;TEXTO </B>- Palavra constante;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;sssexxxxxx</B> - Nome do usercode sob o qual se encontra.</P></DIR>
+</DIR>
+
+<P>Na opera&ccedil;&atilde;o de importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de um atributo, campo, sin&ocirc;nimo ou dom&iacute;nio, o arquivo texto deve estar no padr&atilde;o "(USERCODE)TEXTO/sss/eeetttqqqqq", onde:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;(USERCODE)</B> - Nome do usercode sob o qual se encontra;</P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;TEXTO </B>- Palavra constante;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;sss</B> - C&oacute;digo alfab&eacute;tico que identifica o sistema no qual o atributo, campo, sin&ocirc;nimo ou dom&iacute;nio est&aacute; definido;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;<B>eeetttqqqqq</B> - Mnem&ocirc;nico do atributo, campo, sin&ocirc;nimo ou dom&iacute;nio, cuja descri&ccedil;&atilde;o ser&aacute; importada.</P></DIR>
+</DIR>
+
+<P>O arquivo texto deve ser do tipo SEQDATA e tem, necessariamente, de estar residente em algum <I>usercode</I>. </P>
+<P>Para criar um arquivo deste tipo no Cande, deve-se executar o seguinte comando:</P>
+<P>"make &lt;&lt;nome do arquivo&gt;&gt; SEQ", onde:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>make</B> - Comando de cria&ccedil;&atilde;o de arquivo no Cande;</P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;<B>&lt;&lt;nome do arquivo&gt;&gt; </B>- Nome do arquivo nos padr&otilde;es descritos anteriormente;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;<B>SEQ</B> - Palavra constante que identifica o tipo do arquivo</P></DIR>
+</DIR>
+
+<P>Como o tamanho da linha de descri&ccedil;&atilde;o no reposit&oacute;rio de dados do SADS comporta 78 caracteres e nos arquivos SEQDATA disp&otilde;e-se de apenas 72, pode-se utilizar 6 caracteres da pr&oacute;xima linha do arquivo para completar os 78 dispon&iacute;veis no SADS. Para isto, deve-se informar "@" na coluna 9 da linha onde a informa&ccedil;&atilde;o ser&aacute; complementada.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argimp">Argumentos da importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento</A></B></FONT> </P>
+<FONT SIZE=2><P>Para importar descri&ccedil;&atilde;o de elemento, deve-se utilizar o menu de opera&ccedil;&atilde;o IMPDES, cujos campos devem ser preenchidos conforme indicado:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Elemento</B> - C&oacute;digo do elemento no padr&atilde;o SADS.</P>
+<P>Para importar a descri&ccedil;&atilde;o de um sistema, deve-se informar seu c&oacute;digo no campo Elemento.</FONT> </P>
+<FONT SIZE=2><P>Para importar descri&ccedil;&atilde;o de atributos, campos, sin&ocirc;nimos e dom&iacute;nios, deve-se informar, tamb&eacute;m, um c&oacute;digo de sistema.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Mnemonico</B> - Mnem&ocirc;nico de atributo, campo, sin&ocirc;nimo ou dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>Este campo somente dever&aacute; ser informado para importar a descri&ccedil;&atilde;o de um atributo, campo, sin&ocirc;nimo ou dom&iacute;nio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usercode</B> - <I>Usercode</I> onde est&aacute; residente o arquivo texto que ser&aacute; importado para o SADS.</FONT> </P>
+<FONT SIZE=2><P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS".</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Exele">Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>A partir do cadastramento da descri&ccedil;&atilde;o de um elemento, atributo, campo, sin&ocirc;nimo ou dom&iacute;nio, pode-se gerar um arquivo texto, tipo SEQDATA, no Cande, atrav&eacute;s de sua exporta&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Esta fun&ccedil;&atilde;o possibilita executar manuten&ccedil;&otilde;es na descri&ccedil;&atilde;o de elementos, utilizando os recursos de edi&ccedil;&atilde;o do Cande.</FONT> </P>
+<FONT SIZE=2><P>Quando a exporta&ccedil;&atilde;o for de um elemento qualquer, exceto atributo, campo, sin&ocirc;nimo e dom&iacute;nio, o arquivo gerado ter&aacute; o seguinte padr&atilde;o:</P>
+<P>"(USERCODE)TEXTO/sssexxxxxx", onde:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>(USERCODE) - </B>Nome do <I>usercode</I> sob o qual se encontra o arquivo;</P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;TEXTO</B> - Palavra constante;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;<B>sssexxxxxx - </B>C&oacute;digo do elemento cuja descri&ccedil;&atilde;o foi exportada (padr&atilde;o SADS).</P></DIR>
+</DIR>
+
+<P>Quando a exporta&ccedil;&atilde;o for da descri&ccedil;&atilde;o de um atributo, campo, sin&ocirc;nimo ou dom&iacute;nio, o arquivo ter&aacute; o padr&atilde;o "USERCODE)TEXTO/sss/eeetttqqqqq", onde:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>(USERCODE)</B> - Nome do <I>usercode</I> sob o qual se encontra o arquivo;</P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;<B>TEXTO - </B>Palavra constatne;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;<B>sss</B> - C&oacute;digo do sistema (padr&atilde;o SADS) no qual o atributo, campo, sin&ocirc;nimo ou dom&iacute;nio est&aacute; definido;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;<B>eeetttqqqqq </B>- Mnem&ocirc;nico atributo cuja descri&ccedil;&atilde;o foi exportada.</P></DIR>
+</DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Argex">Argumentos da exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Para exportar uma descri&ccedil;&atilde;o de elemento, deve-se utilizar o menu de opera&ccedil;&atilde;o EXPDES, cujos campos devem ser preenchidos conforme indicado:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Elemento</B> - C&oacute;digo do elemento que ser&aacute; exportado, no padr&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>Para exportar a descri&ccedil;&atilde;o de um sistema, deve-se informar apenas o seu c&oacute;digo. Para exportar a descri&ccedil;&atilde;o de atributos, campos, sin&ocirc;nimos ou dom&iacute;nios, deve-se informar, tamb&eacute;m, o c&oacute;digo do sistema.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Mnemonico</B> - Mnem&ocirc;nico de atributo, campo, sin&ocirc;nimo ou dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>Este campo somente dever&aacute; ser informado se a exporta&ccedil;&atilde;o for da descri&ccedil;&atilde;o de um atributo, campo, sin&ocirc;nimo ou dom&iacute;nio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usercode</B> - <I>Usercode</I> sob o qual ser&aacute; gerado o arquivo texto.</FONT> </P>
+<FONT SIZE=2><P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS".</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<FONT SIZE=2><P>Caso uma das linhas da descri&ccedil;&atilde;o do elemento cadastradas no reposit&oacute;rio de dados do SADS tenha mais de 72 caracteres, ao efetuar a exporta&ccedil;&atilde;o para o Cande, os excedentes ser&atilde;o deslocados para a linha seguinte, antecedidos pelo caractere "@", na coluna 9. Se este texto for importado posteriormente, as linhas voltar&atilde;o a ser cadastradas no reposit&oacute;rio do dados do SADS, na sua forma original (78 caracteres por linha). </P></DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Cancel">Consulta a lista de cancelamentos on-line</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS oferece uma fun&ccedil;&atilde;o encarregada de listar os cancelamentos de programas <I>on-line</I> desenvolvidos no SADS.</FONT> </P>
+<FONT SIZE=2><P>A tela de processamento apresentada &eacute; do tipo consulta paginada e encontra-se descrita na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", no item "Paginador de sa&iacute;da de dados".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Argum">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para consultar a lista de cancelamentos, deve-se utilizar o menu de opera&ccedil;&atilde;o LISCAN, cujos campos devem ser preenchidos conforme indicado:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Programa Coms</B> - C&oacute;digo do programa cadastrado no Utility do COMS, cuja transa&ccedil;&atilde;o foi cancelada (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data</B> - Data em que ocorreu o cancelamento no formato DDMMAA (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora</B> - Hora em que ocorreu o cancelamento no formato HHMM (opcional).</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Imfex1">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Os cancelamentos a serem apresentados dependem dos argumentos que foram informados, da seguinte forma:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Se forem informados os tr&ecirc;s argumentos (Programa Coms, Data e Hora), a consulta mostrar&aacute; o cancelamento informado, se houver, e os cancelamentos ocorridos posteriormente.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Se for informado apenas o argumento Programa Coms, a consulta mostrar&aacute; os cancelamentos ocorridos no programa, em ordem cronol&oacute;gica.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Se for informado apenas o argumento Data, a consulta mostrar&aacute; os cancelamentos ocorridos a partir da data informada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Se forem informados os argumentos Programa Coms e Data, ser&atilde;o mostrados os cancelamentos no programa informado, a partir da data informada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Se forem informados os argumentos Data e Hora, ser&atilde;o mostrados os cancelamentos ocorridos na data e hora informadas, e tamb&eacute;m os cancelamentos ocorridos posteriormente.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Se nenhum argumento for informado, ser&atilde;o mostrados todos os cancelamentos de todos os programas.</FONT> </P>
+<FONT SIZE=2><P>Caso n&atilde;o tenha ocorrido nenhum cancelamento, ser&aacute; enviada a seguinte mensagem: "NENHUM CANCELAMENTO PARA O(S) ARGUMENTO(S)"</FONT> </P>
+<FONT SIZE=2><P>Para cada um dos cancelamentos <I>on-line</I>, ser&atilde;o apresentadas as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>PROGRAMA NO COMS</B> - Nome do programa no COMS.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>USUARIO</B> - N&uacute;mero do usu&aacute;rio no cadastro do Sistema de Seguran&ccedil;a.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>ESTACAO</B> - Esta&ccedil;&atilde;o que disparou a transa&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>DATA</B> - Data em que ocorreu o cancelamento.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>HORA</B> - Hora em que ocorreu o cancelamento.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>MENSAGEM</B> - Mensagem (truncada) enviada pela esta&ccedil;&atilde;o que provocou o cancelamento.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Tranca">Consulta a transa&ccedil;&atilde;o cancelada</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS oferece uma fun&ccedil;&atilde;o encarregada por apresentar as informa&ccedil;&otilde;es a respeito de um determinado cancelamento de um programa<I> on-line</I>.</FONT> </P>
+<FONT SIZE=2><P>Antes de consultar uma transa&ccedil;&atilde;o cancelada espec&iacute;fica, recomenda-se efetuar uma consulta &agrave; lista de cancelamentos, a fim de certificar a data e a hora em que o cancelamento ocorreu, para informa&ccedil;&atilde;o destes nos argumentos da consulta.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Arguco">Argumentos da consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Para consultar a mensagem que foi transmitida ao programa e que deu origem a um determinado cancelamento, deve-se utilizar o menu de opera&ccedil;&atilde;o CONTRA, cujos campos devem ser preenchidos conforme indicado:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Programa Coms</B> - C&oacute;digo da transa&ccedil;&atilde;o cancelada (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data</B> - Data em que ocorreu o cancelamento, no formato DDMMAA (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora </B>- Hora em que ocorreu o cancelamento, no formato HHMM (opcional).</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Imfex2">Informa&ccedil;&otilde;es exibidas na consulta</A></B></FONT> </P>
+<FONT SIZE=2><P>Os cancelamentos a serem apresentados dependem dos argumentos que foram informados, da seguinte forma:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Se forem informados os tr&ecirc;s argumentos (Programa Coms, Data e Hora), a consulta mostrar&aacute; o cancelamento informado, se houver, e os cancelamentos ocorridos posteriormente.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Se for informado apenas o argumento Programa Coms, a consulta mostrar&aacute; os cancelamentos ocorridos no programa, em ordem cronol&oacute;gica.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Se for informado apenas o argumento Data, a consulta mostrar&aacute; os cancelamentos ocorridos a partir da data informada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Se forem informados os argumentos Programa Coms e Data, ser&atilde;o mostrados os cancelamentos no programa informado, a partir da data informada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Se forem informados os argumentos Data e Hora, ser&atilde;o mostrados os cancelamentos ocorridos na data e hora informadas, e tamb&eacute;m os cancelamentos ocorridos posteriormente.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Se nenhum argumento for informado, ser&atilde;o mostrados todos os cancelamentos de todos os programas.</FONT> </P>
+<FONT SIZE=2><P>Caso n&atilde;o tenha ocorrido nenhum cancelamento, ser&aacute; enviada a seguinte mensagem: "NENHUM CANCELAMENTO PARA O(S) ARGUMENTO(S)".</FONT> </P>
+<FONT SIZE=2><P>Para cada um dos cancelamentos <I>on-line</I>, ser&atilde;o apresentadas as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>PROGRAMA</B> - Nome do programa no COMS.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>ESTACAO </B>- Esta&ccedil;&atilde;o que disparou a transa&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>DATA</B> - Data em que ocorreu o cancelamento.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>HORA</B> - Hora em que ocorreu o cancelamento.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>USUARIO</B> - N&uacute;mero do usu&aacute;rio no cadastro do Sistema de Seguran&ccedil;a.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>AREA CONVERSACIONAL</B> - Conte&uacute;do da &aacute;rea conversacional no momento do cancelamento (240 bytes).</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>MENSAGEM</B> - Mensagem (completa) enviada pela esta&ccedil;&atilde;o que provocou o cancelamento.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>CONTINUA (S/N)</B> - Indicador de continuidade de exibi&ccedil;&atilde;o dos cancelamentos.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S"</B> - Para prosseguir a consulta;</FONT> </P>
+<B><FONT SIZE=2><P>"N"</B> - Para encerrar a consulta.</FONT> </P></DIR>
+</DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Integ">Integra&ccedil;&atilde;o ET-SADS x SADS</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>A integra&ccedil;&atilde;o entre o ET-SADS e o SADS tem como objetivo permitir uma complementa&ccedil;&atilde;o entre as fases do projeto de um determinado sistema desenvolvidas no ET-SADS com aquelas desenvolvidas no SADS.</FONT> </P>
+<FONT SIZE=2><P>Para executar a integra&ccedil;&atilde;o SADS x ET-SADS, determinados passos no ET-SADS dever&atilde;o ser realizados, conforme descrito no "Guia de Integra&ccedil;&atilde;o com SADS", e outros no SADS, conforme descritos nos t&oacute;picos "Carga do sistema do ET-SADS para o SADS" e "Extra&ccedil;&atilde;o do sistema do SADS para o ET-SADS", a seguir.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Sads">Carga do sistema do ET-SADS para o SADS</A></B></FONT> </P>
+<FONT SIZE=2><P>Atrav&eacute;s desta fun&ccedil;&atilde;o, o SADS torna poss&iacute;vel carregar para seu reposit&oacute;rio de dados informa&ccedil;&otilde;es relativas a um determinado sistema que tenham sido cadastradas no ET-SADS.</FONT> </P>
+<FONT SIZE=2><P>Para efetuar a carga do sistema no SADS, &eacute; necess&aacute;rio que os arquivos que cont&ecirc;m os dados do sistema tenham sido transferidos do ET-SADS (micro) para o <I>mainframe</I>.</FONT> </P><DIR>
+
+<P><A NAME="Carga"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=4>Argumentos da carga </A></P>
+</B></FONT><FONT SIZE=2><P>Para carregar os arquivos do ET-SADS para o SADS, deve-se utilizar o menu de opera&ccedil;&atilde;o CARSAD, cujos campos devem ser preenchidos conforme indicado:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>SISTEMA</B> - C&oacute;digo do sistema a ser carregado, no padr&atilde;o SADS.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>FILA PARA EXECUCAO</B> - Fila para execu&ccedil;&atilde;o do <I>job</I> de carga, que n&atilde;o pode possuir limites.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>USERCODE/PASSWORD</B><I> - Usercode</I> e <I>password</I> sob o qual ser&aacute; executado o <I>job</I> de carga.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>ACCESSCODE/PASSWORD</B> - <I>Acesscode e accesscodepassword</I> sob o qual ser&aacute; executado o job de carga.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>CHARGECODE</B> -<I> Chargecode</I> sob o qual ser&aacute; executado o <I>job</I> de carga.</FONT> </P></DIR>
+
+<P><A NAME="Imfex3"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=4>Informa&ccedil;&otilde;es exibidas</A></B></FONT> </P>
+<FONT SIZE=2><P>Ser&aacute; apresentada a tela de processamento para integra&ccedil;&atilde;o SADS X ET-SADS.</FONT> </P>
+<FONT SIZE=2><P>Nesta tela s&atilde;o apresentados dados do <I>job</I> de carga e os arquivos que foram gerados pelo ET-SADS e dever&atilde;o ser carregados.</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>SISTEMA</B> - C&oacute;digo do sistema a ser carregado, no padr&atilde;o SADS (sss).</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>FILA P/ EXECUCAO</B> - N&uacute;mero da fila para execu&ccedil;&atilde;o do <I>job</I> de carga.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>VERSAO DA INTEGRACAO</B> - N&uacute;mero da vers&atilde;o do SADS, seguido do n&uacute;mero da vers&atilde;o do ET-SADS, separados por um <BR>
+ponto <B>( . )</B>.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>ARQUIVOS</B> - N&uacute;mero sequencial correspondente ao <I>dataset</I> do SADS, seguido do seu nome abreviado.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>DATA</B> - Data em que foi extra&iacute;do o arquivo do ET-SADS.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>HORA</B> - Hora em que ocorreu a extra&ccedil;&atilde;o do arquivo do ET-SADS.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>NUM.REGISTROS</B> - N&uacute;mero de registros que o arquivo possui.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>CONFIRME(S/N)</B> - Indicador de confirma&ccedil;&atilde;o de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>"S"</B> - Para confirmar a carga dos arquivos;</FONT> </P>
+<B><FONT SIZE=2><P>"N"</B> - Para cancelar a carga dos arquivos.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Na execu&ccedil;&atilde;o da carga do sistema, ser&aacute; feito um <I>merge</I> entre os arquivos carregados e os <I>datasets</I> do reposit&oacute;rio de dados do SADS.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Extra">Extra&ccedil;&atilde;o do sistema do SADS para o ET-SADS</A></B></FONT> </P>
+<FONT SIZE=2><P>Atrav&eacute;s desta fun&ccedil;&atilde;o, o SADS possibilita extrair os elementos cadastrados no reposit&oacute;rio de dados do SADS, de um determinado sistema, para torn&aacute;-los dispon&iacute;veis para utiliza&ccedil;&atilde;o no ET-SADS.</FONT> </P>
+<FONT SIZE=2><P>Somente ser&atilde;o extra&iacute;dos os elementos que s&atilde;o tratados pelo ET-SADS, quais sejam: sistema, entidades, atributos/sin&ocirc;nimos, dom&iacute;nios, generaliza&ccedil;&otilde;es, relacionamentos, sub-rotinas, processos/fun&ccedil;&otilde;es, dep&oacute;sitos de dados, entidades externas, fluxos de dados, al&eacute;m das descri&ccedil;&otilde;es, express&otilde;es e validades dos mesmos.</FONT> </P>
+<FONT SIZE=2><P>Para executar esta fun&ccedil;&atilde;o, &eacute; necess&aacute;rio que o sistema e seus elementos estejam cadastrados no reposit&oacute;rio de dados do SADS.</FONT> </P><DIR>
+
+<P><A NAME="Argext"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=4>Argumentos da extra&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Para extrair os arquivos para o ET-SADS, deve-se utilizar o menu de opera&ccedil;&atilde;o EXTSAD, cujos campos devem ser preenchidos conforme indicado:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>SISTEMA</B> - C&oacute;digo do sistema a ser extra&iacute;do, no padr&atilde;o SADS (sss).</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>FILA PARA EXECUCAO</B> - N&uacute;mero da fila para execu&ccedil;&atilde;o do <I>job</I> de extra&ccedil;&atilde;o. <BR>
+Esta fila n&atilde;o deve possuir limites.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>USERCODE/PASSWORD</B><I> - Usercode</I> e <I>password</I> sob o qual ser&aacute; executado o <I>job</I> de extra&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>ACCESSCODE/PASSWORD</B> - <I>Acesscode e accesscodepassword</I> sob o qual ser&aacute; executado o job de extra&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>CHARGECODE</B> -<I> Chargecode</I> sob o qual ser&aacute; executado o <I>job</I> de extra&ccedil;&atilde;o.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Argfun">Relacionamento "Fun&ccedil;&atilde;o X Transa&ccedil;&otilde;es"</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS permite que se relacione uma fun&ccedil;&atilde;o j&aacute; cadastrada a uma ou mais transa&ccedil;&otilde;es. Isto corresponde a definir quais as transa&ccedil;&otilde;es do SADS que implementam fisicamente uma determinada fun&ccedil;&atilde;o especificada em um sistema aplicativo.</FONT> </P>
+<FONT SIZE=2><P>Para executar esta opera&ccedil;&atilde;o, &eacute; necess&aacute;rio que a fun&ccedil;&atilde;o esteja cadastrada no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<B><FONT SIZE=5><P>Argumentos para o relacionamento Fun&ccedil;&atilde;o X Transa&ccedil;&otilde;es</B></FONT> </P>
+<FONT SIZE=2><P>Para efetuar manuten&ccedil;&otilde;es sobre um relacionamento Fun&ccedil;&atilde;o X Transa&ccedil;&atilde;o, deve-se utilizar o menu de opera&ccedil;&atilde;o RELFUNTRA, cujos campos devem ser preenchidos conforme indicado:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - Opera&ccedil;&atilde;o a ser efetuada sobre o relacionamento da fun&ccedil;&atilde;o com suas transa&ccedil;&otilde;es, que pode ser:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta).</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Funcao</B> - C&oacute;digo da fun&ccedil;&atilde;o cujo relacionamento com as transa&ccedil;&otilde;s ser&atilde;o operados, no padr&atilde;o SADS.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Ser&aacute; apresentada uma tela de processamento onde os seguintes campos devem ser preenchidos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>FUNCAO</B> - C&oacute;digo da fun&ccedil;&atilde;o informada no menu;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TRANSACAO</B> - C&oacute;digo da transa&ccedil;&atilde;o relacionada &agrave; fun&ccedil;&atilde;o, no padr&atilde;o SADS ("sssUmmnn");</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Este campo vem preenchido com a opera&ccedil;&atilde;o informada no menu.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Edit">Importa&ccedil;&atilde;o de edit</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS possibilita importar arquivos de comandos em Cobol para que se tornem comandos EDIT. &Eacute; necess&aacute;rio que o arquivo a ser importado possua o nome no padr&atilde;o "EDIT/ sssennmmm/xxxxxxxxx", onde:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>"sssenn" &eacute; o c&oacute;digo do programa</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>"mmm" &eacute; o n&uacute;mero do m&oacute;dulo ao qual o EDIT pertence</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>"xxxxxxxxx" &eacute; o nome do EDIT.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Com a opera&ccedil;&atilde;o de importa&ccedil;&atilde;o, torna-se poss&iacute;vel utilizar as facilidades de edi&ccedil;&atilde;o do Cande.</FONT> </P>
+<FONT SIZE=2><P>Sempre quando for efetuada uma importa&ccedil;&atilde;o de comando EDIT do Cande, o programa que teve o EDIT importado ficar&aacute; marcado, podendo ser compilado somente ap&oacute;s ser regerado. Isto para garantir que os comandos do EDIT sejam devidamente gerados no programa ap&oacute;s sua importa&ccedil;&atilde;o para o SADS.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Impor">Argumentos da importa&ccedil;&atilde;o </A></P>
+</B></FONT><FONT SIZE=2><P>Para importar um arquivo para se tornar um comando EDIT, basta transmitir os argumentos do menu de opera&ccedil;&atilde;o IMPEDI, cujos campos devem ser preenchidos conforme indicado:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Programa</B> - C&oacute;digo do programa ao qual o EDIT pertence;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Modulo</B> - C&oacute;digo do m&oacute;dulo do programa ao qual o EDIT pertence;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Edit</B> - Nome do comando EDIT;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usercode</B> - <I>Usercode</I> onde reside o arquivo a ser importado.</FONT> </P>
+<FONT SIZE=2><P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS".</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Exedit">Exporta&ccedil;&atilde;o de edit</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS possibilita exportar comandos de m&oacute;dulo EDIT para o Cande. Ao efetuar uma exporta&ccedil;&atilde;o de um EDIT para o Cande, ser&aacute; gerado um arquivo de nome "EDIT/ sssennmmm/xxxxxxxxx", onde:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>"sssenn" &eacute; o c&oacute;digo do programa</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>"mmm" &eacute; o n&uacute;mero do m&oacute;dulo ao qual o EDIT pertence</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>"xxxxxxxxx" &eacute; o nome do EDIT.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Este arquivo pode ent&atilde;o ser alterado e depois importado pelo SADS, permitindo, com estas opera&ccedil;&otilde;es, que sejam utilizadas as facilidades de edi&ccedil;&atilde;o do Cande.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Expor">Argumentos da exporta&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Para exportar um comando EDIT para o Cande, basta transmitir os argumentos do menu de opera&ccedil;&atilde;o EXPEDI, cujos campos devem ser preenchidos conforme indicado:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Programa - </B>C&oacute;digo do programa ao qual o EDIT pertence;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Modulo</B> - C&oacute;digo do m&oacute;dulo do programa ao qual o EDIT pertence;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Edit</B> - Nome do comando EDIT;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usercode</B> - Usercode onde ir&aacute; residir o arquivo a ser criado.</FONT> </P>
+<FONT SIZE=2><P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS".</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>EXPORTAR MESMO QUE JA EXISTA O EDIT? (S/N)</B> - Indicador de sobreposi&ccedil;&atilde;o de arquivos no Cande, na opera&ccedil;&atilde;o de esporta&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para que seja gerado o arquivo no Cande contendo os comandos do EDIT, mesmo que j&aacute; exista um arquivo neste usercode com mesmo nome. O arquivo anterior ser&aacute; sobreposto.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para que seja n&atilde;o seja gerado o arquivo no Cande contendo os comandos do EDIT caso j&aacute; exista um arquivo neste usercode com mesmo nome.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Maqpro">Cancelamento de transfer&ecirc;ncia de tela e consist&ecirc;ncia para a m&aacute;quina de produ&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Se alguma tela ou consist&ecirc;ncia tiver sido liberada indevidamente para produ&ccedil;&atilde;o e se houver um computador diferente para processamento dos sistemas em produ&ccedil;&atilde;o, sua transfer&ecirc;ncia para a m&aacute;quina de produ&ccedil;&atilde;o pode ser cancelada atrav&eacute;s do menu de opera&ccedil;&atilde;o CANTRAPRO. </P>
+<P>Detalhes a respeito da transfer&ecirc;ncia de telas e consist&ecirc;ncias para a m&aacute;quina de produ&ccedil;&atilde;o est&atilde;o descritos na se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de Apoio", item "Utilit&aacute;rios <I>Batch</I>", neste manual. </P>
+</FONT><B><FONT SIZE=5><P><A NAME="Argume">Argumentos </A></P>
+</B></FONT><FONT SIZE=2><P>Para cancelar a transfer&ecirc;ncia de uma tela ou consist&ecirc;ncia para produ&ccedil;&atilde;o, basta transmitir o argumento do menu de opera&ccedil;&atilde;o CANTRAPRO, cujo campo deve ser preenchido conforme indicado:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Elemento</B> - C&oacute;digo da tela ou consist&ecirc;ncia, no padr&atilde;o SADS, que ter&aacute; sua transfer&ecirc;ncia para a m&aacute;quina de produ&ccedil;&atilde;o cancelada. </P></DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Pagina">Paginadores</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS possui m&oacute;dulos que facilitam a programa&ccedil;&atilde;o dos sistemas que utilizam m&uacute;ltiplas p&aacute;ginas em aplica&ccedil;&otilde;es <I>on-line</I>. S&atilde;o eles:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Pagen">Paginador de entrada de dados</A><FONT SIZE=2> e </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Saida">Paginador de sa&iacute;da de dados</A><FONT SIZE=2>.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Pagen">Paginador de entrada de dados </A></P>
+</B></FONT><FONT SIZE=2><P>O paginador de entrada de dados facilita a programa&ccedil;&atilde;o de aplica&ccedil;&otilde;es <I>on-line</I> de entrada de dados que utilizam m&uacute;ltiplas telas.</FONT> </P>
+<FONT SIZE=2><P>Elimina a necessidade de codifica&ccedil;&atilde;o e economiza recursos de processamento e mem&oacute;ria. Prov&ecirc; o armazenamento de diversas p&aacute;ginas de entrada de dados e flexibilidade de acesso &agrave;s mesmas.</FONT> </P>
+<FONT SIZE=2><P>Suas principais caracter&iacute;sticas s&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Facilidades de navega&ccedil;&atilde;o entre as p&aacute;ginas;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Consist&ecirc;ncia efetuada a cada p&aacute;gina transmitida, com possibilidade do programa aplicativo consistir as p&aacute;ginas armazenadas, de uma s&oacute; vez, contra cadastro;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Manuten&ccedil;&atilde;o da &uacute;ltima transa&ccedil;&atilde;o paginada, em n&iacute;vel de esta&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Pagina&ccedil;&atilde;o de telas de <I>layouts</I> diferentes, com independ&ecirc;ncia de seus formatos, sendo aplic&aacute;vel a transa&ccedil;&otilde;es de inclus&atilde;o e altera&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Possibilidade de restri&ccedil;&atilde;o do n&uacute;mero m&aacute;ximo de p&aacute;ginas a serem tratadas pelo usu&aacute;rio;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Utiliza&ccedil;&atilde;o por programas escritos em diferentes linguagens.</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P><A NAME="Argpa">Argumentos para o paginador de entrada</A></B></FONT> </P>
+<FONT SIZE=2><P>A &uacute;ltima atualiza&ccedil;&atilde;o de dados que utilizou o paginador de entrada - atualiza&ccedil;&atilde;o paginada - estar&aacute; sempre dispon&iacute;vel na mesma esta&ccedil;&atilde;o onde foi apresentada para posterior altera&ccedil;&atilde;o. Deste modo, ap&oacute;s uma atualiza&ccedil;&atilde;o paginada ter sido exibida, ela fica armazenada pelo SADS e o usu&aacute;rio pode, a qualquer momento, reapresent&aacute;-la na mesma esta&ccedil;&atilde;o, sem que seja necess&aacute;rio disparar a transa&ccedil;&atilde;o que a originou.</FONT> </P>
+<FONT SIZE=2><P>Para ent&atilde;o trabalhar com a &uacute;ltima atualiza&ccedil;&atilde;o paginada apresentada na esta&ccedil;&atilde;o, basta transmitir o menu de opera&ccedil;&atilde;o PAGENT, cujo &uacute;nico campo &eacute; o seguinte:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Pagina</B> - N&uacute;mero da primeira p&aacute;gina a ser utilizada, que j&aacute; vem preenchida com "01".</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P><A NAME="Inpag">Informa&ccedil;&otilde;es exibidas pelo paginador de entrada</A></B></FONT> </P>
+<FONT SIZE=2><P>Os campos espec&iacute;ficos para a atualiza&ccedil;&atilde;o paginada s&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PAGINA</B> - N&uacute;mero da p&aacute;gina corrente;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PROXIMA PAGINA</B> - N&uacute;mero da p&aacute;gina desejada, quando houver necessidade de se ver uma tela fora de sequ&ecirc;ncia.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"-" ou "--" - Para voltar &agrave; p&aacute;gina anterior;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"UL" - Para chegar &agrave; &uacute;ltima p&aacute;gina;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"99" - Para encerrar a pagina&ccedil;&atilde;o e efetivar o processamento. </P></DIR>
+
+<P>Se este campo n&atilde;o for informado, ser&aacute; apresentado a pr&oacute;xima p&aacute;gina na sequ&ecirc;ncia que foi programada.</FONT> </P>
+<FONT SIZE=2><P>O processamento dos dados preenchidos nas p&aacute;ginas somente ser&aacute; efetuado quando for transmitido "99" no campo PROXIMA PAGINA.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Os demais campos apresentados na atualiza&ccedil;&atilde;o paginada s&atilde;o espec&iacute;ficos da transa&ccedil;&atilde;o efetuada e est&atilde;o de acordo com o programa aplicativo que trata a transa&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Saida">Paginador de sa&iacute;da de dados</A></B></FONT> </P>
+<FONT SIZE=2><P>O paginador de sa&iacute;da facilita a programa&ccedil;&atilde;o dos sistemas que utilizam consultas de m&uacute;ltiplas p&aacute;ginas em aplica&ccedil;&otilde;es <I>on-line.</I></FONT> </P>
+<FONT SIZE=2><P>Elimina a necessidade de codifica&ccedil;&atilde;o e economiza recursos de processamento e mem&oacute;ria. Prov&ecirc; o armazenamento de diversas p&aacute;ginas de consultas e flexibilidade de acesso &agrave;s mesmas.</FONT> </P>
+<FONT SIZE=2><P>Suas principais caracter&iacute;sticas s&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Prepara&ccedil;&atilde;o de consultas atrav&eacute;s de programas <I>on-line</I>, com arquivamento feito por sub-rotina e possibilidade de utiliza&ccedil;&atilde;o de telas de <I>layouts</I> diferentes;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Pagina&ccedil;&atilde;o das consultas, independente de seus formatos;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Utiliza&ccedil;&atilde;o por programas escritos em diferentes linguagens;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Possibilidade de impress&atilde;o remota de p&aacute;ginas selecionadas;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Facilidades de navega&ccedil;&atilde;o entre as p&aacute;ginas;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Manuten&ccedil;&atilde;o da &uacute;ltima transa&ccedil;&atilde;o&nbsp;paginada, em n&iacute;vel de esta&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P><A NAME="Pasai">Argumentos para o paginador de sa&iacute;da</A></B></FONT> </P>
+<FONT SIZE=2><P>A &uacute;ltima consulta que utilizou o paginador de sa&iacute;da - consulta paginada - estar&aacute; sempre dispon&iacute;vel na mesma esta&ccedil;&atilde;o onde foi apresentada, para posterior visualiza&ccedil;&atilde;o ou impress&atilde;o. Deste modo, ap&oacute;s uma consulta paginada ter sido exibida, ela fica armazenada pelo SADS e o usu&aacute;rio pode, a qualquer momento, reapresent&aacute;-la na mesma esta&ccedil;&atilde;o ou imprim&iacute;-la, sem que seja necess&aacute;rio disparar a transa&ccedil;&atilde;o que a originou.</FONT> </P>
+<FONT SIZE=2><P>Para ent&atilde;o visualizar ou imprimir a &uacute;ltima consulta paginada apresentada na esta&ccedil;&atilde;o, deve-se utilizar o menu de opera&ccedil;&atilde;o PAGSAI, cujos campos devem ser preenchidos conforme indicado:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - Opera&ccedil;&atilde;o a ser efetuada em rela&ccedil;&atilde;o &agrave; &uacute;ltima consulta paginada, que pode ser:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta) - Para que seja reapresentada a &uacute;ltima consulta paginada efetuada na esta&ccedil;&atilde;o; ou</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"IMP" (Impress&atilde;o) - Para que seja impressa a &uacute;ltima consulta paginada efetuada na esta&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Primeira pagina</B> - N&uacute;mero da primeira p&aacute;gina a ser impressa. (Opcional)</FONT> </P>
+<FONT SIZE=2><P>Caso n&atilde;o seja informada, a impress&atilde;o ir&aacute; iniciar da p&aacute;gina 1 da consulta.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Ultima pagina</B> - N&uacute;mero da &uacute;ltima p&aacute;gina a ser impressa. (Opcional)</FONT> </P>
+<FONT SIZE=2><P>Caso n&atilde;o seja informada, a impress&atilde;o ir&aacute; finalizar na &uacute;ltima p&aacute;gina da consulta.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Impressora</B> - C&oacute;digo da impressora onde a consulta paginada ser&aacute; impressa.(Opcional)</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"&lt;C&oacute;digo da impressora remota&gt;" - Para impress&atilde;o da consulta na impressora remota informada (esta impressora deve estar cadastrada na rede de terminais);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"PRINTER" - Para impress&atilde;o da consulta na impressora central, no formul&aacute;rio de 132 posi&ccedil;&otilde;es;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"PRINxx" - Para impress&atilde;o da consulta na impressora central em formul&aacute;rio especial, onde "xx" &eacute; um <I>formid</I> definido na instala&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso a impressora n&atilde;o seja informada, ser&aacute; assumida a impressora <I>default</I> do usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Detalhes sobre o cadastramento da impressora <I>default</I> do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e Habilita&ccedil;&otilde;es", neste manual. </P></DIR>
+
+</FONT><B><FONT SIZE=4><P><A NAME="Exisa">Informa&ccedil;&otilde;es exibidas pelo paginador de sa&iacute;da</A></B></FONT> </P>
+<FONT SIZE=2><P>Os campos espec&iacute;ficos da consulta paginada s&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PAGINA</B> - N&uacute;mero da p&aacute;gina corrente;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PROXIMA PAGINA</B> - N&uacute;mero da pr&oacute;xima p&aacute;gina que ser&aacute; apresentada. Quando houver necessidade de se ver uma tela fora de sequ&ecirc;ncia, deve-se informar o n&uacute;mero da p&aacute;gina desejada.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"-" ou "--" - Para voltar &agrave; p&aacute;gina anterior;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"UL" - Para chegar &agrave; &uacute;ltima p&aacute;gina;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"99" - Para encerrar a pagina&ccedil;o. </P></DIR>
+
+<P>Se este campo n&atilde;o for informado, ser&aacute; apresentada a pr&oacute;xima p&aacute;gina na sequ&ecirc;ncia que foi programada.</FONT> </P>
+<FONT SIZE=2><P>No rodap&eacute; da p&aacute;gina ser&aacute; exibida a palavra "CONTINUA" ou "FIM", significando, respectivamente:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"CONTINUA"</B> - Existem mais p&aacute;ginas para serem exibidas;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"FIM" </B>- N&atilde;o existem mais p&aacute;ginas para serem exibidas.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Os demais campos apresentados pela consulta paginada s&atilde;o espec&iacute;ficos da transa&ccedil;&atilde;o efetuada e s&atilde;o compostos pelo pr&oacute;prio programa aplicativo que trata a transa&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Desvio">Desvio de transa&ccedil;&otilde;es atrav&eacute;s do paginador de sa&iacute;da de dados</A></B></FONT> </P>
+<FONT SIZE=2><P>O paginador de consulta - STP03 - permite que transa&ccedil;&otilde;es sejam encadeadas ap&oacute;s uma consulta paginada, n&atilde;o necessitando assim retornar ao menu para disparar uma pr&oacute;xima transa&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Deste modo, ap&oacute;s uma consulta paginada pode-se encadear uma outra transa&ccedil;&atilde;o, quer seja consulta ou n&atilde;o, de um menu qualquer, a partir de dados informados pelo usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Para que este encadeamento seja poss&iacute;vel, &eacute; necess&aacute;rio que a tela de consulta paginada e o programa encarregado pelo seu processamento sejam adaptados.</FONT> </P>
+<FONT SIZE=2><P>A tela de consulta paginada deve ser adaptada de acordo com as seguintes orienta&ccedil;&otilde;es:</FONT> </P><DIR>
+<DIR>
+<DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;No desenho e na estrutura da tela de consulta devem ser inclu&iacute;dos, logo ap&oacute;s o campo "TLAESTAC", os campos - argumentos - necess&aacute;rios ao disparo da pr&oacute;xima transa&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Nem todos os campos do menu referente &agrave; pr&oacute;xima transa&ccedil;&atilde;o necessitam ser inclu&iacute;dos, somente aqueles que devem ser informados pelo usu&aacute;rio. Os demais poder&atilde;o ser compostos pelo pr&oacute;prio programa de consulta.</FONT> </P></DIR>
+</DIR>
+</DIR>
+
+<FONT SIZE=2><P>No programa encarregado pela consulta paginada devem ser efetuadas as seguintes adapta&ccedil;&otilde;es:</FONT> </P><DIR>
+<DIR>
+<DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Devem ser criados, em sua WORKING-STORAGE SECTION, campos encarregados por simular a tela menu da transa&ccedil;&atilde;o a ser encadeada.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Devem ser inclu&iacute;dos, em sua PROCEDURE DIVISION, antes do comando que desvia o processamento para a sub-rotina de pagina&ccedil;&atilde;o, os comandos que determinam e complementam o encadeamento a ser efetuado.</FONT> </P></DIR>
+</DIR>
+</DIR>
+
+<FONT SIZE=2><P>Atrav&eacute;s do exemplo a seguir, ser&atilde;o explicados como a tela deve ser alterada e como estes campos e comandos devem ser inclu&iacute;dos no programa de consulta paginada.</FONT> </P><DIR>
+
+<P><A NAME="Atela"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Altera&ccedil;&otilde;es na tela</A></FONT> </P>
+</B><FONT SIZE=2><P>Na figura 1, exibida a seguir, &eacute; apresentada a tela de consulta paginada que apresenta todos os dependentes de empregados da empresa ASM. No desenho desta tela j&aacute; foram inclu&iacute;dos, ap&oacute;s o campo "TLAESTAC", os campos "EMPREGADO" e "DEPENDENTE". Nestes campos o usu&aacute;rio poder&aacute; informar, caso desej&aacute;vel, o dependente a ser consultado na pr&oacute;xima transa&ccedil;&atilde;o. Neste caso, o c&oacute;digo do dependente informado ser&aacute; o argumento para a transa&ccedil;&atilde;o de consulta a dependente que ser&aacute; encadeada.</FONT> </P></DIR>
+
+<P><HR ALIGN="LEFT" WIDTH="90%"></P><DIR>
+
+<P><IMG SRC="Fig1.gif" WIDTH=588 HEIGHT=184></P></DIR>
+
+<P><HR ALIGN="LEFT" WIDTH="90%"></P><DIR>
+
+<B><FONT SIZE=2><P>Figura 1: Rela&ccedil;&atilde;o de dependentes</B> </P>
+<P>Na figura 2, exibida a seguir, &eacute; apresentada a tela de consulta paginada com o dependente escolhido pelo usu&aacute;rio.</FONT> </P></DIR>
+
+<P><HR ALIGN="LEFT" WIDTH="90%"></P><DIR>
+
+<P><IMG SRC="Fig2.gif" WIDTH=588 HEIGHT=184></P></DIR>
+
+<P><HR ALIGN="LEFT" WIDTH="90%"></P><DIR>
+
+<P><BR>
+<B><FONT SIZE=2>Figura 2: Rela&ccedil;&atilde;o de dependentes</FONT> </P>
+</B><FONT SIZE=2><P>Cumpre ressaltar que, &eacute; necess&aacute;rio que se informe "DT" no campo "PROX PAG" quando for desej&aacute;vel fazer o desvio de transa&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s a transmiss&atilde;o da tela apresentada na figura 2, &eacute; exibida a tela de consulta a dependente - PDE03.84 - com os dados do dependente informado, conforme figura 3 a seguir:</FONT> </P></DIR>
+
+<P><HR ALIGN="LEFT" WIDTH="90%"></P><DIR>
+
+<P><IMG SRC="Fig3.gif" WIDTH=588 HEIGHT=184></P></DIR>
+
+<P><HR ALIGN="LEFT" WIDTH="90%"></P><DIR>
+
+<B><FONT SIZE=2><P>Figura 3: Consulta a dependentes</B> </P>
+<P><A NAME="Alpro"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>Altera&ccedil;&otilde;es no programa</A></B></FONT> </P>
+<FONT SIZE=2><P>As seguintes adapta&ccedil;&otilde;es devem ser efetuadas no programa para propiciar o desvio de transa&ccedil;&atilde;o:</FONT> </P></DIR>
+
+<OL>
+
+<FONT SIZE=2><LI>Na WORKING-STORAGE SECTION:</FONT> </LI></OL>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<FONT SIZE=2><P>Na WORKING-STORAGE SECTION do programa de consulta paginada foram criados os campos que ir&atilde;o simular o desenho do menu conforme o seguinte exemplo:</FONT> </P></DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<P ALIGN="RIGHT"><TABLE CELLSPACING=0 BORDER=0 WIDTH=623>
+<TR><TD VALIGN="MIDDLE" COLSPAN=3><DIR>
+
+<P><FONT SIZE=2>01&nbsp; WSS-STPS04-DTTELA </DIR>
+</FONT></TD>
+</TR>
+<TR><TD WIDTH="42%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>&nbsp;&nbsp; 05 FILLER</DIR>
+</FONT></TD>
+<TD WIDTH="10%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>&nbsp;</DIR>
+</FONT></TD>
+<TD WIDTH="48%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>PIC X(04) VALUE "@04@". </DIR>
+</FONT></TD>
+</TR>
+<TR><TD WIDTH="42%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>&nbsp;&nbsp; 05 FILLER</DIR>
+</FONT></TD>
+<TD WIDTH="10%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>&nbsp;</DIR>
+</FONT></TD>
+<TD WIDTH="48%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>PIC X(04) VALUE "@03@". </DIR>
+</FONT></TD>
+</TR>
+<TR><TD WIDTH="42%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>&nbsp;&nbsp; 05 FILLER</DIR>
+</FONT></TD>
+<TD WIDTH="10%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>&nbsp;</DIR>
+</FONT></TD>
+<TD WIDTH="48%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>PIC X(05) VALUE "{17 }". </DIR>
+</FONT></TD>
+</TR>
+<TR><TD WIDTH="42%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>&nbsp;&nbsp; 05 WSS-OPCAO</DIR>
+</FONT></TD>
+<TD WIDTH="10%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>&nbsp;</DIR>
+</FONT></TD>
+<TD WIDTH="48%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>PIC X(02) VALUE "84". </DIR>
+</FONT></TD>
+</TR>
+<TR><TD WIDTH="42%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>&nbsp;&nbsp; 05 FILLER</DIR>
+</FONT></TD>
+<TD WIDTH="10%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>&nbsp;</DIR>
+</FONT></TD>
+<TD WIDTH="48%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>PIC X(01) VALUE "?". </DIR>
+</FONT></TD>
+</TR>
+</TABLE>
+</P>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<FONT SIZE=2><P>&Agrave; respeito destes campos tem-se as seguintes considera&ccedil;&otilde;es:</FONT> </P><DIR>
+<DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Estes campos foram criados de modo a simular a tela menu da transa&ccedil;&atilde;o a ser encadeada. Deste modo, a an&aacute;lise destes deve ser feita paralelamente &agrave; an&aacute;lise do menu apresentado na figura 4 a seguir: </P></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+
+</FONT><P><HR ALIGN="LEFT" WIDTH="90%"></P><DIR>
+<DIR>
+
+<P><IMG SRC="Fig3.gif" WIDTH=588 HEIGHT=184></P></DIR>
+</DIR>
+
+<P><HR ALIGN="LEFT" WIDTH="90%"></P><DIR>
+<DIR>
+
+<B><FONT SIZE=2><P>Figura 4: Dependentes</FONT> </P><DIR>
+<DIR>
+<DIR>
+
+</B><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;O primeiro FILLER determina, entre as arrobas, o n&uacute;mero de caracteres do primeiro argumento. No exemplo, "04" &eacute; o tamanho do c&oacute;digo do empregado - "DSRS".</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Sempre quando o campo da tela menu for um argumento da tela de consulta paginada, deve-se informar apenas seu tamanho, delimitado por arrobas, no campo da &aacute;rea de <I>work</I> do programa de consulta paginada.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;O segundo FILLER tem fun&ccedil;&atilde;o similar ao primeiro e determina, entre as arrobas, o n&uacute;mero de caracteres do segundo argumento. No exemplo, "03" &eacute; o tamanho do c&oacute;digo do dependente a ser informado.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;O terceiro FILLER determina, entre as chaves, o n&uacute;mero e o tipo do caractere a ser passado como argumento. No exemplo, ser&atilde;o preenchidos 17 (dezessete) brancos, correspondentes ao campo IMPRESSORA.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;O campo WSS-OPCAO tem o valor "84", que indicar&aacute; o encadeamento da op&ccedil;&atilde;o "84" do menu "PED03" - Consulta a dependente.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;O quarto FILLER - "?" - indica o fim do argumento.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Generalizando, os seguintes padr&otilde;es s&atilde;o adotados para defini&ccedil;&atilde;o dos campos na<I> Working-Storage Section</I>:</FONT> </P><DIR>
+<DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;A sequ&ecirc;ncia de caracteres @nn@ indica que o dado ser&aacute; utilizado como argumento da tela e "nn" &eacute; o tamanho deste argumento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;{nnx} - As chaves indicam repeti&ccedil;&atilde;o de caracteres, onde "x" &eacute; o caractere a ser reptido e "nn" &eacute; a quantidade em que o mesmo ser&aacute; repetido;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;? - A interroga&ccedil;&atilde;o indica o fim do argumento.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Como um exemplo gen&eacute;rico, tem-se:</FONT> </P></DIR>
+</DIR>
+</DIR>
+
+<P ALIGN="CENTER"><CENTER><TABLE CELLSPACING=0 BORDER=0 WIDTH=550>
+<TR><TD VALIGN="MIDDLE" COLSPAN=2>
+<P><FONT SIZE=2>01&nbsp; WSS-STPS04-DTTELA. </FONT></TD>
+</TR>
+<TR><TD WIDTH="53%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>&nbsp;&nbsp;&nbsp;&nbsp;05 FILLER</FONT></TD>
+<TD WIDTH="47%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>PIC X(04) VA "@20@".</FONT></TD>
+</TR>
+</TABLE>
+</CENTER></P>
+<DIR>
+<DIR>
+<DIR>
+
+<FONT SIZE=2><P>(Indica que 20 bytes ser&atilde;o montados a partir de informa&ccedil;&atilde;o do usu&aacute;rio na tela de consulta paginada)</FONT> </P></DIR>
+</DIR>
+</DIR>
+
+<P ALIGN="LEFT"><TABLE CELLSPACING=0 BORDER=0>
+<TR><TD VALIGN="MIDDLE">
+<P><FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;05 FILLER</FONT></TD>
+<TD WIDTH=90 VALIGN="MIDDLE">
+<FONT SIZE=2><P>&nbsp;</FONT></TD>
+<TD VALIGN="MIDDLE">
+<FONT SIZE=2><P>PIC X(06) VA "010190".</FONT></TD>
+</TR>
+</TABLE>
+</P>
+<DIR>
+<DIR>
+<DIR>
+
+<FONT SIZE=2><P>(Indica que ser&aacute; movida a constante "010190")</FONT> </P></DIR>
+</DIR>
+</DIR>
+
+<P ALIGN="LEFT"><TABLE CELLSPACING=0 BORDER=0>
+<TR><TD VALIGN="MIDDLE">
+<P><FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;05 WSS-DATA</FONT></TD>
+<TD WIDTH=62 VALIGN="MIDDLE">
+<P>&nbsp;</TD>
+<TD VALIGN="MIDDLE">
+<FONT SIZE=2><P>PIC X(06).</FONT> </TD>
+</TR>
+</TABLE>
+</P>
+<DIR>
+<DIR>
+<DIR>
+
+<FONT SIZE=2><P>(Indica que este campo ser&aacute; composto internamente ao programa de consulta paginada) </P></DIR>
+</DIR>
+</DIR>
+</FONT>
+<P ALIGN="LEFT"><TABLE CELLSPACING=0 BORDER=0>
+<TR><TD VALIGN="MIDDLE">
+<P><FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;05 FILLER</FONT></TD>
+<TD WIDTH=90 VALIGN="MIDDLE">
+<P>&nbsp;</TD>
+<TD VALIGN="MIDDLE">
+<FONT SIZE=2><P>PIC X(05) VA "{10*}".</FONT></TD>
+</TR>
+</TABLE>
+</P>
+<DIR>
+<DIR>
+<DIR>
+
+<FONT SIZE=2><P>(Indica que ser&atilde;o montados 10 caracteres * - 10 asteriscos) </P></DIR>
+</DIR>
+</DIR>
+</FONT>
+<P ALIGN="LEFT"><TABLE CELLSPACING=0 BORDER=0>
+<TR><TD VALIGN="MIDDLE">
+<P><FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;05 WSS-OPCAO </FONT></TD>
+<TD WIDTH=53 VALIGN="MIDDLE">
+<P>&nbsp;</TD>
+<TD VALIGN="MIDDLE">
+<FONT SIZE=2><P>PIC X(02) VA "01".</FONT></TD>
+</TR>
+</TABLE>
+</P>
+<DIR>
+<DIR>
+<DIR>
+
+<FONT SIZE=2><P>(Indica que ser&aacute; movida a constante "01") </P></DIR>
+</DIR>
+</DIR>
+</FONT>
+<P ALIGN="LEFT"><TABLE CELLSPACING=0 BORDER=0>
+<TR><TD VALIGN="MIDDLE">
+<P><FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;05 FILLER </FONT></TD>
+<TD WIDTH=90 VALIGN="MIDDLE">
+<P>&nbsp;</TD>
+<TD VALIGN="MIDDLE">
+<FONT SIZE=2><P>PIC X(01) VALUE "?".</FONT></TD>
+</TR>
+</TABLE>
+</P>
+<DIR>
+<DIR>
+<DIR>
+
+<FONT SIZE=2><P>(Indica fim do argumento) </P>
+<P>Uma outra forma de propiciar o encadeamento &eacute; compor o campo WSS-STPS04-DTTELA com todos os campos transmiss&iacute;veis da tela menu. Para isto, deve-se informar um campo FILLER de tamanho 4 (quatro) com valor "@00@" como o primeiro do item grupo, conforme exemplo: </P></DIR>
+</DIR>
+</DIR>
+</FONT>
+<P ALIGN="CENTER"><CENTER><TABLE CELLSPACING=0 BORDER=0 WIDTH=501>
+<TR><TD VALIGN="MIDDLE" COLSPAN=2>
+<P><FONT SIZE=2>01&nbsp; WSS-STPS04-DTTELA. </FONT></TD>
+</TR>
+<TR><TD WIDTH="49%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>&nbsp;&nbsp;&nbsp;05 FILLER</FONT></TD>
+<TD WIDTH="51%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>PIC X(04) VALUE "@00@". </FONT></TD>
+</TR>
+<TR><TD WIDTH="49%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>&nbsp;&nbsp;&nbsp;05 WSS-ARGUMENTOS</FONT></TD>
+<TD WIDTH="51%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>PIC X(26). </FONT></TD>
+</TR>
+<TR><TD WIDTH="49%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>&nbsp;&nbsp;&nbsp;05 FILLER</FONT></TD>
+<TD WIDTH="51%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>PIC X(01) VALUE "?".</FONT></TD>
+</TR>
+</TABLE>
+</CENTER></P>
+<DIR>
+<DIR>
+<DIR>
+
+<FONT SIZE=2><P>No exemplo anterior, WSS-ARGUMENTOS deve ter o tamanho total dos argumentos da tela menu do programa a ser encadeado, que &eacute; de 26 (vinte e seis) <I>bytes</I>. </P></DIR>
+</DIR>
+</DIR>
+
+<OL>
+<OL>
+
+<B><LI>Na PROCEDURE-DIVISION</B> </LI></OL>
+</OL>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<P>Na PROCEDURE-DIVISION do programa, antes do primeiro comando que desvia o processamento para a sub-rotina de pagina&ccedil;&atilde;o - PERFORM 89000-00-PAGINAR -, deve-se acrescentar os seguintes comandos: </P><DIR>
+<DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Composi&ccedil;&atilde;o dos campos que n&atilde;o s&atilde;o constantes em WSS-STPS04-DTTELA, caso existam; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Composi&ccedil;&atilde;o do campo de op&ccedil;&atilde;o, se ele n&atilde;o for uma constante; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Composi&ccedil;&atilde;o do c&oacute;digo de transa&ccedil;&atilde;o a ser encadeado, da seguinte forma: MOVE "sssnn.mm" TO STPS04-DTTRANSACAO; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Movimenta&ccedil;&atilde;o do campo da &aacute;rea de <I>Work</I> para a &aacute;rea de comunica&ccedil;&atilde;o do paginador: MOVE WSS-STPS04-DTTELA TO STPS04-DTTELA. </P></DIR>
+</DIR>
+
+<P>No exemplo de encadeamento j&aacute; exibido, ter&iacute;amos as seguintes composi&ccedil;&otilde;es: </P></DIR>
+</DIR>
+</DIR>
+</DIR>
+</FONT>
+<P ALIGN="CENTER"><CENTER><TABLE CELLSPACING=0 BORDER=0>
+<TR><TD VALIGN="MIDDLE">
+<P><FONT SIZE=2>MOVE "PED03.84"</FONT></TD>
+<TD VALIGN="MIDDLE">
+<FONT SIZE=2><P>&nbsp;&nbsp;&nbsp; TO STPS04-DTTRANSACAO. </FONT></TD>
+</TR>
+<TR><TD VALIGN="MIDDLE">
+<FONT SIZE=2><P>MOVE WSS-STPS04-DTTELA</FONT></TD>
+<TD VALIGN="MIDDLE">
+<FONT SIZE=2><P>&nbsp;&nbsp;&nbsp; TO STPS04-DTTELA.</FONT></TD>
+</TR>
+</TABLE>
+</CENTER></P>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<FONT SIZE=2><P>A respeito destes comandos, tem-se as seguintes considera&ccedil;&otilde;es: </P><DIR>
+<DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;Foi considerada a primeira forma de composi&ccedil;&atilde;o da &aacute;rea de <I>work</I> do programa explicada anteriormente; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;O primeiro comando "MOVE" ir&aacute; compor o <I>trancode</I> do menu cuja transa&ccedil;&atilde;o se deseja encadear. </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;&Eacute; obrigat&oacute;rio informar este <I>trancode</I>. </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;O segundo comando "MOVE" ir&aacute; montar a simula&ccedil;&atilde;o da tela menu. </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2>&nbsp;&Eacute; tamb&eacute;m obrigat&oacute;rio incluir este comando. </P></DIR>
+</DIR>
+
+<P>Um terceiro comando "MOVE" poderia ter sido inclu&iacute;do para compor o campo WSS-OPCAO, ao inv&eacute;s de ter sido composto atrav&eacute;s da &aacute;rea de work, da seguinte forma: </P></DIR>
+</DIR>
+</DIR>
+</DIR>
+</FONT>
+<P ALIGN="CENTER"><CENTER><TABLE CELLSPACING=0 BORDER=0 CELLPADDING=4 WIDTH=425>
+<TR><TD WIDTH="29%" VALIGN="TOP" HEIGHT=21>
+<FONT SIZE=2><P>MOVE "84"</FONT></TD>
+<TD WIDTH="38%" VALIGN="TOP" HEIGHT=21><P></P></TD>
+<TD WIDTH="33%" VALIGN="TOP" HEIGHT=21>
+<FONT SIZE=2><P>TO WSS-OPCAO</FONT></TD>
+</TR>
+</TABLE>
+</CENTER></P>
+
+<FONT SIZE=2><P>&nbsp;</P><DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<P>Este comando tamb&eacute;m seria incluido antes da chamada da sub-rotina de pagina&ccedil;&atilde;o. </P>
+<P>Deve-se, ent&atilde;o, observar que os argumentos do menu podem ser compostos internamente ao programa de consulta paginada. </P></DIR>
+</DIR>
+</DIR>
+</DIR>
+</FONT></BODY>
+</HTML>

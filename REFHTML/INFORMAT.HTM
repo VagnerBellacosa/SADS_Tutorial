@@ -1,0 +1,722 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>INFORMAT</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+
+<B><FONT SIZE=6><P><A NAME="Infor">Informativos</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P>Introdu&ccedil;&atilde;o</B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS/SS fornece uma grande variedade de consultas e refer&ecirc;ncias cruzadas relativas aos cadastramentos de usu&aacute;rios e suas habilita&ccedil;&otilde;es que foram efetuados em sua base de dados.</FONT> </P>
+<FONT SIZE=2><P>O Sistema de Seguran&ccedil;a fornece tamb&eacute;m consultas referentes &agrave;s fun&ccedil;&otilde;es de controle por ele efetuadas, tais como: bloqueio de esta&ccedil;&otilde;es, desabilita&ccedil;&atilde;o de transa&ccedil;&otilde;es, limita&ccedil;&atilde;o de hor&aacute;rio de uso de aplicativos, etc.</FONT> </P>
+<FONT SIZE=2><P>Outro recurso oferecido pelo SADS/SS &eacute; a auditoria no cadastro de usu&aacute;rios e habilita&ccedil;&otilde;es. Atrav&eacute;s dela, toda manuten&ccedil;&atilde;o efetuada nos dados cadastrais dos usu&aacute;rios e em suas habilita&ccedil;&otilde;es, pode posteriormente ser consultada e impressa. Descobre-se, assim, qual a atualiza&ccedil;&atilde;o efetuada, qual o usu&aacute;rio agente da opera&ccedil;&atilde;o e qual o usu&aacute;rio afetado pela opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>O Sistema de Seguran&ccedil;a oferece tamb&eacute;m v&aacute;rios informativos impressos, contendo informa&ccedil;&otilde;es diversas a respeito dos cadastramentos de usu&aacute;rios e habilita&ccedil;&otilde;es. </P>
+<P>Estes relat&oacute;rios s&atilde;o emitidos por <I>jobs</I> que podem ser disparados atrav&eacute;s de transa&ccedil;&otilde;es <I>on</I>-<I>line, </I>cadastradas no menu de opera&ccedil;&atilde;o "ROTEMI".</FONT> </P>
+<FONT SIZE=2><P>Todas as consultas, refer&ecirc;ncias cruzadas e auditorias, suportadas pelo Sistema de Seguran&ccedil;a, ser&atilde;o detalhadamente explicadas a seguir.</FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o descritos os t&iacute;tulos dos campos apresentados em cada consulta, sendo que para tomar conhecimento dos valores que estes campos podem assumir, deve-se consultar o item "Usu&aacute;rios e habilita&ccedil;&otilde;es", nesta mesma se&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Os relat&oacute;rios n&atilde;o ser&atilde;o descritos nesta se&ccedil;&atilde;o por estarem detalhadamente explicados na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", item "Utilit&aacute;rios <I>batch</I>".</FONT> </P>
+<FONT SIZE=2><P>Para consultar os informativos do Sistema de Seguran&ccedil;a, deve-se utilizar o menu de escolha "INFSEG".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Conge">Consultas gerais </A></P>
+</B></FONT><P><HR></P>
+<FONT SIZE=2><P>Para efetuar qualquer consulta no Sistema de Seguran&ccedil;a, deve-se utilizar o menu de opera&ccedil;&atilde;o "CONGERSEG". Nele pode-se disparar as consultas relacionadas a seguir.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Conus">Consulta usu&aacute;rio/perfil</A></B></FONT> </P>
+<FONT SIZE=2><P>Atrav&eacute;s desta consulta &eacute; poss&iacute;vel visualizar todos os dados cadastrais e as habilita&ccedil;&otilde;es de um usu&aacute;rio ou de um perfil modelo.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<P>Para utilizar a consulta usu&aacute;rio/perfil, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o "CONGERSEG": </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - "USU" (Consulta usu&aacute;rio/perfil).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>N. Usuario</B> - N&uacute;mero identificador do usu&aacute;rio. (opcional)</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Cod. Usuario</B> - C&oacute;digo identificador do usu&aacute;rio. (opcional)</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Deve-se informar o n&uacute;mero ou o c&oacute;digo do usu&aacute;rio.</FONT> </P>
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Numero</B> - N&uacute;mero do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Situacao</B> - <I>Status</I> do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nome</B> - Nome do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Livre</B> - Dado livre do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sigla da Empresa</B> - Sigla da empresa na qual o usu&aacute;rio foi cadastrado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Area</B> - &Aacute;rea na qual o usu&aacute;rio foi cadastrado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Ambiente</B> - C&oacute;digo do ambiente para o qual o usu&aacute;rio est&aacute; habilitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nivel de Acesso</B> - N&iacute;vel de acesso geral do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Integrado c/ Marc</B> - Indicador de integra&ccedil;&atilde;o do <I>logon</I> do usu&aacute;rio com o Marc.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Validade</B> - Prazo de validade do cadastramento do usu&aacute;rio, caso o mesmo tenha sido definido.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Alteracao de Senha</B> - C&oacute;digo de controle de troca de senha do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Dias Habilitados</B> - C&oacute;digo que determina os dias em que o usu&aacute;rio foi habilitado a efetuar o <I>logon</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Unidades Autorizadas :</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Empresa </B>- C&oacute;digo da empresa autorizada ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estabelecimento</B> - C&oacute;digo do estabelecimento autorizado ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Unidade</B> - C&oacute;digo da unidade autorizada ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estacoes Habilitadas</B> - C&oacute;digos das esta&ccedil;&otilde;es nas quais o usu&aacute;rio pode trabalhar, caso </P>
+<P>exista alguma limita&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Em seguida, &eacute; encadeada uma nova tela exibindo os <I>defaults</I> cadastrados para o usu&aacute;rio:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero, nome e c&oacute;digo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Defaults :</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Impressora</B> - C&oacute;digo da impressora <I>default</I> cadastrada para o usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usercode</B> - C&oacute;digo do usercode <I>default</I> cadastrado para&nbsp;o usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Ambiente</B> - C&oacute;digo do ambiente <I>default</I> cadastrado para&nbsp;o usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Empresa</B> - C&oacute;digo da empresa <I>default</I> cadastrada para&nbsp;o usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estabelecimento</B> - C&oacute;digo do estabelecimento <I>default</I> cadastrado para o usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Unidade</B> - C&oacute;digo da unidade <I>default</I> cadastrada para o usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Resposta apos Logon :</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Tipo</B> - Tipo da resposta a ser enviada pelo Sistema de Seguran&ccedil;a ap&oacute;s o <I>logon</I> do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Resposta</B> - C&oacute;digo da transa&ccedil;&atilde;o, c&oacute;digo da tela, c&oacute;digo do contexto ou mensagem a ser enviada ap&oacute;s o <I>logon</I> efetuado pelo usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Resposta apos Logoff:</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Tipo</B> - Tipo da resposta a ser enviada pelo Sist.&nbsp;Seguran&ccedil;a ap&oacute;s o <I>logoff </I>do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Resposta</B> - C&oacute;digo da transa&ccedil;&atilde;o, c&oacute;digo da tela, c&oacute;digo&nbsp;do contexto ou mensagem a ser enviada ap&oacute;s o <I>logoff </I>efetuado pelo usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s a apresenta&ccedil;&atilde;o dos <I>defaults</I> do usu&aacute;rio, ser&atilde;o apresentados os aplicativos para os quais ele est&aacute; habilitado, com os seguintes campos:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero, nome e c&oacute;digo do usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Para cada um dos aplicativos habilitados, ser&atilde;o informados:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplic</B> - C&oacute;digo do aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Emp</B> - Empresa para a qual o aplicativo lhe foi habilitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estb</B> - Estabelecimento para o qual o aplicativo lhe foi habilitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Und</B> - Unidade para a qual o aplicativo lhe foi habilitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hab</B> - Tipo de habilita&ccedil;&atilde;o do aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Niv</B> - N&iacute;vel de acesso do usu&aacute;rio ao aplicativo.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso o usu&aacute;rio esteja vinculado a um ou mais perfis modelo, ser&aacute; ent&atilde;o exibida uma tela, contendo dados referentes a cada uma destas vincula&ccedil;&otilde;es, com os seguintes campos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero, nome e c&oacute;digo do usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Para cada um dos perfis aos quais o usu&aacute;rio est&aacute; vinculado, ser&atilde;o informados:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Perfil</B> - Numero do perfil modelo ao qual o usu&aacute;rio est&aacute; vinculado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Prio</B> - Prioridade da vincula&ccedil;&atilde;o do usu&aacute;rio ao perfil.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Emp </B>- Empresa na qual o usu&aacute;rio foi vinculado ao perfil.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estb </B>- Estabelecimento no qual o usu&aacute;rio foi vinculado ao perfil.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Und </B>- Unidade na qual o usu&aacute;rio foi vinculado ao perfil.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nv</B> - N&iacute;vel de acesso dos aplicativos herdados do perfil.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Logad">Usu&aacute;rios logados por esta&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta exibe a identifica&ccedil;&atilde;o - dados cadastrais e habilita&ccedil;&otilde;es - de todos os usu&aacute;rios que correntemente est&atilde;o logados na instala&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar esta consulta, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o CONGERSEG:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - "LOG ".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estacao</B> - C&oacute;digo de uma esta&ccedil;&atilde;o, para o caso em que se deseja consultar os dados dos&nbsp;usu&aacute;rios que efetuaram <I>logon</I> em esta&ccedil;&otilde;es cujos c&oacute;digos s&atilde;o subsequentes ao informado (opcional). </P></DIR>
+
+</FONT><B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para cada um dos usu&aacute;rios logados, ser&atilde;o exibidas as informa&ccedil;&otilde;es a seguir:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero, nome e c&oacute;digo do usu&aacute;rio; empresa, estabelecimento, unidade e ambiente do <I>logon</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estacao</B> - N&uacute;mero e c&oacute;digo da esta&ccedil;&atilde;o na qual o usu&aacute;rio em quest&atilde;o efetuou o <I>logon</I>.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Usulo">Usu&aacute;rio logado na esta&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta exibe a identifica&ccedil;&atilde;o - dados cadastrais e habilita&ccedil;&otilde;es - do usu&aacute;rio que efetuou o <I>logon</I> em uma esta&ccedil;&atilde;o espec&iacute;fica.</FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o apresentados todos os dados cadastrais, <I>defaults</I>, habilita&ccedil;&otilde;es e perfis modelos do usu&aacute;rio que efetuou o <I>logon</I> nesta esta&ccedil;&atilde;o, exibindo as mesmas informa&ccedil;&otilde;es da "Consulta usu&aacute;rio/perfil", descrita em t&oacute;pico anterior.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar esta consulta, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o CONGERSEG:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - "EST ".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estacao</B> - C&oacute;digo da esta&ccedil;&atilde;o onde o usu&aacute;rio a ser consultado efetuou o <I>logon</I>.</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P>
+<FONT SIZE=2><P>Ser&atilde;o apresentados todos os dados cadastrais, <I>defaults</I>, habilita&ccedil;&otilde;es e perfis modelos do usu&aacute;rio que efetuou o <I>logon</I> nesta esta&ccedil;&atilde;o, exibindo as mesmas informa&ccedil;&otilde;es da "Consulta usu&aacute;rio/perfil", descrita em t&oacute;pico anterior.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Usuli">Usu&aacute;rios a liberar </A></P>
+</B></FONT><FONT SIZE=2><P>Sempre que s&atilde;o inclu&iacute;das ou alteradas as habilita&ccedil;&otilde;es de aplicativos, transa&ccedil;&otilde;es ou elementos de um usu&aacute;rio, deve-se liber&aacute;-lo a fim de que suas novas habilita&ccedil;&otilde;es passem a ter validade para os testes efetuados pelo Sistema de Seguran&ccedil;a e a fim de que o usu&aacute;rio possa efetuar <I>logon</I>.</FONT> </P>
+<FONT SIZE=2><P>Para tanto, o SADS/SS disponibiliza uma consulta a usu&aacute;rios que necessitam ser liberados, possibilitanto ao Administrador de Seguran&ccedil;a faz&ecirc;-lo. </P>
+</FONT><B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar a consulta aos usu&aacute;rios a liberar, deve-se informar o seguinte argumento no menu de opera&ccedil;&atilde;o "CONGERSEG":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - "LIB ".</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para cada um dos usu&aacute;rios a liberar, ser&atilde;o informados:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Bloq.</B> - Indicador de bloqueio do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Numero</B> - N&uacute;mero do usu&aacute;rio a liberar.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do usu&aacute;rio a liberar.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nome</B> - Nome do usu&aacute;rio a liberar.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Desab">Transa&ccedil;&otilde;es desabilitadas</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta exibe as transa&ccedil;&otilde;es que est&atilde;o correntemente desabilitadas, para facilitar o controle do administrador de seguran&ccedil;a quanto &agrave;s suas habilita&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>Uma transa&ccedil;&atilde;o desabilitada n&atilde;o pode ser processada por quaisquer que seja o usu&aacute;rio. </P>
+<P>As transa&ccedil;&otilde;es podem ser desabilitadas manualmente por usu&aacute;rios autorizados ou automaticamente pelo pr&oacute;prio host. A desabilita&ccedil;&atilde;o autom&aacute;tica pelo host ocorre ap&oacute;s um certo n&uacute;mero de cancelamentos da transa&ccedil;&atilde;o, podendo este n&uacute;mero ser parametrizado na instala&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Quando uma transa&ccedil;&atilde;o &eacute; desabilitada manualmente, pode-se faz&ecirc;-la por um certo per&iacute;odo, ap&oacute;s o qual a transa&ccedil;&atilde;o ser&aacute; automaticamente habilitada pelo Sistema de Seguran&ccedil;a.</FONT> </P>
+<FONT SIZE=2><P>Associado a uma desabilita&ccedil;&atilde;o, existir&aacute; cadastrado o motivo pelo qual a transa&ccedil;&atilde;o se encontra neste estado.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar a consulta &agrave;s transa&ccedil;&otilde;es desabilitadas, deve-se informar o seguinte argumento no menu de opera&ccedil;&atilde;o "CONGERSEG":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - "TRA".</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para cada uma das transa&ccedil;&otilde;es desabilitadas, ser&atilde;o informados:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Menu</B> - C&oacute;digo do menu referente &agrave; transa&ccedil;&atilde;o desabilitada (sssmm).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Opcao</B> - C&oacute;digo da op&ccedil;&atilde;o referente &agrave; transa&ccedil;&atilde;o desabilitada (nn).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data Final</B> - Data final da desabilita&ccedil;&atilde;o, ap&oacute;s a qual a transa&ccedil;&atilde;o ser&aacute; habilitada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora Final</B> - Hora final da desabilita&ccedil;&atilde;o, ap&oacute;s a qual a transa&ccedil;&atilde;o ser&aacute; habilitada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Resp.</B> - N&uacute;mero do usu&aacute;rio respons&aacute;vel pela desabilita&ccedil;&atilde;o da transa&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Motivo</B> - Motivo da desabilita&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Ebloq">Esta&ccedil;&otilde;es bloqueadas</A></B></FONT> </P>
+<FONT SIZE=2><P>As esta&ccedil;&otilde;es podem ser bloqueadas automaticamente, quando se detecta, no momento do <I>logon</I>, uma tentativa de burlar a seguran&ccedil;a, ou podem ser bloqueadas manualmente, atrav&eacute;s de uma transa&ccedil;&atilde;o on-line no Sistema de Seguran&ccedil;a.</FONT> </P>
+<FONT SIZE=2><P>Para auxiliar no controle das esta&ccedil;&otilde;es bloqueadas, &eacute; oferecida tal consulta pelo Sistema de Seguran&ccedil;a.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar a consulta &agrave;s esta&ccedil;&otilde;es bloqueadas, deve-se informar o seguinte argumento no menu de opera&ccedil;&atilde;o "CONGERSEG":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - "BLO ".</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P>
+<FONT SIZE=2><P>C&oacute;digos de todas as esta&ccedil;&otilde;es correntemente bloqueadas.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Lihor">Aplicativos com limite de hor&aacute;rio</A></B></FONT> </P>
+<FONT SIZE=2><P>No Sistema de Seguran&ccedil;a pode-se restringir o hor&aacute;rio de utiliza&ccedil;&atilde;o de determinado aplicativo, permitindo somente que ele seja executado em hor&aacute;rios pr&eacute;-estabelecidos.</FONT> </P>
+<FONT SIZE=2><P>Para que se possa administrar melhor os aplicativos que possuem limita&ccedil;&atilde;o de hor&aacute;rio de utiliza&ccedil;&atilde;o, &eacute; ent&atilde;o oferecida tal consulta.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar a consulta a aplicativos com limite de hor&aacute;rio, deve-se informar o seguinte argumento no menu de opera&ccedil;&atilde;o CONGERSEG:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - "APL ".</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para cada uma das transa&ccedil;&otilde;es com limita&ccedil;&atilde;o de hor&aacute;rio, ser&atilde;o exibidas as informa&ccedil;&otilde;es a seguir:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Transacao</B> - C&oacute;digo da transa&ccedil;&atilde;o cujo hor&aacute;rio para utiliza&ccedil;&atilde;o est&aacute; limitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Horario Permitido :</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Inicio</B> - Hor&aacute;rio a partir do qual a transa&ccedil;&atilde;o est&aacute; dispon&iacute;vel para uso.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Fim</B> - Hor&aacute;rio a partir do qual est&aacute; bloqueado o uso da transa&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Relpe">Rela&ccedil;&atilde;o de perfis </A></P>
+</B></FONT><FONT SIZE=2><P>Esta consulta exibe todos os perfis modelo cadastrados na base de dados do Sistema de Seguran&ccedil;a.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar a consulta a todos os perfis da instala&ccedil;&atilde;o, deve-se informar o seguinte argumento no menu de opera&ccedil;&atilde;o CONGERSEG:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - "PER".</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para cada um dos perfis modelo, ser&atilde;o exibidas as informa&ccedil;&otilde;es a seguir:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Perfil</B> - N&uacute;mero do perfil modelo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nome</B> - Nome do perfil modelo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do perfil modelo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Amb</B> - Ambiente para o qual o perfil est&aacute; habilitado.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Aplim">Usu&aacute;rio/aplicativo com limite de hor&aacute;rio</A></B></FONT> </P>
+<FONT SIZE=2><P>Pode-se definir restri&ccedil;&otilde;es para que um usu&aacute;rio s&oacute; trabalhe com um determinado aplicativo em um intervalo de hora pr&eacute;-estabelecido. Fora deste intervalo o usu&aacute;rio n&atilde;o consegue disparar tal aplicativo e concretizar ent&atilde;o sua opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A consulta a usu&aacute;rios/aplicativos com limite de hor&aacute;rio auxilia ent&atilde;o no controle dos usu&aacute;rios que possuem limita&ccedil;&atilde;o de hor&aacute;rio para trabalhar com aplicativos.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar esta consulta, deve-se informar o seguinte argumento no menu de opera&ccedil;&atilde;o "CONGERSEG":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - "HOR ".</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para cada um dos usu&aacute;rios que possuem limita&ccedil;&atilde;o de hor&aacute;rio por aplicativo, ser&atilde;o exibidas as informa&ccedil;&otilde;es a seguir:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Transacao</B> - C&oacute;digo da transa&ccedil;&atilde;o para a qual o usu&aacute;rio possui limita&ccedil;&atilde;o de&nbsp;trabalho.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Horario Permitido:</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Inicio</B> - Hora a partir da qual o usu&aacute;rio est&aacute; habilita do a trabalhar com a transa&ccedil;&atilde;o informada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Fim</B> - Hora a partir da qual o usu&aacute;rio n&atilde;o mais est&aacute; habilitado a trabalhar com a transa&ccedil;&atilde;o informada.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Ultlo">Usu&aacute;rios &uacute;ltimo logon</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta apresenta dados referentes ao &uacute;ltimo <I>logon</I> efetuado por todos os usu&aacute;rios do Sistema de Seguran&ccedil;a.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar a consulta aos &uacute;ltimos <I>logons</I> dos usu&aacute;rios, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o CONGERSEG:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - "ULT ".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Mes </B>- M&ecirc;s no qual foram efetuadas as opera&ccedil;&otilde;es de <I>logon</I> que se deseja consultar. (opcional)</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Ano </B>- Ano no qual foram efetuadas as opera&ccedil;&otilde;es de <I>logon</I> que se deseja consultar. (opcional)</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para cada um dos usu&aacute;rios da instala&ccedil;&atilde;o, ser&atilde;o exibidas as informa&ccedil;&otilde;es a seguir:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nome</B> - Nome do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data </B>- Data do &uacute;ltimo <I>logon</I>.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Aplib">Habilita&ccedil;&otilde;es de aplicativos ap&oacute;s libera&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>No momento da libera&ccedil;&atilde;o de um usu&aacute;rio s&atilde;o consultados os perfis aos quais ele est&aacute; vinculado (caso hajam), sendo feita uma s&iacute;ntese de suas habilita&ccedil;&otilde;es de aplicativos e elementos, de acordo com as prioridades destas vincula&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>Torna-se poss&iacute;vel ent&atilde;o, atrav&eacute;s desta consulta, certificar e validar os aplicativos aos quais o usu&aacute;rio finalmente est&aacute; habilitado.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar a consulta &agrave;s habilita&ccedil;&otilde;es de aplicativos ap&oacute;s a libera&ccedil;&atilde;o do usu&aacute;rio, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o "CONGERSEG":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - "HAA".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>N. Usuario</B> - N&uacute;mero do usu&aacute;rio do qual se deseja consultar as habilita&ccedil;&otilde;es&nbsp;de aplicativos ap&oacute;s libera&ccedil;&atilde;o. (opcional)</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Cod. Usuario</B> - C&oacute;digo do usu&aacute;rio do qual se deseja consultar as habilita&ccedil;&otilde;es de aplicativos ap&oacute;s libera&ccedil;&atilde;o. (opcional)</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Deve ser informado ou o n&uacute;mero ou o c&oacute;digo do usu&aacute;rio.</FONT> </P>
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero e nome do usu&aacute;rio</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do usu&aacute;rio</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Ambiente</B> - Ambiente do usu&aacute;rio</FONT> </P>
+<FONT SIZE=2><P>Para cada um dos aplicativos habilitados ao usu&aacute;rio ser&atilde;o informados:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplic.</B> - C&oacute;digo do aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Emp </B>- Empresa para a qual o aplicativo lhe foi habilitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estb </B>- Estabelecimento para o qual o aplicativo lhe foi habilitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Und </B>- Unidade para a qual o aplicativo lhe foi habilitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hab </B>- Tipo de habilita&ccedil;&atilde;o ao aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Niv </B>- N&iacute;vel de habilita&ccedil;&atilde;o ao aplicativo.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Elelib">Habilita&ccedil;&otilde;es de elementos ap&oacute;s libera&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>No momento da libera&ccedil;&atilde;o de um usu&aacute;rio s&atilde;o consultados os perfis aos quais ele est&aacute; vinculado (caso hajam), sendo feita uma s&iacute;ntese de suas habilita&ccedil;&otilde;es de aplicativos e elementos, de acordo com as prioridades destas vincula&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>Torna-se poss&iacute;vel ent&atilde;o, atrav&eacute;s desta consulta, certificar e validar os elementos aos quais o usu&aacute;rio finalmente est&aacute; habilitado.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar a consulta &agrave;s habilita&ccedil;&otilde;es de elementos ap&oacute;s a libera&ccedil;&atilde;o do usu&aacute;rio, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o "CONGERSEG":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - "HAE".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>N. Usuario</B> - N&uacute;mero do usu&aacute;rio do qual se deseja consultar as habilita&ccedil;&otilde;es&nbsp;de elementos ap&oacute;s libera&ccedil;&atilde;o. (opcional)</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Cod. Usuario</B> - C&oacute;digo do usu&aacute;rio do qual se deseja consultar as habilita&ccedil;&otilde;es de elementos ap&oacute;s libera&ccedil;&atilde;o. (opcional)</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Deve ser informado ou o n&uacute;mero ou o c&oacute;digo do usu&aacute;rio.</FONT> </P>
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero e nome do usu&aacute;rio</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do usu&aacute;rio</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Ambiente</B> - Ambiente do usu&aacute;rio</FONT> </P>
+<FONT SIZE=2><P>Para cada um dos aplicativos ou lista de elementos que possuem elementos habilitados ao usu&aacute;rio, ser&atilde;o informados:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplicativo/Lista</B> - C&oacute;digo do aplicativo ou lista de elementos cujos elementos lhe foram habilitados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Elemento</B> - C&oacute;digo do elemento habilitado ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Empresa</B> - Empresa para a qual o elemento lhe foi habilitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estabelecimento</B> - Estabelecimento para o qual o elemento lhe foi habilitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Unidade</B> - Unidade para a qual o elemento lhe foi habilitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hab.</B> - Tipo da habilita&ccedil;&atilde;o do elemento</FONT> </P></DIR>
+
+<B><FONT FACE="CG Times" SIZE=5><a name="Translib"><P>Habilita&ccedil;&otilde;es de transa&ccedil;&otilde;es ap&oacute;s libera&ccedil;&atilde;o</P>
+</B></FONT><FONT SIZE=2><P>No momento da libera&ccedil;&atilde;o de um usu&aacute;rio s&atilde;o consultados os perfis aos quais ele est&aacute; vinculado (caso hajam), sendo feita uma s&iacute;ntese de suas habilita&ccedil;&otilde;es de transa&ccedil;&otilde;es, de acordo com as prioridades destas vincula&ccedil;&otilde;es.</P>
+<P>Torna-se poss&iacute;vel ent&atilde;o, atrav&eacute;s desta consulta, certificar e validar os elementos aos quais o usu&aacute;rio finalmente est&aacute; habilitado.</P>
+</FONT><B><FONT FACE="CG Times" SIZE=4><P>Argumentos da consulta</P>
+</B></FONT><FONT SIZE=2><P>Para utilizar a consulta &agrave;s habilita&ccedil;&otilde;es de transa&ccedil;&otilde;es ap&oacute;s a libera&ccedil;&atilde;o do usu&aacute;rio, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o &quot;CONGERSEG&quot;:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Operacao - </B>&quot;HAT&quot;.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;N. Usuario - </B>N&uacute;mero do usu&aacute;rio do qual se deseja consultar as habilita&ccedil;&otilde;es&nbsp;de transa&ccedil;&otilde;es ap&oacute;s libera&ccedil;&atilde;o. (opcional)</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Cod. Usuario - </B>C&oacute;digo do usu&aacute;rio do qual se deseja consultar as habilita&ccedil;&otilde;es de transa&ccedil;&otilde;es ap&oacute;s libera&ccedil;&atilde;o. (opcional)</P>
+<P>Deve ser informado ou o n&uacute;mero ou o c&oacute;digo do usu&aacute;rio.</P></DIR>
+
+</FONT><B><FONT FACE="CG Times" SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</P><DIR>
+
+</B></FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Usuario </B>- N&uacute;mero e nome do usu&aacute;rio</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Codigo </B>- C&oacute;digo do usu&aacute;rio</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Ambiente </B>- Ambiente do usu&aacute;rio</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Aplicativo - </B>C&oacute;digo do aplicativo cujas transa&ccedil;&otilde;es lhe foram habilitadas.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Empresa </B>- Empresa para a qual o aplicativo/transa&ccedil;&atilde;o lhe foi habilitado.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Estabelecimento </B>- Estabelecimento para o qual o aplicativo/transa&ccedil;&atilde;o lhe foi habilitado.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Unidade - </B>Unidade para a qual o aplicativo/transa&ccedil;&atilde;o lhe foi habilitado.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Habilitacao </B>- Tipo da habilita&ccedil;&atilde;o do aplicativo/transa&ccedil;&atilde;o.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;Nivel</B> – N&iacute;vel de habilita&ccedil;&atilde;o do aplicativo/transa&ccedil;&atilde;o.</P>
+<P>&lt;Tabela de transa&ccedil;&otilde;es&gt; – Indicativos (S/N) de habilita&ccedil;&otilde;es das transa&ccedil;&otilde;es do referido<B> </B>aplicativo ao usu&aacute;rio.</P></DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Refer">Refer&ecirc;ncias cruzadas</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>As refer&ecirc;ncias cruzadas do Sistema de Seguran&ccedil;a permitem consultar quais elementos se relacionam com o elemento informado.</FONT> </P>
+<FONT SIZE=2><P>Para efetuar refer&ecirc;ncias cruzadas, deve-se utilizar o menu de escolha "REFCRUSEG".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Uelem">Usu&aacute;rios por elemento </A></P>
+</B></FONT><FONT SIZE=2><P>Esta consulta apresenta todos os usu&aacute;rios habilitados a trabalhar com um elemento, ou grupo de elementos, em um aplicativo ou lista de elementos espec&iacute;fica.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar a consulta usu&aacute;rios por elemento, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o "USUPORELE":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplicativo/Lista de Elementos</B> - C&oacute;digo do aplicativo ou lista de elementos para o qual o elemento est&aacute; habilitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Elemento</B> - C&oacute;digo do elemento (opcional). </P>
+<P>Se n&atilde;o informado, ser&atilde;o exibidos os c&oacute;digos de todos os usu&aacute;rios que t&ecirc;m acesso a quaisquer elementos no aplicativo/lista de elementos informado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Empresa</B> - C&oacute;digo da empresa na qual o aplicativo/lista&nbsp;de elementos est&aacute; cadastrado e na&nbsp;qual os usu&aacute;rios podem ter acesso ao elemento (opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todas as empresas.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estabelec</B> - C&oacute;digo do estabelecimento no qual o aplicativo/lista de elementos est&aacute; cadastrado e no qual os usu&aacute;rios podem ter acesso ao elemento (opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todos os estabelecimentos.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Unidade</B> - C&oacute;digo da unidade na qual o aplicativo/lista de elementos est&aacute;&nbsp;cadastrado e na qual os usu&aacute;rios podem ter acesso ao elemento&nbsp;(opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todas as unidades.</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplicativo/Lista de Elemento</B> - C&oacute;digo do aplicativo ou lista de elementos&nbsp;no qual o elemento foi habilitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Empresa</B> - C&oacute;digo da empresa na qual os usu&aacute;rios&nbsp;podem ter acesso ao elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estab.</B> - C&oacute;digo do estabelecimento no qual os usu&aacute;rios podem ter acesso ao elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Unidade</B> - C&oacute;digo da unidade na qual os usu&aacute;rios podem ter acesso ao elemento.</FONT> </P>
+<FONT SIZE=2><P>Para cada um dos usu&aacute;rios habilitados ao elemento, s&atilde;o exibidos:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Elemento</B> - C&oacute;digo do elemento habilitado ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hab</B> - C&oacute;digo da habilita&ccedil;&atilde;o do usu&aacute;rio ao elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero do usu&aacute;rio habilitado ao elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nome</B> - Nome do usu&aacute;rio habilitado ao elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do usu&aacute;rio habilitado ao elemento.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Tp</B> - Tipo do usu&aacute;rio habilitado ao elemento.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Uapli">Usu&aacute;rios por aplicativo</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta exibe uma lista com todos os usu&aacute;rios habilitados a trabalhar com o aplicativo especificado.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar esta consulta, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o "USUPORAPL":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplicativo</B> - C&oacute;digo do aplicativo ou grupo de aplicativos aos quais os&nbsp;usu&aacute;rios foram habilitados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Empresa</B> - C&oacute;digo da empresa na qual os usu&aacute;rios est&atilde;o habilitados a trabalhar com o aplicativo (opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todas as empresas.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estabelecimento</B> - C&oacute;digo do estabelecimento no qual os usu&aacute;rios est&atilde;o&nbsp;habilitados a trabalhar com o aplicativo (opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todos os estabelecimentos.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Unidade</B> -C&oacute;digo da unidade na qual os usu&aacute;rios est&atilde;o habilitados a trabalhar com o aplicativo (opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todas as unidades.</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para cada usu&aacute;rio habilitado ao aplicativo especificado, ser&atilde;o exibidas as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplic</B> - C&oacute;digo do aplicativo ao qual o usu&aacute;rio est&aacute; habilitado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Emp </B>- C&oacute;digo da empresa na qual o usu&aacute;rio pode ter acesso ao aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Est</B> - C&oacute;digo do estabelecimento no qual o usu&aacute;rio pode ter acesso ao aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Und </B>- C&oacute;digo da unidade na qual o usu&aacute;rio pode ter acesso ao aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nome</B> - Nome do usu&aacute;rio que tem habilita&ccedil;&atilde;o ao aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero do usu&aacute;rio que tem habilita&ccedil;&atilde;o ao aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do usu&aacute;rio que tem habilita&ccedil;&atilde;o ao aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>T</B> - Tipo do usu&aacute;rio que tem habilita&ccedil;&atilde;o ao aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>H</B> - Tipo da habilita&ccedil;&atilde;o do usu&aacute;rio ao aplicativo.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Unive">Usu&aacute;rios por n&iacute;vel de acesso </A></P>
+</B></FONT><FONT SIZE=2><P>Atrav&eacute;s desta consulta pode-se consultar os usu&aacute;rios que possuem um determinado n&iacute;vel de acesso geral,cadastrado no Sistema de Seguran&ccedil;a.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar esta consulta, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o "USUPORNIV":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nivel Acesso</B> - N&iacute;vel de acesso geral dos usu&aacute;rios que se deseja consultar.</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nivel Acesso</B> - N&iacute;vel de acesso geral dos usu&aacute;rios.</FONT> </P>
+<FONT SIZE=2><P>Para cada um dos usu&aacute;rios com o n&iacute;vel de acesso especificado ser&atilde;o exibidos:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Emp</B> - C&oacute;digo da empresa &agrave; qual o usu&aacute;rio pertence.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Area</B> - C&oacute;digo da &aacute;rea &agrave; qual o usu&aacute;rio pertence.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nome</B> - Nome do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do usu&aacute;rio.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Uempr">Usu&aacute;rios por empresa/&aacute;rea</A></B></FONT> </P>
+<FONT SIZE=2><P>No Sistema de Seguran&ccedil;a, pode-se consultar os usu&aacute;rios que est&atilde;o cadastrados em uma determinada empresa e &aacute;rea.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar a consulta aos usu&aacute;rios de uma empresa/&aacute;rea, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o "USUPOREMP":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Empresa</B> - Sigla da empresa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Area </B>- C&oacute;digo da &aacute;rea ou grupo de &aacute;reas.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Pode-se consultar uma &aacute;rea espec&iacute;fica ou , informando apenas parte do c&oacute;digo da &aacute;rea, pode-se consultar um grupo de &aacute;reas, que caracteriza uma consulta hierarquizada.</FONT> </P>
+<FONT SIZE=2><P>Por exemplo, informando-se Area = "D" ser&atilde;o apresentados os usu&aacute;rios de todas as &aacute;reas iniciadas pela letra "D".</FONT> </P>
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sigla da Empresa</B> - Sigla da empresa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Area</B> - C&oacute;digo da &aacute;rea.</FONT> </P>
+<FONT SIZE=2><P>Para cada usu&aacute;rio cadastrado na empresa/&aacute;rea, ser&atilde;o exibidas as seguintes informa&ccedil;&otilde;es:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nome</B> - Nome do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>T</B> - Tipo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>A</B> - C&oacute;digo do ambiente ao qual o usu&aacute;rio pode ter acesso.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nv</B> - N&iacute;vel de acesso geral do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Emp</B> - C&oacute;digo da empresa autorizada ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estb</B> - C&oacute;digo do estabelecimento autorizado ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Und</B> - C&oacute;digo da unidade autorizada ao usu&aacute;rio.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Uperf">Usu&aacute;rios por perfil modelo</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta exibe todos os usu&aacute;rios que est&atilde;o vinculados ao perfil modelo especificado. Pode-se, opcionalmente, informar os campos "Emresa", "Estabelecimento" e "Unidade", a fim de que sejam apresentados apenas os usu&aacute;rios definidos nestas unidades que estejam vinculados ao perfil modelo informado.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar a consulta aos usu&aacute;rios vinculados a um perfil modelo, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o "USUPORPER":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Numero Perfil</B> - N&uacute;mero do perfil modelo. (opcional)</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo Perfil</B> - C&oacute;digo do perfil modelo. (opcional)</FONT> </P>
+<FONT SIZE=2><P>Deve-se informar ou o n&uacute;mero ou o c&oacute;digo do perfil.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Empresa</B> - C&oacute;digo da empresa na qual os usu&aacute;rios a serem pesquisados foram definidos&nbsp;(opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todas as empresas.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estabelec. </B>- C&oacute;digo do estabelecimento no qual os usu&aacute;rios a serem pesquisados foram definidos&nbsp;(opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todos os estabelecimentos.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Unidade</B> - C&oacute;digo da unidade na qual os usu&aacute;rios a serem pesquisados foram definidos&nbsp;(opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todas as unidades.</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Perfil Modelo</B> - N&uacute;mero e nome do perfil.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Ambiente</B> - C&oacute;digo do ambiente autorizado ao perfil.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sigla Empresa</B> - Empresa &agrave; qual o perfil foi autorizado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Area</B> - &Aacute;rea &agrave; qual o perfil foi autorizado.</FONT> </P>
+<FONT SIZE=2><P>Para cada um dos usu&aacute;rios vinculados ao perfil modelo ser&atilde;o exibidos:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nome</B> - Nome do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Prio</B> - Prioridade da vincula&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Validade</B> - Prazo de validade do cadastro do usu&aacute;rio.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Utran">Usu&aacute;rios por transa&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta apresenta todos os usu&aacute;rios que est&atilde;o habilitados a trabalhar com uma determinada transa&ccedil;&atilde;o ("sssmmnn").</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar esta consulta, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o "USUPORTRA":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplicativo</B> - C&oacute;digo do aplicativo para o qual os usu&aacute;rios est&atilde;o habilitados a trabalhar.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Transacao</B> - C&oacute;digo da transa&ccedil;&atilde;o para a qual os usu&aacute;rios est&atilde;o habilitados a&nbsp;trabalhar.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Empresa</B> - C&oacute;digo da empresa para a qual os usu&aacute;rios est&atilde;o habilitados a trabalhar com a transa&ccedil;&atilde;o (opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todas as empresas.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estabelec.</B> - C&oacute;digo do estabelecimento no qual os usu&aacute;rios est&atilde;o habilitados a trabalhar com a transa&ccedil;&atilde;o (opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todos os estabelecimentos.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Unidade</B> - C&oacute;digo da unidade na qual os usu&aacute;rios est&atilde;o habilitados a trabalhar com a transa&ccedil;&atilde;o (opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todas as unidades. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B>&nbsp;Sigla empresa</B> – Sigla da empresa para a qual os usu&aacute;rios est&atilde;o habilitados a trabalhar com a transa&ccedil;&atilde;o (opcional). </P>
+<P>Se n&atilde;o informada, a consulta ser&aacute; feita para todas as empresas.</P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B>&nbsp;Area</B> - C&oacute;digo da &aacute;rea na qual os usu&aacute;rios est&atilde;o habilitados a trabalhar com a transa&ccedil;&atilde;o (opcional). </P>
+<P>Se n&atilde;o informada, a consulta ser&aacute; feita para todas as unidades.</P></DIR>
+
+</FONT><B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplicativo</B> - C&oacute;digo do aplicativo referente &agrave; transa&ccedil;&atilde;o especificada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Transacao</B> - C&oacute;digo da transa&ccedil;&atilde;o para a qual os usu&aacute;rios est&atilde;o habilitados.</FONT> </P>
+<FONT SIZE=2><P>Para cada usu&aacute;rio habilitado &agrave; transa&ccedil;&atilde;o especificada, ser&atilde;o exibidas as seguintes informa&ccedil;&otilde;es:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Emp </B>- C&oacute;digo da empresa na qual o usu&aacute;rio pode ter acesso &agrave; transa&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Est</B> - C&oacute;digo do estabelecimento no qual o usu&aacute;rio pode ter acesso &agrave; transa&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Und </B>- C&oacute;digo da unidade na qual o usu&aacute;rio pode ter acesso &agrave; transa&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nome</B> - Nome do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>T</B> - Tipo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>H</B> - Tipo da habilita&ccedil;&atilde;o do usu&aacute;rio &agrave; transa&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nv</B> - N&iacute;vel de acesso geral do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do usu&aacute;rio.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Usitu">Usu&aacute;rios por situa&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Os usu&aacute;rios, de acordo com a situa&ccedil;&atilde;o de seus cadastramentos e de acordo com a din&acirc;mica de utiliza&ccedil;&atilde;o de suas senhas, podem se encontrar em diferentes <I>status</I>.</FONT> </P>
+<FONT SIZE=2><P>Esta consulta permite ent&atilde;o obter conhecimento de quais usu&aacute;rios possuem um <I>status</I> espec&iacute;fico.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar esta consulta, deve-se informar o seguinte argumento no menu de opera&ccedil;&atilde;o "USUPORSIT":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Situacao</B> - Situa&ccedil;&atilde;o (<I>status</I>) na qual se encontram os usu&aacute;rios a serem pesquisados.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"LIB" - Liberado;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"BLO" - Bloqueado;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ECD" - Em cadastramento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ECB" - Em cadastramento bloqueado;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"BLE" - Bloqueado - erro de d&iacute;gito;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALB" - A liberar;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ABL" - A liberar bloqueado.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Situacao</B> - Situa&ccedil;&atilde;o (<I>status</I>) na qual se encontram os usu&aacute;rios.</FONT> </P>
+<FONT SIZE=2><P>Para cada usu&aacute;rio na mesma situa&ccedil;&atilde;o especificada, ser&atilde;o exibidas as seguintes informa&ccedil;&otilde;es:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Numero</B> - N&uacute;mero do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Nome</B> - Nome do usu&aacute;rio.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Eusua">Elementos por usu&aacute;rio</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta informa a quais elementos determinado usu&aacute;rio pode ter acesso, quando trabalha com um aplicativo, ou a quais elementos ele est&aacute; habilitado de acordo com uma lista de elementos especificada.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar esta consulta, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o "ELEPORUSU":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Numero Usuario</B> - N&uacute;mero do usu&aacute;rio (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo Usuario</B> - C&oacute;digo do usu&aacute;rio (opcional).</FONT> </P>
+<FONT SIZE=2><P>Deve ser informado ou o n&uacute;mero ou o c&oacute;digo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplicativo/Lista de Elementos</B> - C&oacute;digo do aplicativo ou da lista de elementos &agrave; qual o usu&aacute;rio pode executar o acesso aos elementos (opcional).</FONT> </P>
+<FONT SIZE=2><P>Caso o aplicativo/lista de elementos n&atilde;o seja informado, ser&atilde;o apresentados todos os elementos para cada aplicativo, nos quais est&atilde;o habilitados elementos para o usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Empresa</B> - C&oacute;digo da empresa onde se deseja saber se o usu&aacute;rio pode ter acesso ao elemento&nbsp;(opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todas as empresas.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estabelec. </B>- C&oacute;digo do estabelecimento onde se deseja saber se o usu&aacute;rio&nbsp;pode ter acesso ao elemento (opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todos os estabelecimentos.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Unidade</B> - C&oacute;digo da unidade onde se deseja saber se o usu&aacute;rio pode ter acesso ao elemento (opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todas as unidades.</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero, nome e c&oacute;digo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplicativo/Lista de Elementos</B> - C&oacute;digo do aplicativo ou lista de elementos na qual&nbsp;o usu&aacute;rio pode executar o acesso aos elementos.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Empresa</B> - C&oacute;digo da empresa onde o elemento est&aacute; autorizado ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estabelec</B> - C&oacute;digo do estabelecimento onde o elemento est&aacute; autorizado ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Unidade</B> - C&oacute;digo da unidade onde o elemento est&aacute; autorizado ao usu&aacute;rio.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para cada elemento habilitado ao usu&aacute;rio, ser&atilde;o exibidas as seguintes informa&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Elemento/Habilitacao</B> - Elemento habilitado e tipo da habilita&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Trans">Transa&ccedil;&otilde;es por usu&aacute;rio</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta exibe as transa&ccedil;&otilde;es que determinado usu&aacute;rio pode ter acesso.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar esta consulta, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o "TRAPORUSU":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Numero Usuario</B> - N&uacute;mero do usu&aacute;rio (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo Usuario</B> - C&oacute;digo do usu&aacute;rio (opcional).</FONT> </P>
+<FONT SIZE=2><P>Deve ser informado ou o n&uacute;mero ou o c&oacute;digo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplicativo</B> - C&oacute;digo do aplicativo, caso se deseje consultar as transa&ccedil;&otilde;es de&nbsp;um aplicativo espec&iacute;fico (opcional).</FONT> </P>
+<FONT SIZE=2><P>Pode-se solicitar a consulta de forma hierarquizada, informando apenas parte do c&oacute;digo do aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Empresa</B> - C&oacute;digo da empresa &agrave; qual o usu&aacute;rio pode ter acesso &agrave; transa&ccedil;&atilde;o (opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todas as empresas.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estabelecimento</B> - C&oacute;digo do estabelecimento ao qual o usu&aacute;rio pode ter acesso &agrave; transa&ccedil;&atilde;o (opcional).</FONT> </P>
+<FONT SIZE=2><P>Se n&atilde;o informado, a consulta ser&aacute; feita para todos os estabelecimentos.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Unidade</B> - C&oacute;digo da unidade &agrave; qual o usu&aacute;rio pode ter acesso &agrave; transa&ccedil;&atilde;o (opcional). </P>
+<P>Se n&atilde;o informado, a consulta ser&aacute; feita para todas as unidades.</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario</B> - N&uacute;mero e nome do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Aplicativo</B> - C&oacute;digo do aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Habilitacao</B> - C&oacute;digo da habilita&ccedil;&atilde;o do usu&aacute;rio ao aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Empresa</B> - C&oacute;digo da empresa na qual o usu&aacute;rio tem acesso ao aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Estabelecimento</B> - C&oacute;digo do estabelecimento no qual o usu&aacute;rio tem acesso ao&nbsp;aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Unidade</B> - C&oacute;digo da unidade na qual o usu&aacute;rio tem acesso ao aplicativo.</FONT> </P>
+<FONT SIZE=2><P>Nos demais campos, que aparecem sob a forma de uma tabela bidimensional, ser&atilde;o exibidas as habilita&ccedil;&otilde;es ("S") ou inabilita&ccedil;&otilde;es (" ") do usu&aacute;rio &agrave;s transa&ccedil;&otilde;es do aplicativo a ele autorizado.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Prosu">Programas por sub-rotina</A></B></FONT> </P>
+<FONT SIZE=2><P>Atrav&eacute;s desta consulta, obt&eacute;m-se uma lista dos programas habilitados a efetuar acesso &agrave; uma sub-rotina espec&iacute;fica.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar esta consulta, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o "PROPORSUB":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sub-rotina</B> - C&oacute;digo da sub-rotina.</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sub-rotina</B> - C&oacute;digo da sub-rotina.</FONT> </P>
+<FONT SIZE=2><P>Para cada um dos programas autorizados a acessar a sub-rotina, ser&atilde;o exibidos:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Programa</B> - C&oacute;digo do programa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data </B>- Data da compila&ccedil;&atilde;o do programa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora</B> - Hora de compila&ccedil;&atilde;o do programa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Segmento</B> - Tamanho em segmentos do objeto do programa.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Audit">Auditoria de manuten&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O Sistema de Seguran&ccedil;a mant&eacute;m arquivadas todas as manuten&ccedil;&otilde;es que foram efetuadas no cadastro de usu&aacute;rios e suas habilita&ccedil;&otilde;es. Essas informa&ccedil;&otilde;es ficam dispon&iacute;veis para as consultas exibidas a seguir, que podem ser disparadas atrav&eacute;s do menu de opera&ccedil;&atilde;o "AUDSEG".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Crono">Cadastro de usu&aacute;rios - ordem cronol&oacute;gica </A></P>
+</B></FONT><FONT SIZE=2><P>Esta opera&ccedil;&atilde;o ir&aacute; apresentar as atualiza&ccedil;&otilde;es efetuadas no cadastro de usu&aacute;rios por ordem cronol&oacute;gica.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar a consulta &agrave;s opera&ccedil;&otilde;es efetuadas no cadastro de usu&aacute;rios em ordem cronol&oacute;gica, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o "AUDSEG":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Opcao</B> - "CRO".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data Inicial</B> - Data a partir da qual se deseja realizar a consulta (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data Final</B> - Data at&eacute; a qual se deseja realizar a consulta (opcional).</FONT> </P>
+<FONT SIZE=2><P>Se nenhuma data for informada, ser&aacute; assumida a data corrente para a pesquisa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Numero Usuario</B> - N&uacute;mero do usu&aacute;rio, caso se deseje obter as atualiza&ccedil;&otilde;es efetuadas apenas em seu cadastro (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo Usuario</B> - C&oacute;digo do usu&aacute;rio, caso se deseje obter as atualiza&ccedil;&otilde;es efetuadas apenas em seu cadastro (opcional).</FONT> </P>
+<FONT SIZE=2><P>Deve ser informado ou o n&uacute;mero ou o c&oacute;digo do usu&aacute;rio.</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data </B>- Data em que foram efetuadas as opera&ccedil;&otilde;es no cadastro de usu&aacute;rios, por ordem de ocorr&ecirc;ncia.</FONT> </P>
+<FONT SIZE=2><P>Para cada uma das opera&ccedil;&otilde;es efetuadas na data apresentada, ser&atilde;o exibidos:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora </B>-<B> </B>Hora em que foi efetuada a opera&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Op</B> - Tipo da opera&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Agente</B> - N&uacute;mero do usu&aacute;rio que efetuou a a&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Afetado</B> - N&uacute;mero do usu&aacute;rio que sofreu a a&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Dados Anteriores :</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>A</B> - C&oacute;digo do ambiente ao qual o usu&aacute;rio tinha acesso.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Nv</B> - N&iacute;vel de acesso anterior do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Emp</B>- C&oacute;digo da empresa anteriormente autorizada ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Estb</B>- C&oacute;digo do estabelecimento anteriormente&nbsp;autorizado ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Und</B> - C&oacute;digo da unidade anteriormente autorizada&nbsp;ao usu&aacute;rio.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Dados Atuais:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>A</B> - Novo c&oacute;digo do ambiente do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Nv</B> - Novo n&iacute;vel de acesso do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Emp</B> - Novo c&oacute;digo da empresa autorizada ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Estb</B> - Novo c&oacute;digo do estabelecimento autorizado&nbsp;ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Und</B> - Novo c&oacute;digo da unidade autorizada ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - Novo c&oacute;digo do usu&aacute;rio.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Tipop">Cadastro de usu&aacute;rios - tipo de opera&ccedil;&atilde;o</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta apresenta as atualiza&ccedil;&otilde;es efetuadas no cadastro de usu&aacute;rios de acordo com o tipo da opera&ccedil;&atilde;o executada: inclus&atilde;o, altera&ccedil;&atilde;o, exclus&atilde;o, troca ou duplica&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar esta consulta, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o "AUDSEG":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Opcao</B> - "OPE".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data Inicial</B> - Data a partir da qual se deseja realizar a consulta (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data Final</B> - Data at&eacute; a qual se deseja realizar a consulta (opcional).</FONT> </P>
+<FONT SIZE=2><P>Se nenhuma data for informada, ser&aacute; assumida a data corrente para a pesquisa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao</B> - C&oacute;digo da opera&ccedil;&atilde;o desejada ("I", "A", "E", "T" ou "D"). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Numero Usuario</B> - N&uacute;mero do usu&aacute;rio, caso se deseje obter as atualiza&ccedil;&otilde;es efetuadas apenas em seu cadastro (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo Usuario</B> - C&oacute;digo do usu&aacute;rio, caso se deseje obter as atualiza&ccedil;&otilde;es efetuadas apenas em seu cadastro (opcional).</FONT> </P></DIR>
+
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao de</B> - Tipo da opera&ccedil;&atilde;o efetuada no cadastro de usu&aacute;rios.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data</B> - Data em que foram efetuadas as opera&ccedil;&otilde;es no cadastro de usu&aacute;rios, por ordem de ocorr&ecirc;ncia.</FONT> </P>
+<FONT SIZE=2><P>Para cada uma das opera&ccedil;&otilde;es do tipo especificado, que foram efetuadas na data informada, ser&atilde;o exibidos:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora </B>- Hora em que foi efetuada a opera&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Agente</B> - N&uacute;mero do usu&aacute;rio que efetuou a a&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Afetado</B> - N&uacute;mero do usu&aacute;rio que sofreu a a&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Dados Anteriores :</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>A</B> - C&oacute;digo do ambiente ao qual o usu&aacute;rio tinha acesso.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Nv</B> - N&iacute;vel de acesso anterior do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Emp</B>- C&oacute;digo da empresa anteriormente autorizada&nbsp;ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Estb</B> - C&oacute;digo do estabelecimento anteriormente autorizado ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Und</B> - C&oacute;digo da unidade anteriormente autorizada&nbsp;ao usu&aacute;rio.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Dados Atuais :</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>A</B> - C&oacute;digo da &aacute;rea &agrave; qual o usu&aacute;rio tem acesso.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Nv</B> - Novo n&iacute;vel de acesso do usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Emp</B> - Novo c&oacute;digo da empresa autorizada ao&nbsp;usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Estb </B>- Novo c&oacute;digo do estabelecimento autorizado&nbsp;ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Und</B> - Novo c&oacute;digo da unidade autorizada ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - Novo c&oacute;digo do usu&aacute;rio.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Hapli">Habilita&ccedil;&otilde;es de aplicativos</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta consulta apresenta as atualiza&ccedil;&otilde;es que foram efetuadas no cadastro de habilita&ccedil;&otilde;es dos usu&aacute;rios.</FONT> </P>
+<B><FONT SIZE=4><P>Argumentos da consulta</B></FONT> </P>
+<FONT SIZE=2><P>Para utilizar esta consulta, deve-se informar os seguintes argumentos no menu de opera&ccedil;&atilde;o "AUDSEG":</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Opcao</B> - "APL".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data Inicial</B> - Data a partir da qual se deseja realizar a consulta (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data Final</B> - Data at&eacute; a qual se deseja realizar a consulta (opcional).</FONT> </P>
+<FONT SIZE=2><P>Se nenhuma data for informada, ser&aacute; assumida a data corrente para a pesquisa.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Numero Usuario</B> - N&uacute;mero do usu&aacute;rio, caso se deseje obter as atualiza&ccedil;&otilde;es efetuadas apenas em seu cadastro (opcional).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo Usuario</B> - C&oacute;digo do usu&aacute;rio, caso se deseje obter as atualiza&ccedil;&otilde;es efetuadas apenas em seu cadastro (opcional).</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Deve ser informado ou o n&uacute;mero ou o c&oacute;digo do usu&aacute;rio.</FONT> </P>
+<B><FONT SIZE=4><P>Informa&ccedil;&otilde;es apresentadas na consulta</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Data</B> - Data em que foi efetuada a opera&ccedil;&atilde;o no cadastro de habilita&ccedil;&otilde;es, por ordem de ocorr&ecirc;ncia</FONT> </P>
+<FONT SIZE=2><P>Para cada uma das opera&ccedil;&otilde;es efetuadas, ser&atilde;o exibidos:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Hora</B> - Hora em que foi efetuada a opera&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Op</B> - Tipo da opera&ccedil;&atilde;o efetuada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usuario:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Agente</B> - N&uacute;mero do usu&aacute;rio que efetuou a a&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Afetado</B> - N&uacute;mero do usu&aacute;rio que sofreu a a&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Aplic</B> - C&oacute;digo do aplicativo que sofreu a a&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Dados Anteriores :</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Emp</B> - C&oacute;digo da empresa anteriormente autorizada ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Estb</B> - C&oacute;digo do estabelecimento anteriormente autorizado ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Und</B> - C&oacute;digo da unidade anteriormente autorizada ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>H</B> - Tipo da habilita&ccedil;&atilde;o ao qual o usu&aacute;rio estava anteriormente habilitado ao aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Nv</B> - N&iacute;vel de acesso do usu&aacute;rio ao aplicativo, anteriormente &agrave; a&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Dados Atuais:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Emp</B> - Novo c&oacute;digo da empresa autorizada ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Estb</B> - Novo c&oacute;digo do estabelecimento autorizado ao usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Und</B> - Novo c&oacute;digo da unidade autorizada ao&nbsp;usu&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>H</B> - Novo tipo da habilita&ccedil;&atilde;o do usu&aacute;rio ao aplicativo.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>Nv</B> - Novo n&iacute;vel de acesso do usu&aacute;rio ao aplicativo.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Relat">Relat&oacute;rios</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O Sistema de Seguran&ccedil;a oferece v&aacute;rios informativos impressos, que cont&ecirc;m informa&ccedil;&otilde;es diversas a respeito dos cadastramentos de usu&aacute;rios e habilita&ccedil;&otilde;es, quais sejam:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Rela&ccedil;&atilde;o completa de usu&aacute;rios;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Rela&ccedil;&atilde;o resumida de usu&aacute;rios;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Resumo de usu&aacute;rios-ordem alfab&eacute;tica;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Rela&ccedil;&atilde;o de usu&aacute;rios bloqueados;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Rela&ccedil;&atilde;o de perfis e seus usu&aacute;rios;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Rela&ccedil;&atilde;o de usu&aacute;rios e seus perfis;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Resumo de usu&aacute;rios por empresa/&aacute;rea;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Usu&aacute;rios/habilita&ccedil;&otilde;es por empresa/&aacute;rea solicitada;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Usu&aacute;rios/habilita&ccedil;&otilde;es por sistema/empresa/&aacute;rea;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Resumo de usu&aacute;rios por sistema;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Aplicativos habilitados ap&oacute;s libera&ccedil;&atilde;o;</FONT> </P>
+<FONT SIZE=2><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>Elementos habilitados ap&oacute;s libera&ccedil;&atilde;o; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>&nbsp;Transa&ccedil;&otilde;es habilitadas ap&oacute;s libera&ccedil;&atilde;o;</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Rela&ccedil;&atilde;o de usu&aacute;rios por empresa/&aacute;rea/aplicativo;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Rela&ccedil;&atilde;o de usu&aacute;rios por empresa/&aacute;rea;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Rela&ccedil;&atilde;o de usu&aacute;rios por transa&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Auditoria no cadastro de usu&aacute;rios;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Auditoria de aplicativos e elementos;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><I><FONT SIZE=2>Logons</I> e <I>logoffs</I> por esta&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Tentativas de <I>logon</I> inv&aacute;lidas.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Estes relat&oacute;rios s&atilde;o emitidos por <I>jobs</I> que podem ser disparados atrav&eacute;s de transa&ccedil;&otilde;es <I>on-line</I> que se encontram cadastradas no menu de opera&ccedil;&atilde;o "ROTEMI", opera&ccedil;&otilde;es "SEG" e "AUD".</FONT> </P>
+<FONT SIZE=2><P>Entretanto, os relat&oacute;rios do Sistema de Seguran&ccedil;a n&atilde;o ser&atilde;o descritos nesta se&ccedil;&atilde;o por estarem detalhadamente explicados na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", item "Utilit&aacute;rios <I>batch".</I></FONT> </P></BODY>
+</HTML>

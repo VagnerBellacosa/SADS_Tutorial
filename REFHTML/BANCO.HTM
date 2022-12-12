@@ -1,0 +1,589 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Banco de Dados</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+<basefont size=2>
+<B><FONT SIZE=6><P><A NAME="Banco">Banco de dados</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Conce">Conceitua&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Bancos de dados s&atilde;o conjuntos de estruturas onde os dados dos sistemas aplicativos ficam armazenados. Estes dados podem permanecer distribu&iacute;dos em v&aacute;rios arquivos, para os quais s&atilde;o permitidos acessos simultaneos por diferentes aplica&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>Os acessos a estes arquivos s&atilde;o controlados por um SGBD (Sistema Gerenciador de Banco de Dados), portanto, os programas aplicativos n&atilde;o t&ecirc;m acesso direto a eles, podendo ser atualizados somente atrav&eacute;s deste gerenciador.</FONT> </P>
+<FONT SIZE=2><P>O SADS suporta a constru&ccedil;&atilde;o de bancos de dados para o SGBD DMSII - <I>Data Management System II</I> - da Unisys. Portanto, o banco de dados deve ser definido no reposit&oacute;rio de dados do SADS de acordo com as particularidades desse <I>software</I>.</FONT> </P>
+<FONT SIZE=2><P>Maiores informa&ccedil;&otilde;es relativas ao DMSII poder&atilde;o ser obtidas no "DMSII - <I>Data and Structure Definition Language (DASDL) - Programming Reference Manual</I>" da Unisys.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Padro">Padroniza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O padr&atilde;o de codifica&ccedil;&atilde;o adotado pelo SADS para banco de dados &eacute; o seguinte:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>"sssBxx"</B> onde: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B>"sss"</B> &eacute; o c&oacute;digo alfab&eacute;tico que identifica o sistema; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B>"B"</B> &eacute; a constante de estrutura DMSII, </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B>"xx"</B> &eacute; o identificador alfanum&eacute;rico do bando de dados. </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Como o padr&atilde;o de codifica&ccedil;&atilde;o de banco de dados &eacute; semelhante ao de <I>dataset</I> ou <I>remap</I>, no momento da defini&ccedil;&atilde;o do banco no reposit&oacute;rio de dados, o c&oacute;digo informado s&oacute; ser&aacute; v&aacute;lido se n&atilde;o tiver sido anteriormente utilizado para identificar um <I>dataset</I> ou <I>remap</I>.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Utili">Utiliza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Um banco de dados pode ser utilizado por um conjunto de programas aplicativos com a finalidade de registrar e manter informa&ccedil;&otilde;es dos sistemas.</FONT> </P>
+<FONT SIZE=2><P>O banco de dados, ap&oacute;s ter sido definido no reposit&oacute;rio de dados do SADS, pode ter seu fonte DASDL (<I>Data and Structure Definition Language</I>) gerado. Tamb&eacute;m poder&aacute; ser referenciado em bases de dados e em <I>hosts</I>. </P>
+</FONT><B><FONT SIZE=5><P><A NAME="Cadas">Cadastramento</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O processo de defini&ccedil;&atilde;o de um banco de dados s&oacute; &eacute; poss&iacute;vel a partir do cadastramento do sistema e dos <I>datasets</I> e <I>remaps</I> que ir&atilde;o comp&ocirc;-lo no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o &eacute; necess&aacute;rio que cada sistema tenha os seus bancos de dados espec&iacute;ficos. Um banco de dados pode ser compartilhado por v&aacute;rios sistemas e um sistema pode ter acesso a mais de um banco de dados. Por&eacute;m, por recomenda&ccedil;&atilde;o do DMSII, somente um banco de dados pode ser aberto como <I>update</I> por um programa .</FONT> </P>
+<B><FONT SIZE=4><P>Roteiro</B></FONT> </P>
+<FONT SIZE=2><P>As fun&ccedil;&otilde;es relacionadas ao cadastramento de um banco de dados s&atilde;o as seguintes :</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Defin">Defini&ccedil;&atilde;o de banco de dados</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Param">Cadastramento de par&acirc;metros e defaults globais</A><FONT SIZE=2> ;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Globa">Cadastramento de op&ccedil;&otilde;es globais</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cadban">Cadastramento de softwares de banco</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cadfil">Cadastramento de audit e control file</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cadite">Cadastramento de itens globais</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cadesp">Cadastramento de especifica&ccedil;&otilde;es f&iacute;sicas globais</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Gerfon">Gera&ccedil;&atilde;o de fonte DASDL de banco</A><FONT SIZE=2>.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Defin">Defini&ccedil;&atilde;o de banco de dados</A></B></FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>BANCO</B> - C&oacute;digo do banco de dados no padr&atilde;o SADS (sssBxx).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Descri&ccedil;&atilde;o resumida do banco de dados.</FONT> </P>
+<FONT SIZE=2><P>O nome tem o objetivo de identificar, de maneira resumida, a natureza das informa&ccedil;&otilde;es que ser&atilde;o nele armazenadas.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CODIGO EXTERNO</B> - C&oacute;digo com o qual o banco de dados ser&aacute; referido externamente ao SADS.</FONT> </P>
+<FONT SIZE=2><P>Este c&oacute;digo pode ser utilizado quando a instala&ccedil;&atilde;o adotar um padr&atilde;o de codifica&ccedil;&atilde;o diferente do padr&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>&Eacute; tamb&eacute;m utilizado para definir, no SADS, bancos de dados j&aacute; existentes na instala&ccedil;&atilde;o que n&atilde;o foram gerados pelo SADS, mas que ser&atilde;o tratados e/ou atualizados por programas por ele gerados.</FONT> </P>
+<FONT SIZE=2><P>Caso este campo seja informado, ser&aacute; utilizado em todas as gera&ccedil;&otilde;es do SADS, isto &eacute;, o c&oacute;digo externo substituir&aacute; o c&oacute;digo no padr&atilde;o SADS tanto no fonte DASDL do banco quanto nas<I> libraries</I> de declara&ccedil;&atilde;o de bancos em que ele estiver referenciado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TIPO</B> - Classifica&ccedil;&atilde;o a ser adotada para o banco de dados.</FONT> </P>
+<FONT SIZE=2><P>Um banco de dados pode ter os seguintes tipos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"L" (L&oacute;gico) - Um banco de dados l&oacute;gico &eacute; tratado no SADS como um banco composto exclusivamente por <I>remaps</I>, que s&atilde;o vis&otilde;es l&oacute;gicas de <I>datasets</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"F" (F&iacute;sico) - Um banco de dados f&iacute;sico &eacute; tratado no SADS como um banco composto exclusivamente por <I>datasets</I>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Ap&oacute;s a defini&ccedil;&atilde;o do banco, seu tipo n&atilde;o mais poder&aacute; ser alterado. Caso exista esta necessidade, o banco ter&aacute; de ser exclu&iacute;do e inclu&iacute;do novamente. Vale lembrar que um banco de dados somente poder&aacute; ser exclu&iacute;do se n&atilde;o estiver relacionado a <I>hosts</I> ou bases de dados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>BANCO FISICO RELACIONADO</B> - C&oacute;digo do banco de dados f&iacute;sico relacionado ao banco de dados l&oacute;gico a ser definido (sssBxx)</FONT> </P>
+<FONT SIZE=2><P>Para definir um banco de dados l&oacute;gico, &eacute; necess&aacute;rio informar o banco f&iacute;sico a que ele est&aacute; relacionado, que, por sua vez, tem de estar cadastrado no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>AMBIENTE</B> - Ambiente em que o banco ser&aacute; utilizado.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"T" (Teste);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"P" (Produ&ccedil;&atilde;o).</FONT> </P></DIR>
+
+<FONT SIZE=2><P>O banco de dados, quando definido para ser utilizado em ambiente de produ&ccedil;&atilde;o, dever&aacute; estar associado a um banco de teste j&aacute; cadastrado. Este relacionamento ser&aacute; observado no momento da gera&ccedil;&atilde;o da <I>library</I> da base de dados, onde o banco gerado na <I>library</I> ser&aacute; aquele compat&iacute;vel com o ambiente para o qual ela foi gerada.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s a defini&ccedil;&atilde;o do banco, seu ambiente n&atilde;o mais poder&aacute; ser alterado. Caso exista esta necessidade, o banco ter&aacute; de ser exclu&iacute;do e inclu&iacute;do novamente. Vale lembrar que um banco de dados somente poder&aacute; ser exclu&iacute;do se n&atilde;o estiver relacionado a <I>hosts</I> ou bases de dados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>BANCO DE TESTE RELACIONADO</B> - C&oacute;digo do banco de dados em teste relacionado ao banco de dados em produ&ccedil;&atilde;o a ser definido (sssBxn).</FONT> </P>
+<FONT SIZE=2><P>O banco de dados, quando definido para ser utilizado em ambiente de produ&ccedil;&atilde;o, dever&aacute; estar associado a um banco de teste j&aacute; existente. Este relacionamento ser&aacute; observado no momento da gera&ccedil;&atilde;o da <I>library</I> da base de dados, onde o banco gerado na <I>library</I> ser&aacute; aquele compat&iacute;vel com o ambiente para o qual ela foi gerada.</FONT> </P>
+<FONT SIZE=2><P>O banco de teste informado tem de estar previamente definido no reposit&oacute;rio de dados.</FONT> </P>
+<FONT SIZE=2><P>Um banco de dados de teste poder&aacute; estar relacionado a v&aacute;rios bancos de produ&ccedil;&atilde;o, por&eacute;m, um banco de dados de produ&ccedil;&atilde;o somente poder&aacute; estar relacionado a um &uacute;nico banco de teste.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CODIGO DO RESTART DATASET </B>- C&oacute;digo do <I>restart dataset</I> a ser utilizado pelo banco de dados, no padr&atilde;o SADS (SBGBnn).</FONT> </P>
+<FONT SIZE=2><P>O <I>restart dataset</I> padr&atilde;o utilizado em gera&ccedil;&otilde;es do SADS &eacute; o "SBGB01". Podem ser utilizados tamb&eacute;m os c&oacute;digos "SBGB03", "SBGB04". "SBGB05", "SBGB06" OU "SBGB07".</FONT> </P>
+<FONT SIZE=2><P>Para utiliza&ccedil;&atilde;o de <I>restart dataset </I>com c&oacute;digo diferente de "SBGB01", a tabela de op&ccedil;&otilde;es de compila&ccedil;&atilde;o, SBPM5018, deve ser utilizada, informando-se as op&ccedil;&otilde;es "SADSRDS03" para uso do "SBGB03", "SADSRDS04" para uso do "SBGB04", "SADSRDS05" para uso do "SBGB05","SADSRDS06" para uso do "SBGB06" ou "SADSRDS07" para uso do "SBGB07". Detalhes a respeito da tabela SBPM5018 est&atilde;o descritos na se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DATASETS </B>- C&oacute;digo(s) do(s) <I>dataset(s)</I> ou <I>remap(s)</I> relacionado(s) ao banco de dados. Estes elementos devem ser informados no padr&atilde;o SADS (sssBxn).</FONT> </P>
+<FONT SIZE=2><P>Na defini&ccedil;&atilde;o de bancos de dados f&iacute;sicos deve-se informar somente <I>datasets</I>. Nas defini&ccedil;&otilde;es de bancos de dados l&oacute;gicos, somente <I>remaps</I>.</FONT> </P>
+<FONT SIZE=2><P>Os <I>datasets</I> ou <I>remaps</I> devem estar previamente definidos no reposit&oacute;rio de dados do SADS para que possam ser relacionados ao banco.</FONT> </P>
+<FONT SIZE=2><P>Na defini&ccedil;&atilde;o de um banco de dados deve-se indicar pelo menos um <I>dataset</I> ou <I>remap</I>.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o &eacute; necess&aacute;rio informar o <I>restart</I> <I>dataset</I> no campo DATASETS, pois ele j&aacute; foi especificado no campo CODIGO DO RESTART DATASET.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTINUA(S/N)</B> - Indicador de continuidade de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para prosseguir a defini&ccedil;&atilde;o de banco de dados;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para encerrar a opera&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o ao banco de dados.</FONT> </P>
+<FONT SIZE=2><P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=5><P><A NAME="Param">Cadastramento de par&acirc;metros e defaults globais</A></FONT> </P>
+<FONT SIZE=2><P>Os par&acirc;metros globais s&atilde;o informa&ccedil;&otilde;es necess&aacute;rias para controlar as caracter&iacute;sticas das rotinas de acesso ao banco de dados em tempo de compila&ccedil;&atilde;o e de execu&ccedil;&atilde;o.</FONT> </P>
+<I><FONT SIZE=2><P>Defaults</I> globais s&atilde;o valores assumidos nas estruturas dos atributos de bancos de dados que n&atilde;o apresentarem declara&ccedil;&otilde;es expl&iacute;citas de algum valor para os mesmos.</FONT> </P>
+<FONT SIZE=2><P>Um acompanhamento peri&oacute;dico, feito por administradores de bancos dados, para ajustes dos valores declarados, geralmente garante uma boa <I>performance</I> e qualidade do banco de dados.</FONT> </P>
+<FONT SIZE=2><P>As informa&ccedil;&otilde;es relativas aos par&acirc;metros e <I>defaults</I> globais no reposit&oacute;rio de dados do SADS s&atilde;o utilizadas especificamente para gera&ccedil;&atilde;o do fonte DASDL do banco de dados.</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>BANCO</B> - C&oacute;digo do banco de dados no padr&atilde;o SADS (sssBxx).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DEFAULTS GLOBAIS:</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>INCORPORAR DEFAULTS DA INSTALACAO</B> - Indicador de incorpora&ccedil;&atilde;o de <I>defaults</I> globais definidos para os bancos da instala&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para assumir os valores pr&eacute;-definidos para os <I>defaults</I> globais que n&atilde;o forem<BR>
+especificados para o banco de dados;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para desconsiderar os valores pr&eacute;-definidos para os <I>defaults</I> globais.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>A pr&eacute;-defini&ccedil;&atilde;o de <I>defaults</I> globais deve ser especificada na tabela SBPM5050. Detalhes sobre esta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>LIBRARY GERACAO DASDL</B> - C&oacute;digo de <I>library</I>, no padr&atilde;o SADS (sssLxx), que cont&eacute;m as especifica&ccedil;&otilde;es de<I> defaults </I>globais de bancos de dados que n&atilde;o estejam sendo contempladas na vers&atilde;o corrente do SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>BUFFERS</B> - N&uacute;mero de <I>buffers</I> que o sistema ir&aacute; alocar para a estrutura, mais o n&uacute;mero de <I>buffers</I> adicionais que o sistema dever&aacute; alocar para cada programa que utiliz&aacute;-la.</FONT> </P>
+<FONT SIZE=2><P>Os valores <I>defaults</I> s&atilde;o os seguintes:</FONT> </P>
+<PRE>
+<IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><I>&nbsp;System    Buffers</I><FONT FACE="Courier,Courier New">       &nbsp; = 1
+</FONT><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><I><FONT FACE="Courier,Courier New">&nbsp;Random    user    Buffers</I> = 1
+</FONT><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><I><FONT FACE="Courier,Courier New">&nbsp;Serial    user    Buffers</I> = 0 se <I>Reblock</I>    = FALSE
+                        &nbsp;      2 se <I>Reblock</I>    = TRUE</PRE>
+</FONT><FONT SIZE=2><P>O valor m&aacute;ximo permitido &eacute; 254 + 254 ou apenas 254. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CHECKSUM</B> - Indicador de utiliza&ccedil;&atilde;o da cl&aacute;usula <I>checksum</I>. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para utiliza&ccedil;&atilde;o do <I>checksum</I>; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para eliminar o uso do <I>checksum</I> (<I>default</I> do DMSII). </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>O <I>checksum</I> &eacute; utilizado para controlar erros de I/O, atrav&eacute;s da compara&ccedil;&atilde;o de valores calculados na grava&ccedil;&atilde;o e leitura de blocos de dados, podendo ser declarado em n&iacute;vel de estrutura. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SECURITYGUARD</B> -<I>Usercode,</I> nome e localiza&ccedil;&atilde;o f&iacute;sica do arquivo <I>guard</I>, caso este seja utilizado. </P>
+<P>O arquivo <I>guard</I> controla o acesso ao banco de dados pelos aplicativos. Um arquivo <I>guard</I> somente dever&aacute; ser definido se realmente tiver de ser utilizado, pois a defini&ccedil;&atilde;o aleat&oacute;ria destes arquivos pode causar "SECURITY ERROR" nos acessos ao banco de dados. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PACK</B> - Disco onde os arquivos do banco de dados ficar&atilde;o residentes. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>REBLOCK</B> - Indicador de utiliza&ccedil;&atilde;o de tamanhos de blocos diferentes numa mesma estrutura. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para reblocagem; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Sem reblocagem (<I>default</I> do DMSII). </P></DIR>
+
+<P>O <I>reblock</I> &eacute; utilizado para manter, simultaneamente, dois tamanhos diferentes de blocos para uma mesma estrutura, com a finalidade de otimizar os acessos rand&ocirc;micos e seriais. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>REBLOCKFACTOR</B> - Fator que dimensiona os blocos quando estiverem sendo usados dois tamanhos diferentes. O maior bloco, para acessos seriais, &eacute; calculado como resultado da multiplica&ccedil;&atilde;o do tamanho do bloco pelo valor <I>reblockfactor</I>. </P>
+<P>Este campo deve ser informado apenas se o campo REBLOCK tiver sido definido com "S". </P>
+<P>O valor m&aacute;ximo que ele pode assumir &eacute; 60 e o <I>default</I> &eacute; 1. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>INITIALVALUE</B> - Valores iniciais que os itens assumem na cria&ccedil;&atilde;o de registros. </P>
+<P>Os valores iniciais v&aacute;lidos s&atilde;o apresentados na tabela a seguir: </P></DIR>
+</FONT>
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" WIDTH=250>
+<TR><TD WIDTH="43%" VALIGN="MIDDLE"><DIR>
+
+<P ALIGN="CENTER"><FONT SIZE=2>Formato dos itens</DIR>
+</FONT></TD>
+<TD WIDTH="57%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P ALIGN="CENTER">Valores iniciais v&aacute;lidos</DIR>
+</FONT></TD>
+</TR>
+<TR><TD WIDTH="43%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>ALPHA</DIR>
+</FONT></TD>
+<TD WIDTH="57%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>"B" (brancos) </P>
+<P>"H"(<I>high-values</I>) </P>
+<P>"L" (<I>low-values</I>) </DIR>
+</FONT></TD>
+</TR>
+<TR><TD WIDTH="43%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>BOOLEAN </DIR>
+</FONT></TD>
+<TD WIDTH="57%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>"V" (verdadeiro) </P>
+<P>"F" (falso) </DIR>
+</FONT></TD>
+</TR>
+<TR><TD WIDTH="43%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>REAL</DIR>
+</FONT></TD>
+<TD WIDTH="57%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>"0" (zeros)</P>
+<P>"H"(<I>high-values</I>) </P>
+<P>"L" (<I>low-values</I>) </DIR>
+</FONT></TD>
+</TR>
+<TR><TD WIDTH="43%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>NUMBER</DIR>
+</FONT></TD>
+<TD WIDTH="57%" VALIGN="MIDDLE"><DIR>
+
+<FONT SIZE=2><P>"0" (zeros) </P>
+<P>"H"(<I>high-values</I>) </P>
+<P>"L" (<I>low-values</I>) </DIR>
+</FONT></TD>
+</TR>
+</TABLE>
+<DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PARAMETROS GLOBAIS:</B> </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>INCORPORAR DEFAULTS DA INSTALACAO </B>- Indicador de incorpora&ccedil;&atilde;o de <I>defaults</I> para par&acirc;metros globais. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para assumir os valores pr&eacute;-definidos para os par&acirc;metros globais que n&atilde;o forem especificados para o banco de dados; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para desconsiderar os valores pr&eacute;-definidos para os par&acirc;metros globais. </P></DIR>
+
+<P>A pr&eacute;-defini&ccedil;&atilde;o de par&acirc;metros globais deve ser especificada na tabela SBPM5050. Detalhes sobre esta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>LIBRARY GERACAO DASDL </B>- C&oacute;digo de <I>library</I>, informado no padr&atilde;o SADS (sssLxx), que cont&eacute;m as especifica&ccedil;&otilde;es de<I> </I>par&acirc;metros globais de bancos de dados que n&atilde;o estejam sendo contempladas na vers&atilde;o corrente do SADS. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTROLPOINT</B> - N&uacute;mero de <I>syncpoints</I> entre atualiza&ccedil;&otilde;es f&iacute;sicas do banco de dados. </P>
+<P>S&oacute; se aplica a bancos auditados. </P>
+<P>O valor m&aacute;ximo permitido &eacute; 4095 e o <I>default</I> DMSII &eacute; 2. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SYNCPOINT</B> - N&uacute;mero m&aacute;ximo de transa&ccedil;&otilde;es que podem ocorrer entre grava&ccedil;&otilde;es no <I>audit</I>. </P>
+<P>S&oacute; se aplica a bancos auditados. </P>
+<P>O valor m&aacute;ximo permitido &eacute; 4095 e o <I>default</I> DMSII &eacute; 100. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SYNCWAIT </B>- Tempo, em segundos, de espera do programa por <I>syncpoint</I>. </P>
+<P>Para utiliza&ccedil;o do SYNCWAIT, as op&ccedil;&otilde;es INDEPENDENTTRANS e REAPLYCOMPLETED devem estar setadas. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ALLOWEDCORE</B> - Quantidade de mem&oacute;ria a ser utilizada para <I>buffers</I> do banco. O valor m&aacute;ximo permitido &eacute; 16.000.000 <I>words</I> e o <I>default</I> DMSII &eacute; 50.000 <I>words</I>. </P>
+<P>O valor informado n&atilde;o poder&aacute; ser menor que o <I>Resident Limit</I>.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>RESIDENT LIMIT</B> - N&uacute;mero m&aacute;ximo de <I>words</I> para ocupa&ccedil;&atilde;o pelo banco.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OVERLAYGOAL</B> - Percentual do <I>alowedcore</I> por minuto. </P>
+<P>O <I>overlaygoal</I> controla a taxa de <I>overlay</I> de <I>buffers</I> para disco. </P>
+<P>O valor m&aacute;ximo permitido &eacute; 100% do <I>allowedcore</I> por minuto e o <I>default</I> DMSII &eacute; 5% do <I>allowedcore</I> por minuto. Se for informado o valor "0", OVERLAYGOAL = 0 ser&aacute; gerado no fonte DASDL. Caso o valor n&atilde;o seja informado, o comando n&atilde;o ser&aacute; gerado. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO </B>- Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o aos <I>defaults</I>/ par&acirc;metros globais. </P>
+<P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta). </P></DIR>
+</DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Globa">Cadastramento de op&ccedil;&otilde;es globais</A></B></FONT><FONT SIZE=2> </P>
+<P>As op&ccedil;&otilde;es globais controlam as caracter&iacute;sticas das rotinas de acesso ao banco de dados, em tempo de compila&ccedil;&atilde;o e execu&ccedil;&atilde;o. </P>
+<P>As informa&ccedil;&otilde;es relativas a op&ccedil;&otilde;es globais no reposit&oacute;rio de dados do SADS s&atilde;o utilizadas para gera&ccedil;&atilde;o do fonte DASDL do banco de dados. </P>
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>BANCO</B> - C&oacute;digo do banco de dados no padr&atilde;o SADS (sssBxx). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>INCORPORAR DEFAULTS DA INSTALACAO</B> - Indicador de incorpora&ccedil;&atilde;o de <I>defaults</I> para op&ccedil;&otilde;es globais. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para assumir os valores pr&eacute;-definidos para as op&ccedil;&otilde;es globais que n&atilde;o forem especificados para o banco de dados; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para desconsiderar os valores pr&eacute;-definidos para as op&ccedil;&otilde;es globais. </P></DIR>
+
+<P>A pr&eacute;-defini&ccedil;&atilde;o de <I>defaults</I> globais deve ser especificada na tabela SBPM5060. Detalhes sobre esta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>LIBRARY PARA GERACAO DASDL</B> - C&oacute;digo de <I>library</I>, no padr&atilde;o SADS (sssLxx), que cont&eacute;m as especifica&ccedil;&otilde;es de<I> </I>op&ccedil;&otilde;es globais de bancos de dados que n&atilde;o estejam sendo contempladas na vers&atilde;o corrente do SADS. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>AUDIT</B> - Deve-se informar "S" para utiliza&ccedil;&atilde;o de <I>audit</I> para o banco de dados. Caso o campo n&atilde;o seja informado, ser&aacute; assumido o valor <I>default</I>, isto &eacute;, que o banco de dados n&atilde;o ser&aacute; "auditado". </P>
+<P>O <I>audit</I> proporciona a recupera&ccedil;&atilde;o autom&aacute;tica do banco de dados ap&oacute;s falhas de <I>hardware</I> ou <I>software</I>. O banco de dados, quando auditado, deve conter a declara&ccedil;&atilde;o da trilha de <I>audit</I> e do <I>restart</I> <I>dataset</I>. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ADDRESSCHECK</B> - Deve-se informar "S" para utiliza&ccedil;&atilde;o da op&ccedil;&atilde;o <I>addresscheck</I> no banco de dados. Caso este campo n&atilde;o seja informado, ser&aacute; assumido o valor <I>default</I>, isto &eacute;, que o banco de dados n&atilde;o utilizar&aacute; esta op&ccedil;&atilde;o. </P>
+<P>Se informado "S", ser&atilde;o gerados controles de erros de I/O atrav&eacute;s da compara&ccedil;&atilde;o de valores calculados na grava&ccedil;&atilde;o e leitura de blocos de dados. N&atilde;o pode ser declarada em n&iacute;vel individual de estruturas. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>BACKOUTTOSPT</B> - Deve-se informar "S" para utiliza&ccedil;&atilde;o da op&ccedil;&atilde;o <I>backouttospt</I> no banco de dados. Caso este campo n&atilde;o seja informado, ser&aacute; assumido o valor <I>default</I>, isto &eacute;, que o banco n&atilde;o utilizar&aacute; esta op&ccedil;&atilde;o. </P>
+<P>Se informado "S", em caso de recupera&ccedil;&atilde;o, o banco de dados ser&aacute; retornado incondicionalmente a um ponto de integridade. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>INDEPENDENTTRANS </B>- Deve-se informar "S" para utiliza&ccedil;&atilde;o da op&ccedil;&atilde;o <I>independenttrans</I> no banco de dados. Caso este campo n&atilde;o seja informado, ser&aacute; assumido o valor <I>default</I>, isto &eacute;, que o banco n&atilde;o utilizar&aacute; esta op&ccedil;&atilde;o. </P>
+<P>Se informado "S", as transa&ccedil;&otilde;es ficar&atilde;o independentes, de forma a permitir <I>aborts</I> de transa&ccedil;&otilde;es &uacute;nicas, eliminar exce&ccedil;&otilde;es e recuperar programas que n&atilde;o sofreram <I>aborts</I>. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>KEYCOMPARE</B> - Deve-se informar "S" para utiliza&ccedil;&atilde;o da op&ccedil;&atilde;o <I>keycompare</I> no banco de dados. Caso este campo n&atilde;o seja informado, ser&aacute; assumido o valor <I>default</I>, isto &eacute;, que o banco n&atilde;o utilizar&aacute; esta op&ccedil;&atilde;o. </P>
+<P>Se informado "S", ser&atilde;o geradas as op&ccedil;&otilde;es de compara&ccedil;&atilde;o da chave do <I>dataset</I> com as chaves dos <I>sets</I> e/ou <I>subsets</I> autom&aacute;ticos. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NO OPEN INITIALIZE</B> - Deve-se informar "S" para utiliza&ccedil;&atilde;o da op&ccedil;&atilde;o <I>no open initialize</I> no banco de dados. Caso este campo n&atilde;o seja informado, ser&aacute; assumido o valor <I>default</I>, isto &eacute;, que o banco n&atilde;o utilizar&aacute; esta op&ccedil;&atilde;o. </P>
+<P>Se informado "S", n&atilde;o ser&aacute; permitida a utiliza&ccedil;&atilde;o do comando "OPEN INITIALIZE" para o banco. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>RDSSTORE</B> - Deve-se informar "S" para utiliza&ccedil;&atilde;o da op&ccedil;&atilde;o <I>rdsstore</I> no banco de dados. Caso este campo n&atilde;o seja informado, ser&aacute; assumido o valor <I>default</I>, isto &eacute;, que o banco n&atilde;o utilizar&aacute; esta op&ccedil;&atilde;o. </P>
+<P>A informa&ccedil;&atilde;o deste campo garante que, nas opera&ccedil;&otilde;es de <I>begin </I>e<I> end transaction</I>, o <I>restart</I> <I>dataset</I> ser&aacute; atualizado. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>REAPLYCOMPLETED</B> - Deve-se informar "S" para utiliza&ccedil;&atilde;o da op&ccedil;&atilde;o <I>reaplycompleted</I> no banco de dados. Caso este campo n&atilde;o seja informado, ser&aacute; assumido o valor <I>default</I>, isto &eacute;, que o banco n&atilde;o utilizar&aacute; esta op&ccedil;&atilde;o. </P>
+<P>Se informado "S", em caso de <I>halt/load recovery</I>, todas as transa&ccedil;&otilde;es completas ser&atilde;o reaplicadas. Esta informa&ccedil;&atilde;o exige a utiliza&ccedil;&atilde;o da op&ccedil;&atilde;o INDEPENDENTTRANS. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>RESTART TRANSACTIONS ONLY</B> - Deve-se informar "S" para utiliza&ccedil;&atilde;o da op&ccedil;&atilde;o <I>restart transactions only</I> no banco de dados. Caso este campo n&atilde;o seja informado, ser&aacute; assumido o valor <I>default</I>, isto &eacute;, que o banco n&atilde;o utilizar&aacute; esta op&ccedil;&atilde;o. </P>
+<P>O "S" determina que s&oacute; as informa&ccedil;&otilde;es para transa&ccedil;&otilde;es com t&eacute;rmino anormal, durante o estado de transa&ccedil;&atilde;o, ser&atilde;o armazenadas no <I>restart dataset</I>. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>STATISTICS</B> - Deve-se informar "S" para utiliza&ccedil;&atilde;o da op&ccedil;&atilde;o <I>statistics</I> no banco de dados. Caso este campo n&atilde;o seja informado, ser&aacute; assumido o valor <I>default</I>, isto &eacute;, que o banco n&atilde;o utilizar&aacute; esta op&ccedil;&atilde;o. </P>
+<P>Esta op&ccedil;&atilde;o faz com que as informa&ccedil;&otilde;es referentes &agrave; <I>performance</I> do banco sejam armazenadas durante a sua execu&ccedil;&atilde;o. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave;s op&ccedil;&otilde;es globais. </P>
+<P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta). </P></DIR>
+</DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Cadban">Cadastramento de softwares de banco</A></B></FONT><FONT SIZE=2> </P>
+<P>Esta fun&ccedil;&atilde;o permite o cadastramento dos nomes e da localiza&ccedil;&atilde;o dos <I>softwares</I> do DMSII, <I>accessroutines</I>, <I>recovery</I>, <I>datarecovery</I>, <I>reconstruct</I> e <I>dmsupport</I>. </P>
+<P>As informa&ccedil;&otilde;es relativas aos <I>softwares</I> do banco de dados no reposit&oacute;rio de dados do SADS s&atilde;o utilizadas para gera&ccedil;&atilde;o do fonte DASDL do mesmo. </P>
+<P>O <I>title</I> especificado para a <I>dmsupport</I> &eacute; utilizado pelos programas gerados no SADS para que, em caso de cancelamentos em acessos e atualiza&ccedil;&otilde;es de bancos de dados, seja apresentado um <I>display</I> do nome da estrutura na qual aconteceu a exce&ccedil;&atilde;o. </P>
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>BANCO</B> - C&oacute;digo do banco no padr&atilde;o SADS (sssBxx). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>INCORPORAR DEFAULTS DA INSTALACAO</B> - Indicador de incorpora&ccedil;&atilde;o de <I>titles</I> <I>defaults</I> para <I>softwares</I> de bancos de dados. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para assumir os <I>titles</I> pr&eacute;-definidos para os <I>softwares</I> que n&atilde;o forem especificados para o banco de dados; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para desconsiderar os <I>titles</I> pr&eacute;-definidos para os <I>softwares</I>. </P></DIR>
+
+<P>A pr&eacute;-defini&ccedil;&atilde;o de <I>titles</I> de <I>softwares</I> deve ser especificada na tabela SBPM5070. Detalhes sobre esta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>LIBRARY PARA GERACAO DE DASDL</B> - C&oacute;digo de <I>library</I>, no padr&atilde;o SADS (sssLxn), que cont&eacute;m as especifica&ccedil;&otilde;es de <I>titles</I> de <I>softwares</I> de bancos de dados que n&atilde;o estejam sendo contempladas na vers&atilde;o corrente do SADS. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ACCESSROUTINES</B> - C&oacute;digo das rotinas que executam o gerenciamento l&oacute;gico e f&iacute;sico do banco de dados e que permitem o acesso concorrente ao banco por v&aacute;rios usu&aacute;rios. </P>
+<P>Os comandos executados em programas, referentes a bancos de dados, s&atilde;o traduzidos em mensagens para as <I>accessroutines</I>. Assim, o acesso e a atualiza&ccedil;&atilde;o dos bancos de dados somente podem ser executados atrav&eacute;s delas. </P>
+<P>A rotina de acesso <I>default</I> do DMSII &eacute; a SYSTEM/ACCESSROUTINES. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DATARECOVERY</B> - C&oacute;digo da rotina usada em procedimentos de recupera&ccedil;&atilde;o que, atrav&eacute;s da leitura da trilha de <I>audit</I> e de sua atualiza&ccedil;&atilde;o, auxiliam o <I>reconstruct</I> na recupera&ccedil;&atilde;o de <I>rows</I>. </P>
+<P>A rotina <I>default</I> do DMSII para recupera&ccedil;&atilde;o &eacute; a SYSTEM/DMDATARECOVERY. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DMSUPPORT</B> - C&oacute;digo da rotina, com fun&ccedil;&otilde;es espec&iacute;ficas do DMSII, utilizada para atender necessidades especiais dos usu&aacute;rios atrav&eacute;s de seus<I> entry points</I>. </P>
+<P>O <I>title</I> da <I>dmsupport</I>, por ser espec&iacute;fico para cada banco de dados, n&atilde;o pode ser definido previamente. Portanto, sua informa&ccedil;&atilde;o &eacute; obrigat&oacute;ria. </P>
+<P>O <I>title</I> padr&atilde;o para a <I>dmsupport</I> &eacute; DMSUPPORT/c&oacute;digo do Banco de Dados. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>RECONSTRUCT</B> - C&oacute;digo da rotina utilizada para recupera&ccedil;&atilde;o de <I>rows</I> durante o processo de recupera&ccedil;&atilde;o. </P>
+<P>O <I>title</I> do <I>reconstruct</I>, por ser espec&iacute;fico para cada banco de dados, n&atilde;o pode ser previamente definido. Portanto, sua informa&ccedil;&atilde;o &eacute; obrigat&oacute;ria. </P>
+<P>O <I>title</I> padr&atilde;o para o <I>reconstruct</I> &eacute; RECONSTRUCT/c&oacute;digo do Banco de Dados. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>RECOVERY</B> - C&oacute;digo da rotina executada durante uma recupera&ccedil;&atilde;o em <I>audit</I> e <I>control file</I>, <I>rebuild</I> ou <I>rollback</I>. </P>
+<P>A rotina <I>default</I> do DMSII &eacute; a SYSTEM/DMRECOVERY. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o aos <I>softwares</I> de banco. </P>
+<P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta). </P></DIR>
+</DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Cadfil">Cadastramento de audit e control file</A></B></FONT><FONT SIZE=2> </P>
+<P>A <I>audit trail</I> ,ou trilha de auditoria, cont&eacute;m registros de controle e c&oacute;pia das atualiza&ccedil;&otilde;es efetuadas no banco de dados. </P>
+<P>&Eacute; utilizada quando houver necessidade de recupera&ccedil;&atilde;o do banco, pois, al&eacute;m da c&oacute;pia das atualiza&ccedil;&otilde;es efetuadas, fornece informa&ccedil;&otilde;es de rein&iacute;cio dos programas sempre que necess&aacute;rio. </P>
+<P>O <I>control</I> <I>file</I> cont&eacute;m informa&ccedil;&otilde;es sobre estruturas e par&acirc;metros, respons&aacute;veis por garantir a compatibilidade entre as estruturas do banco de dados e os programas que as utilizam, e de controle para recupera&ccedil;&atilde;o. </P>
+<P>As informa&ccedil;&otilde;es relativas a <I>audit e control file</I> no reposit&oacute;rio de dados do SADS s&atilde;o utilizadas para gera&ccedil;&atilde;o do fonte DASDL do banco de dados. </P>
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>BANCO</B> - C&oacute;digo do banco no padr&atilde;o SADS (sssBxx). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>AUDIT TRAIL:</B> </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>INCORPORAR DEFAULTS INSTALACAO</B> - Indicador de incorpora&ccedil;&atilde;o de <I>defaults</I> para a <I>audit trail</I> de bancos de dados. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para assumir os valores pr&eacute;-definidos para a <I>audit trail</I> que n&atilde;o forem especificados para o banco de dados; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para desconsiderar os valores pr&eacute;-definidos para a<I> audit trail</I>. </P></DIR>
+
+<P>A pr&eacute;-defini&ccedil;&atilde;o de valores para a<I> audit trail</I> deve ser especificada na tabela SBPM5080. Detalhes sobre esta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>LIBRARY PARA INCORPORAR DASDL</B> - C&oacute;digo de <I>library</I>, no padr&atilde;o SADS (sssLxx), que cont&eacute;m as especifica&ccedil;&otilde;es da <I>audit trail</I> do banco de dados que n&atilde;o estejam sendo contempladas na vers&atilde;o corrente do SADS. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>AREAS</B> - N&uacute;mero m&aacute;ximo de &aacute;reas em disco para uso da <I>audit trail</I>. </P>
+<P>O valor <I>default</I> do DMSII &eacute; 100. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>AREASIZE/*UNIDADE </B>- Tamanho de cada &aacute;rea da <I>audit trail</I>, na unidade especificada. </P>
+<P>As unidades poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+<DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"R" (<I>Records</I>) - Para que o tamanho seja expresso em n&uacute;mero de registros; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" (<I>Segments</I>) - Para que o tamanho seja expresso em quantidade de segmentos;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"Y" (<I>bYtes</I>) - Para que o tamanho seja expresso em n&uacute;mero de <I>bytes</I>; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"W" (<I>Words</I>) - Para que o tamanho seja expresso em n&uacute;mero de palavras; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"B" (<I>Blocks</I>) - Para que o tamanho seja expresso em n&uacute;mero de blocos. </P></DIR>
+</DIR>
+
+<P>O <I>default</I> do SADS para a unidade do campo AREASIZE &eacute; <I>Blocks</I>. </P>
+<P>O valor <I>default</I> do DMSII &eacute; 100 <I>blocks</I>. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>BLOCKSIZE/*UNIDADE</B> - Tamanho dos blocos f&iacute;sicos da <I>audit trail</I>, na unidade especificada. </P>
+<P>As unidades poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"R" (<I>Records</I>) - Para que o tamanho seja expresso em n&uacute;mero de registros; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" (<I>Segments</I>) - Para que o tamanho seja expresso em quantidade de segmentos; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"Y" (<I>bYtes</I>) - Para que o tamanho seja expresso em n&uacute;mero de <I>bytes</I>; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"W" (<I>Words</I>) - Para que o tamanho seja expresso em n&uacute;mero de palavras; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"B" (<I>Blocks</I>) - Para que o tamanho seja expresso em n&uacute;mero de blocos. </P></DIR>
+
+<P>O <I>default</I> do SADS para a unidade do campo BLOCKSIZE &eacute; <I>Words</I>. </P>
+<P>O valor <I>default</I> do DMSII &eacute; 900 <I>words</I>. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CHECKSUM(S/N)</B> - Indicador de utiliza&ccedil;&atilde;o da cl&aacute;usula <I>checksum</I>. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para utiliza&ccedil;&atilde;o do <I>checksum</I>; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para eliminar o uso do <I>checksum</I> (<I>default</I> do MSII). </P></DIR>
+
+<P>O <I>checksum</I> &eacute; utilizado para controlar erros de I/O atrav&eacute;s da compara&ccedil;&atilde;o de valores calculados na grava&ccedil;&atilde;o e leitura de blocos de dados, podendo ser declarado em n&iacute;vel de estrutura. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PACK PRIMARIO</B> - Local f&iacute;sico (fam&iacute;lia) onde o <I>audit</I> prim&aacute;rio ficar&aacute; residente. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PACK SECUNDARIO</B> - Local f&iacute;sico (fam&iacute;lia) onde o <I>audit</I> secund&aacute;rio ficar&aacute; residente. </P>
+<P>O pack secund&aacute;rio &eacute; id&ecirc;ntico ao prim&aacute;rio e &eacute; utilizado para garantir a recupera&ccedil;&atilde;o do banco. </P>
+<P>O <I>default</I> do DMSII &eacute; n&atilde;o possuir <I>audit</I> secund&aacute;rio. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>FITA (TIPO)</B> - Tipo da fita magn&eacute;tica. </P>
+<P>Os tipos poss&iacute;veis s&atilde;o os seguintes:</P><DIR>
+
+<P>"TAPE" ; </P>
+<P>"TAPE7"; </P>
+<P>"TAPE9"; </P>
+<P>"PETAPE"; </P>
+<P>"TAPEPE";</P>
+<P>"GCRTAPE";</P>
+<P>"TAPEGCR".</P></DIR>
+
+<P>Os tipos poss&iacute;veis s&atilde;o aqueles relacionados no <I>DMSII DASDL Program Reference Manual, </I>da <I>Unisys</I>.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>&nbsp;<B>DENSIDADE </B>- Densidade da fita magn&eacute;tica.</P>
+<P>Os tipos poss&iacute;veis s&atilde;o os seguintes:</P><DIR>
+
+<P>"BPI200";</P>
+<P>"BPI556";</P>
+<P>"BPI800";</P>
+<P>"BPI1250"; </P>
+<P>"BPI1600";</P>
+<P>"BPI6250";</P>
+<P>"BPI11000";</P>
+<P>"BPI38000".</P></DIR>
+
+<P>S&oacute; &eacute; poss&iacute;vel informar a densidade para as fitas definidas com o tipo "TAPE".</P>
+<P>As densidades poss&iacute;veis s&atilde;o aqueles relacionadas no <I>DMSII DASDL Program Reference Manual, </I>da <I>Unisys</I>.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NUM. COPIAS</B> - N&uacute;mero de c&oacute;pias do arquivo de <I>audit</I>, quando copiado para fita, verificado e removido do meio original. </P>
+<P>Para que o arquivo possa ser copiado para fita, verificado e removido, o valor no campo no campo VERIFY deve ser "N". </P>
+<P>&nbsp;</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>VERIFY(S/N)</B> - Indicador de verifica&ccedil;&atilde;o do arquivo de <I>audit</I>, sem que este seja copiado para fita. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para verificar se o arquivo de <I>audit</I> est&aacute; correto, sem copi&aacute;-lo para fita; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para n&atilde;o impedir que o arquivo seja copiado para fita e verificado. </P></DIR>
+
+<P>Se for informado o valor "S" no campo VERIFY, n&atilde;o ser&aacute; permitida a informa&ccedil;&atilde;o de n&uacute;mero de c&oacute;pias. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>UPDATE EOF</B> - Frequ&ecirc;ncia com que um ponteiro de<I> end of file</I> &eacute; atualizado em disco, em n&uacute;mero de blocos. </P>
+<P>O <I>default</I> do DMSII &eacute; 100 <I>blocks</I>. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ALTERNATE IS TAPE</B> - Indicador de utiliza&ccedil;&atilde;o da fita magn&eacute;tica como meio f&iacute;sico alternativo para grava&ccedil;&atilde;o de <I>audit</I>. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para grava&ccedil;&atilde;o do <I>audit</I> em fita magn&eacute;tica, quando a &aacute;rea em disco for insuficiente; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para grava&ccedil;&atilde;o de <I>audits</I> exclusivamente em disco. </P></DIR>
+
+<P>O <I>default</I> do DMSII &eacute; a n&atilde;o utiliza&ccedil;&atilde;o de fitas magn&eacute;ticas. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>JOB COPIA/VERIFICACAO</B> - Nome do <I>job</I> a ser utilizado na c&oacute;pia de <I>audit</I> prim&aacute;rio para fita. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>COPIA DE AUDIT SECUNDARIO</B> - Indicador de c&oacute;pia do <I>audit</I> secund&aacute;rio para fita, que pode assumir os seguintes valores: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para que a c&oacute;pia do <I>audit</I> secund&aacute;rio para a fita seja efetuada. </P>
+<P>Neste caso o <I>pack</I> secund&aacute;rio deve ter sido informado. </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para que a c&oacute;pia do <I>audit</I> secund&aacute;rio para a fita n&atilde;o seja efetuada. </P></DIR>
+
+<P>O <I>default</I> para este campo &eacute; "N". </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>JOB COPIA/VERIF. AUDIT SECUND.</B> - Nome do <I>job</I> a ser utilizado na c&oacute;pia de <I>audit</I> secund&aacute;rio para fita. </P>
+<P>Caso o nome do <I>job</I> para <I>audit</I> secund&aacute;rio n&atilde;o seja informado, e o indicador de c&oacute;pia de <I>audit</I> secund&aacute;rio estiver com o valor "S", ser&aacute; utilizado o <I>job</I> informado para o <I>audit</I> prim&aacute;rio. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTROL FILE:</B> </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>INCORPORAR DEFAULTS INSTALACAO</B> - Indicador de incorpora&ccedil;&atilde;o de <I>defaults</I> para o<I> control file</I> do banco de dados. </P>
+<P>Pode assumir os seguintes valores: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para assumir os valores pr&eacute;-definidos para o<I> control file </I>que n&atilde;o forem especificados para o banco de dados; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para desconsiderar valores pr&eacute;-definidos para <I>control file.</I> </P></DIR>
+
+<P>A pr&eacute;-defini&ccedil;&atilde;o de valores para o<I> control file </I>deve ser especificada na tabela SBPM5080. Detalhes sobre esta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>LIBRARY P/ INCORPORAR DASDL</B> - C&oacute;digo de <I>library</I>, no padr&atilde;o SADS (sssLxx), que cont&eacute;m as especifica&ccedil;&otilde;es do <I>control file </I>do banco de dados que n&atilde;o estejam sendo contempladas na vers&atilde;o corrente do SADS. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PACK</B> - Local f&iacute;sico (fam&iacute;lia) onde o <I>control</I> <I>file</I> ficar&aacute; residente. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>USERCODE</B> - <I>Usercode</I> sob o qual o <I>control</I> <I>file</I> ficar&aacute; residente. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SECURITYGUARD</B> - Nome do arquivo a ser utilizado pelo SYSTEM/GUARDFILE, caso ele seja utilizado. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o aos <I>audit</I>s e <I>control</I> <I>file</I> . </P>
+<P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta). </P></DIR>
+</DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Cadite">Cadastramento de itens globais</A></B></FONT><FONT SIZE=2> </P>
+<P>Os itens globais formam um conjunto de atributos ou campos associados ao c&oacute;digo do banco de dados. </P>
+<P>Maiores informa&ccedil;&otilde;es poder&atilde;o ser obtidas no "DMSII - <I>Data and Structure Definition Language (DASDL) - Programming Reference Manual</I>" da Unisys. </P>
+<P>Atrav&eacute;s desta opera&ccedil;&atilde;o &eacute; permitido definir a estrutura dos itens globais, com as especifica&ccedil;&otilde;es dos atributos e campos que a comp&otilde;em, seus relacionamentos e suas particularidades. </P>
+<P>No contexto de itens globais, entenda-se atributo como atributo propriamente dito, campo ou sin&ocirc;nimo. </P>
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>BANCO</B> - C&oacute;digo do banco de dados de acordo com a padroniza&ccedil;&atilde;o adotada pelo SADS (sssBxx). </P>
+<P>Descri&ccedil;&atilde;o resumida do banco de dados. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SEQ</B> - N&uacute;mero sequencial que indica o posicionamento do atributo dentro da estrutura de itens globais do banco de dados. </P>
+<P>Este campo j&aacute; vem informado, sendo o primeiro n&uacute;mero igual a "0010" e os demais acrescidos de 10. </P>
+<P>Para incluir um atributo entre dois j&aacute; inclu&iacute;dos, deve-se preencher uma linha que estiver em branco e alterar o n&uacute;mero sequencial desta linha para um n&uacute;mero entre os j&aacute; informados. O SADS reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima opera&ccedil;&atilde;o, os atributos j&aacute; estar&atilde;o na nova ordem. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ATRIBUTO</B> - Mnem&ocirc;nico do atributo que far&aacute; parte da estrutura dos itens globais do banco de dados. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NIVEL</B> - N&iacute;vel de estrutura&ccedil;&atilde;o do atributo, an&aacute;logo ao n&iacute;vel de &aacute;rea de <I>work</I> dos programas Cobol. </P>
+<P>O n&iacute;vel inicial &eacute; o 10 , se for necess&aacute;rio criar agrupamentos de atributos, deve-se usar m&uacute;ltiplos de 5, a partir de 15, at&eacute; 45. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NDEF</B> - N&iacute;vel de defini&ccedil;&atilde;o do atributo. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" (Sistema) - Para atributo definido no sistema informado no campo SIS ou para atributo do mesmo sistema do banco de dados; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"G" (Geral) - Para atributo gen&eacute;rico do SADS; </P></DIR>
+
+<P>Caso NDEF n&atilde;o seja informado, o atributo ser&aacute; interpretado como um item grupo na estrutura dos itens globais do banco de dados. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SIS</B> - C&oacute;digo do sistema do atributo.<BR>
+Este campo deve ser informado somente se NDEF = "S". Se o atributo estiver definido no mesmo sistema do banco de dados em quest&atilde;o, n&atilde;o &eacute; necess&aacute;rio inform&aacute;-lo. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OCCURS </B>- N&uacute;mero de ocorr&ecirc;ncias do atributo para cria&ccedil;&atilde;o de grupos repetitivos dentro da estrutura. </P>
+<P>Para criar um grupo repetitivo, &eacute; necess&aacute;rio definir um item grupo, pois os itens elementares n&atilde;o aceitam o preenchimento do campo OCCURS. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CLAUSULA</B> - Tipo de relacionamento para o atributo. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"C" (Coment&aacute;rio) - Indica que o atributo funciona como uma redefini&ccedil;&atilde;o do anterior. </P>
+<P>Como o DMSII n&atilde;o permite redefini&ccedil;&atilde;o, apenas ser&aacute; gerado um coment&aacute;rio no fonte DASDL do banco de dados. Esta cl&aacute;usula exige que o atributo anterior existente na estrutura do registro seja informado no campo COMPLEMENTO. </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"D" (Cl&aacute;usula <I>Depending On</I>) </P>
+<P>No campo COMPLEMENTO, deve-se informar o atributo num&eacute;rico pertencente &agrave; estrutura que est&aacute; sendo definida e para o qual a cl&aacute;usula <I>depending on</I> ser&aacute; gerada. </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"E" (Nome externo) - Indica que o nome colocado no campo COMPLEMENTO dever&aacute; ser assumido na gera&ccedil;&atilde;o do DASDL das estruturas, em detrimento do nome gerado no padr&atilde;o SADS, facilitando, desta forma, a integra&ccedil;&atilde;o com bancos de dados j&aacute; existentes; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"I" (<I>Initialvalue</I>) - Indica que o atributo ter&aacute; o valor inicial informado no campo COMPLEMENTO; </P></DIR>
+
+<P>Em uma estrutura de banco de dados, um atributo pode possuir v&aacute;rias cl&aacute;usulas, bastando para isto repetir a informa&ccedil;&atilde;o do atributo, com uma outra cl&aacute;usula. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>COMPLEMENTO</B> - Este campo tem sua utiliza&ccedil;&atilde;o dependente da informa&ccedil;&atilde;o do campo CLAUSULA, conforme explica&ccedil;&otilde;es anteriores. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTINUA (S/N) </B>- Indicador de continuidade de opera&ccedil;&atilde;o. </P>
+<P>Pode assumir os seguintes valores: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para prosseguir na opera&ccedil;&atilde;o que est&aacute; sendo efetuada; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para encerrar a opera&ccedil;&atilde;o que est&aacute; sendo efetuada. </P></DIR>
+
+<P>Se uma tela n&atilde;o for suficiente para a informa&ccedil;&atilde;o de todos os atributos da estrutura do <I>dataset</I>, ao informar "S" no campo CONTINUA, uma nova tela ser&aacute; mostrada para informa&ccedil;&atilde;o de outros atributos. </P></DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Cadesp">Cadastramento de especifica&ccedil;&otilde;es f&iacute;sicas globais</A></B></FONT><FONT SIZE=2> </P>
+<P>Especifica&ccedil;&otilde;es f&iacute;sicas globais s&atilde;o caracter&iacute;sticas f&iacute;sicas relativas ao banco de dados. </P>
+<P>Maiores informa&ccedil;&otilde;es poder&atilde;o ser obtidas no "DMSII - <I>Data and Structure Definition Language (DASDL) - Programming Reference Manual</I>" da Unisys. </P>
+<P>Para cadastrar par&acirc;metros f&iacute;sicos para o banco de dados, &eacute; necess&aacute;rio que o mesmo esteja definido no reposit&oacute;rio de dados do SADS. </P>
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>BANCO</B> - C&oacute;digo do banco de dados para o qual ser&atilde;o especificados os par&acirc;metros f&iacute;sicos (sssBxx). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>INCORPORAR DEFAULTS DA INSTALACAO</B> - Indicador de incorpora&ccedil;&atilde;o de <I>defaults</I> para o bancos de dados. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para assumir os valores pr&eacute;-definidos para o banco de dados que n&atilde;o forem especificados; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para desconsiderar os valores pr&eacute;-definidos para o banco de dados. </P></DIR>
+
+<P>A pr&eacute;-defini&ccedil;&atilde;o de valores para as especifica&ccedil;&otilde;es f&iacute;sicas globais do banco de dados deve ser especificada na tabela SBPM5085. Detalhes sobre esta tabela est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>LIBRARY GERACAO DASDL</B> - C&oacute;digo de <I>library</I>, no padr&atilde;o SADS (sssLxx), que cont&eacute;m as especifica&ccedil;&otilde;es f&iacute;sicas globais do banco de dados que n&atilde;o estejam sendo contempladas na vers&atilde;o corrente do SADS. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CHECKSUM</B> - Indicador de utiliza&ccedil;&atilde;o de <I>checksum</I>. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para o uso de <I>checksum</I>; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para eliminar o uso de <I>checksum</I> (default DMSII). </P></DIR>
+
+<P>O <I>checksum</I> &eacute; utilizado para controlar erros de I/O, atrav&eacute;s da compara&ccedil;&atilde;o de valores calculados na grava&ccedil;&atilde;o e leitura de blocos de dados, podendo ser declarado em n&iacute;vel de estrutura. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>KIND</B> - Tipo do perif&eacute;rico a ser utilizado pelo banco de dados. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DISKPACK </B>- Indicador do disco a ser utilizado pelo banco de dados. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PACKNAME</B> - Nome do disco a ser utilizado pelo banco de dados. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PACK</B> - Nome do disco a ser utilizado pelo banco de dados. </P>
+<P>O disco <I>default</I> do DMSII &eacute; o <I>Disk</I>. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>GUARDFILE</B> - Indicador de uso de <I>guardfile</I>. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SECURITYGUARD</B> - <I>Usercode,</I> nome e localiza&ccedil;&atilde;o f&iacute;sica do arquivo <I>guard</I>, caso este seja utilizado. </P>
+<P>O arquivo <I>guard</I> controla o acesso ao banco de dados pelos aplicativos. Um arquivo <I>guard</I> somente dever&aacute; ser definido se realmente tiver de ser utilizado, pois a defini&ccedil;&atilde;o aleat&oacute;ria destes arquivos pode causar "SECURITY ERROR" nos acessos ao banco de dados. </P></DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Gerfon">Gera&ccedil;&atilde;o de fonte DASDL de banco</A></B></FONT><FONT SIZE=2> </P>
+<P>A DASDL (<I>Data and Structure Definition Language</I>) &eacute; a linguagem utilizada para descri&ccedil;&atilde;o e constru&ccedil;&atilde;o de bancos de dados DMSII. </P>
+<P>A compila&ccedil;&atilde;o de um fonte DASDL gera o <I>description</I> e os outros <I>softwares</I> do banco que tornam os programas que o referenciam dispon&iacute;veis para compila&ccedil;&atilde;o. Para que as estruturas do banco sejam criadas, &eacute; necess&aacute;rio executar o processo de inicializa&ccedil;&atilde;o (<I>initialize</I>) e, caso contr&aacute;rio, o de atualiza&ccedil;o (<I>update</I>). Por&eacute;m, &eacute; poss&iacute;vel gerar um fonte DASDL sem a informa&ccedil;&atilde;o do objetivo da compila&ccedil;&atilde;o (<I>initialize</I> ou <I>update</I>).</P>
+<P>Para gerar o fonte DASDL do banco de dados, &eacute; necess&aacute;rio que ele, os <I>titles</I> da <I>Dmsupport</I> e do <I>Reconstruct</I> tenham sido definidos no reposit&oacute;rio de dados do SADS, conforme descrito no t&oacute;pico "Softwares de banco", neste mesmo item.</P>
+<P> Caso seja desej&aacute;vel, pode-se parametrizar que, antes da gera&ccedil;&atilde;o de um novo fonte DASDL, o antigo seja salvo. Detalhes de como se parametrizar a salva de fontes DASL est&atilde;o descritos na Se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es do SADS&quot;, item &quot;Bancos&quot;, deste manual.</P>
+<P>Maiores informa&ccedil;&otilde;es poder&atilde;o ser obtidas no "DMSII - <I>Data and Structure Definition Language (DASDL) - Programming Reference Manual</I>" da Unisys. </P>
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Banco </B>- C&oacute;digo do banco de dados que ter&aacute; seu fonte DASDL gerado (sssBxx). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Objetivo da gera&ccedil;&atilde;o</B> - Processo a ser executado sobre as estruturas do banco, que pode ser: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"I" (<I>Initialize</I>) - Para inicializa&ccedil;&atilde;o das estruturas do banco; ou </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12>"U" (<I>Update</I>) - Para atualiza&ccedil;&atilde;o das estruturas do banco. </P>
+<P>Caso n&atilde;o seja informado, o objetivo da gera&ccedil;&atilde;o n&atilde;o ser&aacute; composto no fonte DASDL. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Ambiente</B> - Ambiente no qual a <I>library</I> ser&aacute; gerada. </P>
+<P>Caso o ambiente n&atilde;o seja informado, ser&aacute; assumido o ambiente <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do ambiente <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es". </P>
+<P>Se alguma das incorpora&ccedil;&otilde;es de <I>defaults</I> da instala&ccedil;&atilde;o foi selecionada, na defini&ccedil;&atilde;o do banco de dados, o acesso &agrave;s tabelas de parametriza&ccedil;&atilde;o de banco de dados ser&aacute; feito no ambiente indicado na gera&ccedil;&atilde;o do fonte DASDL. Detalhes a este respeito est&atilde;o descritos na se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+<P>Ser&aacute; feito o acesso &agrave;s tabelas de parametriza&ccedil;&atilde;o que cont&ecirc;m as op&ccedil;&otilde;es de compila&ccedil;&atilde;o a n&iacute;vel de instala&ccedil;&atilde;o e a n&iacute;vel espec&iacute;fico do banco de dados, no ambiente indicado na gera&ccedil;&atilde;o do fonte DASDL. Detalhes a este respeito est&atilde;o descritos na se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+<P>Se a <I>library</I> for gerada para teste, as informa&ccedil;&otilde;es de teste ser&atilde;o obtidas neste mesmo ambiente, caso contr&aacute;rio, ser&atilde;o obtidas no ambiente de produ&ccedil;&atilde;o. </P>
+<P>De acordo com ambiente informado, o c&oacute;digo do fonte DASDL ser&aacute; gerado com o seguinte padr&atilde;o: </P>
+</FONT><PRE>
+        Para o Banco de Dados - XYZB01
+        O fonte DASDL ser&aacute;: 
+XY/Z/BF/01        - Para produ&ccedil;&atilde;o;
+XY/Z/BF/01T       - Para teste.</PRE>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Usercode</B> - <I>Usercode</I> de an&aacute;lise para gera&ccedil;&atilde;o da <I>library</I>. </P>
+<P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS". </P>
+<P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es". </P>
+<P>Para <I>usercodes</I> de an&aacute;lise, s&atilde;o definidos os ambientes (<I>usercode</I> e disco) onde ficar&atilde;o residentes suas <I>libraries</I> de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as <I>libraries</I> de produ&ccedil;&atilde;o fiquem sem <I>usercodes</I>. Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002, que se encontra descrita na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS". </P></DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Funca">Fun&ccedil;&otilde;es de apoio</A></B></FONT><FONT SIZE=2> </P>
+</FONT><P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Gener">Gen&eacute;ricas aplic&aacute;veis aos bancos</A></B></FONT><FONT SIZE=2> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Utilit&aacute;rios:</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Duplica&ccedil;&atilde;o de elemento; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Descri&ccedil;&atilde;o de elemento; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Consultas:</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Elementos por sistema; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Fonte de <I>library</I> (DASDL); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Descri&ccedil;&atilde;o de elemento. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Refer&ecirc;ncia cruzada:</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Elementos x elemento - Bancos que um sistema utiliza; Sistemas que utilizam um determinado banco; <I>Datasets</I> que comp&otilde;em um banco; Bancos em que um dataset &eacute; <I>utilizado</I>. </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Informa&ccedil;&otilde;es impressas:</B> </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista elementos por sistema; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista descri&ccedil;&atilde;o de elementos; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista fonte de <I>library</I> (DASDL); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista estruturas (<I>datasets</I>) por banco. </P></DIR>
+</DIR>
+
+<P>Todos estes utilit&aacute;rios, consultas, refer&ecirc;ncias cruzadas e informativos impressos encontram-se detalhadamente descritos na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", neste manual. </P></FONT></BODY>
+</HTML>

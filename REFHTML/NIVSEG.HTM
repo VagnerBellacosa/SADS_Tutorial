@@ -1,0 +1,238 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>NIVSEG</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+<basefont size=2>
+<B><FONT SIZE=6><P><A NAME="Niseg">N&iacute;veis de seguran&ccedil;a dispon&iacute;veis</A></B></FONT> </P>
+<P><HR></P>
+<P><A NAME="Intro">Introdu&ccedil;&atilde;o</A> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O Sistema de Seguran&ccedil;a - SADS/SS - oferece diversos testes e informa&ccedil;&otilde;es dos usu&aacute;rios que evitam a necessidade de serem implementados individualmente em cada um dos Sistemas Aplicativos.</FONT> </P>
+<FONT SIZE=2><P>Estes testes e informa&ccedil;&otilde;es s&atilde;o referentes &agrave;s habilita&ccedil;&otilde;es cadastradas para os usu&aacute;rios do Sistema de Seguran&ccedil;a e informa&ccedil;&otilde;es dos <I>logons</I> efetuados por eles. </P>
+<P>Com a utiliza&ccedil;&atilde;o destes recursos, oferecidos pelo Sistema de Seguran&ccedil;a, &eacute; poss&iacute;vel alcan&ccedil;ar os seguintes benef&iacute;cios:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> Aumento de produtividade no desenvolvimento e manuten&ccedil;&atilde;o de aplicativos; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> Aumento do n&iacute;vel de seguran&ccedil;a dos aplicativos. </P></DIR>
+
+<FONT SIZE=2><P>A partir do conhecimento destes recursos, os administradores de seguran&ccedil;a estar&atilde;o mais aptos a proceder o cadastramento de usu&aacute;rios e os analistas de sistemas poder&atilde;o tirar maior proveito das facilidades oferecidas pelo SADS/SS.</FONT> </P>
+<FONT SIZE=2><P>S&atilde;o relacionados, a seguir, todos estes testes, com a descri&ccedil;&atilde;o dos procedimentos para cadastramento de usu&aacute;rios, habilita&ccedil;&otilde;es, programas e sub-rotinas permitindo aos aplicativos que se beneficiem com a utiliza&ccedil;&atilde;o dos mesmos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> N&iacute;veis de acesso do usu&aacute;rio; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> Valida&ccedil;&atilde;o de elemento; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> Valida&ccedil;&atilde;o de programa para acesso a sub-rotina; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> Campos para identifica&ccedil;&atilde;o dos usu&aacute;rios. </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Acess">N&iacute;veis de acesso do usu&aacute;rio</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>S&atilde;o dois os n&iacute;veis de acesso de um usu&aacute;rio: o n&iacute;vel de acesso geral e o n&iacute;vel de acesso por aplicativo.</FONT> </P>
+<FONT SIZE=2><P>O n&iacute;vel de acesso geral de um usu&aacute;rio, especificado no momento de seu cadastramento, determina o seu poder de acesso aos sistemas.</FONT> </P>
+<FONT SIZE=2><P>Os n&iacute;veis de acesso geral, permitidos a um usu&aacute;rio, s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> N&iacute;vel "99" - N&iacute;vel que identifica o administrador de seguran&ccedil;a. Este usu&aacute;rio &eacute; autorizado a realizar qualquer opera&ccedil;&atilde;o dentro do Sistema de Seguran&ccedil;a. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> N&iacute;vel "98" - N&iacute;vel que identifica os usu&aacute;rios habilitados, pelo administrador de seguran&ccedil;a, a realizar opera&ccedil;&otilde;es de controle do Sistema de Seguran&ccedil;a, dentro de um limite estabelecido pelas suas pr&oacute;prias habilita&ccedil;&otilde;es. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> N&iacute;vel "97" - N&iacute;vel que identifica o preparador de servi&ccedil;os no Sistema de Controle de Processamento (SPO). </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> N&iacute;veis menores que "97" - N&iacute;veis dos usu&aacute;rios que n&atilde;o s&atilde;o autorizados a efetuar manuten&ccedil;&otilde;es no Sistema de Seguran&ccedil;a. </P></DIR>
+
+<FONT SIZE=2><P>Quando nenhum n&iacute;vel de acesso geral &eacute; definido para um usu&aacute;rio, &eacute; assumido que ele possui n&iacute;vel "00"</FONT> </P>
+<FONT SIZE=2><P>Quando o usu&aacute;rio efetua o <I>logon</I>, seu n&iacute;vel de acesso geral fica dispon&iacute;vel aos aplicativos atrav&eacute;s do campo global GBL-USUNIVACES, podendo por eles ser utilizado e testado. Desta forma, o n&iacute;vel de acesso geral de um usu&aacute;rio, originalmente definido como poder de acesso do usu&aacute;rio ao Sistema de Seguran&ccedil;a, pode ser estendido aos demais aplicativos e utilizados por estes para indicar tamb&eacute;m o poder de acesso do usu&aacute;rio ao aplicativo em quest&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Existe outro n&iacute;vel de acesso do usu&aacute;rio que &eacute; definido no momento em que s&atilde;o cadastrados os aplicativos a ele habilitados. Neste cadastramento, para cada aplicativo que o usu&aacute;rio for habilitado a trabalhar, estabelece-se qual o seu poder de acesso espec&iacute;fico.</FONT> </P>
+<FONT SIZE=2><P>Assim sendo, quando o usu&aacute;rio requisita um aplicativo qualquer, o valor de seu n&iacute;vel de acesso referente a este aplicativo fica dispon&iacute;vel no campo global GBL-UAHNIVHAB, permitindo ao aplicativo utiliz&aacute;-lo, por exemplo, para valida&ccedil;&atilde;o de autoriza&ccedil;&atilde;o de execu&ccedil;&atilde;o de fun&ccedil;&otilde;es . </P>
+<P>Suponha os seguintes aplicativos e n&iacute;veis de acesso habilitados ao usu&aacute;rio 000001:</FONT> </P>
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" WIDTH=225>
+<TR><TD WIDTH="63%" VALIGN="MIDDLE">
+<P>APLICATIVO</TD>
+<TD WIDTH="37%" VALIGN="MIDDLE">
+<P>NIVEL </TD>
+</TR>
+<TR><TD WIDTH="63%" VALIGN="MIDDLE">
+<P>GHD</TD>
+<TD WIDTH="37%" VALIGN="MIDDLE">
+<P>90</TD>
+</TR>
+<TR><TD WIDTH="63%" VALIGN="MIDDLE">
+<P>M</TD>
+<TD WIDTH="37%" VALIGN="MIDDLE">
+<P>30</TD>
+</TR>
+</TABLE>
+
+<P>No exemplo apresentado, o n&iacute;vel de acesso do usu&aacute;rio ao aplicativo "GHD" &eacute; 90 e aos aplicativos que se iniciam com a letra "M" &eacute; 30. </P>
+<P>Suponha agora os seguintes exemplos de utiliza&ccedil;&atilde;o do n&iacute;vel de acesso por aplicativo, tendo como base as habilita&ccedil;&otilde;es anteriores : </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> No aplicativo "GHD" as opera&ccedil;&otilde;es de manuten&ccedil;&atilde;o no sal&aacute;rio do empregado requerem grande seguran&ccedil;a. O analista respons&aacute;vel por tal aplicativo estabelece ent&atilde;o que somente usu&aacute;rios que possu&iacute;rem n&iacute;vel de acesso ao "GHD" superior a "80" (GBL-UAHNIVHAB &gt;&gt; 80) poder&atilde;o execut&aacute;-las. Deste modo, o programa respons&aacute;vel pela altera&ccedil;&atilde;o de sal&aacute;rio de empregado, ao testar o campo GBL-UAHNIVHAB, quando o usu&aacute;rio 000001 disparar tal opera&ccedil;&atilde;o, ir&aacute; permitir que ele a execute. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> Internamente aos aplicativos iniciados com "M", podem ser inclu&iacute;dos testes dos n&iacute;veis de acesso dos usu&aacute;rios que os requisitarem. Neste caso, o usu&aacute;rio 000001 somente poder&aacute; executar as transa&ccedil;&otilde;es destes aplicativos que n&atilde;o exigirem n&iacute;vel de acesso maior que 30, ou aquelas transa&ccedil;&otilde;es que n&atilde;o questionarem sobre o n&iacute;vel de acesso por aplicativo do usu&aacute;rio que as requisitou. </P></DIR>
+
+<P>&Eacute; recomend&aacute;vel que os aplicativos se utilizem do n&iacute;vel de acesso de usu&aacute;rio por aplicativo (GBL-UAHNIVHAB), j&aacute; que o n&iacute;vel de acesso geral do usu&aacute;rio (GBL-USUNIVACES) pode n&atilde;o atender simultaneamente a diferentes aplicativos. </P>
+<B><FONT SIZE=5><P><A NAME="Valid">Valida&ccedil;&atilde;o de elemento</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O Sistema de Seguran&ccedil;a permite aos aplicativos validar se um usu&aacute;rio pode ou n&atilde;o executar o acesso a um elemento espec&iacute;fico.</FONT> </P>
+<FONT SIZE=2><P>O elemento a ser testado depende da necessidade do aplicativo, podendo ser qualquer informa&ccedil;&atilde;o interna ao mesmo para a qual se queira validar a seguran&ccedil;a de acesso. Da&iacute; o elemento n&atilde;o possuir padr&atilde;o de codifica&ccedil;&atilde;o, podendo conter at&eacute; 17 posi&ccedil;&otilde;es e em qualquer formato de edi&ccedil;&atilde;o (num&eacute;rico, alfab&eacute;tico ou alfanum&eacute;rico). </P>
+<P>O elemento a ser testado pode ser totalmente hierarquizado e se referir a um conjunto de elementos. Por exemplo, ao habilitar um usu&aacute;rio a trabalhar com o elemento "GO", ele estar&aacute; tamb&eacute;m habilitado a trabalhar com todos os elementos iniciados com "GO", tais como "GO10" e "GO20".</FONT> </P>
+<FONT SIZE=2><P>Quando um aplicativo for utilizar o teste de valida&ccedil;&atilde;o de elemento, ele dever&aacute; identificar qual o nome da lista que agrupar&aacute; os elementos a serem testados e quais elementos dever&atilde;o ser habilitados a cada usu&aacute;rio. O nome da lista pode ser o c&oacute;digo total ou parcial do aplicativo, o c&oacute;digo da transa&ccedil;&atilde;o que ir&aacute; disparar o teste do elemento ou pode ser um nome qualquer, que identifique a qual grupo de elementos o teste se refere.</FONT> </P>
+<FONT SIZE=2><P>Como exemplo de teste de elementos, tem-se: no aplicativo de Controle de Projetos (ACP), os usu&aacute;rios somente poder&atilde;o apropriar horas em projetos para os quais est&atilde;o habilitados. Neste aplicativo ficou determinado ent&atilde;o, que a lista de elementos a ser habilitada aos usu&aacute;rios se chamar&aacute; "PROJS" e nela dever&atilde;o estar definidas, para cada usu&aacute;rio, os c&oacute;digos dos projetos pass&iacute;veis de apropria&ccedil;&atilde;o. Esta lista poderia tamb&eacute;m se chamar, por exemplo, "ACP" ou "ACP0101" (Transa&ccedil;&atilde;o de apropria&ccedil;&atilde;o de horas do aplicativo ACP). </P>
+<P>O c&oacute;digo da lista de elementos pode tamb&eacute;m ser totalmente hierarquizado. Por exemplo, ao habilitar um usu&aacute;rio a trabalhar com um elemento na lista de elementos "PRO", ele estar&aacute; tamb&eacute;m habilitado ao mesmo elemento em todas as listas iniciadas com "PRO", tais como "PROJETO" e "PROGRAMA", caso estas duas outras listas n&atilde;o possuam seus pr&oacute;prios elementos habilitados.</FONT> </P>
+<FONT SIZE=2><P>A habilita&ccedil;&atilde;o de elementos para um usu&aacute;rio &eacute; definida para um aplicativo/lista de elementos, podendo levar em considera&ccedil;&atilde;o a empresa, o estabelecimento e a unidade em que o usu&aacute;rio pode efetuar <I>logon</I>.</FONT> </P>
+<FONT SIZE=2><P>Para que um aplicativo possa se utilizar do teste de valida&ccedil;&atilde;o de elemento, s&atilde;o necess&aacute;rios dois procedimentos, a saber :</FONT> </P>
+<OL>
+
+<DFN><LI>Habilita&ccedil;&atilde;o, dos elementos autorizados para os usu&aacute;rios do aplicativo, na lista de elementos especificada. <BR>
+Para efetuar a habilita&ccedil;&atilde;o de elementos a um usu&aacute;rio, deve-se informar os seguintes campos no menu de opera&ccedil;&atilde;o HABUSU:</LI>
+</DFN><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Operacao</B> - Opera&ccedil;&atilde;o de habilita&ccedil;&atilde;o do usu&aacute;rio, que deve ser informada "ELE".</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Numero Usuario</B> - N&uacute;mero do usu&aacute;rio para o qual os elementos ser&atilde;o habilitados. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Codigo Usuario</B> - C&oacute;digo do usu&aacute;rio para o qual os elementos ser&atilde;o habilitados. <BR>
+Deve ser informado ou o n&uacute;mero ou o c&oacute;digo do usu&aacute;rio. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Aplicativo/Lista de Elementos</B> - C&oacute;digo do aplicativo ou nome da lista de elementos para os quais a habilita&ccedil;&atilde;o de elemento ser&aacute; realizada. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Empresa</B> - C&oacute;digo da empresa para a qual a habilita&ccedil;&atilde;o de elemento do usu&aacute;rio ser&aacute; efetuada, caso o usu&aacute;rio tenha acesso a mais de uma empresa.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Estabelecimento</B> - C&oacute;digo do estabelecimento para o qual a habilita&ccedil;&atilde;o de elemento do usu&aacute;rio ser&aacute; efetuada, caso o usu&aacute;rio tenha acesso a mais de um estabelecimento.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Unidade</B> - C&oacute;digo da unidade para a qual a habilita&ccedil;&atilde;o de elemento do usu&aacute;rio ser&aacute; efetuada, caso o usu&aacute;rio tenha acesso a mais de uma unidade.<BR>
+Para maiores detalhes sobre como efetuar o cadastramento de habilita&ccedil;&otilde;es de elementos a um usu&aacute;rio, deve-se consultar o item "Usu&aacute;rios e habilita&ccedil;&otilde;es", nesta se&ccedil;&atilde;o. </P>
+<LI>Disparo do teste para valida&ccedil;&atilde;o do elemento, no momento da execu&ccedil;&atilde;o do aplicativo. <BR>
+Para que o teste de valida&ccedil;&atilde;o de um elemento seja executado, assim que uma transa&ccedil;&atilde;o do aplicativo for disparada, deve-se tomar um dos seguintes procedimentos : </LI></OL>
+<DIR>
+<DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Incorpora&ccedil;&atilde;o, interna ao programa, da chamada ao teste oferecido pelo SADS/SS para essa valida&ccedil;&atilde;o; ou </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Defini&ccedil;&atilde;o, na consist&ecirc;ncia geral da tela ou tabela onde exista a requisi&ccedil;&atilde;o do elemento, da chamada ao teste de valida&ccedil;&atilde;o do SADS/SS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> O teste de valida&ccedil;&atilde;o de elemento interno aos programas &eacute; efetuado pela sub-rotina SBTS03. Logo, para que eles efetuem o teste de valida&ccedil;&atilde;o de elemento, &eacute; necess&aacute;rio que fa&ccedil;am uma chamada &agrave; esta sub-rotina, informando-lhe os par&acirc;metros devidos.<BR>
+No programa aplicativo, para que seja efetuada a chamada &agrave; sub-rotina SBTS03, devem ser executados os seguintes cadastramentos : </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13> Definir a sub-rotina SBTS03 como recurso do programa; Preencher a &aacute;rea de comunica&ccedil;&atilde;o da sub-rotina SBTS03, na PROCEDURE DIVISION, atrav&eacute;s dos seguintes comandos de m&oacute;dulo COBOL: </P><DIR>
+
+<P><IMG SRC="Bullet9.gif" WIDTH=15 HEIGHT=13> MOVE 10 TO TS0304-SUBOPCAO<BR>
+MOVE H-ESTACAO TO TS0304-ETCNUM<BR>
+Observa&ccedil;&atilde;o: O <I>host</I> atualiza corretamente o campo global H-ESTACAO, <BR>
+podendo este ent&atilde;o ser utilizado livremente pelo programa aplicativo.<BR>
+MOVE &lt;valor do elemento a ser testado&gt; TO TS0304-ELMCOD <BR>
+MOVE &lt; Aplicativo/Lista de elementos&gt; TO TS0304-TRACOD </P></DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13> Definir a chamada &agrave; sub-rotina SBTS03, atrav&eacute;s do comando de m&oacute;dulo CALL. <BR>
+Codificar comandos para teste do retorno da sub-rotina, validando a habilita&ccedil;&atilde;o do usu&aacute;rio ao elemento, atrav&eacute;s de comandos COBOL e comandos MSG. Na defini&ccedil;&atilde;o destes comandos deve ser seguido o seguinte algoritmo: </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13> Se TS0304-SUBOPCAO = 99<BR>
+Ent&atilde;o </P><DIR>
+
+<P><IMG SRC="Bullet9.gif" WIDTH=15 HEIGHT=13> Erro = O valor do elemento n&atilde;o foi encontrado na lista de <BR>
+elementos/aplicativo do usu&aacute;rio<BR>
+O usu&aacute;rio n&atilde;o est&aacute; habilitado a trabalhar com o elemento especificado </P></DIR>
+
+<P>Sen&atilde;o </P><DIR>
+
+<P><IMG SRC="Bullet9.gif" WIDTH=15 HEIGHT=13> (Foi encontrado o elemento na lista de elementos/aplicativos do usu&aacute;rio)<BR>
+(Pode-se ent&atilde;o testar o tipo de acesso que o usu&aacute;rio tem ao elemento atrav&eacute;s <BR>
+do campo TS0304-SUBOPCAO) <BR>
+Se TS0304-SUBOPCAO = 0 <BR>
+Ent&atilde;o Usu&aacute;rio autorizado somente a consultar o elemento <BR>
+Sen&atilde;o </P><DIR>
+<DIR>
+<DIR>
+
+<P><IMG SRC="Bullet9.gif" WIDTH=15 HEIGHT=13> Se TS0304-SUBOPCAO = 2 <BR>
+Ent&atilde;o Usu&aacute;rio autorizado a consultar e atualizar o elemento<BR>
+Sen&atilde;o </P><DIR>
+<DIR>
+
+<P><IMG SRC="Bullet9.gif" WIDTH=15 HEIGHT=13> Se TS0304-SUBOPCAO = 3<BR>
+Ent&atilde;o Usu&aacute;rio n&atilde;o autorizado a trabalhar com o elemento </P></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<P>fim-se. </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> O teste de seguran&ccedil;a, quando cadastrado na consist&ecirc;ncia, verifica se o usu&aacute;rio que efetuou o <I>logon</I> na esta&ccedil;&atilde;o est&aacute; habilitado a trabalhar com o conte&uacute;do por ele informado para o atributo (elemento). Caso o usu&aacute;rio n&atilde;o tenha habilita&ccedil;&atilde;o para este elemento, a consist&ecirc;ncia retornar&aacute; uma mensagem de erro.<BR>
+Este teste garante que o usu&aacute;rio trabalhe com este atributo somente com valores para os quais esteja habilitado. <BR>
+Para cadastramento do teste de seguran&ccedil;a na consist&ecirc;ncia, os campos que devem ser informados na tela de validade em n&iacute;vel de estrutura s&atilde;o:</P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B> Seq </B>- N&uacute;mero seq&uuml;encial para posicionamento do teste.</P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B> Fun </B>- Fun&ccedil;&atilde;o a ser efetuada sobre o atributo, que pode ser "SEG" ou "SGA".</P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B> Operando1</B>- Mnem&ocirc;nico do atributo a ser testado.</P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B> Suf1</B>- Sufixo do atributo a ser testado, caso ele o possua na estrutura&nbsp;da consist&ecirc;ncia. </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B> Operando2</B> - C&oacute;digo do aplicativo ou da lista de elementos para os quais dever&aacute; ser verificada a habilita&ccedil;&atilde;o do elemento. <BR>
+A informa&ccedil;&atilde;o deste c&oacute;digo &eacute; opcional. Se n&atilde;o informado, ser&aacute; assumido o aplicativo cujo c&oacute;digo seja igual ao c&oacute;digo da consist&ecirc;ncia (menos o identificador de tipo de elemento "C"), como mostrado a seguir:<BR>
+C&oacute;digo da consist&ecirc;ncia: sssCnnnn<BR>
+C&oacute;digo do aplicativo: sssnnnn</P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B> Erro</B> - C&oacute;digo da mensagem de erro. <BR>
+&Eacute; opcional; se n&atilde;o for informado ser&aacute; assumido o valor "028" (NAO AUTORIZADO). <BR>
+Para maiores detalhes sobre como cadastrar um teste de um atributo, para seguran&ccedil;a de acesso aos dados, deve-se consultar a se&ccedil;&atilde;o II, "Elementos do reposit&oacute;rio de dados", item "Consist&ecirc;ncia". </P></DIR>
+</DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Vapro">Valida&ccedil;&atilde;o de programa para acesso a sub-rotina</A></B></FONT> </P>
+<P><HR></P>
+<OL>
+
+<FONT SIZE=2><LI>Sistema de Seguran&ccedil;a permite que uma sub-rotina qualquer valide se o programa que a chamou pode ou n&atilde;o efetuar o acesso a ela.<BR>
+Para que uma sub-rotina possa executar a valida&ccedil;&atilde;o de programas autorizados &eacute; necess&aacute;rio que:<BR>
+Sejam anteriormente efetuadas as habilita&ccedil;&otilde;es dos programas que estar&atilde;o autorizados a acessar a sub-rotina. <BR>
+Para realizar a habilita&ccedil;&atilde;o de programas para acesso a sub-rotina, deve-se informar o seguinte argumento no menu de opera&ccedil;&atilde;o SEGSUB:</LI>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> <B>Sub-Rotina</B> - C&oacute;digo da sub-rotina cujo acesso ser&aacute; autorizado, no padr&atilde;o SADS (sssSxx).</P>
+<P>Ser&aacute; apresentada uma tela de processamento onde devem ser preenchidos os seguintes campos:</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Sub-Rotina</B> - C&oacute;digo da sub- rotina .</P>
+<P>Para cada um dos programas cujo acesso a sub-rotina ser&aacute; autorizado, devem ser informados:</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Programa </B>- C&oacute;digo do programa, no padr&atilde;o SADS (ssspxx) .</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Data</B> - Data da compila&ccedil;&atilde;o do programa (<I>Creationdate</I>). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Hora</B> - Hora da compila&ccedil;&atilde;o do programa (<I>Creationdate</I>). </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Segmentos </B>- Tamanho do objeto do programa em segmentos (<I>total sectors</I>).</P>
+<P>Sempre que for compilado o programa, suas especifica&ccedil;&otilde;es de data e hora de compila&ccedil;&atilde;o e tamanho em segmentos ter&atilde;o de ser atualizados na tela descrita anteriormente. Isto porque, no processo de compila&ccedil;&atilde;o, o programa ter&aacute; estas especifica&ccedil;&otilde;es alteradas e deixar&atilde;o portanto de ter autoriza&ccedil;&atilde;o de acesso &agrave; sub-rotina. </P>
+<LI>Sejam incorporados &agrave; sub-rotina do aplicativo testes oferecidos pelo SADS/SS para a valida&ccedil;&atilde;o de acesso. <BR>
+Para que as sub-rotinas dos aplicativos efetuem o teste de habilita&ccedil;&atilde;o de programa &eacute; necess&aacute;rio que elas contenham uma chamada &agrave; sub-rotina de Seguran&ccedil;a SBTS03, que &eacute; a respons&aacute;vel direta por tal teste.<BR>
+Para efetuar tal acesso, internamente &agrave; sub-rotina do aplicativo, devem ser executados os seguintes passos:</LI></OL>
+<DIR>
+<DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Definir a sub-rotina SBTS03 como recurso;</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Preencher a &aacute;rea de comunica&ccedil;&atilde;o da sub-rotina SBTS03, na PROCEDURE DIVISION, atrav&eacute;s dos seguintes comandos de m&oacute;dulo COBOL: <BR>
+MOVE 18 TO TS0306-SUBOPCAO<BR>
+MOVE &lt;&lt;c&oacute;d. da sub-rotina do aplic. (sssSxx)&gt;&gt; TO TS0306-SUBCOD</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Definir a chamada &agrave; sub-rotina SBTS03, atrav&eacute;s do comando de m&oacute;dulo CALL. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Codificar comandos para teste do retorno da SBTS03, validando ent&atilde;o a habilita&ccedil;&atilde;o do usu&aacute;rio ao elemento, atrav&eacute;s de comandos COBOL e comandos MSG. Na defini&ccedil;&atilde;o destes comandos deve ser seguido o seguinte algoritmo: </P><DIR>
+
+<P>Se TS0306-SUBOPCAO = 99</P><DIR>
+
+<P>Ent&atilde;o</P><DIR>
+<DIR>
+
+<P>Erro = O programa n&atilde;o est&aacute; autorizado a efetuar acesso &agrave; sub-rotina<BR>
+(TS0304-SUBMENS cont&eacute;m a mensagem de erro)</P></DIR>
+</DIR>
+
+<P>Sen&atilde;o</P><DIR>
+<DIR>
+
+<P>O programa est&aacute; autorizado a efetuar o acesso &agrave; sub-rotina</P></DIR>
+</DIR>
+</DIR>
+
+<P>fim-se.</P></DIR>
+</DIR>
+</DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Campo">Campos para identifica&ccedil;&atilde;o do usu&aacute;rio</A></B></FONT> </P>
+<P><HR></P>
+<P>No momento do logon, o usu&aacute;rio informa seu n&uacute;mero ou c&oacute;digo e, se necess&aacute;rio, a empresa, o estabelecimento, a unidade e o ambiente nos quais deseja trabalhar. Estas informa&ccedil;&otilde;es ficam dispon&iacute;veis em campos da &aacute;rea global de comunica&ccedil;&atilde;o entre o <I>host</I> e os programas chamados e podem ser utilizados por estes para efetuar testes ou sele&ccedil;&otilde;es. </P>
+<FONT SIZE=2><P>Outros campos, tais como a sigla da empresa na qual o usu&aacute;rio efetuou o <I>logon</I> e o n&iacute;vel de acesso do usu&aacute;rio, tamb&eacute;m s&atilde;o armazenados em campos globais na &aacute;rea de comunica&ccedil;&atilde;o para posterior aproveitamento.<BR>
+A finalidade principal destes campos &eacute;, portanto, identificar, para o <I>host</I> e programas chamados, o usu&aacute;rio que requisitou a transa&ccedil;&atilde;o e as caracter&iacute;sticas do <I>logon</I> por ele efetuado.<BR>
+Estes campos, por identificarem o usu&aacute;rio que disparou a transa&ccedil;&atilde;o corrente, podem ser &uacute;teis para, por exemplo, selecionar as informa&ccedil;&otilde;es que poder&atilde;o ser apresentadas ao usu&aacute;rio em quest&atilde;o. <BR>
+Como exemplo, suponha uma transa&ccedil;&atilde;o que executa a seguinte fun&ccedil;&atilde;o: Consulta aos projetos em desenvolvimento. Se o usu&aacute;rio que requisitou a consulta tiver efetuado o <I>logon</I> na empresa "023", estabelecimento "0011" e unidade "012", o aplicativo poder&aacute; exibir para ele somente os projetos que estiverem em desenvolvimento na empresa, estabelecimento e unidade por ele informados. Deste modo, ele n&atilde;o saber&aacute; quais os demais projetos em desenvolvimento nas outras empresas, estabelecimentos e unidades diferentes daqueles por ele informados.<BR>
+Estes campos, tal como definidos na <I>library</I> da &aacute;rea global de comunica&ccedil;&atilde;o (SB/P/PL/60), s&atilde;o apresentados a seguir:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> GBL-USUNUM PIC X(06) - N&uacute;mero do usu&aacute;rio; </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> GBL-USUCODEXT PIC X(17) - C&oacute;digo do usu&aacute;rio;</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> GBL-EMPCOD PIC 9(03) - C&oacute;digo da empresa em que o usu&aacute;rio efetuou o <I>logon</I>; </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> GBL-ETBCOD PIC 9(04) - C&oacute;digo do estabelecimento e em que ousu&aacute;rio efetuou o <I>logon</I>; </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> GBL-UNDCOD PIC 9(03) - C&oacute;digo da unidade em que o usu&aacute;rio efetuou o logon;</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> GBL-USUAMBI PIC X(01) - Ambiente em que o usu&aacute;rio efetuou o <I>logon</I>; </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> GBL-EMPSIGLA PIC X(10) - Sigla da empresa em que o usu&aacute;rio efetuou o <I>logon</I>; </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> GBL-UAHNIVHAB PIC 9(02) - N&iacute;vel de acesso do usu&aacute;rio ao aplicativo;</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> GBL-USUNIVACES PIC 9(02COMP) - N&iacute;vel de acesso do usu&aacute;rio. </P></DIR>
+
+<P>Os <I>hosts</I> e os programas chamados dos aplicativos s&atilde;o automaticamente gerados com a inclus&atilde;o da <I>library</I> da &aacute;rea global de comunica&ccedil;&atilde;o - SB/P/PL/60. <BR>
+As informa&ccedil;&otilde;es do usu&aacute;rio que efetuou o <I>logon</I> s&atilde;o tamb&eacute;m automaticamente atualizadas pelo <I>host</I> nos campos globais citados anteriormente. Por&eacute;m, cumpre ressaltar que aqueles programas chamados que n&atilde;o tiverem sido definidos com seguran&ccedil;a no cadastramento de seus menus, no reposit&oacute;rio de dados, n&atilde;o ter&atilde;o esses campos atualizados.<BR>
+Outras informa&ccedil;&otilde;es a respeito do usu&aacute;rio que efetuou o <I>logon</I>, tais como nome, &aacute;rea, campo livre (dados funcionais do usu&aacute;rio), unidades autorizadas, data de validade da senha, etc podem ser obtidas atrav&eacute;s de chamada &agrave; sub-rotina SBTS05, que &eacute; a sub-rotina do Sistema de Seguran&ccedil;a respons&aacute;vel por efetuar v&aacute;rias consultas a dados cadastrais do usu&aacute;rio.<BR>
+Para maiores esclarecimentos a respeito da sub-rotina SBTS05, deve-se consultar a Se&ccedil;&atilde;o II, "Elementos do reposit&oacute;rio de dados", item "Sub-rotinas". </P></FONT></BODY>
+</HTML>

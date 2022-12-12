@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>INTERFAC</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+
+<B><FONT SIZE=6><P><A NAME="Inter">Interface com aplicativos</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O Sistema de Seguran&ccedil;a disponibiliza alguns elementos com o objetivo de propiciar a comunica&ccedil;&atilde;o entre ele e os demais programas aplicativos. Estes elementos, que comp&otilde;em a interface com o SADS/SS, s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>&Aacute;rea global de comunica&ccedil;&atilde;o; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Sub-rotinas:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>SBTS01: Sub-rotina para testes das habilita&ccedil;&otilde;es de transa&ccedil;&otilde;es e esta&ccedil;&otilde;es;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>SBTS03: Sub-rotina para testes e fun&ccedil;&otilde;es de controle do Sistema de Seguran&ccedil;a</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>SBTS05: Sub-rotina para consulta a dados do Sistema de Seguran&ccedil;a;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>SBTS06: Sub-rotina para bloqueio de usu&aacute;rio do Sistema de Seguran&ccedil;a;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>SBTS99: Sub-rotina para consist&ecirc;ncias espec&iacute;ficas de usu&aacute;rios do Sistema de Seguran&ccedil;a.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>A seguir, ser&atilde;o brevemente explicados cada um destes elementos de interface com o Sistema de Seguran&ccedil;a.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Gloco">&Aacute;rea global de comunica&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>No momento do <I>logon</I>, o usu&aacute;rio informa seu n&uacute;mero ou c&oacute;digo e, se necess&aacute;rio, a empresa, o estabelecimento, a unidade e o ambiente nos quais deseja trabalhar. Estas informa&ccedil;&otilde;es ficam dispon&iacute;veis em campos da &aacute;rea global de comunica&ccedil;&atilde;o entre o <I>host</I> e os programas chamados, podendo ser utilizados por estes para efetuar testes ou sele&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>Outros campos, tais como a sigla da empresa na qual o usu&aacute;rio efetuou o <I>logon</I> e o n&iacute;vel de acesso do usu&aacute;rio, tamb&eacute;m s&atilde;o armazenados em campos globais na &aacute;rea de comunica&ccedil;&atilde;o para posterior aproveitamento.</FONT> </P>
+<FONT SIZE=2><P>A finalidade principal destes campos &eacute;, portanto, identificar, para o host e programas chamados, o usu&aacute;rio que requisitou a transa&ccedil;&atilde;o e as caracter&iacute;sticas do <I>logon</I> por ele efetuado.</FONT> </P>
+<FONT SIZE=2><P>Estes campos, por identificarem o usu&aacute;rio que disparou a transa&ccedil;&atilde;o corrente, podem ser &uacute;teis para, por exemplo, selecionar as informa&ccedil;&otilde;es que poder&atilde;o ser apresentadas ao usu&aacute;rio em quest&atilde;o. </P>
+<P>Como exemplo, suponha uma transa&ccedil;&atilde;o que executa a seguinte fun&ccedil;&atilde;o: Consulta aos projetos em desenvolvimento. Se o usu&aacute;rio que requisitou a consulta tiver efetuado o <I>logon</I> na empresa "023", estabelecimento "0011" e unidade "012", o aplicativo poder&aacute; exibir para ele somente os projetos que estiverem em desenvolvimento na empresa, estabelecimento e unidade por ele informados. Deste modo, ele n&atilde;o saber&aacute; quais os demais projetos em desenvolvimento nas outras empresas, estabelecimentos e unidades diferentes daqueles por ele informados.</FONT> </P>
+<FONT SIZE=2><P>Estes campos, tal como definidos na <I>library</I> da &aacute;rea global de comunica&ccedil;&atilde;o (SB/P/PL/60), s&atilde;o apresentados a seguir:</P>
+<P>05 GBL-USUNUM PIC X(06) - N&uacute;mero do usu&aacute;rio; </P>
+<P>05 GBL-USUCODEXT PIC X(17) - C&oacute;digo do usu&aacute;rio;</FONT> </P>
+<FONT SIZE=2><P>05 GBL-EMPCOD PIC 9(03) - C&oacute;digo da empresa na qual o<BR>
+usu&aacute;rio efetuou o <I>logon</I>;</FONT> </P>
+<FONT SIZE=2><P>05 GBL-ETBCOD PIC 9(04) - C&oacute;digo do estabelec. no qual<BR>
+o usu&aacute;rio efetuou o <I>logon</I>;</FONT> </P>
+<FONT SIZE=2><P>05 GBL-UNDCOD PIC 9(03) - C&oacute;digo da unidade na qual o <BR>
+usu&aacute;rio efetuou o <I>logon</I>;</FONT> </P>
+<FONT SIZE=2><P>05 GBL-USUAMBI PIC X(01) - Ambiente no qual o usu&aacute;rio <BR>
+efetuou o <I>logon</I>;</FONT> </P>
+<FONT SIZE=2><P>05 GBL-EMPSIGLA PIC X(10) - Sigla da empresa na qual o <BR>
+usu&aacute;rio efetuou o <I>logon</I>;</FONT> </P>
+<FONT SIZE=2><P>05 GBL-UAHNIVHAB PIC 9(02 ) - N&iacute;vel de acesso do usu&aacute;rio ao<BR>
+aplicativo disparado;</FONT> </P>
+<FONT SIZE=2><P>05 GBL-USUNIVACES PIC 9(02) - N&iacute;vel de acesso geral do usu&aacute;rio.</P>
+<P>Os <I>hosts</I> e os programas chamados dos aplicativos s&atilde;o automaticamente gerados com a inclus&atilde;o da <I>library</I> da &aacute;rea global de comunica&ccedil;&atilde;o - SB/P/PL/60. </P>
+<P>As informa&ccedil;&otilde;es do usu&aacute;rio que efetuou o <I>logon</I> s&atilde;o tamb&eacute;m automaticamente atualizadas pelo<B><I> </B>host </I>nos campos globais citados anteriormente. Por&eacute;m, cumpre ressaltar que aqueles programas chamados que n&atilde;o tiverem sido definidos com seguran&ccedil;a no cadastramento de seus menus, no reposit&oacute;rio de dados, n&atilde;o ter&atilde;o esses campos atualizados.</FONT> </P>
+<FONT SIZE=2><P>Uma vez determinado o ambiente pelo usu&aacute;rio, no momento do<B><I> </B>logon, </I>este s&oacute; ter&aacute; acesso aos<I> </I>aplicativos habilitados a ele e que estiverem compilados para o ambiente em quest&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Outras informa&ccedil;&otilde;es a respeito do usu&aacute;rio que efetuou o <I>logon</I>, tais como nome, &aacute;rea, campo livre (dados funcionais do usu&aacute;rio), unidades autorizadas, data de validade da senha, etc podem ser obtidas atrav&eacute;s de chamada &agrave; sub-rotina SBTS05, que &eacute; a sub-rotina do Sistema de Seguran&ccedil;a respons&aacute;vel por efetuar v&aacute;rias consultas a dados cadastrais do usu&aacute;rio.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Subro">Sub-rotinas</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>As sub-rotinas s&atilde;o disponibilizadas pelo Sistema de Seguran&ccedil;a a fim de que os programas aplicativos possam dispar&aacute;-las e, com isso, efetuar diversas fun&ccedil;&otilde;es de controle e testes, que ir&atilde;o aumentar e garantir ainda mais a seguran&ccedil;a das informa&ccedil;&otilde;es gerenciadas por tais aplicativos.</FONT> </P>
+<FONT SIZE=2><P>A seguir encontram-se apenas citadas todas as op&ccedil;&otilde;es de processamento de cada uma destas sub-rotinas. Os detalhes sobre como disparar cada uma delas - quais par&acirc;metros informar, como preencher os par&acirc;metros, etc - encontram-se descritos na Se&ccedil;&atilde;o II, "Elementos do reposit&oacute;rio de dados", item "Sub-rotina", t&oacute;pico "Utiliza&ccedil;&atilde;o".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="SBTS01">Sub-rotina SBTS01</A></B></FONT> </P>
+<FONT SIZE=2><P>A sub-rotina SBTS01 &eacute; a respons&aacute;vel pela grande maioria das fun&ccedil;&otilde;es do Sistema de Seguran&ccedil;a: efetuar o<I> logon</I> e o <I>logoff</I> do usu&aacute;rio, trocar senha, liberar esta&ccedil;&atilde;o bloqueada, habilitar e desabilitar transa&ccedil;&atilde;o e outras.</FONT> </P>
+<FONT SIZE=2><P>Por&eacute;m, a sua utiliza&ccedil;&atilde;o &eacute; restrita aos programas <I>hosts </I>gerados pelo SADS, que s&atilde;o automaticamente gerados com os comandos e defini&ccedil;&otilde;es necess&aacute;rios a esta utiliza&ccedil;&atilde;o. </P>
+<P>Desta forma, na Se&ccedil;&atilde;o II, no item "Sub-rotina", n&atilde;o ser&aacute; descrito o funcionamento - &Aacute;rea de comunica&ccedil;&atilde;o, op&ccedil;&otilde;es de processamento, etc - de tal sub-rotina, por n&atilde;o ser de interesse dos programas aplicativos.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="SBTS03">Sub-rotina SBTS03</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta sub-rotina &eacute; oferecida pelo SADS com o objetivo de permitir que os programas aplicativos realizem os seguintes testes e fun&ccedil;&otilde;es de controle do Sistema de Seguran&ccedil;a:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Teste de habilita&ccedil;&atilde;o de usu&aacute;rio para trabalhar com um elemento;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Teste de habilita&ccedil;&atilde;o de programa para acesso a uma sub-rotina;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Desabilita&ccedil;&atilde;o de transa&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Habilita&ccedil;&atilde;o de transa&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Pesquisa esta&ccedil;&atilde;o na qual o usu&aacute;rio efetuou <I>logon</I>;</FONT> </P>
+<FONT SIZE=2><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>Teste de habilita&ccedil;&atilde;o de usu&aacute;rio para trabalhar com um aplicativo. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>&nbsp;Valida&ccedil;&atilde;o da senha de um usu&aacute;rio.</P>
+</FONT><P>&nbsp;</P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="SBTS05">Sub-rotina SBTS05</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta sub-rotina &eacute; oferecida pelo SADS com o objetivo de permitir que os programas aplicativos realizem as seguintes consultas &agrave;s bases de dados do Sistema de Seguran&ccedil;a:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Dados do usu&aacute;rio cadastrado no Sistema de Seguran&ccedil;a;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Dados do usu&aacute;rio logado em uma esta&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Aplicativos habilitados ao usu&aacute;rio;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Elementos habilitados ao usu&aacute;rio;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Esta&ccedil;&otilde;es habilitadas ao usu&aacute;rio;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Limites de hor&aacute;rio de trabalho do usu&aacute;rio;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Limites de hor&aacute;rio de utiliza&ccedil;&atilde;o da transa&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Limites de hor&aacute;rio do usu&aacute;rio trabalhar com a transa&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="SBTS06">Sub-rotina SBTS06</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta sub-rotina objetiva possibilitar aos programas aplicativos bloquear os usu&aacute;rios cadastrados no Sistema de Seguran&ccedil;a.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s o bloqueio de um usu&aacute;rio, o mesmo fica impossibilitado de efetuar <I>logon</I> e, conseq&uuml;entemente, de acessar qualquer aplicativo no ambiente SADS.</FONT> </P>
+<FONT SIZE=2><P>Caso o usu&aacute;rio j&aacute; esteja logado no momento de seu bloqueio pela sub-rotina SBTS06, ser&aacute; ent&atilde;o efetuado seu <I>logoff</I> e, posteriormente, seu bloqueio.</FONT> </P>
+<FONT SIZE=2><P>Somente ap&oacute;s a libera&ccedil;&atilde;o do usu&aacute;rio &eacute; que ele poder&aacute; novamente obter acesso ao ambiente SADS.</FONT> </P>
+<FONT SIZE=2><P>O programa que ir&aacute; disparar a sub-rotina SBTS06 dever&aacute; estar habilitado a acess&aacute;-la. Esta habilita&ccedil;&atilde;o deve ter sido feita atrav&eacute;s do menu de opera&ccedil;&atilde;o "SEGSUB". Para se obter maiores detalhes sobre como proceder este cadastramento, deve-se consultar o item "Fun&ccedil;&otilde;es de controle", nesta se&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="SBTS99">Sub-rotina SBTS99</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta sub-rotina &eacute; um recurso disponibilizado pelo SADS/SS a fim de que seja poss&iacute;vel disparar testes de usu&aacute;rios que normalmente n&atilde;o s&atilde;o executados pelo Sistema de Seguran&ccedil;a. </P>
+<P>A sub-rotina SBTS99 para consist&ecirc;ncias espec&iacute;ficas de usu&aacute;rios &eacute; sempre disparada nas opera&ccedil;&otilde;es de inclus&atilde;o e altera&ccedil;&atilde;o de usu&aacute;rios e perfis modelo. Inicialmente ela foi definida sem nenhum comando ou teste. &Agrave; medida que os aplicativos tiverem necessidade de codificar testes espec&iacute;ficos, estes dever&atilde;o ser inclu&iacute;dos na sub-rotina, e o objeto desta dever&aacute; ent&atilde;o ser substitu&iacute;do.</FONT> </P>
+<FONT SIZE=2><P>Os testes constantes na sub-rotina SBTS99 poder&atilde;o ser independentes daqueles efetuados pelo pr&oacute;prio Sistema de Seguran&ccedil;a e ir&atilde;o depender da necessidade dos aplicativos em integrar com o SADS/SS.</FONT> </P>
+<FONT SIZE=2><P>Como exemplos de testes espec&iacute;ficos a serem definidos na SBTS99, tem-se: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Verificar se o usu&aacute;rio a ser inclu&iacute;do na base de dados do Sistema de Seguran&ccedil;a j&aacute; se encontra cadastrado no Sistema de Recursos Humanos;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>Verificar se o usu&aacute;rio a ser cadastrado com n&iacute;vel de acesso igual a 98 (subadministrador de Seguran&ccedil;a) possui o cargo de gerente de ag&ecirc;ncia, etc. </P></DIR>
+</FONT></BODY>
+</HTML>

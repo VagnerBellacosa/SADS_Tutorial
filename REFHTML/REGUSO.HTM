@@ -1,0 +1,585 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<TITLE>Untitled</TITLE>
+
+<META NAME="GENERATOR" CONTENT="Internet Assistant for Microsoft Word 2.04z">
+</HEAD>
+<BODY BACKGROUND="doc_b.gif">
+<basefont size=2>
+<P>
+<A NAME="Regis"><B><FONT SIZE=6>Registro do dataset de uso geral</FONT></B></A>
+<HR>
+<P>
+<A NAME="Conce"><B><FONT SIZE=5>Conceitua&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<FONT SIZE=2>
+<P>Registros do dataset de uso geral s&atilde;o registros de um dataset que podem ser utilizados para armazenar informa&ccedil;&otilde;es
+de controle dos diversos sistemas de uma instala&ccedil;&atilde;o.
+No SADS, o dataset que tem esta fun&ccedil;&atilde;o &eacute; chamado SBGB02.
+<P>Os sistemas podem ter vis&otilde;es distintas da &aacute;rea do SBGB02, sendo que cada uma destas vis&otilde;es
+deve ser cadastrada no SADS como um registro deste dataset.
+<P>Uma utiliza&ccedil;&atilde;o criteriosa deste elemento pode evitar a constru&ccedil;&atilde;o de v&aacute;rios datasets
+para utiliza&ccedil;&otilde;es espec&iacute;ficas pelos aplicativos. Um sistema de contabilidade, por exemplo, pode ter o registro
+de per&iacute;odo fiscal em aberto armazenado no dataset de uso geral.
+<P><A NAME="Padro"><B><FONT SIZE=5>Padroniza&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>O padr&atilde;o de codifica&ccedil;&atilde;o adotado pelo SADS para a identifica&ccedil;&atilde;o de um determinado
+tipo de registro do dataset de uso geral &eacute; o seguinte:
+<dir><P><img src="Bullet5.gif" width=13 heigth=13><B>&quot;sssGxn&quot;</B>onde:
+<dir>
+<P><img src="Bullet7.gif" width=13 heigth=13><B>&quot;sss&quot;</B> &eacute;o c&oacute;digo alfab&eacute;tico que identifica o sistema;
+<P><img src="Bullet7.gif" width=13 heigth=13><B>&quot;G&quot;</B> &eacute;a constante de registro do dataset de uso geral;
+<P><img src="Bullet7.gif" width=13 heigth=13><B>&quot;xn&quot;</B> &eacute;o indicador alfanum&eacute;rico do tipo de registro do dataset
+de uso geral (arquivo l&oacute;gico).</dir></Dir>
+<P>Como exemplo da padroniza&ccedil;&atilde;o adotada para tipo de registro do <I>dataset</I>
+ de uso geral tem-se &quot;ARHG01&quot;, onde:
+<dir>
+<P><b>&quot;ARH&quot;</b> representa a &Aacute;rea de Recursos Humanos de uma empresa;
+<P><b>&quot;G&quot;</b> &eacute; a constante do registro do <I>dataset</I> de uso geral;
+<P><b>&quot;01&quot;</b> &eacute; o c&oacute;digo identificador do tipo de registro ou do arquivo l&oacute;gico.
+</dir>
+<P>Cada tipo de registro do <I>dataset</I> de uso geral, que deve ser entendido como um arquivo l&oacute;gico,
+pode possuir v&aacute;rios registros, cada um com uma estrutura diferente de dados.
+<P>O padr&atilde;o de codifica&ccedil;&atilde;o adotado pelo SADS para a identifica&ccedil;&atilde;o de um registro do
+ <I>dataset</I> de uso geral &eacute; o seguinte:
+<dir>
+<P><img src="Bullet5.gif" width=13 heigth=13><B>&quot;sssGxnmm&quot;</B>onde:
+<dir>
+<P><img src="Bullet7.gif" width=13 heigth=13><B>&quot;sss&quot;</B>&eacute;o c&oacute;digo alfab&eacute;tico que identifica o sistema;
+<P><img src="Bullet7.gif" width=13 heigth=13><B>&quot;G&quot;</B>&eacute;a constante de registro de dataset de uso geral;
+<P><img src="Bullet7.gif" width=13 heigth=13><B>&quot;xn&quot;</B>&eacute;o indicador alfanum&eacute;rico do tipo do registro (arquivo l&oacute;gico);
+<P><img src="Bullet7.gif" width=13 heigth=13><B>&quot;mm&quot;</B>&eacute;o indicador do registro.
+</dir></dir>
+<P>Como exemplo de um registro do <I>dataset</I> de uso geral, cadastrado para a mesma &aacute;rea do exemplo anterior,
+tem-se &quot;ARHG0101&quot;, onde:
+<dir>
+<P><b>&quot;ARH&quot;</b> representa a &aacute;rea de Recursos Humanos da mesma empresa;
+<P><b>&quot;G&quot; &eacute;</b> a constante do registro do <I>dataset</I> de uso geral;
+<P><b>&quot;01&quot; &eacute;</b> o indicador do tipo do registro ou do arquivo l&oacute;gico;
+<P><b>&quot;01&quot; &eacute;</b> o indicador do registro.
+</dir>
+<P>No SADS, cada registro do <I>dataset</I> de uso geral &eacute; formado pelos atributos/campos que comp&otilde;em
+a sua estrutura de dados. A partir da estrutura de dados de um registro &eacute; gerada uma<I><COLOR=#000000>library</I>
+para ser incorporada aos programas que o utilizam.
+<P>&Eacute; importante ressaltar que, nos menus de opera&ccedil;&atilde;o e de escolha, o SADS considera o tipo de registro como sendo o
+pr&oacute;prio registro do <I>dataset</I> de uso geral e o registro, como sendo a sua estrutura.
+<P>
+<A NAME="Utili"><B><FONT SIZE=5>Utiliza&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>Os sistemas utilizam os <I>datasets</I> de uso geral para armazenar pequenos volumes de dados, relativamente
+est&aacute;ticos, pouco vers&aacute;teis, a fim de evitar a cria&ccedil;&atilde;o desnecess&aacute;ria de
+<I>datasets</I>espec&iacute;ficos.
+<P>Para o gerenciamento desses dados, geralmente &eacute; criado um SBGB02 para cada banco f&iacute;sico da instala&ccedil;&atilde;o.
+<P>Os grandes volumes de dados devem ser armazenados em <I>datasets</I> pr&oacute;prios de cada sistema.
+<P>Sua estrutura de dados e <I>sets</I> de acesso s&atilde;o apresentados a seguir:
+<dir>
+<P>SBGB02 COMPACT DATA SET &quot;USO GERAL&quot;<pre><font size=3>  G0200-HEADER            GROUP          (Header do registro);
+       G0200-HDRDATA      NUMBER (06)    (Data de &uacute;ltima atualiza&ccedil;&atilde;o do registro);
+       G0200-HDRHORA      NUMBER (06)    (Hora de &uacute;ltima atualiza&ccedil;&atilde;o do registro);
+       G0200-HDRESTACAO   NUMBER (03)    (Num. da esta&ccedil;&atilde;o que executou a &uacute;ltima atualiza&ccedil;&atilde;o do registro);
+       G0200-HDRSTATGER   ALPHA  (01)    (Status</I>do registro);
+   0200-CHAVE             GROUP          (Chave de acesso ao reg.);
+       G0200-SISTEMA      ALPHA  (02)    (C&oacute;digo do sistema - &ltss;&gt);
+       G0200-SUBSIST      ALPHA  (01)    (C&oacute;digo do subsistema - &lts&gt);
+       G0200-ARQUIVO      ALPHA  (02)    (Tipo reg - arquivo l&oacute;g.);
+       G0200-REGISTRO     ALPHA  (02)    (N&uacute;mero do registro);
+       G0200-COMPLEMENTO  GROUP
+            G0200-COMPL   ALPHA  (05)    (Complemento para acesso);
+            G0200-COMPL2  ALPHA  (25)    (Seg. complem.para acesso);
+       G0200-SENHA        ALPHA  (06)    (Senha para acesso);
+       G0200-TAMREG       NUMBER (04)    (Tam. reg.-m&aacute;x:1920 bytes);
+       G0200-AREAREG      GROUP          (Campo informa&ccedil;&atilde;o do reg.);
+            G0200-ITEM    OCCURS 1920    TIMES DEPENDING ON
+                          G0200-TAMREG   (Conte&uacute;do do registro).
+</pre></font>
+<P>Este <I>dataset</I> tem dois <I>sets</I> para acesso, a saber:<br>
+<pre><font size=3>
+  SBGB02A SET OF SBGB02
+     KEY  ( G0200-SISTEMA,
+            G0200-SUBSIST,
+            G0200-ARQUIVO,
+            G0200-REGISTRO,
+            G0200-COMPL,
+            G0200-COMPL2 )
+     NO DUPLICATES
+     INDEX SEQUENCIAL;
+  SBGB02B SET OF SBGB02
+     KEY ( G0200-SISTEMA,
+           G0200-SUBSIST,
+           G0200-ARQUIVO,
+           G0200-REGISTRO,
+           G0200-COMPL2,
+           G0200-COMPL)
+     NO DUPLICATES
+     INDEX SEQUENCIAL;</pre></font>
+</table></dir>
+<P>A identifica&ccedil;&atilde;o do sistema e subsistema de um registro do <I>dataset</I> de uso geral do SADS - SBGB02 - &eacute;
+feita atrav&eacute;s dos campos da chave G0200-SISTEMA e G0200-SUBSIST.
+<P>Para um mesmo sistema, podem existir v&aacute;rios tipos de registros ou arquivos l&oacute;gicos, que ser&atilde;o
+diferenciados pelo campo da chave G0200-ARQUIVO.
+<P>Cada arquivo l&oacute;gico pode possuir diferentes registros, cada um deles armazenando um tipo diferente de informa&ccedil;&atilde;o,
+que ser&atilde;o identificados pelo campo da chave G0200-REGISTRO.Para cada um destes registros dever&aacute; haver um cadastramento
+de sua estrutura no reposit&oacute;rio de dados do SADS.
+<P>As v&aacute;rias ocorr&ecirc;ncias de um mesmo registro s&atilde;o diferenciadas pelo campo G0200-COMPLEMENTO (G0200-COMPL
+e G0200-COMPL2).
+<P>Ap&oacute;s fazer acesso ao <I>dataset</I> SBGB02, o conte&uacute;do do campo G0200-AREAREG dever&aacute;
+ser movido primeiramente para o campo respectivo da <I>library</I>do registro, para que possa ser utilizado pelo aplicativo.
+<P>Da mesma forma, para compor o campo G0200-AREAREG, deve-se movimentar os dados primeiramente para o campo auxiliar
+da <I>library</I> e, depois deste, para o campo G0200-AREAREG.
+<P>Na primeira grava&ccedil;&atilde;o da ocorr&ecirc;ncia do registro no <I>dataset</I>
+SBGB02, o campo G0200-TAMREG dever&aacute; ser composto com a quantidade de <I>bytes</I>
+que o campo G0200-AREAREG ocupar&aacute;.
+<P>Tomando novamente como exemplo a &Aacute;rea de Recursos Humanos de uma empresa (ARH), temos as seguintes informa&ccedil;&otilde;es:
+<ol type=1 Start=1>
+<li>C&oacute;digo do cargo de programador s&ecirc;nior;
+<li>Faixa salarial de programador s&ecirc;nior;
+<li>Matr&iacute;cula do &uacute;ltimo programador s&ecirc;nior admitido;
+<li>C&oacute;digo do cargo de gerente t&eacute;cnico;
+<li>Faixa salarial de gerente t&eacute;cnico;
+<li>Matr&iacute;cula do &uacute;ltimo gerente t&eacute;cnico admitido;
+<li>Per&iacute;odo fiscal em aberto.
+</ol>
+<P>Analisando estas informa&ccedil;&otilde;es tem-se que, para o sistema ARH, os dois primeiros grupos de tr&ecirc;s
+(de 1 a 3 e de 4 a 6) cont&ecirc;m o mesmo tipo de informa&ccedil;&atilde;o e por isso mesmo podem ser armazenadas 
+em um registro de mesma estrutura - ARHG0101.
+<P>J&aacute; a s&eacute;tima informa&ccedil;&atilde;o possui conte&uacute;do diferente e, por isso mesmo, dever&aacute;
+ser criado novo registro para armazen&aacute;-la - ARHG0102;
+<P>As tr&ecirc;s primeiras informa&ccedil;&otilde;es (de 1 a 3) dever&atilde;o ser armazenadas em um s&oacute; registro,
+pois referem-se ao cargo de Programador S&ecirc;nior, e as pr&oacute;ximas tr&ecirc;s (de 4 a 6) tamb&eacute;m dever&atilde;o 
+ser armazenadas em um mesmo registro, pois referem-se estritamente ao cargo Gerente T&eacute;cnico.
+<P>Seguindo este racioc&iacute;nio, conclui-se que para cada tipo de informa&ccedil;&atilde;o deve-se criar um registro
+espec&iacute;fico que ir&aacute; armazen&aacute;-la.
+<P>A seguir, ser&atilde;o exibidos os tipos registros a serem criados no reposit&oacute;rio de dados para o sistema
+ARH, suas estruturas, suas chaves de acessos e exemplos de informa&ccedil;&otilde;es contidas nos mesmos.
+<P>-Registro do <I>dataset</I> de uso geral ARHG0101 :
+<dir>
+<P>Estrutura : CARCOD alfanum&eacute;rico, 2.
+<dir><dir><dir>CARFAI item grupo.<br>
+CARFAIMIN num&eacute;rico, 5, compactado.<br>
+CARFAIMAX num&eacute;rico, 5, compactado.<br>
+EMPMAT num&eacute;rico, 6, compactado.<BR>
+</dir></dir></dir>
+<p>Library gerada : AR/H/GL/01/01:<br>
+<dir>01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HG0101-ARHG0101.<br>
+<dir>&nbsp;&nbsp;10 &nbsp;&nbsp;&nbsp;&nbsp; HG0101-CARCOD  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PIC X(02).<br>
+&nbsp;&nbsp;10 &nbsp;&nbsp;&nbsp;&nbsp;  HG0101-CARFAI.<br>
+&nbsp;&nbsp;15 &nbsp;&nbsp;&nbsp;&nbsp; HG0101-CARFAIMIN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PIC 9(05) COMP.<br>
+&nbsp;&nbsp;15 &nbsp;&nbsp;&nbsp;&nbsp; HG0101-CARFAIMAX &nbsp;&nbsp;&nbsp;&nbsp; PIC 9(05) COMP.<br>
+&nbsp;&nbsp;10 &nbsp;&nbsp;&nbsp;&nbsp; HG0101-EMPMAT &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  PIC 9(06) COMP.<BR>
+</dir></dir>
+<p>Chave de acesso &agrave;s tr&ecirc;s primeiras informa&ccedil;&otilde;es (1-3):<br>
+<dir><dir><dir><dir>G0200-SISTEMA = &quot;AR&quot;;<br>
+G0200-SUBSIST = &quot;H&quot;;<br>
+G0200-ARQUIVO = &quot;01&quot;;<br>
+G0200-REGISTRO = &quot;01&quot;;<br>
+G0200-COMPLEMENTO= &quot;PS&quot; (programador s&ecirc;nior);<br>
+</dir></dir></dir>
+<P>Informa&ccedil;&otilde;es: G0200-AREAREG = &quot;P72500030000000168&quot;
+<dir><dir><dir><dir><dir><dir><dir><dir><dir>(CARCOD = P7;<br>
+CARFAIMIN = 25000;<br>
+CARFAIMAX = 30000;<br>
+EMPMAT = 000168).<BR>
+</dir></dir></dir></dir></dir></dir></dir></dir></dir></dir>
+<P>Chave de acesso &agrave;s tr&ecirc;s pr&oacute;ximas informa&ccedil;&otilde;es (4-6):<br>
+<dir><dir><dir><dir>G0200-SISTEMA = &quot;AR&quot;;<br>
+G0200-SUBSIST = &quot;H&quot;;<br>
+G0200-ARQUIVO = &quot;01&quot;;<br>
+G0200-REGISTRO = &quot;01&quot;;<br>
+G0200-COMPLEMENTO= &quot;GT&quot; (gerente t&eacute;cnico);<br>
+</dir></dir></dir>
+<p>Informa&ccedil;&otilde;es: G0200-AREAREG = &quot;G25000090000000070&quot;
+<dir><dir><dir><dir><dir><dir><dir><dir><dir>(CARCOD = G2;<br>
+CARFAIMIN = 50000;<br>
+CARFAIMAX = 90000;<br>
+EMPMAT = 000070).<BR>
+</dir></dir></dir></dir></dir></dir></dir></dir></dir></dir></dir>
+<P>-Registro do <I>dataset</FONT></I> de uso geral ARHG0102:
+<dir><font size=2>Estrutura : PFIANO num&eacute;rico, 2.<br>
+<dir><dir>&nbsp;&nbsp;&nbsp;&nbsp;&nbspPFIMES num&eacute;rico, 2. <BR>
+</dir></dir>
+<P>Library gerada : AR/H/GL/01/02:
+<dir><font size=2>&nbsp;&nbsp;&nbsp;01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HG0102-ARHG0102.<br>
+<dir><dir>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp HG0102-PFIANO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp PIC 9(02).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp10 &nbsp;&nbsp;&nbsp;&nbsp;&nbspHG0102-PFIMES &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp PIC 9(02).<BR>
+</dir></dir></dir>
+<P>Chave de acesso ao per&iacute;odo fiscal em aberto (7):<br>
+<dir><dir><dir>G0200-SISTEMA = &quot;AR&quot;;<br>
+G0200-SUBSIST = &quot;H&quot;;<br>
+G0200-ARQUIVO = &quot;01&quot;;<br>
+G0200-REGISTRO = &quot;02&quot;;<br>
+G0200-COMPLEMENTO= &quot; &quot;;<br>
+</dir></dir>
+<p>Informa&ccedil;&otilde;es:&nbsp; G0200-AREAREG&nbsp; =&nbsp; &quot;9301&quot;
+<dir><dir><dir><dir><dir><dir><dir><dir><dir>(PFIANO = 93;<br>
+&nbsp; PFIMES = 01).</dir></dir></dir></dir></dir></dir></dir></dir></dir></dir></dir>
+<P>
+<A NAME="Manreg"><B><FONT SIZE=5>Manipula&ccedil;&atilde;o de registros do <I>dataset</I> de uso geral</FONT></B></A>
+<P>O SADS fornece fun&ccedil;&otilde;es que permitem a manipula&ccedil;&atilde;o das ocorr&ecirc;ncias dos registros
+armazenados no <I>dataset</I> de uso geral de seu pr&oacute;prio banco - SBGB02 do SDDB01. Estas
+fun&ccedil;&otilde;es englobam inclus&atilde;o, altera&ccedil;&atilde;o, consulta e exclus&atilde;o dos registros.
+<P>No SADS, o sistema respons&aacute;vel por executar estas fun&ccedil;&otilde;es &eacute; o SBA, cujos fontes, 
+desenhos de telas e <I>libraries</I> s&atilde;o cedidos ao cliente quando da instala&ccedil;&atilde;o
+do SADS.
+<P>Isto se deve ao fato de que o SADS visa permitir que todas estas fun&ccedil;&otilde;es possam ser executadas tamb&eacute;m
+para os registros do <I>dataset</I> de uso geral dos bancos dos aplicativos.
+<P>Por&eacute;m, para isto, devem ser efetuados os seguintes procedimentos:
+<P>
+<ul type=circle>
+<li>Os desenhos das telas do SBA - SBAT0100, SBAT0101 e SBAT0102 - devem ser duplicados com outros c&oacute;digos. 
+Cumpre ressaltar que, no momento da duplica&ccedil;&atilde;o, as novas telas n&atilde;o devem ser convertidas para 
+a vers&atilde;o 3.0 do SADS. As <I>libraries</I> das telas tamb&eacute;m devem ser duplicadas;
+<li>Os fontes dos programas cedidos - SBAN01 e SBAN11 - devem ser alterados para fazer acesso aos novos c&oacute;digos
+de telas;
+<li>A tela do menu deve ser alterada para exibir o c&oacute;digo do banco, cujo <I>dataset</I>de uso geral ser&aacute; 
+manipulado;
+<li>O c&oacute;digo do banco na <I>library</I> - SB/A/BL/00 - dever&aacute; tamb&eacute;m ser alterado para o
+novo c&oacute;digo;
+<li>O <I>host</I> e os programas chamados devem ser compilados;
+<li>O <I>binder</I> deve ser efetuado;
+<li>O cadastramento no <I>utility</I> deve ser efetuado.
+</ul>
+<P>Cada ocorr&ecirc;ncia de registro pode ou n&atilde;o ter uma senha de acesso. Esta senha, caso tenha sido armazenada
+pelo pr&oacute;prio aplicativo no campo G0200-SENHA da ocorr&ecirc;ncia, ser&aacute; exigida pelo SBA nos acessos ao mesmo.
+</dir>
+<P><A NAME="Cadas"><B><FONT SIZE=5>Cadastramento</FONT></B></A>
+<HR>
+<P>O cadastramento de um registro do <I>dataset</I> de uso geral SBGB02 consiste na defini&ccedil;&atilde;o de sua
+estrutura no reposit&oacute;rio de dados do SADS.
+<P>A partir de seu cadastramento poder&aacute; ser gerada uma <I>library</I>, que consiste em uma &aacute;rea auxiliar para 
+utiliza&ccedil;&atilde;o pelos programas e sub-rotinas dos aplicativos que far&atilde;o acesso ao respectivo registro.
+<P>Um registro do <I>dataset</I> de uso geral (tipo = &quot;G&quot;), desde que sua estrutura n&atilde;o
+tenha sido definida, pode ser transformado em uma <I>library</I> de <I>procedure</I> (tipo = &quot;P&quot;). 
+Tamb&eacute;m uma <I>library</I> de <I>procedure</I>, desde que n&atilde;o tenha m&oacute;dulos cadastrados, 
+pode ser transformada em uma <I>>library</I> de registro de <I>dataset</I> de uso geral (tipo = &quot;G&quot;). 
+<P>A defini&ccedil;&atilde;o de um registro do <I>dataset</I> de uso geral pode ser feita separadamente ou gerada a partir de
+uma entidade j&aacute; existente no reposit&oacute;rio de dados.Para isso, como pr&eacute;-requisito, &eacute; exigido que o seu
+sistema j&aacute; esteja cadastrado no reposit&oacute;rio de dados do SADS. Entretanto, se o registro do <I>dataset</I>
+de uso geral for gerado a partir de uma entidade, &eacute; necess&aacute;rio, tamb&eacute;m, que esta j&aacute;  
+tenha sido definida no reposit&oacute;rio de dados, bem como sua estrutura e os atributos que a comp&otilde;em.
+<P><B><FONT SIZE=4>Roteiro</FONT></B>
+<P>Para cadastrar e tornar dispon&iacute;vel um registro
+do <I>dataset</I> de uso geral, as seguintes fun&ccedil;&otilde;es devem ser executadas:
+<ul tYPE=CIRCLE>
+<lI>Cadastramento de tipo de registro do <I>dataset</I>de uso geral: pode ser feito atrav&eacute;s de sua cria&ccedil;&atilde;o
+a partir de entidade ou defini&ccedil;&atilde;o direta no reposit&oacute;rio de dados do SADS;
+<LI>Cadastramento de estrutura de registro do <I>dataset</I> de uso geral;
+<LI>Gera&ccedil;&atilde;o de library de registro do <I>dataset</I> de uso geral;
+<LI>Libera&ccedil;&atilde;o de <I>library</I> de registro do <I>dataset</I> de uso geral para produ&ccedil;&atilde;o.
+</ul></dir>
+<A NAME="Cadat"><B><FONT SIZE=5>Cadastramento de tipo de registro do dataset de uso geral</FONT></B></A>
+<P>O cadastramento de registro do <I>dataset</FONT></I> de uso geral no reposit&oacute;rio de dados do SADS &eacute; 
+necess&aacute;rio para que o mesmo possa ser utilizado como recurso pelos programas e sub-rotinas.
+<P><A NAME="Crireg"><B><FONT SIZE=4>Cria&ccedil;&atilde;o de registro do dataset de uso geral a partir da entidade</FONT></B></A>
+<P>Para gerar o registro do <I>dataset</I> de uso geral de um sistema a partir de alguma entidade, &eacute;
+necess&aacute;rio que a estrutura da mesma esteja cadastrada no reposit&oacute;rio de dados do SADS.
+<P>A gera&ccedil;&atilde;o de registro do <I>dataset</I> de uso geral a partir de entidade n&atilde;o est&aacute; associada
+a nenhuma tela de processamento. Portanto, para efetu&aacute;-la, basta transmitir os argumentos da tela &quot;CRIREGENT&quot;,
+cujos campos est&atilde;o explicados a seguir:
+<dir><B>CAMPOS DA TELA
+<p><dir><img src="Bullet5.gif" width=13 heigth=13>Registro</B> - C&oacute;digo do registro do <I>dataset</I> de uso geral no padr&atilde;o SADS (sssGxnmm).
+<P>O indicador num&eacute;rico &quot;mm&quot; do registro do <I>dataset</I> de uso geral deve ser 01, se ainda n&atilde;o estiver cadastrado.
+Se o registro j&aacute; estiver cadastrado, informe uma estrutura que n&atilde;o esteja cadastrada, mas que seja compat&iacute;vel
+com a quantidade informada no campo REGISTROS da defini&ccedil;&atilde;o.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>Entidade</B> - C&oacute;digo da entidade que servir&aacute; de base para a
+estrutura do registro do <I>dataset</I> de uso geral.</dir></dir>
+<P><A NAME="Defreg"><B><FONT SIZE=4>Defini&ccedil;&atilde;o de registro
+do dataset</FONT></B><FONT SIZE=4 COLOR=#000000> <B>de uso geral</B></FONT></A>
+<P>Utilizando-se da mesma tela de defini&ccedil;&atilde;o de registro do <I>dataset</I> de uso geral, podem ser definidas,
+tamb&eacute;m, as &aacute;reas de comunica&ccedil;&atilde;o de sub-rotinas, <I>libraries</I> de <I>procedure</I> e &aacute;reas 
+de trabalho. Por isso, existem nela alguns campos que n&atilde;o devem ser preenchidos no momento da defini&ccedil;&atilde;o
+do registro do <I>dataset</I> de uso geral. Os campos que comp&otilde;em a tela de defini&ccedil;&atilde;o
+do registro est&atilde;o explicados a seguir:
+<p><dir><B>CAMPOS DA TELA
+<p><dir><img src="Bullet5.gif" width=13 heigth=13>Elemento</b> - C&oacute;digo do tipo do registro do <I>dataset</I> de uso geral no padr&atilde;o SADS (sssGxn).
+<P><img src="Bullet5.gif" width=13 heigth=13><B>Geracao completa pelo SADS (S/N)</B> - Controle de gera&ccedil;&atilde;o da <I>library</I>
+do <I>dataset</I> de uso geral, diferenciando <I>libraries</I> criadas no CANDE das geradas pelo SADS.
+<p>Pode assumir os seguintes valores:<br>
+<dir><img src="Bullet7.gif" width=13 heigth=13>&quot;S&quot; - Indicador de <I>library</I> gerada pelo SADS;
+<P><img src="Bullet7.gif" width=13 heigth=13>&quot;N&quot; - Indicador de <I>library</I> definida no reposit&oacute;rio de dados do SADS, e criada manualmente no CANDE.
+</dir>
+<p>Este campo ser&aacute; utilizado quando uma compila&ccedil;&atilde;o
+de programa ou sub-rotina que declare a <I>library</I> do <I>dataset</I>de uso geral como recurso, estiver com o campo COMPILAR MESMO
+QUE OS RECURSOS ESTEJAM DESATUALIZADOS preenchido com o valor &quot;NAO&quot;. 
+Neste caso, se a <I>library</I> do <I>dataset</I> de uso geral estiver com &quot;S&quot; ser&aacute; verificado
+o seu status de gera&ccedil;&atilde;o.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>Nome</B> - Descri&ccedil;&atilde;o resumida do tipo de registro do <I>dataset</I> 
+de uso geral.
+<p>O nome do tipo de registro tem o objetivo de identificar e explicar resumidamente 
+a que se refere o registro do <I>dataset</I> de uso geral.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>Registros</B>- Quantidade de estruturas (<I>layouts</I>) que o registro ter&aacute; (01 a 99).
+<P><img src="Bullet5.gif" width=13 heigth=13><B>Tipo </B>- Tipo da <I>library</I> a ser gerada. 
+<p>Para registros do <I>dataset</I>de uso geral deve-se informar &quot;E&quot; (estrutura).
+<P><img src="Bullet5.gif" width=13 heigth=13><B>Lib. de PROCEDURE p/ uso em: </B>
+<P><dir><img src="Bullet7.gif" width=13 heigth=13><B>Sub-rotina (S/N)</B>- N&atilde;o se aplica a <I>dataset</I> de uso geral.
+<P><img src="Bullet7.gif" width=13 heigth=13><B>On-line (S/N)</B>- N&atilde;o se aplica a <I>dataset</I> de uso geral.
+<P><img src="Bullet7.gif" width=13 heigth=13><B>Batch (S/N)</B>- N&atilde;o se aplica a <I>dataset</I> de uso geral.</dir>
+<P><img src="Bullet5.gif" width=13 heigth=13><B>Operacao</B>- Opera&ccedil;&atilde;o efetuada sobre a defini&ccedil;&atilde;o
+do registro do <I>dataset</I> de uso geral.
+<P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o
+as seguintes:
+<p><dir><img src="Bullet7.gif" width=13 heigth=13>&quot;INC&quot; (Inclus&atilde;o);
+<P><img src="Bullet7.gif" width=13 heigth=13>&quot;ALT&quot; (Altera&ccedil;&atilde;o);
+<P><img src="Bullet7.gif" width=13 heigth=13>&quot;EXC&quot; (Exclus&atilde;o);
+<P>&quot;CON&quot; (Consulta).
+<p></dir></dir></dir><A NAME="Cadest"><B><FONT SIZE=5>Cadastramento de estrutura de
+registro do dataset de uso geral</FONT></B></A>
+<P>No SADS, cada registro do <I>dataset</I> de uso geral pode possuir mais de uma estrutura de dados. Estas
+estruturas s&atilde;o formadas por atributos e/ou campos.
+<P>A partir da estrutura de dados de um registro &eacute; gerada sua <I>library</I>,
+que posteriormente ser&aacute; incorporada aos programas que manipulam tal registro.
+<P>Para cadastrar a estrutura do registro do <I>dataset</I> de uso geral, &eacute; 
+necess&aacute;rio que sua defini&ccedil;&atilde;o esteja cadastrada no reposit&oacute;rio de dados do SADS.
+<P><dir><B>CAMPOS DA TELA</B>
+<p><dir><img src="Bullet5.gif" width=13 heigth=13><B>ELEMENTO</B>- C&oacute;digo do tipo do registro do <I>dataset</I> de uso geral 
+no padr&atilde;o SADS (sssGxn).
+<P><img src="Bullet5.gif" width=13 heigth=13><B>REGISTRO</B>- N&uacute;mero da estrutura do registro.
+<P>Em caso de encadeamento, ap&oacute;s a defini&ccedil;&atilde;o
+do registro, este campo vir&aacute; preenchido com &quot;01&quot;.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>REDEFINE REGISTRO </B>- N&uacute;mero do registro que ter&aacute; sua estrutura redefinida
+pela estrutura em cadastramento.
+<P>Este campo somente dever&aacute; ser informado se a estrutura em cadastramento for redefinir algum registro. Caso
+sejam independentes, este campo n&atilde;o dever&aacute; ser informado.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>NOME</B>- Descri&ccedil;&atilde;o resumida do registro do <I>dataset</I>de uso geral.
+<P>O nome do registro tem o objetivo de identificar
+e explicar resumidamente a que se refere o registro do <I>dataset</I> de uso geral.
+<P>Nos grupos de ocorr&ecirc;ncia da tela, deve-se informar os atributos e campos que comp&otilde;em o registro.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>SEQ</B>- N&uacute;mero para posicionamento do atributo dentro da estrutura do registro
+do <I>dataset</I> de uso geral.
+<P>Este campo j&aacute; vem informado, sendo o primeiro igual a &quot;0010&quot; e os demais, acrescidos de 10.
+<P>Para incluir um atributo entre dois outros j&aacute; inclu&iacute;dos, deve-se preencher uma 
+linha que estiver em branco e alterar o n&uacute;mero sequencial desta linha para um n&uacute;mero
+entre os j&aacute; informados. O SADS reorganizar&aacute; automaticamente a estrutura. 
+Na pr&oacute;xima opera&ccedil;&atilde;o, os atributos j&aacute; estar&atilde;o na nova ordem.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>ATRIBUTO</B>- Mnem&ocirc;nico de atributo/campo.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>SUF </B>- Sufixo do atributo/campo.
+<P>Esta informa&ccedil;&atilde;o &eacute; utilizada somente para diferenciar um mesmo atributo ou campo que aparece
+mais de uma vez na mesma estrutura.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>NIV</B>- N&iacute;vel de estrutura&ccedil;&atilde;o do atributo/campo, an&aacute;logo
+ao n&iacute;vel do Cobol.
+<P>O n&iacute;vel inicial &eacute; o 10, se for necess&aacute;rio criar agrupamentos de atributos, deve-se usar m&uacute;ltiplos
+de 5 (15, 20 e assim por diante), de forma semelhante ao Cobol.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>NDEF</B>- N&iacute;vel de defini&ccedil;&atilde;o do atributo/campo. 
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes:
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>&quot;S&quot; (Sistema) - Para atributo/campo definido no sistema informado no campo SIS ou para atributo/campo do sistema
+do registro do <I>dataset</I> de uso geral em cadastramento;
+<P><img src="Bullet7.gif" width=13 heigth=13>&quot;P&quot; (Particular) - Para atributo/campo n&atilde;o definido no reposit&oacute;rio de dados do SADS de
+utiliza&ccedil;&atilde;o espec&iacute;fica do registro do <I>dataset</I> de uso geral em cadastramento.
+</dir><P>N&atilde;o pode ser informado NDEF = &quot;P&quot; caso tenha sido parametrizado na tabela SBPM5000 que n&atilde;o
+se pode definir atributos/campos particulares nas estuturas SADS.
+<P>Maiores detalhes a respeito desta parametriza&ccedil;&atilde;o, deve-se consultar a Se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es
+do SADS&quot;, item &quot;Atributo&quot;, subitem &quot;Redefini&ccedil;&atilde;o em estruturas&quot;.
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>&quot;G&quot; (Global) - Para atributo/campo j&aacute; definido no reposit&oacute;rio do SADS para utiliza&ccedil;&atilde;o
+gen&eacute;rica dos sistemas aplicativos.</dir>
+</blockquote>
+<P><img src="Bullet5.gif" width=13 heigth=13><B>SIS</B> - C&oacute;digo do sistema ao qual o atributo/campo pertence.
+<P>S&oacute; deve ser informado quando o campo NDEF estiver preenchido com &quot;S&quot; e o atributo/campo pertencer
+a um sistema diferente do sistema do registro do <I>dataset</I> de uso geral.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>COMP</B>- Indicador de atributo/campo num&eacute;rico compactado.
+<P>Deve-se informar &quot;S&quot; para atributo/campo num&eacute;rico compactado no registro;
+<P><B>FORM</B>- Formato do atributo/campo na estrutura do registro.
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes:
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>&quot;A&quot; (Alfab&eacute;tico);
+<P><img src="Bullet7.gif" width=13 heigth=13>&quot;N&quot; (Num&eacute;rico);
+<P><img src="Bullet7.gif" width=13 heigth=13>&quot;D&quot; (<I>Display</I>)- Alfanum&eacute;rico;
+<P><img src="Bullet7.gif" width=13 heigth=13>&quot;R&quot; (Redefini&ccedil;&atilde;o);
+<P><img src="Bullet7.gif" width=13 heigth=13>&quot;B&quot; (<I>Boolean</I>).</dir>
+<P>Este campo n&atilde;o pode ser informado caso tenha sido parametrizado na tabela SBPM5000 que os atributos/campos
+n&atilde;o podem ter seus formatos redefinidos nas estruturas nas quais s&atilde;o inclu&iacute;dos.
+<P>Maiores detalhes a respeito desta parametriza&ccedil;&atilde;o,
+deve-se consultar a Se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es
+do SADS&quot;, item &quot;Atributo&quot;, subitem &quot;Redefini&ccedil;&atilde;o
+em estruturas&quot;. 
+<P><img src="Bullet5.gif" width=13 heigth=13><B>TAM</B> - Tamanho do atributo/campo.
+<P>Este campo n&atilde;o pode ser informado caso tenha sido parametrizado na tabela
+ SBPM5000 que os atributos/campos n&atilde;o podem ter seus tamanhos redefinidos nas estruturas
+nas quais s&atilde;o inclu&iacute;dos.
+<P>Maiores detalhes a respeito desta parametriza&ccedil;&atilde;o,
+deve-se consultar a Se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es
+do SADS&quot;, item &quot;Atributo&quot;, subitem &quot;Redefini&ccedil;&atilde;o
+em estruturas&quot;. 
+<P><img src="Bullet5.gif" width=13 heigth=13><B>SIN</B> - Indicadorde sinaliza&ccedil;&atilde;o do atributo/campo.
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes:
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>&quot;S&quot; - Para atributo/campo com sinal;
+<P><img src="Bullet7.gif" width=13 heigth=13>&quot;N&quot; - Para atributo/campo sem sinal.</DIR>
+<P><img src="Bullet5.gif" width=13 heigth=13><B>DEC</B> - Quantidade de casas decimais.
+<P>Os campos FORM, TAM, SIN e DEC s&oacute; devem ser informados para atributos e campos particulares ou quando, no
+registro em cadastramento, assumirem caracter&iacute;sticas diferentes das definidas para eles.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>CLAS</B> - Classifica&ccedil;o do atributo dentro da estrutura do registro de uso geral.
+<P>Pode-se assumir os seguintes valores:
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>&quot;C&quot; (Chave) - Atributo definido como chave do registro de uso geral.
+<P><img src="Bullet7.gif" width=13 heigth=13>&quot;P&quot; (Particular) - Atributo n&atilde;o definido no reposit&oacute;rio de dados do SADS, a ser especificado
+na pr&oacute;pria estrutura.</dir>
+<P><img src="Bullet5.gif" width=13 heigth=13><B>OCCURS</B> - N&uacute;mero de ocorr&ecirc;ncias do atributo/campo para cria&ccedil;&atilde;o
+de grupos repetitivos.
+<P>O campo OCCURS &eacute; semelhante &agrave; cl&aacute;usula &quot;OCCURS&quot; das estruturas do Cobol e &eacute; usado para
+definir tabelas ou grupos de ocorr&ecirc;ncias.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>CONTINUA(S/N)</B>- Indicador de continuidade de opera&ccedil;&atilde;o.
+<P>As possibilidades para o preenchimento deste campo s&atilde;o as seguintes:
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>&quot;S&quot; - Para prosseguir o cadastramento da mesma estrutura;
+<P><img src="Bullet7.gif" width=13 heigth=13>&quot;N&quot; - Para encerrar o cadastramento desta estrutura e, se houver, iniciar o da pr&oacute;xima.</dir>
+<P><img src="Bullet5.gif" width=13 heigth=13><B>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave;
+estrutura do registro do <I>dataset</I> de uso geral.
+<P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>&quot;INC&quot; (Inclus&atilde;o);
+<P><img src="Bullet7.gif" width=13 heigth=13>&quot;ALT&quot; (Altera&ccedil;&atilde;o);
+<P><img src="Bullet7.gif" width=13 heigth=13>&quot;EXC&quot; (Exclus&atilde;o);
+<P><img src="Bullet7.gif" width=13 heigth=13>&quot;CON&quot; (Consulta).
+</dir></dir></DIR>
+<P><A NAME="Gerlib"><B><FONT SIZE=5>Gera&ccedil;&atilde;o de <i>library</i>
+de registro do dataset de uso geral</FONT></B></A>
+<P>Cada tipo de registro do <I>dataset</I> de uso geral tem de possuir ao menos uma estrutura de dados com
+seus atributos e/ou campos. A partir desta estrutura de dados &eacute; gerada a <I>library</I>
+para ser incorporada aos programas que manipulam tal registro. Um tipo de registro pode possuir mais de uma estrutura e cada
+uma destas estruturas dar&aacute; origem a uma <I>library</I> independente, mesmo que estes registros n&atilde;o sejam redefini&ccedil;&otilde;es.
+<P>Para gerar as <I>libraries</I> de tipo de registro do <I>dataset</I> de uso geral, &eacute; necess&aacute;rio que suas estruturas j&aacute;
+estejam cadastradas no reposit&oacute;rio de dados do SADS.
+<P>A gera&ccedil;&atilde;o da <I>library</I>de tipo de registro do <I>dataset</I> de uso geral n&atilde;o est&aacute; associada a nenhuma tela de
+processamento. Portanto, para efetu&aacute;-la, basta transmitir
+o menu de opera&ccedil;&atilde;o &quot;GERLIBUSO&quot;, cujos
+campos est&atilde;o explicados a seguir:
+<P><DIR><B>CAMPOS DA TELA</B>
+<P><dir><img src="Bullet5.gif" width=13 heigth=13><B>Registro</B>- C&oacute;digo do tipo de registro do uso geral no padr&atilde;o
+SADS (sssGxn).
+<P><img src="Bullet5.gif" width=13 heigth=13><B>Ambiente (P/T)</B> - Ambiente em que a <I>library</I> ser&aacute; gerada.
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes:
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>&quot;T&quot; (Teste);
+<P><img src="Bullet7.gif" width=13 heigth=13>&quot;P&quot; (Produ&ccedil;&atilde;o).</dir>
+<P>Caso o ambiente n&atilde;o seja informado, ser&aacute;
+assumido o ambiente <I>default</I>do usu&aacute;rio. Detalhes sobre o cadastramento do ambiente
+<I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI,
+&quot;Sistema de Seguran&ccedil;a&quot;, item &quot;Usu&aacute;rios
+e habilita&ccedil;&otilde;es&quot;.
+<P>Se uma <I>library</I> for gerada para o ambiente de teste, n&atilde;o &eacute; poss&iacute;vel
+ger&aacute;-la novamente para o ambiente de produ&ccedil;&atilde;o.
+Neste caso, ela dever&aacute; ser liberada, conforme descrito
+no item &quot;Libera&ccedil;&atilde;o de <I>library</I> de registro do <I>dataset</I>
+de uso geral para produ&ccedil;&atilde;o&quot;, a seguir.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>Usercode</B> - <I>Usercode</I> de an&aacute;lise.
+<P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como
+elemento, em sua lista de elementos &quot;SEGUSER&quot;, no Sistema
+de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o
+descritos na Se&ccedil;&atilde;o VI, &quot;Sistema de Seguran&ccedil;a&quot;,
+item &quot;Habilita&ccedil;&otilde;es de usu&aacute;rios SADS&quot;.
+<P>Caso o <I>usercode</I> &atilde;o seja informado, ser&aacute; assumido o <I>usercode</I>
+<I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I>
+<I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI,
+&quot;Sistema de Seguran&ccedil;a&quot;, item &quot;Usu&aacute;rios
+e habilita&ccedil;&otilde;es&quot;.
+<P>Para <I>usercodes</I> de an&aacute;lise s&atilde;o definidos os ambientes (<I>usercode</I>
+e disco) onde ficar&atilde;o residentes suas <I>libraries</I> de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as
+<I>libraries</I> de produ&ccedil;&atilde;o fiquem sem <I>usercodes</I>.
+Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002,
+cuja manuten&ccedil;&atilde;o &eacute; feita pelo respons&aacute;vel
+pelo SADS na sua instala&ccedil;&atilde;o.
+<P>O c&oacute;digo da <I>library</I>
+&eacute; derivado do c&oacute;digo da estrutura do registro.
+<P>Retomando o exemplo anterior do Sistema de Recursos
+Humanos, tem-se:
+<P>Para o tipo de registro ARHG01, que possui as estruturas
+&quot;01&quot; e &quot;02&quot;, tem-se as <I>libraries</I>
+AR/H/GL/01/01 e AR/H/GL/01/02.<Pre><font size=3> <I>Library</I>: AR/ H/ GL/ 01/ 01:
+      01  HG0101-ARHG0101
+          10   HG0101-CARCOD             PIC    X(02).
+          10   HG0101-CARFAI
+               15    HG0101-CARFAIMIN    PIC    9(05) COMP.
+               15    HG0101-CARFAIMAX    PIC    9(05) COMP.
+          10   HG0101-EMPMAT             PIC    9(06) COMP.
+ <I>Library</I>: AR/ H/ GL/ 01/ 02:
+      01  HG0102-ARHG0102
+          10   HG0102-PFIANO             PIC    9(02).
+          10   HG0102-PFIMES             PIC    9(02).
+</pre></font>
+<p>Os prefixos dos campos de <I>library</I> de registro de <I>dataset</I> de uso geral t&ecirc;m a seguinte forma&ccedil;&atilde;o:
+<P><dir>Terceira letra do sistema (&quot;H&quot;, no exemplo)
++ a letra &quot;G&quot; (que identifica um registro do SBGB02)
++ o sequencial do registro (&quot;01&quot;, no exemplo) + o n&uacute;mero
+da estrutura do registro (&quot;01&quot; e &quot;02&quot;, no
+exemplo) + &quot;-&quot; (constante) + o mnem&ocirc;nico do atributo
+ou campo.</dir>
+</dir></dir></dir>
+<p><A NAME="Liblib"><B><FONT SIZE=5>Libera&ccedil;&atilde;o de </FONT><I><FONT SIZE=5 COLOR=#000000>library</FONT></I><FONT SIZE=5 COLOR=#000000>
+de tipo de registro do dataset de uso geral para produ&ccedil;&atilde;o</FONT></B></A>
+<P>&Eacute; permitido liberar <I>libraries</I> de tipo de registro do <I>dataset</I>
+de uso geral do ambiente de teste para o ambiente de produ&ccedil;&atilde;o.
+<P>Para liberar uma <I>library</I> para produ&ccedil;&atilde;o, &eacute; necess&aacute;rio que esta
+tenha sido gerada inicialmente para o ambiente de teste.
+<P>Se a <I>library</I> n&atilde;o tiver sido gerada para o ambiente de teste, pode-se
+ger&aacute;-la diretamente para o ambiente de produ&ccedil;&atilde;o.
+<P>A libera&ccedil;&atilde;o da <I>library</I> de tipo de registro do <I>dataset</I>
+de uso geral para produ&ccedil;&atilde;o n&atilde;o est&aacute;
+associada a nenhuma tela de processamento. Portanto, para efetu&aacute;-la,
+basta transmitir o menu de opera&ccedil;&atilde;o &quot;LIBREGUSO&quot;,
+cujos campos est&atilde;o explicados a seguir:
+<P><dir><B>CAMPOS DA TELA</B>
+<P><dir><img src="Bullet5.gif" width=13 heigth=13><B>Registro</B> - C&oacute;digo do registro do <I>dataset</I>
+de uso geral no padr&atilde;o SADS (sssGxn).
+<P><img src="Bullet5.gif" width=13 heigth=13><B>Usercode</B> - <I>Usercode</I>de an&aacute;lise.
+<P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como
+elemento, em sua lista de elementos &quot;SEGUSER&quot;, no Sistema
+de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o
+descritos na Se&ccedil;&atilde;o VI, &quot;Sistema de Seguran&ccedil;a&quot;,
+item &quot;Habilita&ccedil;&otilde;es de usu&aacute;rios SADS&quot;.
+<P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I>
+<I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I>
+<I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI,
+&quot;Sistema de Seguran&ccedil;a&quot;, item &quot;Usu&aacute;rios
+e habilita&ccedil;&otilde;es&quot;.
+<P>Para <I>usercodes</I>de an&aacute;lise, s&atilde;o definidos os ambientes (<I>usercode
+</I> e disco) onde ficar&atilde;o residentes suas <I>libraries</I>
+de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as
+<I>libraries</I> de produ&ccedil;&atilde;o fiquem sem <I>usercodes</I>
+Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002,
+cuja manuten&ccedil;&atilde;o &eacute; feita pelo respons&aacute;vel
+pelo SADS na instala&ccedil;&atilde;o.
+<P>Ap&oacute;s a libera&ccedil;&atilde;o da <I>library</I> do registro do <I>dataset</I>
+de uso geral para produ&ccedil;&atilde;o, os programas que utilizem
+este registro podem ser compilados para produ&ccedil;&atilde;o.
+<P>Se na defini&ccedil;&atilde;o do seu <I>usercode</I>
+de an&aacute;lise, na tabela SBPM5002, estiver indicado que as
+<I>libraries</I>de produ&ccedil;&atilde;o ficar&atilde;o residentes no <I>usercode</I>
+de objetos em produ&ccedil;&atilde;o, ao executar suas libera&ccedil;&otilde;es,
+aquelas que est&atilde;o em teste ser&atilde;o mantidas e vers&otilde;es
+id&ecirc;nticas ser&atilde;o criadas para o <I>usercode</I> de produ&ccedil;&atilde;o. Se as <I>libraries</I>
+de produ&ccedil;&atilde;o ficarem residentes sem <I>usercode</I>,ao executar suas libera&ccedil;&otilde;es, aquelas que est&atilde;o
+em teste ser&atilde;o removidas e outras id&ecirc;nticas ser&atilde;o
+criadas em *, ou seja, sem <I>usercode</I>,
+para atender aos dois ambientes (teste e produ&ccedil;&atilde;o).</dir></dir></dir>
+<P><A NAME="Funca"><B><FONT SIZE=5>Fun&ccedil;&otilde;es de apoio</FONT></B></A>
+<HR>
+<P>
+<A NAME="Gener"><B><FONT SIZE=5>Gen&eacute;ricas aplic&aacute;veis
+aos registros do dataset de uso geral</FONT></B></A>
+<blockquote><img src="Bullet5.gif" width=13 heigth=13><B>Utilit&aacute;rios</B>:
+<ul>
+<li>Ressequenciamento de estrutura de elemento;
+<li>Duplica&ccedil;&atilde;o de elemento;
+<li>Duplica&ccedil;&atilde;o de registro;
+<li>Descri&ccedil;&atilde;o de elemento;
+<li>Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento;
+<li>Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento.
+</ul>
+<p><img src="Bullet5.gif" width=13 heigth=13><b>Consultas:</B>
+<ul>
+<li>Elementos por sistema;
+<li>Estrutura de registro;
+<li>Fontes de <I>libraries</I>;
+<li>Descri&ccedil;&atilde;o de elemento.
+</ul>
+<p><img src="Bullet5.gif" width=13 heigth=13><b>Refer&ecirc;ncia cruzada:</B>
+<ul>
+<li>Elementos x elemento - Programas que utilizam um
+registro do SBGB02; Entidade a partir da qual foi gerado o registro.
+</ul>
+<p><img src="Bullet5.gif" width=13 heigth=13><b>Informativos impressos:</B>
+<ul>
+<li>Lista de elementos por sistema;
+<li>Lista da estrutura de registro;
+<li>Lista de descri&ccedil;&atilde;o de elemento.
+<li>Todos estes utilit&aacute;rios, consultas, refer&ecirc;ncias
+cruzadas e informativos impressos encontram-se detalhadamente
+descritos na Se&ccedil;&atilde;o III, &quot;Fun&ccedil;&otilde;es
+de apoio&quot;, neste manual.
+</ul></blockquote>
+</BODY>
+</HTML>

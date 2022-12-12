@@ -1,0 +1,741 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>@SECAO = Seção VII</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+
+<P><basefont size=2></P>
+<B><FONT FACE="Arial" SIZE=6><P ALIGN="CENTER">Se&ccedil;&atilde;o VII</P>
+</FONT><FONT SIZE=5><P ALIGN="CENTER">Servidor <I>Web</P>
+</B></I></FONT><FONT SIZE=2><P>Esta se&ccedil;&atilde;o apresenta o Servidor <I>Web</I> do SADS, m&oacute;dulo que torna poss&iacute;vel a utiliza&ccedil;&atilde;o de aplicativos desenvolvidos em SADS, sendo executados em uma m&aacute;quina <I>Unisys</I> S&eacute;rie A, no ambiente <I>World Wide Web</I>.</P>
+<P>Nesta se&ccedil;&atilde;o ser&atilde;o exibidos os procedimentos necess&aacute;rios &agrave; sua configura&ccedil;&atilde;o e utiliza&ccedil;&atilde;o, e detalhes de seu funcionamento.</P>
+</FONT><B><P>&Iacute;ndice</P><DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A href="#Introd">Introdu&ccedil;&atilde;o&#9;</P></a><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><A href="#Termos">Termos t&eacute;cnicos da Internet&#9;</P></a>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><A href="#Apres">Apresenta&ccedil;&atilde;o&#9;</P></a></DIR>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A href="#Prereq">Pr&eacute;-requisitos&#9;</P></a>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A href="#Instal">Instala&ccedil;&atilde;o &#9;</P></a>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A href="#Config">Configura&ccedil;&otilde;es&#9;</P></a><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><A href="#Param">Parametriza&ccedil;&otilde;es</P></a><DIR>
+<DIR>
+
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><A href="#Porta">Porta de comunica&ccedil;&atilde;o TCP/IP com <I>Browsers</I>(Tabela SBPM5077)</a></P>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><A href="#Maximo">M&aacute;ximo de conex&otilde;es simult&acirc;neas permitidas para comunica&ccedil;&atilde;o TCP/IP com <I>Browsers</I> (Tabela SBPM5077)</a></P>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><A href="#Conect">N&uacute;mero de conectores livres para comunica&ccedil;&atilde;o TCP/IP com os <I>Browsers</I> (Tabela SBPM5077)</P></a>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><A href="#Permis">Permiss&atilde;o para grava&ccedil;&atilde;o de <I>Cookies</I> nas m&aacute;quinas clientes (Tabela SBPM5077)</P></a>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Nivel">N&iacute;vel do <I>log</I> a ser gerado na execu&ccedil;&atilde;o do <I>Servidor Web </I>(Tabela SBPM5077)</P></a>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Diretorio">Diret&oacute;rio raiz dos arquivos a serem acessados pelo <I>Servidor Web</I> (Tabela SBPM5077)</P></a>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Prefixo">Prefixo dos c&oacute;digos das esta&ccedil;&otilde;es a serem criadas (Tabela SBPM5077)</P></a>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Regra">Regra de forma&ccedil;&atilde;o do c&oacute;digo da esta&ccedil;&atilde;o (Tabela SBPM5077)</P></a>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Salva">Salva das telas dos aplicativos que foram convertidos automaticamente (Tabela SBPM5077)</P></a>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Extensao">Extens&atilde;o dos arquivos a serem acessados(Tabela SBPM5077)</P></a>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Time"><I>Timeout</I> das esta&ccedil;&otilde;es (Tabela SBPM5077)</P></a>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Padrao">Padr&atilde;o para o fundo de p&aacute;ginas (Tabela SBPM5077)</P></a>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Disparo">Permiss&atilde;o para disparo de transa&ccedil;&otilde;es COMS (Tabela SBPM5077)</P></a>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Tamanho">Tamanho da &aacute;rea conversacional (Tabela SBPM5077)</P></a>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Ident">Posicionamento do identificador da transa&ccedil;&atilde;o nas mensagens(Tabela SBPM5077)</P></a>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Tipos">Tipos de exten&ccedil;&otilde;es trat&aacute;veis (Tabela SBPM5077)</P></a></DIR>
+</DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><a href="#Amb">Ambiente&#9;</P></a>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><a href="#Sistapl">Sistemas Aplicativos&#9;</P></a>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><a href="#Sistnao">Sistema n&atilde;o SADS&#9;</P></a>
+<DIR>
+<DIR>
+
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Entrada">Entrada &#9;</P></a>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Saida">Sa&iacute;da &#9;</P></a></DIR>
+</DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><a href="#Sistsads">Sistema SADS&#9;</P></a><DIR>
+<DIR>
+
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Html">Gera&ccedil;&atilde;o de p&aacute;ginas HTML &#9;</P></a>
+<P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><a href="#Altera">Altera&ccedil;&atilde;o em p&aacute;ginas HTML<FONT SIZE=2> &#9;</P></a></DIR>
+</DIR>
+</DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><a href="#Carfun">Caracter&iacute;sticas funcionais&#9;</P></a><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><a href="#Inicio">In&iacute;cio de sess&atilde;o&#9;</P></a>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><a href="#Acesso">Acesso aos arquivos &#9;</P></a>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><a href="#Erro">Mensagens de erro &#9;</P></a>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><a href="#Coms">Mensagens para o COMS &#9;</P></a></DIR>
+</DIR>
+
+<p><a name="Introd"><B><FONT SIZE=6><P>Introdu&ccedil;&atilde;o</P></a>
+<a name="Termos"</FONT><FONT FACE="Arial" SIZE=4><P>Termos t&eacute;cnicos da Internet</P></a>
+</B></FONT><FONT SIZE=2><P>Para facilitar o entendimento deste, que foi desenvolvido para atender a um "novo" ambiente, segue uma explica&ccedil;&atilde;o sucinta e simplificada de alguns termos t&eacute;cnicos que aparecem com frequ&ecirc;ncia no mundo Internet. </P>
+<P>As explica&ccedil;&otilde;es de tais termos foram obtidas a partir de gloss&aacute;rios mais completos, que compilam rela&ccedil;&otilde;es de termos t&eacute;cnicos, siglas, nomes de institui&ccedil;&otilde;es, etc. do mundo Internet. Estes gloss&aacute;rios completos, por sua vez, foram obtidos a partir dos sites de dois dos mais importantes agentes da Internet no Brasil: a RNP - Rede Nacional de Pesquisa (www.ci.rnp.br) - e a EMBRATEL (www.embratel.net.br ).</P>
+<P>A seguir est&atilde;o apresentados tais termos:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;Browser </P>
+</B><P>O <I>browser</I> &eacute; um cliente para extra&ccedil;&atilde;o de informa&ccedil;&atilde;o em um <I>Web</I> <I>Server</I>. Tipicamente, um <I>browser</I> ser&aacute; um programa, em um computador pessoal, que acessar&aacute;, via Internet ou Intranet, um servidor (isto &eacute;, um programa que atende a demanda de clientes remotos) contendo informa&ccedil;&otilde;es de interesse amplo.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;Cookies </P>
+</B><P>Mecanismo geral que a conex&atilde;o do lado servidor pode usar a fim de armazenar e recuperar informa&ccedil;&otilde;es do lado cliente. Um servidor, quando retorna um objeto HTTP para o cliente, pode tamb&eacute;m enviar uma informa&ccedil;&atilde;o que o cliente dever&aacute; armazenar. Dados a respeito do cliente fazem parte desta informa&ccedil;&atilde;o. Ap&oacute;s isto, qualquer requisi&ccedil;&atilde;o HTTP requisitada pelo cliente, ir&aacute; incluir a transmiss&atilde;o de tal informa&ccedil;&atilde;o de volta ao servidor. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;HTML</P>
+</B><P>Acr&ocirc;nimo de Hypertext Markup Language, &eacute; a linguagem padr&atilde;o para escrever p&aacute;ginas de documentos <I>Web</I>, que possibilita preparar documentos com gr&aacute;ficos e links para outros documentos, para visualiza&ccedil;&atilde;o em browsers.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;Internet</P></DIR>
+
+<OL>
+
+</B><LI>Com inicial mai&uacute;scula, significa a "rede das redes", originalmente criada nos EUA, que se tornou uma associa&ccedil;&atilde;o mundial de redes interligadas, que utilizam protocolos da fam&iacute;lia TCP/IP. A Internet prov&ecirc; transfer&ecirc;ncia de arquivos, login remoto, correio eletr&ocirc;nico, news e outros servi&ccedil;os; </LI>
+<LI>Com inicial min&uacute;scula, genericamente, significa uma cole&ccedil;&atilde;o de redes locais e/ou de longa distancia, interligadas por pontes, roteadores e/ou gateways.</LI></OL>
+<DIR>
+
+<P>A Internet utiliza um modelo de computa&ccedil;&atilde;o denominado Cliente/Servidor, que permite o uso eficiente dos recursos dispon&iacute;veis em cada m&aacute;quina. </P>
+<P>As aplica&ccedil;&otilde;es deste modelo reduzem o tr&aacute;fego na rede atrav&eacute;s da otimiza&ccedil;&atilde;o na troca de dados entre clientes e servidores. O servidor cuida do armazenamento e da altera&ccedil;&atilde;o de grandes cole&ccedil;&otilde;es de dados, controla o acesso &agrave; informa&ccedil;&atilde;o e processa pedidos, enquanto o cliente (um PC, por exemplo) se encarrega de fazer o que for necess&aacute;rio para que a apar&ecirc;ncia e a intera&ccedil;&atilde;o com a informa&ccedil;&atilde;o seja a melhor poss&iacute;vel. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;Intranet </P>
+</B><P>&Eacute; o termo descritivo usado para a implenta&ccedil;&atilde;o das tecnologias da Internet dentro de uma corpora&ccedil;&atilde;o, ao inv&eacute;s de uma conex&atilde;o externa com a Internet. Essa implementa&ccedil;&atilde;o proporciona, de forma transparente, a disponibiliza&ccedil;&atilde;o de imensos recursos informativos de uma organiza&ccedil;&atilde;o para todos os seus computadores, com um custo e tempo m&iacute;nimos de implementa&ccedil;&atilde;o. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;Servidor</P></DIR>
+
+<OL>
+
+</B><LI>No modelo cliente/servidor, &eacute; o programa respons&aacute;vel pelo atendimento a determinado servi&ccedil;o solicitado por um cliente. Servi&ccedil;os como archie, Gopher, WAIS e WWW s&atilde;o providos por servidores; </LI>
+<LI>Referindo-se a equipamento, o servidor &eacute; um sistema que prov&ecirc; recursos tais como armazenamento de dados, impress&atilde;o e acesso dial-up para usu&aacute;rios de uma rede de computadores.</LI></OL>
+<DIR>
+
+<p></FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;Site [instala&ccedil;&atilde;o]</P></DIR>
+
+<OL>
+
+</B><LI>Uma institui&ccedil;&atilde;o, onde computadores s&atilde;o instalados e operados; </LI>
+<LI>Um n&oacute; Internet.</LI></OL>
+<DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;TCP/IP</P>
+</B><P>Acr&ocirc;nimo de Transmission Control Protocol/Internet Protocol, &eacute; a fam&iacute;lia de protocolos para a comunica&ccedil;&atilde;o de dados inter-redes, originalmente proposta para a <I>Advanced Research Products Agency</I> (ARPA). Hoje &eacute; um padr&atilde;o de fato para inter-redes abertas, e seu uso &eacute; amplamente difundido dentro e fora dos EUA.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>&nbsp;WWW</P>
+</B><I><P>World Wide</I> <I>Web</I>, ou <I>Web</I>. Meta-rede, baseada em hipertextos, que integra diversos servi&ccedil;os Internet, atrav&eacute;s de uma interface que possibilita o acesso a informa&ccedil;&otilde;es multim&iacute;dia.</P></DIR>
+
+<p><a name="Apres"></FONT><B><FONT FACE="Arial" SIZE=6><P>Apresenta&ccedil;&atilde;o</P>
+</B></FONT><FONT SIZE=2><P>O Servidor <I>Web</I> &eacute; um m&oacute;dulo do SADS que visa disponibilizar os sistemas aplicativos que executam em uma m&aacute;quina Unisys no ambiente <I>World Wide Web</I>.</P>
+<P>Atrav&eacute;s dele, as transa&ccedil;&otilde;es dos aplicativos poder&atilde;o ser acessadas por <I>browsers</I> que s&atilde;o padr&otilde;es de mercado, tais como o Comunicator &lt;$FComunicator &eacute; marca registrada da Netscape Communications Corporation.&gt; e o Internet Explorer &lt;$Finternet Explorer &eacute; marca registrada da Microsoft Corporation.&gt;, em uma Intranet, ou mesmo na pr&oacute;pria Internet.</P>
+<P>Este servidor ir&aacute; transformar, automaticamente, as aplica&ccedil;&otilde;es atuais com telas caractere, disparadas atrav&eacute;s do COMS, em documentos HTML, para <I>Web</I> <I>browsers</I>. </P>
+<P>Desta forma, os dados j&aacute; armazenados no <I>mainframe</I> poder&atilde;o ser acessados e atualizados atrav&eacute;s de <I>browsers</I>.</P>
+<P>Como se percebe, atrav&eacute;s da utiliza&ccedil;&atilde;o do Servidor <I>Web</I>, ser&aacute; poss&iacute;vel a utiliza&ccedil;&atilde;o de um equipamento Unisys - S&eacute;rie A ou <I>Clear Path</I> - como m&aacute;quina servidora Internet/Intranet. Ela ir&aacute; receber as requisi&ccedil;&otilde;es oriundas dos <I>browsers</I> e ir&aacute; atend&ecirc;-las, enviando documentos HTML que ser&atilde;o resultados de convers&otilde;es autom&aacute;ticas de telas de transa&ccedil;&otilde;es de aplicativos, que processam em uma janela direta do COMS.</P>
+<P>As informa&ccedil;&otilde;es a serem disponibilizadas no Servidor <I>Web</I> j&aacute; se encontram no <I>Unisys</I> e os sistemas aplicativos j&aacute; est&atilde;o dispon&iacute;veis para acess&aacute;-las automaticamente atrav&eacute;s da Intranet/Internet. Desta forma, &eacute; desnecess&aacute;ria a redund&acirc;ncia destas informa&ccedil;&otilde;es e a cria&ccedil;&atilde;o de novos sistemas em uma nova plataforma.</P>
+<P>Como a plataforma <I>Unisys </I>j&aacute; &eacute; dominada tecnicamente, o treinamento requerido para viabilizar uma conex&atilde;o com a Internet com sucesso &eacute; m&iacute;nimo. Isto levando em considera&ccedil;&atilde;o que o Servidor <I>Web</I> &eacute; de f&aacute;cil instala&ccedil;&atilde;o e n&atilde;o requer nenhum treinamento espec&iacute;fico para controle e administra&ccedil;&atilde;o.</P>
+<P>A equipe t&eacute;cnica, j&aacute; habilitada a trabalhar com o <I>mainframe</I>, poder&aacute; continuar o desenvolvimento de novos aplicativos, agora contando com uma nova forma de acesso dos mesmos pelos usu&aacute;rios.</P>
+<P>O Servidor <I>Web</I> ir&aacute; permitir que <I>homepages</I>, filmes, processos JAVA, figuras, sons etc. sejam armazenados e disponibilizados na plataforma <I>Unisys</I>, aproveitando a disponibilidade de espa&ccedil;o de armazenamento e a rapidez de recupera&ccedil;&atilde;o dos dados.</P>
+<P>O Servidor permitir&aacute; tamb&eacute;m que, atrav&eacute;s do campo de endere&ccedil;o do pr&oacute;prio <I>browser</I>, seja disparada qualquer mensagem a fim de ser tratada pelo COMS, tal como: "?ON SADS", "?WRU", outros <I>trancodes</I> etc. Ele ir&aacute; entregar devidamente tal mensagem ao COMS, para que ele a processe, e ir&aacute; devolver a resposta tamb&eacute;m em p&aacute;ginas HTML.</P>
+<p><a name="Prereq"></FONT><B><FONT FACE="Arial" SIZE=6><P>Pr&eacute;-requisitos</P>
+</B></FONT><FONT SIZE=2><P>Para o perfeito funcionamento do Servidor <I>Web</I>, os seguintes pr&eacute;-requisitos devem ser satisfeitos:</P>
+<P>Os micros que ir&atilde;o acessar o Servidor <I>Web</I> dever&atilde;o possuir um <I>software</I> de <I>browser</I> instalado. Al&eacute;m disso, &eacute; necess&aacute;rio que tal <I>software</I> seja de uma vers&atilde;o atualizada, a fim de poder usufruir de todas as implementa&ccedil;&otilde;es em c&oacute;digo <I>JavaScript</I> criadas automaticamente nas p&aacute;ginas HTML. </P>
+<OL>
+
+<LI>Desta forma, caso o browser utilizado seja o Navigator, &eacute; necess&aacute;rio que sua vers&atilde;o seja a 3.0 ou superior. Caso seja o Explorer, a vers&atilde;o deve ser 3.0 ou superior. Demais browsers n&atilde;o foram testados, visto serem pouco utilizados.</LI>
+<LI>Deve haver o protocolo TCP-IP instalado, tanto no micro com browser, quanto no Unisys.</LI>
+<LI>Para que uma p&aacute;gina HTML que &eacute; um template de resposta de uma transa&ccedil;&atilde;o, possa ser corretamente enviada pelo Servidor Web, ela deve ter o limite m&aacute;ximo de 64 Kbytes.</LI></OL>
+
+<p><a name="Instal"></FONT><B><FONT FACE="Arial" SIZE=6><P>Instala&ccedil;&atilde;o</P>
+</B></FONT><FONT SIZE=2><P>O Servidor <I>Web</I> foi implementado atrav&eacute;s dos seguintes objetos:</P>
+
+<UL>
+<LI>Programa principal SI/W/NC/00; </LI>
+<I><LI>Library</I> SI/W/SC/01: </LI>
+<I><LI>Library</I> SI/W/SC/02 e </LI>
+<I><LI>Library</I> SI/W/SC/03: Para formata&ccedil;&atilde;o dos dados a serem transferidos entre os sistemas aplicativos e o Servidor <I>Web</I>. </LI></UL>
+
+<P>Para o correto funcionamento do produto, o objeto do programa SI/W/NC/00 deve ser definido como um MCS no IDC ou NDL.</P>
+<P>O <I>program</I> que ir&aacute; disparar este objeto, deve possuir as seguintes configura&ccedil;&otilde;es no <I>Utility</I> do COMS: </P>
+<OL>
+
+<LI>Seu objeto deve estar sob * (asterisco);</LI>
+<LI>O usercode no qual ele ser&aacute; executado deve possuir obrigatoriamente o atributo "COMSCONTROL";</LI>
+<LI>O nome do program &eacute; livre, por&eacute;m, por quest&atilde;o de padroniza&ccedil;&atilde;o, sugere-se SIW00;</LI>
+<LI>Os par&acirc;metros MINCOPIES e MAXCOPIES devem ser definidos com "1", a fim de garantir que apenas uma e sempre uma c&oacute;pia do programa esteja no ar em uma mesma m&aacute;quina. </LI></OL>
+
+<p><a Name="Config"></FONT><B><FONT FACE="Arial" SIZE=6><P>Configura&ccedil;&otilde;es</P></a>
+<p><a name="Param"></FONT><FONT FACE="Arial" SIZE=5><P>Parametriza&ccedil;&otilde;es</P></a>
+</B></FONT><FONT SIZE=2><P>Os par&acirc;metros necess&aacute;rios ao funcionamento do Servidor <I>Web</I> devem ser definidos nas tabelas SBPM5077 - Par&acirc;metros gerais para funcionamento do Servidor <I>Web</I> - e SBPM5078 - Extens&otilde;es dos arquivos a serem tratados pelo Servidor <I>Web</I>. </P>
+<P>A seguir, ser&aacute; exibida uma explica&ccedil;&atilde;o sobre cada um dos par&acirc;metros a serem cadastrados: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><a name="Porta">Porta de comunica&ccedil;&atilde;o TCP/IP com os <I>Browsers </I>(Tabela SBPM5077)</P></a><DIR>
+
+</B></FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = Deve-se informar um dos seguintes valores:</P><DIR>
+
+<P>"PORTA" – Para configura&ccedil;&atilde;o da porta a ser utilizada pelo Servidor <I>Web</I>;</P>
+<P>"ADM1"- Para configura&ccedil;&atilde;o da porta a ser utilizada pelo Administ. do Servidor <I>Web</I>; ou</P>
+<P>"HTTP21" – Para configura&ccedil;&atilde;o de uma segunda porta para utiliza&ccedil;&atilde;o pelo Servidor <I>Web</I>, caso seja necess&aacute;ria.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = N&uacute;mero da porta. </P>
+<P>A porta principal, por conven&ccedil;&atilde;o, &eacute; a 80.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><a name="Maximo">M&aacute;ximo de conex&otilde;es simult&acirc;neas permitidas para comunica&ccedil;&atilde;o TCP/IP com os <I>Browsers </I>(Tabela SBPM5077)</P></a><DIR>
+
+</B></FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = Deve-se informar um dos seguintes valores:</P><DIR>
+
+<P>"MAXPOR" - Para configura&ccedil;&atilde;o do n&uacute;mero m&aacute;ximo de conex&otilde;es simult&acirc;neas que poder&atilde;o ser estabelecidas pelo Servidor <I>Web</I> utilizando a porta definida no par&acirc;metro PORTA;</P>
+<P>"ADM2" - Para configura&ccedil;&atilde;o do n&uacute;mero m&aacute;ximo de conex&otilde;es simult&acirc;neas que poder&atilde;o ser utilizadas pelo Administrador do Servidor <I>Web</I>, utilizando a porta definida no par&acirc;metro ADM1; ou</P>
+<P>"HTTP22" – Para configura&ccedil;&atilde;o do n&uacute;mero m&aacute;ximo de conex&otilde;es simult&acirc;neas que poder&atilde;o ser utilizadas atrav&eacute;s da segunda porta definida para o Servidor <I>Web</I> (Porta definida no par&acirc;metro HTTP21).</P></DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = Informar o valor correspondente ao n&uacute;mero m&aacute;ximo de conex&otilde;es simult&acirc;neas na respectiva porta. Sugere-se 20. </P></DIR>
+
+</FONT><P><a name="Conect"><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4>&nbsp;N&uacute;mero de conectores livres para comunica&ccedil;&atilde;o TCP/IP com os <I>Browsers </I>(Tabela SBPM5077)</P><DIR></a>
+
+</B></FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = Deve-se informar um dos seguintes valores: </P><DIR>
+
+<P>"NUMPOR" – Para configura&ccedil;&atilde;o do n&uacute;mero de conectores sempre dispon&iacute;veis na porta definida no par&acirc;metro "PORTA";</P>
+<P>"ADM3" – Para configura&ccedil;&atilde;o do n&uacute;mero de conectores sempre dispon&iacute;veis na porta definida no par&acirc;metro "ADM1"; ou</P>
+<P>"HTTP23" – Para configura&ccedil;&atilde;o do n&uacute;mero de conectores sempre dispon&iacute;veis na porta definida no par&acirc;metro "HTTP21".</P></DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = Informar o valor correspondente ao n&uacute;mero de conectores livres na respectiva porta. </P>
+<P>Sugere-se 5. O m&aacute;ximo permitido &eacute; 30.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><a name="Permis">Permiss&atilde;o para grava&ccedil;&atilde;o de <I>cookies</I> nas m&aacute;quinas clientes (Tabela SBPM5077)</P></a><DIR>
+
+</B></FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = Deve-se informar um dos seguintes valores: </P><DIR>
+
+<P>"COOKIE" – Para configurar a permiss&atilde;o de se gravar cookies nas m&aacute;quinas clientes, quando se utiliza a porta definida no par&acirc;metro "PORTA";</P>
+<P>"ADM4" – Para configurar a permiss&atilde;o de se gravar cookies nas m&aacute;quinas clientes, quando se utiliza a porta definida no par&acirc;metro "ADM1"<B>; </B>ou</P>
+<P>"HTTP4" – Para configurar a permiss&atilde;o de se gravar cookies nas m&aacute;quinas clientes, quando se utiliza a porta definida no par&acirc;metro "HTTP1".</P></DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = Indicador de permiss&atilde;o de grava&ccedil;&atilde;o de <I>cookies</I> nas m&aacute;quinas clientes, que pode ser:</P><DIR>
+
+<P>"0"- N&atilde;o &eacute; permitido ao Servidor gravar cookies nas m&aacute;quinas clientes; ou</P>
+<P>"1"- O Servidor poder&aacute; gravar cookies nas m&aacute;quinas clientes.</P></DIR>
+
+<P>Para que o Servidor <I>Web</I> possa fazer o controle das sess&otilde;es de trabalho das diversas esta&ccedil;&otilde;es conectadas, ele ir&aacute; enviar <I>cookies</I> nas m&aacute;quinas clientes. Por&eacute;m, caso a recep&ccedil;&atilde;o de um <I>cookie</I> seja impedida atrav&eacute;s desta parametriza&ccedil;&atilde;o, n&atilde;o ser&aacute; poss&iacute;vel manter os dados correntes da esta&ccedil;&atilde;o criada no <I>mainframe</I> entre uma requisi&ccedil;&atilde;o e outra, tais como: c&oacute;digo e senha do <I>logon</I>, janela corrente, <I>usercode</I> e <I>password</I>, etc.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><a name="Nivel">N&iacute;vel do <I>log</I> a ser gerado na execu&ccedil;&atilde;o do </B>Servidor <I>Web<B> </I>(Tabela SBPM5077)</P></a><DIR>
+
+</B></FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = "NIVLOG"</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = Identificador num&eacute;rico do n&iacute;vel do <I>log</I> a ser gerado. </P>
+<P>Quanto maior o n&iacute;vel do <I>log</I>, mais informa&ccedil;&otilde;es ser&atilde;o armazenadas.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><A name="Diretorio">Diret&oacute;rio raiz dos arquivos a serem acessados pelo </B>Servidor <I>Web<B> </I>(Tabela SBPM5077)</P></a><DIR>
+
+</B></FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = "WEBDIR"</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = Nome do diret&oacute;rio onde residir&aacute; todos os arquivos a serem acessados pelo Servidor <I>Web</I>.</P>
+<P>Sugere-se que se informe "WEB_DIR".</P>
+<P>Na parametriza&ccedil;&atilde;o do diret&oacute;rio dos arquivos, pode-se informar tamb&eacute;m seu <I>usercode</I>, conforme o seguinte exemplo:</P><DIR>
+
+<P>(AMB<I>WEB</I>)WEB_DIR</P></DIR>
+
+<P>Neste caso, quando se informar o <I>usercode</I>, ou o objeto do Servidor - SI/W/NC/00 – ou tal <I>usercode</I> devem ser privilegiados, para evitar o problema de n&atilde;o se encontrar os arquivos a serem acessados, quando estes forem privados.</P>
+<P>Os discos dos arquivos acessados ser&atilde;o os mesmos definidos na <I>family</I> do <I>usercode</I> do <I>program</I> SIW00 no <I>Utility</I>.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><a name="Prefixo">Prefixo dos c&oacute;digos das esta&ccedil;&otilde;es a serem criadas (Tabela SBPM5077)</P></a><DIR>
+
+</B></FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = "<I>WEB</I>STA"</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = Prefixo que ir&aacute; compor o c&oacute;digo das esta&ccedil;&otilde;es a serem criadas pelo Servidor <I>Web</I>.</P>
+<P>O c&oacute;digo completo de uma esta&ccedil;&atilde;o ter&aacute; o seguinte padr&atilde;o: </P>
+<P>&#9;&lt;par&acirc;metro <I>WEB</I>STA&gt;/&lt;endere&ccedil;oIP&gt;</P>
+<P>Caso seja desej&aacute;vel definir uma configura&ccedil;&atilde;o espec&iacute;fica para todas as esta&ccedil;&otilde;es a serem criadas pelo Servidor <I>Web</I>, tal como <I>window </I>e <I>user defaults</I>, deve-se ent&atilde;o cadastrar a esta&ccedil;&atilde;o &lt;par&acirc;metro <I>WEB</I>STA&gt;/DEFAULT no <I>Utility</I> contendo a configura&ccedil;&atilde;o desejada. Desta forma, todas as esta&ccedil;&otilde;es criadas pelo Servidor <I>Web</I> ir&atilde;o assumir esta configura&ccedil;&atilde;o cadastrada.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><a name="Regra">Regra de forma&ccedil;&atilde;o do c&oacute;digo da esta&ccedil;&atilde;o (Tabela SBPM5077)</P></a><DIR>
+
+</B></FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = "STP"</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = Indica&ccedil;&atilde;o de c&oacute;digo diferenciado das esta&ccedil;&otilde;es a serem criadas, que pode ser:</P>
+<P>"0" - Caso o c&oacute;digo da esta&ccedil;&atilde;o seja criado conforme os padr&otilde;es do Servidor <I>Web</I>: </P><DIR>
+
+<P>&lt;par&acirc;metro <I>WEB</I>STA&gt;/endere&ccedil;oIP; </P></DIR>
+
+<P>onde <I>WEB</I>STA &eacute; um prefixo para as esta&ccedil;&otilde;es, tamb&eacute;m parametrizado na tabela SBPM5077.</P>
+<P>"1" - Caso a esta&ccedil;&atilde;o seja criada com o seguinte c&oacute;digo : </P><DIR>
+
+<P>&lt;par&acirc;metro <I>WEB</I>STA&gt;sequencial/endere&ccedil;oIP;</P></DIR>
+
+<P>onde <I>WEB</I>STA &eacute; um prefixo para as esta&ccedil;&otilde;es, tamb&eacute;m parametrizado na tabela SBPM5077.</P>
+<P>"2" - Caso a esta&ccedil;&atilde;o seja criada com o seguinte c&oacute;digo : </P><DIR>
+
+<P>&lt;par&acirc;metro <I>WEB</I>STA&gt;sequencial;</P></DIR>
+
+<P>onde <I>WEB</I>STA &eacute; um prefixo para as esta&ccedil;&otilde;es, tamb&eacute;m parametrizado na tabela SBPM5077.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><a name="Salva">Salva das telas dos aplicativos que foram convertidas automaticamente (Tabela SBPM5077)</P><DIR>
+
+</B></FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = "SVHTML"</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = Indicador de salva de p&aacute;ginas HTML.</P>
+<P>Antes do Servidor <I>Web</I> enviar uma tela do aplicativo para a esta&ccedil;&atilde;o cliente, ele a converte automaticamente para documento HTML. Por&eacute;m, ele s&oacute; efetuar&aacute; esta convers&atilde;o caso este documento n&atilde;o exista gravado no <I>mainframe</I>, no diret&oacute;rio raiz<I>. </I>O documento HTML j&aacute; existente no <I>mainframe</I> tanto pode ter sido criado atrav&eacute;s de uma convers&atilde;o anterior do Servidor <I>Web</I>, quanto elaborado manualmente.</P>
+<P>O Servidor <I>Web</I> ir&aacute; salvar o documento HTML gerado atrav&eacute;s da convers&atilde;o caso, na tabela SBPM5077, CODIGO = "SVHTML", o campo PARAMETRO esteja preenchido com "S".</P>
+<P>O documento HTML ser&aacute; salvo no <I>mainframe</I> com o seguinte <I>title</I>:</P>
+<B><P>(usercode)diret&oacute;rio/tela on pack</P>
+</B><P>onde:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;usercode</B> - &Eacute; o <I>usercode</I> definido para o <I>program</I> SIW00 no <I>Utility (</I>ou o <I>usercode</I> tamb&eacute;m definido na tabela SBPM5077 - Tabela de Par&acirc;metros do Servidor <I>Web</I>, PARAMETRO = "WEBDIR";</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;diret&oacute;rio</B> - &Eacute; o diret&oacute;rio raiz dos arquivos a serem acessados pelo Servidor <I>Web</I>, definido na tabela SBPM5077 - Tabela de Par&acirc;metros do Servidor <I>Web</I>, PARAMETRO = "WEBDIR";</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;tela</B> - C&oacute;digo da tela referente ao arquivo (sssTmmnn);</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;pack </B>– Disco prim&aacute;rio definido na <I>family</I> do <I>usercode</I> do <I>program</I> SIW00.</P></DIR>
+
+<P>Este documento HTML, referente a uma tela do aplicativo, pode ser alterado a fim de tornar sua apresenta&ccedil;&atilde;o mais elaborada e criativa. Para maiores detalhes das altera&ccedil;&otilde;es poss&iacute;veis, deve-se consultar o item "Caracter&iacute;sticas funcionais", posteriormente descrito nesta se&ccedil;&atilde;o.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><a name="Extensao">Extens&atilde;o dos arquivos a serem acessados (Tabela SBPM5077)</P><a>
+</B></FONT><FONT SIZE=2><P>Sempre quando &eacute; solicitada uma p&aacute;gina HTML, o Servidor <I>Web</I> ir&aacute; verificar, no diret&oacute;rio raiz dos arquivos a serem acessados - par&acirc;metro "<I>WEB</I>DIR" da tabela SBPM5077-, se existe um arquivo com tal c&oacute;digo. Se, por exemplo, for solicitado "palestra", ser&aacute; procurado o arquivo "&lt;WEBDIR&gt;/PALESTRA". </P>
+<P>Caso exista, o Servidor ir&aacute; envi&aacute;-lo &agrave; esta&ccedil;&atilde;o cliente. Caso n&atilde;o exista e o arquivo seja solicitado sem extens&atilde;o, ser&aacute; ent&atilde;o verificado se existe, tamb&eacute;m no diret&oacute;rio &lt;WEBDIR&gt;, o arquivo com o mesmo c&oacute;digo, por&eacute;m com extens&atilde;o similar &agrave; especificada no par&acirc;metro "EXT" da tabela SBPM5077. Se, por exemplo, nesta tabela estiver cadastrado "HTM", ser&aacute; ent&atilde;o verificada a exist&ecirc;ncia do arquivo "&lt;WEBDIR&gt;/PALESTRA.HTM". </P>
+<P>Ent&atilde;o, para a parametriza&ccedil;&atilde;o da extens&atilde;o dos arquivos a serem acessados, deve-se cadastrar os seguintes campos na tabela SBPM5077:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = "EXT"</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = Sugere-se "HTML" ou "HTM".</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><I><FONT FACE="CG Times" SIZE=4><a name="Time">Timeout</I> das esta&ccedil;&otilde;es (Tabela SBPM5077)</P></b></a><DIR>
+
+</B></FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = "TIMOUT"</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = Tempo m&aacute;ximo, em minutos, que uma esta&ccedil;&atilde;o fica no ar sem ter se comunicado com o Sevidor <I>Web</I>.</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;Caso a esta&ccedil;&atilde;o n&atilde;o se comunique com o servidor por um tempo superior ao estabelecido neste par&acirc;metro, a mesma ser&aacute; deletada.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><a name="Padrao">Padr&atilde;o para o fundo de p&aacute;ginas (Tabela SBPM5077)</P><DIR>
+
+</B></FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = "FUNDO"</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = C&oacute;digo do arquivo (".GIF", ".JPEG", etc.) que ir&aacute; compor o fundo das p&aacute;ginas que ser&atilde;o montadas automaticamente pelo Servidor <I>Web</I>.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><a Name="Disparo">Permiss&atilde;o para disparo de transa&ccedil;&otilde;es COMS (Tabela SBPM5077)</P></a>
+</B></FONT><FONT SIZE=2><P>Qualquer mensagem pode ser disparada atrav&eacute;s do campo de endere&ccedil;o do pr&oacute;prio <I>browser</I>, a fim de ser tratada pelo COMS, tal como: "?ON SADS", "?WRU", outros <I>trancodes</I> etc. O servidor ir&aacute; entregar devidamente tal mensagem ao COMS para que ele a processe, devolvendo a resposta em p&aacute;ginas HTML.</P>
+<P>Para disparar uma mensagem COMS, a mesma deve ser especificada no campo de endere&ccedil;o do <I>browser</I> no seguinte formato:</P>
+<B><P>endere&ccedil;o/COMS_BIN/mensagem, </B>onde:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><B><FONT SIZE=2>&nbsp;endere&ccedil;o</B> - &Eacute; o endere&ccedil;o IP da m&aacute;quina na qual foi instalado o Servidor <I>Web</I>;</P>
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><B><FONT SIZE=2>&nbsp;COMS_BIN</B> - &Eacute; o diret&oacute;rio que identifica as mensagens a serem tratadas pelo COMS;</P>
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><B><FONT SIZE=2>&nbsp;mensagem - </B>&Eacute; a mensagem a ser interpretada pelo COMS.<B> </P>
+</B><P>Como exemplo, em uma determinada m&aacute;quina fict&iacute;cia na qual o Servidor <I>Web</I> est&aacute; instalado, poderia ser disparada a seguinte mensagem:</P>
+<P>http//exemplo.com.br/COMS_BIN/SDD03</P></DIR>
+
+<P>Para configurar se ser&aacute; permitido disparar uma mensagem COMS atrav&eacute;s do Servidor <I>Web</I>, o seguinte par&acirc;metro dever&aacute; ser determinado:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = "CBIN"</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = Pode-se informar um dos seguintes valores:</P><DIR>
+
+<P>"0" – Para que n&atilde;o seja permitido disparar mensagens COMS atrav&eacute;s do Servidor <I>Web</I>; ou</P>
+<P>"1" - Para permitir o disparo de mensagens COMS atrav&eacute;s do Servidor <I>Web</I>.</P></DIR>
+</DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><a name="Tamanho">Tamanho da &aacute;rea conversacional (Tabela SBPM5077)</P><DIR>
+
+</B></FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = "CAREA"</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = Tamanho da &aacute;rea conversacional a ser utilizada pela <I>library</I> SIWS03.</P>
+<P>A <I>library</I> SIWS03 &eacute; utilizada para formata&ccedil;&atilde;o dos dados a serem transferidos entre os sistemas aplicativos e o Servidor <I>Web. </I>Dependendo ent&atilde;o da necessidade de tal <I>library</I> se comunicar com o Servidor, alguns dados dever&atilde;o ser salvos na &aacute;rea conversacional, relativos a cada esta&ccedil;&atilde;o, e o tamanho destes dados salvos deve ser definido nesta parametriza&ccedil;&atilde;o.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><a name="Ident">Posicionamento do identificador da transa&ccedil;&atilde;o nas mensagens (Tabela SBPM5077)</P></a>
+</B></FONT><FONT SIZE=2><P>Toda vez que o Servidor recebe uma string de dados, ele necessita reconhecer a tela, para acessar o seu respectivo template, em HTML, que est&aacute; armazenado no mainframe. Desta forma, &eacute; imprescind&iacute;vel que o Servidor saiba reconhecer a exata posi&ccedil;&atilde;o dos identificadores das transa&ccedil;&otilde;es.</P>
+<P>Os identificadores das transa&ccedil;&otilde;es, sejam eles <I>trancodes</I> ou n&atilde;o, podem estar posicionados em qualquer parte da mensagem a ser tratada pelo Servidor <I>Web</I>. Eles poder&atilde;o ser compostos por caracteres n&atilde;o consecutivos do corpo da mensagem. </P>
+<P>Para especificar ao Servidor como determinar os identificadores das transa&ccedil;&otilde;es, pode-se escolher entre informar os campos formatados (CAMPO1 e CAMPO2) ou as posi&ccedil;&otilde;es dos caracteres (POS1 e POS2) que dever&atilde;o comp&ocirc;-los.</P>
+<P>Caso a parametriza&ccedil;&atilde;o seja efetuada informando-se os campos (CAMPO1 E CAMPO2), no campo PARAMETRO deve-se informar a sequ&ecirc;ncia do campo no corpo do menu e o n&uacute;mero de caracteres a serem extra&iacute;dos do mesmo.</P>
+<P>Caso a parametriza&ccedil;&atilde;o seja efetuada informando-se as posi&ccedil;&otilde;es dos caracteres (POS1 e POS2), no campo PARAMETRO deve-se informar a posi&ccedil;&atilde;o inicial dos caracteres no corpo da mensagem, a iniciar de zero, e o n&uacute;mero de caracteres a serem extra&iacute;dos a partir desta posi&ccedil;&atilde;o.</P>
+<P>Para melhor entendimento, suponha a seguinte mensagem a ser transmitida:</P>
+</FONT><P><center><table border=1 BORDERCOLOR=#000000><tr><td><IMG SRC="Imagem2.gif"></table></center></P>
+<FONT SIZE=2><P>Supondo que o identificador da transa&ccedil;&atilde;o desta mensagem seja "ABC01.02", pode-se ent&atilde;o parametrizar sua composi&ccedil;&atilde;o, atrav&eacute;s da indica&ccedil;&atilde;o do campo, da seguinte forma:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = "CAMPO1"</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = 1,8 </P>
+<P>Nesta parametriza&ccedil;&atilde;o foi informado que o campo que ir&aacute; compor o identificador da transa&ccedil;&atilde;o (CAMPO1) &eacute; o primeiro da mensagem, ocupando 8 posi&ccedil;&otilde;es (1,8.</P>
+<P>&Eacute; importante informar que o primeiro campo da mensagem &eacute; o de n&uacute;mero 1 (um).</P></DIR>
+
+<P>Como um segundo exemplo, suponha a seguinte mensagem a ser transmitida:</P>
+</FONT><P><center><table border=1 Bordercolor=#000000><IMG SRC="Image3.gif" width=460 heigth=270></center></table></P>
+<FONT SIZE=2><P>Tamb&eacute;m supondo que o identificador da transa&ccedil;&atilde;o desta mensagem seja "ABC01.02", pode-se ent&atilde;o parametrizar sua composi&ccedil;&atilde;o, atrav&eacute;s da indica&ccedil;&atilde;o de sua posi&ccedil;&atilde;o, da seguinte forma:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = "POS1"</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> = 122,8 </P>
+<P>Nesta parametriza&ccedil;&atilde;o foi informado que os caracteres a compor o identificador da transa&ccedil;&atilde;o (POS1) ocupam 8 bytes a partir da posi&ccedil;&atilde;o inicial 122.</P></DIR>
+
+<P>Concluindo, para a parametriza&ccedil;&atilde;o dos identificadores das transa&ccedil;&otilde;es, deve-se informar os seguintes campos na tabela SBPM5077:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CODIGO</B> = "CAMPO1", "CAMPO2", "POS1" ou "POS2".</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;PARAMETRO</B> =:</P></DIR>
+</DIR>
+
+
+<UL>
+
+<UL>
+<LI>Se a parametriza&ccedil;&atilde;o for feita atrav&eacute;s dos campos formatados da mensagem, informar: </LI></UL>
+</UL>
+<DIR>
+<DIR>
+<DIR>
+
+<P>&lt;sequ&ecirc;ncia do campo&gt;, &lt;n&uacute;mero de bytes do campo&gt;;</P></DIR>
+</DIR>
+</DIR>
+
+
+<UL>
+
+<UL>
+<LI>Se a parametriza&ccedil;&atilde;o for feita atrav&eacute;s da posi&ccedil;&atilde;o dos caracteres na mensagem, informar: </LI></UL>
+</UL>
+<DIR>
+<DIR>
+<DIR>
+
+<P>&lt;posi&ccedil;&atilde;o inicial dos caracteres&gt;, &lt;n&uacute;mero de bytes do campo&gt;</P></DIR>
+</DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><a name="Tipos">Tipos de extens&otilde;es trat&aacute;veis (Tabela SBPM5078)</P></a>
+</B></FONT><FONT SIZE=2><P>Na tabela SBPM5078 dever&atilde;o ser especificados os c&oacute;digos de extens&otilde;es dos diversos tipos de arquivos poss&iacute;veis de serem tratados pelo Servidor <I>Web</I>. Para estas especifica&ccedil;&otilde;es, dever&atilde;o ser informados os seguintes campos da tabela:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;Extensao</B> = C&oacute;digo da extens&atilde;o dos arquivos a serem tratados pelo Servidor <I>Web</I>.</P>
+<P>Como exemplos, os arquivos podem possuir as seguintes extens&otilde;es: "JPE", "JPG", "JPEG", "HTM", "HTML", "EXE", "GIF", "MIME", etc.</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;Content Type</B> = Tipo do conte&uacute;do armazenado nos arquivos que possuem a extens&atilde;o especificada. </P>
+<P>Os tipos de conte&uacute;dos devem ser informados em ingl&ecirc;s, de acordo com o padr&otilde;es j&aacute; existentes e poss&iacute;veis de serem tratados pelo Servidor <I>Web</I>. </P>
+<P>Relativos a cada um dos exemplos de extens&otilde;es descritos anteriormente, deveriam ser especificados os seguintes <I>Content Types, </I>respectivamente: "<I>image</I>/<I>jpeg</I>", "<I>image</I>/<I>jpeg</I>", "<I>image</I>/<I>jpeg</I>", "<I>text</I>/<I>html</I>", "<I>text</I>/<I>html</I>", "<I>application</I>/<I>octet</I>-<I>stream</I>", "<I>image</I>/<I>gif</I>", "<I>message</I>/rfc822".</P></DIR>
+
+<P>Atrav&eacute;s dos exemplos expostos, percebe-se que podem ser definidos mais de um c&oacute;digo de extens&atilde;o para o mesmo tipo de conte&uacute;do de arquivos.</P></DIR>
+
+<a name="Amb"></FONT><B><FONT FACE="Arial" SIZE=5><P>Ambiente</P></a>
+</B></FONT><FONT SIZE=2><P>Para configura&ccedil;&atilde;o do ambiente onde dever&atilde;o ser executados os sistemas aplicativos, recomenda-se:</P>
+<OL>
+<OL>
+
+<LI>Definir uma <I>Window</I> no <I>Utility</I> onde ser&atilde;o executados todos os sistemas que ter&atilde;o acesso &agrave; <I>WEB</I>. Esta Window n&atilde;o deve ter "<I>Notify Open</I>".</LI>
+<LI>Declarar uma esta&ccedil;&atilde;o com o c&oacute;digo &lt;par&acirc;metro <I>WEB</I>STA&gt;/DEFAULT no <I>Utility</I>.</LI></OL>
+</OL>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<P>&Eacute; conveniente que todas as esta&ccedil;&otilde;es a serem criadas pelo Servidor <I>Web</I> possuam configura&ccedil;&otilde;es espec&iacute;ficas, tal como <I>window </I>e <I>user defaults</I>. Para isto sugere-se ent&atilde;o cadastrar uma esta&ccedil;&atilde;o com o c&oacute;digo &lt;par&acirc;metro <I>WEB</I>STA&gt;/DEFAULT no <I>Utility</I> contendo a configura&ccedil;&atilde;o desejada. Feito este cadastramento, todas as esta&ccedil;&otilde;es criadas pelo Servidor <I>Web</I> ir&atilde;o assumir esta configura&ccedil;&atilde;o cadastrada.</P>
+<P>A esta&ccedil;&atilde;o <I>default</I> deve ser criada com as seguintes caracter&iacute;sticas:</P>
+<I><P>2.1 - Default Window</I>: <I>Window</I> rec&eacute;m-criada;</P>
+<I><P>2.2 - Default usercode</I>: <I>Usercode</I> com o m&iacute;nimo de atribui&ccedil;&otilde;es necess&aacute;rias para se acessar os sistemas;</P>
+<P>       &Eacute; recomend&aacute;vel que este usercode n&atilde;o esteja habilitado a disparar comandos "?";</P>
+<I><P>2.3 - Window List</I>: Somente a <I>window</I> rec&eacute;m-criada;</P>
+<I><P>2.4 - CloseAction</I>: Permanecer na <I>Window</I>.</P></DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<P>&nbsp;</P>
+<a name="Sistapl"></FONT><B><FONT FACE="Arial" SIZE=5><P>Sistemas Aplicativos </P></a>
+</B></FONT><FONT SIZE=2><P>Para facilitar a disponibiliza&ccedil;&atilde;o de um sistema aplicativo residente em um <I>mainframe</I> <I>Unisys</I> para o ambiente <I>Web</I>, atrav&eacute;s do Servidor <I>Web</I>, pode-se optar entre as duas seguintes formas de desenvolvimento dos mesmos: </P>
+<OL>
+
+<LI>Desenvolver o sistema atrav&eacute;s de uma ferramenta qualquer, ou at&eacute; mesmo sem utilizar nenhuma ferramenta, por&eacute;m tratando a entrada e sa&iacute;da de dados de acordo com o protocolo estabelecido pelo Servidor <I>Web</I>; ou</LI>
+<LI>Definir o sistema como cooperativo no SADS e ger&aacute;-lo automaticamente.</LI></OL>
+
+<P>A seguir ser&atilde;o detalhadas cada uma destas duas formas de se desenvolver um sistema para integra&ccedil;&atilde;o com o Servidor <I>Web</I>.</P>
+</FONT><B><FONT FACE="CG Times" SIZE=5><P><a name="Sistnao">Sistema n&atilde;o SADS</P></a>
+</B></FONT><FONT SIZE=2><P>Quando o sistema n&atilde;o tiver sido gerado de forma cooperativa atrav&eacute;s do SADS, suas entradas e sa&iacute;das, que ser&atilde;o integradas ao ambiente <I>Web</I>, dever&atilde;o ser adaptadas para seguir o protocolo do Servidor.</P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><a name="Entrada">Entrada</P></a>
+</B></FONT><FONT SIZE=2><P>As entradas de dados para o sistema, enviadas pelo Servidor, n&atilde;o t&ecirc;m nada de particular: o programa dever&aacute; ser preparado para receber uma string contendo somente os dados de entrada que ser&atilde;o tratados pelo programa. Nenhum desenho de tela ser&aacute; enviado pelo Servidor.</P>
+<P>A p&aacute;gina HTML para captar os dados via Browser pode possuir formatos e elementos dispostos de forma totalmente criativa. N&atilde;o &eacute; necess&aacute;rio que a p&aacute;gina possua os mesmos campos da tela relativa do sistema. Por&eacute;m, no momento de se enviar os dados ao mainframe via Servidor <I>Web</I>, a p&aacute;gina dever&aacute; compor uma string contendo somente os dados a serem tratados pelo sistema. </P>
+<P>Para informar ao Servidor sobre os campos de dados que dever&atilde;o compor a <I>string</I>, o &uacute;ltimo campo a ser tratado no <I>form</I> a ser transmitido dever&aacute; ter a seguinte estrutura:</P><DIR>
+
+<B><P>&lt;input type=hidden name=layout value="tam1, tam2, tam3... tamult"&gt;, </B>onde:</P>
+<B><P>layout: </B>Nome fixo do campo de informa&ccedil;&otilde;es;</P>
+<B><P>tam1, tam2 ... tamult</B>: Tamanho de cada um dos campos que ir&atilde;o compor a string, inclusive o trancode, caso possua.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4><a name="Saida">Sa&iacute;da</P></a><DIR>
+
+</B></FONT><FONT SIZE=2><P>Os dados que saem do sistema e que ser&atilde;o exibidos em uma p&aacute;gina HTML devem tamb&eacute;m ser formatados em uma <I>string</I> de dados, sem atributos de v&iacute;deo. Esta <I>string</I> dever&aacute; possuir, em seus <I>bytes</I> iniciais, um <I>header</I> para comunica&ccedil;&atilde;o com o Servidor <I>Web</I> no seguinte padr&atilde;o:</P><DIR>
+
+<B><P>"&amp;K&lt;c&oacute;digo do <I>template</I> HTML(8bytes)&gt;&lt;c&oacute;digo do contexto(8bytes)&gt;&lt;os dados&gt;", onde:</P><DIR>
+
+<P>&amp;K –</B> Constante que identifica in&iacute;cio de header trat&aacute;vel pelo Servidor;</P>
+<B><P>&lt;c&oacute;digo do <I>template</I> HTML&gt; - </B>8 <I>bytes</I> que informam o c&oacute;digo do <I>template</I> HTML que dever&aacute; ser acessado pelo Servidor e que dever&aacute; ser composto pelos dados enviados pelo sistema. Ap&oacute;s esta composi&ccedil;&atilde;o de dados, a p&aacute;gina HTML ser&aacute; enviada pelo servidor ao Browser;</P>
+<B><P>&lt;c&oacute;digo do contexto&gt; -</B> 8 bytes que informam o c&oacute;digo do contexto referente ao template HTML a ser acessado.</P>
+<B><P>&lt;os dados&gt; -</B> Dados fornecidos pelo sistema, provenientes de bases de dados no mainframe, que dever&atilde;o compor a p&aacute;gina HTML a ser apresentada no ambiente <I>Web</I>.</P></DIR>
+</DIR>
+
+<P>Com as informa&ccedil;&otilde;es acima, o Servidor ir&aacute; acessar o seguinte arquivo a fim de compor os dados a serem apresentados:</P><DIR>
+<DIR>
+
+<B><P>(usercode)diret&oacute;rio/CONTEXTO/contexto/"template.ext"/T on pack </P>
+</B><P>onde:</P><DIR>
+<DIR>
+
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;usercode </B>- &Eacute; o <I>usercode</I> definido para o <I>program</I> SIW00 no <I>Utility</P>
+</I></FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;diret&oacute;rio</B> - &Eacute; o diret&oacute;rio raiz dos arquivos a serem acessados pelo Servidor <I>Web</I>, definido na tabela SBPM5077 - Tabela de Par&acirc;metros do Servidor <I>Web</I>, PARAMETRO = "<I>WEB</I>DIR";</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CONTEXTO</B> - Constante que identifica que o arquivo HTML para substituir uma tela de navega&ccedil;&atilde;o de um contexto;</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;contexto </B>- &Eacute; o c&oacute;digo do contexto informado;</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;template</B> – &Eacute; o c&oacute;digo do template informado;</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;ext</B> - Extens&atilde;o do arquivo definida na tabela SBPM5077 - Tabela de Par&acirc;metros do Servidor <I>Web</I> -, PARAMETRO = "EXT"; </P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;pack </B>– Disco prim&aacute;rio definido na <I>family</I> do <I>usercode</I> do <I>program</I> SIW00.</P><DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<P>&nbsp;</P></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<p><a name="Sistsads"></FONT><B><FONT FACE="CG Times" SIZE=5><P>Sistema SADS</P></a>
+</B></FONT><FONT SIZE=2><P>Quando o sistema tiver sido gerado de forma cooperativa atrav&eacute;s do SADS, durante seu desenvolvimento, nenhum trabalho adicional necessita ser feito para adequar suas entradas e sa&iacute;das ao padr&atilde;o estabelecido pelo Servidor <I>Web</I>. Isto porque, pelo simples fato de defini-lo como cooperativo, ele j&aacute; &eacute; gerado totalmente compat&iacute;vel com o Servidor <I>Web</I>.</P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT FACE="CG Times" SIZE=5><a name="Html">Gera&ccedil;&atilde;o de p&aacute;ginas HTML</P><DIR>
+
+</B></FONT><FONT SIZE=2><P>Para complementar o processo de utiliza&ccedil;&atilde;o de um aplicativo SADS atrav&eacute;s da Internet, foi disponibilizado um processo para gera&ccedil;&atilde;o de p&aacute;ginas HTML a partir das telas j&aacute; cadastradas no reposit&oacute;rio de dados do SADS.</P>
+<P>Este processo de gera&ccedil;&atilde;o de p&aacute;ginas HTML pode ser efetuado atrav&eacute;s de tr&ecirc;s etapas distintas, quais sejam:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Gera&ccedil;&atilde;o de p&aacute;ginas HTML a partir dos menus de navega&ccedil;&atilde;o de um contexto;</P>
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Gera&ccedil;&atilde;o de p&aacute;ginas HTML a partir de telas de processamento e menus de op&ccedil;&atilde;o de um sistema; e</P>
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Gera&ccedil;&atilde;o de p&aacute;gina HTML a partir de uma tela espec&iacute;fica.</P></DIR>
+
+<P>A seguir, cada uma destas etapas ser&atilde;o explicadas isoladamente.</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT FACE="CG Times" SIZE=4>&nbsp;Gera&ccedil;&atilde;o de p&aacute;ginas HTML a partir da navega&ccedil;&atilde;o</P>
+</B></FONT><FONT SIZE=2><P>Sem executar este processo, os aplicativos que utilizam a nova navega&ccedil;&atilde;o SADS poder&atilde;o ser acessados atrav&eacute;s da Internet. Por&eacute;m, seus menus de escolha e opera&ccedil;&atilde;o ser&atilde;o apresentados, ap&oacute;s a convers&atilde;o autom&aacute;tica para p&aacute;gina HTML efetuada pelo servidor, no mesmo padr&atilde;o com que s&atilde;o apresentados no <I>mainframe.</I> </P>
+<P>Para melhor visualizar o resultado de uma convers&atilde;o autom&aacute;tica, a seguir &eacute; apresentado o desenho de um menu de escolha cadastrado no <I>mainframe</I> e, logo a seguir, o respectivo desenho a ser apresentado no <I>browser</I> ap&oacute;s sua convers&atilde;o autom&aacute;tica para uma p&aacute;gina HTML: </P>
+</FONT>
+<p><center><table border=1 BORDERCOLOR=#000000><tr><td><IMG SRC="Image4.gif"></table></center>
+<p><blockquote><FONT SIZE=2><b>Figura 1:</b> Menu de Escolha Sist. de Pedidos no mainframe</P></blockquote>
+<P>&nbsp;</P>
+</FONT><P><center><table border=1 BORDERCOLOR=#000000><tr><td><IMG SRC="Image5.gif"></Center>
+</table>
+<p align=center><FONT SIZE=2><b>Figura 2:</b> Menu de Escolha Sist. de Pedidos no mainframe ap&oacute;s Convers&atilde;o autom&aacute;tica</P>
+
+<P>Conforme visualizado, ap&oacute;s a convers&atilde;o autom&aacute;tica, a p&aacute;gina referente ao menu de escolha foi apresentada com os seguintes campos:</P>
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Um campo de <I>input</I> para informar a ACAO;</P>
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp; O corpo do menu exibindo as escolhas dispon&iacute;veis;</P>
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Um campo de <I>input</I> para informar a ESCOLHA selecionada;</P>
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Um campo de <I>input</I>, referente ao campo de posicionamento do cursor - TLAESTAC (N&atilde;o ser&aacute; utilizado); e</P>
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Dois bot&otilde;es ao final da p&aacute;gina, quais sejam:</P><DIR>
+
+<P>"<B>Transmite</B>" - Utilizado para enviar a p&aacute;gina preenchida ao servidor; e</P>
+<P>"<B>Limpa</B>" - Utilizado para limpar os caracteres que foram preenchidos manualmente e retornar a p&aacute;gina tal como enviada pelo servidor.</P></DIR>
+
+<P>Caso seja executado o procedimento para gera&ccedil;&atilde;o de p&aacute;ginas HTML, para o menu de escolha exemplificado anteriormente, ser&aacute; gerada a seguinte p&aacute;gina HTML:</P>
+</FONT><P><center><table border=1 bordercolor=#000000><IMG SRC="Imagem6.gif"></table></center><FONT SIZE=2><p align=center><7b>Figura 3:</b> Menu de Escolha Sist. de Pedidos ap&oacute;s gera&ccedil;&atilde;o de p&aacute;ginas HTML</P>
+<P>De acordo com a figura apresentada, a p&aacute;gina HTML seria gerada no seguinte padr&atilde;o: </P>
+<P>Para cada ACAO poss&iacute;vel de ser disparada, ser&aacute; criado um bot&atilde;o. <BR>
+N&atilde;o ser&atilde;o criados bot&otilde;es para se disparar as a&ccedil;&otilde;es Restaura e Anterior. Isto porque pode ser utilizado o bot&atilde;o "<I>Back</I>", j&aacute; implementado nos <I>browsers</I>, e que efetua fun&ccedil;&otilde;es an&aacute;logas.</P>
+<P>Ser&aacute; criado um campo de <I>input</I> para que o usu&aacute;rio possa informar argumentos para disparar as a&ccedil;&otilde;es "In&iacute;cio", "Desvio" e "Comando", caso sejam necess&aacute;rios. </P>
+<P>As rotas de navega&ccedil;&atilde;o n&atilde;o ser&atilde;o campos de <I>output</I> est&aacute;ticos e sim <I>hyperlinks</I>, que, quando acionados, desviar&atilde;o para outro menu, de acordo com as rotas cadastradas no reposit&oacute;rio de dados do SADS.</P>
+<P>Os arquivos HTML referentes a cada menu da navega&ccedil;&atilde;o ser&atilde;o gerados com o seguinte <I>title</I>:</P>
+<B><P>(usercode)diret&oacute;rio/CONTEXTO/contexto/"tela.ext"/T</B> <B>on pack</P>
+</B><P>onde:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;usercode</B> - &Eacute; o <I>usercode</I> definido para o <I>program</I> SIW00 no <I>Utility;</P>
+</I></FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;diret&oacute;rio</B> - &Eacute; o diret&oacute;rio raiz dos arquivos a serem acessados pelo Servidor <I>Web</I>, definido na tabela SBPM5077 - Tabela de Par&acirc;metros do Servidor <I>Web</I> -, PARAMETRO = "<I>WEB</I>DIR";</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;CONTEXTO</B> - Constante que identifica que o arquivo HTML foi criado a partir de uma tela de navega&ccedil;&atilde;o de um contexto;</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;contexto</B> - &Eacute; o c&oacute;digo do contexto ao qual a tela pertence;</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;tela</B> - T&iacute;tulo da tela de navega&ccedil;&atilde;o - menu de escolha ou menu de opera&ccedil;&atilde;o;</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;ext</B> - Extens&atilde;o do arquivo definida na tabela SBPM5077 - Tabela de Par&acirc;metros do Servidor <I>Web</I> -, PARAMETRO = "EXT"; </P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;T</B> - Identificador de tela em teste, caso a convers&atilde;o tenha sido efetuada neste ambiente;</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>&nbsp;Caso o ambiente de convers&atilde;o seja o de produ&ccedil;&atilde;o, este identificador n&atilde;o far&aacute; parte do <I>title</I> do arquivo.</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>&nbsp;pack </B>– Disco prim&aacute;rio definido na <I>family</I> do <I>usercode</I> do <I>program</I> SIW00.</P></DIR>
+
+<P>Cumpre ressaltar que, no momento de gera&ccedil;&atilde;o de uma p&aacute;gina HTML a partir de uma tela da navega&ccedil;&atilde;o, se j&aacute; houver algum arquivo com <I>title</I> igual ao que ser&aacute; gerado (incluindo o <I>usercode</I>), tal arquivo ser&aacute; perdido, pois ser&aacute; sobreposto pelo rec&eacute;m-criado.</P>
+<P>Para efetivar a gera&ccedil;&atilde;o de p&aacute;ginas HTML das telas de navega&ccedil;&atilde;o de um dado contexto, deve-se utilizar o menu de opera&ccedil;&atilde;o ROTAPO.</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B>&nbsp;Solicita&ccedil;&atilde;o on-line</P><DIR>
+
+<FONT SIZE=2><P>Menu de opera&ccedil;&atilde;o</B> : ROTAPO</P>
+<B><P>Opera&ccedil;&atilde;o</B> - "GER" (Gera&ccedil;&atilde;o de p&aacute;ginas HTML a partir do sistema ou contexto).</P>
+<P>Ser&aacute; encadeada uma tela com todos os processos de gera&ccedil;&otilde;es de p&aacute;ginas HTML, onde se deve informar "S" (Sim) no campo EXECUCAO (S/N) referente &agrave; "Menus de um contexto" (Fase 2)</P></DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B>&nbsp;Tela de par&acirc;metros:</P>
+</B><FONT SIZE=2><P>Para a gera&ccedil;&atilde;o de p&aacute;ginas HTML dos menus da navega&ccedil;&atilde;o, somente os seguintes argumentos devem ser informados, caso sejam necess&aacute;rios:</P><DIR>
+
+<B><P>Contexto </B>- C&oacute;digo do contexto cujas telas de navega&ccedil;&atilde;o ser&atilde;o geradas em HTML<B>;</P>
+<P>Prioridades para defini&ccedil;&atilde;o das palavras-chaves no corpo dos menus de escolha</P>
+</B><P>No momento da gera&ccedil;&atilde;o de uma p&aacute;gina HTML, dever&atilde;o ser identificados, no desenho do menu de escolha, onde se encontram as palavras-chaves definidas para tal menu. Isto porque, para cada uma das rotas, que ser&aacute; identificada pela sua respectiva palavra-chave, ser&aacute; criado um hyperlink, de acordo com o cadastramento desta rota no reposit&oacute;rio de dados.</P>
+<P>Para auxiliar na localiza&ccedil;&atilde;o das palavras-chaves no desenho do corpo do menu, podem ser estabelecidas as prioridades com que tais palavras foram desenhadas.</P>
+<B><P>Limitadas por caracteres nao maiusculos </B>- Prioridade com que as palavras-chaves aparecem sempre delimitadas por caracteres n&atilde;o mai&uacute;sculos (espa&ccedil;os, min&uacute;sculos, caracteres especiais...) (opcional).</P>
+<P>Exemplos de rotas com palavras-chaves limitadas por caracteres n&atilde;o mai&uacute;sculos:</P><DIR>
+
+<P>LANcamento de PEDidos</P>
+<P>EMIssao de noTA fiscal</P></DIR>
+
+<P>Pode ser informado um valor de 1 a 3 para tal prioridade.</P>
+<B><P>Juntas - </B>Prioridade com que as palavras-chaves aparecem sempre juntas, em uma mesma palavra, no corpo do menu (opcional).</P>
+<P>Exemplos de rotas com palavras-chaves na mesma palavra:</P><DIR>
+
+<P>LIBeracao de pedidos</P>
+<P>EMISSAO de nota fiscal</P>
+<P>relatorio de usuarios em DEBITO</P></DIR>
+
+<P>Pode ser informado um valor de 1 a 3 para tal prioridade.</P>
+<B><P>Juntas no inicio </B>- Prioridade com que as palavras-chaves aparecem sempre juntas, em uma mesma palavra, no in&iacute;cio de cada rota no corpo do menu (opcional).</P>
+<P>Exemplos de rotas com palavras-chaves agrupadas no inicio da rota:</P><DIR>
+
+<P>LIB - LIBERACAO DE PEDIDOS</P>
+<P>EMINOT - emissao de nota fiscal</P>
+<P>DEBITO - relatorio de usuarios em d&eacute;bito</P></DIR>
+
+<P>Pode ser informado um valor de 1 a 3 para tal prioridade.</P>
+<P>Em rela&ccedil;&atilde;o &agrave; gera&ccedil;&atilde;o de hyperlinks a partir da localiza&ccedil;&atilde;o das palavras-chaves, tem-se ainda as seguintes considera&ccedil;&otilde;es:</P></DIR>
+</DIR>
+</DIR>
+
+
+<UL>
+
+<UL>
+<LI>As prioridades informadas somente ser&atilde;o consideradas caso sejam encontradas mais de uma rota referente a uma mesma palavra-chave. Isto ir&aacute; ocorrer quando, pela an&aacute;lise do desenho, uma palavra-chave ocorrer em mais de uma frase (rota). Caso aconte&ccedil;a que, mesmo ap&oacute;s aplicadas as prioridades, n&atilde;o seja resolvido o impasse, as v&aacute;rias frases (rotas) ser&atilde;o consideradas como um mesmo link e o usu&aacute;rio dever&aacute; interceder na p&aacute;gina HTML gerada, a fim de acertar devidamente os links criados.</LI></UL>
+</UL>
+
+
+<UL>
+
+<UL>
+<LI>As palavras-chaves que n&atilde;o forem encontradas ser&atilde;o ignoradas.</LI></UL>
+</UL>
+
+
+<UL>
+
+<UL>
+<LI>Ser&atilde;o considerados apenas os caracteres mai&uacute;sculos para localiza&ccedil;&atilde;o das palavras-chaves.</LI></UL>
+</UL>
+<DIR>
+<DIR>
+<DIR>
+
+<B><P>Ambiente</B> - Ambiente das telas de navega&ccedil;&atilde;o a serem convertidas: "T" (Teste) ou "P"(Produ&ccedil;&atilde;o).</P></DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B>&nbsp;Dados do</B><I> </I><B>job</P><DIR>
+
+<FONT SIZE=2><P>Jobs:&#9;&#9;&#9;</B>SI/W/JB/02 e SR/B/JF/36.</P>
+<B><P>Descri&ccedil;&atilde;o:&#9;&#9;</B>Gera&ccedil;&atilde;o de p&aacute;ginas HTML das telas de navega&ccedil;&atilde;o de um contexto.</P>
+<B><P>Periodicidade:&#9;&#9;</B>Espor&aacute;dico.</P>
+<B><P>Recupera&ccedil;&atilde;o:&#9;&#9;</B>No caso de falha, este job pode ser disparado novamente.</P>
+<P>A seguir, &eacute; apresentada a estrutura&ccedil;&atilde;o do job SI/W/JB/02.</P>
+<P>Programa executado - SI/W/PC/02 (Gera&ccedil;&atilde;o de p&aacute;ginas HTML das telas de navega&ccedil;&atilde;o de um contexto)</P>
+<P>Par&acirc;metro - Arquivo DATA SIWA51, no qual se deve informar "xxxxxxxxxmjia", onde:</P>
+<B><P>xxxxxxxxx</B> - &eacute; o c&oacute;digo do contexto cujas p&aacute;ginas HTML ser&atilde;o geradas (9 caracteres);</P>
+<B><P>m</B> - &eacute; a prioridade com que as escolhas aparecem em mai&uacute;sculas no corpo do menu; (opcional)</P>
+<B><P>j</B> - &eacute; a prioridade com que as escolhas aparecem juntas, numa mesma palavra, no corpo do menu; (opcional)</P>
+<B><P>i</B> - &eacute; a prioridade com que as escolhas aparecem juntas, numa mesma palavra, no in&iacute;cio de cada rota no corpo do menu; (opcional)</P>
+<B><P>a</B> - &eacute; o ambiente em que se encontram as telas do contexto que ser&atilde;o a base da gera&ccedil;&atilde;o;</P>
+<B><P>Entrada</B> - SDDB01 (Banco de dados do SADS);</P>
+<B><P>Sa&iacute;da</B> - Arquivos HTML.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT FACE="CG Times" SIZE=4>&nbsp;Gera&ccedil;&atilde;o de p&aacute;ginas HTML a partir de telas de processamento e menus de op&ccedil;&atilde;o de um sistema</P>
+</B></FONT><FONT SIZE=2><P>Atrav&eacute;s deste processo, ser&atilde;o geradas as p&aacute;ginas HTML a partir de todas as telas de processamento e menus de op&ccedil;&atilde;o do sistema especificado, a fim de que, posteriormente, a partir destas p&aacute;ginas criadas, possam ser manualmente efetuadas manuten&ccedil;&otilde;es para torn&aacute;-las mais elaboradas e criativas.</P>
+<P>Neste processo de gera&ccedil;&atilde;o, as p&aacute;ginas HTML s&atilde;o criadas tais e quais os desenhos das telas cadastradas no reposit&oacute;rio de dados do SADS, sem ser acrescentado ou alterado nenhum recurso visual. O prop&oacute;sito &eacute; gerar o fonte HTML da tela, para, a partir do mesmo, o pr&oacute;prio usu&aacute;rio efetuar suas manuten&ccedil;&otilde;es, colocando figuras, fundos, cores, etc.</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B>&nbsp;Solicita&ccedil;&atilde;o on-line</P><DIR>
+
+<FONT SIZE=2><P>Menu de opera&ccedil;&atilde;o : </B>ROTAPO</P>
+<B><P>Opera&ccedil;&atilde;o - </B>"GER" (Gera&ccedil;&atilde;o de p&aacute;ginas HTML das telas de processamento e menus de op&ccedil;&atilde;o de um sistema).</P>
+<P>Ser&aacute; encadeada uma tela com todos os processos de gera&ccedil;&otilde;es de p&aacute;ginas HTML, onde se deve informar "S" (Sim) no campo EXECUCAO (S/N) referente &agrave; "Telas e menus de op&ccedil;&atilde;o por sistema" (Fase 1)</P></DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B>&nbsp;Tela de par&acirc;metros:</P><DIR>
+
+</B><FONT SIZE=2><P>Para a gera&ccedil;&atilde;o de p&aacute;ginas HTML dos menus da navega&ccedil;&atilde;o, somente o seguinte argumento deve ser informado:</P>
+<B><P>Sistema – </B>C&oacute;d. do sistema cujas telas de processam. e menus de op&ccedil;&atilde;o ser&atilde;o gerados em HTML.</P>
+<B><P>Dados do job</P>
+<P>Jobs:&#9;&#9;</B>&#9;SI/W/JB/01 e SR/B/JF/36.</P>
+<B><P>Descri&ccedil;&atilde;o:&#9;&#9;</B>Gera&ccedil;&atilde;o de p&aacute;ginas HTML das telas de processamento e menus de op&ccedil;&atilde;o de um sistema.</P>
+<B><P>Periodicidade:&#9;&#9;</B>Espor&aacute;dico.</P>
+<B><P>Recupera&ccedil;&atilde;o:&#9;&#9;</B>No caso de falha, este job pode ser disparado novamente.</P>
+<P>A seguir, &eacute; apresentada a estrutura&ccedil;&atilde;o do job SI/W/JB/01.</P>
+<P>Programa executado - SI/W/PC/01 (Gera&ccedil;&atilde;o de p&aacute;ginas HTML das telas de processamento e menus de op&ccedil;&atilde;o de um sistema)</P>
+<P>Par&acirc;metro - Recebido por refer&ecirc;ncia, no formato "sss", onde:</P>
+<B><P>"sss"</B> - &eacute; o c&oacute;digo do sistema cujas p&aacute;ginas HTML ser&atilde;o geradas.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT FACE="CG Times" SIZE=4>&nbsp;Gera&ccedil;&atilde;o de p&aacute;ginas HTML a partir de uma tela espec&iacute;fica</P>
+</B></FONT><FONT SIZE=2><P>Atrav&eacute;s deste processo, ser&aacute; gerada a p&aacute;gina HTML referente a uma tela espec&iacute;fica qualquer, que pode ser uma tela de processamento, menu de op&ccedil;&atilde;o ou menu de navega&ccedil;&atilde;o (menu de escolha ou opera&ccedil;&atilde;o). A partir desta p&aacute;gina criada, podem ser manualmente efetuadas manuten&ccedil;&otilde;es para torn&aacute;-la mais elaborada e criativa.</P>
+<P>Neste processo de gera&ccedil;&atilde;o, a p&aacute;gina HTML tamb&eacute;m &eacute; criada tal e qual o desenho da tela em produ&ccedil;&atilde;o cadastrada no reposit&oacute;rio de dados, sem ser acrescentado ou alterado nenhum recurso visual, independente de ser uma tela da navega&ccedil;&atilde;o. O prop&oacute;sito &eacute; gerar o fonte HTML da tela, para, a partir do mesmo, o pr&oacute;prio usu&aacute;rio efetuar suas manuten&ccedil;&otilde;es, colocando figuras, fundos, cores, etc.</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B>&nbsp;Solicita&ccedil;&atilde;o on-line</P><DIR>
+
+<FONT SIZE=2><P>Menu de opera&ccedil;&atilde;o :</B> ROTAPO</P>
+<B><P>Opera&ccedil;&atilde;o</B> - "GER" (Gera&ccedil;&atilde;o de p&aacute;gina HTML de uma tela espec&iacute;fica).</P>
+<P>Ser&aacute; encadeada uma tela com todos os processos de gera&ccedil;&otilde;es de p&aacute;ginas HTML, onde se deve informar "S" (Sim) no campo EXECUCAO (S/N) referente &agrave; "Tela espec&iacute;fica" (Fase 3)</P></DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B>&nbsp;Tela de par&acirc;metros:</P><DIR>
+
+</B><FONT SIZE=2><P>Para a gera&ccedil;&atilde;o de p&aacute;gina HTML de uma tela espec&iacute;fica, somente o seguinte argumento deve ser informado:</P>
+<P>Tela - C&oacute;digo da tela a partir da qual ser&aacute; gerada uma p&aacute;gina HTML ("ssstmmnn").</P>
+<B><P>Dados do job</P>
+<P>Jobs:&#9;&#9;&#9;</B>SI/W/JB/03 e SR/B/JF/36.</P>
+<B><P>Descri&ccedil;&atilde;o:&#9;&#9;</B>Gera&ccedil;&atilde;o de p&aacute;gina HTML de uma tela espec&iacute;fica.</P>
+<B><P>Periodicidade:&#9;</B>&#9;Espor&aacute;dico.</P>
+<B><P>Recupera&ccedil;&atilde;o:&#9;&#9;</B>No caso de falha, este job pode ser disparado novamente.</P>
+<P>A seguir, &eacute; apresentada a estrutura&ccedil;&atilde;o do job SI/W/JB/03.</P>
+<P>Programa executado - SI/W/PC/03 (Gera&ccedil;&atilde;o de p&aacute;ginas HTML de uma tela espec&iacute;fica).</P>
+<P>Par&acirc;metro - Recebido por refer&ecirc;ncia, no formato "ssstmmnn", onde:</P>
+<B><P>"ssstmmnn" </B>- &eacute; o c&oacute;digo da tela a partir da qual ser&aacute; gerada a p&aacute;gina HTML.</P></DIR>
+</DIR>
+</DIR>
+
+<a name="Altera"></FONT><B><FONT FACE="CG Times" SIZE=5><P>Altera&ccedil;&atilde;o em p&aacute;ginas HTML</P></a>
+</B></FONT><FONT SIZE=2><P>Caso seja desej&aacute;vel, pode-se criar p&aacute;ginas HTML elaboradas e criativas, utilizando recursos gr&aacute;ficos, para substituir o desenho de uma tela de um sistema cooperativo a ser apresentada. Neste caso, o servidor n&atilde;o ir&aacute; converter automaticamente a tela e ir&aacute; exibi-la de acordo com a p&aacute;gina HTML elaborada.</P>
+<P>A seguir ser&aacute; apresentado o desenho da tela inicial do contexto SADS, apresentando um exemplo de uma tela alterada manualmente.</P><DIR>
+<DIR>
+
+</FONT><P><center><table border=1 bordercolor=#000000><IMG SRC="Imagem7.gif"></P></table></center>
+<FONT SIZE=2><P><center><b>Figura 4:</b> Menu inicial do SADS</P></center>
+<P>Telas de sistemas n&atilde;o cooperativos ou de sistemas n&atilde;o SADS s&atilde;o sempre convertidas automaticamente e, desta forma, n&atilde;o h&aacute; possibilidade de apresent&aacute;-las com outro formato criado manualmente.</P>
+<P>Para substituir o desenho de uma tela cooperativa a ser exibida, algumas considera&ccedil;&otilde;es e dicas devem ser observadas:</P>
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;O novo desenho deve residir no mesmo <I>usercode</I> definido para o <I>program</I> SIW00 no <I>Utility</I>. </P>
+</FONT><P><IMG SRC="Bullet6.gif" WIDTH=15 HEIGHT=11><FONT SIZE=2>&nbsp;Caso a tela a ser substitu&iacute;da seja de navega&ccedil;&atilde;o - menu de escolha ou opera&ccedil;&atilde;o, o <I>title</I> de seu arquivo deve obedecer o seguinte formato:</P>
+<B><P>&nbsp;</P>
+</B></FONT><P><IMG SRC="Bullet8.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;(usercode)diret&oacute;rio/CONTEXTO/contexto/"tela.ext"/T on pack</B> ,onde:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;usercode</B> - &Eacute; o <I>usercode</I> definido para o <I>program</I> SIW00 no <I>Utility</P>
+</I></FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;diret&oacute;rio</B> - &Eacute; o diret&oacute;rio raiz dos arquivos a serem acessados pelo Servidor <I>Web</I>, definido na tabela SBPM5077 - Tabela de Par&acirc;metros do Servidor <I>Web</I>, PARAMETRO = "<I>WEB</I>DIR";</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;CONTEXTO</B> - Constante que identifica que o arquivo HTML para substituir uma tela de navega&ccedil;&atilde;o de um contexto;</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;contexto</B> - &Eacute; o c&oacute;digo do contexto ao qual a tela pertence;</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;tela</B> - T&iacute;tulo da tela de navega&ccedil;&atilde;o - menu de escolha ou menu de opera&ccedil;&atilde;o;</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;ext</B> - Extens&atilde;o do arquivo definida na tabela SBPM5077 - Tabela de Par&acirc;metros do Servidor <I>Web</I> -, PARAMETRO = "EXT"; </P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;T</B> - Identificador de tela em teste, caso a convers&atilde;o tenha sido efetuada neste ambiente;</P>
+</FONT><P><IMG SRC="Bullet2.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;pack </B>– Disco prim&aacute;rio definido na <I>family</I> do <I>usercode</I> do <I>program</I> SIW00.</P>
+<P>- Caso a tela a ser substitu&iacute;da n&atilde;o seja de navega&ccedil;&atilde;o - menu de op&ccedil;&atilde;o ou tela de processamento -, o <I>title</I> de seu arquivo deve obedecer o seguinte formato:</P>
+<P>&nbsp;</P></DIR>
+
+</FONT><P><IMG SRC="Bullet8.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;(usercode)diret&oacute;rio/tela on pack </B>,onde:</P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;usercode</B> - &Eacute; o <I>usercode</I> definido para o <I>program</I> SIW00 no <I>Utility</P>
+</I></FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;diret&oacute;rio</B> - &Eacute; o diret&oacute;rio raiz dos arquivos a serem acessados pelo Servidor <I>Web</I>, definido na tabela SBPM5077 - Tabela de Par&acirc;metros do Servidor <I>Web</I>, PARAMETRO = "<I>WEB</I>DIR";</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;tela</B> - C&oacute;digo da tela referente ao arquivo (sssTmmnn);</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2>&nbsp;pack </B>– Disco prim&aacute;rio definido na <I>family</I> do <I>usercode</I> do <I>program</I> SIW00.</P>
+<P>- Os campos de <I>output</I> e os textos (parte fixa) da tela podem ser alterados livremente.</P>
+<P>- N&atilde;o pode ser alterada a ordena&ccedil;&atilde;o dos campos de <I>input</I> da tela, nem podem ser inclu&iacute;dos ou exclu&iacute;dos tais campos. Em suma, a ordena&ccedil;&atilde;o e o n&uacute;mero de campos de <I>input</I> da nova tela deve ser igual &agrave;quela cadastrada no reposit&oacute;rio de dados do SADS.</P>
+<P>- Pode-se mudar a forma de apresenta&ccedil;&atilde;o dos campos de <I>input</I>, usando recursos no padr&atilde;o <I>Windows</I> - <I>Radio buttons, check buttons, edit text</I>, etc - desde que o conte&uacute;do do campo a ser enviado para o servidor seja igual ao que seria enviado anteriormente pelo antigo desenho da tela. </P></DIR>
+
+<P>Para visualiza&ccedil;&atilde;o de uma altera&ccedil;&atilde;o de apresenta&ccedil;&atilde;o, observe a p&aacute;gina a seguir, que &eacute; utilizada no cadastramento de desenhos de telas. Nesta p&aacute;gina, os campos "Opera&ccedil;&atilde;o" e "Estado" foram alterados e, ao inv&eacute;s de simples campos de <I>input</I>, utilizam os recursos de <I>List box</I> e <I>Radio</I> <I>Buttons</I>. </P>
+</FONT><P><center><table border=1 bordercolor=#000000><tr><td><IMG SRC="Imagem8.gif"></center></table></P>
+<FONT SIZE=2><P><center><b>Figura 5:</b> DESTEL com recursos visuais Windows</center></P>
+<P>&nbsp;</P>
+<P>Se for necess&aacute;rio identificar alguma extens&atilde;o no <I>title</I> de um arquivo criado manualmente, a fim de ser acessado pelo Servidor <I>Web</I>, o seu c&oacute;digo dever&aacute; ser definido entre aspas. Esse padr&atilde;o &eacute; v&aacute;lido para os arquivos de qualquer extens&atilde;o. O tamanho m&aacute;ximo do <I>string</I> entre aspas &eacute; de 17 caracteres, ou seja, o tamanho &uacute;til para o c&oacute;digo de um arquivo &eacute; de 17 menos a extens&atilde;o, incluindo o "."(ponto).</P>
+<P>Exemplo do <I>title</I> de um arquivo criado manualmente para ser acessado pelo Servidor <I>Web</I>: </P>
+</FONT><P><IMG SRC="Bullet8.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2>&nbsp;(use<I>Web</I>)<I>Web</I>dir/contexto/pedidos/"pedcli.gif" on pack<I>Web</P>
+</B></I><P ALIGN="CENTER">&nbsp;</P></DIR>
+</DIR>
+
+<p><a name="Carfun"></FONT><B><FONT FACE="Arial" SIZE=6>Caracter&iacute;sticas funcionais</P></a>
+</B></FONT><FONT SIZE=2><P>Atrav&eacute;s da utiliza&ccedil;&atilde;o do Servidor <I>Web</I>, torna-se poss&iacute;vel a utiliza&ccedil;&atilde;o de equipamentos <I>Unisys </I>S&eacute;rie A ou <I>Clear Path</I> como m&aacute;quinas servidoras Internet/Intranet. Elas ir&atilde;o receber as requisi&ccedil;&otilde;es, oriundas de programas <I>browser </I>&nbsp;e ir&atilde;o atend&ecirc;-las, enviando documentos HTML, <I>byte-codes</I> JAVA, ou mesmo transa&ccedil;&otilde;es que processem em janela direta do COMS.</P><DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT FACE="CG Times" SIZE=4><a name="Inicio">In&iacute;cio de sess&atilde;o</a></P>
+</B></FONT><FONT SIZE=2><P>Ao receber a primeira solicita&ccedil;&atilde;o de uma sess&atilde;o, o servidor verificar&aacute; a exist&ecirc;ncia do arquivo INDEX.HTML e, caso exista, ele ser&aacute; ent&atilde;o exibido. Este arquivo pode ser elaborado manualmente de acordo com a necessidade e criatividade da pr&oacute;pria instala&ccedil;&atilde;o. Se este arquivo n&atilde;o existir, o servidor exibir&aacute; uma p&aacute;gina contendo um &iacute;ndice de todos os arquivos existentes no diret&oacute;rio especificado no par&acirc;metro "<I>WEB</I>DIR" da tabela SBPM5077 - Tabela de Par&acirc;metros do Servidor <I>Web</I>.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT FACE="CG Times" SIZE=4><a name="Acesso">Acesso aos arquivos</P></a>
+</B></FONT><FONT SIZE=2><P>As telas das transa&ccedil;&otilde;es a serem utilizadas s&atilde;o convertidas automaticamente, sem necessidade de reprograma&ccedil;&atilde;o, para documentos HTML, antes mesmo de serem enviadas para a esta&ccedil;&atilde;o cliente. </P>
+<P>Sempre quando &eacute; solicitada uma p&aacute;gina HTML, o Servidor <I>Web</I> ir&aacute; verificar, no diret&oacute;rio raiz dos arquivos a serem acessados - par&acirc;metro "<I>WEB</I>DIR" da tabela SBPM5077-, se existe um arquivo com tal c&oacute;digo. Se, por exemplo, for solicitado "palestra", ser&aacute; procurado o arquivo "&lt;<I>WEB</I>DIR&gt;/PALESTRA". </P>
+<P>Caso exista, o Servidor ir&aacute; envi&aacute;-lo &agrave; esta&ccedil;&atilde;o cliente. Caso n&atilde;o exista e o arquivo seja solicitado sem extens&atilde;o, ser&aacute; ent&atilde;o verificado se existe, tamb&eacute;m no diret&oacute;rio &lt;<I>WEB</I>DIR&gt;, o arquivo com o mesmo c&oacute;digo, por&eacute;m com extens&atilde;o similar &agrave; especificada no par&acirc;metro "EXT" da tabela SBPM5077. Se, por exemplo, nesta tabela estiver cadastrado "HTM", ser&aacute; ent&atilde;o verificada a exist&ecirc;ncia do arquivo "&lt;<I>WEB</I>DIR&gt;/PALESTRA.HTM". </P>
+<P>Se este arquivo tamb&eacute;m n&atilde;o existir, o Servidor <I>Web</I> interpretar&aacute; o c&oacute;digo "palestra" como sendo de um diret&oacute;rio e ir&aacute; verificar a presen&ccedil;a do seguinte arquivo: "&lt;<I>WEB</I>DIR&gt;/PALESTRA/INDEX.HTM". </P>
+<P>N&atilde;o encontrando e ainda assumindo que "palestra" &eacute; um diret&oacute;rio, o Servidor montar&aacute; uma p&aacute;gina com a lista de todos os arquivos e diret&oacute;rios presentes no diret&oacute;rio solicitado. Caso n&atilde;o contenha arquivos e/ou diret&oacute;rios, o Servidor <I>Web</I>, ent&atilde;o, retornar&aacute; uma mensagem de erro, indicando que o arquivo especificado - "palestra" - n&atilde;o foi encontrado (NO FILE).</P>
+<P>Em s&iacute;ntese, para que o Servidor <I>Web</I> encontre e exiba um arquivo, ele percorre os seguintes caminhos:</P></DIR>
+
+<OL>
+
+<OL>
+
+<LI>&lt;<I>WEB</I>DIR&gt;/ARQUIVO</LI>
+<LI>&lt;<I>WEB</I>DIR&gt;/ARQUIVO.&lt;EXT&gt;</LI>
+<LI>&lt;<I>WEB</I>DIR&gt;/ARQUIVO/INDEX.HTM</LI>
+<LI>&lt;<I>WEB</I>DIR&gt;/ARQUIVO/=</LI>
+<LI>NO FILE.</LI></OL>
+</OL>
+<DIR>
+
+<P>Para que o Servidor <I>Web</I> possa fazer o controle das sess&otilde;es de trabalho das diversas esta&ccedil;&otilde;es conectadas, ele ir&aacute; enviar <I>cookies</I> nas m&aacute;quinas clientes. Por&eacute;m, como a recep&ccedil;&atilde;o de um <I>cookie</I> pode ser impedida atrav&eacute;s de configura&ccedil;&atilde;o efetuada no <I>browser</I>, &eacute; importante salientar que, caso isto ocorra, n&atilde;o ser&aacute; poss&iacute;vel manter os dados correntes da esta&ccedil;&atilde;o criada no <I>mainframe</I> entre uma requisi&ccedil;&atilde;o e outra, tais como: c&oacute;digo e senha do <I>logon</I>, janela corrente, <I>usercode</I> e <I>password</I>, etc.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT FACE="CG Times" SIZE=4><a name="Erro">Mensagens de erro</P>
+</B></FONT><FONT SIZE=2><P>Sempre quando for necess&aacute;rio apresentar uma mensagem de erro ao usu&aacute;rio oriunda de um sistema cooperativo, o Servidor <I>Web</I> enviar&aacute; uma p&aacute;gina HTML que possibilitar&aacute; exibir tal mensagem em um di&aacute;logo, impedindo que a p&aacute;gina anteriormente preenchida seja perdida.</P>
+<P>Por&eacute;m, se a mensagem de erro for enviada por um sistema n&atilde;o cooperativo ou um sistema n&atilde;o SADS, ela ser&aacute; entregue ao <I>browser</I> como uma p&aacute;gina HTML qualquer, e, desta forma, ir&aacute; se sobrepor &agrave;quela j&aacute; existente. Neste caso, para recuperar a p&aacute;gina anterior j&aacute; preenchida, deve-se utilizar o bot&atilde;o "<I>Back</I>" do <I>browser</I>.</P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT FACE="CG Times" SIZE=4><a name="Coms">Mensagens para o COMS</P>
+</B></FONT><FONT SIZE=2><P>Atrav&eacute;s do campo de endere&ccedil;o do pr&oacute;prio <I>browser</I>, pode ser disparada qualquer mensagem a fim de ser tratada pelo COMS, tal como: "?ON SADS", "?WRU", outros <I>trancodes</I> etc. O servidor ir&aacute; entregar devidamente tal mensagem ao COMS para que ele a processe, devolvendo a resposta em p&aacute;ginas HTML.</P>
+<P>Para disparar uma mensagem COMS, a mesma deve ser especificada no campo de endere&ccedil;o do <I>browser</I> no seguinte formato:</P>
+<B><P>endere&ccedil;o/COMS_BIN/mensagem</P>
+</B><P>onde:</P><DIR>
+
+<B><P>endere&ccedil;o</B> - &Eacute; o endere&ccedil;o IP da m&aacute;quina na qual foi instalado o Servidor <I>Web</I>;</P>
+<B><P>COMS_BIN</B> - &Eacute; o diret&oacute;rio que identifica as mensagens a serem tratadas pelo COMS;</P>
+<B><P>mensagem - </B>&Eacute; a mensagem a ser interpretada pelo COMS.</P></DIR>
+</DIR>
+</FONT></BODY>
+</HTML>

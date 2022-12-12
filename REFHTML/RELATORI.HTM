@@ -1,0 +1,1177 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Untitled</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="doc_b.gif">
+<basefont size=2>
+<B><FONT SIZE=6><P><A NAME="Relat">Relat&oacute;rio</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Conce">Conceitua&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<P><Basefont size=2></P>
+<P>Relat&oacute;rio &eacute; o elemento respons&aacute;vel por apresentar dados em formul&aacute;rios de papel para o usu&aacute;rio, ou seja, &eacute; um elemento utilizado pelos aplicativos para exibir dados a serem emitidos em impressoras remota ou central. </P>
+<P>O relat&oacute;rio &eacute; composto por um conjunto de linhas. Cada linha, por sua vez, possui um desenho (layout) com a disposi&ccedil;&atilde;o dos campos e cabe&ccedil;alhos. O desenho representa a maneira pela qual a informa&ccedil;&atilde;o ser&aacute; apresentada ao usu&aacute;rio. Cada linha pode possuir uma estrutura de atributos, que s&atilde;o os elementos vari&aacute;veis da linha que ser&atilde;o compostos pelo aplicativo para apresenta&ccedil;&atilde;o ao usu&aacute;rio. </P>
+<P>O SADS suporta a defini&ccedil;&atilde;o e prototipa&ccedil;&atilde;o de relat&oacute;rios e, a partir de sua defini&ccedil;&atilde;o, gera <I>libraries</I> Cobol para utiliza&ccedil;&atilde;o pelos programas aplicativos que os emitem. </P>
+<B><FONT SIZE=5><P><A NAME="Querel">Quebra de relat&oacute;rio</A></B></FONT> </P>
+<P>Os itens de dados de um relat&oacute;rio podem ser agrupados devido ao fato de possu&iacute;rem uma ou mais caracter&iacute;sticas comuns. </P>
+<P>Desta forma, cada agrupamento de itens de dados poder&aacute; conter linhas iniciais, que cont&ecirc;m as caracter&iacute;sticas comuns ao grupo, - linhas de prepara&ccedil;&atilde;o do agrupamento - linhas de prepara&ccedil;&atilde;o de quebra, linhas com os itens de dados - linhas de detalhes - e linhas de encerramento do agrupamento - linhas de encerramento de quebra. </P>
+<P>Antes de realizar a impress&atilde;o de um item que n&atilde;o possui caracter&iacute;sticas comuns ao grupo, deve-se finalizar o agrupamento antigo e dar in&iacute;cio a um novo. Este rompimento de agrupamentos de dados &eacute; conhecido como quebra. </P>
+<P>Em um mesmo relat&oacute;rio podem existir agrupamentos dentro de agrupamentos, ou seja, quebras externas e internas. A hierarquia destes agrupamentos &eacute; determinada atrav&eacute;s do n&iacute;vel de quebra de cada um deles. </P>
+<P>Para melhor explicar o assunto, &eacute; apresentado um exemplo pr&aacute;tico de relat&oacute;rio com quebras. O exemplo apresentado &eacute; bastante simples e servir&aacute; de refer&ecirc;ncia para todas as defini&ccedil;&otilde;es relativas ao t&oacute;pico em quest&atilde;o. </P>
+<P>Especifica&ccedil;&otilde;es para o relat&oacute;rio exemplo: </P><DIR>
+
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>O relat&oacute;rio tem como objetivo emitir uma listagem com todos os empregados da empresa "M&Oacute;VEIS ALTEROSA S.A"; </P>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>A empresa, para o qual ser&aacute; emitido o relat&oacute;rio, possui v&aacute;rias &aacute;reas e cada &aacute;rea, por sua vez, possui v&aacute;rios setores; </P>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>No relat&oacute;rio ser&aacute; apresentado, tamb&eacute;m, o total de empregados da empresa, bem como o total de empregados por &aacute;rea e por setor, isoladamente.</P></DIR>
+
+<P>Esse relat&oacute;rio poderia apresentar os seguintes dados: </P>
+<pre><font size=3>**********************************************************************
+*                    RELATORIO DE EMPREGADOS DA                PAG.1 *
+*                 M O V E I S A L T E R O S A S.A.                   *
+*                        18/01/93 10:00:00                           *
+**********************************************************************
+AREA: ADF - Administrativa e Financeira
+DIRETOR: Ronaldo Pereira Rocha
+    SETOR: PES - Pessoal
+         Alexandre Costa de Almeida               MAT: 168-1
+&#9; Andrea Lemos Campolina                   MAT: 134-3
+&#9; Marcelo Rubens Martins                   MAT: 068-2
+&#9; Pedro Gervasio da Silveira               MAT: 004-1
+&#9; Sonia Bras Lima                          MAT: 131-5
+         Virginia Lucas                           MAT: 164-9
+     TOTAL DO SETOR: 6
+     SETOR: CONT - Contabilidade
+        Alberto Eliakin Araujo                    MAT: 115-3
+        Carlos de Almeida Vasconcelos             MAT: 035-2
+        Vera Le&amp;acetil;o Braga                     MAT: 007-2
+     TOTAL DO SETOR: 3
+TOTAL DA AREA: 10
+AREA: MKT - Marketing
+DIRETOR: Sandra Freitas Nascimento
+    SETOR: VDS - Vendas
+&#9;  Ana Maria Cardoso Araujo                MAT: 096-3
+&#9;  Andre de Souza Alvim                    MAT: 112-2 
+    TOTAL DO SETOR: 2
+    SETOR: PBC - Publicidade:
+&#9;  Donizeti Cesar Maximo                   MAT: 082-4 
+    TOTAL DO SETOR: 1
+TOTAL DA AREA: 4
+AREA: TCN - Tecnica
+DIRETOR: Antonio Eustaquio Silva
+    SETOR: DES - Desenvolvimento
+&#9;  Denise Souza Aguiar                     MAT: 056-3 
+&#9;  Jose Lucas Eldorado                     MAT: 058-2
+&#9;  Luiz Fernando Rodrigues                 MAT: 059-3
+&#9;  Marcio Franco Lobato                    MAT: 060-3
+&#9;  Paulo Lima                              MAT: 062-2
+&#9;  Rita Tavares Rezende                    MAT: 063-1
+&#9;  Rogerio Moura                           MAT: 068-2
+&#9;  Sergio Mauricio Ferreira                MAT: 064-1
+    TOTAL DO SETOR: 8
+    SETOR: SPT - Suporte
+&#9;  Guilherme Carvalho Gouveia              MAT: 075-2
+&#9;  Robson Campos Chagas                    MAT: 070-5
+&#9;  Tomas Herminio Costa                    MAT: 077-4
+    TOTAL DO SETOR: 3
+TOTAL DA AREA: 12
+TOTAL GERAL DE EMPREGADOS: 26</pre></font>
+<FONT SIZE=2><P>Os campos para controle de quebra, QBN-ANTER (anterior) e QBA-ATUAL (atual), que ser&atilde;o gerados nos programa que emitem este relat&oacute;rio, possuem a seguinte forma:</FONT> </P>
+<pre><font size=3>
+05 QBN-ANTER. 
+   10  QBN-ANT1.
+       15  QBN-ANT2.
+           20  QBN-AREA        PIC X(03).  - Quebra 2 (&aacute;rea) 
+        15 QBN-SETOR           PIC X(03).  - Quebra 1 (setor).
+05 QBA-ATUAL.
+   10  QBA-ATU1.
+       15  QBA-ATU2.
+           20  QBA-AREA        PIC X(03).  - Quebra 2 (&aacute;rea) 
+       15  QBA-SETOR           PIC X(03).  - Quebra 1 (setor).</pre></font>
+<P>No programa que emite este relat&oacute;rio, antes que qualquer nome de empregado seja impresso, seus dados, que s&atilde;o elementos de quebra (&aacute;rea e setor), s&atilde;o movidos para os campos correspondentes em QBA-ATUAL (QBA-AREA e QBA-SETOR). </P>
+<P>Os campos que comp&otilde;em a estrutura QBN-ANTER acumulam os valores comuns a um grupo de empregados. </P>
+<P>A cada nova leitura, os campos de QBA-ATUAL s&atilde;o compostos e testados pelo programa para verificar se QBA-ATUAL &eacute; diferente de QBN-ANTER. Em caso afirmativo, significa que houve uma quebra, ou seja, o empregado possui um setor ou &aacute;rea (dependendo se foi quebra 1 ou 2) diferente do grupo de empregados anterior. </P>
+<P>A partir desta verifica&ccedil;&atilde;o, ser&atilde;o impressas a linha de encerramento do agrupamento anterior e a linha de prepara&ccedil;&atilde;o do novo agrupamento, antes de imprimir os dados do empregado em quest&atilde;o. Neste momento, a estrutura QBN-ANTER ser&aacute; composta novamente com as informa&ccedil;&otilde;es de QBA-ATUAL. </P>
+<P>De acordo com o exemplo, a cada verifica&ccedil;&atilde;o de empregado que possui um setor diferente do anterior, ocorrer&aacute; uma quebra 1, ou seja, a quebra mais interna - interna porque o setor est&aacute; dentro da &aacute;rea. Deve-se salientar que o campo de controle de setor (QBA-ATU1) cont&eacute;m os c&oacute;digos da &aacute;rea e do setor, e que o campo de controle de &aacute;rea (QBA-ATU2) cont&eacute;m apenas o c&oacute;digo da &aacute;rea. Com isto, pode-se dizer que, a cada empregado com &aacute;rea diferente (quebra de &aacute;rea) se efetuar&aacute; tamb&eacute;m uma quebra de setor. </P>
+<P>Seguindo este racioc&iacute;nio, pode-se concluir (ou generalizar) o seguinte: toda vez que uma quebra for efetuada, por conseguinte, outras ser&atilde;o efetuadas em n&iacute;veis inferiores ao n&iacute;vel em quest&atilde;o, isto &eacute;, ser&atilde;o realizadas todas as quebras internas relativas a esse n&iacute;vel. </P>
+<P>No t&oacute;pico "Defini&ccedil;&atilde;o de relat&oacute;rio", a seguir, encontram-se explicados, isoladamente, os conceitos relativos &agrave; quebra de relat&oacute;rios (n&iacute;vel de quebra, sequ&ecirc;ncia do tipo, etc). </P>
+<B><FONT SIZE=5><P><A NAME="Gerpro">Gera&ccedil;&atilde;o de programas aplicativos que utilizam relat&oacute;rios</A></B></FONT> </P>
+<P>Quando um programa aplicativo declara um relat&oacute;rio como recurso a ser utilizado, o SADS gera o seu fonte com os seguintes comandos: </P><DIR>
+
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>Na WORKING-STORAGE SECTION: </P><DIR>
+
+<P>COPY "ss/s/RL/xnn",</P></DIR>
+
+<P>onde "ss/s/RL/xnn" &eacute; o c&oacute;digo da <I>library</I> do relat&oacute;rio, tamb&eacute;m gerada pelo SADS. </P>
+<P>Esta <I>library</I> cont&eacute;m a declara&ccedil;&atilde;o, em linguagem Cobol, das linhas do relat&oacute;rio. Esta declara&ccedil;&atilde;o &eacute; composta do desenho e da estrutura de campos das linhas do relat&oacute;rio.</P>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>Na PROCEDURE DIVISION: </P>
+<P>As impress&otilde;es de linhas s&atilde;o feitas atrav&eacute;s de uma rotina gerada no programa. Antes de chamar esta rotina, os campos que cont&eacute;m as informa&ccedil;&otilde;es da linha a ser impressa devem ser compostos. </P>
+<P>A codifica&ccedil;&atilde;o gerada pelo SADS relativa &agrave; impress&atilde;o das linhas do relat&oacute;rio em programas <I>batch</I> ou <I>on-line</I> com l&oacute;gica de emiss&atilde;o central &eacute; a seguinte: </P>
+<pre><font size=3>
+     MOVE &lt;linha&gt;                     TO DETALHE
+
+     MOVE &lt;espacejamento da linha&gt;    TO SALTO
+
+     PERFORM 730nn-00-IMPRESS&Atilde;O       THRU 730nn-99-EXIT. </pre></font></DIR>
+
+<P>O "espacejamento da linha" &eacute; um valor referente &agrave; linha que se encontra na <I>library</I> do relat&oacute;rio. Eventualmente, pode-se compor o campo SALTO com valores diferentes dos constantes na <I>library</I>. </P>
+<P>O comando de m&oacute;dulo "IMPRES" e os demais comandos que envolvem relat&oacute;rios e que podem ser definidos em programas aplicativos, est&atilde;o detalhadamente explicados no item "Programa", t&oacute;pico "Comandos de m&oacute;dulos", nesta se&ccedil;&atilde;o. </P>
+<B><FONT SIZE=5><P><A NAME="Padro">Padroniza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<P>O padr&atilde;o de codifica&ccedil;&atilde;o adotado pelo SADS para identifica&ccedil;&atilde;o dos c&oacute;digos de relat&oacute;rios &eacute; o seguinte: </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>"sssRxnn"</B> onde: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12><B>"sss"</B> &eacute;o c&oacute;digo alfab&eacute;tico que identifica o sistema; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12><B>"R"</B> &eacute;a constante de relat&oacute;rio e </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12><B>"xn"</B>&eacute; o identificador alfanum&eacute;rico do relat&oacute;rio. </P></DIR>
+</DIR>
+
+<P>Costuma-se destinar aos relat&oacute;rios c&oacute;digos derivados dos c&oacute;digos dos programas que os emitem. Desta forma, o "xn" do identificador alfanum&eacute;rico do relat&oacute;rio pode ser o mesmo "xn" do programa emissor. O segundo "n" do identificador alfanum&eacute;rico do relat&oacute;rio ("xnn") &eacute; opcional, sendo utilizado para programas que emitem mais de um relat&oacute;rio.</P>
+<B><FONT SIZE=5><P><A NAME="Utili">Utiliza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<P>Relat&oacute;rio, tal como citado em sua defini&ccedil;&atilde;o, &eacute; utilizado pelos aplicativos para apresentar dados para o usu&aacute;rio. </P>
+<P>Atrav&eacute;s da composi&ccedil;&atilde;o dos desenhos das linhas do relat&oacute;rio, torna-se poss&iacute;vel apresentar as informa&ccedil;&otilde;es que o usu&aacute;rio necessitar de forma l&oacute;gica e significativa. </P>
+<B><FONT SIZE=5><P><A NAME="Cadas">Cadastramento</A></B></FONT> </P>
+<P><HR></P>
+<P>O processo de defini&ccedil;&atilde;o de relat&oacute;rio requer o cadastramento de seu sistema no reposit&oacute;rio de dados do SADS. </P>
+<B><FONT SIZE=4><P>Roteiro</B></FONT> </P>
+<P>O cadastramento de relat&oacute;rio &eacute; executado atrav&eacute;s das seguintes fun&ccedil;&otilde;es: </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>Defini&ccedil;&atilde;o de relat&oacute;rio; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>Cadastramento de desenho de linhas de relat&oacute;rio; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>Cadastramento de estrutura de linhas de relat&oacute;rio; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>Gera&ccedil;&atilde;o de <I>library</I> de relat&oacute;rio; </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12>Libera&ccedil;&atilde;o de <I>library</I> de relat&oacute;rio para produ&ccedil;&atilde;o. </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Defrel">Defini&ccedil;&atilde;o de relat&oacute;rio</A></B></FONT> </P>
+<P>Definir um relat&oacute;rio no SADS significa fornecer-lhe um nome, classific&aacute;-lo, definir o tipo de salto para impress&atilde;o de suas linhas e especificar as linhas que o comp&otilde;em informando seu tipo (cabe&ccedil;alho, prepara&ccedil;&atilde;o de quebra, detalhe ou encerramento de quebra), a que quebra pertence, seu n&iacute;vel de quebra e o salto para sua impress&atilde;o. </P>
+<P>No contexto de relat&oacute;rio, entenda-se atributo como sendo o atributo propriamente dito, campo ou sin&ocirc;nimo. </P>
+<P>Para efetuar a defini&ccedil;&atilde;o de um relat&oacute;rio &eacute; necess&aacute;rio que seu sistema j&aacute; esteja cadastrado no reposit&oacute;rio de dados do SADS. </P><DIR>
+
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>RELATORIO </B>- C&oacute;digo do relat&oacute;rio no padr&atilde;o SADS (sssRxnn). </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>NOME</B> - Descri&ccedil;&atilde;o resumida do relat&oacute;rio. </P>
+<P>O nome tem o objetivo de identificar e explicar, de maneira resumida, a que informa&ccedil;&otilde;es o relat&oacute;rio se refere. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>TIPO</B> - Tipo do relat&oacute;rio. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"B" (<I>Batch</I>) - Para relat&oacute;rios que ser&atilde;o emitidos em impressora central ou relat&oacute;rios <I>on-line</I>,impressos atrav&eacute;s do <I>Print System</I> da Unisys em impressora central ou do <I>reprints</I> em impressora remota. </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"R" (Remoto) - Para relat&oacute;rios remotos que n&atilde;o ser&atilde;o impressos atrav&eacute;s do <I>Print System</I> da Unisys,ou seja, que ser&atilde;o enviados diretamente a impressora remota.</P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>LINHAS/PAGINA</B> - Quantidade de linhas a serem impressas por p&aacute;gina. </P>
+<P>Para relat&oacute;rio <I>batch</I>,deve-se informar a quantidade total de linhas que ser&atilde;o impressas por p&aacute;gina, exceto as linhas de cabe&ccedil;alho. </P>
+<P>Para relat&oacute;rio remoto, deve-se informar a quantidade m&aacute;xima de linhas que ser&atilde;o impressas por p&aacute;gina, que dever&aacute; ser menor que ou igual a 90. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B>&nbsp;SALTO DE PAGINA (I/F/A/N) – </B>Tipo de salto de p&aacute;gina a ser efetuado no relat&oacute;rio.</P>
+<P>Os valores poss&iacute;veis s&atilde;o : </P><DIR>
+<DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13>&nbsp; &quot;I&quot; (In&iacute;cio) - Salto de p&aacute;gina no in&iacute;cio do relat&oacute;rio;</P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13>&nbsp;&quot;F&quot; (Fim) - Salto de p&aacute;gina ao final do relat&oacute;rio;</P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13>&nbsp;&quot;A&quot; (Ambos) - Salto de p&aacute;gina no in&iacute;cio e no fim do relat&oacute;rio (default); </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13>&nbsp;&quot;N&quot; (Nenhum) - N&atilde;o haver&aacute; salto de p&aacute;gina nem no in&iacute;cio nem no fim do relat&oacute;rio.</P></DIR>
+</DIR>
+
+<P>Para os relat&oacute;rios <I>batch</I> ser&atilde;o aceitos apenas os valores &quot;A&quot; e &quot;F&quot;, porque o salto ao final do relat&oacute;rio sempre deve ocorrer por uma limita&ccedil;&atilde;o do <I>Print System/Reprints</I>.</P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>SALTO(AFTER/BEFORE)</B> - Tipo do salto a ser utilizado na impress&atilde;o das linhas do relat&oacute;rio. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"A" (<I>After</I>)- Para que cada linha do relat&oacute;rio seja impressa ap&oacute;s as linhas em branco definidas como salto da linha; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"B" (<I>Before</I>)- Para que cada linha do relat&oacute;rio seja impressa antes das linhas em branco definidas como salto da linha.</P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>TAMANHO</B> - Quantidade de colunas por linha. </P>
+<P>O n&uacute;mero de colunas por linha permitido pelo SADS para relat&oacute;rios do tipo <I>batch</I>("B") &eacute; qualquer valor entre 1 e 232 posi&ccedil;&otilde;es. </P>
+<P>Para relat&oacute;rios do tipo remoto ("R"), o n&uacute;mero de colunas por linha permitido &eacute; de: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>80 colunas por linha.<BR>
+Este padr&atilde;o pode ser impresso em formul&aacute;rio de 240mm ou 375mm, no formato de 16 ou 10 caracteres por polegada. </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>132 colunas por linha. Este padr&atilde;o pode ser impresso em formul&aacute;rio de 375mm, no formato de 10 ou 16 caracteres por polegada ou em formul&aacute;rio de 240 mm, no formato de 16 caracteres por polegada. </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>232 colunas por linha.<BR>
+Este padr&atilde;o s&oacute; pode ser impresso em formul&aacute;rio de 375mm, no formato de 16 caracteres por polegada.</P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>LABEL RECORD (OMITTED/STANDARD)</B> - Identificador de presen&ccedil;a de informa&ccedil;&otilde;es<BR>
+de <I>label</I> no relat&oacute;rio <I>batch</I>. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"S" (<I>Standard</I>) - Para que o atributo <I>label record</I>do relat&oacute;rio seja definido como <I>standard</I>; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"O" (<I>Omitted</I>)- Para que o atributo <I>label record</I> do relat&oacute;rio seja definido como <I>omitted.</P></DIR>
+
+</I><P>Este atributo tamb&eacute;m pode ser definido genericamente para todos os relat&oacute;rios da instala&ccedil;&atilde;o, na tabela SBPM5000. Detalhes &agrave; respeito desta parametriza&ccedil;&atilde;o podem ser obtidos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", item "Relat&oacute;rio", subitem "<I>Label Record</I>". </P>
+<P>Caso este atributo tenha sido parametrizado na tabela SBPM5000, ele ser&aacute; assumido no momento de inclus&atilde;o dos relat&oacute;rios, e poder&aacute; ser alterado livremente, caso necess&aacute;rio, para cada um deles. </P>
+<P>A tela possui campos de ocorr&ecirc;ncia (grupos que ocorrem v&aacute;rias vezes na tela) para informa&ccedil;&atilde;o das caracter&iacute;sticas de cada linha que comp&otilde;e o relat&oacute;rio, quais sejam: </P><DIR>
+
+<P><IMG SRC="Seta.gif" WIDTH=10 HEIGHT=10><B>LINHA</B> - N&uacute;mero identificador da linha no relat&oacute;rio. </P>
+<P>Este campo n&atilde;o pode ser preenchido ou alterado e identifica a linha no reposit&oacute;rio de dados do SADS. </P>
+<P><IMG SRC="Seta.gif" WIDTH=10 HEIGHT=10><B>TIPOS DE LINHA(C/P/D/E):</B>Identificador do tipo da linha do relat&oacute;rio. </P>
+<P>Pode assumir os seguintes valores: </P><DIR>
+
+<B><P>"C"</B> - Linha de cabe&ccedil;alho. </P>
+<P>S&atilde;o linhas que listam dados gerais, como data de emiss&atilde;o, data de refer&ecirc;ncia, identifica&ccedil;&atilde;o do relat&oacute;rio, etc. S&atilde;o emitidas no in&iacute;cio de cada p&aacute;gina do relat&oacute;rio. </P>
+<P>No exemplo refer&ecirc;ncia, as cinco primeiras linhas s&atilde;o linhas de cabe&ccedil;alho (linhas do tipo "C"), pois exibem o t&iacute;tulo, a data de refer&ecirc;ncia e o identificador de p&aacute;gina do relat&oacute;rio, e ser&atilde;o emitidas a cada in&iacute;cio de p&aacute;gina. </P>
+<B><P>"P"</B> - Linha de prepara&ccedil;&atilde;o de quebra (cabe&ccedil;alho intermedi&aacute;rio). </P>
+<P>S&atilde;o linhas impressas a cada quebra, antes das linhas de detalhe, que listam os dados com valores repetidos para grupos de linhas de detalhe. </P>
+<P>No exemplo de refer&ecirc;ncia, as linhas de prepara&ccedil;&atilde;o de quebra (tipo "P") s&atilde;o: </P>
+<pre><font size=3>
+  AREA:  xxx - xxxxxxxxxxxxxxxxxxx
+
+  DIRETOR:  xxxxxxxxxxxxxxxxxxxxxx e
+
+       SETOR: xxx - xxxxxxxxxxxxxxxxxx</pre></font>
+<P>Estas linhas ser&atilde;o impressas a cada nova &aacute;rea e setor, respectivamente, antes das linhas de detalhe (linhas de empregados), apresentando a &aacute;rea com seu diretor e o setor que s&atilde;o comuns a eles. </P>
+<B><P>"D"</B> - Linha de detalhe. </P>
+<P>S&atilde;o linhas que listam os itens de dados. </P>
+<P>No exemplo de refer&ecirc;ncia, as linhas que cont&ecirc;m o nome e a matr&iacute;cula dos empregados s&atilde;o as de detalhe (linhas do tipo "D" ), pois s&atilde;o elas que listam os empregados com mesma &aacute;rea e setor indicado no in&iacute;cio do grupo (ou quebra). </P>
+<B><P>"E"</B> - Linha de totaliza&ccedil;&atilde;o de quebra (rodap&eacute; intermedi&aacute;rio) ou linha de encerramento final do relat&oacute;rio (rodap&eacute;). </P>
+<P>S&atilde;o linhas que listam o encerramento intermedi&aacute;rio ou final dos itens. </P>
+<P>No exemplo de refer&ecirc;ncia, as linhas de encerramento de quebra (tipo "E") s&atilde;o: </P>
+<pre><font size=3>
+  TOTAL DA AREA: yyy
+   
+       TOTAL DO SETOR: yyy</pre></font>
+<P>Estas linhas ser&atilde;o impressas no final de cada &aacute;rea ou setor, ou seja, quando quebrar a &aacute;rea ou o setor. O total impresso refere-se &agrave; &aacute;rea ou setor anterior cujas informa&ccedil;&otilde;es terminaram.</P></DIR>
+
+<P><IMG SRC="Seta.gif" WIDTH=10 HEIGHT=10><B>SEQ. DO TIPO</B> - N&uacute;mero sequencial por tipo de linha. </P>
+<P>Cada tipo de linha (C,P,D,E) pode ter at&eacute; 98 linhas distintas. </P>
+<P>As linhas de cabe&ccedil;alho (tipo "C") s&atilde;o apresentadas segundo a sequ&ecirc;ncia definida. </P>
+<P>No exemplo de refer&ecirc;ncia, temos: </P>
+<pre><font size=3>
+<U>  Linha                                             Sequ&ecirc;ncia
+</U>Linha de asteriscos inicial                         1 
+RELATORIO DE EMPREGADOS DA          PAG nn          2
+MOVEIS ALTEROSA S.A.                                3
+Linha com data e hora                               4
+Linha de asteriscos final                           5</pre></font>
+<P>As linhas de prepara&ccedil;&atilde;o de quebra (tipo "P") s&atilde;o apresentadas segundo a sequ&ecirc;ncia definida dentro da quebra. </P>
+<P>No exemplo refer&ecirc;ncia, temos: </P>
+<pre><font size=3>
+<U>  Linha                             Quebra          Sequ&ecirc;ncia
+</U>AREA xxx - xxxxxxxxxxxxxxxxxxx         2            1
+DIRETOR xxxxxxxxxxxxxxxxxxxxxx         2            2
+SETOR xxx - xxxxxxxxxxxxxxxxxx         1            1</pre></font>
+<P>As linhas de detalhe (tipo "D") s&atilde;o apresentadas na sequ&ecirc;ncia definida, a exemplo das linhas de cabe&ccedil;alho. </P>
+<P>No exemplo existe apenas uma linha de detalhe que &eacute; a seguinte: </P>
+<pre><font size=3>
+<U>  Linha                                            Sequ&ecirc;ncia
+</U>xxxxxxxxxxxxxxxxxxxxxxxxx          MAT: yyyry      1</pre></font>
+<P>As linhas de encerramento de quebra ou totaliza&ccedil;&atilde;o (tipo "E") s&atilde;o apresentadas, a exemplo das linhas de prepara&ccedil;&atilde;o de quebra, segundo a sequ&ecirc;ncia definida dentro da quebra. </P>
+<P>No exemplo refer&ecirc;ncia, temos: </P>
+<pre><font size=3><font size=3><font size=3>
+<U>  Linha                            Quebra          Sequ&ecirc;ncia
+</U>TOTAL DA AREA: yyy                    2            1
+TOTAL DO SETOR: yyy                   1            1
+TOTAL GERAL DE EMPREGADOS: yyy        9            1</pre></font>
+<P><IMG SRC="Seta.gif" WIDTH=10 HEIGHT=10><B>NIVEL QUEBRA</B> - N&iacute;vel de quebra da linha do relat&oacute;rio. </P>
+<P>O n&iacute;vel de quebra define a hierarquia dos agrupamentos dos itens de dados a serem impressos no relat&oacute;rio. </P>
+<P>Os itens de dados de um relat&oacute;rio podem ser agrupados devido ao fato de possu&iacute;rem uma ou mais caracter&iacute;sticas comuns. </P>
+<P>Em um mesmo relat&oacute;rio podem existir agrupamentos dentro de agrupamentos, ou seja, quebras externas e internas. A hierarquia destes agrupamentos &eacute; determinada atrav&eacute;s do n&iacute;vel de quebra de cada um deles. </P>
+<P>Os n&iacute;veis de quebra v&aacute;lidos s&atilde;o os seguintes: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>De "1" a "7", para linhas do tipo "P" (prepara&ccedil;&atilde;o de quebra) e "E" (totaliza&ccedil;&atilde;o de quebra); </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"9", para linhas do tipo "E", utilizadas no encerramento final do relat&oacute;rio.</P></DIR>
+
+<P>Para relat&oacute;rios remotos o n&iacute;vel de quebra "9" n&atilde;o deve ser utilizado. Isto porque os programas de impress&atilde;o remota no possuem rotina de encerramento final. </P>
+<P>No exemplo de refer&ecirc;ncia, uma &aacute;rea pode ter v&aacute;rios setores. Desta forma, o relat&oacute;rio ter&aacute; a &aacute;rea com n&iacute;vel de quebra "2" (mais externa) e o setor com n&iacute;vel de quebra "1" (mais interna). Sendo assim, pode-se concluir que as quebras t&ecirc;m de ser informadas em ordem descrescente, ou seja, da mais externa (maior) para a mais interna, que &eacute; a quebra "1" (um). </P>
+<P>Para as linhas do tipo "P", do exemplo de refer&ecirc;ncia, os n&iacute;veis de quebra s&atilde;o: </P>
+<pre><font size=3>
+<U>  Linha                                        N&iacute;vel de quebra
+</U>AREA xxx - xxxxxxxxxxxxxxxxxxx                 2
+DIRETOR xxxxxxxxxxxxxxxxxxxxxx                 2
+SETOR xxx - xxxxxxxxxxxxxxxxxx                 1</pre></font>
+<P>Para as linhas do tipo "E", do exemplo de refer&ecirc;ncia, os n&iacute;veis de quebra s&atilde;o: </P>
+<pre><font size=3>
+<U>  Linha                                        N&iacute;vel de quebra
+</U>TOTAL DA AREA: yyy                             2
+TOTAL DO SETOR: yyy                            1
+TOTAL GERAL DE EMPREGADOS: yyy                 9</pre></font>
+<P><IMG SRC="Seta.gif" WIDTH=10 HEIGHT=10><B>SALTO</B> - N&uacute;mero de saltos que a impressora dar&aacute; antes ou ap&oacute;s da impress&atilde;o de cada linha, dependendo se o salto das linhas do relat&oacute;rio tiver sido definida como "A" (<I>after</I>) ou "B"(<I>before</I>), respectivamente. </P>
+<P>Esta informa&ccedil;&atilde;o &eacute; gerada na <I>library</I> e utilizada pelas rotinas de impress&atilde;o dos programas emissores. </P>
+<B><P>Exemplo:</B> </P>
+<P>Para a linha 05 do relat&oacute;rio SXYR011, temos na <I>library</I> a seguinte gera&ccedil;&atilde;o: </P>
+<pre><font size=3>  05    YR011-05-RELLINSALT          PIC 9(02) VA 3.</pre></font>
+<P><IMG SRC="Seta.gif" WIDTH=10 HEIGHT=10><B>CONTINUA (S/N)</B> - Indicador de continuidade de opera&ccedil;&atilde;o. </P>
+<P>As possibilidades para o preenchimento deste campo s&atilde;o as seguintes: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"S" - Para prosseguir informando mais linhas para o relat&oacute;rio; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"N" - Para encerrar a defini&ccedil;&atilde;o das linhas que comp&otilde;em o relat&oacute;rio e iniciar a etapa de desenho das mesmas.</P></DIR>
+
+<P><IMG SRC="Seta.gif" WIDTH=10 HEIGHT=10><B>OPERACAO</B> - Opera&ccedil;&atilde;o realizada sobre a defini&ccedil;&atilde;o do relat&oacute;rio. </P>
+<P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"INC" (Inclus&atilde;o); </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"ALT" (Altera&ccedil;&atilde;o); </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"CON" (Consulta); </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"EXC" (Exclus&atilde;o).</P></DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Caddes">Cadastramento de desenho de linhas de relat&oacute;rio</A></B></FONT> </P>
+<P>Desenhar a linha do relat&oacute;rio significa especificar as constantes e as <I>pictures</I> de edi&ccedil;&atilde;o dos atributos que a comp&otilde;em. </P>
+<P>Para desenhar as linhas de um relat&oacute;rio, &eacute; necess&aacute;rio que o mesmo esteja definido no reposit&oacute;rio de dados do SADS e contenha o n&uacute;mero da linha desejada. </P><DIR>
+
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>RELATORIO</B>- C&oacute;digo do relat&oacute;rio no padr&atilde;o SADS (sssRxnn). </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>LINHA</B> - N&uacute;mero da linha a ser desenhada. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>TIPO</B> - Tipo da linha a ser desenhada. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12><B>"C"</B> - Se a linha for de cabe&ccedil;alho; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12><B>"P"</B> - Se a linha for de prepara&ccedil;&atilde;o de quebra; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12><B>"D"</B> - Se a linha for de detalhe; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12><B>"E"</B> - Se a linha for de encerramento final ou totaliza&ccedil;&atilde;o de quebra.</P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>SEQUENCIA</B> - N&uacute;mero sequencial da linha, dentro do tipo e da quebra aos quais ela pertence, que varia de 1 a 49. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>ESPACEJAMENTO</B> - N&uacute;mero de saltos que a impressora dar&aacute; antes ou ap&oacute;s da impress&atilde;o de cada linha, dependendo se o salto das linhas do relat&oacute;rio tiver sido definida como "A" (<I>after</I>)ou "B"(<I>before</I>),respectivamente. </P>
+<P>Todos estes campos s&atilde;o apresentados para indicar qual &eacute; a linha a ser desenhada. </P>
+<P>Para o desenho propriamente dito, est&atilde;o dispon&iacute;veis tr&ecirc;s campos, cada um deles com tamanho de 78 posi&ccedil;&otilde;es, totalizando 234. Como um relat&oacute;rio pode ter 80, 132 ou 232 posi&ccedil;&otilde;es, s&oacute; &eacute; poss&iacute;vel desenhar as linhas at&eacute; o tamanho m&aacute;ximo definido para o relat&oacute;rio. </P>
+<P>Abaixo de cada campo para desenho da linha existe um gabarito de espacejamento para auxiliar no posicionamento das constantes e das <I>pictures</I>de edi&ccedil;&atilde;o dos atributos. Os atributos que ocorrerem v&aacute;rias vezes devem ter o mesmo espacejamento entre eles. </P>
+<P>A seguir, s&atilde;o apresentados os caracteres de edi&ccedil;&atilde;o SADS e os equivalentes no Cobol dispon&iacute;veis para edi&ccedil;&atilde;o de atributos em linhas de relat&oacute;rios: </P></DIR>
+</DIR>
+
+<TABLE BORDER CELLSPACING=1 WIDTH=526>
+<TR><TD VALIGN="MIDDLE" COLSPAN=4>
+<P ALIGN="CENTER">EXEMPLOS DE PICTURES</TD>
+</TR>
+<TR><TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">SADS</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">COBOL</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">DESENHO NO SADS</TD>
+<TD WIDTH="29%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">EQUIVALENTE COBOL</TD>
+</TR>
+<TR><TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">x </TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">X</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P>xxx </TD>
+<TD WIDTH="29%" VALIGN="MIDDLE">
+<P>PIC XXX</TD>
+</TR>
+<TR><TD WIDTH="24%" VALIGN="MIDDLE">&nbsp;</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">9</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P>yyy </TD>
+<TD WIDTH="29%" VALIGN="MIDDLE">
+<P>PIC 999</TD>
+</TR>
+<TR><TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">v</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">,</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P>yvyy </TD>
+<TD WIDTH="29%" VALIGN="MIDDLE">
+<P>PIC 9,99</TD>
+</TR>
+<TR><TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">p</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">.</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P>ypyyy </TD>
+<TD WIDTH="29%" VALIGN="MIDDLE">
+<P>PIC 9.999</TD>
+</TR>
+<TR><TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">z</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">Z</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P>zpzzy </TD>
+<TD WIDTH="29%" VALIGN="MIDDLE">
+<P>PIC Z.ZZ9</TD>
+</TR>
+<TR><TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">r</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">-</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P>rrprry </TD>
+<TD WIDTH="29%" VALIGN="MIDDLE">
+<P>PIC --.-9 PIC 99-9</TD>
+</TR>
+<TR><TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">m</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">+</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P>mmpmmy zzpzzym </TD>
+<TD WIDTH="29%" VALIGN="MIDDLE">
+<P>PIC ++.++9 PIC ZZ.ZZ9+</TD>
+</TR>
+<TR><TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">a</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">*</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P>aaaayy </TD>
+<TD WIDTH="29%" VALIGN="MIDDLE">
+<P>PIC ****99</TD>
+</TR>
+<TR><TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">b</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">&nbsp;</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P>yypyyb </TD>
+<TD WIDTH="29%" VALIGN="MIDDLE">
+<P>PIC 99.999 BLANK WHEN ZEROS</TD>
+</TR>
+<TR><TD WIDTH="24%" VALIGN="MIDDLE">
+<FONT SIZE=2><P ALIGN="CENTER">j</FONT></TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">&nbsp;</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>yyyyj</FONT></TD>
+<TD WIDTH="29%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>PIC    9999  JUST RIGHT</FONT></TD>
+</TR>
+<TR><TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">c</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">CR</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P>ypyyyc </TD>
+<TD WIDTH="29%" VALIGN="MIDDLE">
+<P>PIC 9.999CR</TD>
+</TR>
+<TR><TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">d</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">DB</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P>ypyyyd </TD>
+<TD WIDTH="29%" VALIGN="MIDDLE">
+<P>PIC 9.999DB</TD>
+</TR>
+<TR><TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">h</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">:</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P>yyhyyhyy </TD>
+<TD WIDTH="29%" VALIGN="MIDDLE">
+<P>PIC 99:99:99</TD>
+</TR>
+<TR><TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">q</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">/</TD>
+<TD WIDTH="24%" VALIGN="MIDDLE">
+<P>yyqyyqyy </TD>
+<TD WIDTH="29%" VALIGN="MIDDLE">
+<P>PIC 99/99/99</TD>
+</TR>
+</TABLE>
+<DIR>
+<DIR>
+
+<P>Deve-se atentar para o fato de que as edi&ccedil;&otilde;es "CR" e "DB" s&atilde;o geradas com dois caracteres e informadas com apenas um. Portanto, ao desenhar linhas utilizando esta edi&ccedil;&atilde;o deve-se reservar um espa&ccedil;o a mais ap&oacute;s a edi&ccedil;&atilde;o desenhada. </P>
+<B><P>Exemplo:</B> </P>
+<pre><font size=3>    Desenho: yypyyc    yypyyd    yyy
+    Gera&ccedil;&atilde;o: 99.99CR   99.99DB   999 </pre></font>
+<P>No desenho, o espa&ccedil;o entre os campos &eacute; de quatro caracteres. Na gera&ccedil;&atilde;o, este espa&ccedil;o &eacute; de tr&ecirc;s caracteres, pois um deles ser&aacute; utilizado nas <I>pictures</I> "CR" e "DB", respectivamente. </P>
+<P>As letras min&uacute;sculas s&atilde;o utilizadas para defini&ccedil;&atilde;o de edi&ccedil;&atilde;o de atributos, n&atilde;o sendo permitido utiliz&aacute;-las em constantes nas linhas de relat&oacute;rios. </P>
+<P>Ao desenhar uma linha com grupo de dados, ou seja, com ocorr&ecirc;ncias, estas devem ter o mesmo <I>layout</I>, isto &eacute;, o mesmo espacejamento entre os campos de uma mesma ocorr&ecirc;ncia e o mesmo espacejamento entre as ocorr&ecirc;ncias. </P>
+<B><P>Exemplo de desenho de uma linha com ocorr&ecirc;ncia (grupo de dados):</B> </P>
+<pre><font size=3>* xxxxx yyyy xxxxx yyyy xxxxx yyyy xxxxx yyyy *</pre></font>
+<P>Na linha acima temos corretamente desenhadas 4 ocorr&ecirc;ncias iguais. Cada uma delas cont&eacute;m um campo alfanum&eacute;rico de tamanho 5, um espa&ccedil;o em branco, um campo num&eacute;rico de tamanho 4 e tr&ecirc;s espa&ccedil;os em branco. </P>
+<P>Na gera&ccedil;&atilde;o da <I>library</I> deste relat&oacute;rio, esta linha teria gera&ccedil;&atilde;o semelhante &agrave; que se segue: </P>
+<pre><font size=3>
+05   SXYR011-01                          PIC X(80)    VA
+     "* xxxxx yyyy     xxxxx yyyy    xxxxx yyyy     xxxxx yyyy 
+   - " * ".
+05   SXYR011-01-RED                      REDEFINES  SXYR011-01.
+      10  FILLER                         PIC X(03).
+      10  YR011-01-CAMPOGRUPO            OCCURS 4 TIMES.
+          15  YR011-01-CAMPOALFA         PIC X(05).
+          15  FILLER                     PIC X(01).
+          15  YR011-01-CAMPONUM          PIC 9(04).
+          15 FILLER                      PIC X(03).
+      10  FILLER                         PIC X(21).</pre></font>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>PROXIMA LINHA/LINHA MODELO</B> - Pr&oacute;xima linha a ser exibida para processamento nas transa&ccedil;&otilde;es de altera&ccedil;&atilde;o, consulta e exclus&atilde;o, ou linha a ser exibida como modelo para o desenho da pr&oacute;xima nas transa&ccedil;&otilde;es de inclus&atilde;o. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>ALINHAMENTO:</B> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>TIPO</B> - Tipo do alinhamento a ser efetuado. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<P>"C" - Para centralizar todo o desenho da linha; </P>
+<P>"D" - Para dividir igualmente os espa&ccedil;os em branco entre os campos e constantes do desenho da linha.</P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=10 HEIGHT=10><B>POSICAO INICIAL</B> - Posi&ccedil;&atilde;o inicial a ser ocupada pela centraliza&ccedil;&atilde;o ou divis&atilde;o da linha. </P>
+<P>Caso este campo n&atilde;o for informado, a coluna 1 &eacute; assumida como posi&ccedil;&atilde;o inicial da linha, isto se o tamanho tamb&eacute;m n&atilde;o for informado. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=10 HEIGHT=10><B>TAMANHO</B> - N&uacute;mero de posi&ccedil;&otilde;es a serem centralizadas ou divididas. </P>
+<P>Se este campo n&atilde;o for informado, &eacute; assumido o tamanho total da linha menos a posi&ccedil;&atilde;o inicial. </P>
+<P>Exemplo: </P>
+<P>Dado o desenho de linha </P>
+<pre><font size=3>"Empresa: xxx                              ", temos:
+
+                 (48 espa&ccedil;os em branco)</pre></font>
+<P>Para centralizar esta linha da posi&ccedil;&atilde;o 40 at&eacute; a 60, deve-se informar o seguinte: </P>
+<pre><font size=3>
+  POSICAO INICIAL = 40
+  TAMANHO         = 20</pre></font>
+<P>A partir desta informa&ccedil;&atilde;o ser&aacute; obtido o seguinte desenho: </P>
+<pre><font size=3>"                      Empresa: xxx                      "
+(44 espa&ccedil;os em branco)              (24 espa&ccedil;os em branco)</pre></font></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Cadest">Cadastramento de estrutura de linhas de relat&oacute;rio</A></B></FONT> </P>
+<P>A estrutura de uma linha de relat&oacute;rio compreende os atributos que comp&otilde;em a parte vari&aacute;vel da mesma, isto &eacute;, os atributos que ser&atilde;o preenchidos pelo programa aplicativo para serem exibidos ao usu&aacute;rio. </P>
+<P>As estruturas de linha devem ser cadastradas para as linhas cujos desenhos possuam atributos vari&aacute;veis a serem preenchidos pelo aplicativo em execu&ccedil;&atilde;o. </P>
+<P>Para cadastrar a estrutura de uma linha do relat&oacute;rio, &eacute; necess&aacute;rio que o desenho da linha j&aacute; esteja cadastrado no reposit&oacute;rio de dados do SADS. </P>
+<P>Os campos de ocorr&ecirc;ncia (grupos que ocorrem v&aacute;rias vezes na tela), dever&atilde;o ser utilizados para informa&ccedil;&atilde;o dos atributos que comp&otilde;em a linha do relat&oacute;rio e suas particularidades, se houver. Neste contexto, e conforme j&aacute; descrito em t&oacute;picos anteriores, entenda-se atributo como sendo atributo propriamente dito, campo ou sin&ocirc;nimo. </P><DIR>
+
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>RELATORIO</B> - C&oacute;digo do relat&oacute;rio no padr&atilde;o SADS (sssRxnn). </P>
+<P>Logo ap&oacute;s este campo, s&atilde;o apresentados o n&uacute;mero da linha, seu tipo, sua sequ&ecirc;ncia, seu n&iacute;vel de quebra (para linhas de prepara&ccedil;&atilde;o e encerramento de quebra) e o seu desenho. </P>
+<P>Deve-se atentar para o fato de que somente as linhas que contiverem atributos ser&atilde;o estruturadas. Portanto, se no desenho da linha, exibido no cabe&ccedil;alho da tela, existirem apenas constantes, a tela dever&aacute; ser transmitida em branco e nova linha para defini&ccedil;&atilde;o ser&aacute; encadeada. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>SEQ</B> - N&uacute;mero sequencial para posicionamento do atributo na estrutura da linha. </P>
+<P>Este campo j&aacute; vem informado, sendo o primeiro n&uacute;mero igual a "0010" e os demais, acrescidos de 10. </P>
+<P>Para incluir um atributo entre dois outros j&aacute; inclu&iacute;dos, deve-se preencher uma linha que estiver em branco e alterar o n&uacute;mero sequencial desta linha para um n&uacute;mero entre os j&aacute; informados. O SADS reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima opera&ccedil;&atilde;o, os atributos j&aacute; estar&atilde;o na nova ordem. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>ATRIBUTO</B> - Mnem&ocirc;nico de um atributo. </P>
+<P>V&aacute;rios atributos est&atilde;o definidos no SADS para uso gen&eacute;rico pelos sistemas aplicativos, alguns s&atilde;o comumente utilizados em relat&oacute;rios. S&atilde;o eles: </P></DIR>
+</DIR>
+
+<TABLE CELLSPACING=0 BORDER=0>
+<TR><TD VALIGN="MIDDLE">
+<P>EMPCOD </TD>
+<TD VALIGN="MIDDLE">
+<P>- C&oacute;digo da Empresa; </TD>
+</TR>
+<TR><TD VALIGN="MIDDLE">
+<P>EMPNOM </TD>
+<TD VALIGN="MIDDLE">
+<P>- Nome da Empresa; </TD>
+</TR>
+<TR><TD VALIGN="MIDDLE">
+<P>ETBCOD </TD>
+<TD VALIGN="MIDDLE">
+<P>- C&oacute;digo do Estabelecimento; </TD>
+</TR>
+<TR><TD VALIGN="MIDDLE">
+<P>ETBNOM </TD>
+<TD VALIGN="MIDDLE">
+<P>- Nome do Estabelecimento; </TD>
+</TR>
+<TR><TD VALIGN="MIDDLE">
+<P>RELDAT </TD>
+<TD VALIGN="MIDDLE">
+<P>- Data em Relat&oacute;rio (ano com 2 posi&ccedil;&otilde;es); </TD>
+</TR>
+<TR><TD VALIGN="MIDDLE">
+<P>RELDATC </TD>
+<TD VALIGN="MIDDLE">
+<P>- Data em Relat&oacute;rio (ano com 4 posi&ccedil;&otilde;es); </TD>
+</TR>
+<TR><TD VALIGN="MIDDLE">
+<P>RELDATREF </TD>
+<TD VALIGN="MIDDLE">
+<P>- Data de Refer&ecirc;ncia para Relat&oacute;rio (ano com 2 posi&ccedil;&otilde;es); </TD>
+</TR>
+<TR><TD VALIGN="MIDDLE">
+<P>RELDATCREF </TD>
+<TD VALIGN="MIDDLE">
+<P>- Data de Refer&ecirc;ncia para Relat&oacute;rio (ano com 4 posi&ccedil;&otilde;es); </TD>
+</TR>
+<TR><TD VALIGN="MIDDLE">
+<P>RELHOR </TD>
+<TD VALIGN="MIDDLE">
+<P>- Hora em Relat&oacute;rio; </TD>
+</TR>
+<TR><TD VALIGN="MIDDLE">
+<P>RELPAGNUM </TD>
+<TD VALIGN="MIDDLE">
+<P>- N&uacute;mero da P&aacute;gina em Relat&oacute;rio; </TD>
+</TR>
+<TR><TD VALIGN="MIDDLE">
+<P>UNDCOD </TD>
+<TD VALIGN="MIDDLE">
+<P>- C&oacute;digo de Unidade; </TD>
+</TR>
+<TR><TD VALIGN="MIDDLE">
+<P>UNDNOM </TD>
+<TD VALIGN="MIDDLE">
+<P>- Nome de Unidade; </TD>
+</TR>
+<TR><TD VALIGN="MIDDLE">
+<P>USUNOM </TD>
+<TD VALIGN="MIDDLE">
+<P>- Nome de Usu&aacute;rio; </TD>
+</TR>
+<TR><TD VALIGN="MIDDLE">
+<P>USUNUM </TD>
+<TD VALIGN="MIDDLE">
+<P>- N&uacute;mero do Usu&aacute;rio. </TD>
+</TR>
+</TABLE>
+<DIR>
+<DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>SUF</B> - Sufixo do atributo. </P>
+<P>O sufixo deve ser preenchido para diferenciar atributos que aparecerem mais de uma vez na estrutura. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>NIVEL</B> - N&iacute;vel de estrutura&ccedil;&atilde;o do atributo, an&aacute;logo ao n&iacute;vel do Cobol. </P>
+<P>O n&iacute;vel inicial &eacute; 10 e, se for necess&aacute;rio criar agrupamentos de atributos, deve-se utilizar m&uacute;ltiplos de 5 (15, 20 e assim por diante), de forma semelhante ao Cobol. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>NDEF</B> - N&iacute;vel de defini&ccedil;&atilde;o do atributo. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"S" (Sistema) - Para atributos definidos no sistema informado no campo SIS ou para atributos pertencentes ao mesmo sistema do relat&oacute;rio; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"G" (Geral) - Para atributos pr&eacute;-definidos no reposit&oacute;rio de dados do SADS para utiliza&ccedil;&atilde;o gen&eacute;rica pelos sistemas aplicativos; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"P" (Particular) - Para campos utilizados unicamente neste relat&oacute;rio e, portanto, n&atilde;o cadastrados no reposit&oacute;rio de dados do SADS. </P>
+<P>N&atilde;o pode ser informado NDEF = "P" caso tenha sido parametrizado na tabela SBPM5000 que n&atilde;o se pode definir atributos/campos particulares nas estuturas SADS. </P>
+<P>Maiores detalhes a respeito desta parametriza&ccedil;&atilde;o, deve-se consultar a Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", item "Atributo", subitem "Redefini&ccedil;&atilde;o em estruturas".</P></DIR>
+
+<P>Caso NDEF n&atilde;o seja informado, o gerador de<I>libraries</I> do SADS interpretar&aacute; o campo como sendo um item grupo. </P>
+<P>&Eacute; poss&iacute;vel definir atributos estruturados e itens de grupo na estrutura de linha de relat&oacute;rio, mesmo que n&atilde;o seja utilizado na cria&ccedil;&atilde;o de grupos repetitivos (com ocorr&ecirc;ncias). Por&eacute;m, s&oacute; &eacute; poss&iacute;vel definir um n&iacute;vel de estrutura&ccedil;&atilde;o, portanto, n&atilde;o &eacute; permitido criar um item grupo dentro de outro item grupo. </P>
+<P>&Eacute; importante salientar que as informa&ccedil;&otilde;es de tamanho, formato, decimais e a indica&ccedil;&atilde;o de sinal definidas para atributos, n&atilde;o ser&atilde;o observadas na gera&ccedil;&atilde;o de <I>library</I> de relat&oacute;rios, valendo apenas a <I>picture</I> desenhada nas linhas para cada um destes atributos. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>SISTEMA</B> - Sistema no qual o atributo foi definido. </P>
+<P>Este campo dever&aacute; ser informado somente se NDEF = "S" e o atributo n&atilde;o pertencer ao mesmo sistema do relat&oacute;rio. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>OCCURS</B> - Quantidade de vezes que o grupo de atributos ser&aacute; repetido na linha. </P>
+<P>&Eacute; obrigat&oacute;rio que o atributo em quest&atilde;o seja um item grupo. </P>
+<P>Todos os atributos que ser&atilde;o itens elementares de um item grupo devem ter o n&iacute;vel hier&aacute;rquico maior que o n&iacute;vel hier&aacute;rquico deste. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>CONTINUA (S/N)</B> - Indicador de continuidade de opera&ccedil;&atilde;o. </P>
+<P>As possibilidades de preenchimento deste campo s&atilde;o as seguintes: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"S" - Para prosseguir no cadastramento da estrutura da linha; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"N" - Para encerrar a estrutura&ccedil;&atilde;o da linha.</P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>OPERACAO</B> - Opera&ccedil;&atilde;o realizada sobre a estrutura da linha do relat&oacute;rio. </P>
+<P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"INC" (Inclus&atilde;o); </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"ALT" (Altera&ccedil;&atilde;o); </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"EXC" (Exclus&atilde;o); </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"CON" (Consulta).</P></DIR>
+</DIR>
+
+<P></ir></P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Gerlib">Gera&ccedil;&atilde;o de library de relat&oacute;rio</A></B></FONT> </P>
+<P>A gera&ccedil;&atilde;o de <I>library</I> de relat&oacute;rio compreende &agrave; cria&ccedil;&atilde;o de um arquivo fonte Cobol com o <I>layout</I> do relat&oacute;rio a ser incorporado nos programas aplicativos que tratam o mesmo. </P>
+<P>A <I>library</I> do relat&oacute;rio &eacute; gerada a partir da defini&ccedil;&atilde;o do desenho e da estrutura de dados das linhas do relat&oacute;rio,os quais dever&atilde;o estar cadastrados no reposit&oacute;rio de dados do SADS. </P>
+<P>Ela &eacute; formada pelos campos desprotegidos do relat&oacute;rio, isto &eacute;, os campos de entrada de dados. </P>
+<P>O c&oacute;digo da <I>library</I> &eacute; derivado do c&oacute;digo do relat&oacute;rio da seguinte forma: </P>
+<P>Para o relat&oacute;rio SXYR011, a <I>library</I> ser&aacute; SX/Y/RL/011. </P>
+<P>A <I>library</I> &eacute; inserida no programa emissor do relat&oacute;rio na sua WORKING-STORAGE SECTION, atrav&eacute;s do comando "COPY" do Cobol. </P>
+<B><P>Exemplo:</B> </P>
+<pre><font size=3>COPY   "SX/Y/RL/011".</pre></font>
+<P>A seguir, &eacute; apresentado um exemplo de <I>library</I> de relat&oacute;rio <I>batch</I>: </P>
+<pre><font size=3>
+  100000
+  100100            SELECT SXYR011 ASSIGN TO PRINTER.
+  100200
+  200000
+  200100    FD      SXYR011.
+  200200
+  200300    01      SXYR0110                      PIC X(132).
+  200400
+  300000
+  300100    01      WS-SXYR011.
+  300200
+  300300
+  300400            05  Y011-RELLINQTD            PIC 9(002)    VA 60.
+  300500
+  300600            05  SXYR011-01                PIC X(132)    VA
+  300700                "* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 
+  300800-               " RELACAO DETALHADA DE ELEMENTOS 
+  300900-               "                                  FL.999 ".
+  301000
+  301100            05  SXYR011-01-RED            REDEFINES SXYR011-01.
+  301200                10 FILLER                 PIC X(02).
+  301300                10 Y011-01-EMPNOM         PIC X(40).
+  301400                10 FILLER                 PIC X(85).
+  301500                10 Y011-01-RELPAG         PIC 9(03).
+  301600                10 FILLER                 PIC X(02).
+  301700
+  301800            05  Y011-01-RELLINSALT        PIC 9(001)    VA 1.</pre></font>
+<P>A <I>library</I> cont&eacute;m v&aacute;rias informa&ccedil;&otilde;es e &eacute; referenciada em pontos distintos do programa da seguinte forma: </P><DIR>
+
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>O segmento da sequ&ecirc;ncia 100000 at&eacute; 199000, onde est&aacute; declarado o SELECT do relat&oacute;rio, &eacute; chamado na FILE-CONTROL da ENVIRONMENT DIVISION. </P>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>O segmento da sequ&ecirc;ncia 200000 at&eacute; 299000, onde est&aacute; declarado a FD do relat&oacute;rio, &eacute; chamado na FILE SECTION da DATA DIVISION. Nesta parte da <I>library</I>, tamb&eacute;m est&aacute; declarado o tamanho do registro. </P>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>O segmento da sequ&ecirc;ncia 300000 at&eacute; 499000, onde est&atilde;o declaradas as estruturas das linhas do relat&oacute;rio, &eacute; chamado na WORKING-STORAGE SECTION da DATA DIVISION. Estas estrututras funcionam como &aacute;res auxiliares para composi&ccedil;&atilde;o dos campos das linhas do relat&oacute;rio.</P></DIR>
+
+<P>Para relat&oacute;rios <I>on-line</I>n&atilde;o s&atilde;o gerados os seguimentos de comandos SELECT e FD. Portanto, em programas <I>on-line</I> estes seguimentos n&atilde;o s&atilde;o chamados. </P>
+<P>Os prefixos dos campos de <I>library</I> de relat&oacute;rio t&ecirc;m a seguinte forma&ccedil;&atilde;o: </P>
+<P>Terceira letra do sistema ("Y", no exemplo) + o sequencial do relat&oacute;rio ("011", no exemplo) + "-" (constante) + o n&uacute;mero da linha ("01", no exemplo) + "-" (constante) + o mnem&ocirc;nico do atributo ou campo. </P>
+<P>Quando o sequencial do relat&oacute;rio possui apenas duas posi&ccedil;&otilde;es, a terceira, no prefixo dos campos, &eacute; completada com 0 (zero). Como exemplo temos que, para o relat&oacute;rio SXYR65, o prefixo dos campos da linha 01 ser&aacute; Y650-01-. </P>
+<P>A <I>library</I> do relat&oacute;rio &eacute; gerada no <I>usercode</I> para o ambiente escolhido, sendo utilizada pelos programas aplicativos que forem compilados neste ambiente. </P>
+<P>O <I>usercode</I> dever&aacute; estar cadastrado na tabela de <I>usercodes</I> do SADS. Detalhes sobre esta tabela encontram-se descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+<P>A gera&ccedil;&atilde;o de <I>library</I> de relat&oacute;rio n&atilde;o est&aacute; associada a nenhuma tela de processamento. Portanto, para efetu&aacute;-la, basta transmitir os argumentos da tela "GERLIBREL", cujos campos est&atilde;o explicados a seguir: </P><DIR>
+
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>Relatorio</B> - C&oacute;digo do relat&oacute;rio no padr&atilde;o SADS (sssRxnn). </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>Usercode</B> - <I>Usercode</I> de an&aacute;lise. </P>
+<P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS". </P>
+<P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es". </P>
+<P>Para <I>usercodes</I>de an&aacute;lise, s&atilde;o definidos os elementos (<I>usercode</I> e disco) onde ficar&atilde;o residentes suas <I>libraries</I> de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as <I>libraries</I>de produ&ccedil;&atilde;o fiquem sem <I>usercodes</I>. Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002, que se encontra descrita na se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>Ambiente T/P</B> - Ambiente na qual a <I>library</I>do relat&oacute;rio ser&aacute; gerada. </P>
+<P>Os ambientes poss&iacute;veis s&atilde;o: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"T" - Para gerar a <I>library</I> do relat&oacute;rio para o ambiente de teste. </P>
+<P>Neste caso, ela ser&aacute; utilizada por programas compilados para teste. </P>
+<P>Caso a <I>library</I>tenha sido gerada para o ambiente de teste ("T"), o programa que emitir este relat&oacute;rio dever&aacute; ser compilado para teste. No momento em que for necess&aacute;rio compil&aacute;-lo para produ&ccedil;&atilde;o, ser&aacute; tamb&eacute;m necess&aacute;rio, antes da compila&ccedil;&atilde;o, liberar essa <I>library</I> para produ&ccedil;&atilde;o, conforme descrito no t&oacute;pico "Libera&ccedil;&atilde;o de <I>library</I> para produ&ccedil;&atilde;o", a seguir. </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"P" - Para gerar a <I>library</I> do relat&oacute;rio para o ambiente de produ&ccedil;&atilde;o. </P>
+<P>Neste caso, ela ser&aacute; utilizada por programas compilados para produ&ccedil;&atilde;o. </P></DIR>
+
+<P>Caso o ambiente n&atilde;o seja informado, ser&aacute; assumido o ambiente <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do ambiente <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es". </P>
+<P>Se o ambiente de produ&ccedil;&atilde;o para gera&ccedil;&atilde;o de <I>libraries</I> n&atilde;o especificar <I>usercode</I> (ambiente "*"), as <I>libraries</I> ser&atilde;o utilizadas simultaneamente para compila&ccedil;&otilde;es para teste e produ&ccedil;&atilde;o. </P>
+<P>Se j&aacute; existir <I>library </I>em teste, ser&aacute; solicitada a libera&ccedil;&atilde;o da mesma, em vez de sua gera&ccedil;&atilde;o para produ&ccedil;&atilde;o. </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Liblib">Libera&ccedil;&atilde;o de library de relat&oacute;rio para produ&ccedil;&atilde;o</A></B></FONT> </P>
+<P>A libera&ccedil;&atilde;o &eacute; o processo que permite que a <I>library</I> gerada no ambiente de teste seja transportada para o ambiente de produ&ccedil;&atilde;o, ou seja, que seja gerada uma c&oacute;pia da <I>library</I> do <I>usercode</I> de teste para o de produ&ccedil;&atilde;o. </P>
+<P>Para liberar uma <I>library</I> para produ&ccedil;&atilde;o, &eacute; necess&aacute;rio que a mesma tenha sido gerada para o ambiente de teste. </P>
+<P>A libera&ccedil;&atilde;o de <I>library</I> de relat&oacute;rio n&atilde;o est&aacute; associada a nenhuma tela de processamento. Portanto, para efetu&aacute;-la, basta transmitir os argumentos na tela "LIBLIBREL", cujos campos est&atilde;o explicados a seguir: </P><DIR>
+
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>Relatorio</B> - C&oacute;digo do relat&oacute;rio no padr&atilde;o SADS (sssRxnn). </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>Usercode</B> - <I>Usercode</I> de an&aacute;lise. </P>
+<P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS". </P>
+<P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es". </P>
+<P>Para <I>usercodes</I> de an&aacute;lise, s&atilde;o definidos os ambientes (<I>usercode</I> e disco) onde ficar&atilde;o residentes suas <I>libraries</I> de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as <I>libraries</I> de produ&ccedil;&atilde;o fiquem sem <I>usercodes</I>. Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002, que se encontra descrita na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+<P>Se na parametriza&ccedil;&atilde;o do <I>usercode</I> informado houver indica&ccedil;&atilde;o para que <I>libraries</I> de produ&ccedil;&atilde;o fiquem residentes no <I>usercode</I> de produ&ccedil;&atilde;o, ao liberar <I>library</I> para produ&ccedil;&atilde;o, a vers&atilde;o de teste ser&aacute; mantida e uma id&ecirc;ntica ser&aacute; criada no <I>usercode</I> de produ&ccedil;&atilde;o. Caso contr&aacute;rio, a <I>library</I> de teste ser&aacute; removida e outra ser&aacute; gerada sem <I>usercode</I> (em *) para utiliza&ccedil;&atilde;o pelos programas compilados em ambos os ambientes. </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Funca">Fun&ccedil;&otilde;es de apoio</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Esprel">Espec&iacute;ficas de relat&oacute;rios</A></B></FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Simrel">Simula&ccedil;&atilde;o de relat&oacute;rio</A></B></FONT> </P>
+<P>A simula&ccedil;&atilde;o da emiss&atilde;o de um relat&oacute;rio &eacute; uma vis&atilde;o pr&eacute;via de como suas linhas ser&atilde;o impressas. </P>
+<P>Para simular a impress&atilde;o de um relat&oacute;rio, &eacute; necess&aacute;rio que os desenhos de todas as linhas estejam cadastrados no reposit&oacute;rio de dados do SADS. </P><DIR>
+
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>Relatorio</B> - C&oacute;digo do relat&oacute;rio no padr&atilde;o SADS (sssRxnn). </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>Impressora</B> - C&oacute;digo da impressora onde ser&aacute; impresso o relat&oacute;rio simulado. </P>
+<P>Pode assumir os seguintes valores: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"&lt;C&oacute;digo da impressora remota&gt;" - Para listagem do relat&oacute;rio em impressora remota. </P>
+<P>Esta impressora dever&aacute; estar cadastrada na rede. </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"PRINTER" - Para listagem do relat&oacute;rio em impressora central, em formul&aacute;rio de 132 posi&ccedil;&otilde;es; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"PRINxx" - Para listagem em impressora central e em formul&aacute;rio especial, onde "xx" &eacute; um <I>formid</I> v&aacute;lido para a instala&ccedil;&atilde;o.</P></DIR>
+
+<P>Caso a impressora n&atilde;o seja informada, ser&aacute; assumida a impressora <I>default</I> do usu&aacute;rio. </P>
+<P>Detalhes sobre o cadastramento da impressora <I>default</I> do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e Habilita&ccedil;&otilde;es", neste manual. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>Tipo A/C</B> - Tipo de simula&ccedil;&atilde;o do relat&oacute;rio. </P>
+<P>Os tipos permitidos s&atilde;o os seguintes: </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"A" (Simula&ccedil;&atilde;o autom&aacute;tica) - Para imprimir a simula&ccedil;&atilde;o de acordo com a defini&ccedil;&atilde;o do relat&oacute;rio, respeitando a ordena&ccedil;&atilde;o das linhas de cabe&ccedil;alho, prepara&ccedil;&otilde;es de quebra, detalhes e encerramentos; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>"C" (Simula&ccedil;&atilde;o por comando) - Para imprimir a simula&ccedil;&atilde;o do relat&oacute;rio de acordo com a ordem das linhas estabelecida pelo usu&aacute;rio.</P></DIR>
+
+<P>Na simula&ccedil;&atilde;o autom&aacute;tica, a impress&atilde;o das linhas &eacute; executada na seguinte sequ&ecirc;ncia: </P><DIR>
+
+<P>1ª - S&atilde;o impressas as linhas de cabecalho (tipo "C"), no in&iacute;cio de cada p&aacute;gina; </P>
+<P>2ª - S&atilde;o impressas todas as linhas de prepara&ccedil;&atilde;o de quebra (tipo "P"); </P>
+<P>3ª - S&atilde;o impressas tr&ecirc;s linhas de detalhe (tipo "D"); </P>
+<P>4ª - S&atilde;o impressas as linhas de encerramento (tipo "E"), para a quebra mais interna (quebra 1); </P>
+<P>5ª - S&atilde;o impressas novamente as linha de prepara&ccedil;&atilde;o (tipo "P"), para a quebra mais interna (quebra 1); </P>
+<P>6ª - S&atilde;o impressas novamente tr&ecirc;s linhas de detalhe; </P>
+<P>7ª - S&atilde;o impressas novamente as linhas de encerramento da quebra mais interna (quebra 1); </P>
+<P>S&atilde;o simuladas duas ocorr&ecirc;ncias de quebra para cada n&iacute;vel de quebra definido, similar ao apresentado para a quebra 1. </P>
+<P>8ª - S&atilde;o impressas as linhas de encerramento final (tipo "E", quebra "9").</P></DIR>
+
+<P>A seguir, &eacute; apresentado um exemplo da simula&ccedil;&atilde;o autom&aacute;tica de um relat&oacute;rio que possui tr&ecirc;s n&iacute;veis de quebra. </P>
+<P>O relat&oacute;rio possui a seguinte estrutura: </P>
+<U><pre><font size=3>
+Linha            Tipo de Linha     Sequ&ecirc;ncia     Quebra
+</U>  1              Cabe&ccedil;alho          1 
+  2              Cabe&ccedil;alho          2
+  3              Cabe&ccedil;alho          3
+  4              Cabe&ccedil;alho          4
+
+  5              Prepara&ccedil;&atilde;o         1             3
+  6              Prepara&ccedil;&atilde;o         2             3
+  7              Prepara&ccedil;&atilde;o         1             2
+  8              Prepara&ccedil;&atilde;o         1             1
+  9              Prepara&ccedil;&atilde;o         2             1
+  10             Detalhe                          1       
+  11             Encerramento       1             1
+
+  12             Encerramento       1             2
+  13             Encerramento       2             2
+  14             Encerramento       1             3
+  15             Encerramento       1             9
+  16             Encerramento       2             9
+<U>  17             Encerramento       3             9    </pre></font>
+</U><P>De acordo com a estrutura anteriormente exibida, o relat&oacute;rio &eacute; simulado automaticamente da seguinte forma: </P>
+<pre><font size=3>
+  Linha 1 - Cabe&ccedil;alho
+  Linha 2 - Cabe&ccedil;alho
+  Linha 3 - Cabe&ccedil;alho
+  Linha 4 - Cabe&ccedil;alho
+
+  Linha 5 - Prep. quebra 3
+  Linha 6 - Prep. quebra 3 
+     Linha 7 - Prep. quebra 2
+         Linha 8 - Prep. quebra 1
+         Linha 9 - Prep. quebra 1
+                Linha 10 - Detalhe
+                Linha 10 - Detalhe
+                Linha 10 - Detalhe
+         Linha 11 - Enc. quebra 1
+
+         Linha 8 - Prep. quebra 1
+         Linha 9 - Prep. quebra 1
+                Linha 10 - Detalhe
+                Linha 10 - Detalhe
+                Linha 10 - Detalhe
+         Linha 11 - Enc. quebra 1
+     Linha 12 - Enc. quebra 2
+     Linha 13 - Enc. quebra 2
+
+     Linha 7 - Prep. quebra 2
+         Linha 8 - Prep. quebra 1
+         Linha 9 - Prep. quebra 1
+                Linha 10 - Detalhe
+                Linha 10 - Detalhe
+                Linha 10 - Detalhe
+         Linha 11 - Enc. quebra 1
+
+         Linha 8 - Prep. quebra 1
+         Linha 9 - Prep. quebra 1
+                Linha 10 - Detalhe
+                Linha 10 - Detalhe
+                Linha 10 - Detalhe
+         Linha 11 - Enc. quebra 1
+     Linha 12 - Enc. quebra 2
+     Linha 13 - Enc. quebra 2
+  Linha 14 - Enc. quebra 3
+
+  Linha 5 - Prep. quebra 3
+  Linha 6 - Prep. quebra 3
+     Linha 7 - Prep. quebra 2
+         Linha 8 - Prep. quebra 1
+         Linha 9 - Prep. quebra 1
+                Linha 10 - Detalhe
+                Linha 10 - Detalhe
+                 Linha 10 - Detalhe
+         Linha 11 - Enc. quebra 1
+
+
+         Linha 8 - Prep. quebra 1
+         Linha 9 - Prep. quebra 1
+                Linha 10 - Detalhe
+                Linha 10 - Detalhe
+                Linha 10 - Detalhe
+         Linha 11 - Enc. quebra 1
+     Linha 12 - Enc. quebra 2
+     Linha 13 - Enc. quebra 2
+
+     Linha 7 - Prep. quebra 2
+         Linha 8 - Prep. quebra 1
+         Linha 9 - Prep. quebra 1
+                Linha 10 - Detalhe
+                Linha 10 - Detalhe
+                Linha 10 - Detalhe
+         Linha 11 - Enc. quebra 1
+
+         Linha 8 - Prep. quebra 1
+         Linha 9 - Prep. quebra 1
+                Linha 10 - Detalhe
+                Linha 10 - Detalhe
+                Linha 10 - Detalhe
+         Linha 11 - Enc. quebra 1
+     Linha 12 - Enc. quebra 2
+     Linha 13 - Enc. quebra 2
+  Linha 14 - Enc. quebra 3
+
+  Linha 15 - Enc. final
+  Linha 16 - Enc. final
+  Linha 17 - Enc. final</pre></font>
+<P>Na simula&ccedil;&atilde;o por comando, deve-se informar, na sequ&ecirc;ncia escolhida para impress&atilde;o, o c&oacute;digo da linha e a quantidade de vezes que a mesma ser&aacute; impressa. </P>
+<P>Caso desejar imprimir linhas em branco entre as linhas do relat&oacute;rio, basta informar "LB" no c&oacute;digo da linha e informar quantas vezes esta dever&aacute; ser impressa. </P>
+<P>A &uacute;ltima sequ&ecirc;ncia de simula&ccedil;&atilde;o de um relat&oacute;rio &eacute; armazenada e apresentada quando uma nova simula&ccedil;&atilde;o por comando for solicitada para o mesmo.</P></DIR>
+
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>RELATORIO</B> - C&oacute;digo do relat&oacute;rio no padr&atilde;o SADS (sssRxnn). </P>
+<P>Logo ap&oacute;s este campo, s&atilde;o mostradas as 18 primeiras linhas do relat&oacute;rio com seu tipo, sequ&ecirc;ncia e n&iacute;vel de quebra. </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>LINHAS/COPIAS</B> - O campo LINHAS refere-se ao n&uacute;mero da linha que dever&aacute; ser impressa, e o campo COPIAS, &agrave; quantidade de vezes que a mesma dever&aacute; ser impressa. </P>
+<P>Para imprimir linhas em branco, o campo LINHAS dever&aacute; conter a constante "LB", e o campo COPIAS, a quantidade de vezes que a mesma dever&aacute; ser impressa. </P>
+<B><P>Exemplo:</B> </P>
+<P>O relat&oacute;rio apresentado anteriormente na simula&ccedil;&atilde;o autom&aacute;tica, poderia ser simulado de modo a exibir cada quebra apenas uma vez, por&eacute;m com 6 linhas de detalhe e duas linhas em branco entre as linhas de tipo ou de quebras diferentes. Deste modo, a simula&ccedil;&atilde;o por comando teria sua sequ&ecirc;ncia de linhas definida da seguinte forma:</P>
+<pre><font size=3>
+-----------------------Linhas/C&oacute;pias-------------------------
+01/01 02/01 03/01 04/01 LB/01 05/01 06/01 LB/01 07/01 LB/01
+08/01 09/01 LB/01 10/06 LB/01 11/01 LB/01 12/01 13/01 LB/01
+14/01 LB/01 15/01 16/01 17/01
+-------------------------------------------------------------</pre></font>
+<P>A simula&ccedil;&atilde;o ficaria assim: </P>
+<pre><font size=3>
+  Linha 1 - Cabe&ccedil;alho
+  Linha 2 - Cabe&ccedil;alho
+  Linha 3 - Cabe&ccedil;alho
+  Linha 4 - Cabe&ccedil;alho
+
+  Linha 5 - Prep. quebra 3
+  Linha 6 - Prep. quebra 3
+
+     Linha 7 - Prep. quebra 2
+
+          Linha 8 - Prep. quebra 1
+          Linha 9 - Prep. quebra 1
+
+                 Linha 10 - Detalhe
+                 Linha 10 - Detalhe
+                 Linha 10 - Detalhe
+                 Linha 10 - Detalhe
+                 Linha 10 - Detalhe
+                 Linha 10 - Detalhe
+
+          Linha 11 - Enc. quebra 1
+
+     Linha 12 - Enc. quebra 2
+     Linha 13 - Enc. quebra 2
+
+  Linha 14 - Enc. quebra 3
+
+  Linha 15 - Enc. final
+  Linha 16 - Enc. final
+  Linha 17 - Enc. final
+
+
+</pre></font></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Resse">Ressequenciamento de linhas</A></B></FONT> </P>
+<FONT SIZE=2><P>O ressequenciamento de linhas de relat&oacute;rio &eacute; uma fun&ccedil;&atilde;o que permite reorganizar os c&oacute;digos das mesmas a fim de que linhas do mesmo tipo fiquem em ordem crescente de sequ&ecirc;ncia.</FONT> </P>
+<FONT SIZE=2><P>O ressequenciamento da estrutura do relat&oacute;rio consiste em dispor a estrutura de suas linhas em uma nova sequ&ecirc;ncia, de acordo com o seu tipo e n&iacute;vel de quebra, para uma melhor visualiza&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Esta opera&ccedil;&atilde;o s&oacute; &eacute; poss&iacute;vel se o relat&oacute;rio estiver definido no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s um ressequenciamento, todas as linhas de cabe&ccedil;alhos aparecer&atilde;o em primeiro lugar, seguidas das linhas de prepara&ccedil;&atilde;o, detalhe e encerramento. As linhas de cabe&ccedil;alho e detalhe s&atilde;o ordenadas por sequ&ecirc;ncia. As de prepara&ccedil;&atilde;o de quebra s&atilde;o organizadas em ordem decrescente de quebra e dentro da quebra, em ordem crescente. As de encerramento, em ordem crescente de quebra e de sequ&ecirc;ncia.</FONT> </P>
+<FONT SIZE=2><P>Ao realizar o processo de ressequenciamento de um relat&oacute;rio, suas linhas poder&atilde;o mudar de n&uacute;mero e, como os prefixos dos campos s&atilde;o derivados do n&uacute;mero da linha, sua <I>library</I>, consequentemente, poder&aacute; sofrer altera&ccedil;&otilde;es. Portanto, ap&oacute;s realizar um ressequenciamento, &eacute; necess&aacute;rio que os fontes dos programas que utilizam o relat&oacute;rio sejam gerados novamente, bem como a <I>sua library</I>, para que as modifica&ccedil;&otilde;es efetuadas no mesmo sejam assimiladas.</FONT> </P>
+<FONT SIZE=2><P>Se os programas que utilizam o relat&oacute;rio n&atilde;o foram completamente gerados pelo SADS, poder&aacute; ser necess&aacute;rio alterar o seu fonte a fim de que o mesmo se adapte &agrave; nova sequ&ecirc;ncia das linhas.</FONT> </P>
+<B><FONT SIZE=2><P>Exemplo de ressequenciamento:</B></FONT> </P>
+<FONT SIZE=2><P>ANTES DO RESSEQUENCIAMENTO DEPOIS DO RESSEQUENCIAMENTO</FONT> </P>
+<TABLE BORDER CELLSPACING=1 WIDTH=544>
+<TR><TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">Linha</TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">Tipo</TD>
+<TD WIDTH="16%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">Sequencia</TD>
+<TD WIDTH="12%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">N.Quebra</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">Linha</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">Tipo</TD>
+<TD WIDTH="17%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">Sequencia</TD>
+<TD WIDTH="14%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">N.Quebra</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">01</TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">C</TD>
+<TD WIDTH="16%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">01</TD>
+<TD WIDTH="12%" VALIGN="MIDDLE">&nbsp;</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">01</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">C</TD>
+<TD WIDTH="17%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">01 </TD>
+<TD WIDTH="14%" VALIGN="MIDDLE">&nbsp;</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">02</TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">C</TD>
+<TD WIDTH="16%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">02</TD>
+<TD WIDTH="12%" VALIGN="MIDDLE">&nbsp;</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">02</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">C</TD>
+<TD WIDTH="17%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">02</TD>
+<TD WIDTH="14%" VALIGN="MIDDLE">&nbsp;</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">03</TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">D</TD>
+<TD WIDTH="16%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">01</TD>
+<TD WIDTH="12%" VALIGN="MIDDLE">&nbsp;</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">03</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">C</TD>
+<TD WIDTH="17%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">03</TD>
+<TD WIDTH="14%" VALIGN="MIDDLE">&nbsp;</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">04</TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">P</TD>
+<TD WIDTH="16%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">01</TD>
+<TD WIDTH="12%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">1</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">04</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">P</TD>
+<TD WIDTH="17%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">01</TD>
+<TD WIDTH="14%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">2</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">05</TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">C</TD>
+<TD WIDTH="16%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">03</TD>
+<TD WIDTH="12%" VALIGN="MIDDLE">&nbsp;</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">05</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">P</TD>
+<TD WIDTH="17%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">02</TD>
+<TD WIDTH="14%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">2</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">06</TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">E</TD>
+<TD WIDTH="16%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">01</TD>
+<TD WIDTH="12%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">1</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">06</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">P</TD>
+<TD WIDTH="17%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">01</TD>
+<TD WIDTH="14%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">1</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">07</TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">D</TD>
+<TD WIDTH="16%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">02</TD>
+<TD WIDTH="12%" VALIGN="MIDDLE">&nbsp;</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">07</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">D</TD>
+<TD WIDTH="17%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">01</TD>
+<TD WIDTH="14%" VALIGN="MIDDLE">&nbsp;</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">08</TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">P</TD>
+<TD WIDTH="16%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">01</TD>
+<TD WIDTH="12%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">2</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">08</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">D</TD>
+<TD WIDTH="17%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">02</TD>
+<TD WIDTH="14%" VALIGN="MIDDLE">&nbsp;</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">09</TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">P</TD>
+<TD WIDTH="16%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">02</TD>
+<TD WIDTH="12%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">2</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">09</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">E</TD>
+<TD WIDTH="17%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">01</TD>
+<TD WIDTH="14%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">1</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">10</TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">E</TD>
+<TD WIDTH="16%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">01</TD>
+<TD WIDTH="12%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">9</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">10</TD>
+<TD WIDTH="11%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">E</TD>
+<TD WIDTH="17%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">01</TD>
+<TD WIDTH="14%" VALIGN="MIDDLE">
+<P ALIGN="CENTER">9</TD>
+</TR>
+</TABLE>
+<DIR>
+
+<B><P>CAMPOS DA TELA</B> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>RELATORIO</B> - C&oacute;digo do relat&oacute;rio no padr&atilde;o SADS (sssRxnn).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Descri&ccedil;&atilde;o resumida do relat&oacute;rio.</FONT> </P>
+<FONT SIZE=2><P>O nome tem o objetivo de identificar e explicar, de maneira resumida, a que informa&ccedil;&otilde;es o relat&oacute;rio se refere.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONFIRMA(S/N)</B> - Indica&ccedil;&atilde;o de confirma&ccedil;&atilde;o do ressequenciamento.</FONT> </P>
+<FONT SIZE=2><P>As possibilidades de preenchimento deste campo s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>"S" - Para confirmar o ressequenciamento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>"N" - Para cancelar a opera&ccedil;&atilde;o de ressequenciamento.</P></DIR>
+</DIR>
+
+</FONT><B><FONT SIZE=5><P><A NAME="Gener">Gen&eacute;ricas aplic&aacute;veis aos relat&oacute;rios</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>Utilit&aacute;rios:</B> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>Duplica&ccedil;&atilde;o de elemento; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>Descri&ccedil;&atilde;o de elemento; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento.</P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>Consultas:</B> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>Fonte de <I><FONT SIZE=2>library</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>Elementos por sistema; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>Estrutura de dados de um elemento; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>Descri&ccedil;&atilde;o de um elemento.</P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>Refer&ecirc;ncias cruzadas:</B> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>Elementos X elemento - Programas que emitem um relat&oacute;rio ou relat&oacute;rios emitidos por um programa.</P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B>Informativos impressos:</B> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13>&nbsp;.Rela&ccedil;&atilde;o de relat&oacute;rios por sistema/reposit&oacute;rio;</P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>Rela&ccedil;&atilde;o de elementos por sistema; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>Rela&ccedil;&atilde;o de atributos por elemento; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>Lista estrutura de dados; </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=12 HEIGHT=12>Lista descri&ccedil;&atilde;o de elemento. </P></DIR>
+
+<FONT SIZE=2><P>Todos estes utilit&aacute;rios, consultas, refer&ecirc;ncias cruzadas e informativos impressos encontram-se detalhadamente descritos na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", neste manual.</FONT> </P></DIR>
+</DIR>
+</BODY>
+</HTML>

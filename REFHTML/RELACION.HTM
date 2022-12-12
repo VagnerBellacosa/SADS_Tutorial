@@ -1,0 +1,184 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<TITLE>Untitled</TITLE>
+
+<META NAME="GENERATOR" CONTENT="Internet Assistant for Microsoft Word 2.04z">
+</HEAD>
+<BODY BACKGROUND="doc_b.gif">
+<basefont size=2>
+<P>
+<A NAME="Relac"><B><FONT SIZE=6>Relacionamento</FONT></B></A>
+<HR>
+<P>
+<A NAME="Conce"><B><FONT SIZE=5>Conceitua&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>No modelo conceitual, relacionamento &eacute; a associa&ccedil;&atilde;o
+feita entre as ocorr&ecirc;ncias de duas ou mais entidades. Esta
+associa&ccedil;&atilde;o pode possuir caracter&iacute;sticas pr&oacute;prias,
+ou seja, atributos pr&oacute;prios resultantes do relacionamento
+entre as entidades.
+<P>&Eacute; tamb&eacute;m poss&iacute;vel associar uma
+entidade consigo mesma, relacionamento este denominado auto-relacionamento.
+<P>Os relacionamentos podem ser definidos no ET-SADS,
+que &eacute; uma ferramenta UPPER-CASE voltada &agrave; aplica&ccedil;&atilde;o
+da an&aacute;lise de dados e da an&aacute;lise estruturada e,
+posteriormente, transferidos para o reposit&oacute;rio de dados
+do SADS. O ET-SADS trabalha na filosofia de esta&ccedil;&atilde;o
+de trabalho, requerendo uma plataforma IBM-PC ou compat&iacute;vel
+em ambiente MS-DOS. 
+<P>As informa&ccedil;&otilde;es relativas &agrave; tranfer&ecirc;ncia
+de informa&ccedil;&otilde;es do ET-SADS para o SADS podem ser
+consultadas no &quot;Guia de Refer&ecirc;ncia do DFD&quot; e no
+&quot;Guia de Integra&ccedil;&atilde;o com o SADS&quot;, manuais
+que acompanham o ET-SADS.
+<P><A NAME="Padro"><B><FONT SIZE=5>Padroniza&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>O padr&atilde;o de codifica&ccedil;&atilde;o para
+identificar relacionamentos no reposit&oacute;rio de dados do
+SADS &eacute; o seguinte:
+<dir>
+<P><img src="Bullet5.gif" width=13 heigth=13><B>&quot;sssYaaaaaa&quot;</B> onde:
+<P><dir><img src="Bullet7.gif" width=13 heigth=13><B>&quot;sss&quot;</B> &eacute; o c&oacute;digo alfab&eacute;tico 
+que identifica o sistema;
+<P><img src="Bullet7.gif" width=13 heigth=13><B>&quot;Y&quot;</B> &eacute;a constante de relacionamento e,
+<P><img src="Bullet7.gif" width=13 heigth=13><B>&quot;aaaaaa&quot;</B> &eacute; o identificador alfab&eacute;tico 
+do relacionamento.</dir></dir>
+<P><A NAME="Utili"><B><FONT SIZE=5>Utiliza&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>As informa&ccedil;&otilde;es referentes aos relacionamentos
+s&atilde;o utilizadas apenas para documenta&ccedil;&atilde;o,
+pois podem fazer parte dos manuais emitidos pelo SADS, n&atilde;o
+havendo gera&ccedil;&otilde;es a partir de suas especifica&ccedil;&otilde;es.
+<P><A NAME="Cadas"><B><FONT SIZE=5>Cadastramento</FONT></B></A>
+<HR>
+<P>Para definir um relacionamento, &eacute; necess&aacute;rio
+que as entidades envolvidas no processo j&aacute; estejam definidas
+no reposit&oacute;rio de dados do SADS.
+<P><B><FONT SIZE=4>Roteiro</FONT></B>
+<P>Para cadastrar um relacionamento, &eacute; necess&aacute;rio
+executar apenas a seguinte fun&ccedil;&atilde;o:
+<dir>- Defini&ccedil;&atilde;o de relacionamento.</dir>
+<P>
+<A NAME="Defrel"><B><FONT SIZE=4>Defini&ccedil;&atilde;o de relacionamento</FONT></B></A>
+<P><dir><B>CAMPOS DA TELA</B>
+<P><dir><img src="Bullet5.gif" width=13 heigth=13><b>RELACIONAMENTO</B>-C&oacute;digo do relacionamento no padr&atilde;o SADS (sssYaaaaaa).
+<P><img src="Bullet5.gif" width=13 heigth=13><B>CODIGO EXTERNO</B> - C&oacute;digo externo do relacionamento. 
+<P>Este c&oacute;digo pode ser informado no caso da instala&ccedil;&atilde;o adotar um padr&atilde;o 
+de codifica&ccedil;&atilde;o diferente do padr&atilde;o SADS ou quando houver integra&ccedil;&atilde;o
+entre o ET-SADS e o SADS. Neste caso, o c&oacute;digo externo do relacionamento no SADS conter&aacute; 
+o c&oacute;digo do relacionamento no ET-SADS.
+<P>O c&oacute;digo externo &eacute; uma informa&ccedil;&atilde;o
+puramente documental, ou seja, somente ser&aacute; utilizado para
+identificar, nos relat&oacute;rios e manuais, a qual elemento
+externo ao SADS o relacionamento se refere.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>NOME</B> - Descri&ccedil;&atilde;o resumida do relacionamento.
+<P>O nome tem o objetivo de identificar e explicar,
+de maneira reduzida, a que se refere o relacionamento.
+<P><img src="Bullet5.gif" width=13 heigth=13><B>ENTIDADE DERIVADA DO RELACIONAMENTO</B> - Entidade que conter&aacute; os atributos do relacionamento.
+<P>Esta entidade deve ter sido devidamente cadastrada no reposit&oacute;rio de dados e o seu c&oacute;digo dever&aacute;
+ser informado no padr&atilde;o SADS (sssEaaa).
+<P>A entidade derivada de relacionamento &eacute; geralmente utilizada em relacionamentos do tipo &quot;N para N&quot;,  
+n&atilde;o podendo ser definida para relacionamentos do tipo &quot;1 para
+N&quot; onde exista somente transposi&ccedil;&atilde;o de chave
+entre as entidades envolvidas na associa&ccedil;&atilde;o.
+<P>A seguir, s&atilde;o apresentadas as ocorr&ecirc;ncias
+da tela que definem as entidades que fazem parte do relacionamento
+e suas condi&ccedil;&otilde;es de totalidade:
+<P><dir><img src="Bullet9.gif" width=13 heigth=13><B>ENTIDADE</B> - C&oacute;digo da entidade envolvida no relacionamento. 
+<P>Esta entidade deve ter sido devidamente cadastrada
+no reposit&oacute;rio de dados e o seu c&oacute;digo dever&aacute;
+ser informado no padr&atilde;o SADS (sssEaaa).
+<P><img src="Bullet9.gif" width=13 heigth=13><B>TOTALIDADE</B>- Indicador de condi&ccedil;&atilde;o de totalidade da entidade
+no relacionamento.
+<P>As possibilidades s&atilde;o as seguintes :
+<P><dir><img src="Bullet7.gif" width=13 heigth=13><b>&quot;S&quot; (Total)</b> - Todas as ocorr&ecirc;ncias
+da entidade participam obrigatoriamente do relacionamento;
+<P><img src="Bullet7.gif" width=13 heigth=13><b>&quot;N&quot; (Parcial)</b> - Nem todas as ocorr&ecirc;ncias
+da entidade participam do relacionamento.</dir>
+<P><img src="Bullet9.gif" width=13 heigth=13><B>CARDINALIDADE:</B>
+<P><img src="Bullet9.gif" width=13 heigth=13><B>CLASSE</B> - N&uacute;mero m&aacute;ximo de vezes que uma determinada ocorr&ecirc;ncia
+da entidade pode participar do relacionamento.
+<P>Pode assumir os seguintes valores:
+<P><dir><img src="Bullet7.gif" width=13 heigth=13><b>&quot;1&quot;</b> - No m&aacute;ximo uma vez;
+<P><img src="Bullet7.gif" width=13 heigth=13><b>&quot;N&quot;</b> - V&aacute;rias vezes (o valor m&aacute;ximo
+deve ser indicado no campo CARDINALIDADE MAXIMA).</dir>
+<P>Para entidades caracter&iacute;sticas, o valor a
+ser informado no campo CLASSE &eacute; &quot;1&quot;.
+<P><img src="Bullet9.gif" width=13 heigth=13><B>MIN </B>- Quantidade m&iacute;nima de ocorr&ecirc;ncias da entidade que pode relacionar-se
+com uma determinada ocorr&ecirc;ncia da outra entidade.
+<P>A cardinalidade m&iacute;nima deve ser compat&iacute;vel
+com o valor indicado no campo TOTALIDADE, da seguinte forma:
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>Se o relacionamento for total, por defini&ccedil;&atilde;o,
+todas as ocorr&ecirc;ncias da entidade<BR>
+participam do relacionamento no m&iacute;nimo uma vez, ou seja,
+a cardinalidade m&iacute;nima tem de ser maior que ou igual a 1 (um).
+<P><img src="Bullet7.gif" width=13 heigth=13>Se o relacionamento for parcial, podem haver ocorr&ecirc;ncias
+da entidade que n&atilde;o participam do relacionamento, ou seja, a cardinalidade m&iacute;nima
+tem de ser igual a &quot;0&quot; (zero) ou &quot; &quot; (n&atilde;o dever&aacute; ser informada).</dir>
+<P><img src="Bullet9.gif" width=13 heigth=13><B>MAX</B> - Quantidade m&aacute;xima de ocorr&ecirc;ncias da entidade que pode relacionar-se
+com uma determinada ocorr&ecirc;ncia da outra entidade.
+<P>A cardinalidade m&aacute;xima deve ser compat&iacute;vel
+com o valor indicado no campo CLASSE, da seguinte forma:
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>Se CLASSE = &quot;1&quot;, por defini&ccedil;&atilde;o,
+as ocorr&ecirc;ncias da entidade podem participar do<BR>
+relacionamento, no m&aacute;ximo, uma vez, ou seja, a cardinalidade
+m&aacute;xima tem de ser igual<BR> a &quot;1&quot; (um).
+<P><img src="Bullet7.gif" width=13 heigth=13>Se CLASSE = &quot;N&quot;, a cardinalidade m&aacute;xima
+tem de ser maior que &quot;1&quot; (um).</dir>
+<P>O valor &quot;999&quot; significa que a cardinalidade m&aacute;xima n&atilde;o foi definida, portanto, uma determinada
+ocorr&ecirc;ncia da entidade pode participar uma quantidade indefinida de vezes do relacionamento.
+<P>As informa&ccedil;&otilde;es que se seguem somente ser&atilde;o necess&aacute;rias se a participa&ccedil;&atilde;o
+da entidade no relacionamento depender de alguma condi&ccedil;&atilde;o.
+<P>Se TOTALIDADE for igual a &quot;S&quot;, por defini&ccedil;&atilde;o,
+n&atilde;o existe condi&ccedil;&atilde;o para relacionamento.
+<P><img src="Bullet9.gif" width=13 heigth=13><B>ATRIBUTO</B> - Mnem&ocirc;nico do atributo que define a condi&ccedil;&atilde;o
+de participa&ccedil;&atilde;o da entidade no relacionamento.
+<P><img src="Bullet9.gif" width=13 heigth=13><B>OPERADOR</B> - Operador relacional que define, para o conte&uacute;do do atributo,
+qual a condi&ccedil;&atilde;o que identifica a participa&ccedil;&atilde;o
+da entidade no relacionamento.
+<P>Os operadores relacionais s&atilde;o os seguintes:
+<P><dir><img src="Bullet7.gif" width=13 heigth=13><b>&quot;NE&quot;</b>(<I>Not equal</I>) - Diferente de;
+<p><img src="Bullet7.gif" width=13 heigth=13><b>&quot;EQ&quot;</b> (<I>Equal</I>) - Igual a;
+<p><img src="Bullet7.gif" width=13 heigth=13><b>&quot;GT&quot;</b> (<I>Greater than</I>) - Maior que;
+<p><img src="Bullet7.gif" width=13 heigth=13><b>&quot;GE&quot;</b> (<I>Greater or equal</I>) - Maior que ou igual a;
+<p><img src="Bullet7.gif" width=13 heigth=13><b>&quot;LT&quot;</b> (<I>Less than</I>)- Menor que;
+<p><img src="Bullet7.gif" width=13 heigth=13><b>&quot;LE&quot;</b> (<I>Less or equal</I>)- Menor que ou igual a.</dir>
+<P><img src="Bullet9.gif" width=13 heigth=13><B>VALOR</B> - Indica o valor do atributo que define, segundo uma condi&ccedil;&atilde;o,
+a participa&ccedil;&atilde;o da entidade no relacionamento.
+<P><img src="Bullet9.gif" width=13 heigth=13><B>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o ao
+relacionamento.
+<P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:
+<P><dir><img src="Bullet7.gif" width=13 heigth=13><b>&quot;INC&quot;</b> (inclus&atilde;o);
+<p><img src="Bullet7.gif" width=13 heigth=13><b>&quot;ALT&quot;</b> (altera&ccedil;&atilde;o);
+<P><img src="Bullet7.gif" width=13 heigth=13><b>&quot;EXC&quot;</b> (exclus&atilde;o);
+<P><img src="Bullet7.gif" width=13 heigth=13><b>&quot;CON&quot;</b> (consulta).</dir></dir></dir></dir>
+<P><A NAME="Funca"><B><FONT SIZE=5>Fun&ccedil;&otilde;es de apoio</FONT></B></A>
+<HR>
+<P><A NAME="Gener"><B><FONT SIZE=5>Gen&eacute;ricas aplic&aacute;veis
+aos relacionamentos</FONT></B></A>
+<P><dir><img src="Bullet5.gif" width=13 heigth=13><b>Utilit&aacute;rios:</B>
+<ul><li>Duplica&ccedil;&atilde;o de elemento;
+<li>Descri&ccedil;&atilde;o de elemento;
+<li>Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento;
+<li>Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento.
+</ul>
+<p><b><img src="Bullet5.gif" width=13 heigth=13>Consultas:</B>
+<ul>
+<li>Descri&ccedil;&atilde;o de elemento;
+<li>Elementos por sistema.
+</ul>
+<p><b><img src="Bullet5.gif" width=13 heigth=13>Refer&ecirc;ncia cruzada:</B>
+<ul>
+<li>Elementos x elemento (Lista de entidades componentes de um relacionamento).
+</ul>
+<p><B><img src="Bullet5.gif" width=13 heigth=13>Informativos impressos:</B>
+<ul>
+<li>Rela&ccedil;&atilde;o de elementos por sistema;
+<li>Lista descri&ccedil;&atilde;o de elementos.</ul></dir>
+Todos estes utilit&aacute;rios, consultas, refer&ecirc;ncia
+cruzada e informativos impressos encontram-se detalhadamente descritos
+na Se&ccedil;&atilde;o III, &quot;Fun&ccedil;&otilde;es de apoio&quot;,
+deste manual.
+</BODY>
+</HTML>

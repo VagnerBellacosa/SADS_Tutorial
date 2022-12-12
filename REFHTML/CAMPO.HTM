@@ -1,0 +1,466 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Untitled</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+
+<B><FONT SIZE=6><P><A NAME="Campo">Campo</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Conce">Conceitua&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Campo &eacute; um dado isolado, geralmente utilizado nos projetos l&oacute;gico e f&iacute;sico nas seguintes situa&ccedil;&otilde;es: para definir totalizadores em telas e relat&oacute;rios, t&iacute;tulos variados tamb&eacute;m em telas e relat&oacute;rios, informa&ccedil;&otilde;es resultantes de processamento em arquivos, itens de &aacute;reas de <I>work</I> de programas e itens de &aacute;reas de comunica&ccedil;&atilde;o com sub-rotina.</FONT> </P>
+<FONT SIZE=2><P>A distin&ccedil;&atilde;o f&iacute;sica entre um atributo e um campo &eacute; que um campo nunca pertence a estrutura de uma entidade, e um atributo sim. No caso da instala&ccedil;&atilde;o fazer op&ccedil;&atilde;o pela aus&ecirc;ncia de verifica&ccedil;&atilde;o metodol&oacute;gica, um atributo pode tamb&eacute;m n&atilde;o estar relacionado a sua entidade origem. Neste caso, o atributo assemelha-se fisicamente a um campo. </P>
+<P>O campo &eacute; um dado elementar que caracteriza, identifica ou qualifica uma estrutura qualquer, exceto a entidade.</FONT> </P>
+<FONT SIZE=2><P>Os campos n&atilde;o podem ser validados segundo metodologias, o que n&atilde;o &eacute; o caso dos atributos. Detalhes a respeito de valida&ccedil;&otilde;es de atributos segundo metodologias est&atilde;o descritos no item "Atributos", nesta se&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Padro">Padroniza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O SADS n&atilde;o adota padroniza&ccedil;&atilde;o espec&iacute;fica para codifica&ccedil;&atilde;o dos mnem&ocirc;nicos de campos. Por&eacute;m, &eacute; necess&aacute;rio que estes mnem&ocirc;nicos possuam no m&iacute;nimo 6 (seis) caracteres alfab&eacute;ticos e/ou num&eacute;ricos.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Utili">Utiliza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<P>O campo, ap&oacute;s ter sido definido no reposit&oacute;rio de dados, pode ser utilizado nas defini&ccedil;&otilde;es de &aacute;reas de <I>work</I> de programas, &aacute;reas de comunica&ccedil;&atilde;o de sub-rotina, em estruturas de arquivos, &aacute;reas de trabalho, consist&ecirc;ncias, <I>datasets</I>, registros de uso geral, relat&oacute;rios, tabelas e telas. </P>
+<FONT SIZE=2><P>A utiliza&ccedil;&atilde;o de campos em estruturas de <I>datasets</I> e tabelas pode ser inibida atrav&eacute;s de parametriza&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A tabela utilizada para esta parametriza&ccedil;&atilde;o &eacute; a SBPM5000 - Tabela de Par&acirc;metros Gerais.</FONT> </P>
+<FONT SIZE=2><P>Considerando o argumento "EMPCOD" desta tabela e de acordo com o par&acirc;metro 4 informado para este argumento, tem-se as seguintes possibilidades de padroniza&ccedil;&atilde;o de utiliza&ccedil;&atilde;o de campos:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>"N" - Indica que n&atilde;o haver&aacute; valida&ccedil;&atilde;o da utiliza&ccedil;&atilde;o de campos em <I>datasets</I> e tabelas, ou seja, pode-se usar livremente campos nestas estruturas;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>"S" - Indica que haver&aacute; valida&ccedil;&atilde;o da utiliza&ccedil;&atilde;o de campos em <I>datasets</I> e tabelas, ou seja, somente atributos poder&atilde;o ser referenciados nestas estruturas.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Esta valida&ccedil;&atilde;o tamb&eacute;m n&atilde;o ser&aacute; executada para sistemas definidos na tabela SBPM7002 (sistemas sem valida&ccedil;&atilde;o de mnem&ocirc;nico).</FONT> </P>
+<FONT SIZE=2><P>Estas tabelas est&atilde;o descritas detalhadamente na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", item "Metodologia", neste manual.</FONT> </P>
+<FONT SIZE=2><P>O campo pode tamb&eacute;m, ap&oacute;s ter sido cadastrado no reposit&oacute;rio de dados, ser utilizado como sin&ocirc;nimo de outros campos ou atributos. Com este relacionamento, o novo campo possuir&aacute; as mesmas caracter&iacute;sticas (formato, tamanho, sintaxe, etc) do campo ou atributo j&aacute; definido. Qualquer altera&ccedil;&atilde;o efetuada no campo refletir&aacute; automaticamente nos seus sin&ocirc;nimos.</FONT> </P>
+<FONT SIZE=2><P>O SADS permite que seja parametrizado se haver&aacute; ou n&atilde;o consist&ecirc;ncia no cadastramento de sin&ocirc;nimos, da seguinte forma: atributo s&oacute; pode ser sin&ocirc;nimo de atributo e campo s&oacute; pode ser sin&ocirc;nimo de campo, nunca vice-versa.</FONT> </P>
+<FONT SIZE=2><P>A tabela utilizada para esta parametriza&ccedil;&atilde;o &eacute; a SBPM5000 (Tabela de Par&acirc;metros Gerais), argumento "EMPCOD", par&acirc;metro 6 - PAR-6.</FONT> </P>
+<FONT SIZE=2><P>Detalhes a respeito desta parametriza&ccedil;&atilde;o podem ser consultados na se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", item "Metodologia", t&oacute;pico "Consist&ecirc;ncia de sin&ocirc;nimos".</FONT> </P>
+<FONT SIZE=2><P>Detalhes a respeito de sin&ocirc;nimo de atributo podem ser consultados no item "Sin&ocirc;nimo", nesta mesma se&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Detalhes a respeito de sin&ocirc;nimo de campo devem ser consultados no item "Sin&ocirc;nimo", nesta mesma se&ccedil;&atilde;o.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Cadas">Cadastramento</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O processo de defini&ccedil;&atilde;o de um campo s&oacute; &eacute; poss&iacute;vel a partir do cadastramento de seu sistema no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>No momento da defini&ccedil;&atilde;o de um campo, caso ele j&aacute; tenha sido definido em outro sistema, o SADS ir&aacute; informar esta duplicidade ao usu&aacute;rio atrav&eacute;s de uma mensagem e exigir que ele retransmita a tela de defini&ccedil;&atilde;o do campo a fim de que seja realmente efetivada a inclus&atilde;o, caso a deseje.</FONT> </P>
+<B><FONT SIZE=4><P>Roteiro</B></FONT> </P>
+<FONT SIZE=2><P>A defini&ccedil;&atilde;o de campo &eacute; executada atrav&eacute;s das seguintes fun&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Defin">Defini&ccedil;&atilde;o de campo</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cadval">Cadastramento de validades de campo</A><FONT SIZE=2>, caso seja vari&aacute;vel definida (Sintaxe = "VD") (opcional);</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Descam">Descri&ccedil;&atilde;o do campo</A><FONT SIZE=2> (opcional);</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cadfor">Cadastramento de f&oacute;rmula de campo</A><FONT SIZE=2>, caso seja vari&aacute;vel gerada (Sintaxe = "VG") (opcional).</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Defin">Defini&ccedil;&atilde;o de campo</A></B></FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SISTEMA</B> - Sistema no qual o campo est&aacute; definido.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Todo campo tem de estar, obrigatoriamente, relacionado a um sistema.</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CODIGO</B> - Mnem&ocirc;nico do campo.</FONT> </P>
+<FONT SIZE=2><P>Pode-se cadastrar campos com mesmo mnem&ocirc;nico, por&eacute;m em sistemas diferentes.</FONT> </P>
+<FONT SIZE=2><P>O c&oacute;digo de um campo deve iniciar por letras, e n&atilde;o por n&uacute;meros, devendo ter um tamanho m&iacute;nimo de cinco caracteres.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Descri&ccedil;&atilde;o resumida do campo.</FONT> </P>
+<FONT SIZE=2><P>O nome tem o objetivo de identificar e explicar, de maneira reduzida, a que se refere o campo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>COD. EXTERNO</B> - C&oacute;digo com o qual o campo foi definido externamente ao SADS.</FONT> </P>
+<FONT SIZE=2><P>Este c&oacute;digo pode ser informado no caso da instala&ccedil;&atilde;o adotar um padr&atilde;o de codifica&ccedil;&atilde;o diferente do padr&atilde;o SADS.</FONT> </P>
+<FONT SIZE=2><P>Caso um <I>dataset</I> seja definido como externo (campo INCORPORAR NOME EXTERNO DE ATRIBUTOS = "S"), o c&oacute;digo externo do campo substituir&aacute; seu mnem&ocirc;nico na DASDL do <I>dataset</I> e nos comandos de movimenta&ccedil;&atilde;o e acesso ao <I>dataset</I> naqueles programas que o utilizam.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DOM&Iacute;NIO</B> - Sistema/dom&iacute;nio do campo.</FONT> </P>
+<FONT SIZE=2><P>Dom&iacute;nio &eacute; um conjunto de caracter&iacute;sticas e valores, ou intervalo de valores, que os atributos e campos a ele relacionados poder&atilde;o assumir.</FONT> </P>
+<FONT SIZE=2><P>No reposit&oacute;rio de dados, o dom&iacute;nio &eacute; identificado pelo seu sistema e c&oacute;digo.</FONT> </P>
+<FONT SIZE=2><P>Se um campo for relacionado a um dom&iacute;nio, ele herdar&aacute; deste suas caracter&iacute;sticas de formato, tamanho, decimais, indicador de sinal, padr&atilde;o, sintaxe, validades, tabela ou sub-rotina. Portanto, estas caracter&iacute;sticas n&atilde;o poder&atilde;o ser especificadas para o campo, caso ele se relacione a um dom&iacute;nio j&aacute; cadastrado.</FONT> </P>
+<FONT SIZE=2><P>Para cadastrar um dom&iacute;nio para campo, &eacute; necess&aacute;rio que o campo esteja cadastrado no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Detalhes a respeito de dom&iacute;nio est&atilde;o descritos no item "Dom&iacute;nio", nesta se&ccedil;&atilde;o. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>FORMATO</B> - Formato do campo.</FONT> </P>
+<FONT SIZE=2><P>O formato indica o tipo do conte&uacute;do do campo.</FONT> </P>
+<FONT SIZE=2><P>O campo pode possuir os seguintes formatos: </P><DIR>
+
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" (Num&eacute;rico);</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"A" (Alfab&eacute;tico);</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"D" (<I>Display</I> - Alfanum&eacute;rico);</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"B" (<I>Boolean</I>); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"F" (<I>Field</I>); </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"R" (<I>Real</I>).</FONT> </P></DIR>
+</DIR>
+
+<P>V&aacute;rias caracter&iacute;sticas do campo est&atilde;o relacionadas ao seu formato. Por exemplo: s&oacute; &eacute; poss&iacute;vel cadastrar sinal, decimais e f&oacute;rmula para campos com formato num&eacute;rico. </P><DIR>
+
+<FONT SIZE=2><P>Os testes padr&otilde;es tamb&eacute;m devem ser compat&iacute;veis com o formato do campo. Por exemplo: testes padr&otilde;es para "CPF", "CGC" e "DMA" est&atilde;o vinculados a campos num&eacute;ricos e assim por diante.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TAMANHO</B> - Tamanho do campo.</FONT> </P>
+<FONT SIZE=2><P>O tamanho identifica a quantidade de caracteres (alfab&eacute;ticos, alfanum&eacute;ricos ou num&eacute;ricos) que o campo possui.</FONT> </P>
+<FONT SIZE=2><P>Se o campo possuir formato num&eacute;rico, seu tamanho compreender&aacute; a soma do n&uacute;mero de casas inteiras mais o n&uacute;mero de casas decimais.</FONT> </P>
+<FONT SIZE=2><P>No caso de um campo possuir dom&iacute;nio, seu tamanho ser&aacute; herdado do mesmo; portanto, n&atilde;o pode ser informado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DECIMAIS</B> - Quantidade de casas decimais do campo.</FONT> </P>
+<FONT SIZE=2><P>Um campo somente poder&aacute; ter decimais caso seu formato seja num&eacute;rico. O campo que tiver casas decimais dever&aacute; ter, pelo menos, uma casa inteira.</FONT> </P>
+<FONT SIZE=2><P>No caso de um campo possuir dom&iacute;nio, a quantidade de casas decimais ser&aacute; herdada do mesmo; portanto, n&atilde;o pode ser informada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SINAL</B> - Indicador de exist&ecirc;ncia de sinal no campo.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Se o campo possuir sinal (+ ou -);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" ou " " - Se o campo n&atilde;o possuir sinal.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Um campo somente poder&aacute; ser sinalizado caso seu formato seja num&eacute;rico.</FONT> </P>
+<FONT SIZE=2><P>No caso de um campo possuir dom&iacute;nio, a sinaliza&ccedil;&atilde;o ser&aacute; herdada do mesmo; portanto, n&atilde;o pode ser informada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CLASSIFICAC&Atilde;O</B> - Informa&ccedil;&atilde;o exclusiva de atributo. Portanto, este campo n&atilde;o deve ser informado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OCORRENCIAS</B> - Informa&ccedil;&atilde;o exclusiva de atributo. Portanto, este campo n&atilde;o deve ser informado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PADR&Atilde;O</B> - Teste padr&atilde;o ao qual o campo ser&aacute; submetido para valida&ccedil;&atilde;o de seu conte&uacute;do.</FONT> </P>
+<FONT SIZE=2><P>O teste padr&atilde;o, quando definido para o campo, ir&aacute; estabelecer, para a consist&ecirc;ncia geral, qual o teste a que o campo ser&aacute; submetido para valida&ccedil;&atilde;o do seu conte&uacute;do.</FONT> </P>
+<FONT SIZE=2><P>Os testes padr&otilde;es dispon&iacute;veis para campo, de acordo com o conte&uacute;do a ser assumido pelo mesmo, s&atilde;o os seguintes :</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"AMD" (Data) - Para data no formato ano, m&ecirc;s, dia;</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do campo for igual a seis, o teste do ano ser&aacute; feito com duas posi&ccedil;&otilde;es, ou seja, o ano poder&aacute; assumir os valores de "00" a "99". Caso seu tamanho seja oito, o teste do ano ser&aacute; feito com a quatro posi&ccedil;&otilde;es e, neste caso, o ano poder&aacute; assumir os valores de "0000" a "9999".</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"DMA" (Data) - Para data no formato DDMMAA;</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do campo for igual a seis, o teste do ano ser&aacute; feito com duas posi&ccedil;&otilde;es, ou seja, o ano poder&aacute; assumir os valores de "00" a "99". Caso seu tamanho seja oito, o teste do ano ser&aacute; feito com a quatro posi&ccedil;&otilde;es, e neste caso o ano poder&aacute; assumir os valores de "0000" a "9999".</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"D/M" (Data) - Para data no formato DDMM (dia/m&ecirc;s);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"M/D" (Data) - Para data no formato MMDD (dia/m&ecirc;s);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"M/A" (Data) - Para data no formato MMAA (m&ecirc;s/ano);</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do atributo for igual a quatro, o teste do ano ser&aacute; feito com duas posi&ccedil;&otilde;es, ou seja, o ano poder&aacute; assumir os valores de "00" a "99". Caso seu tamanho seja seis, o teste do ano ser&aacute; feito com a quatro posi&ccedil;&otilde;es, e neste caso o ano poder&aacute; assumir os valores de "0000" a "9999".</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INV" (Data) - Para data DDMMAA ou DDMMAAAA com invers&atilde;o para AAMMDD ou AAAAMMDD;</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do atributo for igual a seis, o teste do ano ser&aacute; feito com duas posi&ccedil;&otilde;es, ou seja, o ano poder&aacute; assumir os valores de "00" a "99". Caso seu tamanho seja oito, o teste do ano ser&aacute; feito com a quatro posi&ccedil;&otilde;es, e neste caso o ano poder&aacute; assumir os valores de "0000" a "9999".</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CPF" (CPF) - Para CPF;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CGC" (CGC) - Para CGC, abrangendo CPF;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ICG" (CGC) - Para CGC, n&atilde;o abrangendo CPF;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"C10" (M&oacute;d. 10) - Para c&aacute;lculo de d&iacute;gito usando m&oacute;dulo 10;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"C11" (M&oacute;d. 11) - Para c&aacute;lculo de d&iacute;gito usando m&oacute;dulo 11;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"M10" (M&oacute;d. 10) - Para teste de d&iacute;gito usando m&oacute;dulo 10;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"M11" (M&oacute;d. 11) - Para teste de d&iacute;gito usando m&oacute;dulo 11;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"BRA" - Para teste do preenchimento de apenas um branco entre as palavras de um atributo;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CIV" (Estado civil) - Para teste de estado civil: "S" (Solteiro), "C" (Casado), "D" (Divorciado) e "O" (Outros);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EST" (Esta&ccedil;&atilde;o) - Para teste de esta&ccedil;&atilde;o v&aacute;lida na rede;</FONT> </P>
+<FONT SIZE=2><P>Antes de efetuar a valida&ccedil;&atilde;o de um c&oacute;digo de impressora na rede, &eacute; verificado se tal c&oacute;digo est&aacute; cadastrado na tabela SBPM5024 - Tabela de Impressoras em outra m&aacute;quina. Caso positivo, tal c&oacute;digo &eacute; aceito como v&aacute;lido. </P>
+<P>Este teste tamb&eacute;m efetua corretamente a valida&ccedil;&atilde;o de impressoras ligadas ao sistema atrav&eacute;s de linhas que utilizam o protocolo TCP/IP.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"HOR" (Hora) - Para hora no formato HHMM ou HHMMSS;</FONT> </P>
+<FONT SIZE=2><P>Se o tamanho do atributo for igual a quatro, ser&aacute; consistido horas e minutos e se o tamanho for igual a seis ser&aacute; consistido horas, minutos e segundos.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"NEZ" - Para teste de atributo num&eacute;rico diferente de zero.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"PPO" - Para teste do preenchimento da primeira posi&ccedil;&atilde;o do atributo, que n&atilde;o pode ser branco;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"RPT" - Para teste de impress&atilde;o via <I>Reprints;</I></FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"SEX" (Sexo) - Para teste de sexo: "F" (Feminino) ou "M" (Masculino);</FONT> </P>
+<FONT SIZE=2><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12>"S/N" ("S" ou "N") - Para teste de resposta: "S" (Sim) ou "N" (N&atilde;o).</P>
+<P> Os testes de consist&ecirc;ncia de data, opcionalmente, aceitam que uma data seja totalmente preenchida com o algarismo 9. </P>
+<P>Para fazer op&ccedil;&atilde;o por este modo de funcionamento, o campo "DATA C/ 9's", da tabela SBPM5004, deve ser preenchido com "S",  para um sistema espec&iacute;fico ou para o sistema "SBC" quando se desejar configurar para todos os sistemas da instala&ccedil;&atilde;o.</P>
+<P>Maiores detalhes sobre esta parametriza&ccedil;&atilde;o podem ser pesquisadas neste Manual de Refer&ecirc;ncia do SADS, na Se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es do SADS&quot;, item &quot;Consist&ecirc;ncia&quot;, t&oacute;pico &quot;Datas preenchidas com noves (999999)&quot;.</P></DIR>
+
+<P>No caso de um campo possuir dom&iacute;nio, o teste padr&atilde;o ser&aacute; herdado do mesmo; portanto, n&atilde;o pode ser informado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DESCRI&Ccedil;&Atilde;O</B> - Indicador de encadeamento da descri&ccedil;&atilde;o do campo.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Indica que, ap&oacute;s a tela de defini&ccedil;&atilde;o de campo, ser&aacute; encadeada a tela de descri&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Indica que, ap&oacute;s a tela de defini&ccedil;&atilde;o de campo, n&atilde;o haver&aacute; encadeamento da tela de descri&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>No caso da altera&ccedil;&atilde;o do campo, se informado "S" em DESCRICAO, a tela de descri&ccedil;&atilde;o ser&aacute; encadeada somente se a mesma j&aacute; estiver cadastrada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DEFAULT</B> - Valor <I>default</I> do campo.</FONT> </P>
+<FONT SIZE=2><P>Valor assumido pelo campo quando o mesmo n&atilde;o for informado em telas de entrada de dados.</FONT> </P>
+<FONT SIZE=2><P>O valor <I>default</I> &eacute; utilizado na gera&ccedil;&atilde;o da WORKING-STORAGE SECTION dos programas que utilizam o campo, nos casos em que na tela de defini&ccedil;&atilde;o da &aacute;rea de <I>work </I>dos mesmos for definido "D" no campo VAL referente ao campo. Deste modo, o campo ser&aacute; inicializado com este valor pr&eacute;-estabelecido.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TABELA/SUBROTINA</B> - Tabela ou sub-rotina contra o qual o campo ser&aacute; validado.</FONT> </P>
+<FONT SIZE=2><P>Tanto a tabela quanto a sub-rotina para a valida&ccedil;&atilde;o do campo devem estar cadastradas no reposit&oacute;rio de dados do SADS e ser informadas no padr&atilde;o SADS (sssMnnnn e sssSxx, respectivamente).</FONT> </P>
+<FONT SIZE=2><P>Se, para um campo, estiver definido um teste contra uma tabela, os valores que lhe forem atribu&iacute;dos nas transa&ccedil;&otilde;es de entrada de dados ter&atilde;o de estar cadastrados na tabela indicada. Da mesma forma, em um teste contra sub-rotina, a consist&ecirc;ncia geral ir&aacute; cham&aacute;-la para testar a validade do conte&uacute;do do campo. Neste caso, a sub-rotina deve obedecer a certos padr&otilde;es definidos pela consist&ecirc;ncia geral, que encontram-se especificados no item "Consist&ecirc;ncia geral", nesta se&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SINTAXE</B> - Sintaxe do campo.<BR>
+Determina qual a natureza da informa&ccedil;&atilde;o contida no campo.</FONT> </P>
+<FONT SIZE=2><P>Um campo pode possuir as seguintes sintaxes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"VL" (Vari&aacute;vel livre) - Vari&aacute;vel cujo conte&uacute;do n&atilde;o possui valores v&aacute;lidos pr&eacute;-estabelecidos.<BR>
+Uma vari&aacute;vel pode ser livre e ter seu conte&uacute;do validado contra uma tabela ou sub-rotina.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"VD" (Vari&aacute;vel definida) - Vari&aacute;vel cujo conte&uacute;do est&aacute; definido por um conjunto de validades pr&eacute;-estabelecidas para o campo.<BR>
+Neste caso, as validades do campo devem ser cadastradas para complementar a defini&ccedil;&atilde;o do mesmo. Um campo pode ser uma vari&aacute;vel definida e ter ainda seu conte&uacute;do validado contra uma tabela ou sub-rotina.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"VE" (Vari&aacute;vel estruturada) - Vari&aacute;vel composta por itens elementares.<BR>
+A cria&ccedil;&atilde;o de itens grupos ocorre na defini&ccedil;&atilde;o das estruturas de dados. Portanto, a<BR>
+sintaxe "VE" apenas documenta a estrutura&ccedil;&atilde;o do campo.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"VG" (Vari&aacute;vel gerada) - Vari&aacute;vel gerada atrav&eacute;s de f&oacute;rmula. <BR>
+Neste caso, as f&oacute;rmulas do campo podem ser cadastradas para complementar a defini&ccedil;&atilde;o do mesmo. Um campo pode ser uma vari&aacute;vel gerada e n&atilde;o ter a sua f&oacute;rmula cadastrada no reposit&oacute;rio de dados do SADS.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>FORMULA</B> - Indicador de encadeamento da f&oacute;rmula do campo.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Indica que haver&aacute; encadeamento da tela de f&oacute;rmula ap&oacute;s a defini&ccedil;&atilde;o do campo.<BR>
+Neste caso, o conte&uacute;do do campo SINTAXE deve ter sido preenchido com "VG".</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Indica que n&atilde;o haver&aacute; encadeamento da tela de f&oacute;rmula ap&oacute;s a defini&ccedil;&atilde;o do campo.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>No caso da altera&ccedil;&atilde;o do campo, se F&Oacute;RMULA = "S", a tela de defini&ccedil;&atilde;o de f&oacute;rmula somente ser&aacute; encadeada caso j&aacute; se encontre cadastrada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CABECALHO</B> - Cabe&ccedil;alho ou t&iacute;tulo atribu&iacute;do ao campo.</FONT> </P>
+<FONT SIZE=2><P>O cabe&ccedil;alho do campo pode ser utilizado na composi&ccedil;&atilde;o das mensagens de erro apresentadas pela consist&ecirc;ncia geral, caso na instala&ccedil;&atilde;o esteja parametrizado que o mesmo deva ser exibido. Para maiores detalhes a respeito desta parametriza&ccedil;&atilde;o, deve-se consultar a Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>M&Aacute;SCARA DE EDICAO</B> - Edi&ccedil;&atilde;o Cobol para o campo.</FONT> </P>
+<FONT SIZE=2><P>A m&aacute;scara de edi&ccedil;&atilde;o ou <I>picture</I> de edi&ccedil;&atilde;o segue os mesmos padr&otilde;es adotados no desenho de telas e relat&oacute;rios, ou seja, pode ser definida, como por exemplo, das seguintes formas: yyyyyvyy, yyqyyqyy e rrrprryvyy.</FONT> </P>
+<FONT SIZE=2><P>A m&aacute;scara &eacute; utilizada na gera&ccedil;&atilde;o da WORKING-STORAGE SECTION dos programas que utilizam o campo, nos casos em que na tela de defini&ccedil;&atilde;o da &aacute;rea de <I>work</I> dos programas for definido "E" (edi&ccedil;&atilde;o) no campo VAL. Deste modo, ele ser&aacute; gerado com a <I>picture</I> de edi&ccedil;&atilde;o pr&eacute;-estabelecida.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave; defini&ccedil;&atilde;o do campo.</FONT> </P>
+<FONT SIZE=2><P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Cadval">Cadastramento de validades de campo</A></B></FONT> </P>
+<FONT SIZE=2><P>S&atilde;o os valores ou intervalo de valores que o campo poder&aacute; assumir.</FONT> </P>
+<B><FONT SIZE=2><P>Exemplo de validades de campos:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Maior que 10 e menor que 50;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Igual a 1 ou 2 ou 3;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Diferente de "MARIA";</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Diferente de "A" e "B" e "C".</FONT> </P></DIR>
+
+<FONT SIZE=2><P>As validades definidas para os campos ser&atilde;o observadas sempre que um valor lhe for atribu&iacute;do em tabelas ou telas de entrada de dados, onde a consist&ecirc;ncia geral ir&aacute; testar se este valor se enquadra nos valores v&aacute;lidos definidos para o campo em quest&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As validades s&atilde;o utilizadas pelo <I>help</I> <I>on-line</I> quando este for solicitado ap&oacute;s ter sido verificado um erro pela consist&ecirc;ncia geral e este erro for relativo a um campo vari&aacute;vel definida (sintaxe "VD"). </P>
+<P>As validades s&atilde;o tamb&eacute;m utilizadas pela sub-rotina "SDDS04" que, ao ser disparada por programas aplicativos, decodifica as validades dos campos para exibi&ccedil;&atilde;o em telas, relat&oacute;rios ou composi&ccedil;&atilde;o de arquivos.</FONT> </P>
+<FONT SIZE=2><P>Detalhes a respeito da sub-rotina SDDS04 est&atilde;o descritos no item "Sub-rotina", nesta se&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Para cadastrar as validades de um campo, &eacute; necess&aacute;rio que o mesmo j&aacute; esteja definido no reposit&oacute;rio de dados do SADS e que possua SINTAXE = "VD" (vari&aacute;vel definida).</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SISTEMA</B> - Sistema no qual o campo est&aacute; definido.<BR>
+Todo campo deve, obrigatoriamente, estar relacionado a um sistema.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CAMPO</B> - Mnem&ocirc;nico do campo possuidor das validades.<BR>
+Para cadastramento das validades do campo s&atilde;o apresentados os seguintes campos:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SEQ</B> - N&uacute;mero para posicionamento das validades do campo na seq&uuml;&ecirc;ncia em que os testes ser&atilde;o executados.</FONT> </P>
+<FONT SIZE=2><P>O primeiro n&uacute;mero &eacute; "0010" e os demais, acrescidos de 10. </P>
+<P>Para incluir uma validade entre duas outras j&aacute; inclu&iacute;das, &eacute; necess&aacute;rio preencher uma linha que esteja em branco e alterar n&uacute;mero seq&uuml;encial desta linha para um n&uacute;mero entre os j&aacute; existentes. O SADS reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima opera&ccedil;&atilde;o, as validades j&aacute; estar&atilde;o na nova ordem.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>E/O</B> - Operador l&oacute;gico utilizado para concatenar as express&otilde;es que definem as validades do campo.</FONT> </P>
+<FONT SIZE=2><P>Os operadores l&oacute;gicos poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"E" - Operador l&oacute;gico E (<I>and</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"O" - Operador l&oacute;gico OU (<I>or</I>).</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPER</B> - Operador relacional utilizado nas express&otilde;es que definem as validades do campo.</FONT> </P>
+<FONT SIZE=2><P>Os operadores relacionais poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EQ" (<I>equal</I>) - Igual a;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"NE" (<I>not equal</I>) - Diferente de;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"GE" (<I>greater or equal</I>) - Maior que ou igual a;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"GT" (<I>greater than</I>) - Maior que;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"LE" (<I>less or equal</I>) - Menor que ou igual a;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"LT" (<I>less than</I>) - Menor que.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERANDO</B> - Valores que definem as validades poss&iacute;veis para o campo. O operando deve ser informado alinhado de acordo com o formato do campo:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Se o campo for num&eacute;rico, o operando tamb&eacute;m deve ser num&eacute;rico e seu conte&uacute;do tem de ser ajustado &agrave; direita. N&atilde;o &eacute; necess&aacute;rio preench&ecirc;-lo com zeros &agrave; esquerda.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Se o campo for alfanum&eacute;rico ou alfab&eacute;tico, o operando tamb&eacute;m deve ser alfanum&eacute;rico ou alfab&eacute;tico e seu conte&uacute;do tem de ser ajustado &agrave; esquerda com brancos &agrave; direita.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>O tamanho do operando n&atilde;o pode exceder o tamanho determinado para o campo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DESCRICAO</B> - Descri&ccedil;&atilde;o ou explica&ccedil;&atilde;o resumida do operando.<BR>
+Utilizado para descrever o valor informado no operando.<BR>
+A descri&ccedil;&atilde;o n&atilde;o &eacute; obrigat&oacute;ria, por&eacute;m, quando poss&iacute;vel, ela deve ser informada, pois ser&aacute; apresentada quando um <I>help</I> do atributo for solicitado. Al&eacute;m do mais, ela pode ser utilizada na decodifica&ccedil;&atilde;o das validades em telas e relat&oacute;rios.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTINUA (S/N)</B> - Indicador de continuidade de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As possibilidades de preenchimento deste campo s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Nova tela ser&aacute; aberta para prosseguir a opera&ccedil;&atilde;o relacionada &agrave;s validades de<BR>
+campo;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - &Uacute;ltima tela para opera&ccedil;&atilde;o sobre as validades do campo.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave;s validades do campo.</FONT> </P>
+<FONT SIZE=2><P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Analisando o exemplo anterior, pode-se verificar que os &uacute;nicos valores poss&iacute;veis para o campo VALMES s&atilde;o os que nele se encontram apresentados. Portanto, sempre que o campo aparecer em entrada de dados e tabelas, a consist&ecirc;ncia geral ir&aacute; verificar se o valor informado para o mesmo &eacute; um dos pr&eacute;-estabelecidos. Caso contr&aacute;rio, ser&aacute; enviada a seguinte mensagem de erro:</FONT> </P>
+<FONT SIZE=2><P>"VALMES (Mes do Ano) INVALIDO" </P>
+</FONT><B><FONT SIZE=5><P><A NAME="Descam">Descri&ccedil;&atilde;o de campo</A></B></FONT> </P>
+<FONT SIZE=2><P>A descri&ccedil;&atilde;o de um campo &eacute; uma fun&ccedil;&atilde;o dispon&iacute;vel no SADS que auxilia na documenta&ccedil;&atilde;o do sistema.</FONT> </P>
+<FONT SIZE=2><P>Est&atilde;o dispon&iacute;veis 99 p&aacute;ginas para a descri&ccedil;&atilde;o detalhada do campo, sendo que cada p&aacute;gina possui 10 linhas de 78 posi&ccedil;&otilde;es, totalizando 780 por p&aacute;gina de descri&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A descri&ccedil;&atilde;o de um campo no SADS &eacute; livre de qualquer padr&atilde;o, podendo ser cadastrada de acordo com a conveni&ecirc;ncia e a necessidade de cada usu&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>As informa&ccedil;&otilde;es relativas &agrave; descri&ccedil;&atilde;o do atributo s&atilde;o puramente documentais, pois podem fazer parte dos relat&oacute;rios e manuais emitidos pelo SADS, sendo apresentadas sempre que um <I>help on-line</I> for solicitado para o atributo.</FONT> </P>
+<FONT SIZE=2><P>Para descrever um campo, &eacute; necess&aacute;rio que o mesmo j&aacute; esteja cadastrado no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SISTEMA</B> - Sistema no qual o campo est&aacute; definido </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CAMPO</B> - Mnem&ocirc;nico do campo cuja descri&ccedil;&atilde;o ser&aacute; cadastrada.<BR>
+Ap&oacute;s o c&oacute;digo, &eacute; apresentado o nome do campo. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DESCRICAO</B> - Descri&ccedil;&atilde;o detalhada do campo.<BR>
+Est&atilde;o dispon&iacute;veis 99 p&aacute;ginas, com 10 linhas cada, para esta descri&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTINUA</B> - Indicador de continuidade da opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As possibilidades de preenchimento deste campo s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Nova tela ser&aacute; aberta para prosseguir descrevendo o campo;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - &Uacute;ltima tela da descri&ccedil;&atilde;o do campo.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave; descri&ccedil;&atilde;o do campo.</FONT> </P>
+<FONT SIZE=2><P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Cadfor">Cadastramento da f&oacute;rmula de campo</A></B></FONT> </P>
+<FONT SIZE=2><P>A f&oacute;rmula &eacute; uma sequ&ecirc;ncia de opera&ccedil;&otilde;es matem&aacute;ticas que define como calcular o valor de um campo.</FONT> </P>
+<FONT SIZE=2><P>A f&oacute;rmula do campo &eacute; identificada pelo sistema acrescido do mnem&ocirc;nimo do campo e de um seq&uuml;encial que representa o n&uacute;mero da f&oacute;rmula do campo.</FONT> </P>
+<FONT SIZE=2><P>Um campo pode possuir mais de uma f&oacute;rmula.</FONT> </P>
+<FONT SIZE=2><P>A f&oacute;rmula do campo pode ser utilizada na gera&ccedil;&atilde;o de programas pelo SADS atrav&eacute;s do comando de m&oacute;dulo "FORMUL". </P>
+<P>Detalhes a respeito dos comandos de m&oacute;dulo, relativo &agrave; f&oacute;rmula, est&atilde;o descritos no item "Programa", t&oacute;pico "Comandos de m&oacute;dulo", nesta se&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Para cadastrar as f&oacute;rmulas de um campo, &eacute; necess&aacute;rio que o mesmo j&aacute; esteja definido no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Para que um campo possua f&oacute;rmula, &eacute; necess&aacute;rio que ele tenha sido definido como vari&aacute;vel gerada (Sintaxe = "VG") e com formato num&eacute;rico (Formato = "N").</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SISTEMA</B> - C&oacute;digo do sistema do campo que possui a f&oacute;rmula.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CAMPO</B> - Mnem&ocirc;nico do campo que possui a f&oacute;rmula.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NUM. FORMULA</B> - N&uacute;mero da f&oacute;rmula.</FONT> </P>
+<FONT SIZE=2><P>O n&uacute;mero da f&oacute;rmula &eacute; um seq&uuml;encial que distingue as v&aacute;rias f&oacute;rmulas do campo.</FONT> </P>
+<FONT SIZE=2><P>A f&oacute;rmula do campo &eacute; identificada pelo sistema acrescido do mnem&ocirc;nico do atributo e de um n&uacute;mero seq&uuml;encial que identifica uma das f&oacute;rmulas do campo.</FONT> </P>
+<FONT SIZE=2><P>Para cadastramento dos operandos da f&oacute;rmula do campo s&atilde;o apresentadas os seguintes campos:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SEQ</B> - N&uacute;mero para posicionamento do item dentro da f&oacute;rmula.</FONT> </P>
+<FONT SIZE=2><P>O primeiro n&uacute;mero &eacute; igual a "0010" e os demais, acrescidos de 10.</FONT> </P>
+<FONT SIZE=2><P>Para incluir um item entre dois outros j&aacute; inclu&iacute;dos, &eacute; necess&aacute;rio preencher uma linha que esteja em branco e alterar o n&uacute;mero seq&uuml;encial desta linha para um n&uacute;mero entre os j&aacute; informados. O SADS reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima opera&ccedil;&atilde;o, os itens j&aacute; estar&atilde;o na nova ordem.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPER</B> - Operador aritm&eacute;tico utilizado na defini&ccedil;&atilde;o da f&oacute;rmula.</FONT> </P>
+<FONT SIZE=2><P>Os operadores aritm&eacute;ticos poss&iacute;veis s&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"+" - (Adi&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"-" - (Subtra&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"*" - (Multiplica&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"/" - (Divis&atilde;o).</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PAR</B> - Indicador de abre par&ecirc;ntese(s).<BR>
+O indicador de abre par&ecirc;ntese(s) &eacute; utilizado para definir as prioridades das opera&ccedil;&otilde;es matem&aacute;ticas que comp&otilde;em a f&oacute;rmula. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes: "( ", "((" ou " (", ou seja, s&atilde;o permitidos apenas dois n&iacute;veis de par&ecirc;nteses.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NDEF</B> - N&iacute;vel de defini&ccedil;&atilde;o do operando.</FONT> </P>
+<FONT SIZE=2><P>O valor v&aacute;lido para este campo &eacute;:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para atributos e campos definidos no sistema do campo "SIS" ou no mesmo sistema do campo da f&oacute;rmula.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Quando nada for informado no campo NDEF, o SADS assumir&aacute; que o operando informado &eacute; uma constante.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SIS</B> - C&oacute;digo do sistema do operando.<BR>
+Este campo deve ser informado somente se o operando for um atributo ou campo e o sistema do operando n&atilde;o for o mesmo daquele do campo possuidor da f&oacute;rmula.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERANDO</B> - Atributo, campo ou constante utilizada na f&oacute;rmula.<BR>
+Somente s&atilde;o permitidas constantes num&eacute;ricas.</FONT> </P>
+<FONT SIZE=2><P>Se o operando for um atributo ou campo, deve-se informar "S" no campo NDEF.</FONT> </P>
+<FONT SIZE=2><P>Se o operando for uma constante, deve-se ajust&aacute;-la &agrave; direita. N&atilde;o &eacute; necess&aacute;rio preencher com zeros &agrave; esquerda, nem informar os campos NDEF e SIS.</FONT> </P>
+<FONT SIZE=2><P>Se o operando for um atributo ou campo seu formato tem de ser num&eacute;rico.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PAR</B> - Indicador de fecha par&ecirc;ntese(s).</FONT> </P>
+<FONT SIZE=2><P>O indicador de fecha-par&ecirc;ntese(s) &eacute; utilizado para definir, junto com os abre-par&ecirc;nteses, as prioridades das opera&ccedil;&otilde;es matem&aacute;ticas que comp&otilde;em a f&oacute;rmula.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes: ") ", "))" ou " )", ou seja, s&atilde;o permitidos apenas dois n&iacute;veis de par&ecirc;nteses.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s as ocorr&ecirc;ncias aparecem as seguintes informa&ccedil;&otilde;es:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTINUA (S/N)</B> - Indicador de continuidade de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As possibilidades de preenchimento deste campo s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Nova tela ser&aacute; aberta para prosseguir cadastrando f&oacute;rmula de campo;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - &Uacute;ltima tela para opera&ccedil;&atilde;o sobre a f&oacute;rmula de campo.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave; f&oacute;rmula de campo.</FONT> </P>
+<FONT SIZE=2><P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Funca">Fun&ccedil;&otilde;es de apoio</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Espec">Espec&iacute;ficas de campo</A></B></FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Dupcam">Duplica&ccedil;&atilde;o de campo</A></B></FONT> </P>
+<FONT SIZE=2><P>O SADS permite que seja definido um novo campo com as mesmas caracter&iacute;sticas (formato, tamanho, decimais, indicador de sinal, classifica&ccedil;&atilde;o, padr&atilde;o, sintaxe, tabela/sub-rotina, f&oacute;rmula, validades e descri&ccedil;&atilde;o) de um campo j&aacute; definido.</FONT> </P>
+<FONT SIZE=2><P>Para duplicar campo, &eacute; necess&aacute;rio que o campo que ter&aacute; suas caracter&iacute;sticas duplicadas esteja cadastrado no reposit&oacute;rio de dados do SADS e que o novo campo n&atilde;o esteja cadastrado.</FONT> </P>
+<FONT SIZE=2><P>O novo campo n&atilde;o ser&aacute; criado como sin&ocirc;nimo do campo original.</FONT> </P>
+<FONT SIZE=2><P>A duplica&ccedil;&atilde;o de campo n&atilde;o est&aacute; associada a nenhuma tela de processamento. Para efetu&aacute;-la, basta transmitir o menu de opera&ccedil;&atilde;o "DUPCAM", cujos campos est&atilde;o explicados a seguir:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>Original:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sistema</B> - Sistema do campo a ser duplicado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Campo</B> - C&oacute;digo do campo a ser duplicado.</FONT> </P></DIR>
+
+<B><FONT SIZE=2><P>Copia:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sistema</B> - Sistema para o qual ser&aacute; criado o novo campo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Campo</B> - C&oacute;digo do campo que ser&aacute; criado.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=4><P><A NAME="Troca">Troca c&oacute;digo de campo</A></B></FONT> </P>
+<FONT SIZE=2><P>A troca do c&oacute;digo de um campo compreende, al&eacute;m da troca propriamente dita, a sua substitui&ccedil;&atilde;o em todas as estruturas de dados que o referenciarem.</FONT> </P>
+<FONT SIZE=2><P>Para trocar o c&oacute;digo de um campo, &eacute; necess&aacute;rio que o campo atual esteja cadastrado e que o campo a ser criado n&atilde;o esteja cadastrado.</FONT> </P>
+<FONT SIZE=2><P>Se o campo atual estiver cadastrado em alguma estrutura, somente ser&aacute; possivel trocar seu mnem&ocirc;nico com solicita&ccedil;&atilde;o simult&acirc;nea de atualiza&ccedil;&atilde;o de suas estruturas.</FONT> </P>
+<FONT SIZE=2><P>A troca de c&oacute;digo de campo n&atilde;o est&aacute; associada a nenhuma tela de processamento. Para efetu&aacute;-la, basta transmitir o menu de opera&ccedil;&atilde;o "TROCAM", cujos campos est&atilde;o explicados a seguir:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P>
+<B><FONT SIZE=2><P>Atual:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sistema</B> - Sistema do campo a ser trocado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Campo</B> - C&oacute;digo do campo a ser trocado.</FONT> </P></DIR>
+
+<B><FONT SIZE=2><P>Novo:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sistema</B> - Sistema para o qual o campo ser&aacute; trocado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Campo</B> - C&oacute;digo para o qual o campo ser&aacute; trocado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Informe "S" para atualizar estruturas </B>- Indicador de atualiza&ccedil;&atilde;o ou n&atilde;o das estruturas nas quais o campo atual est&aacute; sendo referenciado.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Indica que o c&oacute;digo atual do campo ser&aacute; trocado pelo novo em todas as estruturas em que ele estiver sendo referenciado;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Indica que o c&oacute;digo do campo n&atilde;o ser&aacute; atualizado nas estruturas em que ele estiver sendo referenciado. </P>
+<P>Neste caso, se o campo atual estiver cadastrado em alguma estrutura, a troca n&atilde;o ser&aacute; efetuada.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=4><P><A NAME="Trans">Transforma&ccedil;&atilde;o campo x sin&ocirc;nimo</A></FONT> </P>
+<FONT SIZE=2><P>O SADS permite que um campo seja transformado em sin&ocirc;nimo de um campo ou atributo j&aacute; existente. Deste modo ele herdar&aacute; todas as caracter&iacute;sticas (formato, tamanho, sintaxe, validades, tabela, sub-rotina, etc) do campo ou atributo original. </P>
+<P>Esta fun&ccedil;&atilde;o permite tamb&eacute;m que um sin&ocirc;nimo volte novamente &agrave; sua condi&ccedil;&atilde;o original de campo.</FONT> </P>
+<FONT SIZE=2><P>O SADS permite que seja parametrizado se haver&aacute; ou n&atilde;o consist&ecirc;ncia no cadastramento de sin&ocirc;nimos, da seguinte forma: atributo s&oacute; pode ser sin&ocirc;nimo de atributo e campo s&oacute; pode ser sin&ocirc;nimo de campo, nunca vice-versa.</FONT> </P>
+<FONT SIZE=2><P>A tabela utilizada para esta parametriza&ccedil;&atilde;o &eacute; a SBPM5000 (Tabela de Par&acirc;metros Gerais), argumento "EMPCOD", par&acirc;metro 6 - PAR-6.</FONT> </P>
+<FONT SIZE=2><P>Detalhes a respeito desta parametriza&ccedil;&atilde;o podem ser consultados na se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", item "Metodologia", t&oacute;pico "Consist&ecirc;ncia de sin&ocirc;nimos".</FONT> </P>
+<FONT SIZE=2><P>Detalhes a respeito de sin&ocirc;nimo de atributo podem ser consultados no item "Sin&ocirc;nimo", nesta mesma se&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Para efetuar as opera&ccedil;&otilde;es de transforma&ccedil;&atilde;o de campo em sin&ocirc;nimo e vice-versa, ambos os campos devem estar cadastrados no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>A transforma&ccedil;&atilde;o de campo em sin&ocirc;nimo e vice-versa n&atilde;o est&aacute; associada a nenhuma tela de processamento. Para efetu&aacute;-la, basta transmitir o menu de opera&ccedil;&atilde;o "TRACAM", cujos campos est&atilde;o explicados a seguir: </P>
+<B><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Operacao (SIN/CAM)</B> - Opera&ccedil;&atilde;o a ser efetuada sobre o campo informado.</FONT> </P>
+<FONT SIZE=2><P>Podem ser informados os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"SIN" - Para transformar um campo em sin&ocirc;nimo;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CAM" - Para transformar um sin&ocirc;nimo em campo.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>O campo que possui as caracter&iacute;sticas a serem herdadas atrav&eacute;s da opera&ccedil;&atilde;o "SIN" n&atilde;o pode ser sin&ocirc;nimo de outro campo e nem pode ser dom&iacute;nio.</FONT> </P>
+<FONT SIZE=2><P>Para a opera&ccedil;&atilde;o "SIN", ser&aacute; criado um relacionamento entre o campo e o sin&ocirc;nimo. Neste caso, o sin&ocirc;nimo, sempre que for referenciado, herdar&aacute; as caracter&iacute;sticas do campo.</FONT> </P>
+<FONT SIZE=2><P>O campo a ser transformado em sin&ocirc;nimo na opera&ccedil;&atilde;o "SIN" n&atilde;o pode possuir outro campo como sin&ocirc;nimo de si pr&oacute;prio.</FONT> </P>
+<FONT SIZE=2><P>Para a opera&ccedil;&atilde;o "CAM", as caracter&iacute;sticas do sin&ocirc;nimo ser&atilde;o copiadas para o campo e o relacionamento entre eles ser&aacute; desfeito.</FONT> </P></DIR>
+
+<B><FONT SIZE=2><P>Campo:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sistema</B> - Sistema do campo a ser transformado em sin&ocirc;nimo ou do sin&ocirc;nimo a ser<BR>
+transformado em campo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Codigo</B> - C&oacute;digo do campo a ser transformado em sin&ocirc;nimo ou do sin&ocirc;nimo a ser<BR>
+transformado em campo.</FONT> </P></DIR>
+
+<B><FONT SIZE=2><P>Sinonimo de:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sistema</B> - Sistema do campo original a partir do qual ser&aacute; criado o sin&ocirc;nimo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Campo</B> - C&oacute;digo do campo original a partir do qual ser&aacute; criado o sin&ocirc;nimo.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Os campos relativos ao sin&ocirc;nimo devem ser informados somente para a opera&ccedil;&atilde;o "SIN".</FONT> </P>
+<B><FONT SIZE=4><P><A NAME="Resse">Ressequenciamento de validades</A></B></FONT> </P>
+<FONT SIZE=2><P>O SADS possibilita que as validades definidas para um determinado campo sejam ressequenciadas, ou seja, tenham alteradas suas sequ&ecirc;ncias, de modo que todas elas tenham um n&uacute;mero m&uacute;ltiplo de 10 (dez).</FONT> </P>
+<FONT SIZE=2><P>Para utilizar esta opera&ccedil;&atilde;o, as validades a serem ressequenciadas j&aacute; devem ter sido cadastradas no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Para ressequenciar as validades de um campo, basta transmitir os argumentos do menu de opera&ccedil;&atilde;o RESVALCAM, cujos campos devem ser preenchidos conforme explica&ccedil;&atilde;o a seguir:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Sistema</B> - C&oacute;digo do sistema ao qual pertence o campo (sss).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Campo</B> - C&oacute;digo do campo cujas validades ser&atilde;o ressequenciadas.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Esta transa&ccedil;&atilde;o ser&aacute; executada imediatamente, sem apresenta&ccedil;&atilde;o de tela de processamento e, ao seu t&eacute;rmino, ser&aacute; enviada uma mensagem confirmando o ressequenciamento.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Gener">Gen&eacute;ricas aplic&aacute;veis aos campos</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Utilit&aacute;rios:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento;</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Consultas:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Atributos/campos por sistema; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Defini&ccedil;&atilde;o e validades de atributo/campos;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Defini&ccedil;&atilde;o de atributos/campos por sistema ou estrutura;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Descri&ccedil;&atilde;o de atributo/campo.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Refer&ecirc;ncias cruzadas:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Todas as estruturas a que o atributo/campo pertence; </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Todos os programas que os utilizam;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Todos os atributos/campos que s&atilde;o sin&ocirc;nimos de um determinado campo;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Todos os atributos/campos relacionados a um dom&iacute;nio.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Informativos impressos:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista de atributos/campos por sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista de atributos/campos por sistema por c&oacute;digo externo;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Relat&oacute;rio de defini&ccedil;&atilde;o de atributos/campos por estrutura ou sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista descri&ccedil;&atilde;o.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Todos estes utilit&aacute;rios, consultas, refer&ecirc;ncias cruzadas e informativos impressos encontram-se detalhadamente descritos na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", neste manual.</FONT> </P></BODY>
+</HTML>

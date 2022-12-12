@@ -1,0 +1,277 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>ENTIDADE</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+<basefont size=2>
+<B><FONT SIZE=6><P><A NAME="Entid">Entidade</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Conce">Conceitua&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Entidade &eacute; tudo aquilo que faz parte da realidade, podendo ser de natureza concreta, como, por exemplo, objetos (equipamento, material) ou pessoas (fornecedor, funcion&aacute;rio), ou de natureza abstrata (curso, profiss&atilde;o).</FONT> </P>
+<FONT SIZE=2><P>As entidades podem ser definidas no ET-SADS, que &eacute; uma ferramenta UPPER-CASE voltada &agrave; aplica&ccedil;&atilde;o da an&aacute;lise de dados e da an&aacute;lise estruturada e, posteriormente, transferidas para o reposit&oacute;rio de dados do SADS. O ET-SADS trabalha na filosofia de esta&ccedil;&atilde;o de trabalho, requerendo uma plataforma IBM-PC ou compat&iacute;vel em ambiente MS-DOS. </P>
+<P>As informa&ccedil;&otilde;es relativas &agrave; transfer&ecirc;ncia de informa&ccedil;&otilde;es do ET-SADS para o SADS podem ser consultadas no "Guia de Refer&ecirc;ncia do DFD" e no "Guia de Integra&ccedil;&atilde;o com o SADS", manuais que acompanham o ET-SADS.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Padro">Padroniza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<P>O padr&atilde;o de codifica&ccedil;&atilde;o para identificar entidades no reposit&oacute;rio de dados do SADS &eacute; o seguinte: </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>"sssEaaa"</B> onde:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"sss"</B> &eacute; o c&oacute;digo alfab&eacute;tico que identifica o sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"E"</B> &eacute; a constante de entidade e,</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"aaa"</B> &eacute; o identificador alfab&eacute;tico da entidade.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Utili">Utiliza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>As entidades s&atilde;o utilizadas, no modelo conceitual, nas defini&ccedil;&otilde;es de relacionamentos e hierarquias de generaliza&ccedil;&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>Na transposi&ccedil;&atilde;o do modelo conceitual para os modelos l&oacute;gico e f&iacute;sico, a entidade pode ser utilizada na gera&ccedil;&atilde;o autom&aacute;tica dos elementos: arquivo, tabela, <I>dataset</I> e registro de <I>dataset</I> de uso geral (SBGB02).</FONT> </P>
+<FONT SIZE=2><P>Na estrutura da entidade, pode-se definir os atributos com obrigatoriedade de informa&ccedil;&atilde;o nas entradas de dados (situa&ccedil;&atilde;o v&aacute;lida no caso da entidade ser utilizada para gera&ccedil;&atilde;o de uma tabela) e aqueles cujo armazenamento &eacute; obrigat&oacute;rio, ou seja, que necessitam de um valor n&atilde;o nulo para inclus&atilde;o de um item (situa&ccedil;&atilde;o v&aacute;lida no caso da entidade ser utilizada para gera&ccedil;&atilde;o de <I>dataset</I>).</FONT> </P>
+<FONT SIZE=2><P>Somente entidades cujos atributos das estruturas estiverem totalmente cadastrados podem ser utilizadas em gera&ccedil;&otilde;es desta natureza.</FONT> </P>
+<FONT SIZE=2><P>No cadastramento de atributo, em alguns casos, &eacute; exigido que o mesmo j&aacute; perten&ccedil;a &agrave; estrutura de sua entidade original. Isto se deve ao fato do SADS permitir que seja parametrizado se haver&aacute; ou n&atilde;o consist&ecirc;ncia metodol&oacute;gica entre atributos e entidades.</FONT> </P>
+<FONT SIZE=2><P>Maiores detalhes a respeito da parametriza&ccedil;&atilde;o metodol&oacute;gica entre atributos e entidades est&atilde;o descritos no t&oacute;pico "Cadastramento de estrutura de entidade".</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Cadas">Cadastramento</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Para cadastrar entidade, &eacute; necess&aacute;rio que o sistema j&aacute; esteja cadastrado no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Uma restri&ccedil;&atilde;o no cadastramento das entidades pode ou n&atilde;o ser executada no momento da sua defini&ccedil;&atilde;o. Isto vai depender da parametriza&ccedil;&atilde;o adotada na instala&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>A tabela utilizada para esta parametriza&ccedil;&atilde;o &eacute; a SBPM5000 (Tabela de Par&acirc;metros Gerais). Considerando o argumento "EMPCOD" desta tabela e de acordo com o par&acirc;metro 3 informado para este argumento, os seguintes valores podem ser especificados:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"5" - Indica que somente ser&aacute; poss&iacute;vel definir uma entidade se a mesma estiver cadastrada na tabela SBPM7007, associada ao mesmo sistema em que estiver sendo definida.</FONT> </P>
+<P><font size=2><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12>"7" - Indica que somente ser&aacute; poss&iacute;vel definir uma entidade se a mesma estiver cadastrada na tabela SBPM7007 associada ao mesmo sistema em que estiver sendo definida.</font> </P></DIR>
+
+<FONT SIZE=2><P>Detalhes a respeito das parametriza&ccedil;&otilde;es adotadas pelo SADS podem ser consultados na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<B><FONT SIZE=4><P>Roteiro</B></FONT> </P>
+<FONT SIZE=2><P>Para definir uma entidade, &eacute; necess&aacute;rio executar as fun&ccedil;&otilde;es de:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Defent">Defini&ccedil;&atilde;o de entidade</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cadest">Cadastramento de estrutura de entidade</A><FONT SIZE=2>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Outra fun&ccedil;&atilde;o que pode ser executada para este elemento &eacute; a seguinte:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cadsec">Cadastramento de estrutura de chave secund&aacute;ria</A><FONT SIZE=2>.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Defent">Defini&ccedil;&atilde;o de entidade</A></B></FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ENTIDADE</B> - C&oacute;digo da entidade no padr&atilde;o SADS (sssEaaa).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Descri&ccedil;&atilde;o resumida da entidade.</FONT> </P>
+<FONT SIZE=2><P>O nome tem o objetivo de identificar e explicar, de maneira reduzida, a que se refere a entidade.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CODIGO EXTERNO</B> - C&oacute;digo externo da entidade.</FONT> </P>
+<FONT SIZE=2><P>Este c&oacute;digo pode ser informado no caso da instala&ccedil;&atilde;o adotar um padr&atilde;o de codifica&ccedil;&atilde;o diferente do padr&atilde;o SADS ou quando houver integra&ccedil;&atilde;o entre o ET-SADS e o SADS. Neste caso, o c&oacute;digo externo da entidade no SADS conter&aacute; o c&oacute;digo da entidade no ET-SADS.</FONT> </P>
+<FONT SIZE=2><P>O c&oacute;digo externo &eacute; uma informa&ccedil;&atilde;o puramente documental, ou seja, somente ser&aacute; utilizado para identificar, nos relat&oacute;rios e manuais, a qual elemento externo ao SADS a entidade se refere.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>MERAMENTE CONCEITUAL</B> - Indicador de entidade meramente conceitual.</FONT> </P>
+<FONT SIZE=2><P>Este campo pode assumir o seguinte valor:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Indica que a entidade &eacute; meramente conceitual e aparece somente no modelo conceitual.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso este campo n&atilde;o seja informado, indica que a entidade ser&aacute; transposta do modelo conceitual para o l&oacute;gico (e/ou f&iacute;sico).</FONT> </P>
+<FONT SIZE=2><P>A entidade meramente conceitual aparece no modelo conceitual apenas para melhorar a compreens&atilde;o do mesmo. Portanto, ela n&atilde;o &eacute; transposta para os modelos l&oacute;gico e f&iacute;sico.</FONT> </P>
+<FONT SIZE=2><P>Uma entidade meramente conceitual pode ser definida como sendo uma subentidade. Neste caso, n&atilde;o &eacute; poss&iacute;vel cadastrar para ela caracter&iacute;sticas pr&oacute;prias, tais como: classifica&ccedil;&atilde;o, per&iacute;odo, ocorr&ecirc;ncias por per&iacute;odo, total de ocorr&ecirc;ncias, estrutura externa e tempo para desativa&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o &eacute; permitido tamb&eacute;m efetuar o cadastramento da estrutura de uma entidade meramente conceitual.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SUBENTIDADE</B> - Indicador de subentidade.</FONT> </P>
+<FONT SIZE=2><P>Este campo pode assumir o seguinte valor:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Indica que a entidade &eacute; uma subentidade;</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso este campo n&atilde;o seja informado, indica que a entidade n&atilde;o &eacute; subentidade.</FONT> </P>
+<FONT SIZE=2><P>Subentidade &eacute; uma entidade que pertence a uma hierarquia de generaliza&ccedil;&atilde;o, herdando caracter&iacute;sticas de sua superentidade, tais como: classifica&ccedil;&atilde;o quanto a identifica&ccedil;&atilde;o e classifica&ccedil;&atilde;o quanto a periodicidade. Portanto, n&atilde;o &eacute; poss&iacute;vel cadastrar estas informa&ccedil;es para uma subentidade.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CLASSIFICACAO QUANTO A IDENTIFICACAO</B> - Classifica&ccedil;&atilde;o que identifica a origem e a depend&ecirc;ncia em rela&ccedil;&atilde;o &agrave; outras entidades.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"PR" (Primitiva) - Entidade cuja identifica&ccedil;&atilde;o de suas ocorr&ecirc;ncias &eacute; feita exclusivamente atrav&eacute;s de seus pr&oacute;prios atributos, ou seja, possui em sua chave prim&aacute;ria apenas atributos pr&oacute;prios.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"DE" (Derivada dependente ou fraca) - Entidade cuja exist&ecirc;ncia est&aacute; condicionada &agrave; exist&ecirc;ncia da entidade da qual ela depende, ou seja, possui em sua chave prim&aacute;ria pelo menos um atributo externo que, por sua vez, &eacute; chave prim&aacute;ria ou sin&ocirc;nimo da chave prim&aacute;ria da entidade da qual ela depende.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"DR" (Derivada de Relacionamento) - Entidade cujas ocorr&ecirc;ncias resultam da associa&ccedil;&atilde;o entre ocorr&ecirc;ncias de duas ou mais entidades, ou seja, tem como objetivo representar relacionamentos, geralmente do tipo "N para N".<BR>
+Sua identifica&ccedil;&atilde;o &eacute; feita atrav&eacute;s dos atributos chave das entidades componentes do relacionamento. Portanto, sua chave prim&aacute;ria possui apenas atributos externos que s&atilde;o chaves prim&aacute;rias ou sin&ocirc;nimos das chaves prim&aacute;rias das entidades que formam o relacionamento. Os relacionamentos "1 para N" geralmente s&atilde;o representados pela transposi&ccedil;&atilde;o da chave prim&aacute;ria entre as entidades relacionadas. Portanto, n&atilde;o &eacute; necess&aacute;rio definir uma entidade derivada, exceto quando houver atributos pr&oacute;prios do relacionamento.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CA" (Caracter&iacute;stica) - Entidade que existe para caracterizar ou qualificar uma ocorr&ecirc;ncia de outra. Cont&eacute;m poucos atributos para justificar a sua exist&ecirc;ncia como entidade, em geral, apenas um c&oacute;digo e uma descri&ccedil;&atilde;o. </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"TA" (Tabela Agregada) - Entidade formada apenas por atributos resultantes de processamento. Portanto, representa um conjunto de dados redundantes cujo objetivo &eacute; possibilitar um acesso mais r&aacute;pido a determinadas informa&ccedil;&otilde;es. &Eacute; utilizada somente no modelo l&oacute;gico.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>A classifica&ccedil;&atilde;o quanto a identifica&ccedil;&atilde;o &eacute; uma informa&ccedil;&atilde;o puramente documental, ou seja, somente ser&aacute; utilizada nos relat&oacute;rios e manuais emitidos pelo SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CLASSIFICACAO QUANTO A PERIODICIDADE</B> - Classifica&ccedil;&atilde;o que identifica o per&iacute;odo de estabilidade das ocorr&ecirc;ncias da entidade.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"C" (Componente) - Entidade cujas ocorr&ecirc;ncias s&atilde;o est&aacute;veis, ou seja, apresentam<BR>
+interesse por longo per&iacute;odo de tempo;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"E" (Evento) - Entidade cujas ocorr&ecirc;ncias representam fatos, normalmente repetitivos,<BR>
+relacionados a ocorr&ecirc;ncias anteriores e com import&acirc;ncia maior em per&iacute;odos pr&oacute;ximos &agrave;<BR>
+ocorr&ecirc;ncia do fato.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>A classifica&ccedil;&atilde;o quanto a periodicidade &eacute; uma informa&ccedil;&atilde;o puramente documental, ou seja, somente ser&aacute; utilizada nos relat&oacute;rios e manuais emitidos pelo SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PERIODO</B> - Frequ&ecirc;ncia com que surgem novas ocorr&ecirc;ncias na entidade.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"D" (Di&aacute;rio);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"M" (Mensal);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"T" (Trimestral);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" (Semestral);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"A" (Anual);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"P" (Permanente).</FONT> </P></DIR>
+
+<FONT SIZE=2><P>O per&iacute;odo &eacute; uma informa&ccedil;&atilde;o puramente documental, ou seja, somente ser&aacute; utilizado nos relat&oacute;rios e manuais emitidos pelo SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OCORRENCIAS POR PERIODO</B> - N&uacute;mero m&aacute;ximo de ocorr&ecirc;ncias que podem surgir no per&iacute;odo especificado.</FONT> </P>
+<FONT SIZE=2><P>Se o per&iacute;odo for permanente, n&atilde;o &eacute; poss&iacute;vel determinar o n&uacute;mero de ocorr&ecirc;ncias por per&iacute;odo.</FONT> </P>
+<FONT SIZE=2><P>Esta &eacute; uma informa&ccedil;&atilde;o puramente documental, ou seja, somente ser&aacute; utilizada nos relat&oacute;rios e manuais emitidos pelo SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TOTAL DE OCORRENCIAS</B> - N&uacute;mero m&aacute;ximo de ocorr&ecirc;ncias da entidade.</FONT> </P>
+<FONT SIZE=2><P>Esta &eacute; uma informa&ccedil;&atilde;o puramente documental, ou seja, somente ser&aacute; utilizada em relat&oacute;rios e manuais emitidos pelo SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TEMPO P/ DESATIVACAO</B> - Tempo m&aacute;ximo, estipulado em dias, ap&oacute;s o qual uma determinada ocorr&ecirc;ncia da entidade ser&aacute; desativada, geralmente no caso de eventos.</FONT> </P>
+<FONT SIZE=2><P>Esta &eacute; uma informa&ccedil;&atilde;o puramente documental, ou seja, somente ser&aacute; utilizada nos relat&oacute;rios e manuais emitidos pelo SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave; defini&ccedil;&atilde;o da entidade:</FONT> </P>
+<FONT SIZE=2><P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=5><P><A NAME="Cadest">Cadastramento de estrutura de entidade</A></FONT> </P>
+<FONT SIZE=2><P>A estrutura de uma entidade engloba todos os atributos que a classificam, identificam, qualificam ou quantificam.</FONT> </P>
+<FONT SIZE=2><P>A consist&ecirc;ncia metodol&oacute;gica entre os atributos das entidades pode ou n&atilde;o ser executada no momento do cadastramento de sua estrutura. Isto vai depender da parametriza&ccedil;&atilde;o a respeito da metodologia adotada na instala&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Caso tenha sido definido a exist&ecirc;ncia de metodologia, vale informar que, todo atributo externo na estrutura de uma entidade deve ser chave prim&aacute;ria ou sin&ocirc;nimo da chave prim&aacute;ria na estrutura de sua entidade origem.</FONT> </P>
+<FONT SIZE=2><P>A tabela utilizada para esta parametriza&ccedil;&atilde;o &eacute; a SBPM5000 (Tabela de Par&acirc;metros Gerais). Considerando o argumento "EMPCOD" desta tabela e de acordo com o par&acirc;metro 5 informado para este argumento, tem-se as seguintes possibilidades de consist&ecirc;ncias:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>"S" - Indica que haver&aacute; consist&ecirc;ncia de atributo em entidade, ou seja, todo atributo, para que possa ser cadastrado como externo, tem de estar definido como chave ou sin&ocirc;nimo da chave prim&aacute;ria na estrutura de sua entidade.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>"N" - Indica que n&atilde;o haver&aacute; consist&ecirc;ncia de atributo em entidade, ou seja, n&atilde;o ser&aacute; exigido que o atributo externo esteja definido em sua entidade como chave ou sin&ocirc;nimo da chave.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Detalhes a respeito das parametriza&ccedil;&otilde;es adotadas pelo SADS podem ser consultados na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ENTIDADE</B> - C&oacute;digo da entidade no padr&atilde;o SADS (sssEaaa).</FONT> </P>
+<FONT SIZE=2><P>A seguir, s&atilde;o apresentadas as ocorr&ecirc;ncias para indica&ccedil;&atilde;o dos atributos da entidade com as seguintes informa&ccedil;&otilde;es:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SEQ</B> - N&uacute;mero sequencial para posicionamento do atributo na estrutura da entidade.</FONT> </P>
+<FONT SIZE=2><P>O primeiro n&uacute;mero &eacute; "0010" e os demais, acrescidos de 10.<BR>
+Para incluir um atributo entre dois outros j&aacute; inclu&iacute;dos, &eacute; necess&aacute;rio preencher uma linha que estiver em branco e alterar o n&uacute;mero sequencial desta linha para um n&uacute;mero entre os j&aacute; existentes. O SADS reorganizar&aacute; automaticamente a estrutrura. Na pr&oacute;xima opera&ccedil;&atilde;o, os atributos j&aacute; estar&atilde;o na nova ordem.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ATRIBUTO</B> - Mnem&ocirc;nico do atributo.</FONT> </P>
+<FONT SIZE=2><P>Se um campo j&aacute; cadastrado for informado na estrutura da entidade, ele ser&aacute; automaticamente transformado em atributo, e se um atributo for retirado da estrutura da entidade, ele ser&aacute; automaticamente transformado em campo. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NIVEL</B> - N&iacute;vel de estrutura&ccedil;&atilde;o do atributo, an&aacute;logo ao n&iacute;vel do Cobol.<BR>
+O n&iacute;vel inicial &eacute; 10 e, se for necess&aacute;rio criar agrupamentos de atributos, deve-se utilizar m&uacute;ltiplos de 5 (15, 20 e assim por diante), de forma semelhante ao Cobol.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NDEF</B> - N&iacute;vel de defini&ccedil;&atilde;o do atributo no reposit&oacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Os valores posss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" (Sistema) - Atributo definido no sistema informado no campo SIS ou no sistema da entidade;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"P" (Provis&oacute;rio) - Atributo ainda n&atilde;o definido no reposit&oacute;rio de dados do SADS.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Quando este atributo for cadastrado no reposit&oacute;rio de dados do SADS, no mesmo sistema da entidade, o campo NDEF ser&aacute; automaticamente alterado de "P" para "S".</FONT> </P>
+<FONT SIZE=2><P>Nas opera&ccedil;&otilde;es de inclus&atilde;o e altera&ccedil;&atilde;o da estrutura de uma entidade, somente os atributos externos ou estrangeiros (CLAS = "E") necessitam de cadastramento pr&eacute;vio no reposit&oacute;rio de dados (NDEF = "S"). Os atributos pr&oacute;prios da entidade devem ser informados como provis&oacute;rios (NDEF = "P"), caso ainda n&atilde;o estejam cadastrados.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SIS</B> - C&oacute;digo do sistema ao qual o atributo pertence.</FONT> </P>
+<FONT SIZE=2><P>Este c&oacute;digo deve ser informado somente para atributos externos e quando o atributo pertencer a um sistema diferente do sistema da entidade.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CLAS</B> - Classifica&ccedil;&atilde;o do atributo na estrutura da entidade.</FONT> </P>
+<FONT SIZE=2><P>Pode-se assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"C" (Chave da entidade) - Atributo definido como chave da entidade.</FONT> </P>
+<FONT SIZE=2><P>Ao ser gerado um <I>dataset</I> a partir da entidade, os atributos classificados como chave formar&atilde;o a estrutura da chave prim&aacute;ria de acesso (<I>set</I> "A", <I>no duplicates</I>), isto &eacute;, o conjunto de atributos que determina uma &uacute;nica ocorr&ecirc;ncia da entidade.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"P" (Pr&oacute;prio da entidade) - Atributo que tem origem na entidade.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"E" (Externo &agrave; entidade) - Atributo externo que comp&otilde;e a estrutura da entidade. Caso tenha sido definido consist&ecirc;ncia metolol&oacute;gica, o atributo deve ser chave ou sin&ocirc;nimo da chave em sua entidade origem.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"R" (Redundante) - Atributo externo que comp&otilde;e a estrutura da entidade, sendo pr&oacute;prio e n&atilde;o chave em sua entidade origem.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"A" (Agregado) - Atributo pr&oacute;prio da entidade, resultante de processamento. </P></DIR>
+
+<P>Apenas atributos que n&atilde;o fa&ccedil;am parte da chave da entidade em quest&atilde;o podem ser classificados como redundantes ou agregados.</FONT> </P>
+<FONT SIZE=2><P>Somente atributos pr&oacute;prios da entidade podem ser classificados como chave da entidade (CLAS = "C"). Para especificar atributos externos como parte da chave prim&aacute;ria ou se a chave for composta por v&aacute;rios atributos, &eacute; necess&aacute;rio definir um atributo pr&oacute;prio como item grupo, classific&aacute;-lo como chave e colocar os demais atributos pr&oacute;prios ou externos como itens elementares deste atributo. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ARMAZ</B> - Indica se o atributo ir&aacute; ou n&atilde;o compor a estrutura do arquivo, <I>dataset</I>, tabela ou registro de <I>dataset</I> de uso geral, na gera&ccedil;&atilde;o autom&aacute;tica a partir da entidade. </P>
+<P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" ou " " - Indica que o atributo ser&aacute; armazenado no modelo f&iacute;sico;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Indica que o atributo n&atilde;o ser&aacute; armazenado no modelo f&iacute;sico.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Somente os atributos da estrutura da entidade que tiverem indica&ccedil;&atilde;o para armazenamento, ap&oacute;s serem cadastrados no reposit&oacute;rio de dados do SADS, ser&atilde;o utilizados para compor os <I>datasets</I>, tabelas e registros de <I>dataset</I> de uso geral que poder&atilde;o ser gerados na transposi&ccedil;&atilde;o para o modelo f&iacute;sico.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OBRIG</B> - Indica se o atributo &eacute; obrigat&oacute;rio na inclus&atilde;o de uma ocorr&ecirc;ncia da entidade.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Indica que o atributo &eacute; obrigat&oacute;rio.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>No caso de gera&ccedil;&atilde;o de <I>dataset</I> a partir de entidade, significa que o atributo ser&aacute; gerado com a cl&aacute;usula <I>required</I>;</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N " ou " " - Indica que o atributo &eacute; opcional.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Ap&oacute;s as ocorr&ecirc;ncias, s&atilde;o apresentadas as seguintes informa&ccedil;&otilde;es:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTINUA(S/N)</B> - Indicador de continua&ccedil;&atilde;o da opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As possibilidades de preenchimento deste campo s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Nova tela ser&aacute; aberta para prosseguir a opera&ccedil;&atilde;o relacionada &agrave; estrutura da<BR>
+entidade;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - &Uacute;ltima tela para se operar sobre a estrutura da entidade.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave; estrutura da entidade.</FONT> </P>
+<FONT SIZE=2><P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Cadsec">Cadastramento de estrutura de chave secund&aacute;ria</A></B></FONT> </P>
+<FONT SIZE=2><P>Chave secund&aacute;ria &eacute; o conjunto de atributos que permite acessar ocorr&ecirc;ncias da entidade em uma sequ&ecirc;ncia diferente da chave prim&aacute;ria.</FONT> </P>
+<FONT SIZE=2><P>As chaves secund&aacute;rias podem identificar mais de uma ocorr&ecirc;ncia da entidade, ou seja, podem aceitar duplicatas. Elas facilitam a gera&ccedil;&atilde;o autom&aacute;tica de <I>sets</I> dos <I>datasets</I> e chaves secund&aacute;rias de tabelas, no momento da transposi&ccedil;&atilde;o do modelo conceitual para o modelo l&oacute;gico ou f&iacute;sico.</FONT> </P>
+<FONT SIZE=2><P>Podem ser definidas v&aacute;rias chaves secund&aacute;rias para acesso a uma entidade, por&eacute;m, se a entidade der origem a uma tabela, apenas tr&ecirc;s estruturas de chaves secund&aacute;rias ser&atilde;o transpostas para a tabela.</FONT> </P>
+<FONT SIZE=2><P>O padr&atilde;o de codifica&ccedil;&atilde;o para identificar chaves secund&aacute;rias de entidades no reposit&oacute;rio de dados do SADS &eacute; o seguinte:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><FONT SIZE=2>"sssEaaaa" onde:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"sss" &eacute; o c&oacute;digo alfab&eacute;tico que identifica</P></DIR>
+</DIR>
+
+<P>Para efetuar o cadastramento da estrutura de uma chave secund&aacute;ria &eacute; necess&aacute;rio que a estrutura da entidade a ela relacionada j&aacute; tenha sido definida. Isto se deve ao fato de que todos os atributos a serem cadastrados na estrutura da chave secund&aacute;ria t&ecirc;m de pertencer &agrave; estrutura da entidade.</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ENTIDADE</B> - C&oacute;digo da entidade no padr&atilde;o SADS (sssEaaa).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CHAVE</B> - Identificador da chave secund&aacute;ria da entidade. Pode-se utilizar qualquer letra de "B" a "Z".</FONT> </P>
+<FONT SIZE=2><P>A chave prim&aacute;ria &eacute; definida pelos atributos classificados como chave (CLAS = "C") no cadastramento da estrutura da entidade.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Descri&ccedil;&atilde;o resumida da chave secund&aacute;ria da entidade.</FONT> </P>
+<FONT SIZE=2><P>O nome tem o objetivo de identificar, de maneira reduzida, a ordem com a qual a chave secund&aacute;ria est&aacute; sendo definida.</FONT> </P>
+<FONT SIZE=2><P>A seguir, s&atilde;o apresentadas ocorr&ecirc;ncias para indica&ccedil;&atilde;o dos atributos que comp&otilde;em a chave secund&aacute;ria da entidade.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SEQ</B> - N&uacute;mero sequencial para posicionamento dos atributos dentro da estrutura da chave secund&aacute;ria.</FONT> </P>
+<FONT SIZE=2><P>O primeiro n&uacute;mero &eacute; "0010" e os demais, acrescidos de 10.</FONT> </P>
+<FONT SIZE=2><P>Para incluir um atributo entre dois outros j&aacute; inclu&iacute;dos, &eacute; necess&aacute;rio preencher uma linha que esteja em branco e alterar n&uacute;mero sequencial desta linha para um n&uacute;mero entre os j&aacute; existentes. O SADS reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima opera&ccedil;&atilde;o, os atributos j&aacute; estar&atilde;o na nova ordem.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ATRIBUTO</B> - C&oacute;digo de um dos atributos que ir&aacute; compor a chave secund&aacute;ria, sendo que, os atributos que fizerem parte da chave secund&aacute;ria t&ecirc;m de pertencer &agrave; estrutura da entidade.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s as ocorr&ecirc;ncias, s&atilde;o apresentadas as seguintes informa&ccedil;&otilde;es:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTINUA(S/N)</B> - Indicador de continua&ccedil;&atilde;o da opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As possibilidades de preenchimento deste campo s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Nova tela ser&aacute; aberta para prosseguir a opera&ccedil;&atilde;o relacionada &agrave; estrutura da chave secund&aacute;ria;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - &Uacute;ltima tela para se operar sobre a estrutura da chave secund&aacute;ria.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OPERACAO</B> - Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave; estrutura da chave secund&aacute;ria.</FONT> </P>
+<FONT SIZE=2><P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Funca">Fun&ccedil;&otilde;es de apoio</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Espent">Espec&iacute;ficas de entidade</A></B></FONT> </P>
+<FONT SIZE=2><P>A &uacute;nica fun&ccedil;&atilde;o de apoio espec&iacute;fica dispon&iacute;vel para entidades &eacute; a consulta &agrave; "Rela&ccedil;&atilde;o detalhada de entidades", descrita detalhadamente na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", neste manual.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Gener">Gen&eacute;ricas aplic&aacute;veis &agrave;s entidades</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Utilit&aacute;rios:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Duplica&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Ressequenciamento de estrutura de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Consultas:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Elementos por sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Estrutura de dados;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Descri&ccedil;&atilde;o de elementos.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Refer&ecirc;ncia cruzada:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Elementos x elemento (estrutura externa, relacionamentos e hierarquias de generaliza&ccedil;&atilde;o relacionadas a uma entidade). </P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Informativos impressos:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Rela&ccedil;&atilde;o de elementos por sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Rela&ccedil;&atilde;o de atributos por sistema/estrutura;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>Lista descri&ccedil;&atilde;o de elementos.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Todos estes utilit&aacute;rios, consultas, refer&ecirc;ncias cruzadas e informativos impressos encontram-se detalhadamente descritos na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", neste manual.</FONT> </P></BODY>
+</HTML>

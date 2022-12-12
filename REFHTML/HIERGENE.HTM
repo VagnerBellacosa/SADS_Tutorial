@@ -1,0 +1,120 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>HIERGENE</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+<basefont size=2>
+<B><FONT SIZE=6><P><A NAME="Hiera">Hierarquia de generaliza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Conce">Conceitua&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Hierarquias de generaliza&ccedil;&atilde;o s&atilde;o elementos que permitem representar, no modelo conceitual, ocorr&ecirc;ncias similares de uma entidade gen&eacute;rica que guardem informa&ccedil;&otilde;es ou caracter&iacute;sticas espec&iacute;ficas.</FONT> </P>
+<FONT SIZE=2><P>A entidade gen&eacute;rica &eacute; denominada superentidade. As ocorr&ecirc;ncias similares, por sua vez, s&atilde;o representadas por diversas classes de entidades denominadas subentidades. A entidade gen&eacute;rica possui informa&ccedil;&otilde;es comuns a todas as subentidades, e estas possuem informa&ccedil;&otilde;es espec&iacute;ficas. V&aacute;rias hierarquias de generaliza&ccedil;&atilde;o podem ser definidas para uma mesma entidade.</FONT> </P>
+<FONT SIZE=2><P>Em resumo, no modelo conceitual, a hierarquia de generaliza&ccedil;&atilde;o de um sistema &eacute; a divis&atilde;o de uma entidade (superentidade) em subconjuntos (subentidades).</FONT> </P>
+<FONT SIZE=2><P>As hierarquias de generaliza&ccedil;&atilde;o podem ser definidas no ET-SADS, que &eacute; uma ferramenta UPPER-CASE voltada &agrave; aplica&ccedil;&atilde;o da an&aacute;lise de dados e da an&aacute;lise estruturada e, posteriormente, transferidas para o reposit&oacute;rio de dados do SADS. O ET-SADS trabalha na filosofia de esta&ccedil;&atilde;o de trabalho, requerendo uma plataforma IBM-PC ou compat&iacute;vel em ambiente MS-DOS. </P>
+<P>As informa&ccedil;&otilde;es relativas &agrave; tranfer&ecirc;ncia de informa&ccedil;&otilde;es do ET-SADS para o SADS podem ser consultadas no "Guia de Refer&ecirc;ncia do DFD" e no "Guia de Integra&ccedil;&atilde;o com o SADS", manuais que acompanham o ET-SADS.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Padro">Padroniza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O padr&atilde;o de codifica&ccedil;&atilde;o para identificar hierarquias de generaliza&ccedil;&atilde;o no reposit&oacute;rio de dados do SADS &eacute; o seguinte:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> "sssOaaaaaa"</B> onde:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2> "sss"</B> &eacute; o c&oacute;digo alfab&eacute;tico que identifica o sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2> "O"</B> &eacute; a constante de generaliza&ccedil;&atilde;o e,</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2> "aaaaaa"</B> &eacute; o identificador alfab&eacute;tico da generaliza&ccedil;&atilde;o.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Utili">Utiliza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>As informa&ccedil;&otilde;es referentes &agrave;s hierarquias de generaliza&ccedil;&atilde;o s&atilde;o utilizadas apenas para documenta&ccedil;&atilde;o, pois podem fazer parte dos manuais emitidos pelo SADS, n&atilde;o havendo gera&ccedil;&otilde;es a partir de suas especifica&ccedil;&otilde;es.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Cadas">Cadastramento</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Para cadastrar hierarquia de generaliza&ccedil;&atilde;o, &eacute; necess&aacute;rio que a superentidade e as subentidades j&aacute; estejam definidas e suas estruturas cadastradas no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<B><FONT SIZE=4><P>Roteiro</B></FONT> </P>
+<FONT SIZE=2><P>Para cadastrar uma hierarquia de generaliza&ccedil;&atilde;o, &eacute; necess&aacute;rio executar apenas a seguinte fun&ccedil;&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> </FONT><A HREF="#Defhie">Defini&ccedil;&atilde;o de hierarquia de generaliza&ccedil;&atilde;o</A><FONT SIZE=2>.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Defhie">Defini&ccedil;&atilde;o de hierarquia de generaliza&ccedil;&atilde;o</A></B></FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> GENERALIZACAO</B> - C&oacute;digo da hierarquia de generaliza&ccedil;&atilde;o no padr&atilde;o SADS (sssOaaaaaa).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> CODIGO EXTERNO</B> - C&oacute;digo externo da generaliza&ccedil;&atilde;o. </P>
+<P>Este c&oacute;digo pode ser informado no caso da instala&ccedil;&atilde;o adotar um padr&atilde;o de codifica&ccedil;&atilde;o diferente do padr&atilde;o SADS ou quando houver integra&ccedil;&atilde;o entre o ET-SADS e o SADS. Neste caso, o c&oacute;digo externo da generaliza&ccedil;&atilde;o no SADS conter&aacute; o c&oacute;digo da generaliza&ccedil;&atilde;o no ET-SADS.</FONT> </P>
+<FONT SIZE=2><P>O c&oacute;digo externo &eacute; uma informa&ccedil;&atilde;o puramente documental, ou seja, somente ser&aacute; utilizado para identificar, nos relat&oacute;rios e manuais, a qual elemento externo ao SADS a hierarquia de generaliza&ccedil;&atilde;o se refere.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> NOME</B> - Descri&ccedil;&atilde;o resumida da hierarquia de generaliza&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>O nome tem o objetivo de identificar e explicar, de maneira reduzida, a que se refere a hierarquia de generaliza&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> TIPO</B> - Tipo da generaliza&ccedil;&atilde;o quanto a exclusividade das suas ocorr&ecirc;ncias.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "E" (Exclusiva ou Particionamento) - A generaliza&ccedil;&atilde;o ser&aacute; um particionamento quando cada ocorr&ecirc;ncia da superentidade pertencer a uma &uacute;nica subentidade;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "N" (N&atilde;o-exclusiva ou Especializa&ccedil;&atilde;o) - A generaliza&ccedil;&atilde;o ser&aacute; uma especializa&ccedil;&atilde;o quando cada ocorr&ecirc;ncia da superentidade puder pertencer a mais de uma subentidade da hierarquia, simultaneamente.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> SUPERENTIDADE</B> - C&oacute;digo da entidade "pai" da hierarquia de generaliza&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Esta entidade tem de estar cadastrada no reposit&oacute;rio de dados e deve ser informada no padr&atilde;o SADS (sssEaaa).</FONT> </P>
+<FONT SIZE=2><P>A seguir, s&atilde;o apresentadas as ocorr&ecirc;ncias que definem quais entidades comp&otilde;em a superentidade e a condi&ccedil;&atilde;o de ocorr&ecirc;ncia para cada uma delas:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> SUBENTIDADE</B> - C&oacute;digo da entidade "filha" da hierarquia de generaliza&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Esta entidade deve ter sido devidamente cadastrada no reposit&oacute;rio de dados e o seu c&oacute;digo dever&aacute; ser informado no padr&atilde;o SADS (sssEaaa).</FONT> </P>
+<FONT SIZE=2><P>A especifica&ccedil;&atilde;o da condi&ccedil;&atilde;o de ocorr&ecirc;ncia das subentidades deve ser composta pelo atributo diferenciador da classe, por um operador relacional e por um valor poss&iacute;vel para o atributo.</FONT> </P>
+<FONT SIZE=2><P>Dependendo do valor assumido pelo atributo, cada ocorr&ecirc;ncia da superentidade ser&aacute; classificada como pertencente a uma ou mais subentidades da mesma hierarquia.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> ATRIBUTO</B> - Mnem&ocirc;nico do atributo diferenciador ou identificador da subentidade. Este atributo deve pertencer &agrave; estrutura da superentidade (entidade "pai").</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> OPERADOR</B> - Operador relacional que define, para o conte&uacute;do do atributo, a condi&ccedil;&atilde;o que identifica a ocorr&ecirc;ncia da subentidade em quest&atilde;o. </P>
+<P>Os operadores relacionais s&atilde;o os seguintes :</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "NE" (<I>Not equal</I>) - Diferente de;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "EQ" (<I>Equal</I>) - Igual a;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "GT" (<I>Greater than</I>) - Maior que;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "GE" (<I>Greater or equal</I>) - Maior que ou igual a;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "LT" (<I>Less than</I>) - Menor que;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "LE" (<I>Less or equal</I>) - Menor que ou igual a.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> VALOR</B> - Valor do atributo que determina a ocorr&ecirc;ncia da superentidade como pertencente &agrave; respectiva subentidade.</FONT> </P>
+<FONT SIZE=2><P>Dependendo do valor assumido pelo atributo, cada ocorr&ecirc;ncia da superentidade ser&aacute; classificada em pelo menos uma subentidade espec&iacute;fica.</FONT> </P>
+<FONT SIZE=2><P>Ap&oacute;s as ocorr&ecirc;ncias s&atilde;o apresentadas as seguintes informa&ccedil;&otilde;es:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> CONTINUA(S/N)</B> - Indicador de continua&ccedil;&atilde;o da opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As possibilidades de preenchimento deste campo s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "S" - Nova tela ser&aacute; aberta para prosseguir informando mais subentidades na hierarquia<BR>
+de generaliza&ccedil;&atilde;o;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "N" - &Uacute;ltima tela da defini&ccedil;&atilde;o da hierarquia de generaliza&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> OPERACAO</B> - Opera&ccedil;&atilde;o efetuada sobre a hierarquia de generaliza&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "INC" (Inclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "ALT" (Altera&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "EXC" (Exclus&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "CON" (Consulta).</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Funca">Fun&ccedil;&otilde;es de apoio</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Gener">Gen&eacute;ricas aplic&aacute;veis &agrave;s hierarquias de generaliza&ccedil;&atilde;o</A></B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Utilit&aacute;rios:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Duplica&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Consultas:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Descri&ccedil;&atilde;o de elementos;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Elementos por sistema.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Refer&ecirc;ncia cruzada:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Elementos x elemento (Lista de entidades componentes de uma hierarquia de generaliza&ccedil;&atilde;o e das hierarquias de que uma entidade participa).</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Informativos impressos:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Rela&ccedil;&atilde;o de elementos por sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Lista descri&ccedil;&atilde;o de elementos.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Todos estes utilit&aacute;rios, consultas, refer&ecirc;ncias cruzadas e informativos impressos encontram-se detalhadamente descritos na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", deste manual.</FONT> </P></BODY>
+</HTML>

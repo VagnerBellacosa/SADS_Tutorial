@@ -1,0 +1,1604 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<TITLE>Tela</TITLE>
+
+<META NAME="GENERATOR" CONTENT="Internet Assistant for Microsoft Word 2.04z">
+</HEAD>
+<BODY BACKGROUND="doc_b.gif">
+<basefont size=2>
+<P>
+<A NAME="Tela"><B><FONT SIZE=6>Tela</FONT></B></A>
+<HR>
+<P>
+<A NAME="Conce"><B><FONT SIZE=5>Conceitua&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>
+<FONT SIZE=2>Tela &eacute; um elemento respons&aacute;vel por
+captar e apresentar dados, ou seja, &eacute; um elemento utilizado
+para promover a interface entre usu&aacute;rios e sistemas aplicativos.</FONT>
+<P>
+<FONT SIZE=2>Cada tela possui um desenho, apresentado ao usu&aacute;rio
+sempre que este solicitar sua transa&ccedil;&atilde;o correspondente,
+e uma estrutura composta de atributos e/ou campos, elementos vari&aacute;veis
+no processamento das transa&ccedil;&otilde;es.</FONT>
+<P>
+<A NAME="Tipte"><B><FONT SIZE=5>Tipos de telas</FONT></B></A>
+<P>
+<FONT SIZE=2>Existem tr&ecirc;s tipos diferentes de telas para
+o SADS:</FONT>
+<P><dir><img src="Bullet1.gif" width=8 heigth=8>Telas que comp&otilde;em as transa&ccedil;&otilde;es
+do sistema aplicativo, identificadas no seu c&oacute;digo pela
+constante &quot;T&quot; (sssTnnmm);</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8>Telas para explica&ccedil;&atilde;o de argumentos
+de uma tela menu, identificadas no seu c&oacute;digo pela constante
+&quot;E&quot; (sssEnnmm);</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8>Telas utilizadas para informa&ccedil;&atilde;o de
+par&acirc;metros para </FONT><I><FONT SIZE=2 COLOR=#000000>jobs</FONT></I><FONT SIZE=2>
+do Sistema de Controle de Processamento (SCAP/SPO), identificadas
+no seu c&oacute;digo pela constante &quot;J&quot; (sssJxnmm).</dir>
+<P>
+<FONT SIZE=2>As telas que fazem parte do aplicativo, identificadas
+pela letra &quot;T&quot;, s&atilde;o as de menu e as de processamento
+das op&ccedil;&otilde;es dos menus.</FONT>
+<P>
+<FONT SIZE=2>As telas para explica&ccedil;&atilde;o de argumento,
+identificadas pela letra &quot;E&quot;, s&atilde;o utilizadas
+para esclarecer como os argumentos dos menus de op&ccedil;&atilde;o
+devem ser informados para o processamento de cada uma de suas
+op&ccedil;&otilde;es.</FONT>
+<P>
+<FONT SIZE=2>Essas telas, dispon&iacute;veis para serem utilizadas
+apenas em menus de op&ccedil;&atilde;o, n&atilde;o precisam ser
+desenhadas para sistemas cuja navega&ccedil;&atilde;o seja feita
+atrav&eacute;s de menus de escolha e de opera&ccedil;&atilde;o,
+m&eacute;todo assim constru&iacute;do visando, por si s&oacute;,
+possibilitar um tratamento diferenciado para cada transa&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Para cada uma das op&ccedil;&otilde;es constantes
+no menu pode ser cadastrada uma tela de explica&ccedil;&atilde;o
+de argumento. </FONT>
+<P>
+<FONT SIZE=2>A seguir, s&atilde;o apresentados exemplos de como
+codificar uma tela de explica&ccedil;&atilde;o de argumento: </FONT>
+<P><dir><img src="Bullet1.gif" width=8 heigth=8>Sistema SXY, menu 01, op&ccedil;&atilde;o 45: tela
+de explica&ccedil;&atilde;o &quot;SXYE0145&quot;;</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8>Sistema XYZ, menu 05, op&ccedil;&atilde;o 04: tela
+de explica&ccedil;&atilde;o &quot;XYZE0504&quot;.</dir>
+<P>
+<FONT SIZE=2>Para tornar uma tela de explica&ccedil;&atilde;o
+dispon&iacute;vel para utiliza&ccedil;&atilde;o pelo usu&aacute;rio
+final, basta desenh&aacute;-la e liber&aacute;-la. N&atilde;o
+&eacute; necess&aacute;rio defini-la ou gerar sua </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+Cobol.</FONT>
+<P>
+<FONT SIZE=2>Ap&oacute;s a sua libera&ccedil;&atilde;o, a tela
+de explica&ccedil;&atilde;o ser&aacute; exibida ao usu&aacute;rio
+final quando este, ao apresentar d&uacute;vidas quanto ao preenchimento
+dos argumentos, informar o n&uacute;mero da op&ccedil;&atilde;o
+nos dois primeiros </FONT><I><FONT SIZE=2 COLOR=#000000>bytes</FONT></I><FONT SIZE=2>
+dispon&iacute;veis da tela menu e transmiti-la com a op&ccedil;&atilde;o
+&quot;97&quot;.<BR>
+</FONT>
+<P>
+<FONT SIZE=2>As telas utilizadas para informar par&acirc;metros
+para </FONT><I><FONT SIZE=2 COLOR=#000000>jobs</FONT></I><FONT SIZE=2>
+do Sistema de Controle de Processamento (SPO), identificadas pela
+letra &quot;J&quot; (sssJxnmm), devem ser criadas sempre que na
+prepara&ccedil;&atilde;o de um servi&ccedil;o (</FONT><I><FONT SIZE=2 COLOR=#000000>job</FONT></I><FONT SIZE=2>)
+houver necessidade desta informa&ccedil;&atilde;o para a execu&ccedil;&atilde;o
+do mesmo.</FONT>
+<P>
+<FONT SIZE=2>Os</FONT><I><FONT SIZE=2 COLOR=#000000> job</FONT></I><FONT SIZE=2>s
+que possuem par&acirc;metros devem estar relacionados &agrave;s
+telas para capta&ccedil;&atilde;o dos mesmos, como por exemplo:</FONT>
+<P><dir><img src="Bullet1.gif" width=8 heigth=8>Sistema FGH, </FONT><I><FONT SIZE=2 COLOR=#000000>job</FONT></I><FONT SIZE=2>
+&quot;FGHJD1&quot;, tela de par&acirc;metro &quot;FGHJ0100&quot;;</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8>Sistema JFD, </FONT><I><FONT SIZE=2 COLOR=#000000>job</FONT></I><FONT SIZE=2>
+&quot;JFDJ08&quot;, tela de par&acirc;metro &quot;JFDJ0403&quot;.</dir>
+<P>
+<FONT SIZE=2>N&atilde;o &eacute; necess&aacute;rio que o nome
+do </FONT><I><FONT SIZE=2 COLOR=#000000>job</FONT></I><FONT SIZE=2>
+seja o mesmo ou esteja indicado no c&oacute;digo da tela de par&acirc;metro
+a ele relacionado. Basta que, nos </FONT><I><FONT SIZE=2 COLOR=#000000>jobs</FONT></I><FONT SIZE=2>
+fontes do SPO, seja indicado qual &eacute; o c&oacute;digo da
+tela de par&acirc;metro a ele relacionada.</FONT>
+<P>
+<A NAME="Estad"><B><FONT SIZE=5>Estados de telas</FONT></B></A>
+<P>
+<FONT SIZE=2>O estado de uma tela identifica, para cada um de
+seus desenhos, se ela pode ser utilizada em algum ambiente de
+processamento (teste ou produ&ccedil;&atilde;o), se ainda est&aacute;
+em desenvolvimento ou em manuten&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Assim sendo, uma &uacute;nica tela possui desenhos
+espec&iacute;ficos nos estados de desenvolvimento, manuten&ccedil;&atilde;o,
+teste e produ&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>O estado de desenvolvimento &eacute; exclusivo, ou
+seja, uma tela &quot;em desenvolvimento&quot; possui apenas uma
+c&oacute;pia do desenho. Portanto, ela ainda n&atilde;o pode ser
+utilizada pelos programas aplicativos nos ambientes de teste e
+produ&ccedil;&atilde;o. </FONT>
+<P>
+<FONT SIZE=2>Quando uma tela &quot;em desenvolvimento&quot; &eacute;
+liberada para teste, ela deixa de existir naquele ambiente para
+existir apenas &quot;em teste&quot;. A partir deste momento, qualquer
+altera&ccedil;&atilde;o efetuada no seu desenho acarretar&aacute;
+na cria&ccedil;&atilde;o de outra vers&atilde;o &quot;em manuten&ccedil;&atilde;o&quot;
+que, at&eacute; ser liberada, n&atilde;o interferir&aacute; nas
+vers&otilde;es que se encontram &quot;em teste&quot; ou &quot;em
+produ&ccedil;&atilde;o&quot;.</FONT>
+<P>
+<FONT SIZE=2>Portanto, uma tela pode ter, simultaneamente, at&eacute;
+tr&ecirc;s vers&otilde;es diferentes do seu desenho, ou seja,
+&quot;em produ&ccedil;&atilde;o&quot;, &quot;em teste&quot; e
+&quot;em manuten&ccedil;&atilde;o&quot;.</FONT>
+<P>
+<FONT SIZE=2>A seguir, s&atilde;o apresentados detalhes sobre
+cada um dos estados de uma tela:</FONT>
+<P><dir><img src="Bullet5.gif" width=13 heigth=13>
+<I><B><FONT SIZE=2 COLOR=#000000>Desenvolvimento </FONT></B></I><FONT SIZE=2>-
+Estado inicial da tela. Neste estado, a tela n&atilde;o se encontra
+dispon&iacute;vel para os programas aplicativos nos ambientes
+de teste e produ&ccedil;&atilde;o. </FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<I><B><FONT SIZE=2 COLOR=#000000>Teste</FONT></B></I><FONT SIZE=2>
+- Estado resultante da libera&ccedil;&atilde;o para teste de uma
+tela em manuten&ccedil;&atilde;o ou em desenvolvimento. Neste
+estado, a tela encontra-se dispon&iacute;vel para acesso pelos
+programas aplicativos execut&aacute;veis no ambiente de teste.
+Por&eacute;m, caso algum programa no ambiente de produ&ccedil;&atilde;o
+tente obter acesso a uma tela que esteja liberada para teste mas
+n&atilde;o esteja liberada para produ&ccedil;&atilde;o, o acesso
+ser&aacute; para a vers&atilde;o em teste.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<I><B><FONT SIZE=2 COLOR=#000000>Produ&ccedil;&atilde;o</FONT></B></I><FONT SIZE=2>
+- Estado resultante da libera&ccedil;&atilde;o para produ&ccedil;&atilde;o
+de uma tela em teste. Neste estado, a tela encontra-se dispon&iacute;vel
+apenas para os programas aplicativos execut&aacute;veis no ambiente
+de produ&ccedil;&atilde;o.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<I><B><FONT SIZE=2 COLOR=#000000>Manuten&ccedil;&atilde;o</FONT></B></I><FONT SIZE=2>
+- Estado intermedi&aacute;rio de uma tela anteriormente em teste,
+ou seja, &eacute; o estado resultante da altera&ccedil;&atilde;o
+de uma tela j&aacute; liberada. A vers&atilde;o &quot;em manuten&ccedil;&atilde;o&quot;
+n&atilde;o fica dispon&iacute;vel para acesso pelos programas
+aplicativos, podendo sofrer altera&ccedil;&otilde;es sem que estas
+reflitam nos ambientes operacionais de teste e de produ&ccedil;&atilde;o.
+</dir>
+<P>
+<A NAME="Padro"><B><FONT SIZE=5>Padroniza&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>
+<FONT SIZE=2>No SADS, existe um padr&atilde;o de codifica&ccedil;&atilde;o
+espec&iacute;fico utilizado para cada tipo de tela no cadastramento
+do seu desenho:</FONT>
+<P><dir><b> - </b> Padr&atilde;o para telas de menu e de processamento:
+</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13><b>&quot;sssTnnmm&quot;</FONT></B><FONT SIZE=2> onde:</FONT>
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>
+<B><FONT SIZE=2>&quot;sss&quot;</FONT></B><FONT SIZE=2> &eacute;
+o c&oacute;digo alfab&eacute;tico que identifica o sistema;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<B><FONT SIZE=2>&quot;T&quot;</FONT></B><FONT SIZE=2> &eacute;
+a constante de tela;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<B><FONT SIZE=2>&quot;nn&quot;</FONT></B><FONT SIZE=2> &eacute;
+o c&oacute;digo num&eacute;rico que identifica o menu e</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<B><FONT SIZE=2>&quot;mm&quot;</FONT></B><FONT SIZE=2> &eacute;
+o c&oacute;digo num&eacute;rico que identifica a tela</dir>
+<P>
+<FONT SIZE=2>O c&oacute;digo num&eacute;rico que identifica a
+tela deve ser o mesmo do n&uacute;mero da op&ccedil;&atilde;o
+do menu ao qual ela se encontra relacionada, pois o processo de
+gera&ccedil;&atilde;o de programas </FONT><I><FONT SIZE=2 COLOR=#000000>on-line</FONT></I><FONT SIZE=2>
+pressup&otilde;e esta compatibilidade.</FONT>
+<P>
+<FONT SIZE=2 COLOR=#000000>Exemplo da forma&ccedil;&atilde;o de
+um c&oacute;digo de tela:<Pre><FONT SIZE=3>  A partir do Sistema: XYZ,
+              Menu : 01 e
+              Op&ccedil;&atilde;o : 05,
+  tem-se a Tela &nbsp; : XYZT0105.</pre></FONT>
+<P><b> - </b>Padr&atilde;o para telas de explica&ccedil;&atilde;o
+de argumento:</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2>&quot;sssEnnmm&quot;</FONT></B><FONT SIZE=2> onde:</FONT>
+<P>
+<B><dir><img src="Bullet7.gif" width=13 heigth=13><FONT SIZE=2>&quot;sss&quot;</FONT></B><FONT SIZE=2> &eacute;
+o c&oacute;digo alfab&eacute;tico que identifica o sistema;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<B><FONT SIZE=2>&quot;E&quot;</FONT></B><FONT SIZE=2> &eacute;
+a constante de tela de explica&ccedil;&atilde;o de argumento;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<B><FONT SIZE=2>&quot;nn&quot;</FONT></B><FONT SIZE=2> &eacute;
+o c&oacute;digo num&eacute;rico que identifica o menu e</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<B><FONT SIZE=2>&quot;mm&quot;</FONT></B><FONT SIZE=2> &eacute;
+o c&oacute;digo num&eacute;rico que identifica a op&ccedil;&atilde;o
+a ser explicada.</dir>
+<P><b> - </b>Padr&atilde;o para telas para capta&ccedil;&atilde;o
+de par&acirc;metros de </FONT><I><FONT SIZE=2 COLOR=#000000>job</FONT></I><FONT SIZE=2>:
+</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13><B><FONT SIZE=2>&quot;sssJxnmm&quot;</FONT></B><FONT SIZE=2> onde:</FONT>
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>
+<B><FONT SIZE=2>&quot;sss&quot;</FONT></B><FONT SIZE=2> &eacute;
+o c&oacute;digo alfab&eacute;tico que identifica o sistema;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<B><FONT SIZE=2>&quot;T&quot;</FONT></B><FONT SIZE=2> &eacute;
+a constante de tela de par&acirc;mentro de job e</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<B><FONT SIZE=2>&quot;xnmm&quot;</FONT></B><FONT SIZE=2> &eacute;
+o identificador da tela.</dir></dir>
+<P>
+<A NAME="Utili"><B><FONT SIZE=5 COLOR=#000000>Utiliza&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>
+<FONT SIZE=2>As telas s&atilde;o utilizadas, de modo geral, como
+interface entre usu&aacute;rios e transa&ccedil;&otilde;es </FONT><I><FONT SIZE=2 COLOR=#000000>on-line</FONT></I><FONT SIZE=2>
+para capta&ccedil;&atilde;o e apresenta&ccedil;&atilde;o de informa&ccedil;&otilde;es
+em terminais de v&iacute;deo.</FONT>
+<P>
+<A NAME="Cadas"><B><FONT SIZE=5>Cadastramento</FONT></B></A>
+<HR>
+<P>
+<FONT SIZE=2>No SADS, a defini&ccedil;&atilde;o e o desenho da
+tela s&atilde;o cadastrados separadamente. Para definir ou desenhar
+uma tela no SADS, &eacute; necess&aacute;rio que o sistema tenha
+sido anteriormente cadastrado. </FONT>
+<P>
+<B><FONT SIZE=4>Roteiro</FONT></B>
+<P>
+<FONT SIZE=2>Para cadastrar uma tela no SADS e torn&aacute;-la
+dispon&iacute;vel para utiliza&ccedil;&atilde;o, &eacute; necess&aacute;rio
+executar as seguintes fun&ccedil;&otilde;es:</FONT>
+<P><dir><img src="Bullet1.gif" width=8 heigth=8>Desenho de tela;</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8>Defini&ccedil;&atilde;o de tela;</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8>Cadastramento de estrutura de tela;</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8>Gera&ccedil;&atilde;o de </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de tela;</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8>Gera&ccedil;&atilde;o de consist&ecirc;ncia de tela;</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8>Libera&ccedil;&atilde;o de desenho de tela;</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8>Libera&ccedil;&atilde;o de </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de tela, e</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8>Libera&ccedil;&atilde;o de consist&ecirc;ncia de
+tela.</dir>
+<P>
+<A NAME="Desen"><B><FONT SIZE=5>Desenho de tela</FONT></B></A>
+<P>
+<FONT SIZE=2>O desenho de uma tela consiste na formata&ccedil;&atilde;o
+de campos, de t&iacute;tulos de campos, de mensagens e de atributos
+de v&iacute;deo para apresenta&ccedil;&atilde;o em terminais,
+ou seja, &eacute; uma m&aacute;scara atrav&eacute;s da qual pode-se
+informar e receber dados em uma disposi&ccedil;&atilde;o adequada.</FONT>
+<P>
+<FONT SIZE=2>O SADS oferece um editor onde ser&atilde;o desenhadas
+as telas a serem utilizadas. Neste editor existem alguns controles
+e regras para se cadastrar o desenho de uma tela, quais sejam:</FONT>
+<P><dir><img src="Bullet1.gif" width=8 heigth=8>Atributos de v&iacute;deo - Determinam a apar&ecirc;ncia
+do campo no desenho da tela.</FONT>
+<P>
+<FONT SIZE=2>No quadro a seguir, s&atilde;o apresentados os atributos
+de v&iacute;deo v&aacute;lidos para terminais TB27 da UNISYS ou
+compat&iacute;veis, dispon&iacute;veis para utiliza&ccedil;&atilde;o
+no desenho de telas, e os comandos de teclado que possibilitam
+a sua defini&ccedil;&atilde;o:</FONT>
+<P>
+<TABLE BORDER=1>
+<TR><TD WIDTH=118>Comando</TD><TD WIDTH=189>Fun&ccedil;&atilde;o
+</TD></TR>
+<TR><TD WIDTH=118>CTRL H :</TD><TD WIDTH=189>Atributo Intensificado
+</TD></TR>
+<TR><TD WIDTH=118>CTRL H /</TD><TD WIDTH=189>Atributo Sublinhado 
+</TD></TR>
+<TR><TD WIDTH=118>CTRL H .</TD><TD WIDTH=189>Atributo Reverso
+</TD></TR>
+<TR><TD WIDTH=118>CTRL H 7</TD><TD WIDTH=189>Atributo Normal</TD>
+</TR>
+<TR><TD WIDTH=118>CTRL H 8</TD><TD WIDTH=189>Atributo Piscante 
+</TD></TR>
+<TR><TD WIDTH=118>CTRL H 9</TD><TD WIDTH=189>Atributo Invis&iacute;vel
+</TD></TR>
+</TABLE>
+<P><img src="Bullet1.gif" width=8 heigth=8>Delimitadores para campos de <I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>
+- Usados para formatar campos de entrada de dados, ou seja, campos
+que ser&atilde;o recebidos pelo programa aplicativo atrav&eacute;s
+da tela.</FONT>
+<P>
+<FONT SIZE=2>No quadro, a seguir, s&atilde;o apresentados os comandos
+de teclado e/ou caracteres atrav&eacute;s dos quais os delimitadores
+para campos de </FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>
+ser&atilde;o definidos:</FONT>
+<P>
+<TABLE BORDER=1>
+<TR><TD WIDTH=156>Comando</TD><TD WIDTH=87>Caracter</TD><TD WIDTH=241>Fun&ccedil;&atilde;o
+</TD></TR>
+<TR><TD WIDTH=156>CTRL H ?</TD><TD WIDTH=87>&nbsp;&nbsp;&quot;{&quot;</TD>
+<TD WIDTH=241>Abre campo alinhado &agrave; esquerda</TD></TR>
+<TR><TD WIDTH=156>CTRL H =</TD><TD WIDTH=87>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD WIDTH=241>Abre campo alinhado &agrave; direita
+</TD></TR>
+<TR><TD WIDTH=156>CTRL H &lt;&lt;</TD><TD WIDTH=87>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD WIDTH=241>Abre campo protegido transmiss&iacute;vel
+</TD></TR>
+<TR><TD WIDTH=156>CTRL H &gt;&gt;</TD><TD WIDTH=87>&nbsp;&nbsp;&quot;}&quot;
+</TD><TD WIDTH=241>Fecha campo transmiss&iacute;vel</TD></TR>
+</TABLE>
+<P><img src="Bullet1.gif" width=8 heigth=8><I><FONT SIZE=2 COLOR=#000000>Pictures</FONT></I><FONT SIZE=2>
+de edi&ccedil;&atilde;o para campos de </FONT><I><FONT SIZE=2 COLOR=#000000>output</FONT></I><FONT SIZE=2>
+- Usadas para formatar campos de sa&iacute;da de dados, ou seja,
+campos que ser&atilde;o editados nas telas pelos programas aplicativos
+para apresenta&ccedil;&atilde;o ao usu&aacute;rio.</FONT>
+<P>
+<FONT SIZE=2>No quadro a seguir, s&atilde;o apresentados os caracteres
+atrav&eacute;s dos quais as </FONT><I><FONT SIZE=2 COLOR=#000000>pictures</FONT></I><FONT SIZE=2>
+de edi&ccedil;&atilde;o s&atilde;o definidas:</FONT>
+<P>
+<TABLE BORDER=1>
+<TR><TD WIDTH=80>Caracter</TD><TD WIDTH=97>COBOL</TD><TD WIDTH=105>Exemplo</TD><TD WIDTH=155>Picture COBOL</TD></TR>
+<TR><TD WIDTH=80>y</TD><TD WIDTH=97>9</TD><TD WIDTH=105>{yyy</TD><TD WIDTH=155>PIC 999</TD></TR>
+<TR><TD WIDTH=80>p</TD><TD WIDTH=97>.</TD><TD WIDTH=105>{yypyy</TD><TD WIDTH=155>PIC 99.99</TD></TR>
+<TR><TD WIDTH=80>q</TD><TD WIDTH=97>/</TD><TD WIDTH=105>{yyqyy}</TD><TD WIDTH=155>PIC 99/99</TD></TR>
+<TR><TD WIDTH=80>r</TD><TD WIDTH=97>-</TD><TD WIDTH=105>{rry<br>{yyyry</TD><TD WIDTH=155>PIC -9<br>PIC 999-9</TD></TR>
+<TR><TD WIDTH=80>v</TD><TD WIDTH=97>,</TD><TD WIDTH=105>{yyvyy</TD><TD WIDTH=155>PIC 99,99</TD></TR>
+<TR><TD WIDTH=80>z</TD><TD WIDTH=97>Z</TD><TD WIDTH=105>{zzy}</TD><TD WIDTH=155>PIC ZZ9</TD></TR>
+<TR><TD WIDTH=80>b</TD><TD WIDTH=97>blank when zero</TD><TD WIDTH=105>{yyb</TD><TD WIDTH=155>PIC 999 BLANK WHEN ZERO</TD></TR>
+<TR><TD WIDTH=80>c</TD><TD WIDTH=97>CR</TD><TD WIDTH=105>{yyc</TD><TD WIDTH=155>PIC 99CR</TD></TR>
+<TR><TD WIDTH=80>d</TD><TD WIDTH=97>DB</TD><TD WIDTH=105>{yyd</TD><TD WIDTH=155>PIC 99DB</TD></TR>
+<TR><TD WIDTH=80>m</TD><TD WIDTH=97>+</TD><TD WIDTH=105>{myy</TD><TD WIDTH=155>PIC +99</TD></TR>
+<TR><TD WIDTH=80>a</TD><TD WIDTH=97>*</TD><TD WIDTH=105>{aay}</TD><TD WIDTH=155>PIC **9</TD></TR>
+<TR><TD WIDTH=80>h</TD><TD WIDTH=97>:</TD><TD WIDTH=105>{yyhyy</TD><TD WIDTH=155>PIC 99:99</TD></TR>
+<TR><TD WIDTH=80>x</TD><TD WIDTH=97>X</TD><TD WIDTH=105>{xxx</TD><TD WIDTH=155>PIC XXX</TD></TR>
+</TABLE>
+<P>
+Pode-se verificar que as <I><FONT SIZE=2 COLOR=#000000>pictures</FONT></I><FONT SIZE=2>
+de edi&ccedil;&atilde;o s&atilde;o definidas por letras min&uacute;sculas,
+tamb&eacute;m utilizadas para compor palavras constantes na tela.
+Para diferenciar os campos das constantes com letras min&uacute;sculas,
+utiliza-se o caractere &quot;{&quot; (abre chaves) antecedendo
+a cada campo.</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8></FONT><I><FONT SIZE=2 COLOR=#000000>Trancode </FONT></I><FONT SIZE=2>ou
+c&oacute;digo de transa&ccedil;&atilde;o - Este campo &eacute;
+obrigat&oacute;rio, devendo ser o primeiro da tela e iniciado
+na primeira ou segunda posi&ccedil;&atilde;o da mesma. O editor
+de telas j&aacute; mostra este campo desenhado com oito posi&ccedil;&otilde;es
+e preenchido com uma identifica&ccedil;&atilde;o derivada do c&oacute;digo
+da tela, sendo permitido alterar o atributo de v&iacute;deo do
+mesmo.</FONT>
+<P>
+<FONT SIZE=2>A seguir, s&atilde;o apresentados exemplos da rela&ccedil;&atilde;o
+do </FONT><I><FONT SIZE=2 COLOR=#000000>trancode</FONT></I><FONT SIZE=2>
+com o c&oacute;digo da tela:</FONT>
+<P>
+<FONT SIZE=2>Para a tela SXYT0134, o </FONT><I><FONT SIZE=2 COLOR=#000000>trancode</FONT></I><FONT SIZE=2>
+ser&aacute; SXY01.34;</FONT>
+<P>
+<FONT SIZE=2>Para a tela de explica&ccedil;&atilde;o SXYE0244,
+o </FONT><I><FONT SIZE=2 COLOR=#000000>trancode</FONT></I><FONT SIZE=2>
+ser&aacute; SXY02E44 e, neste caso, ele ser&aacute; substitu&iacute;do,
+no momento da sua apresenta&ccedil;&atilde;o, pelo </FONT><I><FONT SIZE=2 COLOR=#000000>trancode</FONT></I><FONT SIZE=2>
+do menu que possui a op&ccedil;&atilde;o relativa a ela;</FONT>
+<P>
+<FONT SIZE=2>Para a tela de par&acirc;metro de job SXYJ0100, o
+</FONT><I><FONT SIZE=2 COLOR=#000000>trancode</FONT></I><FONT SIZE=2>
+ser&aacute; SXY01J00. Este </FONT><I><FONT SIZE=2 COLOR=#000000>trancode</FONT></I><FONT SIZE=2>
+n&atilde;o ser&aacute; utilizado pelo COMS para endere&ccedil;ar
+uma transa&ccedil;&atilde;o, pois, a tela, no momento de sua apresenta&ccedil;&atilde;o,
+sempre vir&aacute; precedida do </FONT><I><FONT SIZE=2 COLOR=#000000>trancode</FONT></I><FONT SIZE=2>
+SPO01.43.</FONT>
+<P>
+<FONT SIZE=2><img src="Bullet1.gif" width=8 heigth=8>Tratamento da navega&ccedil;&atilde;o - Caso seja
+utilizado um campo de a&ccedil;&atilde;o para tratamento da navega&ccedil;&atilde;o,
+este campo, com 69 posi&ccedil;&otilde;es, </FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>
+e opcional, dever&aacute; ser inclu&iacute;do, em </FONT><I><FONT SIZE=2 COLOR=#000000>menus</FONT></I><FONT SIZE=2>
+ou telas de processamento que n&atilde;o utilizem o paginador,
+ap&oacute;s o </FONT><I><FONT SIZE=2 COLOR=#000000>trancode,</FONT></I><FONT SIZE=2>
+ou em telas paginadas, ap&oacute;s o campo TLAPAGNUM - sugere-se
+o campo TLAACAO. Caso este campo seja utilizado no desenho de
+telas de processamento, deve-se informar &quot;S&quot; no campo
+&quot;acao&quot;, no cadastramento do menu, descrito no item &quot;Menu&quot;,
+sub-item &quot;Defini&ccedil;&atilde;o de menu&quot;, nesta se&ccedil;&atilde;o.
+As seguintes situa&ccedil;&otilde;es podem ocorrer em fun&ccedil;&atilde;o
+do uso de um campo de a&ccedil;&atilde;o em telas de processamento:</FONT>
+<P><dir><li><FONT SIZE=2>Se o campo &quot;acao&quot;, na defini&ccedil;&atilde;o
+de menu, tiver sido informado, e no desenho e estrutura da tela
+n&atilde;o existir o campo TLAACAO, o host processar&aacute; a
+transa&ccedil;&atilde;o como se as primeiras 69 posi&ccedil;&otilde;es
+preenchidas na tela fossem o campo de a&ccedil;&atilde;o;</FONT>
+<P><li><FONT SIZE=2>Se o campo &quot;acao&quot;, na defini&ccedil;&atilde;o
+de menu, n&atilde;o tiver sido informado, e no desenho e estrutura
+da tela existir o campo TLAACAO, o host processar&aacute; a transa&ccedil;&atilde;o
+independente do conte&uacute;do do campo de a&ccedil;&atilde;o;</FONT>
+<P><li>
+<FONT SIZE=2>Se o campo &quot;acao&quot;, na defini&ccedil;&atilde;o
+de menu, tiver sido preenchido, e no desenho e estrutura da tela
+tamb&eacute;m existir o campo TLAACAO, o host processar&aacute;
+a transa&ccedil;&atilde;o interpretando o conte&uacute;do do campo
+de a&ccedil;&atilde;o.</FONT></dir>
+<P><img src="Bullet1.gif" width=8 heigth=8><FONT SIZE=2>Nas telas de processamento e menus dos sistemas,
+&eacute; poss&iacute;vel desenhar um campo de</FONT><I><FONT SIZE=2 COLOR=#000000>
+output</FONT></I><FONT SIZE=2> com 18 (dezoito) ou 20 (vinte)
+posi&ccedil;&otilde;es alfanum&eacute;ricas na primeira linha,
+para que sejam apresentadas automaticamente a data e hora de sua
+exibi&ccedil;&atilde;o no terminal, sendo que deve ser utilizado
+o atributo TLADTH ou TLADTHC, respectivamente, no cadastramento
+de sua estrutura.</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8><FONT SIZE=2>Nas telas menus, &eacute; poss&iacute;vel que sejam
+preenchidos automaticamente, pelo pr&oacute;prio </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>,
+os campos sigla da empresa e ambiente nos quais foi efetuado o</FONT><I><FONT SIZE=2 COLOR=#000000>
+logon</FONT></I><FONT SIZE=2>. Para isso, &eacute; necess&aacute;rio
+que eles sejam desenhados, na primeira ou segunda linha da tela,
+sem o caracter chaves (&quot;{&quot;) anteriormente e sem necessidade
+de cadastramento na estrutura da tela. A sigla da empresa deve
+possuir 3 (tr&ecirc;s) posi&ccedil;&otilde;es alfanum&eacute;ricas
+e o ambiente, 8 (oito) posi&ccedil;&otilde;es alfanum&eacute;ricas.
+O </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+deve ter sido compilado ap&oacute;s a implanta&ccedil;&atilde;o
+da vers&atilde;o 3.2.661 do SADS para que tal preenchimento possa
+ser efetuado.</FONT>
+<P><FONT SIZE=2><img src="Bullet1.gif" width=8 heigth=8>Nas telas menus, o SADS disponibiliza tamb&eacute;m
+o preenchimento autom&aacute;tico de determinados campos de </FONT><I><FONT SIZE=2 COLOR=#000000>output</FONT></I><FONT SIZE=2>.
+Para utilizar esta facilidade, devem ser observados os seguintes
+procedimentos:</FONT>
+<P><dir><li><FONT SIZE=2>&Eacute; necess&aacute;rio desenhar, em qualquer
+posi&ccedil;&atilde;o da tela menu, uma sequ&ecirc;ncia de caracteres
+especiais para identifica&ccedil;&atilde;o dos campos de </FONT><I><FONT SIZE=2 COLOR=#000000>output</FONT></I><FONT SIZE=2>,
+sem coloc&aacute;-los precedidos por chaves (&quot;{&quot;).</FONT>
+<P><li><FONT SIZE=2>N&aacute;o &eacute; necess&aacute;rio cadastrar um
+atributo correspondente &agrave; estes caracteres na estrutura
+da tela.</FONT>
+<P><li><FONT SIZE=2>Estes campos podem estar separados, em qualquer posi&ccedil;&atilde;o
+da tela. </FONT>
+<P><li><FONT SIZE=2>O caractere especial utilizado para identifica&ccedil;&atilde;o
+dos campos de</FONT><I><FONT SIZE=2 COLOR=#000000> output</FONT></I><FONT SIZE=2>
+n&atilde;o pode ser utilizado para qualquer outra finalidade nos
+desenhos de tela. </FONT>
+<P><li><FONT SIZE=2>Qualquer sequ&ecirc;ncia menor do que 3 (tr&ecirc;s)
+caracteres n&atilde;o ser&aacute; composta, sendo que o n&uacute;mero
+de caracteres especiais deve ser m&uacute;ltiplo de 3 (tr&ecirc;s).</FONT>
+<P><li><FONT SIZE=2>O caractere especial que ir&aacute; definir tais
+campos de </FONT><I><FONT SIZE=2 COLOR=#000000>output</FONT></I><FONT SIZE=2>,
+o conte&uacute;do a ser preenchido nestes campos e a data a partir
+da qual o conte&uacute;do deve ser utilizado no preenchimento
+devem ser parametrizados na tabela SBPM5022. Detalhes a este respeito
+est&atilde;o descritos na se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es
+do SADS&quot;, neste manual.</FONT>
+<P><li>
+<FONT SIZE=2>O </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>
+que ir&aacute; apresentar os menus com campos de </FONT><I><FONT SIZE=2 COLOR=#000000>output</FONT></I><FONT SIZE=2>
+especiais deve ter sido compilado ap&oacute;s a implanta&ccedil;&atilde;o
+da vers&atilde;o 3.2.661 do SADS.</FONT></dir>
+<P><img src="Bullet1.gif" width=8 heigth=8><FONT SIZE=2>Nas telas de consulta que ser&atilde;o utilizadas
+por programas de consulta paginada, &eacute; necess&aacute;rio
+desenhar, ap&oacute;s o campo de data/hora, se existente, os seguintes
+campos:</FONT>
+<P><dir><li><FONT SIZE=2>Um campo com 2 (duas) posi&ccedil;&otilde;es num&eacute;ricas
+para exibir o n&uacute;mero da p&aacute;gina corrente - sugere-se
+o campo TLAPAGNUM;</FONT>
+<P><li>
+<FONT SIZE=2>Opcionalmente, ap&oacute;s o campo TLAPAGNUM, pode-se
+desenhar um campo &quot;ACAO&quot; para tratamento da navega&ccedil;&atilde;o,
+com 69 posi&ccedil;&otilde;es, </FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>
+e opcional. Sugere-se o campo TLAACAO;</FONT>
+<P><li>
+<FONT SIZE=2>Um campo com 2 (duas) posi&ccedil;&otilde;es num&eacute;ricas
+para se informar o n&uacute;mero da pr&oacute;xima p&aacute;gina
+a ser apresentada na consulta - sugere-se o campo TLAPAGPROX;</FONT></dir>
+<P>
+<FONT SIZE=2>Deve-se salientar que, em uma tela a ser utilizada
+em um programa de consulta paginada, os &uacute;nicos campos de
+entrada de dados (</FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>)
+permitidos s&atilde;o: o </FONT><I><FONT SIZE=2 COLOR=#000000>trancode</FONT></I><FONT SIZE=2>,
+o campo para o n&uacute;mero da p&aacute;gina corrente, o campo
+para o n&uacute;mero da pr&oacute;xima p&aacute;gina e, opcionalmente,
+os campos de a&ccedil;&atilde;o - TLAACAO e de transmiss&atilde;o
+- TLAESTAC.</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8><FONT SIZE=2>Nas telas de atualiza&ccedil;&atilde;o paginada,
+&eacute; necess&aacute;rio desenhar, ap&oacute;s o campo de data/hora,
+se existente, os seguintes campos:</FONT>
+<P><dir><li><FONT SIZE=2>Um campo com 8 (oito) posi&ccedil;&otilde;es alfanum&eacute;ricas
+para o c&oacute;digo da transa&ccedil;&atilde;o de atualiza&ccedil;&atilde;o
+paginada que ser&aacute; processada - sugere-se o campo TRACOD;</FONT>
+<P><li><FONT SIZE=2>Um campo com 2 (duas) posi&ccedil;&otilde;es num&eacute;ricas
+para exibir o n&uacute;mero da p&aacute;gina corrente - sugere-se
+o campo TLAPAGNUM;</FONT>
+<P><li><FONT SIZE=2>Um campo com 2 (duas) posi&ccedil;&otilde;es num&eacute;ricas
+para se informar o n&uacute;mero da pr&oacute;xima p&aacute;gina
+a ser atualizada - sugere-se o campo TLAPAGPROX;</FONT>
+<P><li><FONT SIZE=2>Opcionalmente, ap&oacute;s o campo TLAPAGNUM, pode-se
+ter um campo &quot;ACAO&quot; para tratamento da navega&ccedil;&atilde;o,
+com 69 posi&ccedil;&otilde;es, </FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>
+e opcional - sugere-se o campo TLAACAO.</FONT></dir>
+<P>
+<FONT SIZE=2>Deve-se salientar que, em uma tela de atualiza&ccedil;&atilde;o
+paginada, n&atilde;o pode existir campos de entrada de dados (</FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>)
+entre o campo do c&oacute;digo da transa&ccedil;&atilde;o - TRACOD
+- e o campo do n&uacute;mero da p&aacute;gina corrente - TLAPAGNUM.</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8><FONT SIZE=2>Nas telas de sele&ccedil;&atilde;o de dados, &eacute;
+necess&aacute;rio desenhar, antes de cada item selecion&aacute;vel,
+um campo de </FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>
+alfanum&eacute;rico de 1 (uma) posi&ccedil;&atilde;o - TLAITESEL.
+Este campo servir&aacute; para o usu&aacute;rio indicar ou n&atilde;o
+a sele&ccedil;&atilde;o do respectivo item. </FONT>
+<P>
+<FONT SIZE=2>Caso a sele&ccedil;&atilde;o dos dados seja apresentada
+em mais de uma p&aacute;gina - Sele&ccedil;&atilde;o com pagina&ccedil;&atilde;o
+(sem utilizar o paginador de entrada), deve-se tamb&eacute;m definir
+um campo de </FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>
+alfanum&eacute;rico de 1 (uma) posi&ccedil;&atilde;o - TLACONTPAG,
+para que o usu&aacute;rio possa indicar o seu desejo de continuar
+a sua sele&ccedil;&atilde;o de dados. Este campo pode assumir
+os valores: &quot;S&quot; (Continua na pr&oacute;xima p&aacute;gina),
+&quot;R&quot; (Retorna &agrave; pagina anterior) ou &quot;N&quot;
+(N&atilde;o continua a pagina&ccedil;&atilde;o, encadeando a pr&oacute;xima
+transa&ccedil;&atilde;o, se houver, ou retornando ao menu).</FONT>
+<P><img src="Bullet1.gif" width=8 heigth=8><FONT SIZE=2>Nas telas de consulta utilizadas em programas com
+l&oacute;gica de consulta com encadeamento, caso os itens sejam
+apresentados em mais de uma p&aacute;gina - Consulta encadeada
+com pagina&ccedil;&atilde;o (sem utilizar o paginador de entrada),
+deve-se tamb&eacute;m definir um campo alfanum&eacute;rico de
+1 (uma) posi&ccedil;&atilde;o - TLACONTPAG, para que o usu&aacute;rio
+possa indicar o seu desejo de continuar a sua consulta aos dados.
+Este campo pode assumir os valores: &quot;S&quot; (Continua na
+pr&oacute;xima p&aacute;gina), &quot;R&quot; (Retorna &agrave;
+pagina anterior) ou &quot;N&quot; (N&atilde;o continua a pagina&ccedil;&atilde;o,
+encadeando a pr&oacute;xima transa&ccedil;&atilde;o, se houver,
+ou retornando ao menu).</FONT>
+<P><FONT SIZE=2>O desenho de uma tela tem um variado n&uacute;mero
+de utiliza&ccedil;&otilde;es, quais sejam:</FONT>
+<P><dir><li><FONT SIZE=2>Pelos programas aplicativos, para coletar ou exibir
+dados;</FONT>
+<P><li><FONT SIZE=2>Pela navega&ccedil;&atilde;o, para a composi&ccedil;&atilde;o
+dos contextos;</FONT>
+<P><li><FONT SIZE=2>Pela tela, no processo de gera&ccedil;&atilde;o
+de sua</FONT><I><FONT SIZE=2 COLOR=#000000> library</FONT></I><FONT SIZE=2>
+Cobol;</FONT>
+<P><li><FONT SIZE=2>Pelos </FONT><I><FONT SIZE=2 COLOR=#000000>hosts</FONT></I><FONT SIZE=2>,
+para apresenta&ccedil;&atilde;o das telas de explica&ccedil;&atilde;o
+de argumento;</FONT>
+<P><li><FONT SIZE=2>Pelo sistema de controle de processamento SCAP/SPO,
+para capta&ccedil;&atilde;o de par&acirc;metros para </FONT><I><FONT SIZE=2 COLOR=#000000>jobs</FONT></I><FONT SIZE=2>.
+</FONT></dir>
+<P>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B>
+<P>
+<I><FONT SIZE=2 COLOR=#000000>Trancode</FONT></I><FONT SIZE=2>
+do editor de telas &quot;SSS04.01&quot; </FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS A SALTAR</FONT></B><FONT SIZE=2>
+- N&uacute;mero de campos desprotegidos a serem saltados pelo
+cursor no momento do envio da tela para o terminal. Os campos
+a saltar s&atilde;o contados a partir do </FONT><I><FONT SIZE=2 COLOR=#000000>trancode</FONT></I><FONT SIZE=2>,
+inclusive. Os campos protegidos transmiss&iacute;veis n&atilde;o
+s&atilde;o contados para posicionamento do cursor.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13><FONT SIZE=2 COLOR=#000000><I><B>&lt;Trancode</B></I><B>
+da tela&gt;</B></FONT></B><FONT SIZE=2> - C&oacute;digo de
+transa&ccedil;&atilde;o derivado do c&oacute;digo da tela a ser
+desenhada. Este &eacute; o &uacute;nico campo obrigat&oacute;rio
+no desenho de uma tela, tendo que ocupar o primeiro dos seus campos
+e iniciar na primeira ou segunda posi&ccedil;&atilde;o da mesma.
+No momento em que uma inclus&atilde;o de tela &eacute; solicitada,
+o editor j&aacute; coloca o </FONT><I><FONT SIZE=2 COLOR=#000000>trancode
+</FONT></I><FONT SIZE=2>na posi&ccedil;&atilde;o inicial da mesma,
+ficando o seu atributo de v&iacute;deo livre para altera&ccedil;&otilde;es.</FONT>
+<P>
+<FONT SIZE=2>O restante da tela &eacute; uma &aacute;rea livre,
+com 23 linhas de 80 colunas cada, dispon&iacute;vel para a defini&ccedil;&atilde;o
+dos campos e valores constantes que ir&atilde;o compor o desenho
+da mesma.Uma ou duas linhas do final da tela devem ser reservadas
+para as mensagens que ser&atilde;o enviadas pelos aplicativos
+do sistema. O mesmo n&uacute;mero de linhas tem de ser reservado
+para todas as telas que forem tratadas pelo mesmo </FONT><I><FONT SIZE=2 COLOR=#000000>host</FONT></I><FONT SIZE=2>,
+tendo, ainda, de ser especificado na defini&ccedil;&atilde;o deste
+host.</FONT></dir>
+<P>
+<A NAME="Defte"><B><FONT SIZE=5>Defini&ccedil;&atilde;o de tela</FONT></B></A>
+<P>
+<FONT SIZE=2>A defini&ccedil;&atilde;o de uma tela no reposit&oacute;rio
+de dados do SADS consiste na identifica&ccedil;&atilde;o do seu
+nome e do tipo de processamento ao qual ela se destina.</FONT>
+<P>
+<FONT SIZE=2>Somente telas de menu e de processamento devem ser
+definidas no reposit&oacute;rio de dados do SADS. Esta defini&ccedil;&atilde;o
+n&atilde;o &eacute; permitida para telas de explica&ccedil;&atilde;o
+de argumento.</FONT>
+<P>
+<FONT SIZE=2>A defini&ccedil;&atilde;o de uma tela &eacute; utilizada
+pelo SADS na gera&ccedil;&atilde;o da sua</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> Cobol e na consist&ecirc;ncia
+dos recursos definidos para os programas aplicativos, onde &eacute;
+necess&aacute;rio que os programas </FONT><I><FONT SIZE=2 COLOR=#000000>on-line</FONT></I><FONT SIZE=2>
+tenham ao menos uma tela de tipo compat&iacute;vel com a l&oacute;gica
+do programa.</FONT>
+<P>
+<FONT SIZE=2>Para definir uma tela, &eacute; necess&aacute;rio
+que seu sistema j&aacute; tenha sido definido no reposit&oacute;rio
+de dados do SADS.</FONT><dir>
+<P>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B><dir>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Tela</FONT></B><FONT SIZE=2> - C&oacute;digo
+da tela no padr&atilde;o SADS (sssTnnmm).</FONT>
+<P>
+<FONT SIZE=2>A padroniza&ccedil;&atilde;o utilizada para as telas
+encontra-se descrita no t&oacute;pico &quot;Padroniza&ccedil;&atilde;o&quot;,
+explicado anteriormente, neste mesmo item.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Nome</FONT></B><FONT SIZE=2> - Descri&ccedil;&atilde;o
+resumida da tela.</FONT>
+<P>
+<FONT SIZE=2>O nome tem o objetivo de identificar e explicar,
+de maneira reduzida, a que se refere a tela.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Tipo </FONT></B><FONT SIZE=2>- Tipo
+de processamento a que se destina a tela.</FONT>
+<P>
+<FONT SIZE=2>Os tipos de telas poss&iacute;veis, de acordo com
+o processamento a que ela se destina, s&atilde;o os seguintes:</FONT><blockquote>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;A&quot; (Atualiza&ccedil;&atilde;o simples);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;P&quot; (Atualiza&ccedil;&atilde;o paginada);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;C&quot; (Consulta);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;M&quot; (Menu);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;S&quot; (Sele&ccedil;&atilde;o).</FONT></blockquote>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Operacao</FONT></B><FONT SIZE=2>
+- Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave;
+defini&ccedil;&atilde;o da tela.</FONT>
+<P>
+<FONT SIZE=2>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o
+as seguintes:</FONT>
+<P><blockquote><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;INC&quot; (Inclus&atilde;o);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;ALT&quot; (Altera&ccedil;&atilde;o);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;EXC&quot; (Exclus&atilde;o);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;CON&quot; (Consulta).</FONT></blockquote></dir></dir>
+<P>
+<A NAME="Estru"><FONT SIZE=5 COLOR=#000000>Cadastramento de estrutura
+de tela</FONT></A>
+<P>
+<FONT SIZE=2>A estrutura &eacute; o conjunto de atributos e/ou
+campos que constituem as informa&ccedil;&otilde;es vari&aacute;veis
+da tela, ou seja, os campos de entrada de dados (</FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>)
+e os campos de sa&iacute;da de dados (</FONT><I><FONT SIZE=2 COLOR=#000000>output</FONT></I><FONT SIZE=2>).</FONT>
+<P>
+<FONT SIZE=2>A estrutura de dados de uma tela tem um variado n&uacute;mero
+de utiliza&ccedil;&otilde;es, quais sejam:</FONT>
+<P>
+<FONT SIZE=2>-Gera&ccedil;&atilde;o de sua</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> Cobol;</FONT>
+<dir><li><FONT SIZE=2>Movimenta&ccedil;&atilde;o de campos, na gera&ccedil;&atilde;o
+de programas;</FONT>
+<li><FONT SIZE=2>Gera&ccedil;&atilde;o de estrutura de consist&ecirc;ncia
+geral;</FONT>
+<li><FONT SIZE=2>Convers&atilde;o de estrutura, atrav&eacute;s das
+regras, no m&oacute;dulo de navega&ccedil;&atilde;o;</FONT>
+<li><FONT SIZE=2>Gera&ccedil;&atilde;o de</FONT><I><FONT SIZE=2 COLOR=#000000>
+layouts</FONT></I><FONT SIZE=2> de telas de sistemas cooperativos,
+transa&ccedil;&atilde;o esta que evita recompila&ccedil;&otilde;es
+desnecess&aacute;rias de programas quando os desenhos das telas
+s&atilde;o simplesmente modificados sem haver inclus&atilde;o
+ou exclus&atilde;o de campos e sem que eles tenham suas posi&ccedil;&otilde;es
+invertidas na tela.</FONT></dir>
+<P>
+<FONT SIZE=2>No momento da inclus&atilde;o da estrutura de uma
+tela, alguns campos j&aacute; v&ecirc;m preenchidos, de acordo
+com o tipo da tela, a saber:</FONT>
+<dir><li><FONT SIZE=2>Para as telas com tipo &quot;A&quot; (atualiza&ccedil;&atilde;o),
+&quot;C&quot; (consulta), &quot;M&quot;(menu) e &quot;S&quot;
+(sele&ccedil;&atilde;o), j&aacute; vem preenchidos os seguintes
+campos: TLATRS (c&oacute;digo da transa&ccedil;&atilde;o) e TLADTH
+(Data dd/mm/aa e hora hh:mm:ss da transa&ccedil;&atilde;o);</FONT>
+<li><FONT SIZE=2>Para as telas com tipo &quot;P&quot; (atualiza&ccedil;&atilde;o
+paginada) j&aacute; vem preenchidos os seguintes campos: TLATRS
+(c&oacute;digo da transa&ccedil;&atilde;o do paginador), TLADTH
+(Data dd/mm/aa e hora hh:mm:ss da transa&ccedil;&atilde;o), TRACOD
+(c&oacute;digo da transa&ccedil;&atilde;o) e TLAPAGNUM (n&uacute;mero
+da p&aacute;gina).</FONT></dir>
+<P>
+<FONT SIZE=2>Caso o desenho da tela n&atilde;o possua data/hora,
+o campo TLADTH deve ser eliminado de sua estrutura.</FONT>
+<P>
+<FONT SIZE=2>Caso a data possua ano com 4 posi&ccedil;&otilde;es
+(dd/mm/aaaa), o campo TLADTH deve ser substitu&iacute;do pelo
+campo TLADTHC (dd/mm/aaaa hh:mm:ss) em sua estrutura.</FONT>
+<P>
+<FONT SIZE=2>Para efetuar o cadastramento da estrutura de uma
+tela, &eacute; necess&aacute;rio que a tela e todos os atributos
+e campos que ir&atilde;o compor a sua estrutura tenham sido definidos
+no reposit&oacute;rio de dados.</FONT>
+<P><dir>
+<FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT><dir>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Tela</FONT></B><FONT SIZE=2> - C&oacute;digo
+da tela no padr&atilde;o SADS (sssTnnmm).</FONT>
+<P>
+<FONT SIZE=2>Para cada um dos atributos e campos que comp&otilde;em
+a estrutura da tela, tem-se as seguintes informa&ccedil;&otilde;es:</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Seq</FONT></B><FONT SIZE=2> - N&uacute;mero
+para posicionamento do atributo ou campo na estrutura da tela.</FONT>
+<P>
+<FONT SIZE=2>O primeiro n&uacute;mero &eacute; &quot;0010&quot;
+e os demais, acrescidos de 10.</FONT>
+<P>
+<FONT SIZE=2>Para incluir um atributo ou campo entre dois outros
+j&aacute; inclu&iacute;dos, &eacute; necess&aacute;rio preencher
+uma linha que esteja em branco e alterar o n&uacute;mero seq&uuml;encial
+desta linha para um n&uacute;mero entre os j&aacute; informados.
+O SADS reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima
+opera&ccedil;&atilde;o, os atributos ou campos j&aacute; estar&atilde;o
+na nova ordem.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Atributo</FONT></B><FONT SIZE=2>
+- Mnem&ocirc;nico do atributo ou campo.</FONT>
+<P>
+<FONT SIZE=2>Para telas de sistemas n&atilde;o cooperativos que
+possuam constantes repetitivas, ou seja, dentro de ocorr&ecirc;ncias,
+&eacute; necess&aacute;rio definir, na posi&ccedil;&atilde;o relativa
+&agrave; constante, o atributo TLACTE como se fosse um campo do
+grupo de ocorr&ecirc;ncias.</FONT>
+<P>
+<FONT SIZE=2>Existem atributos e campos, definidos no reposit&oacute;rio
+de dados do SADS para uso gen&eacute;rico dos sistemas aplicativos
+- definidos no sistema &quot;SBC&quot; - e que s&atilde;o geralmente
+utilizados em telas, quais sejam:. </FONT><blockquote>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>EMPSIGLA - Atributo para apresenta&ccedil;&atilde;o
+da sigla da empresa na qual o usu&aacute;rio efetuou o</FONT><I><FONT SIZE=2 COLOR=#000000>
+logon</FONT></I><FONT SIZE=2>;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLAACAO - Campo para tratamento das a&ccedil;&otilde;es
+da navega&ccedil;&atilde;o;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLACONFIRME - Campo para confirma&ccedil;&atilde;o
+de transa&ccedil;&atilde;o;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLACONT - Campo para indica&ccedil;&atilde;o de continua&ccedil;&atilde;o;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLACTE - Campo para indica&ccedil;&atilde;o de constante
+em ocorr&ecirc;ncias de tela;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLADET - Campo para composi&ccedil;&atilde;o de literais
+gen&eacute;ricos;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLADTH - Campo para edi&ccedil;&atilde;o da data
+e hora da apresenta&ccedil;&atilde;o da tela (dd/mm/aa hh:mm:ss);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLADTHC - Campo para edi&ccedil;&atilde;o da data
+e hora da apresenta&ccedil;&atilde;o da tela (dd/mm/aaaa hh:mm:ss);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLAESCOLHA - Campo para tratamento de escolhas em
+menus de navega&ccedil;&atilde;o;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLAESTAC - Campo de posicionamento do cursor para
+transmiss&atilde;o no final da tela;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLAETX - Campo de posicionamento do cursor para transmiss&atilde;o
+do </FONT><I><FONT SIZE=2 COLOR=#000000>trancode</FONT></I><FONT SIZE=2>;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLAIMP - Campo para informa&ccedil;&atilde;o de impressora
+para programas de emiss&atilde;o remota;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLAIMPRE - Campo para informa&ccedil;&atilde;o de
+impressora para programas de emiss&atilde;o remota;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLAMSG - Campo para apresenta&ccedil;&atilde;o de
+mensagem no corpo da tela;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLAOPCAO - Campo para indica&ccedil;&atilde;o de
+op&ccedil;&atilde;o em menus;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLAOPER - Campo para indica&ccedil;&atilde;o de opera&ccedil;&atilde;o;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLAPAGNUM - N&uacute;mero da p&aacute;gina corrente
+em telas paginadas;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLAPAGOPER - C&oacute;digo da opera&ccedil;&atilde;o
+para telas paginadas;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLAPAGPROX - Campo para indica&ccedil;&atilde;o da
+pr&oacute;xima p&aacute;gina em telas paginadas;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLATOT - Campo para apresenta&ccedil;&atilde;o de
+totais;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>TLATRS - Campo para apresenta&ccedil;&atilde;o do
+</FONT><I><FONT SIZE=2 COLOR=#000000>trancode</FONT></I><FONT SIZE=2>
+(c&oacute;digo de transa&ccedil;&atilde;o).</FONT></blockquote>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Nivel</FONT></B><FONT SIZE=2> -
+N&iacute;vel de estrutura&ccedil;&atilde;o do atributo ou campo
+(an&aacute;logo ao n&iacute;vel do Cobol).</FONT>
+<P>
+<FONT SIZE=2>O n&iacute;vel inicial &eacute; 10. Se for necess&aacute;rio
+criar agrupamentos de atributos/campos, pode-se usar m&uacute;ltiplos
+de 5 (15, 20, 25, ...) de forma an&aacute;loga ao Cobol.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Ndef</FONT></B><FONT SIZE=2> - N&iacute;vel
+de defini&ccedil;&atilde;o do atributo ou campo no reposit&oacute;rio
+de dados.</FONT>
+<P>
+<FONT SIZE=2>Podem ser informados os seguintes valores:</FONT>
+<P><blockquote><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;S&quot; - Se o atributo est&aacute; definido
+no sistema informado no campo SIS ou no mesmo sistema da tela;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;G&quot; - Se o atributo est&aacute; definido
+no SADS para utiliza&ccedil;&atilde;o gen&eacute;rica. A rela&ccedil;&atilde;o
+dos atributos gen&eacute;ricos geralmente utilizados encontra-se
+na explica&ccedil;&atilde;o do campo ATRIBUTO, descrito anteriormente.</FONT></blockquote>
+<P>
+<FONT SIZE=2>Se este campo n&atilde;o for informado, ser&aacute;
+assumido pelo gerador de </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de tela que ele &eacute; um item grupo.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Sis </FONT></B><FONT SIZE=2>- C&oacute;digo
+do sistema ao qual o atributo ou campo pertence.</FONT>
+<P>
+<FONT SIZE=2>O sistema s&oacute; deve ser informado se o campo
+NDEF estiver preenchido com &quot;S&quot; e o atributo ou campo
+pertencer a um sistema diferente do sistema da tela.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Input</FONT></B><FONT SIZE=2> -
+Identificador de atributo ou campo de entrada.</FONT>
+<P>
+<FONT SIZE=2>Podem ser informados os seguintes valores:</FONT>
+<P><blockquote><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;S&quot; - Para atributo ou campo de entrada
+e sa&iacute;da (</FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>
+e </FONT><I><FONT SIZE=2 COLOR=#000000>output</FONT></I><FONT SIZE=2>);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;A&quot; - Para atributo ou campo de entrada
+e sa&iacute;da (</FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>
+e </FONT><I><FONT SIZE=2 COLOR=#000000>output</FONT></I><FONT SIZE=2>)
+que inicia um grupo opcional, na consist&ecirc;ncia da tela;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;F&quot; - Para atributo ou campo de entrada
+e sa&iacute;da (</FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>
+e </FONT><I><FONT SIZE=2 COLOR=#000000>output</FONT></I><FONT SIZE=2>)
+que finaliza um grupo opcional, na consist&ecirc;ncia da tela.</FONT></blockquote>
+<P>
+<FONT SIZE=2>Se este campo n&atilde;o for informado, o SADS assumir&aacute;
+que o atributo ou campo &eacute; somente de sa&iacute;da (</FONT><I><FONT SIZE=2 COLOR=#000000>output</FONT></I><FONT SIZE=2>).</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Opc</FONT></B><FONT SIZE=2> - Identificador
+de opcionalidade de preenchimento do atributo ou campo, no momento
+de entrada de dados.</FONT>
+<P>
+<FONT SIZE=2>Podem ser informados os seguintes valores:</FONT>
+<P><blockquote><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;S&quot; - Opcional;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;Z&quot; - Opcional. Assume valor 0 (zero),
+caso o campo n&atilde;o seja informado pelo usu&aacute;rio (v&aacute;lido
+somente para atributos ou campos num&eacute;ricos); </FONT></blockquote>
+<P>
+<FONT SIZE=2>Se este campo n&atilde;o for informado, o SADS assumir&aacute;
+que &eacute; obrigat&oacute;ria a informa&ccedil;&atilde;o do
+atributo ou campo no momento da entrada de dados na tela.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Tam</FONT></B><FONT SIZE=2> - Tamanho
+do atributo ou campo no desenho da tela.</FONT>
+<P>
+<FONT SIZE=2>O tamanho do atributo ou campo somente dever&aacute;
+ser informado se, na tela, estiver diferente daquele definido
+para o atributo ou campo no reposit&oacute;rio de dados.</FONT>
+<P>
+<FONT SIZE=2>Este campo n&atilde;o pode ser informado, caso tenha
+sido parametrizado na tabela SBPM5000 que os atributos/campos
+n&atilde;o podem ter seus tamanhos redefinidos nas estruturas
+nas quais s&atilde;o inclu&iacute;dos. Somente se o atributo for
+uma vari&aacute;vel definida - Sintaxe = &quot;VD&quot; - &eacute;
+que este campo poder&aacute; ser informado, caso a parametriza&ccedil;&atilde;o
+tenha sido cadastrada.</FONT>
+<P>
+<FONT SIZE=2>Maiores detalhes a respeito desta parametriza&ccedil;&atilde;o,
+deve-se consultar a Se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es
+do SADS&quot;, item &quot;Atributo&quot;, subitem &quot;Redefini&ccedil;&atilde;o
+em estruturas&quot;. </FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Sin</FONT></B><FONT SIZE=2> - Crit&eacute;rio
+para gera&ccedil;&atilde;o de sinal do atributo ou campo na </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+da tela.</FONT>
+<P>
+<FONT SIZE=2>Podem ser informados os seguintes valores:</FONT>
+<P><blockquote><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;S&quot; - Atributo ou campo num&eacute;rico
+sinalizado (sem decimais);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;N&quot; - Atributo ou campo sem sinal e decimais;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;A&quot; - Atributo ou campo com sinal e decimais;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;D&quot; - Atributo ou campo com decimais (sem
+sinal);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;B&quot; - Atributo ou campo com BLANK WHEN
+ZERO.</FONT></blockquote>
+<P>
+<FONT SIZE=2>Este campo somente dever&aacute; ser informado quando
+for necess&aacute;rio utilizar sinaliza&ccedil;&atilde;o para
+o atributo na </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+da tela, ou a quantidade de casas decimais necess&aacute;ria na
+tela for diferente daquela informada na defini&ccedil;&atilde;o
+do atributo ou campo no reposit&oacute;rio de dados.</FONT>
+<P>
+<FONT SIZE=2>Se for informado &quot;D&quot; ou &quot;A&quot;,
+a quantidade de decimais deve ser informada no campo DEC.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Dec</FONT></B><FONT SIZE=2> - N&uacute;mero
+de casas decimais do atributo ou campo.</FONT>
+<P>
+<FONT SIZE=2>Este campo somente dever&aacute; ser informado se
+a quantidade de decimais da tela for diferente da que est&aacute;
+definida para o atributo ou campo no reposit&oacute;rio de dados.
+Neste caso, deve-se informar &quot;D&quot; ou &quot;A&quot; no
+campo SIN.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Occurs</FONT></B><FONT SIZE=2> -
+N&uacute;mero de ocorr&ecirc;ncias de um item de grupo.</FONT>
+<P>
+<FONT SIZE=2>N&atilde;o pode ser utilizado em itens elementares.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Continua (S/N)</FONT></B><FONT SIZE=2>
+- Indicador de continuidade de opera&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>As possibilidades de preenchimento deste campo s&atilde;o
+as seguintes:</FONT>
+<P><blockquote>
+<FONT SIZE=2><b>&quot;S&quot;</b> - Nova tela ser&aacute; aberta para
+prosseguir a opera&ccedil;&atilde;o com a estrutura da tela;</FONT>
+<P>
+<FONT SIZE=2><b>&quot;N&quot;</b> - &Uacute;ltima tela da opera&ccedil;&atilde;o
+com a estrutura da tela.</FONT></blockquote>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Operacao</FONT></B><FONT SIZE=2>
+- Opera&ccedil;&atilde;o efetuada em rela&ccedil;&atilde;o &agrave;
+estrutura da tela.</FONT>
+<P>
+<FONT SIZE=2>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o
+as seguintes:</FONT>
+<P><blockquote><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;INC&quot; (Inclus&atilde;o);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;ALT&quot; (Altera&ccedil;&atilde;o);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;EXC&quot; (Exclus&atilde;o);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;CON&quot; (Consulta).</FONT></blockquote></dir></dir>
+<P>
+<A NAME="Gerlib"><B><FONT SIZE=5>Gera&ccedil;&atilde;o de library
+de tela</FONT></B></A>
+<P>
+<FONT SIZE=2>A gera&ccedil;&atilde;o de </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de tela compreende a criac&atilde;o de um arquivo em linguagem
+Cobol com os atributos e campos que a comp&otilde;em. </FONT>
+<P>
+<FONT SIZE=2>As</FONT><I><FONT SIZE=2 COLOR=#000000> libraries</FONT></I><FONT SIZE=2>
+s&atilde;o geradas para telas de processamento e de menus de op&ccedil;&atilde;o.
+Portanto, as telas para explica&ccedil;&atilde;o de argumento,
+par&acirc;metros de </FONT><I><FONT SIZE=2 COLOR=#000000>jobs</FONT></I><FONT SIZE=2>,
+menus de escolha e menus de opera&ccedil;&atilde;o n&atilde;o
+possuem </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>.</FONT>
+<P>
+<FONT SIZE=2>A </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de uma tela &eacute; gerada a partir do seu desenho, da sua defini&ccedil;&atilde;o,
+da sua estrutura de dados e da defini&ccedil;&atilde;o dos atributos
+e campos que a comp&otilde;em. Depende, ainda, se seu sistema
+&eacute; do tipo cooperativo ou n&atilde;o, isto &eacute;, se
+utiliza ou n&atilde;o o </FONT><I><FONT SIZE=2 COLOR=#000000>software</FONT></I><FONT SIZE=2>
+COOPERATOR da MSA-INFOR.</FONT>
+<P>
+<FONT SIZE=2>Sua codifica&ccedil;&atilde;o &eacute; derivada do
+c&oacute;digo da tela, como no exemplo a seguir:</FONT>
+<P><blockquote>
+<FONT SIZE=2>Tela : SXYT0123<BR>
+</FONT><I><FONT SIZE=2 COLOR=#000000>Library</FONT></I><FONT SIZE=2>
+: SX/Y/TL/01/23</FONT></blockquote>
+<P>
+<FONT SIZE=2>Ap&oacute;s a sua gera&ccedil;&atilde;o, a </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+ser&aacute; utilizada pelos compiladores Cobol, devendo ser inserida
+na WORKING-STORAGE SECTION do programa atrav&eacute;s do comando
+COPY, conforme o exemplo a seguir: </FONT>
+<P><blockquote><FONT SIZE=2>COPY &quot;SX/Y/TL/01/23&quot;.</FONT></blockquote>
+<P>
+<FONT SIZE=2>A </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>,
+geralmente, &eacute; formada por duas estruturas b&aacute;sicas
+que se redefinem mutuamente, s&atilde;o elas:</FONT>
+<P><dir><li><FONT SIZE=2></FONT><I><FONT SIZE=2 COLOR=#000000>Input</FONT></I><FONT SIZE=2>
+- Onde est&atilde;o declarados os campos transmiss&iacute;veis
+da tela, isto &eacute;, os campos utilizados para entrada de dados.</FONT>
+<P>
+<FONT SIZE=2>Os prefixos dos campos que comp&otilde;em a &aacute;rea
+de </FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>
+s&atilde;o formados do seguinte modo:</FONT>
+<P><blockquote>
+<FONT SIZE=2>Tela : SXYT0123<BR>
+Prefixo de </FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>
+: YT23I-</FONT></blockquote>
+<P>
+<FONT SIZE=2>Portanto, o prefixo &eacute; formado pela terceira
+letra do sistema (subsistema) somada &agrave; constante &quot;T&quot;
+(tela), ao n&uacute;mero da tela e &agrave; constante &quot;I&quot;
+(</FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>).</FONT>
+<P>
+<FONT SIZE=2>Exemplo da &aacute;rea de</FONT><I><FONT SIZE=2 COLOR=#000000>
+input</FONT></I><FONT SIZE=2>:</FONT>
+<p>
+<table><tr><td>05&nbsp;&nbsp; YT23I-IN.
+<tr><td>&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; YT23I-TLATRS.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15 &nbsp;&nbsp; YT23I-TLATRS-RED<td width=10><td> PIC 9(08).
+<tr><td>&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; YT23I-FUNCOD.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15 &nbsp;&nbsp; YT23I-FUNCOD-RED<td width=10><td> PIC 9(05).
+<tr><td>&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; YT23I-FUNNOM.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15 &nbsp;&nbsp; YT23I-FUNNOM-RED<td width=10><td> PIC X(40).
+<tr><td>&nbsp;&nbsp;&nbsp; 10 YT23I-FUNDATNASC.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15 &nbsp;&nbsp; YT23I-FUNDATNASC-RED<td width=10><td> PIC 9(06).
+</table>
+<P>
+<FONT SIZE=2>Os campos com at&eacute; 23 </FONT><I><FONT SIZE=2 COLOR=#000000>byte</FONT></I><FONT SIZE=2>s
+s&atilde;o sempre alfanum&eacute;ricos com redefini&ccedil;&atilde;o
+num&eacute;rica.</FONT>
+<li><FONT SIZE=2></FONT><I><FONT SIZE=2 COLOR=#000000>Output</FONT></I><FONT SIZE=2>
+- Onde encontram-se declarados todos os campos da tela, de entrada
+e de sa&iacute;da, com suas </FONT><I><FONT SIZE=2 COLOR=#000000>pictures</FONT></I><FONT SIZE=2>
+de edi&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Os prefixos dos campos que comp&otilde;em a &aacute;rea
+de </FONT><I><FONT SIZE=2 COLOR=#000000>output</FONT></I><FONT SIZE=2>
+s&atilde;o formados do seguinte modo:</FONT>
+<P><blockquote>
+<FONT SIZE=2>Tela : SXYT0124<BR>
+Prefixo de </FONT><I><FONT SIZE=2 COLOR=#000000>output</FONT></I><FONT SIZE=2>
+: YT24O-</FONT></blockquote>
+<P>
+<FONT SIZE=2>Portanto, o prefixo &eacute; formado pela terceira
+letra do sistema (subsistema) somada &agrave; constante &quot;T&quot;
+(tela), ao n&uacute;mero da tela e &agrave; constante &quot;O&quot;
+(</FONT><I><FONT SIZE=2 COLOR=#000000>output</FONT></I><FONT SIZE=2>).
+</FONT>
+<P>
+<FONT SIZE=2>Exemplo da &aacute;rea de </FONT><I><FONT SIZE=2 COLOR=#000000>output</FONT></I><FONT SIZE=2>
+para sistemas n&atilde;o cooperativos :</FONT>
+<table><tr><td>&nbsp;&nbsp; 05 &nbsp;&nbsp; YT24O-OUT.
+<tr><td>&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; FILLER<td width=10><td> PIC X(05).
+<tr><td>&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; YT24O-TLATRS
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15 &nbsp;&nbsp; YT24O-TLATRS-RED<td width=10><td> PIC 9(08).
+<tr><td>&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; FILLER<td width=10><td> PIC X(50).
+<tr><td>&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; YT24O-TLADTH.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15 &nbsp;&nbsp; YT24O-TLADTH-RED<td width=10><td> PIC 9(18).
+<tr><td>&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; FILLER <td width=10><td> PIC X(05).
+<tr><td>&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; YT24O-FUNCOD.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15 &nbsp;&nbsp; YT24O-FUNCOD-RED<td width=10><td> PIC 9(05).
+<tr><td>&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; FILLER <td width=10><td>PIC X(05).
+<tr><td>&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; YT24O-FUNNOM.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15 YT24O-FUNNOM-RED<td width=10><td> PIC X(40).
+<tr><td>&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; FILLER<td width=10><td> PIC X(05).
+<tr><td>&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp;YT24O-FUNDATNASC.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15 &nbsp;&nbsp; YT24O-FUNDATNASC-RED<td width=10><td> PIC 99/99/99.<BR>
+</table>
+<P>
+<FONT SIZE=2>Os campos com at&eacute; 23 </FONT><I><FONT SIZE=2 COLOR=#000000>bytes</FONT></I><FONT SIZE=2>
+s&atilde;o sempre alfanum&eacute;ricos com redefini&ccedil;&atilde;o
+num&eacute;rica.</FONT>
+<P>
+<FONT SIZE=2>Os &quot;FILLER&quot; que aparecem na </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+s&atilde;o relativos a caracteres constantes e/ou de posicionamento.</FONT>
+<P>
+<FONT SIZE=2>Exemplo da &aacute;rea de </FONT><I><FONT SIZE=2 COLOR=#000000>output</FONT></I><FONT SIZE=2>
+para sistemas cooperativos :</FONT>
+
+<table><tr><td>&nbsp;&nbsp; 05 &nbsp;&nbsp; YT24O-OUT.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; YT24O-TLATRS.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15&nbsp;&nbsp; YT24O-TLATRS-RED<td width=10><td> PIC 9(08).
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; YT24O-TLADTH.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15&nbsp;&nbsp; YT24O-TLADTH-RED<td width=10><td> PIC 9(18).
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; YT24O-FUNCOD.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15&nbsp;&nbsp; YT24O-FUNCOD-RED<td width=10><td> PIC 9(05).
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; YT24O-FUNNOM.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15&nbsp;&nbsp; YT24O-FUNNOM-RED<td width=10><td> PIC X(40).
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp; YT24O-FUNDATNASC.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15 YT24O-FUNDATNASC-RED<td width=10><td> PIC 99/99/99.
+</table>
+<P>
+<FONT SIZE=2>Os campos com at&eacute; 23 </FONT><I><FONT SIZE=2 COLOR=#000000>bytes</FONT></I><FONT SIZE=2>
+s&atilde;o sempre alfanum&eacute;ricos com redefini&ccedil;&atilde;o
+num&eacute;rica.</FONT>
+<P>
+<FONT SIZE=2>Para telas de entrada paginada (para programas que
+utilizam o m&oacute;dulo de pagina&ccedil;&atilde;o de entrada),
+&eacute; gerada, ainda, a seguinte </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>:</FONT>
+<p><li>
+<FONT SIZE=2></FONT><I><FONT SIZE=2 COLOR=#000000>Work</FONT></I><FONT SIZE=2>
+- Onde encontram-se declarados os campos transmiss&iacute;veis
+da tela (campos de </FONT><I><FONT SIZE=2 COLOR=#000000>input</FONT></I><FONT SIZE=2>)
+para utiliza&ccedil;&atilde;o na </FONT><I><FONT SIZE=2 COLOR=#000000>WORKING-STORAGE
+SECTION</FONT></I><FONT SIZE=2> dos programas de atualiza&ccedil;&atilde;o
+paginada.</FONT>
+<P>
+<FONT SIZE=2>Os prefixos dos campos que comp&otilde;em a &aacute;rea
+de </FONT><I><FONT SIZE=2 COLOR=#000000>work</FONT></I><FONT SIZE=2>
+s&atilde;o formados do seguinte modo:</FONT>
+<P><blockquote>
+<FONT SIZE=2>Tela : SXYT0125<BR>
+Prefixo de </FONT><I><FONT SIZE=2 COLOR=#000000>work</FONT></I><FONT SIZE=2>
+: YT25W-</FONT></blockquote>
+<P>
+<FONT SIZE=2>Portanto, o prefixo &eacute; formado pela terceira
+letra do sistema (subsistema) adicionada &agrave; constante &quot;T&quot;
+(tela), ao n&uacute;mero da tela e &agrave; constante &quot;W&quot;
+(</FONT><I><FONT SIZE=2 COLOR=#000000>work</FONT></I><FONT SIZE=2>).</FONT>
+<P>
+<FONT SIZE=2>Exemplo de &aacute;rea de </FONT><I><FONT SIZE=2 COLOR=#000000>work</FONT></I><FONT SIZE=2>
+:</FONT>
+<table><tr><td>&nbsp;&nbsp;&nbsp;05 &nbsp;&nbsp; YT25W-WORK.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp;YT25W-TLATRS.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15&nbsp;&nbsp; YT25W-TLATRS-RED<td width=10><td> PIC 9(08).
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp;YT25W-TLAPAGNUM.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15&nbsp;&nbsp;  YT25W-TLAPAGNUM-RED<td width=10><td> PIC 9(18).
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp;YT25W-FUNCOD.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15&nbsp;&nbsp;  YT25W-FUNCOD-RED<td width=10><td> PIC 9(05).
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp;YT25W-FUNNOM.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15&nbsp;&nbsp;  YT25W-FUNNOM-RED<td width=10><td> PIC X(40).
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp;YT25W-FUNDATNASC.
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15&nbsp;&nbsp;  YT25W-FUNDATNASC-RED<td width=10><td> PIC 9(06).
+</table>
+<P>
+<FONT SIZE=2>Os campos com at&eacute; 23</FONT><I><FONT SIZE=2 COLOR=#000000>
+bytes</FONT></I><FONT SIZE=2> s&atilde;o sempre alfanum&eacute;ricos
+com redefini&ccedil;&atilde;o num&eacute;rica.</FONT>
+<P>
+<FONT SIZE=2>A </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+da tela &eacute; gerada no </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+e disco definidos para o seu </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+de an&aacute;lise e de acordo com o ambiente escolhido.</FONT>
+<P>
+<FONT SIZE=2>O </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+dever&aacute; estar cadastrado na Tabela de </FONT><I><FONT SIZE=2 COLOR=#000000>Usercodes</FONT></I><FONT SIZE=2>
+do SADS - SBPM5002. Para maiores informa&ccedil;&otilde;es, consulte
+Se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es do
+SADS&quot;, neste manual.</FONT>
+<P>
+<FONT SIZE=2>A gera&ccedil;&atilde;o de</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> de tela n&atilde;o est&aacute;
+associada a nenhuma tela de processamento. Portanto, para efetu&aacute;-la,
+basta transmitir os argumentos do menu GERTEL, descritos a seguir.</FONT></dir>
+<P><dir>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B><dir>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Tela</FONT></B><FONT SIZE=2> - C&oacute;digo
+da tela no padr&atilde;o SADS (sssTnnmm).</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13><b>
+<FONT SIZE=2>Ambiente</b> - Ambiente em que a </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+ser&aacute; gerada.</FONT>
+<P>
+<FONT SIZE=2>Podem ser informados os seguintes ambientes:</FONT><blockquote>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;T&quot; (teste) - Para gerar a </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+para o ambiente de teste;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;P&quot; (produ&ccedil;&atilde;o) - Para gerar
+a </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+para o ambiente de produ&ccedil;&atilde;o.</FONT></blockquote>
+<P>
+<FONT SIZE=2>S&oacute; &eacute; poss&iacute;vel gerar uma </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+para produ&ccedil;&atilde;o, quando esta n&atilde;o existir em
+teste, caso contr&aacute;rio deve ser feita a sua libera&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Caso o ambiente n&atilde;o seja informado, ser&aacute;
+assumido o ambiente </FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio. Detalhes sobre o cadastramento do ambiente
+</FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI,
+&quot;Sistema de Seguran&ccedil;a&quot;, item &quot;Usu&aacute;rios
+e habilita&ccedil;&otilde;es&quot;.</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Usercode</FONT></B><FONT SIZE=2>
+- </FONT><I><FONT SIZE=2 COLOR=#000000>Usercode</FONT></I><FONT SIZE=2>
+de an&aacute;lise.</FONT>
+<P>
+<FONT SIZE=2>O </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+a ser informado deve estar habilitado ao usu&aacute;rio, como
+elemento, em sua lista de elementos &quot;SEGUSER&quot;, no Sistema
+de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o
+descritos na Se&ccedil;&atilde;o VI, &quot;Sistema de Seguran&ccedil;a&quot;,
+item &quot;Habilita&ccedil;&otilde;es de usu&aacute;rios SADS&quot;.</FONT>
+<P>
+<FONT SIZE=2>Caso o </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+n&atilde;o seja informado, ser&aacute; assumido o </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+</FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio. Detalhes sobre o cadastramento do </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+</FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI,
+&quot;Sistema de Seguran&ccedil;a&quot;, item &quot;Usu&aacute;rios
+e habilita&ccedil;&otilde;es&quot;.</FONT>
+<P>
+<FONT SIZE=2>Para os </FONT><I><FONT SIZE=2 COLOR=#000000>usercodes</FONT></I><FONT SIZE=2>
+de an&aacute;lise, s&atilde;o definidos os ambientes (</FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+e disco) onde ficar&atilde;o residentes as </FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as
+</FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+de produ&ccedil;&atilde;o fiquem sem </FONT><I><FONT SIZE=2 COLOR=#000000>usercodes</FONT></I><FONT SIZE=2>.
+Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002,
+cuja manuten&ccedil;&atilde;o &eacute; feita pelo respons&aacute;vel
+pelo SADS na sua instala&ccedil;&atilde;o. Esta tabela encontra-se
+descrita na se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es
+do SADS&quot;, neste manual.</FONT>
+<P>
+<FONT SIZE=2>Neste momento, o SADS compatibiliza as informa&ccedil;&otilde;es
+constantes no reposit&oacute;rio de dados com as informa&ccedil;&otilde;es
+do desenho da tela, como por exemplo, pelo tamanho de cada um
+de seus campos. Caso haja incompatibilidade entre o desenho e
+o reposit&oacute;rio de dados, uma mensagem &eacute; enviada notificando
+o erro ocorrido, caso contr&aacute;rio, a mensagem apenas confirma
+o sucesso da opera&ccedil;&atilde;o.</FONT></dir></dir>
+<P>
+<A NAME="Gercon"><FONT SIZE=5 COLOR=#000000>Gera&ccedil;&atilde;o
+de consist&ecirc;ncia de tela</FONT></A>
+<P>
+<FONT SIZE=2>A consist&ecirc;ncia geral de uma tela pode ser cadastrada
+manualmente ou gerada automaticamente a partir da estrutura da
+tela.</FONT>
+<P>
+<FONT SIZE=2>Para efetuar a gera&ccedil;&atilde;o da consist&ecirc;ncia
+de uma tela, &eacute; necess&aacute;rio que a sua estrutura j&aacute;
+esteja cadastrada no reposit&oacute;rio de dados.</FONT>
+<P>
+<FONT SIZE=2>Detalhes a respeito da consist&ecirc;ncia de uma
+tela est&atilde;o descritos no item &quot;Consist&ecirc;ncia geral&quot;,
+nesta se&ccedil;&atilde;o.</FONT>
+<P>
+<A NAME="Libdes"><FONT SIZE=5 COLOR=#000000>Libera&ccedil;&atilde;o
+de desenho de tela </FONT></A>
+<P>
+<FONT SIZE=2>A libera&ccedil;&atilde;o &eacute; o processo que
+torna os elementos das telas dispon&iacute;veis para utiliza&ccedil;&atilde;o
+pelos programas aplicativos num determinado ambiente.</FONT>
+<P>
+<FONT SIZE=2>A libera&ccedil;&atilde;o de desenho de tela consiste
+em tornar dispon&iacute;vel um desenho novo ou alguma manuten&ccedil;&atilde;o
+para os programas que a utilizam no ambiente a que ela se destina.</FONT>
+<P>
+<FONT SIZE=2>Portanto, a libera&ccedil;&atilde;o pode ocorrer
+tanto para um novo desenho de tela quanto para alguma manuten&ccedil;&atilde;o
+efetuada em um desenho j&aacute; liberado. </FONT>
+<P>
+<FONT SIZE=2>A libera&ccedil;&atilde;o do desenho da tela pode
+comportar-se de duas formas distintas, dependendo do ambiente
+a que se destina:</FONT>
+<P><dir><li><FONT SIZE=2><b>Teste -</b>A partir do desenho com ESTADO = &quot;D&quot;
+(&quot;em desenvolvimento&quot;) ou &quot;M&quot; (&quot;em manuten&ccedil;&atilde;o&quot;),
+&eacute; criada ou substitu&iacute;da, se for o caso, a c&oacute;pia
+com ESTADO = &quot;T&quot; (&quot;em teste&quot;), sendo ent&atilde;o
+exclu&iacute;do o desenho original (&quot;em manuten&ccedil;&atilde;o&quot;
+ou &quot;em desenvolvimento&quot;);</FONT>
+<li><FONT SIZE=2><b>Produ&ccedil;&atilde;o -</b> A partir do desenho com
+ESTADO = &quot;T&quot; (&quot;em teste&quot;), &eacute; criada
+ou substitu&iacute;da, se for o caso, a c&oacute;pia com ESTADO
+= &quot;P&quot; (&quot;em produ&ccedil;&atilde;o&quot;), sendo
+mantido o desenho original (&quot;em teste&quot;).</FONT>
+<P>
+<FONT SIZE=2>A transa&ccedil;&atilde;o de libera&ccedil;&atilde;o
+de tela para produ&ccedil;&atilde;o dispara, automaticamente,
+a libera&ccedil;&atilde;o de consist&ecirc;ncia para produ&ccedil;&atilde;o,
+que, por sua vez, somente ser&aacute; liberada se tiver</FONT><I><FONT SIZE=2 COLOR=#000000>
+status</FONT></I><FONT SIZE=2> igual a &quot;a liberar para produ&ccedil;&atilde;o&quot;.</FONT>
+<P>
+<FONT SIZE=2>A libera&ccedil;&atilde;o de telas para produ&ccedil;&atilde;o
+torna-as dispon&iacute;veis para utiliza&ccedil;&atilde;o em ambiente
+de produ&ccedil;&atilde;o no mesmo computador onde foram liberadas.
+Para torn&aacute;-las dispon&iacute;veis para outro computador,
+&eacute; necess&aacute;rio executar o </FONT><I><FONT SIZE=2 COLOR=#000000>job</FONT></I><FONT SIZE=2>
+SD/D/JB/70 no computador de origem, copiar os arquivos SS/S/AF/70
+e SS/S/AF/72 para o computador de produ&ccedil;&atilde;o e nele
+executar o </FONT><I><FONT SIZE=2 COLOR=#000000>job</FONT></I><FONT SIZE=2>
+SD/D/JB/72.</FONT>
+<P>
+<FONT SIZE=2>Neste </FONT><I><FONT SIZE=2 COLOR=#000000>job</FONT></I><FONT SIZE=2>,
+como as consist&ecirc;ncias liberadas para produ&ccedil;&atilde;o
+s&atilde;o tamb&eacute;m extra&iacute;das, o arquivo SS/C/AF/71
+deve ser copiado para possibilitar a compatibiliza&ccedil;&atilde;o
+das consist&ecirc;ncias em rela&ccedil;&atilde;o &agrave;s suas
+telas, caso estas tamb&eacute;m tenham de ser liberadas para o
+computador de produ&ccedil;&atilde;o.</FONT></dir>
+<P>
+<FONT SIZE=2>Se alguma tela ou consist&ecirc;ncia tiver sido liberada
+indevidamente para produ&ccedil;&atilde;o e se houver um computador
+diferente para processamento dos sistemas em produ&ccedil;&atilde;o,
+sua transfer&ecirc;ncia para a m&aacute;quina de produ&ccedil;&atilde;o
+pode ser cancelada atrav&eacute;s do menu CANTRAPRO. Detalhes
+a este respeito est&atilde;o descritos na se&ccedil;&atilde;o
+III, &quot;Fun&ccedil;&otilde;es de Apoio&quot;, item &quot;Utilit&aacute;rios
+</FONT><I><FONT SIZE=2 COLOR=#000000>on-line</FONT></I><FONT SIZE=2>&quot;,
+neste manual.</FONT>
+<P>
+<FONT SIZE=2>A libera&ccedil;&atilde;o de desenho de tela n&atilde;o
+est&aacute; associada a nenhuma tela de processamento. Portanto,
+para efetu&aacute;-la, basta transmitir os argumentos do menu
+&quot;LIBDESTEL&quot;, conforme descrito a seguir.</FONT><dir>
+<P>
+<FONT SIZE=2 COLOR=#000000><B>CAMPOS DA TELA</FONT></B><dir>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Tela</FONT></B><FONT SIZE=2> - C&oacute;digo
+da tela no padr&atilde;o SADS (ssstnnmm).</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Ambiente</FONT></B><FONT SIZE=2>
+- Ambiente para o qual o desenho da tela ser&aacute; liberado.</FONT>
+<P>
+<FONT SIZE=2>Podem ser informados os seguintes ambientes:</FONT>
+<P><blockquote><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;T&quot; (Teste) - Para liberar o desenho da
+tela para o ambiente de teste;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;P&quot; (Produ&ccedil;&atilde;o) - Para liberar
+o desenho da tela para o ambiente de produ&ccedil;&atilde;o.</FONT></blockquote></dir></dir>
+<P>
+<A NAME="Liblib"><B><FONT SIZE=5>Libera&ccedil;&atilde;o de library
+de tela</FONT></B></A>
+<P>
+<FONT SIZE=2>A libera&ccedil;&atilde;o de </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+para produ&ccedil;&atilde;o consiste em gerar uma c&oacute;pia
+da mesma no </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+de produ&ccedil;&atilde;o, excluindo-a do </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+de teste.</FONT>
+<P>
+<FONT SIZE=2>A libera&ccedil;&atilde;o de </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de tela para produ&ccedil;&atilde;o n&atilde;o est&aacute; associada
+a nenhuma tela de processamento. Portanto, para efetu&aacute;-la,
+basta transmitir os argumentos do menu &quot;LIBLIBTEL&quot;,
+conforme descrito a seguir.</FONT>
+<P><dir><FONT SIZE=2 COLOR=#000000><b>CAMPOS DA TELA</b></FONT><dir>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Tela</FONT></B><FONT SIZE=2> - C&oacute;digo
+da tela no padr&atilde;o SADS (sssTnnmm).</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Usercode</FONT></B><FONT SIZE=2>
+- </FONT><I><FONT SIZE=2 COLOR=#000000>Usercode</FONT></I><FONT SIZE=2>
+de an&aacute;lise.</FONT>
+<P>
+<FONT SIZE=2>O </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+a ser informado deve estar habilitado ao usu&aacute;rio, como
+elemento, em sua lista de elementos &quot;SEGUSER&quot;, no Sistema
+de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o
+descritos na Se&ccedil;&atilde;o VI, &quot;Sistema de Seguran&ccedil;a&quot;,
+item &quot;Habilita&ccedil;&otilde;es de usu&aacute;rios SADS&quot;.</FONT>
+<P>
+<FONT SIZE=2>Caso o </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+n&atilde;o seja informado, ser&aacute; assumido o </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+</FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio. Detalhes sobre o cadastramento do </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+</FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI,
+&quot;Sistema de Seguran&ccedil;a&quot;, item &quot;Usu&aacute;rios
+e habilita&ccedil;&otilde;es&quot;.</FONT>
+<P>
+<FONT SIZE=2>Para </FONT><I><FONT SIZE=2 COLOR=#000000>usercodes</FONT></I><FONT SIZE=2>
+de an&aacute;lise, s&atilde;o definidos os ambientes (</FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+e disco) onde ficar&atilde;o residentes suas </FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as
+</FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+de produ&ccedil;&atilde;o fiquem sem </FONT><I><FONT SIZE=2 COLOR=#000000>usercodes</FONT></I><FONT SIZE=2>.
+Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002,
+que se encontra descrita na Se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es
+do SADS&quot;.</FONT>
+<P>
+<FONT SIZE=2>Se na defini&ccedil;&atilde;o do </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+de an&aacute;lise na tabela SBPM5002 estiver indicado que as </FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+de produ&ccedil;&atilde;o ficar&atilde;o sem </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>,
+ao liber&aacute;-las, a vers&atilde;o de teste ser&aacute; removida.
+Esta tabela encontra-se descrita na Se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es
+do SADS&quot;, neste manual.</FONT></dir></dir>
+<P>
+<A NAME="Libcon"><FONT SIZE=5 COLOR=#000000>Libera&ccedil;&atilde;o
+de consist&ecirc;ncia de tela</FONT></A>
+<P>
+<FONT SIZE=2>A libera&ccedil;&atilde;o de consist&ecirc;ncia de
+tela visa tornar dispon&iacute;vel uma consist&ecirc;ncia nova
+ou alguma manuten&ccedil;&atilde;o efetuada na consist&ecirc;ncia
+da tela para o ambiente onde ser&aacute; utilizada.</FONT>
+<P>
+<FONT SIZE=2>A libera&ccedil;&atilde;o de consist&ecirc;ncia da
+tela pode se comportar de duas formas diferentes, dependendo do
+ambiente a que se destina:</FONT>
+<P><dir><li>
+<FONT SIZE=2><b>Teste -</b> A consist&ecirc;ncia liberada estar&aacute;
+dispon&iacute;vel somente para os programas que foram compilados
+para o ambiente de teste.</FONT>
+<P><li>
+<FONT SIZE=2><b>Produ&ccedil;&atilde;o</b> - A consist&ecirc;ncia liberada
+estar&aacute; dispon&iacute;vel somente para os programas que
+foram compilados para o ambiente de produ&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>A libera&ccedil;&atilde;o para produ&ccedil;&atilde;o
+torna a consist&ecirc;ncia dispon&iacute;vel para utiliza&ccedil;&atilde;o
+no ambiente de produ&ccedil;&atilde;o no mesmo computador onde
+ela foi liberada. Para torn&aacute;-la dispon&iacute;vel em outro
+computador, &eacute; necess&aacute;rio executar o </FONT><I><FONT SIZE=2 COLOR=#000000>job</FONT></I><FONT SIZE=2>
+SD/D/JB/70 no computador de origem, copiar o arquivo SS/C/AF/71
+para o computador de produ&ccedil;&atilde;o e nele executar o
+</FONT><I><FONT SIZE=2 COLOR=#000000>job</FONT></I><FONT SIZE=2>
+SD/D/JB/72.</FONT>
+<P>
+<FONT SIZE=2>Neste </FONT><I><FONT SIZE=2 COLOR=#000000>job</FONT></I><FONT SIZE=2>,
+como as telas liberadas para produ&ccedil;&atilde;o s&atilde;o
+tamb&eacute;m extra&iacute;das, os arquivos SS/S/AF/70 e SS/S/AF/72
+devem ser copiados para possibilitar a compatibiliza&ccedil;&atilde;o
+entre as telas e as consist&ecirc;ncias, caso estas tamb&eacute;m
+tenham de ser liberadas para o computador de produ&ccedil;&atilde;o.
+</FONT></dir>
+<P>
+<FONT SIZE=2>Se alguma tela ou consist&ecirc;ncia tiver sido liberada
+indevidamente para produ&ccedil;&atilde;o e se houver um computador
+diferente para processamento dos sistemas em produ&ccedil;&atilde;o,
+sua transfer&ecirc;ncia para a m&aacute;quina de produ&ccedil;&atilde;o
+pode ser cancelada atrav&eacute;s do menu CANTRAPRO. Detalhes
+a esse respeito est&atilde;o descritos na se&ccedil;&atilde;o
+III, &quot;Fun&ccedil;&otilde;es de Apoio&quot;, neste manual.</FONT>
+<P>
+<FONT SIZE=2>A libera&ccedil;&atilde;o de consist&ecirc;ncia de
+tela n&atilde;o est&aacute; associada a nenhuma tela de processamento.
+Portanto, para efetu&aacute;-la, basta transmitir os argumentos
+do menu &quot;LIBCONTEL&quot; ou &quot;LIBCON&quot;, conforme
+descrito a seguir.</FONT>
+<P><dir>
+<FONT SIZE=2 COLOR=#000000><b>CAMPOS DA TELA</b></FONT><dir>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Consistencia</FONT></B><FONT SIZE=2>
+- C&oacute;digo da consist&ecirc;ncia no padr&atilde;o SADS (sssCnnmm).</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>Ambiente</FONT></B><FONT SIZE=2>
+- Ambiente para o qual a consist&ecirc;ncia ser&aacute; liberada.</FONT>
+<P>
+<FONT SIZE=2>Podem ser informados os seguintes ambientes:</FONT>
+<P><blockquote><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;T&quot; (Teste) - Para liberar a consist&ecirc;ncia
+para o ambiente de teste;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;P&quot; (Produ&ccedil;&atilde;o) - Para liberar
+a consist&ecirc;ncia para o ambiente de produ&ccedil;&atilde;o.</FONT></blockquote>
+<P>
+<FONT SIZE=2>N&atilde;o &eacute; poss&iacute;vel liberar uma consist&ecirc;ncia
+de tela em manuten&ccedil;&atilde;o diretamente para o ambiente
+de produ&ccedil;&atilde;o. Para isto, &eacute; necess&aacute;rio
+efetuar antes a sua libera&ccedil;&atilde;o para teste.</FONT></dir></dir>
+<P>
+<A NAME="Funca"><b><FONT SIZE=6 COLOR=#000000>Fun&ccedil;&otilde;es
+de apoio</FONT></b></A>
+<HR>
+<P>
+<A NAME="Espec"><B><FONT SIZE=5>Espec&iacute;ficas de telas</FONT></B></A>
+<P>
+<FONT SIZE=2>Para manipula&ccedil;&atilde;o do desenho de uma
+tela, est&atilde;o dispon&iacute;veis as seguintes fun&ccedil;&otilde;es
+de apoio:</FONT>
+<P><dir><li><FONT SIZE=2>Duplica&ccedil;&atilde;o de desenho da tela;</FONT>
+<P><li><FONT SIZE=2>Lista de telas desenhadas;</FONT></dir>
+<P>
+<FONT SIZE=2>A seguir, s&atilde;o apresentados detalhes sobre
+cada uma dessas fun&ccedil;&otilde;es:</FONT>
+<P><dir>
+<A NAME="Dupli"><B><FONT SIZE=4>Duplica&ccedil;&atilde;o de desenho
+de tela</FONT></B></A>
+<P>
+<FONT SIZE=2>A duplica&ccedil;&atilde;o de desenho de tela consiste
+na c&oacute;pia do desenho de uma tela com outro c&oacute;digo,
+sendo este inclu&iacute;do com ESTADO = &quot;D&quot; (em desenvolvimento).</FONT>
+<P>
+<FONT SIZE=2>A duplica&ccedil;&atilde;o de tela &eacute; utilizada
+quando existe a necessidade de se criar um desenho de tela similar
+a um j&aacute; existente. Neste caso, basta duplicar o desenho
+j&aacute; existente e processar a altera&ccedil;&atilde;o da tela
+rec&eacute;m-criada.</FONT>
+<P>
+<FONT SIZE=2>Para efetuar a duplica&ccedil;&atilde;o de desenho
+de tela, &eacute; necess&aacute;rio que o desenho da tela a ser
+duplicado j&aacute; esteja cadastrado no reposit&oacute;rio de
+dados.</FONT>
+<P>
+<FONT SIZE=2>Para disparar a duplica&ccedil;&atilde;o, deve-se
+primeiramente transmitir os argumentos do menu DESTEL, informando
+&quot;DUP&quot; no campo &quot;Operacao&quot;.</FONT>
+<P>
+<FONT SIZE=2><B>CAMPOS DA TELA</FONT></B><dir>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>NOME</FONT></B><FONT SIZE=2> - C&oacute;digo
+da tela cujo desenho ser&aacute; duplicado.</FONT>
+<P>
+<FONT SIZE=2>Este c&oacute;digo deve ser informado no padr&atilde;o
+SADS (sssTnnmm, sssEnnmm ou sssJxnmm).</FONT>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<B><FONT SIZE=2 COLOR=#000000>ESTADO</FONT></B><FONT SIZE=2> -
+Estado da tela cujo desenho ser&aacute; duplicado.</FONT>
+<P>
+<FONT SIZE=2>Podem ser informados os seguintes valores:</FONT>
+<P><blockquote><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;D&quot; (Desenvolvimento);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;M&quot; (Manuten&ccedil;&atilde;o);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;P&quot; (Produ&ccedil;&atilde;o);</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>&quot;T&quot; (Teste).</FONT></blockquote>
+<P>
+<B><FONT SIZE=2 COLOR=#000000>DUPLICAR COM O NOME DE</FONT></B><FONT SIZE=2>
+- C&oacute;digo da nova tela que ser&aacute; criada.</FONT>
+<P>
+<FONT SIZE=2>Este c&oacute;digo deve ser informado no padr&atilde;o
+SADS (sssTnnmm, sssEnnmm ou sssJxnmm).</FONT>
+<P>
+<A NAME="Liste"><FONT SIZE=4 COLOR=#000000>Lista de telas desenhadas</FONT></A>
+<P>
+<FONT SIZE=2>A lista de telas cadastradas &eacute; uma consulta
+paginada que, a partir de um determinado argumento, exibe a rela&ccedil;&atilde;o
+de telas cadastradas num estado espec&iacute;fico.</FONT>
+<P>
+<FONT SIZE=2>Este argumento pode ser um c&oacute;digo de tela
+ou parte dele, devendo ter pelo menos quatro caracteres, ou seja,
+o sistema mais a constante de tela &quot;T&quot;, &quot;E&quot;
+ou &quot;J&quot;.</FONT>
+<P>
+<FONT SIZE=2>A consulta de telas desenhadas n&atilde;o est&aacute;
+associada a nenhuma tela de processamento. Portanto, para efetu&aacute;-la,
+basta transmitir os argumentos do menu &quot;DESTEL&quot;, informando
+&quot;LIS&quot;.</FONT></dir></dir>
+<P>
+<A NAME="Gener"><FONT SIZE=5 COLOR=#000000>Gen&eacute;ricas aplic&aacute;veis
+&agrave;s telas</FONT></A>
+<P><dir><img src="Bullet5.gif" width=13 heigth=13>
+<FONT SIZE=2></FONT><B><FONT SIZE=2 COLOR=#000000>Utilit&aacute;rios:</FONT></B>
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>Resseq&uuml;enciamento de estrutura de elemento;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>Duplica&ccedil;&atilde;o de elemento;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>Descri&ccedil;&atilde;o de elemento;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o
+de elemento;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o
+de elemento.</FONT></dir>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<FONT SIZE=2></FONT><B><FONT SIZE=2 COLOR=#000000>Consultas:</FONT></B>
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>Elementos por sistema;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>Estrutura de dados de elemento;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>Descri&ccedil;&atilde;o de elemento;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>Fonte de </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>.</FONT>
+</dir>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<FONT SIZE=2></FONT><B><FONT SIZE=2 COLOR=#000000>Refer&ecirc;ncia
+cruzada</FONT></B><FONT SIZE=2>:</FONT>
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>Elementos x elemento (Lista os programas relacionados
+&agrave; tela);</FONT></dir>
+<P><img src="Bullet5.gif" width=13 heigth=13>
+<FONT SIZE=2></FONT><B><FONT SIZE=2 COLOR=#000000>Informativos
+impressos:</FONT></B>
+<P><dir><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>Lista de elementos por sistema;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>Lista desenhos de telas;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>Lista estrutura de elemento;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>Lista atributos e campos por elemento;</FONT>
+<P><img src="Bullet7.gif" width=13 heigth=13>
+<FONT SIZE=2>Lista descri&ccedil;&atilde;o de elemento.</FONT></dir>
+<P>
+<FONT SIZE=2>Todos estes utilit&aacute;rios, consultas, refer&ecirc;ncias
+cruzadas e informativos impressos encontram-se detalhadamente
+descritos na Se&ccedil;&atilde;o III, &quot;Fun&ccedil;&otilde;es
+de apoio&quot;, neste manual.</FONT></dir>
+</BODY>
+</HTML>

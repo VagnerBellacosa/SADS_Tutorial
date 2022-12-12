@@ -1,0 +1,567 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>DATASET</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+
+<B><FONT SIZE=6><P><A NAME="Datas">Dataset</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Conce">Conceitua&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<I><FONT SIZE=2><P>Datasets</I> s&atilde;o cole&ccedil;&otilde;es de registros de dados que podem ser manipulados exclusivamente atrav&eacute;s do sistema gerenciador de banco de dados DMSII. Nos <I>datasets</I>, os dados ficam armazenados de forma similar aos arquivos convencionais, destes diferenciando-se apenas pela organiza&ccedil;&atilde;o e formas de acesso. O acesso ao <I>dataset</I> &eacute; feito somente atrav&eacute;s de extens&otilde;es espec&iacute;ficas do Cobol e BDMSCOBOL. </P>
+<P>Um <I>dataset</I> poder&aacute; ser redefinido logicamente. A essa redefini&ccedil;&atilde;o l&oacute;gica &eacute; dado o nome de <I>remap</I>.</FONT> </P>
+<FONT SIZE=2><P>O <I>remap</I> pode ser &uacute;til na restri&ccedil;&atilde;o do acesso &agrave;s informa&ccedil;&otilde;es para um determinado grupo de usu&aacute;rios ou na reformata&ccedil;&atilde;o dos registros do <I>dataset</I>. Essa redefini&ccedil;&atilde;o evita altera&ccedil;&otilde;es na l&oacute;gica de programas que j&aacute; utilizam o <I>dataset</I>.</FONT> </P>
+<FONT SIZE=2><P>Maiores informa&ccedil;&otilde;es relativas a <I>dataset</I> e <I>remap</I> poder&atilde;o ser obtidas no "DMSII - <I>Data and Structure Definition Language (DASDL) - Programming Reference Manual</I>" da Unisys.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Padro">Padroniza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O padr&atilde;o de codifica&ccedil;&atilde;o para identificar <I>datasets</I> no reposit&oacute;rio de dados do SADS &eacute; o seguinte:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>"sssBxx"</B> onde:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"sss"</B> &eacute; o c&oacute;digo alfab&eacute;tico que identifica o sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"B"</B> &eacute; a constante de dataset e</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><B><FONT SIZE=2>"xx"</B> &eacute; I identificador alfanum&eacute;rico do dataset.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>O identificador alfanum&eacute;rico diferencia um <I>dataset</I> de um <I>remap</I>. O <I>dataset</I> tem como identificador caracteres que variam de "00" a "50" e de "A0" a "ZZ", j&aacute; o <I>remap</I> &eacute; identificado por n&uacute;meros que variam de "51" a "99". </P>
+<P>Como o padr&atilde;o de codifica&ccedil;&atilde;o de <I>dataset</I> &eacute; semelhante ao de banco de dados, no momento da defini&ccedil;&atilde;o de um <I>dataset</I> ou <I>remap</I> no reposit&oacute;rio de dados, o c&oacute;digo informado s&oacute; ser&aacute; v&aacute;lido se n&atilde;o tiver sido anteriormente utilizado para identificar um banco de dados.</FONT> </P>
+<FONT SIZE=2><P>O fonte DASDL, cujo c&oacute;digo possui o padr&atilde;o ss/s/BL/xx, cont&eacute;m os atributos e campos que comp&otilde;em o <I>dataset</I> e a defini&ccedil;&atilde;o das chaves de acesso.</FONT> </P>
+<FONT SIZE=2><P>A seguir, &eacute; apresentado um exemplo de fonte DASDL gerado pelo SADS.</FONT> </P>
+<FONT SIZE=2><P>Para o <I>dataset</I> "SXYB01 - Lojas", temos o DASDL :</P>
+</FONT><PRE>
+   SXYB01 DATA SET "LOJAS"
+                   (
+                   &nbsp;Y0100-HEADER                               GROUP                            (
+                                Y0100-HDRDATA                  NUMBER (006)         ;
+                                Y0100-HDRHORA                  NUMBER (006)    ;
+                                Y0100-HDRESTACAO               NUMBER (003)    ;   )
+                    Y0100-LOJCOD                               NUMBER (003)    ;
+                   &nbsp;Y0100-LOJCGC                               NUMBER (014)    ;
+                   &nbsp;Y0100-LOJNOM                               ALPHA  (030)     ;
+                   &nbsp;Y0100-LOJTIP                               ALPHA  (001)     ;
+                   &nbsp;Y0100-LOJEND                               ALPHA  (060)     ;
+         );
+   SXYB01A SET OF SXYB01
+                &nbsp; KEY   (Y0100-LOJCOD           ,
+                         Y0100-LOJCGC           );
+   SXYB01B SUBSET OF SXYB01
+                   &nbsp; WHERE        Y0100-LOJTIP = "R"
+                   &nbsp; KEY          Y0100-LOJCOD
+                &nbsp;   &nbsp;DATA         Y0100-LOJNOM    ;
+</PRE>
+<FONT SIZE=2><P>Os mnem&ocirc;nicos dos campos de DASDL t&ecirc;m a seguinte forma&ccedil;&atilde;o:</FONT> </P>
+<FONT SIZE=2><P>Terceira letra do sistema ("Y", no exemplo) + o sequencial do <I>dataset</I> ("01", no exemplo) + o n&uacute;mero do registro ("00", no exemplo) + "-" (constante) + o mnem&ocirc;nico do atributo ou campo.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Utili">Utiliza&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O<I> dataset</I>, conforme descrito em sua conceitua&ccedil;&atilde;o, &eacute; utilizado para armazenar registros de dados manipulados pelo sistema gerenciador de banco de dados DMSII.</FONT> </P>
+<FONT SIZE=2><P>Um <I>dataset </I>pode ser definido como sendo um <I>Restart Dataset</I>, a fim de ser utilizado nas rotinas de recupera&ccedil;&atilde;o DMS.</FONT> </P>
+<FONT SIZE=2><P>Um <I>dataset</I>, ap&oacute;s ter sido cadastrado no reposit&oacute;rio de dados do SADS, pode ser utilizado na defini&ccedil;&atilde;o do banco de dados. A partir do momento em que ele estiver relacionado a um banco de dados, o <I>dataset</I> poder&aacute; ser referenciado em defini&ccedil;&otilde;es de base de dados e, depois disso, como recurso de programas <I>on-line</I>, <I>batch</I> e sub-rotinas.</P>
+</FONT><FONT SIZE=5><P><A NAME="Cadas">Cadastramento</A></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O cadastramento de um <I>dataset</I> s&oacute; ser&aacute; poss&iacute;vel se o sistema e os atributos que comp&otilde;em a sua estrutura estiverem definidos no reposit&oacute;rio de dados.</FONT> </P>
+<FONT SIZE=2><P>Se o <I>dataset</I> for ser criado a partir de uma entidade, &eacute; necess&aacute;rio que a entidade j&aacute; esteja totalmente cadastrada no reposit&oacute;rio de dados do SADS (defini&ccedil;&atilde;o, estrutura e chaves secund&aacute;rias, se houver). Tamb&eacute;m &eacute; necess&aacute;rio que tenha todos os seus atributos cadastrados, ou seja, entidades que possuam atributos com n&iacute;vel de defini&ccedil;&atilde;o "P" (provis&oacute;rio) n&atilde;o podem ser utilizadas para gera&ccedil;&atilde;o de <I>datasets</I>.</FONT> </P>
+<B><FONT SIZE=4><P>Roteiro</B></FONT> </P>
+<FONT SIZE=2><P>Um <I>dataset</I> poder&aacute; ser criado a partir de uma entidade ou definido diretamente no reposit&oacute;rio de dados.</FONT> </P>
+<FONT SIZE=2><P>A gera&ccedil;&atilde;o de um <I>dataset</I> &eacute; feita atrav&eacute;s da seguinte fun&ccedil;&atilde;o :</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cridat">Cria&ccedil;&atilde;o de dataset a partir de entidade</A><FONT SIZE=2>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para altera&ccedil;&otilde;es do cadastramento gerado ou para inclus&atilde;o de um <I>dataset</I>, temos as seguintes fun&ccedil;&otilde;es:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Defdat">Defini&ccedil;&atilde;o de dataset</A>; </P>
+<P><A HREF="#Cadest"><IMG SRC="Bullet5.gif" BORDER=0 WIDTH=12 HEIGHT=12>Cadastramento de estrutura de registro de dataset</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cadcha">Cadastramento de chaves de acesso (set/subset/access</A><FONT SIZE=2>);</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para complementa&ccedil;&otilde;es do cadastramento, tem-se as seguintes fun&ccedil;&otilde;es :</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cadcon">Cadastramento de condi&ccedil;&otilde;es para subsets autom&aacute;ticos</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Cadpar">Cadastramento de par&acirc;metros f&iacute;sicos de dataset e chaves de acesso</A><FONT SIZE=2>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Ap&oacute;s o cadastramento do <I>dataset</I>, as seguintes fun&ccedil;&otilde;es poder&atilde;o ser executadas:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Gerfon">Gera&ccedil;&atilde;o de fonte DASDL de dataset</A><FONT SIZE=2>;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><A HREF="#Gerpar">Gera&ccedil;&atilde;o de DASDL de par&acirc;metros f&iacute;sicos de dataset</A><FONT SIZE=2>.</FONT> </P></DIR>
+
+<FONT SIZE=5><P><A NAME="Cridat">Cria&ccedil;&atilde;o de</A><B> </B>dataset a partir de entidade</FONT> </P>
+<FONT SIZE=2><P>A cria&ccedil;&atilde;o de um <I>dataset</I>, de sua estrutura e chaves de acesso a partir de uma entidade s&oacute; ser&aacute; poss&iacute;vel se esta estiver cadastrada corretamente no reposit&oacute;rio de dados do SADS. </P>
+<P>Existe a possibilidade de uma entidade gerar mais de um <I>dataset</I> e de um <I>dataset</I> ser gerado a partir de mais de uma entidade. Neste &uacute;ltimo caso, cada entidade origina um tipo de registro do <I>dataset</I>. Para identificar os <I>datasets</I> ou tabelas gerados a partir de uma entidade, deve-se utilizar a refer&ecirc;ncia cruzada de elementos "REFELEELE". </P>
+<P>A entidade tamb&eacute;m dever&aacute; ter todos os seus atributos cadastrados no reposit&oacute;rio de dados, isto &eacute;, n&atilde;o deve possuir nenhum atributo provis&oacute;rio (NDEF = "P").</FONT> </P>
+<FONT SIZE=2><P>Os atributos, opcionalmente, podem ser criados na estrutura do <I>dataset</I> ordenados de acordo com seus formatos, onde todos os atributos alfab&eacute;ticos e alfanum&eacute;ricos s&atilde;o criados antes dos atributos num&eacute;ricos. A utiliza&ccedil;&atilde;o desta ordena&ccedil;&atilde;o de acordo com o formato pode ser especificada na tabela SBPM5000, cujos detalhes est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS".</FONT> </P>
+<FONT SIZE=2><P>Esta opera&ccedil;&atilde;o n&atilde;o est&aacute; associada a nenhuma tela de processamento. Para efetu&aacute;-la, basta transmitir o menu de opera&ccedil;&atilde;o "CRIDADENT", cujos campos est&atilde;o explicados a seguir:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Entidade</B> - C&oacute;digo da entidade de acordo com a padroniza&ccedil;&atilde;o adotada pelo SADS (sssEaaa).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Dataset</B> - C&oacute;digo do <I>dataset</I> a ser criado a partir da entidade (sssBxx).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Registro</B> - N&uacute;mero do registro do <I>dataset</I> que est&aacute; sendo criado (opcional).</FONT> </P>
+<FONT SIZE=2><P>&Eacute; poss&iacute;vel gerar um <I>dataset</I> ou um registro de <I>dataset</I> a partir de uma entidade. No segundo caso, mesmo que o <I>dataset</I> ainda n&atilde;o esteja cadastrado no reposit&oacute;rio de dados, ele poder&aacute; ser gerado. No entanto, &eacute; desnecess&aacute;rio informar o n&uacute;mero do registro, pois ser&aacute; gerado o registro de n&uacute;mero "00".</FONT> </P>
+<FONT SIZE=2><P>Para criar um registro de formato vari&aacute;vel para o <I>dataset</I>, deve-se informar o n&uacute;mero do registro.Para gerar mais do que um registro, &eacute; necess&aacute;rio que na defini&ccedil;&atilde;o do <I>dataset</I> isto esteja indicado atrav&eacute;s do campo REGISTRO. &Eacute; poss&iacute;vel cadastrar um registro intercalado entre dois j&aacute; existentes.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>Tipo</B> - Tipo de <I>dataset</I> a ser criado.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" <I>(Standard</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"C" <I>(Compact</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"R" <I>(Random</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"D" <I>(Direct</I>).</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Defdat">Defini&ccedil;&atilde;o de dataset</A></B></FONT> </P>
+<FONT SIZE=2><P>A fun&ccedil;&atilde;o de defini&ccedil;&atilde;o de <I>dataset</I> deve ser utilizada quando n&atilde;o houver uma entidade para, a partir dela, gerar o <I>dataset</I> e, tamb&eacute;m, para alterar defini&ccedil;&otilde;es geradas a partir de entidades.</FONT> </P>
+<FONT SIZE=2><P>CAMPOS DA TELA</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DATASET</B> - C&oacute;digo do <I>dataset</I> no padr&atilde;o SADS (sssBxx).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Descri&ccedil;&atilde;o resumida do <I>dataset</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>REMAP DE</B> - C&oacute;digo do <I>dataset</I> que estiver sendo "remapeado". </P>
+<P>Este campo somente deve ser informado nos casos de defini&ccedil;&atilde;o de <I>remaps</I>.</FONT> </P>
+<I><FONT SIZE=2><P>Remap</I> &eacute; a vis&atilde;o l&oacute;gica de um <I>dataset</I> j&aacute; definido. A defini&ccedil;&atilde;o de <I>remaps</I> n&atilde;o exige defini&ccedil;&otilde;es pr&eacute;vias das estruturas dos registros, <I>sets</I> ou <I>subsets</I> do <I>dataset</I> a ser remapeado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME PADRAO NA INSTALACAO </B>- C&oacute;digo do <I>dataset</I> fora do padr&atilde;o SADS. </P>
+<P>Este c&oacute;digo &eacute; utilizado quando a instala&ccedil;&atilde;o possui um padr&atilde;o espec&iacute;fico para nomes de <I>datasets</I>, diferente do padr&atilde;o adotado para cria&ccedil;&atilde;o atrav&eacute;s do SADS, ou para <I>datasets</I> que j&aacute; existam na instala&ccedil;&atilde;o e que n&atilde;o foram criados atrav&eacute;s do SADS.</FONT> </P>
+<FONT SIZE=2><P>Caso este campo seja informado, ser&aacute; utilizado em todas as gera&ccedil;&otilde;es feitas pelo SADS, isto &eacute;, o nome padr&atilde;o na instala&ccedil;&atilde;o substituir&aacute; o c&oacute;digo padr&atilde;o do SADS tanto em fontes DASDL e de programas como nas<I> libraries</I> de par&acirc;metros f&iacute;sicos e de declara&ccedil;&atilde;o de bancos.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>REGISTROS</B> - Quantidade de registros a serem definidos.</FONT> </P>
+<FONT SIZE=2><P>Para <I>datasets</I> de formato fixo, deve-se informar "00".</FONT> </P>
+<FONT SIZE=2><P>Para <I>datasets</I> de formato vari&aacute;vel, deve-se informar quantos tipos o <I>dataset</I> possui, independente do registro "00" (parte fixa que cont&eacute;m os campos chaves). Por exemplo: se o <I>dataset</I> possuir os registros "00", "01" e "02", deve-se informar "02" no campo REGISTROS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>TIPO DE DATASET</B> - Tipo de organiza&ccedil;&atilde;o do <I>dataset</I>.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" <I>(Standard</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"C" <I>(Compact</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"D" <I>(Direct</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"R" <I>(Random</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"T" (<I>Restart Dataset</I>).</FONT> </P></DIR>
+
+<FONT SIZE=2><P>O tipo "T" s&oacute; &eacute; v&aacute;lido para os <I>datasets</I> de c&oacute;digo "SBGB01", "SBGB03", "SBGB04". "SBGB05", "SBGB06" ou "SBGB07".</FONT> </P>
+<FONT SIZE=2><P>Para utiliza&ccedil;&atilde;o de r<I>estart dataset</I> com c&oacute;digo diferente de "SBGB01", a tabela de op&ccedil;&otilde;es de compila&ccedil;&atilde;o, SBPM5018, deve ser utilizada, informando-se as op&ccedil;&otilde;es "SADSRDS03" para uso do "SBGB03", "SADSRDS04" para uso do "SBGB04","SADSRDS05" para uso do "SBGB05","SADSRDS06" para uso do "SBGB06" ou "SADSRDS07" para uso do "SBGB07". Detalhes a este respeito est&atilde;o descritos na se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>INCORPORAR</B></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOMES EXTERNOS DE ATRIBUTOS</B> - Indicador de utiliza&ccedil;&atilde;o de c&oacute;digo externo de atributo.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para que os atributos pertencentes &agrave; estrutura do <I>dataset</I> sejam referenciados pelos seus c&oacute;digos externos.</FONT> </P>
+<FONT SIZE=2><P>Neste caso, os c&oacute;digos externos dos atributos ser&atilde;o utilizados em todas as gera&ccedil;&otilde;es feitas pelo SADS, isto &eacute;, os c&oacute;digos externos substituir&atilde;o os c&oacute;digos padr&otilde;es dos atributos nos fontes DASDL e de programas.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para que os atributos pertencentes &agrave; estrutura do <I>dataset</I> n&atilde;o sejam referenciados pelos seus c&oacute;digos externos e sim pelos seus mnem&ocirc;nicos (c&oacute;digos).</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ESTRUTURA DE HEADER PADRAO</B> - Indicador de incorpora&ccedil;&atilde;o do <I>header</I> padr&atilde;o da instala&ccedil;&atilde;o no <I>dataset</I>.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para incorporar o <I>header</I> padr&atilde;o na gera&ccedil;&atilde;o do DASDL do <I>dataset</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para n&atilde;o incorporar o <I>header</I> padr&atilde;o na gera&ccedil;&atilde;o do DASDL do <I>dataset</I>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>O <I>dataset</I> poder&aacute; ter um <I>header</I> espec&iacute;fico, n&atilde;o ter <I>header</I> algum ou incorporar o <I>header</I> padr&atilde;o da instala&ccedil;&atilde;o ou do banco de dados, definido na tabela SBPM8015, cujos detalhes est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS".</FONT> </P>
+<FONT SIZE=2><P>O valor <I>default </I>para incorpora&ccedil;&atilde;o d<I>e header </I>padr&atilde;o pode ser parametrizado na tabela SBPM5000, cujos detalhes est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS".</FONT> </P>
+<FONT SIZE=2><P>Se a incorpora&ccedil;&atilde;o do <I>header</I> padr&atilde;o for definida, no momento da gera&ccedil;&atilde;o do fonte DASDL do <I>dataset</I>, os campos definidos na tabela ser&atilde;o inclu&iacute;dos no in&iacute;cio da estrutura do mesmo. Os campos de utiliza&ccedil;&atilde;o gen&eacute;rica (NDEF="G") que fizerem parte do <I>header</I>, tanto o padr&atilde;o quanto o espec&iacute;fico, ser&atilde;o tratados nas gera&ccedil;&otilde;es de programas executados atrav&eacute;s do SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>PARAMETROS FISICOS DEFAULTS</B> - Indicador de incorpora&ccedil;&atilde;o de <I>defaults</I> de par&acirc;metros f&iacute;sicos pr&eacute;-definidos para os <I>datasets</I> da instala&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para incorporar os par&acirc;metros f&iacute;sicos definidos para todos os <I>datasets</I> da instala&ccedil;&atilde;o na gera&ccedil;&atilde;o do DASDL do<I> dataset</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para n&atilde;o incorporar os par&acirc;metros f&iacute;sicos de <I>datasets</I> da instala&ccedil;&atilde;o na defini&ccedil;&atilde;o do <I>dataset.</I></FONT> </P></DIR>
+
+<FONT SIZE=2><P>Os par&acirc;metros f&iacute;sicos podem ser definidos especificamente para um <I>dataset</I>, exceto <I>direct dataset, </I>bem como para todos os <I>datasets</I> da instala&ccedil;&atilde;o, na tabela SBPM5090. Detalhes a este respeito est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<FONT SIZE=2><P>Caso tenha sido definido a incorpora&ccedil;&atilde;o de <I>defaults</I> de par&acirc;metros f&iacute;sicos para um <I>dataset</I> e se, no momento da gera&ccedil;&atilde;o de sua <I>library</I> de par&acirc;metros f&iacute;sicos, alguma informa&ccedil;&atilde;o n&atilde;o estiver definida para o <I>mesmo, </I>esta informa&ccedil;&atilde;o ser&aacute; suprida pela contida na tabela de par&acirc;metros f&iacute;sicos de <I>datasets</I> da instala&ccedil;&atilde;o (Tabela SBPM5090)<I>.</I></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>LIBRARY PARA GERACAO DE DASDL</B> - C&oacute;digo da <I>library</I> a ser inclu&iacute;da no fonte DASDL do <I>dataset</I>.</FONT> </P>
+<FONT SIZE=2><P>Pode-se declarar uma <I>library</I> que contenha defini&ccedil;&otilde;es de par&acirc;metros f&iacute;sicos que n&atilde;o estejam sendo contemplados na vers&atilde;o corrente do SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME EXTERNO ATRIBUTO RECORD TYPE</B> - Nome externo que ser&aacute; gerado para o atributo <I>tpregistro</I>.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Cadest">Cadastramento de estrutura de registro de dataset</A></B></FONT> </P>
+<FONT SIZE=2><P>Esta opera&ccedil;&atilde;o permite definir a estrutura dos registros do <I>dataset</I>, com as especifica&ccedil;&otilde;es dos atributos e campos que a comp&otilde;em, seus relacionamentos e suas particularidades.</FONT> </P>
+<FONT SIZE=2><P>No contexto de <I>datase</I>t, entenda-se atributo como atributo propriamente dito, campo ou sin&ocirc;nimo.</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>DATASET</B> - C&oacute;digo do <I>dataset</I> de acordo com a padroniza&ccedil;&atilde;o adotada pelo SADS (sssBxx).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>REGISTRO</B> - N&uacute;mero que identifica o formato do registro (<I>record type</I>) nas estruturas do <I>dataset</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NOME</B> - Descri&ccedil;&atilde;o resumida do <I>dataset</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SEQ </B>- N&uacute;mero sequencial que indica o posicionamento do atributo dentro da estrutura do <I>dataset</I>.</FONT> </P>
+<FONT SIZE=2><P>Este campo j&aacute; vem informado, sendo o primeiro n&uacute;mero igual a "0010" e os demais acrescidos de 10.</FONT> </P>
+<FONT SIZE=2><P>Para incluir um atributo entre dois j&aacute; inclu&iacute;dos, deve-se preencher uma linha que estiver em branco e alterar o n&uacute;mero sequencial desta linha para um n&uacute;mero entre os j&aacute; informados. O SADS reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima opera&ccedil;&atilde;o, os atributos j&aacute; estar&atilde;o na nova ordem.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>ATRIBUTO</B> - Mnem&ocirc;nico do atributo que far&aacute; parte da estrutura do <I>dataset</I>.</FONT> </P>
+<FONT SIZE=2><P>As estruturas <I>dos datasets</I> podem ser compostas por atributos ou campos. A tabela SBPM7002 e o par&acirc;metro "EMPCOD" da tabela SBPM5000 definem estas possibilidades. Detalhes a este respeito est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS".</FONT> </P>
+<FONT SIZE=2><P>A seguir, &eacute; apresentada uma lista contendo os atributos e campos gen&eacute;ricos do SADS, comumente utilizados na estrutura dos <I>datasets</I>, e cujo n&iacute;vel de defini&ccedil;&atilde;o &eacute; geral (NDEF = "G"):</FONT> </P><DIR>
+
+<FONT SIZE=2><P>EMPCOD - C&oacute;digo de empresa;</FONT> </P>
+<FONT SIZE=2><P>EMPNOM - Nome da empresa;</FONT> </P>
+<FONT SIZE=2><P>EMPSIGLA - Sigla da empresa;</FONT> </P>
+<FONT SIZE=2><P>ETBCOD - C&oacute;digo de estabelecimento;</FONT> </P>
+<FONT SIZE=2><P>ETBNOM - Nome do estabelecimento;</FONT> </P>
+<FONT SIZE=2><P>HDRDATA - Data para <I>header</I> de <I>dataset</I>;</FONT> </P>
+<FONT SIZE=2><P>HDRESTACAO - N&uacute;mero de esta&ccedil;&atilde;o para <I>header</I> de <I>dataset</I>;</FONT> </P>
+<FONT SIZE=2><P>HDRHORA - Hora para <I>header</I> de <I>dataset</I>;</FONT> </P>
+<FONT SIZE=2><P>HDRPROGRAMA - C&oacute;digo de programa para <I>header</I> de <I>dataset</I>;</FONT> </P>
+<FONT SIZE=2><P>HDRSTATGER - <I>Status</I> geral para <I>header</I> de <I>dataset</I>;</FONT> </P>
+<FONT SIZE=2><P>HDRUSUNUM - C&oacute;digo de usu&aacute;rio para <I>header</I> de <I>dataset</I>;</FONT> </P>
+<FONT SIZE=2><P>UNDCOD - C&oacute;digo de unidade;</FONT> </P>
+<FONT SIZE=2><P>UNDNOM - Nome de unidade.</P></DIR>
+
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NIVEL</B> - N&iacute;vel de estrutura&ccedil;&atilde;o do atributo, an&aacute;logo ao n&iacute;vel de &aacute;rea de <I>work</I> dos programas Cobol.</FONT> </P>
+<FONT SIZE=2><P>O n&iacute;vel inicial &eacute; o 10. Se for necess&aacute;rio criar agrupamentos de atributos, deve-se usar m&uacute;ltiplos de 5, a partir de 15, at&eacute; 45.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>NDEF</B> - N&iacute;vel de defini&ccedil;&atilde;o do atributo. </P>
+<P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" (Sistema) - Para atributo definido no sistema informado no campo SIS ou para atributo do mesmo sistema do <I>dataset</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"G" (Geral) - Para atributo gen&eacute;rico do SADS;<BR>
+Caso NDEF n&atilde;o seja informado, o atributo ser&aacute; interpretado como um item grupo na estrutura do <I>dataset</I>. Por&eacute;m, paara os atributos que far&atilde;o parte das chaves de acesso, o n&iacute;vel de defini&ccedil;&atilde;o deve obrigatoriamente ser informado.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>SIS </B>- C&oacute;digo do sistema do atributo.</FONT> </P>
+<FONT SIZE=2><P>Este campo deve ser informado somente se NDEF = "S". Se o atributo estiver definido no mesmo sistema do <I>dataset</I> em quest&atilde;o, n&atilde;o &eacute; necess&aacute;rio inform&aacute;-lo.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>OCCURS</B> - N&uacute;mero de ocorr&ecirc;ncias do atributo para cria&ccedil;&atilde;o de grupos repetitivos dentro da estrutura.</FONT> </P>
+<FONT SIZE=2><P>Para criar um grupo repetitivo, &eacute; necess&aacute;rio definir um item grupo, pois os itens elementares n&atilde;o aceitam o preenchimento do campo OCCURS.</FONT> </P>
+<FONT SIZE=2><P>Se o <I>dataset </I>possuir um atributo multivalorado em sua estrutura, o fonte DASDL ser&aacute; gerado com a cl&aacute;usula <I>"occurs". </I>O programa <I>batch </I>SD/U/PC/09 emite um relat&oacute;rio com a rela&ccedil;&atilde;o de todos os <I>datasets</I> da instala&ccedil;&atilde;o que possuem atributos multivalorados em sua estrutura.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CLAUSULA</B> - Tipo de relacionamento para o atributo.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"C" (Coment&aacute;rio) - Indica que o atributo funciona como uma redefini&ccedil;&atilde;o do anterior. </P>
+<P>Como o DMSII n&atilde;o permite redefini&ccedil;&atilde;o, apenas ser&aacute; gerado um coment&aacute;rio no fonte DASDL do <I>dataset</I>. Caso este atributo esteja referenciado em outras estruturas, esta redefini&ccedil;&atilde;o ser&aacute; observada nas movimenta&ccedil;&otilde;es geradas nos programas. Esta cl&aacute;usula exige que o atributo anterior existente na estrutura do registro seja informado no campo COMPLEMENTO. </P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"D" (Cl&aacute;usula <I>Depending On</I>) </P>
+<P>No campo COMPLEMENTO, deve-se informar o atributo num&eacute;rico pertencente &agrave; estrutura que est&aacute; sendo definida e para o qual a cl&aacute;usula <I>depending on</I> ser&aacute; gerada.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"E" (Nome externo) - Indica que o nome colocado no campo COMPLEMENTO dever&aacute; ser assumido na gera&ccedil;&atilde;o do DASDL das estruturas e dos programas, em detrimento do nome gerado no padr&atilde;o SADS, facilitando, desta forma, a integra&ccedil;&atilde;o com bancos de dados j&aacute; existentes;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"I" (<I>Initialvalue</I>) - Indica que o atributo ter&aacute; o valor inicial informado no campo COMPLEMENTO;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" (<I>Null</I>) - Indica que o valor informado no campo COMPLEMENTO ser&aacute; utilizado para implementar a op&ccedil;&atilde;o "NULL" do DMSII;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"R" (<I>Required</I>) - Indica que a informa&ccedil;&atilde;o do atributo ser&aacute; obrigat&oacute;ria na atualiza&ccedil;&atilde;o do <I>dataset</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" (Cl&aacute;usula <I>Stored Depending On</I> ou <I>Stored Optionaly</I>) - Somente para <I>compact dataset</I>. </P>
+<P>A cl&aacute;usula <I>Stored Depending On</I> ser&aacute; gerada no fonte DASDL se um atributo n&uacute;merico, pertencente &agrave; estrutura, for informado no campo COMPLEMENTO. Se nenhum atributo for informado no campo COMPLEMENTO, ser&aacute; gerada a cl&aacute;usula <I>Stored Optionaly</I>.</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"T" (<I>Restart Dataset</I>) - Indica que o atributo &eacute; um dos obrigat&oacute;rios na estrutura do <I>Restart Dataset</I>.</FONT> </P>
+<FONT SIZE=2><P>Esta cl&aacute;usula somente &eacute; v&aacute;lida para atributos pertencentes ao <I>Restart Dataset.<BR>
+</I>Neste caso, no campo COMPLEMENTO deve ser informado qual o tipo do atributo especificado, que deve ser, nesta mesma sequ&ecirc;ncia:</FONT> </P><DIR>
+
+<FONT SIZE=2><P>"TRANSACTION COUNT";</FONT> </P>
+<FONT SIZE=2><P>"RESTART TYPE";</FONT> </P>
+<FONT SIZE=2><P>"COMS-ID";</FONT> </P>
+<FONT SIZE=2><P>"COMS-PROGRAM" e</FONT> </P>
+<FONT SIZE=2><P>"COMS-LOCATOR".</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"V" (Cl&aacute;usula <I>Size Varying Depending On</I> ou <I>Size Varying</I>) - Somente para <I>compact dataset</I>. </P>
+<P>A cl&aacute;usula <I>Size Varying Depending On</I> ser&aacute; gerada no fonte DASDL se um atributo n&uacute;merico, pertencente &agrave; estrutura, for informado no campo COMPLEMENTO. Se nenhum atributo for informado no campo COMPLEMENTO, ser&aacute; gerada a cl&aacute;usula <I>Size Varying</I>.</FONT> </P>
+<FONT SIZE=2><P>Em uma estrutura de dataset, um atributo pode possuir v&aacute;rias cl&aacute;usulas, bastando para isto repetir a informa&ccedil;&atilde;o do atributo, com uma outra cl&aacute;usula.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>COMPLEMENTO</B> - Este campo tem sua utiliza&ccedil;&atilde;o dependente da informa&ccedil;&atilde;o do campo CLAUSULA, conforme explica&ccedil;&otilde;es anteriores.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=12 HEIGHT=12><B><FONT SIZE=2>CONTINUA (S/N)</B> - Indicador de continuidade de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"S" - Para prosseguir na opera&ccedil;&atilde;o que est&aacute; sendo efetuada;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=12><FONT SIZE=2>"N" - Para encerrar a opera&ccedil;&atilde;o que est&aacute; sendo efetuada.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Se uma tela n&atilde;o for suficiente para a informa&ccedil;&atilde;o de todos os atributos da estrutura do <I>dataset</I>, ao informar "S" no campo CONTINUA, uma nova tela ser&aacute; mostrada para informa&ccedil;&atilde;o de outros atributos.</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Cadcha">Cadastramento de chaves de acesso (set/subset/access</B>)</A></FONT> </P>
+<I><FONT SIZE=2><P>Set, subset e access</I> s&atilde;o estruturas utilizadas para recupera&ccedil;&atilde;o de registros em <I>datasets</I>, podendo tamb&eacute;m representar relacionamentos entre registros de <I>datasets</I>.</FONT> </P>
+<I><FONT SIZE=2><P>Set </I>&eacute; utilizado para executar acessos a registros em <I>dataset</I>s, em uma sequ&ecirc;ncia l&oacute;gica determinada. Cada <I>set</I> &eacute; um arquivo independente que cont&eacute;m uma cole&ccedil;&atilde;o de &iacute;ndices ou ponteiros voltados para registros de <I>datasets</I>. Para cada registro do <I>dataset</I> h&aacute; um equivalente em cada <I>set</I>.</FONT> </P>
+<I><FONT SIZE=2><P>Subset</I> tamb&eacute;m &eacute; utilizado para executar acessos a registros em <I>dataset</I>s, em alguma sequ&ecirc;ncia l&oacute;gica determinada<I>. </I>Por&eacute;m, somente registros do <I>dataset</I> que satisfa&ccedil;am a condi&ccedil;&atilde;o determinada para o <I>subset</I> ter&atilde;o nele um registro relacionado, ou seja, cada <I>subset</I> &eacute;, tamb&eacute;m, um arquivo independente que cont&eacute;m uma cole&ccedil;&atilde;o de &iacute;ndices ou ponteiros voltados para alguns registros de um &uacute;nico <I>dataset</I>.</FONT> </P>
+<FONT SIZE=2><P>Os <I>subsets</I> podem ser autom&aacute;ticos ou manuais, sendo que para os autom&aacute;ticos existem condi&ccedil;&otilde;es agregadas denominadas "WHERE CONDITIONS".</FONT> </P>
+<I><FONT SIZE=2><P>Access</I> &eacute; usado para recuperar registros em <I>direct </I>e<I> random datasets</I>. Estes tipos de <I>datasets</I> devem possuir um &uacute;nico <I>access</I> declarado, pois eles n&atilde;o s&atilde;o arquivos independentes. Portanto, o <I>access</I> define simplesmente como ser&atilde;o ordenados os registros dos <I>datasets</I>.</FONT> </P>
+<P>Para efetuar o cadastramento de <I>set</I>/<I>subset</I>/<I>access</I>, &eacute; necess&aacute;rio que o <I>dataset</I> e sua estrutura estejam cadastrados no reposit&oacute;rio de dados do SADS. </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> CHAVE</B> - C&oacute;digo alfanum&eacute;rico que identifica a chave de acesso no padr&atilde;o SADS (sssBxxa).</FONT> </P>
+<FONT SIZE=2><P>As chaves de acesso de um <I>dataset</I> s&atilde;o compostas pelo c&oacute;digo do <I>dataset</I> mais uma letra que ir&aacute; diferenciar as diversas chaves de acesso de um mesmo <I>dataset</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> NOME</B> - Descri&ccedil;&atilde;o resumida da chave de acesso.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> PADRAO INST.</B> - C&oacute;digo da chave de acesso fora do padr&atilde;o SADS. </P>
+<P>Este c&oacute;digo &eacute; utilizado quando a instala&ccedil;&atilde;o possui um padr&atilde;o espec&iacute;fico para nomes de estruturas DMSII, diferente do adotado pelo SADS, ou &eacute; utilizado para definir estruturas que j&aacute; existam na instala&ccedil;&atilde;o e que n&atilde;o foram criadas atrav&eacute;s do SADS.</FONT> </P>
+<FONT SIZE=2><P>Caso este campo seja informado, ele ser&aacute; utilizado em todas as gera&ccedil;&otilde;es efetuadas pelo SADS, isto &eacute;, o nome padr&atilde;o na instala&ccedil;&atilde;o substituir&aacute; o c&oacute;digo padr&atilde;o do SADS tanto em fontes DASDL e de programas como nas<I> libraries</I> de par&acirc;metros f&iacute;sicos e de declara&ccedil;&atilde;o de bancos.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> TIPO</B> - Tipo de chave a ser utilizada.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "S" <I>(Set</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "T" <I>(Subset</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "A" <I>(Access</I>).</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> AUT/MAN.</B> - Tipo do <I>subset</I>.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "A" - Para <I>subset</I> autom&aacute;tico;</P>
+</FONT><P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "M" - Para <I>subset</I> manual.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para <I>subset</I> autom&aacute;tico, a condi&ccedil;&atilde;o para sele&ccedil;&atilde;o dos registros a serem inclu&iacute;dos na chave &eacute; verificada automaticamente pelo DMSII. Portanto, &eacute; necess&aacute;rio que esta condi&ccedil;&atilde;o - WHERE<I> </I>CONDITION - seja definida no reposit&oacute;rio de dados do SADS. Detalhes a este respeito est&atilde;o descritos no t&oacute;pico "Cadastramento de condi&ccedil;&otilde;es para <I>subsets </I>autom&aacute;tico", neste mesmo item.</FONT> </P>
+<FONT SIZE=2><P>O <I>subset</I> deve ser declarado como manual quando a condi&ccedil;&atilde;o para sele&ccedil;&atilde;o for verificada pelos programas aplicativos.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> ORGAN. </B>- Tipo de organiza&ccedil;&atilde;o de <I>sets</I> e <I>subsets</I>.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "IS" <I>(Index sequential</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "IR" <I>(Index random</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "OL" <I>(Ordered list</I>).</FONT> </P></DIR>
+
+<FONT SIZE=2><P>O <I>default</I> assumido como tipo de organiza&ccedil;&atilde;o da chave de acesso &eacute; "IS" (<I>Index Sequential</I>).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> DUPLICATES</B> - Indicador de registros duplicados na chave.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "N" <I>(No duplicates</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "K" <I>(No duplicates keychangeok</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "D" <I>(Duplicates</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "F" <I>(Duplicates first</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "L" <I>(Duplicates last</I>).</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> VISAO DO SET</B> - C&oacute;digo do <I>set</I> ao qual a vis&atilde;o se refere.</FONT> </P>
+<FONT SIZE=2><P>Caso esteja sendo cadastrada uma vis&atilde;o, deve-se ent&atilde;o informar o c&oacute;digo do <I>set</I> ao qual esta vis&atilde;o se refere. Neste caso o <I>set</I> deve ter sido anteriormente cadastrado e n&atilde;o deve ser informada a estrutura de tal vis&atilde;o, pois ser&aacute; assumida a mesma estrutura do <I>set</I> ao qual ela se refere.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> INCORPORAR DEFAULTS NA GERACAO</B> - Indicador de incorpora&ccedil;&atilde;o de <I>defaults</I> de par&acirc;metros f&iacute;sicos para as estruturas de acesso na gera&ccedil;&atilde;o do DASDL do <I>dataset</I>.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "S" - Para incorporar os <I>defaults</I> padr&atilde;o da instala&ccedil;&atilde;o na gera&ccedil;&atilde;o da <I>library</I> de<BR>
+par&acirc;metros f&iacute;sicos do <I>dataset</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "N" - Para n&atilde;o incorporar os <I>defaults</I> padr&atilde;o da instala&ccedil;&atilde;o na gera&ccedil;&atilde;o da <I>library</I> de<BR>
+par&acirc;metros f&iacute;sicos do <I>dataset</I>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Os par&acirc;metros f&iacute;sicos podem ser definidos para todas as chaves de acesso de todos os<I> datasets</I> da instala&ccedil;&atilde;o na tabela SBPM5090. Detalhes a este respeito est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<FONT SIZE=2><P>Caso a incorpora&ccedil;&atilde;o de <I>defaults</I> da instala&ccedil;&atilde;o tenha sido solicitada e se, no momento da gera&ccedil;&atilde;o da <I>library</I> de par&acirc;metros f&iacute;sicos, alguma informa&ccedil;&atilde;o n&atilde;o estiver definida para a chave de acesso, esta informa&ccedil;&atilde;o ser&aacute; suprida pela contida na tabela de par&acirc;metros f&iacute;sicos de <I>datasets</I> da instala&ccedil;&atilde;o (Tabela SBPM5090).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> LIBRARY PARA GERACAO DE DASDL</B> - C&oacute;digo da <I>library</I> a ser inclu&iacute;da no fonte DASDL do <I>dataset</I>.</FONT> </P>
+<FONT SIZE=2><P>Pode-se incluir uma <I>library</I> que contenha defini&ccedil;&otilde;es de par&acirc;metros f&iacute;sicos para estruturas de acesso DMSII que n&atilde;o estejam sendo contempladas pela vers&atilde;o corrente do SADS.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> SEQ</B> - N&uacute;mero sequencial para posicionamento do atributo na estrutura da chave. </P>
+<P>Este campo j&aacute; vem informado, sendo o primeiro n&uacute;mero igual a "0010" e os demais, acrescidos de 10.</FONT> </P>
+<FONT SIZE=2><P>Para incluir um atributo entre dois j&aacute; existentes, deve-se preencher uma linha que estiver em branco e alterar o n&uacute;mero sequencial desta linha para um n&uacute;mero entre os j&aacute; informados. O SADS reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima opera&ccedil;&atilde;o, os atributos j&aacute; estar&atilde;o na nova ordem.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> ATRIBUTO</B> - Mnem&ocirc;nico do atributo que comp&otilde;e a chave de acesso ou que ser&aacute; utilizado como campo de dado redundante na estrutura da chave (<I>key</I> <I>data</I>).</FONT> </P>
+<FONT SIZE=2><P>Este atributo deve, obrigatoriamente, fazer parte do registro "00" do <I>dataset</I>, caso o <I>dataset</I> possua formato vari&aacute;vel.</FONT> </P>
+<FONT SIZE=2><P>N&atilde;o &eacute; poss&iacute;vel especificar um atributo com tamanho maior do que o permitido pelo DMSII para chaves.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> CLASSIF.</B> - Tipo de classifica&ccedil;&atilde;o dos registros utilizando o atributo especificado.</FONT> </P>
+<FONT SIZE=2><P>Para classifica&ccedil;&atilde;o em ordem descendente, deve-se informar "D".</FONT> </P>
+<FONT SIZE=2><P>Caso este campo n&atilde;o seja informado, ser&aacute; assumida uma ordem ascendente na classifica&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> DADO(S)</B> - Indicador de campo de dados na estrutura da chave. </P>
+<P>Deve-se informar "S" para atributo que ser&aacute; armamazenado juntamente com a chave de acesso, de forma redundante, mas que n&atilde;o ser&aacute; chave dentro da estrutura. </P>
+<P>Caso este campo n&atilde;o seja informado, o atributo ser&aacute; utilizado como chave de acesso.</FONT> </P>
+<FONT SIZE=2><P>A utiliza&ccedil;&atilde;o deste recurso economiza tempo no acesso a informa&ccedil;&otilde;es que n&atilde;o s&atilde;o chaves, mas que s&atilde;o utilizadas com muita frequ&ecirc;ncia.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> CONTINUA (S/N)</B> - Indicador de continuidade de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "S" - Para prosseguir com a defini&ccedil;&atilde;o de chave de acesso;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "N" - Para encerrar a opera&ccedil;&atilde;o.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Cadcon">Cadastramento de condi&ccedil;&otilde;es para <I>subset</I>s</B> <B>autom&aacute;ticos</A></B></FONT> </P>
+<FONT SIZE=2><P>As <I>where conditions</I> - condi&ccedil;&otilde;es para grava&ccedil;&atilde;o de <I>subsets</I> autom&aacute;ticos - podem ser definidas no reposit&oacute;rio de dados do SADS para utiliza&ccedil;&atilde;o posterior em gera&ccedil;&otilde;es de DASDL de <I>dataset</I>.</FONT> </P>
+<FONT SIZE=2><P>Para defini-las, &eacute; necess&aacute;rio que o <I>subset</I> autom&aacute;tico, para o qual as <I>where conditions</I> ser&atilde;o definidas, j&aacute; esteja cadastrado no reposit&oacute;rio de dados e que os atributos e campos que ir&atilde;o comp&ocirc;-las fa&ccedil;am parte do registro "00", caso o <I>dataset</I> possua formato vari&aacute;vel.</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> SUBSET</B> - C&oacute;digo do <I>subset</I> autom&aacute;tico, no padr&atilde;o SADS (sssBxxa).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> SEQ</B> - N&uacute;mero sequencial que indica o posicionamento do item dentro da condi&ccedil;&atilde;o para o <I>subset</I>.</FONT> </P>
+<FONT SIZE=2><P>Este campo j&aacute; vem informado, sendo o primeiro n&uacute;mero igual a "0010" e os demais, acrescidos de 10.</FONT> </P>
+<FONT SIZE=2><P>Para incluir um item entre dois j&aacute; inclu&iacute;dos, deve-se preencher uma linha que estiver em branco e alterar o n&uacute;mero sequencial desta linha para um n&uacute;mero entre os j&aacute; informados. O SADS reorganizar&aacute; automaticamente a estrutura. Na pr&oacute;xima opera&ccedil;&atilde;o, os itens j&aacute; estar&atilde;o na nova ordem.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> E/OU</B> - Conector l&oacute;gico utilizado para compara&ccedil;&atilde;o de operandos.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "E" - e (<I>and</I>);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "O" - ou (<I>or</I>).</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> ABRE PAR</B> - Indicador de abre par&ecirc;ntese ("(") para agrupamento das express&otilde;es.</FONT> </P>
+<FONT SIZE=2><P>&Eacute; poss&iacute;vel definir mais de dois (2) n&iacute;veis de par&ecirc;nteses em um mesmo agrupamento. Para isto, deve-se cadastrar uma nova sequ&ecirc;ncia com TIPO "N".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> ATRIBUTO</B> - Mnem&ocirc;nico do atributo ou campo para o qual ser&aacute; definida uma condi&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>O atributo ou campo deve pertencer &agrave; estrutura fixa do <I>dataset</I> (registro "00"), caso ele possua formato vari&aacute;vel. O atributo ou campo pode tamb&eacute;m pertencer ao <I>header</I> padr&atilde;o, caso o <I>dataset</I> o possua.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> OPER</B> - Operador relacional.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "NE" (<I>Not equal</I>) - Diferente de;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "EQ" (<I>Equal</I>) - Igual a;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "GT" (<I>Greater than</I>) - Maior que;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "GE" (<I>Greater or equal</I>) - Maior que ou igual a;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "LT" (<I>Less than</I>) - Menor que;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "LE" (<I>Less or equal</I>) - Menor que ou igual a.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> TIPO</B> - Tipo do operando a ser utilizado na express&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Este campo dever&aacute; ser preenchido de acordo com o conte&uacute;do do campo OPERANDO.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "B" - Caso o atributo seja booleano;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "C" - Caso o operando seja um atributo ou campo;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "K" - Caso o operando seja uma constante;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "N" - Para mais de dois(2) n&iacute;veis de par&ecirc;nteses em um mesmo agrupamento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "-" - Para concatena&ccedil;&atilde;o de constantes com mais de 11 (onze) caracteres.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>O valor "-" deve ser informado no campo TIPO quando a constante a ser testada tiver mais de 11 posi&ccedil;&otilde;es. Este caractere ("-") indica que a constante continuar&aacute; a ser definida na pr&oacute;xima linha.</FONT> </P>
+<FONT SIZE=2><P>Quando o conte&uacute;do do tipo for "B", o operando deve ser "V" (verdadeiro) ou "F" (falso).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> OPERANDO</B> - Valor constante, num&eacute;rico ou alfanum&eacute;rico, ou mnem&ocirc;nico de atributo ou campo.</FONT> </P>
+<FONT SIZE=2><P>O operando dever&aacute; ser informado de acordo com o formato do atributo ou campo definido no campo ATRIBUTO, da seguinte forma:</FONT> </P>
+<FONT SIZE=2><P>Caso o atributo ou campo possua formato num&eacute;rico e o operando seja uma constante, ela deve ser ajustada &agrave; direita. N&atilde;o &eacute; necess&aacute;rio preencher com zeros &agrave; esquerda;</FONT> </P>
+<FONT SIZE=2><P>Caso o atributo ou campo possua formato alfab&eacute;tico ou alfanum&eacute;rico e o operando seja uma constante, ela deve ser ajustada &agrave; esquerda.</FONT> </P>
+<FONT SIZE=2><P>Caso o teste seja feito considerando-se <I>spaces,</I> o n&uacute;mero de brancos desejado deve ser informado entre aspas.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> FECHA PAR</B> - Indicador de fecha par&ecirc;ntese (")" ) para encerrar a condi&ccedil;&atilde;o iniciada por abre par&ecirc;ntese ("(" ).</FONT> </P>
+<FONT SIZE=2><P>&Eacute; poss&iacute;vel definir mais de dois (2) n&iacute;veis de par&ecirc;nteses em um mesmo agrupamento. Para isto, deve-se cadastrar uma nova sequ&ecirc;ncia com TIPO "N". </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> CONTINUA (S/N)</B> - Indicador de continuidade de opera&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "S" - Para prosseguir na defini&ccedil;&atilde;o das condi&ccedil;&otilde;es para <I>subset</I> autom&aacute;tico;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "N" - Para encerrar a opera&ccedil;&atilde;o.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Cadpar">Cadastramento de par&acirc;metros f&iacute;sicos de <I>dataset</B></I> <B>e chaves de acesso</A></B></FONT> </P>
+<FONT SIZE=2><P>Par&acirc;metros f&iacute;sicos s&atilde;o caracter&iacute;sticas que o <I>dataset</I> e suas chaves de acesso assumir&atilde;o no momento da compila&ccedil;&atilde;o do <I>DASDL</I> do banco de dados.</FONT> </P>
+<FONT SIZE=2><P>Os par&acirc;metros f&iacute;sicos podem ser definidos especificamente para um <I>dataset</I>, exceto <I>direct dataset, </I>bem como para todos os <I>datasets</I> da instala&ccedil;&atilde;o, na tabela SBPM5090. Detalhes a este respeito est&atilde;o descritos na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS", neste manual.</FONT> </P>
+<FONT SIZE=2><P>Caso tenha sido definido a incorpora&ccedil;&atilde;o de <I>defaults</I> de par&acirc;metros f&iacute;sicos para um <I>dataset</I>, as seguintes situa&ccedil;&otilde;es ir&atilde;o ocorrer:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> No momento do cadastramento de seus par&acirc;metros f&iacute;sicos, os respectivos <I>defaults</I> cadastrados na tabela de par&acirc;metros f&iacute;sicos de <I>datasets</I> da instala&ccedil;&atilde;o (Tabela SBPM5090)<I> </I>j&aacute; vir&atilde;o exibidos na tela, bastando confirm&aacute;-los ou alter&aacute;-los, se necess&aacute;rio;</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> No momento da gera&ccedil;&atilde;o de sua <I>library</I> de par&acirc;metros f&iacute;sicos, se alguma informa&ccedil;&atilde;o n&atilde;o estiver definida para o <I>mesmo, </I>esta informa&ccedil;&atilde;o ser&aacute; suprida pela contida na tabela SBPM5090<I>.</I></FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para cadastrar par&acirc;metros f&iacute;sicos para <I>dataset</I> e chaves de acesso, &eacute; necess&aacute;rio que os mesmos estejam definidos no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Dataset/set/subset</B> - C&oacute;digo do <I>dataset</I> ou da chave de acesso.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Nome</B> - Nome do <I>dataset</I> ou da chave de acesso informada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Banco </B>- C&oacute;digo do banco de dados que possui o<B> </B><I>dataset</I> para o qual ser&atilde;o especificados os par&acirc;metros f&iacute;sicos (sssBxx).</FONT> </P>
+<FONT SIZE=2><P>Um <I>dataset</I> pode estar relacionado a bancos de dados diferentes. Para cada banco relacionado, o <I>dataset</I> poder&aacute; assumir par&acirc;metros f&iacute;sicos diferentes. Deve-se atentar para a diferen&ccedil;a existente entre bancos de teste e de produ&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Ambiente</B> - Ambiente no qual ser&atilde;o v&aacute;lidos os par&acirc;metros f&iacute;sicos do <I>dataset</I> ou chave de acesso, podendo ser teste ou produ&ccedil;&atilde;o.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Areas</B> - N&uacute;mero de &aacute;reas a serem alocadas em disco.</FONT> </P>
+<FONT SIZE=2><P>O valor m&aacute;ximo permitido &eacute; 1000, com exce&ccedil;&atilde;o das <I>System areas</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Areasize</B> - Tamanho de cada &aacute;rea, na unidade especificada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Unidade</B> - Unidade que especifica o tamanho de cada &aacute;rea. </P>
+<P>As unidades poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "R" (<I>Records</I>) - Para que o tamanho seja expresso em n&uacute;mero de registros;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "S" (<I>Segments</I>) - Para que o tamanho seja expresso em quantidade de segmentos;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "B" (<I>Blocks</I>) - Para que o tamanho seja expresso em n&uacute;mero de blocos;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "Y" (<I>bytes</I>) - Para que o tamanho seja expresso em n&uacute;mero de <I>bytes</I>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>O <I>default</I> do SADS para a unidade do campo AREASIZE &eacute; <I>Blocks</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Blocksize</B> - Tamanho do bloco, na unidade especificada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Unidade</B> - Unidade que especifica o tamanho de cada bloco. </P>
+<P>As unidades poss&iacute;veis s&atilde;o as seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "R" (<I>Records</I>) - Para que o tamanho seja expresso em n&uacute;mero de registros;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "S" (<I>Segments</I>) - Para que o tamanho seja expresso em quantidade de segmentos;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "W" (<I>Words</I>) - Para que o tamanho seja expresso em n&uacute;mero de palavras;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "Y" (<I>bytes</I>) - Para que o tamanho seja expresso em n&uacute;mero de <I>bytes</I>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>O <I>default</I> do SADS para a unidade do campo BLOCKSIZE &eacute; <I>Words</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> AVERAGE RECORD</B> - Tamanho m&eacute;dio de registros de tamanho vari&aacute;vel em <I>compact datasets</I>.</FONT> </P>
+<FONT SIZE=2><P>O tamanho m&eacute;dio &eacute; definido em <I>words</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> BUFFERS</B> - N&uacute;mero de <I>buffers</I> que o sistema ir&aacute; alocar para a estrutura, mais o n&uacute;mero de <I>buffers</I> adicionais que o sistema dever&aacute; alocar para cada programa que utiliz&aacute;-la.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> CHECKSUM</B> - Indicador de utiliza&ccedil;&atilde;o de <I>checksum</I>.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "S" - Para o uso de <I>checksum</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "N" - Para eliminar o uso de <I>checksum</I> (default DMSII).</FONT> </P></DIR>
+
+<FONT SIZE=2><P>O <I>checksum</I> &eacute; utilizado para controlar erros de I/O, atrav&eacute;s da compara&ccedil;&atilde;o de valores calculados na grava&ccedil;&atilde;o e leitura de blocos de dados, podendo ser declarado em n&iacute;vel de estrutura.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> DIGITCHECK</B> - Indicador de utiliza&ccedil;&atilde;o de <I>digitcheck</I>.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "S"- Para utiliza&ccedil;&atilde;o do <I>digitcheck</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "N"- Para elimina&ccedil;&atilde;o do uso do <I>digitcheck</I>.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>No caso de utiliza&ccedil;&atilde;o do <I>digitcheck</I>, os itens <I>number</I> s&atilde;o examinados a fim de detectar valores hexadecimais inv&aacute;lidos na compatibiliza&ccedil;&atilde;o entre m&aacute;quinas.</FONT> </P>
+<FONT SIZE=2><P>Este par&acirc;metro &eacute; v&aacute;lido somente para <I>datasets</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> MEMORYRESIDENT</B> - Identificador de tipo de utiliza&ccedil;&atilde;o da mem&oacute;ria.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os sseguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "ALL" - Para que os <I>buffers</I> usados permane&ccedil;am em mem&oacute;ria at&eacute; o &uacute;ltimo usu&aacute;rio da estrutura fechar o banco;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "COARSE" - Para que somente os <I>coarse tables</I> sejam mantidos em mem&oacute;ria. V&aacute;lido apenas para <I>sets</I> sequenciais indexados.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> PACK</B> - Nome do disco no qual ser&aacute; armazenado o elemento. </P>
+<P>O disco <I>default</I> do DMSII &eacute; o <I>Disk</I>.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> POPULATION</B> - Tamanho esperado da estrutura em n&uacute;mero de registros.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> SECURITYGUARD </B>- Nome do <I>guardfile</I> a ser utilizado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> REBLOCK</B> - Indicador de utiliza&ccedil;&atilde;o de tamanhos de blocos diferentes numa mesma estrutura.</FONT> </P>
+<FONT SIZE=2><P>Pode assumir os seguintes valores:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "S" - Para utilizar dois tamanhos diferentes de blocos numa mesma estrutura;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "N" - Para utilizar apenas um tamanho de bloco na estrutura.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> REBLOCKFACTOR</B> - Fator que dimensiona os blocos, quando estiverem sendo utilizados dois tamanhos diferentes.</FONT> </P>
+<FONT SIZE=2><P>O maior bloco, para acessos seriais, &eacute; calculado como o resultado da multiplica&ccedil;&atilde;o do tamanho do bloco pelo valor do <I>reblockfactor</I>.</FONT> </P>
+<FONT SIZE=2><P>Esse campo deve ser informado apenas se o campo REBLOCK estiver preenchido com "S".</FONT> </P>
+<FONT SIZE=2><P>O valor m&aacute;ximo &eacute; 60 e o <I>default</I> &eacute; 1.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> LOADFACTOR</B> - Fator percentual que determina a aloca&ccedil;&atilde;o de entradas em tabelas com cria&ccedil;&atilde;o de novas tabelas quando necess&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Par&acirc;metro v&aacute;lido somente para <I>sets</I> e <I>subsets</I>.</FONT> </P>
+<FONT SIZE=2><P>O <I>default</I> do DMSII &eacute; 66%.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> PRIME</B> - Indica que o <I>set</I> &eacute; prim&aacute;rio no acesso ao <I>dataset</I>.</FONT> </P>
+<FONT SIZE=2><P>O <I>set</I> prim&aacute;rio &eacute; usado para reordenar o <I>dataset</I> durante a reorganiza&ccedil;&atilde;o.</FONT> </P>
+<FONT SIZE=2><P>S&oacute; &eacute; v&aacute;lida a especifica&ccedil;&atilde;o de um <I>set</I> com o par&acirc;metro PRIME, por <I>dataset</I>. </P>
+<P>Par&acirc;metro v&aacute;lido somente para <I>sets.</I></FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> TABLESIZE</B> - Tamanho das tabelas usadas em <I>sets</I> e <I>subsets</I> (o tamanho das tabelas &eacute; definido em <I>words</I>).</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Gerfon">Gera&ccedil;&atilde;o de fonte DASDL de <I>dataset</A></B></I></FONT> </P>
+<FONT SIZE=2><P>Para que o DASDL de um <I>dataset</I> possa ser gerado, &eacute; necess&aacute;rio que o <I>dataset,</I> seus registros, suas chaves de acesso e as <I>where conditions</I> dos <I>subsets</I> autom&aacute;ticos j&aacute; estejam cadastrados no reposit&oacute;rio de dados do SADS.</FONT> </P>
+<FONT SIZE=2><P>Essa gera&ccedil;&atilde;o cria um fonte DASDL, no ambiente informado, cujo c&oacute;digo possui o seguinte padr&atilde;o: ss/s/BL/xx.</FONT> </P>
+<B><FONT SIZE=2><P>Exemplo</B>:</FONT> </P>
+<PRE>
+<I>Dataset</I><FONT FACE="Courier">: XYZB02;
+Fonte DASDL gerado: XY/Z/BL/02.
+</PRE>
+</FONT><FONT SIZE=2><P>No fonte DASDL gerado, ser&atilde;o inclu&iacute;dos os nomes dos atributos do <I>dataset</I> como coment&aacute;rio e, caso o mesmo tenha sido definido como externo, seus atributos ser&atilde;o referenciados pelos seus c&oacute;digos externos, ao inv&eacute;s de pelos seus c&oacute;digos.</FONT> </P>
+<FONT SIZE=2><P>Se o <I>dataset </I>possuir um atributo multivalorado em sua estrutura, o fonte DASDL ser&aacute; gerado com a cl&aacute;usula <I>occurs. </I>O programa <I>batch </I>SD/U/PC/09 emite um relat&oacute;rio com a rela&ccedil;&atilde;o de todos os <I>datasets</I> da instala&ccedil;&atilde;o que possuem atributos multivalorados em sua estrutura.</FONT> </P>
+<FONT SIZE=2><P>Para a gera&ccedil;&atilde;o de fonte DASDL de todos os <I>datasets</I> de um sitema, pode-se utilizar a fun&ccedil;&atilde;o de gera&ccedil;&atilde;o de fam&iacute;lia. Esta fun&ccedil;&atilde;o est&aacute; descrita na Se&ccedil;&atilde;o III, "Utilit&aacute;rios <I>on-line</I>".</FONT> </P>
+<FONT SIZE=2><P>A gera&ccedil;&atilde;o de fonte DASDL de <I>dataset</I> n&atilde;o est&aacute; associada a nenhuma tela de processamento. Para efetu&aacute;-la, basta transmitir o menu de opera&ccedil;&atilde;o "GERDAT", cujos campos est&atilde;o explicados a seguir:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Dataset</B> - C&oacute;digo do <I>dataset</I> no padr&atilde;o SADS (sssBxx).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Ambiente</B> - Ambiente onde ser&aacute; gerado o DASDL.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "T" (Teste);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "P" (Produ&ccedil;&atilde;o).</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso o ambiente n&atilde;o seja informado, ser&aacute; assumido o ambiente <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do ambiente <I>default</I> do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Usercode</B> - <I>Usercode</I> de an&aacute;lise.</FONT> </P>
+<FONT SIZE=2><P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS".</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<FONT SIZE=2><P>Para <I>usercodes</I> de an&aacute;lise, s&atilde;o definidos os ambientes (<I>usercode</I> e disco) onde ficar&atilde;o residentes suas <I>libraries</I> de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as <I>libraries</I> de produ&ccedil;&atilde;o fiquem sem <I>usercodes</I>. Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002, que se encontra descrita na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS".</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Gerpar">Gera&ccedil;&atilde;o de DASDL de par&acirc;metros f&iacute;sicos de <I>dataset</A></B></I></FONT> </P>
+<FONT SIZE=2><P>O SADS permite gerar o fonte DASDL relativo aos par&acirc;metros f&iacute;sicos de <I>datasets</I> e de suas chaves de acesso.</FONT> </P>
+<FONT SIZE=2><P>Essa gera&ccedil;&atilde;o cria um fonte DASDL, no ambiente informado, com o seguinte padr&atilde;o:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> "ss/s/BL/xx/sssBxx"</B> onde:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2> "ss/s/BL/xx/"</B> &eacute; derivado do c&oacute;digo do dataset e</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><B><FONT SIZE=2> "sssBxx"</B> &eacute; o c&oacute;digo do banco de dados.</FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Exemplo:</FONT> </P>
+<PRE>
+<I>Dataset</I><FONT FACE="Courier">:                        XYZB01;
+Banco de dados:                 XYZB99;
+Fonte DASDL do <I>dataset: XY/Z/BL/01;
+</I>Fonte DASDL de par&acirc;metros
+f&iacute;sicos do <I>dataset</I> no banco
+de dados:                       XY/Z/BL/01/XYZB99.
+</PRE>
+</FONT><FONT SIZE=2><P>No fonte DASDL do banco de dados, &eacute; gerado um comando <I>include</I> para este fonte DASDL de par&acirc;metros f&iacute;sicos. Portanto, a gera&ccedil;&atilde;o dos par&acirc;metros f&iacute;sicos de <I>dataset</I> &eacute; obrigat&oacute;ria e deve ser feita antes da compila&ccedil;&atilde;o do banco, mesmo que n&atilde;o existam par&acirc;metros definidos. Caso os par&acirc;metros fisicos n&atilde;o sejam gerados, haver&aacute; erro na compila&ccedil;&atilde;o do banco de dados.</FONT> </P>
+<FONT SIZE=2><P>Esta <I>library</I> n&atilde;o pode ser submetida a uma libera&ccedil;&atilde;o para produ&ccedil;&atilde;o, uma vez que os bancos de teste e produ&ccedil;&atilde;o s&atilde;o diferentes.</FONT> </P>
+<FONT SIZE=2><P>A gera&ccedil;&atilde;o de DASDL de par&acirc;metros f&iacute;sicos de <I>dataset</I> n&atilde;o est&aacute; associada a nenhuma tela de processamento. Para efetu&aacute;-la, basta transmitir o menu de opera&ccedil;&atilde;o "GERPARFIS", cujos campos est&atilde;o explicados a seguir:</FONT> </P>
+<B><FONT SIZE=2><P>CAMPOS DA TELA</FONT> </P><DIR>
+
+</B><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Dataset</B> - C&oacute;digo do <I>dataset</I> cuja estrutura ser&aacute; gerada (sssBxx).</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Banco</B> - C&oacute;digo do banco para o qual o DASDL ser&aacute; gerado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Ambiente (P/T)</B> - Ambiente para gera&ccedil;&atilde;o do DASDL.</FONT> </P>
+<FONT SIZE=2><P>Os valores poss&iacute;veis s&atilde;o os seguintes:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "P" (Produ&ccedil;&atilde;o);</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> "T" (Teste).</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Caso o ambiente n&atilde;o seja informado, ser&aacute; assumido o ambiente <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do ambiente <I>default</I> do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Usercode</B> - <I>Usercode</I> de an&aacute;lise.</FONT> </P>
+<FONT SIZE=2><P>O <I>usercode</I> a ser informado deve estar habilitado ao usu&aacute;rio, como elemento, em sua lista de elementos "SEGUSER", no Sistema de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Habilita&ccedil;&otilde;es de usu&aacute;rios SADS".</FONT> </P>
+<FONT SIZE=2><P>Caso o <I>usercode</I> n&atilde;o seja informado, ser&aacute; assumido o <I>usercode</I> <I>default</I> do usu&aacute;rio. Detalhes sobre o cadastramento do <I>usercode</I> <I>default</I> do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI, "Sistema de Seguran&ccedil;a", item "Usu&aacute;rios e habilita&ccedil;&otilde;es".</FONT> </P>
+<FONT SIZE=2><P>Para <I>usercodes</I> de an&aacute;lise, s&atilde;o definidos os ambientes (<I>usercode</I> e disco) onde ficar&atilde;o residentes suas <I>libraries</I> de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as <I>libraries</I> de produ&ccedil;&atilde;o fiquem sem <I>usercodes</I>. Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002, que se encontra descrita na Se&ccedil;&atilde;o V, "Parametriza&ccedil;&otilde;es do SADS".</FONT> </P>
+<FONT SIZE=2><P>Para a gera&ccedil;&atilde;o de fonte DASDL de todos os par&acirc;metros f&iacute;sicos de <I>datasets</I> de um banco de dados, pode-se utilizar a fun&ccedil;&atilde;o de gera&ccedil;&atilde;o de fam&iacute;lia. Este procedimento est&aacute; descrito na Se&ccedil;&atilde;o III, "Utilit&aacute;rios <I>on-line</I>".</FONT> </P></DIR>
+
+<B><FONT SIZE=5><P><A NAME="Funca">Fun&ccedil;&otilde;es de apoio</A></B></FONT> </P>
+<P><HR></P>
+<B><FONT SIZE=5><P><A NAME="Gener">Gen&eacute;ricas aplic&aacute;veis aos <I>datasets</A></B></I></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Utilit&aacute;rios:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Ressequenciamento de estrutura;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Duplica&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Duplica&ccedil;&atilde;o de registro;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o de elemento;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Gera&ccedil;&atilde;o/libera&ccedil;&atilde;o de fam&iacute;lia.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Consultas:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Elementos por sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Estrutura de dados;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Fonte de <I>library</I>;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Descri&ccedil;&atilde;o de elemento.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Refer&ecirc;ncia cruzada:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Elementos x elemento - Programas que utilizam um <I>dataset</I>; Bancos em que o <I>dataset</I> est&aacute; cadastrado; Sistemas que declararam um determinado <I>dataset</I> em sua base de dados;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><I><FONT SIZE=2> Set</I> de acesso x programas - Programas que utilizam um <I>set </I>de acesso.</FONT> </P></DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2> Informativos impressos:</B></FONT> </P><DIR>
+
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Lista elementos por sistema;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Lista estrutura de dados;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Lista estrutura de dados (<I>datasets</I>) por banco;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Lista descri&ccedil;&atilde;o de elementos;</FONT> </P>
+<P><IMG SRC="Bullet7.gif" WIDTH=15 HEIGHT=13><FONT SIZE=2> Lista fonte de <I>library.</I></FONT> </P></DIR>
+</DIR>
+
+<FONT SIZE=2><P>Todos estes utilit&aacute;rios, consultas, refer&ecirc;ncias cruzadas e informativos impressos encontram-se detalhadamente descritos na Se&ccedil;&atilde;o III, "Fun&ccedil;&otilde;es de apoio", neste manual.</FONT> </P></BODY>
+</HTML>

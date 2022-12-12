@@ -1,0 +1,1224 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<TITLE>Untitled</TITLE>
+
+<META NAME="GENERATOR" CONTENT="Internet Assistant for Microsoft Word 2.04z">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+<Basefont size=2>
+<P>
+<A NAME="Libra"><B><FONT SIZE=6>Library de procedure</FONT></B></A>
+<HR>
+<P>
+<A NAME="Conce"><B><FONT SIZE=5>Conceitua&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>
+<FONT SIZE=2>Library de procedure &eacute; um conjunto de comandos
+agrupados de modo a efetuar fun&ccedil;&otilde;es afins, a serem
+inclu&iacute;dos na PROCEDURE DIVISION daqueles programas ou sub-rotinas
+que a utilizem como recurso.</FONT>
+<P>
+<A NAME="Utili"><B><FONT SIZE=5>Utiliza&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>A library de procedure &eacute; utilizada na PROCEDURE
+DIVISION de sub-rotinas e programas <I>host</I>,<I>on-line</I> e <I>batch</I>.
+<P>Para um programa ou sub-rotina que utiliza uma <I>library</I> de<I> procedure</I>,
+deve-se declarar, na tela de cadastramento de recursos, o c&oacute;digo
+da mesma com complemento &quot;P&quot;, indicando que ela ser&aacute;
+incorporada na PROCEDURE DIVISION ou &quot;M&quot;, indicando
+que, quando o programa ou sub-rotina for gerado, n&atilde;o ser&aacute;
+gerado um <I>copy</I> desta<I> library</I>, pois este <I>copy</I>
+j&aacute; deve ter sido feito atrav&eacute;s de um dos comandos
+de m&oacute;dulo COBOL, EDIT ou EXCEC. Neste caso, o cadastramento
+da <I>library</I>como recurso do programa ou sub-rotina ser&aacute; &uacute;til
+nas consultas a refer&ecirc;ncias cruzadas de tal <I>library</I>.
+<P>Quando um programa ou sub-rotina declara uma <I>library</I>de <I> procedure</I>
+como recurso, com complemento &quot;P&quot;, o gerador de programas
+do SADS gera um comando COPY na &aacute;rea de <I>work</I>,
+para incluir as vari&aacute;veis criadas pelo SADS e um comando
+COPY, ao final da PROCEDURE DIVISION, contendo os comandos gerados.
+<P>As vari&aacute;veis a serem inclu&iacute;das na &aacute;rea
+de <I>work</I> do programa, referentes &agrave; <I>library</I>
+de <I>procedure</I>,s&atilde;o criadas automaticamente pelo pr&oacute;prio SADS, de
+acordo com a necessidade dos comandos definidos no m&oacute;dulo
+de cadastramento da <I>library</I>.
+<P>As <I> libraries</I> de <I>procedure </I> para
+utiliza&ccedil;&atilde;o em <I>hosts</I>devem ser constru&iacute;das de forma diferente, 
+pois elas n&atilde;o s&atilde;o inclu&iacute;das somente ao final do <I>host</I>,
+mas em alguns pontos espec&iacute;ficos indicados junto ao c&oacute;digo
+da<I> library</I>,respectivamente, nos campos LIBRARY/USO, na defini&ccedil;&atilde;o
+do <I>host</I>. Estes pontos espec&iacute;ficos s&atilde;o os seguintes:
+<dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>&quot;I&quot; (In&iacute;cio) - Nos procedimentos
+iniciais do <I>host</I>, ap&oacute;s o <I>change/call</I> das sub-rotinas e antes da abertura do banco. 
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>&quot;B&quot; (Banco) - Nos procedimentos iniciais
+do <I>host</I>,ap&oacute;s a abertura do banco. 
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>&quot;T&quot; (Tela) - Nos procedimentos do <I>host</I>,
+ap&oacute;s a rotina de leitura de tela menu. 
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>&quot;A&quot; (Antes) - Nos procedimentos do <I>host</I>,
+antes do disparo dos aplicativos. 
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>&quot;D&quot; (Depois) - Nos procedimentos do<I>
+host</I>, ap&oacute;s o aplicativo devolver o controle para o <I>host</I>.
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>&quot;E&quot; (Envio) - Nos procedimentos do
+<I>host</I>, antes deste enviar a mensagem para o COMS. 
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>&quot;F&quot; (Final) - Nos procedimentos finais
+do<I> host</I>.
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>Ao incorporar uma<I>library</I> de <I>procedure</I>
+em um destes locais espec&iacute;ficos, deve-se atentar para a l&oacute;gica
+da rotina na qual haver&aacute; a inser&ccedil;&atilde;o, pois
+n&atilde;o podem haver<I> labels</I> que sejam incompat&iacute;veis com a <I>library</I>.
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>Fatores a serem observados na cria&ccedil;&atilde;o
+de <I>library</I> de <I>procedure </I>apenas definidas no reposit&oacute;rio de dados e n&atilde;o geradas
+completamente pelo SADS:
+<dir>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>As <I>libraries</I> que forem declaradas em programas aplicativos necessitam de
+<I>labels</I> de declara&ccedil;&atilde;o de in&iacute;cio e fim de par&aacute;grafos;
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Caso o sistema n&atilde;o utilize sub-rotinas globais,
+os comandos CALL, definidos pelo usu&aacute;rio em <I>libraries</I> de<I> procedure</I>
+do <I>host </I>que efetuam chamadas &agrave;s sub-rotinas declaradas como recursos
+deste, dever&atilde;o estar definidos da seguinte forma:
+<dir><P>CALL &quot;sssSnn OF sssSnnL&quot; USING sSnnmm-sssSnn.</dir>
+<P>A altera&ccedil;&atilde;o em rela&ccedil;&atilde;o
+&agrave; forma convencional de chamada foi acrescido o caractere
+&quot;L&quot; ao final do c&oacute;digo da sub-rotina, devido
+ao fato dos <I>changes</I> dos nomes das sub-rotinas terem sido efetuados no
+<I>host</I> da seguinte forma:
+<P><dir>CHANGE ATTRIBUTE TITLE OF &quot;sssSnnL&quot; TO GBL-CHANGE.</dir></dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>Os comandos que comp&otilde;em a <I>library</I>
+devem tratar vari&aacute;veis que j&aacute; estejam declaradas
+na &aacute;rea de trabalho dos programas que a utilizam. Pode-se
+utilizar <I>libraries</I> de <I>work</I> para defini&ccedil;&atilde;o destas vari&aacute;veis;
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>A <I>library </I>deve
+executar procedimentos gen&eacute;ricos a um grupo de programas
+e/ou sub-rotinas para justificar sua cria&ccedil;&atilde;o como
+<I>library</I>, e n&atilde;o como m&oacute;dulo de programa.</dir></dir>
+<P>
+<A NAME="Padro"><B><FONT SIZE=5>Padroniza&ccedil;&atilde;o</FONT></B></A>
+<HR>
+<P>Para identificar uma <I>library</I> de <I>procedure</I> s&atilde;o necess&aacute;rios: 
+o c&oacute;digo do sistema + a constante de <I>library</I> de <I>procedure</I>
+&quot;L&quot; + um sequencial alfanum&eacute;rico.
+<P><dir><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B>&quot;sssIxx&quot;</B> onde:
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13><B>&quot;sss&quot;</B> &eacute;
+o c&oacute;digo alfab&eacute;tico que identifica o sistema;
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13><B>&quot;I&quot;</B> &eacute;
+a constante de library de procedure e
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13><B>&quot;xx&quot;</B> &eacute;
+o sequencial alfanum&eacute;rico da library de procedure.</dir></dir>
+<P>
+<A NAME="Cadas"><B><FONT SIZE=5>Cadastramento</FONT></B></A>
+<HR>
+<P>Para cadastrar uma <I>library</I>de <I>procedure</I>, &eacute; necess&aacute;rio 
+que seu sistema esteja cadastrado no reposit&oacute;rio de dados do SADS.
+<P><B><FONT SIZE=4>Roteiro</FONT></B>
+<P>Para se definir uma <I>library</I>
+de <I>procedure</I> no reposit&oacute;rio de dados do SADS e torn&aacute;-la dispon&iacute;vel
+para utiliza&ccedil;&atilde;o, as seguintes fun&ccedil;&otilde;es
+devem ser executadas:<dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>Defini&ccedil;&atilde;o de <I>library</I>
+de <I>procedure</I>;
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>Cadastramento de m&oacute;dulo de processamento
+de <I>library</I> de <I>procedure</I>;
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>Edi&ccedil;&atilde;o Cobol;
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>Gera&ccedil;&atilde;o de <I>library</I>
+de <I>procedure</I>;
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>Libera&ccedil;&atilde;o de <I>library</I>
+de <I>procedure</I> para produ&ccedil;&atilde;o.</dir>
+<P>A seguir, cada uma dessas fun&ccedil;&otilde;es ser&aacute; explicada detalhadamente.
+<P>
+<A NAME="Deflib"><B><FONT SIZE=5>Defini&ccedil;&atilde;o de</FONT></B><FONT SIZE=5 COLOR=#000000>
+<B>library de procedure</B></FONT></A>
+<P>Para que uma <I>library</I> de <I>procedure</I> possa ser utilizada como recurso pelos programas 
+e sub-rotinas,&eacute; necess&aacute;rio que ela esteja cadastrada no reposit&oacute;rio
+do SADS.
+<P>Como a tela de defini&ccedil;&atilde;o de <I>library</I> de<I> procedure</I> &eacute; utilizada 
+tamb&eacute;m para definir &aacute;reas de comunica&ccedil;&atilde;o de sub-rotinas,
+registros do<I> dataset</i> de uso geral e &aacute;reas de trabalho, existem alguns campos
+que n&atilde;o devem ser preenchidos no momento da sua defini&ccedil;&atilde;o.
+Estes campos ser&atilde;o citados a seguir, na explica&ccedil;&atilde;o
+dos campos da tela.
+<P><dir><B>CAMPOS DA TELA</B>
+<P><dir><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B>Elemento</B>- C&oacute;digo da <I>library</I>
+de<I> procedure</I> no padr&atilde;o SADS (sssLxx).
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B>Geracao completa pelo SADS (S/N)</B>
+- Controle de gera&ccedil;&atilde;o da <I>library</I> de <I>procedure, </I>diferenciando <I>libraries</I> de <I>procedure</I>
+criadas no CANDE das geradas pelo SADS.
+<P>Pode assumir os seguintes valores:
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>&quot;S&quot; - Indicador de <I>library</I>
+de <I>procedure</I> completamente gerada pelo SADS;
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>&quot;N&quot; - Indicador de <I>library</I>
+definida no reposit&oacute;rio de dados do SADS e criada manualmente
+no CANDE.</dir>
+<P>Este campo ser&aacute; utilizado quando, no momento
+da compila&ccedil;&atilde;o de um programa ou sub-rotina que declare
+a <I>library</I> de <I>procedure</I>como recurso, o campo &quot;COMPILAR
+MESMO QUE OS RECURSOS ESTEJAM DESATUALIZADOS&quot; for preenchido
+com o valor &quot;NAO&quot;. Neste caso, se a <I>library</I> de <I>procedure</I>
+tiver sido definida com gera&ccedil;&atilde;o completa pelo SADS,
+ser&aacute; verificado o seu <I>status</I> de gera&ccedil;&atilde;o. Caso a <I>library</I>
+esteja com <I>status</I> &quot;A gerar&quot;, o programa ou sub-rotina
+n&atilde;o poder&aacute; ser compilado.
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B>Nome</B> - Descri&ccedil;&atilde;o resumida da <I>library</I>
+de <I>procedure</I>.
+<P>O nome tem o objetivo de identificar e explicar resumidamente
+a que se refere a<I> library</I> de <I>procedure.</I>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B>Registros</B> - Este campo n&atilde;o deve ser preenchido 
+para cadastramento da <I>library</I> de <I>procedure</I>.
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B>Tipo</B> - Este campo deve ser preenchido com &quot;P&quot; 
+(<I>Procedure</i>).
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B>Lib. de PROCEDURE p/ uso em</B>:
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13><B>Sub-rotina</B> - Indicador de uso da <I>library</I>de <I>procedure</I>
+em sub-rotinas.
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13><B>On-line</B> - Indicador de uso da <I>library</I> de <I>procedure</I>
+em programas <I>on-line</I>.
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13><B>Batch </B> - Indicador de uso da <I>library</I>
+de <I>procedure</I> em programas <I>batch</I>.
+<P>Uma <I>library</I> de <I>procedure</I> s&oacute; pode ter comandos compat&iacute;veis com o tipo de l&oacute;gica
+onde for utilizada. Por exemplo, se uma <I>library</I> de <I>procedure</I> for utilizada tanto em programas <I>on-line</I>
+quanto em programas <I>batch</I>, esta <I>library</I> de <I>procedure</I>
+n&atilde;o deve utilizar comandos de m&oacute;dulo v&aacute;lidos
+apenas para programas <I>on-line,</I> evitando assim que ocorra erro quando ela for inserida em programas
+<I>batch</I>.Esta verifica&ccedil;&atilde;o ser&aacute; feita no cadastramento
+do m&oacute;dulo de processamento da <I>library</I> de <I>procedure</I> e no cadastramento dos recursos do programa 
+que a utilizar.</dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B>Operacao</B> - Opera&ccedil;&atilde;o efetuada sobre a defini&ccedil;&atilde;o
+da <I>library</I> de <I>procedure</I>.
+<P>As opera&ccedil;&otilde;es poss&iacute;veis s&atilde;o as seguintes:
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>&quot;INC&quot; (Inclus&atilde;o);
+<p><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>&quot;ALT&quot; (Altera&ccedil;&atilde;o);
+<p><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>&quot;EXC&quot; (Exclus&atilde;o);
+<p><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>&quot;CON&quot; (Consulta).</dir></dir></dir>
+<P>
+<A NAME="Cadmod"><B><FONT SIZE=5>Cadastramento de m&oacute;dulo de processamento de library de procedure</FONT></B></A>
+<P>Uma <I>library</I> de <I>procedure </I>&eacute; composta por um &uacute;nico m&oacute;dulo, que ser&aacute; sempre
+o m&oacute;dulo linear 001.
+<P><FONT SIZE=2>Para cada um dos comandos de m&oacute;dulos a serem
+cadastrados, os campos a seguir s&atilde;o pass&iacute;veis de
+serem informados. A obrigatoriedade ou n&atilde;o de se preencher
+um campo no momento de cadastramento de um determinado comando
+e a explica&ccedil;&atilde;o detalhada de como preench&ecirc;-lo
+encontra-se no t&oacute;pico &quot;Comandos de m&oacute;dulo&quot;,
+no item &quot;Programa&quot;, nesta se&ccedil;&atilde;o.</FONT>
+<P><dir><FONT SIZE=2 COLOR=#000000><b>CAMPOS DA TELA</b></FONT>
+<P><B><dir><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2 COLOR=#000000>SEQ.</FONT></B><FONT SIZE=2> - Sequ&ecirc;ncia
+do comando dentro do m&oacute;dulo.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>COMANDO/TIPO</FONT></B><FONT SIZE=2>
+- C&oacute;digo do comando de m&oacute;dulo que ser&aacute; utilizado
+pela </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>.</FONT>
+<P><FONT SIZE=2>Caso necess&aacute;rio, deve-se fazer a complementa&ccedil;&atilde;o
+do comando, informando seu tipo.</FONT>
+<P><FONT SIZE=2>Todos os comandos de m&oacute;dulos dispon&iacute;veis,
+bem como seus tipos, est&atilde;o descritos detalhadamente no
+t&oacute;pico &quot;Comandos de m&oacute;dulo&quot;, no item &quot;Programa&quot;,
+nesta se&ccedil;&atilde;o.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>ORIGEM</FONT></B><FONT SIZE=2> -
+C&oacute;digo do elemento que ser&aacute; utilizado pela </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+como origem (entrada) para o comando informado.</FONT>
+<P><FONT SIZE=2>&Eacute; necess&aacute;rio que o elemento utilizado
+na origem tenha sido cadastrado como recurso para o programa em
+que a </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+for inclu&iacute;da, exceto quando o elemento for o nome de um
+dos comandos DO, EDIT, EXCEC ou a &aacute;rea de </FONT><I><FONT SIZE=2 COLOR=#000000>&nbsp;work</FONT></I><FONT SIZE=2>
+do pr&oacute;prio programa, que deve ser indicada nos comandos
+de m&oacute;dulo pelo pr&oacute;prio c&oacute;digo do programa
+(ssspxx).</FONT>
+<P><FONT SIZE=2>&Eacute; permitido tamb&eacute;m informar o literal
+&quot;NENHUM&quot; (para os comandos de m&oacute;dulo FIND e TAB),
+indicando que nenhuma movimenta&ccedil;&atilde;o deve ser efetuada
+para a chave de acesso do</FONT><I><FONT SIZE=2 COLOR=#000000>
+dataset</FONT></I><FONT SIZE=2> ou tabela informado no campo DESTINO.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>DESTINO</FONT></B><FONT SIZE=2>
+- C&oacute;digo do elemento que ser&aacute; utilizado pela </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure </FONT></I><FONT SIZE=2>como
+destino (sa&iacute;da) para o comando informado.</FONT>
+<P><FONT SIZE=2>Para o comando de m&oacute;dulo &quot;DO&quot;, poder&aacute;
+ser informado o c&oacute;digo da tela na qual existam ocorr&ecirc;ncias.
+Desta forma, a rotina ser&aacute; executada o n&uacute;mero de
+vezes correspondente ao n&uacute;mero de ocorr&ecirc;ncias definido
+para a primeira tabela cadastrada na estrutura da tela informada.</FONT>
+<P><FONT SIZE=2>Para o comando de m&oacute;dulo &quot;DO&quot;, o
+campo DESTINO e N. VEZES s&atilde;o mutuamente exclusivos, somente
+um dos dois deve ser informado.</FONT>
+<P><FONT SIZE=2>&Eacute; necess&aacute;rio que o elemento utilizado
+no destino tenha sido cadastrado como recurso para o programa
+em que a </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+for inclu&iacute;da, exceto quando o elemento for a &aacute;rea
+de </FONT><I><FONT SIZE=2 COLOR=#000000>&nbsp;work</FONT></I><FONT SIZE=2>
+do pr&oacute;prio programa, que deve ser indicada nos comandos
+de m&oacute;dulo pelo pr&oacute;prio c&oacute;digo do programa
+(ssspxx).</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>SET</FONT></B><FONT SIZE=2> - C&oacute;digo
+da estrutura DMSII (</FONT><I><FONT SIZE=2 COLOR=#000000> set,
+subset </FONT></I><FONT SIZE=2>ou</FONT><I><FONT SIZE=2 COLOR=#000000>
+access</FONT></I><FONT SIZE=2>) de acesso ao </FONT><I><FONT SIZE=2 COLOR=#000000>&nbsp;dataset</FONT></I><FONT SIZE=2>
+ou c&oacute;digo da chave secund&aacute;ria de acesso a uma tabela,
+quando o </FONT><I><FONT SIZE=2 COLOR=#000000>&nbsp;dataset</FONT></I><FONT SIZE=2>
+ou tabela forem utilizados pelo comando de m&oacute;dulo.</FONT>
+<P><FONT SIZE=2>Caso o </FONT><I><FONT SIZE=2 COLOR=#000000>set</FONT></I><FONT SIZE=2>
+n&atilde;o seja informado para acesso a um </FONT><I><FONT SIZE=2 COLOR=#000000>dataset</FONT></I><FONT SIZE=2>,
+ser&aacute; gerado ent&atilde;o acesso direto ao </FONT><I><FONT SIZE=2 COLOR=#000000>dataset</FONT></I><FONT SIZE=2>.
+Neste caso, o campo ATRIBUTO n&atilde;o deve ser preenchido. Esta
+situa&ccedil;&atilde;o &eacute; similar ao se informar o c&oacute;digo
+do </FONT><I><FONT SIZE=2 COLOR=#000000>set</FONT></I><FONT SIZE=2>
+e NENHUM no campo ATRIBUTO.</FONT>
+<P><FONT SIZE=2>Este campo tamb&eacute;m pode indicar, para os comandos
+de m&oacute;dulo READ e START, caso informado &quot;S&quot;, que
+o acesso ao arquivo ser&aacute; feito via chave secund&aacute;ria.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>ATRIBUTO</FONT></B><FONT SIZE=2>
+- C&oacute;digo de um atributo ou campo cadastrado no reposit&oacute;rio
+de dados do SADS.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;&lt;C&oacute;digo do &uacute;ltimo atributo
+para acesso a uma estrutura DMSII&gt;&quot; - Para acesso
+parcial a uma estrutura DMSII (</FONT><I><FONT SIZE=2 COLOR=#000000>set</FONT></I><FONT SIZE=2>,
+</FONT><I><FONT SIZE=2 COLOR=#000000>subset</FONT></I><FONT SIZE=2>
+ou </FONT><I><FONT SIZE=2 COLOR=#000000>access</FONT></I><FONT SIZE=2>),
+isto &eacute;, para acesso at&eacute; este atributo limite. Utilizado
+nos comandos que utilizam </FONT><I><FONT SIZE=2 COLOR=#000000>dataset</FONT></I><FONT SIZE=2>.</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot; &quot; - Para que o acesso &agrave; estrutura
+DMSII seja com chave completa, isto &eacute;, com qualifica&ccedil;&atilde;o
+de todos os atributos da chave. Utilizado nos comandos que utilizam
+</FONT><I><FONT SIZE=2 COLOR=#000000>dataset</FONT></I><FONT SIZE=2>.</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;NENHUM&quot; - Para que o acesso &agrave; estrutura
+DMSII seja feito sem considerar os campos da chave. Utilizado
+nos comandos que utilizam </FONT><I><FONT SIZE=2 COLOR=#000000>dataset</FONT></I><FONT SIZE=2>.</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;&lt;C&oacute;digo do atributo de uma f&oacute;rmula&gt;&quot;-
+Para identifica&ccedil;&atilde;o do atributo nos comandos de gera&ccedil;&atilde;o
+de f&oacute;rmula.</FONT></dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>INDICE</FONT></B><FONT SIZE=2> -
+Indicador de indexa&ccedil;&atilde;o de ocorr&ecirc;ncias nas
+estruturas origem e destino.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;O&quot; - Quando se desejar indexar as ocorr&ecirc;ncias
+do elemento definido na origem;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;D&quot; - Quando se desejar indexar as ocorr&ecirc;ncias
+do elemento definido no destino;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;A&quot; - Quando se desejar indexar as ocorr&ecirc;ncias
+de ambos os elementos definidos na origem e no destino.</FONT></dir>
+<P>
+<FONT SIZE=2>Caso este campo n&atilde;o seja informado, o SADS
+assumir&aacute; que n&atilde;o se deseja indexar as ocorr&ecirc;ncias
+tanto na origem como no destino.</FONT>
+<P>
+<FONT SIZE=2>O campo INDICE poder&aacute; ser utilizado em comandos
+de m&oacute;dulo de movimenta&ccedil;&atilde;o de dados - MVE,
+MOVE e MVEFOR - ou em comandos de m&oacute;dulo que efetuam a
+movimenta&ccedil;&atilde;o de dados impl&iacute;cita - FIND, LOCK,
+ALTERA etc.</FONT>
+<P>
+<FONT SIZE=2>O SADS ir&aacute; gerar a movimenta&ccedil;&atilde;o
+dos itens correspondentes - de mesmo mnem&ocirc;nico - do elemento
+origem para o destino de acordo com a informa&ccedil;&atilde;o
+cadastrada no campo INDICE e de acordo com a localiza&ccedil;&atilde;o
+do comando de m&oacute;dulo dentro do programa, qual seja:</FONT>
+<p>
+<ol type=1>
+<li>Fora de qualquer </FONT><I><FONT SIZE=2 COLOR=#000000>loop</FONT></I><FONT SIZE=2>;
+<li>Interno a um </FONT><I><FONT SIZE=2 COLOR=#000000>loop</FONT></I><FONT SIZE=2>
+normalmente gerado pelo SADS, cujo n&uacute;mero de vezes para
+execu&ccedil;&atilde;o &eacute; contabilizado pelo &iacute;ndice
+IND-GER;
+<li>Interno a um </FONT><I><FONT SIZE=2 COLOR=#000000>loop</FONT></I><FONT SIZE=2>
+definido pelo usu&aacute;rio atrav&eacute;s do comando de m&oacute;dulo
+DO, cujo n&uacute;mero de vezes para execu&ccedil;&atilde;o &eacute;
+contabilizado pelo &iacute;ndice &quot;IND-nnnmm&quot; - onde
+&quot;nnn&quot; &eacute; o n&uacute;mero do m&oacute;dulo e &quot;mm&quot;,
+o n&uacute;mero do DO;
+<li>Interno a ambos os </FONT><I><FONT SIZE=2 COLOR=#000000>loops</FONT></I><FONT SIZE=2>,
+do gerador do SADS e do usu&aacute;rio.
+</ol>
+<P>
+<FONT SIZE=2>Sendo assim, dependendo da localiza&ccedil;&atilde;o
+na </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+onde o comando ser&aacute; gerado, o SADS determinar&aacute; quais
+itens ser&atilde;o movidos, quais sejam:</FONT>
+<P>
+<ul type=circle>
+<li> Apenas os itens que n&atilde;o s&atilde;o indexados
+por nenhum &iacute;ndice (S);</FONT>
+<li> Apenas os itens pertencentes a tabela unidimensional,
+que devem ser indexados por um &iacute;ndice (I1);</FONT>
+<li> Apenas os itens pertencentes a tabelas bidimensionais,
+que devem ser indexados por dois &iacute;ndices (I2).</FONT></ul>
+<P>
+<FONT SIZE=2>Uma tabela a fim de que possa ser percebido, de acordo
+com o INDICE e localiza&ccedil;&atilde;o do comando, quais itens
+ser&atilde;o movidos do elemento origem para o elemento destino,
+se encontra no item &quot;Programa&quot;, neste se&ccedil;&atilde;o.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>N.VEZES OU N.FORMULA</FONT></B><FONT SIZE=2>
+- N&uacute;mero de vezes que ser&aacute; executado o </FONT><I><FONT SIZE=2 COLOR=#000000>perform</FONT></I><FONT SIZE=2>
+a ser gerado pelo comando de m&oacute;dulo DO ou n&uacute;mero
+da f&oacute;rmula do atributo a ser calculada.</FONT>
+<P>
+<FONT SIZE=2>Este campo dever&aacute; ser informado somente para
+o comando de m&oacute;dulo DO e para comandos de m&oacute;dulo
+que utilizam f&oacute;rmula.</FONT>
+<P>
+<FONT SIZE=2>Na gera&ccedil;&atilde;o do fonte Cobol, o comando
+DO ser&aacute; transformado em comando </FONT><I><FONT SIZE=2 COLOR=#000000>perform</FONT></I><FONT SIZE=2>.</FONT>
+<P>
+<FONT SIZE=2>Para o comando de m&oacute;dulo DO, pode assumir
+os seguintes valores:</FONT><dir>
+<P>&quot;99&quot; - Para indicar que o comando gerado
+ser&aacute; um </FONT><I><FONT SIZE=2 COLOR=#000000>Perform</FONT></I><FONT SIZE=2>
+</FONT><I><FONT SIZE=2 COLOR=#000000>until</FONT></I><FONT SIZE=2>
+</FONT><I><FONT SIZE=2 COLOR=#000000>eof</FONT></I><FONT SIZE=2>:</FONT>
+<P><dir>
+<FONT SIZE=2>PERFORM nnnmm-00-&lt;nome com. DO&gt;THRU
+nnnmm-99-EXIT</FONT>
+<P><dir>
+<FONT SIZE=2>UNTIL EOF-nnnmm EQUAL HIGH-VALUES;<BR>
+</FONT></dir></dir>
+<P>
+<FONT SIZE=2>sendo que, no c&oacute;digo da chave de fim de arquivo
+&quot;EOF-nnnmm&quot;, &quot;nnn&quot; &eacute; o n&uacute;mero
+do m&oacute;dulo e &quot;mm&quot;, o n&uacute;mero do DO.</FONT>
+<P>
+<FONT SIZE=2>Neste caso, o campo &quot;EOF-nnnmm&quot; ser&aacute;
+composto no</FONT><I><FONT SIZE=2 COLOR=#000000> </FONT></I><FONT SIZE=2>tratamento
+de exce&ccedil;&atilde;o</FONT><I><FONT SIZE=2 COLOR=#000000>
+notfound</FONT></I><FONT SIZE=2> do comando de acesso cadastrado
+entre o comando DO e o END, se houver.</FONT>
+<P>
+<FONT SIZE=2>De &quot;02&quot; a &quot;98&quot; - Para indicar
+que o comando gerado ser&aacute; um </FONT><I><FONT SIZE=2 COLOR=#000000>Perform</FONT></I><FONT SIZE=2>
+</FONT><I><FONT SIZE=2 COLOR=#000000>varying</FONT></I><FONT SIZE=2>
+de acordo com o &iacute;ndice indicado no campo N.VEZES ou N.FORMULA:</FONT>
+<P><dir>
+<FONT SIZE=2>PERFORM nnnnn-00-&lt;nome com. DO
+&gt; THRU nnnnn-99-EXIT</FONT><dir>
+<P>
+<FONT SIZE=2>VARYING IND-nnnmm FROM 1 BY 1 UNTIL</FONT>
+<P>
+<FONT SIZE=2>IND-nnnmm GREATER &quot;numero de vezes&quot;; <BR>
+</FONT></dir></dir>
+<P>
+<FONT SIZE=2>sendo que, no c&oacute;digo do &iacute;ndice &quot;IND-nnnmm&quot;,
+&quot;nnn&quot; &eacute; o n&uacute;mero do m&oacute;dulo e &quot;mm&quot;,
+o n&uacute;mero do DO.</FONT>
+<P>
+<FONT SIZE=2>Caso este campo n&atilde;o seja informado no comando
+de m&oacute;dulo DO, o SADS ir&aacute; gerar um </FONT><I><FONT SIZE=2 COLOR=#000000>perform</FONT></I><FONT SIZE=2>
+simples da seguinte forma:</FONT>
+<P><dir>
+<FONT SIZE=2>PERFORM nnnnn-00-&lt;nome com. DO&gt; THRU
+nnnnn-99-EXIT;
+</FONT></dir>
+<P>
+<FONT SIZE=2>Para comandos que utilizam f&oacute;rmula, pode assumir
+os seguintes valores:</FONT>
+<P><dir>
+<FONT SIZE=2>De &quot;01&quot; a &quot;99&quot; - Para indicar
+o n&uacute;mero da f&oacute;rmula do atributo que ser&aacute;
+utilizada pelo programa.</FONT>
+<P>
+<B><FONT SIZE=2 COLOR=#000000>Linha livre</FONT></B><FONT SIZE=2>
+- Linha para detalhamento do comando informado no campo COMANDO/TIPO.</FONT>
+<P>
+<FONT SIZE=2>Os comandos de m&oacute;dulo que utilizam a linha
+livre s&atilde;o: COB (COBOL), LAB (LABEL), EXCEPT, COPY, COMENT,
+MSG e MSGIND.</FONT>
+<P>
+<FONT SIZE=2>Na linha livre devem ser utilizados prefixos, sufixos,
+pontos e outras refer&ecirc;ncias espec&iacute;ficas para o comando
+em quest&atilde;o, pois esta linha ser&aacute; gerada na </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+tal como foi cadastrada.</FONT>
+<P>
+<FONT SIZE=2>Para os comandos de m&oacute;dulo de edi&ccedil;&atilde;o
+- COB, EDIT e EXCEC - foi criada a constante &quot;SADSM&quot;,
+a fim de facilitar na determina&ccedil;&atilde;o dos desvios (GO
+TO), &iacute;ndices e chaves de fim (EOF).</FONT>
+<P>
+<FONT SIZE=2>Para se utilizar a constante, ao inv&eacute;s de
+se definir o n&uacute;mero do par&aacute;grafo para os desvios,
+&iacute;ndices ou chaves de fim (EOF), deve-se definir a constante
+&quot;SADSM&quot;. Deste modo, na gera&ccedil;&atilde;o da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>,
+a constante ser&aacute; substitu&iacute;da pelo n&uacute;mero
+do par&aacute;grafo correspondente.</FONT>
+<P>
+<FONT SIZE=2>A seguir, ser&aacute; exibido um trecho de uma </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+- ABCL01 - gerada a partir da utiliza&ccedil;&atilde;o da constante
+SADSM no cadastramento dos comandos COB em seu m&oacute;dulo linear
+001.</FONT>
+<Pre><font size=3>
+                                                    <u>N.VEZES OU</u>
+<u>COMANDO/TIPO  ORIGEM  DESTINO  SET ATRIBUTO  INDICE  N.FORMULA</u>
+DO               EXEMPLO2                               99.
+COB
+           IF    C0200-ATRMNE EQUAL &quot;LOJCOD&quot;
+COB
+                 GO TO SADSM-99-EXIT-ABCL01.
+COB
+           MOVE HIGH-VALUE TO EOF-SADSM-ABCL01.
+COB
+           MOVE CO200-ATRMNE TO C0300-ATRMNE(IND-SADSM-ABCL01).
+END
+</pre></font>
+<P>
+<B><FONT SIZE=2>O fonte ser&aacute; gerado com os seguintes comandos:</FONT></B>
+<pre><font size=3>
+134011 90110-00-EXEMPLO-ABCL01.
+134111
+134211     IF C0200-ATRMNE EQUAL &quot;LOJCOD&quot;
+134311        GO TO 90110-99-EXIT-ABCL01.
+134411     MOVE HIGH-VALUE TO EOF-90110-ABCL01.
+134511     MOVE CO200-ATRMNE TO C0300-ATRMNE(IND-90110-ABCL01).
+134611
+134711 90110-99-EXIT-ABCL01.
+134811       EXIT.
+</pre><font></dir></dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>OPERACAO</FONT></B><FONT SIZE=2>
+- Opera&ccedil;&atilde;o a ser efetuada sobre o cadastramento
+do m&oacute;dulo.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT><dir>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;INC&quot; (Inclus&atilde;o);</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;ALT&quot; (Altera&ccedil;&atilde;o);</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;EXC&quot; (Exclus&atilde;o);</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;CON&quot; (Consulta).</FONT></dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>CONTINUA (S/N)</FONT></B><FONT SIZE=2>
+- Indicador de continuidade de opera&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT><dir>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;S&quot; - Para que seja exibida a pr&oacute;xima
+p&aacute;gina de opera&ccedil;&atilde;o sobre o m&oacute;dulo;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;N&quot; - Para encerrar a opera&ccedil;&atilde;o
+sobre o m&oacute;dulo.</FONT>
+<P>
+<FONT SIZE=2>Neste caso, o campo PROXIMA PAGINA deve estar preenchido
+com &quot;99&quot;.</FONT></dir>
+<P>
+<IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2 COLOR=#000000>PROXIMA PAGINA</FONT></B><FONT SIZE=2>
+- N&uacute;mero da pr&oacute;xima p&aacute;gina a ser exibida
+ou &quot;99&quot; para encerrar a opera&ccedil;&atilde;o sobre
+o m&oacute;dulo.</FONT>
+<P>
+<FONT SIZE=2>O cadastramento de m&oacute;dulos segue a l&oacute;gica
+de atualiza&ccedil;&atilde;o paginada e possui todas as caracter&iacute;sticas
+deste tipo de transa&ccedil;&atilde;o, conforme descrito na Se&ccedil;&atilde;o
+I, &quot;Conceitos preliminares para a utiliza&ccedil;&atilde;o
+do SADS, item &quot;Paginador de entrada de dados&quot;.</FONT>
+<P>
+<FONT SIZE=2>A seguir, &eacute; apresentado um exemplo de cadastramento
+de m&oacute;dulo de processamento de </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>:</FONT>
+</dir></dir></dir
+<P>
+<A NAME="Edicob"><B><FONT SIZE=5>Edi&ccedil;&atilde;o Cobol</FONT></B></A>
+<P>
+<FONT SIZE=2>O SADS possui uma fun&ccedil;&atilde;o para edi&ccedil;&atilde;o
+de comandos quaisquer em Cobol e comandos para tratamento de exce&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Atrav&eacute;s desta fun&ccedil;&atilde;o, torna-se
+poss&iacute;vel ao usu&aacute;rio definir uma sequ&ecirc;ncia
+de comandos a serem inseridos, tal e qual cadastrados, no fonte
+da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>.</FONT>
+<P>
+<FONT SIZE=2>Podem existir determinados comandos da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+que n&atilde;o s&atilde;o gerados da maneira como se deseja pelos
+comandos de m&oacute;dulo oferecidos pelo SADS. Podem tamb&eacute;m
+existir tratamentos de exce&ccedil;&atilde;o gerados pelo SADS
+que n&atilde;o atendem &agrave; necessidade espec&iacute;fica
+da aplica&ccedil;&atilde;o. Desta forma, torna-se necess&aacute;rio
+incluir diretamente no fonte da</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+comandos em Cobol que atendam a essa necessidade ou que substituam
+o tratamento de exce&ccedil;&atilde;o normalmente gerado.</FONT>
+<P>
+<FONT SIZE=2>A inclus&atilde;o de comandos em Cobol no fonte da</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+pode ser feita de duas formas:</FONT><DIR>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>Cadastrando cada comando em Cobol a ser inserido
+na </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+atrav&eacute;s do comando de m&oacute;dulo COB, ou</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>Cadastrando todos os comandos em Cobol atrav&eacute;s
+de um &uacute;nico comando de m&oacute;dulo, que &eacute; o EDIT.</FONT></DIR>
+<P>
+<FONT SIZE=2>J&aacute; a substitui&ccedil;&atilde;o do tratamento
+padr&atilde;o de exce&ccedil;&atilde;o do SADS pode ser feita
+tamb&eacute;m de duas formas:</FONT>
+<P><DIR><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>Substituindo todo o par&aacute;grafo a ser gerado,
+incluindo nele, assim, o novo tratamento desejado, ou</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>O mais conveniente, cadastrando o comando de m&oacute;dulo
+EXCEC ap&oacute;s o comando que executa o acesso ao </FONT><I><FONT SIZE=2 COLOR=#000000>dataset</FONT></I><FONT SIZE=2>
+ou ao arquivo convencional.</FONT></DIR>
+<P>
+<FONT SIZE=2>Atrav&eacute;s do cadastramento no m&oacute;dulo
+dos comandos EDIT ou EXCEC, que s&atilde;o identificados por um
+nome, define-se o local da</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+onde ser&aacute; inserido o trecho com comandos Cobol ou qual
+ser&aacute; o comando de acesso anterior cujo tratamento de exce&ccedil;&atilde;o
+ser&aacute; substitu&iacute;do, respectivamente.</FONT>
+<P>
+<FONT SIZE=2>Ap&oacute;s a finaliza&ccedil;&atilde;o do cadastramento
+do m&oacute;dulo dos comandos EDIT ou EXCEC, o SADS apresenta
+uma tela para cadastramento do comando, dispondo de 21 linhas
+para codifica&ccedil;&atilde;o da sequ&ecirc;ncia de comandos
+em Cobol.</FONT>
+<P>
+<FONT SIZE=2>Caso necess&aacute;rio, outras telas poder&atilde;o
+ser encadeadas para continua&ccedil;&atilde;o da codifica&ccedil;&atilde;o.
+</FONT>
+<P>
+<FONT SIZE=2>Para edi&ccedil;&atilde;o de comandos em Cobol, &eacute;
+necess&aacute;rio que a defini&ccedil;&atilde;o</FONT><I><FONT SIZE=2 COLOR=#000000>
+</FONT></I><FONT SIZE=2>da</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+e os recursos do programa que ter&aacute; a </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+inserida estejam cadastrados no reposit&oacute;rio de dados do
+SADS. Al&eacute;m disto, no m&oacute;dulo, deve ter sido definido
+algum comando EDIT ou EXCEC.</FONT>
+<P>
+<FONT SIZE=2>O uso dos comandos de m&oacute;dulos EDIT e EXCEC
+est&atilde;o descritos detalhadamente no t&oacute;pico &quot;Cadastramento
+de edi&ccedil;&atilde;o Cobol&quot;, no item &quot;Programa&quot;,
+nesta se&ccedil;&atilde;o.</FONT>
+<P>
+<A NAME="Gerlib"><B><FONT SIZE=5>Gera&ccedil;&atilde;o de library
+de procedure </FONT></B></A>
+<P>
+<FONT SIZE=2>O SADS possui uma fun&ccedil;&atilde;o encarregada
+de gerar, no </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+informado, um arquivo contendo o fonte Cobol da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+especificada. A gera&ccedil;&atilde;o deste fonte &eacute; baseada
+nas informa&ccedil;&otilde;es cadastradas para a</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+no reposit&oacute;rio de dados do SADS.</FONT>
+<P>
+<FONT SIZE=2>Qualquer altera&ccedil;&atilde;o no cadastramento
+da</FONT><I><FONT SIZE=2 COLOR=#000000> library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+implica em uma nova gera&ccedil;&atilde;o da mesma , sem que seja
+necess&aacute;rio alter&aacute;-la via Cande.</FONT>
+<P>
+<FONT SIZE=2>A gera&ccedil;&atilde;o da</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+&eacute; utilizada quando se deseja criar o fonte de uma</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+a partir de seu cadastramento no SADS ou quando se deseja atualizar
+o fonte da</FONT><I><FONT SIZE=2 COLOR=#000000> library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+existente no </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>,
+a partir das altera&ccedil;&otilde;es efetuadas em seu cadastramento.</FONT>
+<P>
+<FONT SIZE=2>As </FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+cadastradas em vers&otilde;es anteriores &agrave; 3.3 n&atilde;o
+podem ser geradas pelo SADS. Isto porque, naquelas vers&otilde;es,
+n&atilde;o era poss&iacute;vel o cadastramento de m&oacute;dulos
+de </FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+e estas eram codificadas totalmente no Cande. Caso a gera&ccedil;&atilde;o
+fosse permitida, esta codifica&ccedil;&atilde;o efetuada no Cande
+seria perdida. Por&eacute;m, mesmo para estas </FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+cadastradas anteriormente &agrave; vers&atilde;o 3.3, caso haja
+alguma manuten&ccedil;&atilde;o em seus cadastramentos, o SADS
+passar&aacute; a permitir as suas gera&ccedil;&otilde;es.</FONT>
+<P>
+<FONT SIZE=2>Atrav&eacute;s da fun&ccedil;&atilde;o de gera&ccedil;&atilde;o
+do SADS, &eacute; poss&iacute;vel gerar todas as</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+do sistema completamente, sem a necessidade de complement&aacute;-las
+ou alter&aacute;-las via Cande. </FONT>
+<P>
+<FONT SIZE=2>No momento da gera&ccedil;&atilde;o, s&atilde;o incorporadas
+advert&ecirc;ncias ao fonte da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure </FONT></I><FONT SIZE=2>sempre
+quando o SADS percebe alguma incoer&ecirc;ncia, incompatibilidade
+ou falta de completeza no fonte da</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+a ser gerada. Ao final do mesmo, &eacute; informado o n&uacute;mero
+de advert&ecirc;ncias inclu&iacute;das.</FONT>
+<P>
+<FONT SIZE=2>Assim sendo, &eacute; desej&aacute;vel que estas
+advert&ecirc;ncias sejam sempre verificadas, a fim de evitar poss&iacute;veis
+erros de l&oacute;gica e processamento.</FONT>
+<FONT SIZE=2>As advert&ecirc;ncias s&atilde;o inclu&iacute;das
+quando s&atilde;o detectadas, por exemplo, as seguintes situa&ccedil;&otilde;es:</FONT>
+<P><dir><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>Chaves de acesso a estruturas DMS n&atilde;o compostas;</FONT>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>Chaves de acesso a estruturas DMS compostas parcialmente;</FONT>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>N&atilde;o movimenta&ccedil;&atilde;o de atributos
+entre estruturas, no caso de comando de m&oacute;dulo &quot;MOVE&quot;;</FONT>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>N&atilde;o movimenta&ccedil;&atilde;o de atributos
+da tela menu para a &aacute;rea conversacional, no caso de l&oacute;gica
+&quot;AP&quot;.</FONT></dir>
+<P>
+<FONT SIZE=2>Para gerar uma </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>,
+basta transmitir os argumentos do menu de opera&ccedil;&atilde;o
+GERLIBPRO, cujos campos devem ser preenchidos conforme indicado
+a seguir.</FONT><dir>
+<P>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B>
+<P><dir><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Library </FONT></B><FONT SIZE=2>-
+C&oacute;digo da</FONT><I><FONT SIZE=2 COLOR=#000000> library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+que se deseja gerar, no padr&atilde;o SADS (sssLxx).</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Ambiente</FONT></B><FONT SIZE=2>
+- Ambiente no qual a </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+dever&aacute; ser gerada.</FONT>
+<P>
+<FONT SIZE=2>Podem ser informados os seguintes ambientes:</FONT>
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>&quot;T&quot; - Teste;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>&quot;P&quot; - Produ&ccedil;&atilde;o.</FONT></dir>
+<P><FONT SIZE=2>Caso o ambiente n&atilde;o seja informado, ser&aacute;
+assumido o ambiente </FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio. Detalhes sobre o cadastramento do ambiente
+</FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI,
+&quot;Sistema de Seguran&ccedil;a&quot;, item &quot;Usu&aacute;rios
+e habilita&ccedil;&otilde;es&quot;.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Usercode </FONT></B><FONT SIZE=2>-
+</FONT><I><FONT SIZE=2 COLOR=#000000>Usercode</FONT></I><FONT SIZE=2>
+de an&aacute;lise.</FONT>
+<P>
+<FONT SIZE=2>O </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+a ser informado deve estar habilitado ao usu&aacute;rio, como
+elemento, em sua lista de elementos &quot;SEGUSER&quot;, no Sistema
+de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o
+descritos na Se&ccedil;&atilde;o VI, &quot;Sistema de Seguran&ccedil;a&quot;,
+item &quot;Habilita&ccedil;&otilde;es de usu&aacute;rios SADS&quot;.</FONT>
+<P>
+<FONT SIZE=2>Caso o </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+n&atilde;o seja informado, ser&aacute; assumido o </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+</FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio. Detalhes sobre o cadastramento do </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+</FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI,
+&quot;Sistema de Seguran&ccedil;a&quot;, item &quot;Usu&aacute;rios
+e habilita&ccedil;&otilde;es&quot;.</FONT>
+<P>
+<FONT SIZE=2>S&atilde;o v&aacute;lidos para esta gera&ccedil;&atilde;o
+os </FONT><I><FONT SIZE=2 COLOR=#000000>usercodes</FONT></I><FONT SIZE=2>
+de an&aacute;lise definidos na tabela SBPM5002. A defini&ccedil;&atilde;o
+dos </FONT><I><FONT SIZE=2 COLOR=#000000>usercodes</FONT></I><FONT SIZE=2>
+de an&aacute;lise est&aacute; descrita na Se&ccedil;&atilde;o
+V, &quot;Parametriza&ccedil;&otilde;es do SADS&quot;.</FONT>
+<P>
+<B><FONT SIZE=2 COLOR=#000000>Gerar mesmo que ja exista o fonte</FONT></B><FONT SIZE=2>
+- Indicador de sobreposi&ccedil;&atilde;o do fonte da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;S&quot; - Para gerar o fonte independentemente
+da exist&ecirc;ncia de outro de mesmo c&oacute;digo no </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+informado;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;N&quot; - Para gerar o fonte somente se n&atilde;o
+existir uma </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+com o mesmo c&oacute;digo no </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+informado.</FONT></dir></dir></dir>
+<P>
+<A NAME="Liblib"><B><FONT SIZE=5>Libera&ccedil;&atilde;o de </FONT><FONT SIZE=5 COLOR=#000000>library
+de procedure</FONT></B><FONT SIZE=5 COLOR=#000000> </FONT><B><FONT SIZE=5>para
+produ&ccedil;&atilde;o</FONT></B></A>
+<P>
+<FONT SIZE=2>A libera&ccedil;&atilde;o da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de</FONT><I><FONT SIZE=2 COLOR=#000000> procedure</FONT></I><FONT SIZE=2>
+para produ&ccedil;&atilde;o consiste em gerar uma c&oacute;pia
+da mesma no </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+de produ&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>S&oacute; &eacute; poss&iacute;vel liberar </FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+que tenham sido criadas no ambiente de teste.</FONT>
+<P>
+<FONT SIZE=2>A libera&ccedil;&atilde;o da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+para produ&ccedil;&atilde;o n&atilde;o est&aacute; associada a
+nenhuma tela de processamento. Portanto, para efetu&aacute;-la,
+basta transmitir os argumentos da tela &quot;LIBLIBPRO&quot;,
+cujos campos est&atilde;o explicados a seguir:</FONT>
+<P><dir>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B>
+<P><dir><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Library de Procedure</FONT></B><FONT SIZE=2>
+- C&oacute;digo da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+no padr&atilde;o SADS (sssLxx).</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Usercode</FONT></B><FONT SIZE=2>
+- </FONT><I><FONT SIZE=2 COLOR=#000000>Usercode</FONT></I><FONT SIZE=2>
+de an&aacute;lise.</FONT>
+<P><FONT SIZE=2>O </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+a ser informado deve estar habilitado ao usu&aacute;rio, como
+elemento, em sua lista de elementos &quot;SEGUSER&quot;, no Sistema
+de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o
+descritos na Se&ccedil;&atilde;o VI, &quot;Sistema de Seguran&ccedil;a&quot;,
+item &quot;Habilita&ccedil;&otilde;es de usu&aacute;rios SADS&quot;.</FONT>
+<P>
+<FONT SIZE=2>Caso o </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+n&atilde;o seja informado, ser&aacute; assumido o </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+</FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio. Detalhes sobre o cadastramento do </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+</FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI,
+&quot;Sistema de Seguran&ccedil;a&quot;, item &quot;Usu&aacute;rios
+e habilita&ccedil;&otilde;es&quot;.</FONT>
+<P>
+<FONT SIZE=2>Para </FONT><I><FONT SIZE=2 COLOR=#000000>usercodes</FONT></I><FONT SIZE=2>
+de an&aacute;lise, s&atilde;o definidos os ambientes (</FONT><I><FONT SIZE=2 COLOR=#000000>
+usercode</FONT></I><FONT SIZE=2> e disco) onde ficar&atilde;o
+residentes suas </FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+de teste e produ&ccedil;&atilde;o, sendo poss&iacute;vel que as
+</FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+de produ&ccedil;&atilde;o fiquem sem </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>.
+Estas defini&ccedil;&otilde;es est&atilde;o na tabela SBPM5002,
+que se encontra descrita na Se&ccedil;&atilde;o V, &quot;Parametriza&ccedil;&otilde;es
+do SADS&quot;, neste manual. </FONT>
+<P>
+<FONT SIZE=2>Se na defini&ccedil;&atilde;o do </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+de an&aacute;lise, na tabela SBPM5002, estiver indicado que as
+</FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+de produ&ccedil;&atilde;o ficar&atilde;o residentes no </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+de objetos em produ&ccedil;&atilde;o, ao executar suas libera&ccedil;&otilde;es,
+aquelas que est&atilde;o em teste ser&atilde;o mantidas e vers&otilde;es
+id&ecirc;nticas ser&atilde;o criadas para o </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+de produ&ccedil;&atilde;o. Se as </FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+de produ&ccedil;&atilde;o ficarem residentes sem </FONT><I><FONT SIZE=2 COLOR=#000000>&nbsp;usercode</FONT></I><FONT SIZE=2>,
+ao executar suas libera&ccedil;&otilde;es, aquelas que est&atilde;o
+em teste ser&atilde;o removidas e outras id&ecirc;nticas ser&atilde;o
+criadas em *, ou seja, sem </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>,
+para atender aos dois ambientes (teste e produ&ccedil;&atilde;o).</FONT></dir></dir>
+<P>
+<A NAME="Funca"><B><FONT SIZE=5>Fun&ccedil;&otilde;es de apoio</FONT></B></A>
+<HR>
+<P>
+<A NAME="Esplib"><B><FONT SIZE=5>Espec&iacute;ficas de libraries
+de procedure</FONT></B></A>
+<P>
+<FONT SIZE=2>O SADS oferece as seguintes fun&ccedil;&otilde;es
+de apoio que s&atilde;o espec&iacute;ficas do elemento </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>:</FONT>
+<P><dir><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>Duplica&ccedil;&atilde;o de </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>;</FONT>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>Ressequenciamento de m&oacute;dulo;</FONT>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>Exporta&ccedil;&atilde;o e importa&ccedil;&atilde;o
+de edit;</FONT>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>Consulta fonte de </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>;</FONT>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>-Impress&atilde;o de cadastramento de </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>.</FONT></dir>
+<P>
+<FONT SIZE=2>A seguir, ser&aacute; explicada detalhadamente cada
+uma dessas fun&ccedil;&otilde;es.</FONT>
+<P>
+<A NAME="Duplib"><B><FONT SIZE=4>Duplica&ccedil;&atilde;o de library
+de procedure</FONT></B></A>
+<P>
+<FONT SIZE=2>Para duplicar</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+&eacute; necess&aacute;rio que:</FONT>
+<P><dir><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>A</FONT><I><FONT SIZE=2 COLOR=#000000> library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+origem esteja cadastrada no reposit&oacute;rio de dados do SADS;</FONT>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>A</FONT><I><FONT SIZE=2 COLOR=#000000> library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+destino n&atilde;o esteja cadastrada.</FONT></dir>
+<P>
+<FONT SIZE=2>Para duplicar </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>,
+basta transmitir os argumentos do menu de opera&ccedil;&atilde;o
+&quot;DUPLIBPRO&quot;, cujos campos devem ser preenchidos conforme
+explica&ccedil;&atilde;o a seguir:</FONT>
+<P><dir>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B>
+<P><dir><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Library origem</FONT></B><FONT SIZE=2>
+- C&oacute;digo da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+a ser duplicada, no padr&atilde;o SADS (sssLxx).</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Library destino</FONT></B><FONT SIZE=2>
+- C&oacute;digo da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+que ir&aacute; assumir o novo cadastramento, no padr&atilde;o
+SADS (sssLxx).</FONT></dir></dir>
+<P>
+<FONT SIZE=2>A transa&ccedil;&atilde;o de duplica&ccedil;&atilde;o
+de </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+ser&aacute; executada imediatamente, sem apresenta&ccedil;&atilde;o
+de tela de processamento e, ao seu t&eacute;rmino, ser&aacute;
+enviada uma mensagem confirmando a duplica&ccedil;&atilde;o.</FONT>
+<P>
+<A NAME="Resse"><B><FONT SIZE=4>Ressequenciamento de m&oacute;dulo</FONT></B></A>
+<P>
+<FONT SIZE=2>O SADS possibilita que os comandos definidos no cadastramento
+de m&oacute;dulo sejam ressequenciados, ou seja, tenham alteradas
+suas sequ&ecirc;ncias dentro do m&oacute;dulo, de modo que todas
+elas tenham um n&uacute;mero m&uacute;ltiplo de 10 (dez).</FONT>
+<P>
+<FONT SIZE=2>Para utilizar esta opera&ccedil;&atilde;o, o m&oacute;dulo
+a ser ressequenciado j&aacute; deve ter sido cadastrado no reposit&oacute;rio
+de dados do SADS.</FONT>
+<P>
+<FONT SIZE=2>Para ressequenciar um m&oacute;dulo, basta transmitir
+o argumento do menu de opera&ccedil;&atilde;o RESMODLIB, cujo
+campo deve ser preenchido conforme explica&ccedil;&atilde;o a
+seguir:</FONT>
+<P><dir>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B>
+<P><dir><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Library </FONT></B><FONT SIZE=2>-
+C&oacute;digo da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+que se deseja ressequenciar, no padr&atilde;o SADS (sssLxx).</FONT>
+<P>
+<FONT SIZE=2>Esta transa&ccedil;&atilde;o ser&aacute; executada
+imediatamente, sem apresenta&ccedil;&atilde;o de tela de processamento
+e, ao seu t&eacute;rmino, ser&aacute; enviada uma mensagem confirmando
+o ressequenciamento.</FONT></dir></dir>
+<P>
+<A NAME="Expimp"><B><FONT SIZE=4>Exporta&ccedil;&atilde;o e importa&ccedil;&atilde;o
+de edit</FONT></B></A>
+<P>
+<FONT SIZE=2>O SADS possibilita exportar comandos de m&oacute;dulo
+EDIT para o Cande e importar arquivos de comandos em Cobol para
+que se tornem comandos EDIT. Ao efetuar uma exporta&ccedil;&atilde;o
+de um EDIT no Cande, ser&aacute; gerado um arquivo de nome &quot;EDIT/
+sssennmmm/xxxxxxxxx&quot;, onde:</FONT>
+<P><dir><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>
+<FONT SIZE=2>&quot;sssenn&quot; &eacute; o c&oacute;digo da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de procedure;</FONT>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>
+<FONT SIZE=2>&quot;mmm&quot; &eacute; o n&uacute;mero do m&oacute;dulo
+ao qual o EDIT pertence, no caso de </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+&eacute; 001;</FONT>
+<P><IMG SRC="Bullet1.gif" WIDTH=8 HEIGHT=8>
+<FONT SIZE=2>&quot;xxxxxxxxx&quot; &eacute; o nome do EDIT.</FONT></dir>
+<P>
+<FONT SIZE=2>Este arquivo pode ent&atilde;o ser alterado e depois
+importado pelo SADS, permitindo, com estas opera&ccedil;&otilde;es,
+que sejam utilizadas as facilidades de edi&ccedil;&atilde;o do
+Cande.</FONT>
+<P>
+<FONT SIZE=2>Pode-se tamb&eacute;m criar o arquivo diretamente
+no Cande, desde que ele tenha este padr&atilde;o de nome, para
+que ele seja importado pelo SADS.</FONT>
+<P>
+<FONT SIZE=2>Sempre quando for efetuada uma importa&ccedil;&atilde;o
+de comando EDIT do Cande, a </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+que teve o EDIT importado ficar&aacute; marcada e o programa que
+a utilizar s&oacute; poder&aacute; ser compilado caso ela seja
+regerada. Isto para garantir que os comandos do EDIT sejam devidamente
+gerados na </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+ap&oacute;s sua importa&ccedil;&atilde;o para o SADS.</FONT>
+<P>
+<FONT SIZE=2>Para exportar ou importar um comando EDIT, basta
+transmitir os argumentos do menu de opera&ccedil;&atilde;o &quot;TRAEDILIB&quot;,
+cujos campos devem ser preenchidos conforme explica&ccedil;&atilde;o
+a seguir:</FONT>
+<P><dir>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B>
+<P><dir><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Operacao</FONT></B><FONT SIZE=2>
+- Opera&ccedil;&atilde;o a ser efetuada sobre o comando EDIT.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;IMP&quot; - Importa&ccedil;&atilde;o do arquivo
+no Cande para o comando EDIT do SADS;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;EXP&quot; - Exporta&ccedil;&atilde;o do comando
+EDIT do SADS para um arquivo no Cande;</FONT></dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Library</FONT></B><FONT SIZE=2>
+- C&oacute;digo da </FONT><I><FONT SIZE=2 COLOR=#000000>library
+</FONT></I><FONT SIZE=2>de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+a qual o EDIT pertence.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Edit</FONT></B><FONT SIZE=2> - Nome
+do comando EDIT.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Usercode</FONT></B><FONT SIZE=2>
+- </FONT><I><FONT SIZE=2 COLOR=#000000>Usercode</FONT></I><FONT SIZE=2>
+onde reside o arquivo a ser importado/exportado.</FONT>
+<P>
+<FONT SIZE=2>O </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+a ser informado deve estar habilitado ao usu&aacute;rio como elemento,
+em sua lista de elementos &quot;SEGUSER&quot;, no Sistema de Seguran&ccedil;a.
+Detalhes sobre este cadastramento est&atilde;o descritos na Se&ccedil;&atilde;o
+VI, &quot;Sistema de Seguran&ccedil;a&quot;, item &quot;Habilita&ccedil;&otilde;es
+de usu&aacute;rios SADS&quot;.</FONT>
+<P>
+<FONT SIZE=2>Caso o </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+n&atilde;o seja informado, ser&aacute; assumido o </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+</FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio. Detalhes sobre o cadastramento do </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+</FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI,
+&quot;Sistema de Seguran&ccedil;a&quot;, item &quot;Usu&aacute;rios
+e habilita&ccedil;&otilde;es&quot;.</FONT>
+<P>
+<B><FONT SIZE=2 COLOR=#000000>EXPORTAR MESMO QUE JA EXISTA O EDIT?
+(S/N)</FONT></B><FONT SIZE=2> - Indicador de sobreposi&ccedil;&atilde;o
+de arquivos no Cande, na opera&ccedil;&atilde;o de exporta&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;S&quot; - Para que seja gerado o arquivo no
+Cande contendo os comandos do EDIT, mesmo que j&aacute; exista
+um arquivo neste </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+com mesmo nome. O arquivo anterior ser&aacute; sobreposto.</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;N&quot; - Para que seja n&atilde;o seja gerado
+o arquivo no Cande contendo os comandos do EDIT, caso j&aacute;
+exista um arquivo neste</FONT><I><FONT SIZE=2 COLOR=#000000> usercode</FONT></I><FONT SIZE=2>
+com mesmo nome.</dir></dir>
+<P>
+<A NAME="Fonlib"><B><FONT SIZE=4>Consulta fonte de library de
+procedure</FONT></B></A>
+<P>
+<FONT SIZE=2>O SADS permite, sem precisar ativar a janela Cande,
+consultar o fonte de </FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+geradas. A consulta ao fonte pode ser exibida a partir da primeira
+linha do fonte ou a partir de um </FONT><I><FONT SIZE=2 COLOR=#000000>label</FONT></I><FONT SIZE=2>,
+que deve ser informado com o tamanho m&aacute;ximo de 17 caracteres.
+Desta forma, a consulta ser&aacute; exibida a partir da primeira
+linha da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+que come&ccedil;ar com o conjunto de caracteres informado.</FONT>
+<P>
+<FONT SIZE=2>Para consultar o fonte de uma library de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>,
+&eacute; necess&aacute;rio que a mesma j&aacute; tenha sido gerada
+no </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+informado.</FONT>
+<P>
+<FONT SIZE=2>Para consultar o fonte de uma </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>,
+basta transmitir os argumentos do menu de opera&ccedil;&atilde;o
+&quot;CONFONLIB&quot;, cujos campos devem ser preenchidos conforme
+explica&ccedil;&atilde;o a seguir:</FONT>
+<P><dir>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B>
+<P><dir><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Programa/library </FONT></B><FONT SIZE=2>-
+C&oacute;digo da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+cujo fonte ser&aacute; consultado, no padr&atilde;o SADS (sssLxx).</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Usercode</FONT></B><FONT SIZE=2>
+- </FONT><I><FONT SIZE=2 COLOR=#000000>Usercode</FONT></I><FONT SIZE=2>
+onde reside o fonte da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>.</FONT>
+<P>
+<FONT SIZE=2>O </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+a ser informado deve estar habilitado ao usu&aacute;rio, como
+elemento, em sua lista de elementos &quot;SEGUSER&quot;, no Sistema
+de Seguran&ccedil;a. Detalhes sobre este cadastramento est&atilde;o
+descritos na Se&ccedil;&atilde;o VI, &quot;Sistema de Seguran&ccedil;a&quot;,
+item &quot;Habilita&ccedil;&otilde;es de usu&aacute;rios SADS&quot;.</FONT>
+<P>
+<FONT SIZE=2>Caso o </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+n&atilde;o seja informado, ser&aacute; assumido o </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+</FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio. Detalhes sobre o cadastramento do </FONT><I><FONT SIZE=2 COLOR=#000000>usercode</FONT></I><FONT SIZE=2>
+</FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio podem ser obtidos na Se&ccedil;&atilde;o VI,
+&quot;Sistema de Seguran&ccedil;a&quot;, item &quot;Usu&aacute;rios
+e habilita&ccedil;&otilde;es&quot;.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Ambiente</FONT></B><FONT SIZE=2>
+- Ambiente no qual a </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+foi gerada:</FONT>
+<P>
+<FONT SIZE=2>Podem ser informados os seguintes ambientes:</FONT>
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;T&quot; - Teste;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;P&quot; - Produ&ccedil;&atilde;o.</FONT></dir>
+<P>
+<FONT SIZE=2>Caso o ambiente n&atilde;o seja informado, ser&aacute;
+assumido o ambiente </FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio. Detalhes sobre o cadastramento do ambiente
+</FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+do usu&aacute;rio podem ser obtidos na se&ccedil;&atilde;o VI,
+&quot;Sistema de Seguran&ccedil;a&quot;, item &quot;Usu&aacute;rios
+e habilita&ccedil;&otilde;es&quot;.</FONT>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Label/sequencia</FONT></B><FONT SIZE=2>
+- </FONT><I><FONT SIZE=2 COLOR=#000000>Label</FONT></I><FONT SIZE=2>
+ou sequ&ecirc;ncia a partir do qual ser&aacute; apresentado o
+fonte da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>;</FONT>
+<P>
+<FONT SIZE=2>A consulta ao fonte da</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+&eacute; do tipo paginada, contendo as informa&ccedil;&otilde;es
+de cabe&ccedil;alho, como o c&oacute;digo e o nome da </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>,
+e, a seguir, o seu fonte.</FONT>
+<P>
+<FONT SIZE=2>Em cada linha do fonte &eacute; exibido o conte&uacute;do
+dos seis primeiros </FONT><I><FONT SIZE=2 COLOR=#000000>bytes</FONT></I><FONT SIZE=2>
+do </FONT><I><FONT SIZE=2 COLOR=#000000>MARKID</FONT></I><FONT SIZE=2>
+(colunas 73 a 78).</FONT>
+<P>
+<FONT SIZE=2>No fonte gerado, o MARKID ir&aacute; conter a informa&ccedil;&atilde;o
+&quot;MOD001&quot; ou &quot;&lt;&lt;Nome da edi&ccedil;&atilde;o
+Cobol/exce&ccedil;&atilde;o&gt;&gt;&quot;, caso a linha correspondente
+tenha sido gerada a partir de edi&ccedil;&atilde;o Cobol - comando
+EDIT - ou atrav&eacute;s de um tratamento de exce&ccedil;&atilde;o
+- comando EXEC.</FONT></dir></dir>
+<P>
+<A NAME="Impcad"><B><FONT SIZE=4>Impress&atilde;o de cadastramento
+de library de procedure </FONT></B></A>
+<P>
+<FONT SIZE=2>O SADS oferece uma fun&ccedil;&atilde;o de gera&ccedil;&atilde;o
+de um relat&oacute;rio impresso com todas as informa&ccedil;&otilde;es
+do cadastramento de uma</FONT><I><FONT SIZE=2 COLOR=#000000> library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>:
+defini&ccedil;&atilde;o e cadastramento de m&oacute;dulos.</FONT>
+<P>
+<FONT SIZE=2>Essa opera&ccedil;&atilde;o tem por objetivo facilitar
+a manuten&ccedil;&atilde;o do cadastramento de uma</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>,
+atrav&eacute;s da visualiza&ccedil;&atilde;o em papel impresso
+de todas as informa&ccedil;&otilde;es constantes neste cadastramento,
+para posterior altera&ccedil;&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>Para imprimir o cadastramento de uma</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>,
+basta transmitir os argumentos do menu de opera&ccedil;&atilde;o
+&quot;IMPCADLIB&quot;, cujos campos devem ser preenchidos conforme
+explica&ccedil;&atilde;o a seguir:</FONT>
+<P><dir>
+<B><FONT SIZE=2 COLOR=#000000>CAMPOS DA TELA</FONT></B>
+<P><dir><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Library</FONT></B><FONT SIZE=2>
+- C&oacute;digo da</FONT><I><FONT SIZE=2 COLOR=#000000> library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;sss&quot; - Para imprimir o cadastramento de
+todas as </FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+do sistema;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;sssLxx&quot; - Para imprimir o cadastramento
+de </FONT><I><FONT SIZE=2 COLOR=#000000>library</FONT></I><FONT SIZE=2>
+de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>
+espec&iacute;fica.</FONT></dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<B><FONT SIZE=2 COLOR=#000000>Impressora</FONT></B><FONT SIZE=2>
+- C&oacute;digo da impressora.</FONT>
+<P>
+<FONT SIZE=2>Pode assumir os seguintes valores:</FONT>
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;&lt;C&oacute;digo da impressora remota&gt;&quot;
+- Para imprimir o manual na impressora remota informada (esta
+impressora deve estar cadastrada na rede de terminais);</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;PRINTER&quot; - Para imprimir o manual na impressora
+central, no formul&aacute;rio de 132 posi&ccedil;&otilde;es;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>&quot;PRINxx&quot; - Para imprimir o manual na impressora
+central em formul&aacute;rio especial, onde &quot;xx&quot; &eacute;
+um </FONT><I><FONT SIZE=2 COLOR=#000000>formid</FONT></I><FONT SIZE=2>
+definido na instala&ccedil;&atilde;o.</FONT></dir>
+<P>
+<FONT SIZE=2>As impressoras remotas podem ser cadastradas, com
+um </FONT><I><FONT SIZE=2 COLOR=#000000>formid</FONT></I><FONT SIZE=2>
+correspondente, na tabela SBPM5026. Todas as vezes que for disparada
+uma impress&atilde;o pelo SADS, esta tabela &eacute; consultada,
+e caso a impressora esteja cadastrada, o relat&oacute;rio ser&aacute;
+impresso com o seu</FONT><I><FONT SIZE=2 COLOR=#000000> formid</FONT></I><FONT SIZE=2>
+correspondente. A tabela SBPM5026 est&aacute; descrita na Se&ccedil;&atilde;o
+V, &quot;Parametriza&ccedil;&otilde;es do SADS&quot;, neste manual.</FONT>
+<P>
+<FONT SIZE=2>Caso este campo n&atilde;o seja informado, ser&aacute;
+assumida a impressora </FONT><I><FONT SIZE=2 COLOR=#000000>default</FONT></I><FONT SIZE=2>
+cadastrada para o usu&aacute;rio no Sistema de Seguran&ccedil;a.
+Caso esta n&atilde;o exista cadastrada, ser&aacute; ent&atilde;o
+obrigat&oacute;ria a informa&ccedil;&atilde;o do c&oacute;digo
+da impressora no momento do disparo da impress&atilde;o.</FONT>
+<P>
+<FONT SIZE=2>A impress&atilde;o ser&aacute; executada imediatamente,
+sem apresenta&ccedil;&atilde;o de tela de processamento e, ao
+seu t&eacute;rmino, ser&aacute; enviada uma mensagem confirmando
+a impress&atilde;o.</FONT></dir></dir>
+<P>
+<A NAME="Gener"><B><FONT SIZE=5>Gen&eacute;ricas aplic&aacute;veis
+&agrave;s libraries de procedure</FONT></B></A>
+<P><dir><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13>
+<FONT SIZE=2>-</FONT><B><FONT SIZE=2 COLOR=#000000>Utilit&aacute;rios:</FONT></B>
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Duplica&ccedil;&atilde;o de elemento;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Descri&ccedil;&atilde;o de elemento;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Exporta&ccedil;&atilde;o de descri&ccedil;&atilde;o
+de elemento;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Importa&ccedil;&atilde;o de descri&ccedil;&atilde;o
+de elemento.</FONT></dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2 COLOR=#000000>Consultas:</FONT></B>
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Elementos por sistema;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Fontes de </FONT><I><FONT SIZE=2 COLOR=#000000>libraries</FONT></I><FONT SIZE=2>;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Descri&ccedil;&atilde;o de elementos.</FONT></dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><B><FONT SIZE=2 COLOR=#000000>Refer&ecirc;ncia
+cruzada:</FONT></B>
+<P><dir><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Elementos x elemento: Programas que utilizam uma</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2> de </FONT><I><FONT SIZE=2 COLOR=#000000>procedure</FONT></I><FONT SIZE=2>.</FONT></dir>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13></FONT><B><FONT SIZE=2 COLOR=#000000>Informativos
+impressos:</FONT></B>
+<P><DIR><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Lista elementos por sistema;</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Lista descri&ccedil;&otilde;es.</FONT>
+<P><IMG SRC="Bullet7.gif" WIDTH=13 HEIGHT=13>Lista fonte de</FONT><I><FONT SIZE=2 COLOR=#000000>
+library</FONT></I><FONT SIZE=2>/programa.</FONT></dir></dir>
+<P>
+Todos estes utilit&aacute;rios, consultas, refer&ecirc;ncias cruzadas
+e informativos impressos encontram-se detalhadamente descritos
+na Se&ccedil;&atilde;o III, &quot;Fun&ccedil;&otilde;es de apoio&quot;,
+neste manual.
+</BODY>
+</HTML>

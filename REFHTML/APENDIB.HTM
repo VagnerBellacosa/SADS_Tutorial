@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Apendice B</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+<basefont size=2>
+<B><FONT SIZE=5><P ALIGN="CENTER">Ap&ecirc;ndice B</P>
+</FONT><FONT SIZE=4><P ALIGN="CENTER">SADS Secund&aacute;rio</P><DIR>
+
+</B></FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> </FONT><A HREF="#Objet"><B><FONT SIZE=2>Objetivo </B></FONT></A></P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> </FONT><A HREF="#Requi"><B><FONT SIZE=2>Pr&eacute;-requisito </B></FONT></A></P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> </FONT><A HREF="#Confi"><B><FONT SIZE=2>Configura&ccedil;&atilde;o </B></FONT></A></P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> </FONT><A HREF="#Preca"><B><FONT SIZE=2>Precau&ccedil;&otilde;es </B></FONT></A></P></DIR>
+
+<P><BR>
+<BR>
+<A NAME="Objet"><B><FONT SIZE=5>Objetivo</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>A cria&ccedil;&atilde;o do ambiente "SADS Secund&aacute;rio" tem como objetivo permitir a utiliza&ccedil;&atilde;o de dois ambientes SADS semi-independentes em uma mesma m&aacute;quina.</FONT> </P>
+<FONT SIZE=2><P>Os dois ambientes, SADS Prim&aacute;rio e SADS Secund&aacute;rio, n&atilde;o s&atilde;o totalmente independentes, pois a <I>System library</I> SBPS01, que &eacute; encarregada pelo controle geral do SADS, ser&aacute; sempre compartilhada por ambos.</FONT> </P>
+<FONT SIZE=2><P>A partir da cria&ccedil;&atilde;o do SADS Secund&aacute;rio, torna-se poss&iacute;vel:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Separar os ambientes de desenvolvimento e produ&ccedil;&atilde;o, quando ambos estiverem rodando na mesma m&aacute;quina.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Permitir o <I>backup</I> de uma m&aacute;quina na outra, no caso de falha de uma das m&aacute;quinas, sem interfer&ecirc;ncia no processamento daquela que continua &iacute;ntegra.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Para melhor entender esta utiliza&ccedil;&atilde;o, suponha que ocorra uma falha na m&aacute;quina de desenvolvimento que impossibilite que as equipes de an&aacute;lise continuem seus trabalhos. Com o ambiente SADS Secund&aacute;rio da m&aacute;quina de produ&ccedil;&atilde;o em funcionamento, pode-se montar um ambiente semelhante ao da m&aacute;quina de desenvolvimento (<I>backup</I>) para que este possa ser utilizado temporariamente, at&eacute; que a m&aacute;quina de desenvolvimento seja reparada.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Testar e instalar novas vers&otilde;es do SADS em paralelo com a vers&atilde;o em uso, de forma transparente para a instala&ccedil;&atilde;o.</FONT> </P></DIR>
+
+<FONT SIZE=2><P>Para evitar que as instala&ccedil;&otilde;es e testes do SADS interfiram no ambiente em uso e por isso tenham de ser feitas fora do hor&aacute;rio de trabalho, pode-se utilizar de um ambiente secund&aacute;rio do SADS. Desta forma, somente quando for conveniente, pode ser feita a migra&ccedil;&atilde;o do SADS entre os ambientes.</FONT> </P>
+<FONT SIZE=2><P>A figura a seguir ilustra o esquema de funcionamento dos dois ambientes do SADS convivendo em uma mesma m&aacute;quina.</FONT> </P>
+<P><IMG SRC="apendib.gif" WIDTH=520 HEIGHT=423><BR>
+<FONT SIZE=2>Figura 1: Esquema de funcionamento do ambiente SADS</FONT> </P>
+<P><BR>
+<BR>
+<A NAME="Requi"><B><FONT SIZE=5>Pr&eacute;-requisito</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>O &uacute;nico pr&eacute;-requisito para a cria&ccedil;&atilde;o de um ambiente secund&aacute;rio para o SADS &eacute; que a <I>library</I> SBPS01, que &eacute; utilizada para controle do SADS simultaneamente nos dois ambientes, deve possuir vers&atilde;o 3.1.271 ou superior.</FONT> </P>
+<B><FONT SIZE=5><P><A NAME="Confi">Configura&ccedil;&atilde;o</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Para configurar o SADS para funcionamento em ambientes prim&aacute;rio e secund&aacute;rio, os seguintes procedimentos devem ser efetuados:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Instalar o SADS em uma outra <I>window</I>, que n&atilde;o seja a mesma onde o SADS prim&aacute;rio j&aacute; esteja instalado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Para proceder esta instala&ccedil;&atilde;o, o Manual de Instala&ccedil;&atilde;o do SADS deve ser consultado.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Definir, no MAKEUSER, os <I>usercodes</I> que ir&atilde;o trabalhar no ambiente SADS Secund&aacute;rio - os <I>usercodes</I> do pr&oacute;prio SADS e os <I>usercodes</I> da instala&ccedil;&atilde;o - que dever&atilde;o ter o seguinte atributo:</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> USER &lt;&lt;nome do <I>usercode</I>&gt;&gt; T8W = " * SADS * ";</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Configurar o ambiente secund&aacute;rio do SADS atrav&eacute;s da execu&ccedil;&atilde;o do programa SBP03 no Cande - RUN SBP03.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Neste programa, deve-se informar op&ccedil;&atilde;o "02" - CONFIGURACAO DOS AMBIENTES -, para ent&atilde;o definir a localiza&ccedil;&atilde;o (<I>usercode e </I>disco) do <I>control file</I>, arquivos convencionais e sub-rotinas do SADS a serem utilizados no ambiente secund&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Para isso, os campos da tela devem sem preenchidos da seguinte forma:</FONT> </P><DIR>
+
+<B><FONT SIZE=2><P>SADXCF</B> - Informe a localiza&ccedil;&atilde;o do <I>control file</I> do banco do SADS no ambiente secund&aacute;rio (SDDB01).</FONT> </P>
+<FONT SIZE=2><P>Deve-se especificar o <I>usercode</I> e disco.</FONT> </P>
+<FONT SIZE=2><P>Apenas um dos dois bancos, do SADS Prim&aacute;rio (SADSCF) ou do SADS Secund&aacute;rio (SADXCF), podem ter a especifica&ccedil;&atilde;o do <I>usercode</I> em branco.</FONT> </P>
+<B><FONT SIZE=2><P>SADXAS</B> - Informe a localiza&ccedil;&atilde;o dos arquivos convencionais do SADS no ambiente secund&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Os arquivos convencionais do SADS possuem padr&atilde;o Sx/x/AF/nn.</FONT> </P>
+<FONT SIZE=2><P>Os arquivos do SADS secund&aacute;rio devem, obrigat&oacute;riamente, ficar em <I>pack</I> diferente da localiza&ccedil;&atilde;o destes no SADS prim&aacute;rio.</FONT> </P>
+<B><FONT SIZE=2><P>SADXSP</B> - Informe a localiza&ccedil;&atilde;o dos objetos das sub-rotinas do SADS no ambiente secund&aacute;rio.</FONT> </P>
+<FONT SIZE=2><P>Os objetos de sub-rotinas do SADS possuem padr&atilde;o Sx/x/SC/xx.</FONT> </P>
+<FONT SIZE=2><P>As sub-rotinas do SADS secund&aacute;rio devem, obrigatoriamente, ficar em <I>pack</I> diferente da localiza&ccedil;&atilde;o destas no SADS prim&aacute;rio.</FONT> </P></DIR>
+</DIR>
+
+<B><FONT SIZE=5><P><A NAME="Preca">Precau&ccedil;&otilde;es</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Para utiliza&ccedil;&atilde;o do SADS Secund&aacute;rio as seguintes precau&ccedil;&otilde;es devem ser tomadas:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> O ambiente secund&aacute;rio do SADS n&atilde;o pode compartilhar nenhuma <I>library</I> de item de processamento do COMS com o SADS Prim&aacute;rio.</FONT> </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Os dois ambientes do SADS devem utilizar os paginadores de entrada e sa&iacute;da que tratam o mesmo n&uacute;mero de esta&ccedil;&otilde;es, isto &eacute;, se no ambiente prim&aacute;rio os paginadores trabalharem com 300 esta&ccedil;&otilde;es, no ambiente secund&aacute;rio os paginadores tamb&eacute;m dever&atilde;o trabalhar com 300 esta&ccedil;&otilde;es. </P>
+</FONT><P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13><FONT SIZE=2> Pelo menos um dos dois bancos, do SADS Prim&aacute;rio ou do SADS Secund&aacute;rio, deve ficar sob <I>usercode</I>, pois o DMSII n&atilde;o aceita mais de um banco com o mesmo nome sem <I>usercode</I> ou sob o mesmo <I>usercode</I>.</FONT> </P>
+<FONT SIZE=2><P>Estes usercodes devem ser especificados na configura&ccedil;&atilde;o do ambiente pelo programa SBP03, nos campos SADSCF (<I>Control file</I> do banco do SADS Prim&aacute;rio) e SADXCF (<I>Control file</I> do banco do SADS Secund&aacute;rio).</P></DIR>
+</FONT></BODY>
+</HTML>

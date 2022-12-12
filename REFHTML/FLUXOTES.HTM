@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>FLUXOTES</TITLE>
+<META NAME="Template" CONTENT="J:\MSOFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="DOC_B.GIF">
+<basefont size=2>
+<B><FONT SIZE=6><P><A NAME="Fluxo">Fluxo de testes</A></B></FONT> </P>
+<P><HR></P>
+<FONT SIZE=2><P>Existem basicamente dois tipos de testes efetuados pelo Sistema de Seguran&ccedil;a do SADS para garantir a seguran&ccedil;a no acesso aos dados da instala&ccedil;&atilde;o: aqueles efetuados somente no momento do <I>logon</I> e os rotineiros, efetuados sempre que uma transa&ccedil;&atilde;o &eacute; requisitada.</FONT> </P>
+<FONT SIZE=2><P>No momento do <I>logon</I>, o Sistema de Seguran&ccedil;a obt&eacute;m os dados do usu&aacute;rio e valida a possibilidade deste iniciar uma sess&atilde;o de trabalho no SADS. Os testes efetuados para essa valida&ccedil;&atilde;o s&atilde;o relacionados na Se&ccedil;&atilde;o I, "Requisitos e conceitos para utiliza&ccedil;&atilde;o do SADS", item "Procedimentos de habilita&ccedil;&atilde;o".</FONT> </P>
+<FONT SIZE=2><P>Os testes rotineiros determinam se o usu&aacute;rio, que j&aacute; se encontra logado, pode ou n&atilde;o ter acesso ao aplicativo e &agrave; transa&ccedil;&atilde;o requisitados, se o hor&aacute;rio para acesso ao aplicativo lhe &eacute; permitido, se a transa&ccedil;&atilde;o est&aacute; dispon&iacute;vel para utiliza&ccedil;&atilde;o e se o usu&aacute;rio pode trabalhar nesta transa&ccedil;&atilde;o com os valores dos campos cadastrados como elementos no SADS/SS.</FONT> </P>
+<FONT SIZE=2><P>Nos testes de seguran&ccedil;a considerados rotineiros, sempre que um usu&aacute;rio solicita uma transa&ccedil;&atilde;o, o <I>host</I> do aplicativo verifica:</FONT> </P><DIR>
+
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> Se j&aacute; foi efetuado o <I>logon</I> na esta&ccedil;&atilde;o (em caso negativo, ele ser&aacute; solicitado); </P>
+<P><IMG SRC="Bullet5.gif" WIDTH=13 HEIGHT=13> E, em caso positivo, se o usu&aacute;rio que efetuou o <I>logon</I> est&aacute; habilitado a trabalhar com o aplicativo e a transa&ccedil;&atilde;o solicitados. </P></DIR>
+
+<FONT SIZE=2><P>Satisfeitos estes testes, o <I>hos</I>t verifica se a transa&ccedil;&atilde;o requisitada est&aacute; habilitada ou possui limita&ccedil;&atilde;o de hor&aacute;rio e se o usu&aacute;rio n&atilde;o possui limita&ccedil;&atilde;o de hor&aacute;rio para trabalhar com o aplicativo espec&iacute;fico.</FONT> </P>
+<FONT SIZE=2><P>Uma vez efetuados satisfatoriamente todos estes testes, finalmente o <I>host</I> dispara a transa&ccedil;&atilde;o em quest&atilde;o, entregando o processamento para o programa chamado respons&aacute;vel pela transa&ccedil;&atilde;o disparada.</FONT> </P>
+<FONT SIZE=2><P>As valida&ccedil;&otilde;es de habilita&ccedil;&atilde;o de usu&aacute;rio ao aplicativo e transa&ccedil;&atilde;o s&atilde;o, portanto, requisitadas pelo <I>host</I> deste e efetuadas pelas sub-rotinas de seguran&ccedil;a. Sendo assim, os hosts dos aplicativos j&aacute; s&atilde;o gerados pelo SADS com chamadas a estas sub-rotinas. </P>
+<P>O Sistema de Seguran&ccedil;a faz a valida&ccedil;&atilde;o da habilita&ccedil;&atilde;o de aplicativos segundo os c&oacute;digos de transa&ccedil;&atilde;o das telas de processamento ou de menus 01 a 09. </P>
+<P>Para o SADS/SS, portanto, os c&oacute;digos de transa&ccedil;&atilde;o (sssmmnn) dos menus de escolha ou de opera&ccedil;&atilde;o n&atilde;o podem ser utilizados para definir as habilita&ccedil;&otilde;es dos usu&aacute;rios. Por&eacute;m, apenas os c&oacute;digos de menu (sssmm) dos menus de escolha e de opera&ccedil;&atilde;o devem ser habilitados, para que eles possam utilizar a navega&ccedil;&atilde;o. </P>
+<P>J&aacute; a valida&ccedil;&atilde;o de habilita&ccedil;&atilde;o de elementos deve ser feita nos programas chamados dos aplicativos ou nas consist&ecirc;ncias de suas telas, uma vez que a sua necessidade &eacute; definida pelo analista respons&aacute;vel pelo sistema. Este dever&aacute; incluir nos seus programas, quando lhe convier, a chamada &agrave; sub-rotina SBTS03, que &eacute; a encarregada pela valida&ccedil;&atilde;o de elementos. </P>
+<P>Maiores detalhes sobre habilita&ccedil;&atilde;o de elementos s&atilde;o apresentados nesta se&ccedil;&atilde;o, no item "N&iacute;veis de seguran&ccedil;a dispon&iacute;veis", t&oacute;pico "Valida&ccedil;&atilde;o de elementos".</FONT> </P>
+<FONT SIZE=2><P>Existe tamb&eacute;m a valida&ccedil;&atilde;o de habilita&ccedil;&atilde;o de programa por sub-rotina, que, da mesma forma que a habilita&ccedil;&atilde;o de elemento, deve ser feita nas sub-rotinas dos aplicativos, uma vez que a sua necessidade tamb&eacute;m &eacute; definida pelo analista respons&aacute;vel pelo aplicativo. </P>
+<P>Maiores detalhes sobre habilita&ccedil;&atilde;o de programas para acesso a sub-rotina est&atilde;o descritos nesta se&ccedil;&atilde;o, item " N&iacute;veis de seguran&ccedil;a dispon&iacute;veis", t&oacute;pico "Valida&ccedil;&atilde;o de programa para acesso a sub-rotina".</FONT> </P></BODY>
+</HTML>
